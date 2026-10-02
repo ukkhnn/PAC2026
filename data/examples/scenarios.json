@@ -1,0 +1,495 @@
+[
+  {
+    "id": "normal",
+    "title": "정상 표기",
+    "tag": "기준과 일치",
+    "description": "명확한 표기와 작업계획이 일치하는 경우",
+    "image_url": "/examples/normal.svg",
+    "source_kind": "synthetic_demo",
+    "provider": "fixture_candidates",
+    "observations": [
+      {
+        "id": "mark-1",
+        "bbox": [
+          0.1,
+          0.2,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "PART: BLK-017",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-2",
+        "bbox": [
+          0.1,
+          0.325,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "SEAM: S-04",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-3",
+        "bbox": [
+          0.1,
+          0.45,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "WELD: FW",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-4",
+        "bbox": [
+          0.1,
+          0.575,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "SIZE: 6",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-5",
+        "bbox": [
+          0.1,
+          0.7,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "POS: FLAT",
+            "score": 0.97
+          }
+        ]
+      }
+    ],
+    "context": {
+      "part_id": "BLK-017",
+      "seam_id": "S-04",
+      "expected_size_mm": 6,
+      "weld_type": "FILLET",
+      "material": "DEMO-STEEL",
+      "thickness_mm": 12,
+      "position": "FLAT",
+      "plan_revision": "PLAN-DEMO-v1",
+      "preceding_complete": true
+    }
+  },
+  {
+    "id": "ambiguous",
+    "title": "모호한 수기",
+    "tag": "맥락으로 후보 좁히기",
+    "description": "시연 인식 후보 6 / 8을 계획과 대조하는 경우",
+    "image_url": "/examples/ambiguous.svg",
+    "source_kind": "synthetic_demo",
+    "provider": "fixture_candidates",
+    "observations": [
+      {
+        "id": "mark-1",
+        "bbox": [
+          0.1,
+          0.2,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "PART: BLK-017",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-2",
+        "bbox": [
+          0.1,
+          0.325,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "SEAM: S-04",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-3",
+        "bbox": [
+          0.1,
+          0.45,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "WELD: FW",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-4",
+        "bbox": [
+          0.1,
+          0.575,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "SIZE: 6",
+            "score": 0.55
+          },
+          {
+            "text": "SIZE: 8",
+            "score": 0.51
+          }
+        ]
+      },
+      {
+        "id": "mark-5",
+        "bbox": [
+          0.1,
+          0.7,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "POS: FLAT",
+            "score": 0.97
+          }
+        ]
+      }
+    ],
+    "context": {
+      "part_id": "BLK-017",
+      "seam_id": "S-04",
+      "expected_size_mm": 6,
+      "weld_type": "FILLET",
+      "material": "DEMO-STEEL",
+      "thickness_mm": 12,
+      "position": "FLAT",
+      "plan_revision": "PLAN-DEMO-v1",
+      "preceding_complete": true
+    }
+  },
+  {
+    "id": "conflict",
+    "title": "작업계획 충돌",
+    "tag": "확정 보류",
+    "description": "사진의 치수 8이 계획의 치수 6과 충돌하는 경우",
+    "image_url": "/examples/conflict.svg",
+    "source_kind": "synthetic_demo",
+    "provider": "fixture_candidates",
+    "observations": [
+      {
+        "id": "mark-1",
+        "bbox": [
+          0.1,
+          0.2,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "PART: BLK-017",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-2",
+        "bbox": [
+          0.1,
+          0.325,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "SEAM: S-04",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-3",
+        "bbox": [
+          0.1,
+          0.45,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "WELD: FW",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-4",
+        "bbox": [
+          0.1,
+          0.575,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "SIZE: 8",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-5",
+        "bbox": [
+          0.1,
+          0.7,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "POS: FLAT",
+            "score": 0.97
+          }
+        ]
+      }
+    ],
+    "context": {
+      "part_id": "BLK-017",
+      "seam_id": "S-04",
+      "expected_size_mm": 6,
+      "weld_type": "FILLET",
+      "material": "DEMO-STEEL",
+      "thickness_mm": 12,
+      "position": "FLAT",
+      "plan_revision": "PLAN-DEMO-v1",
+      "preceding_complete": true
+    }
+  },
+  {
+    "id": "memory",
+    "title": "확인 이력 재사용",
+    "tag": "같은 작업만 참조",
+    "description": "모호한 수기를 같은 작업의 확인 기록으로 좁히는 경우",
+    "image_url": "/examples/memory.svg",
+    "source_kind": "synthetic_demo",
+    "provider": "fixture_candidates",
+    "observations": [
+      {
+        "id": "mark-1",
+        "bbox": [
+          0.1,
+          0.2,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "PART: BLK-017",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-2",
+        "bbox": [
+          0.1,
+          0.325,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "SEAM: S-04",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-3",
+        "bbox": [
+          0.1,
+          0.45,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "WELD: FW",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-4",
+        "bbox": [
+          0.1,
+          0.575,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "SIZE: 6",
+            "score": 0.55
+          },
+          {
+            "text": "SIZE: 8",
+            "score": 0.51
+          }
+        ]
+      },
+      {
+        "id": "mark-5",
+        "bbox": [
+          0.1,
+          0.7,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "POS: FLAT",
+            "score": 0.97
+          }
+        ]
+      }
+    ],
+    "context": {
+      "part_id": "BLK-017",
+      "seam_id": "S-04",
+      "expected_size_mm": null,
+      "weld_type": "FILLET",
+      "material": "DEMO-STEEL",
+      "thickness_mm": 12,
+      "position": "FLAT",
+      "plan_revision": "PLAN-DEMO-v1",
+      "preceding_complete": true
+    }
+  },
+  {
+    "id": "wrong-context",
+    "title": "다른 부재의 계획",
+    "tag": "맥락 오류 검출",
+    "description": "BLK-017 사진에 BLK-099 계획이 연결된 경우",
+    "image_url": "/examples/wrong-context.svg",
+    "source_kind": "synthetic_demo",
+    "provider": "fixture_candidates",
+    "observations": [
+      {
+        "id": "mark-1",
+        "bbox": [
+          0.1,
+          0.2,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "PART: BLK-017",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-2",
+        "bbox": [
+          0.1,
+          0.325,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "SEAM: S-04",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-3",
+        "bbox": [
+          0.1,
+          0.45,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "WELD: FW",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-4",
+        "bbox": [
+          0.1,
+          0.575,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "SIZE: 6",
+            "score": 0.97
+          }
+        ]
+      },
+      {
+        "id": "mark-5",
+        "bbox": [
+          0.1,
+          0.7,
+          0.62,
+          0.085
+        ],
+        "candidates": [
+          {
+            "text": "POS: FLAT",
+            "score": 0.97
+          }
+        ]
+      }
+    ],
+    "context": {
+      "part_id": "BLK-099",
+      "seam_id": "S-04",
+      "expected_size_mm": 6,
+      "weld_type": "FILLET",
+      "material": "DEMO-STEEL",
+      "thickness_mm": 12,
+      "position": "FLAT",
+      "plan_revision": "PLAN-DEMO-v1",
+      "preceding_complete": true
+    }
+  }
+]

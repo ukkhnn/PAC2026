@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="900" viewBox="0 0 1000 900">
+<defs><linearGradient id="steel" x2="1" y2="1"><stop stop-color="#303943"/><stop offset="1" stop-color="#141e28"/></linearGradient><pattern id="grain" width="80" height="60" patternUnits="userSpaceOnUse"><path d="M0 20L80 18M0 43L80 46" stroke="#738391" opacity=".09"/></pattern></defs>
+<rect width="1000" height="900" fill="url(#steel)"/><rect width="1000" height="900" fill="url(#grain)"/>
+<path d="M815 100V810" stroke="#73838f" stroke-width="18" opacity=".28"/><path d="M832 100V810" stroke="#0a1119" stroke-width="7"/>
+<g fill="#edf0db" font-family="Menlo,monospace" font-size="53" font-weight="600"><text x="100" y="235" >PART: BLK-017</text><text x="100" y="347" >SEAM: S-04</text><text x="100" y="459" >WELD: FW</text><text x="100" y="571" >SIZE: 8</text><text x="100" y="683" >POS: FLAT</text></g>
+<text x="100" y="94" fill="#7c9bac" font-family="sans-serif" font-size="23">CONTEXTWELD / SYNTHETIC DEMO</text>
+<text x="100" y="830" fill="#7c9bac" font-family="sans-serif" font-size="21">Demo marking grammar · Not a field photograph</text>
+</svg>

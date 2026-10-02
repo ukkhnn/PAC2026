@@ -1,0 +1,15 @@
+{
+  "version": "demo-rules-v1",
+  "source_kind": "synthetic_demo",
+  "disclaimer": "시연용 가상 규칙. 실제 조선소 표기나 승인된 WPS가 아닙니다.",
+  "documents": [
+    {"id": "MARK-01", "title": "시연 표기 문법", "text": "PART는 부재, SEAM은 이음부, WELD는 작업 종류, SIZE는 시연 치수, POS는 자세를 표현한다. FW는 FILLET, BW는 BUTT로 해석한다. 실제 현장 약어가 아니다.", "tags": ["PART", "SEAM", "FW", "BW", "SIZE", "POS"]},
+    {"id": "CHECK-01", "title": "작업 맥락 대조", "text": "사진의 부재·이음부가 계획과 다르면 보류한다. 치수 후보가 복수일 때 계획과 비교하되 단일 시각 결과와 충돌하면 계획으로 덮어쓰지 않는다.", "tags": ["PART", "SEAM", "SIZE", "CONFLICT"]},
+    {"id": "MEMORY-01", "title": "확인 이력 범위", "text": "작업자가 확인한 치수는 같은 부재·이음부·재질·두께·자세·계획 버전·규칙 버전에서만 참조한다. 새 사진의 후보에 없는 치수는 이력으로 넣지 않는다.", "tags": ["MEMORY", "SIZE"]},
+    {"id": "RECIPE-01", "title": "시연 프로그램 적용 범위", "text": "DEMO-STEEL, 두께 10~14 mm, FLAT 자세, FILLET 작업의 치수 6 또는 8에 시연 프로그램을 연결한다. 전류·전압·이동속도는 실제 WPS 확보 전까지 미정이다.", "tags": ["FILLET", "DEMO-STEEL", "FLAT", "RECIPE"]}
+  ],
+  "recipes": [
+    {"id": "DEMO-FW6", "title": "필릿 치수 6 시연 프로그램", "weld_type": "FILLET", "size_mm": 6, "material": "DEMO-STEEL", "thickness_range_mm": [10, 14], "position": "FLAT", "document_id": "RECIPE-01", "settings": {"current_a": null, "voltage_v": null, "travel_speed_mm_min": null}},
+    {"id": "DEMO-FW8", "title": "필릿 치수 8 시연 프로그램", "weld_type": "FILLET", "size_mm": 8, "material": "DEMO-STEEL", "thickness_range_mm": [10, 14], "position": "FLAT", "document_id": "RECIPE-01", "settings": {"current_a": null, "voltage_v": null, "travel_speed_mm_min": null}}
+  ]
+}
