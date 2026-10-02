@@ -6,7 +6,19 @@ ContextWeld는 선박 블록과 부재의 정형 마킹·수기 표기를 인식
 
 [PAC 2026](https://ainnov.co.kr/pac2026) 분과 02 기업 문제 해결형 IR 피칭 대회의 HD현대로보틱스 미션 03을 대상으로 한다. 참가팀은 **Static Duo**다.
 
-> 현재 단계: 기획 및 저장소 구조 준비. 아래 기능은 구현 목표이며, 실행 가능한 애플리케이션과 성능 결과는 아직 없다. 기준일: 2026-10-02.
+> 현재 단계: 실행 가능한 로컬 spike. 5개 시연 사례, 실제 사진 OCR(macOS), 맥락 대조, 작업자 확인·수정·보류, 이력 저장·JSON 내보내기를 구현했다. 실제 현장 데이터·WPS와 현장 성능 결과는 아직 없다. 기준일: 2026-10-02.
+
+## 빠른 실행
+
+Python 3.10 이상에서 저장소 루트에서 실행한다. 외부 패키지나 API 키는 필요하지 않다.
+
+```sh
+python3 scripts/run_demo.py
+```
+
+브라우저에서 <http://127.0.0.1:8765>를 연다. 예제는 합성 이미지와 작성된 인식 후보를 사용한다. 업로드 사진은 macOS와 Swift 개발 도구가 있을 때 실제 Apple Vision OCR로 인식한다. 규칙은 시연용이며 전류·전압·이동속도는 미정이다.
+
+[실행·시연 안내](docs/RUN_DEMO.md) · [코드 학습·교체 안내](docs/LEARNING_GUIDE.md) · [검증 기록](docs/VALIDATION.md)
 
 ## 해결하려는 문제
 
@@ -35,6 +47,7 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
 
 | 문서 | 내용 |
 |---|---|
+| [Spike 명세](docs/SPIKE_SPEC.md) | 시연 사례, 가정, 구현 경계 |
 | [프로젝트 개요](docs/PROJECT_BRIEF.md) | 문제 정의, 미션 요구사항, 기능 범위, 평가 계획 |
 | [마일스톤](docs/MILESTONES.md) | 단계별 목표일, 완료 기준, 진행 상태 |
 | [데이터 요구사항](docs/DATA_REQUIREMENTS.md) | 필요한 자료와 현장 검증 항목 |
@@ -53,6 +66,10 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
 │   ├── MILESTONES.md
 │   ├── DATA_REQUIREMENTS.md
 │   ├── SOURCES.md
+│   ├── SPIKE_SPEC.md
+│   ├── RUN_DEMO.md
+│   ├── LEARNING_GUIDE.md
+│   ├── VALIDATION.md
 │   └── references/           # 기획서와 미션 원문
 ├── src/contextweld/          # 애플리케이션 구현
 ├── tests/                    # 핵심 기능 검증
@@ -70,4 +87,4 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
     └── presentation/        # 발표자료
 ```
 
-현재 구현·데이터·산출물 폴더에는 구조 보존용 파일만 있다. 기술 스택과 설치·실행 방법은 구현 단계에서 추가한다. 원본 현장 자료와 생성 산출물은 기본적으로 Git 추적에서 제외한다. 데이터 공개 기준은 [데이터 안내](data/README.md)를 따른다.
+구현은 Python 표준 라이브러리 서버·SQLite, HTML/CSS/JavaScript 화면, macOS의 Swift OCR 어댑터로 구성한다. 실행 기록과 업로드 자료는 `.local/`에 저장하고 Git 추적에서 제외한다. 원본 현장 자료와 생성 산출물은 기본적으로 Git 추적에서 제외한다. 데이터 공개 기준은 [데이터 안내](data/README.md)를 따른다.

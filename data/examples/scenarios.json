@@ -98,7 +98,7 @@
   },
   {
     "id": "ambiguous",
-    "title": "모호한 수기",
+    "title": "모호한 표기",
     "tag": "맥락으로 후보 좁히기",
     "description": "시연 인식 후보 6 / 8을 계획과 대조하는 경우",
     "image_url": "/examples/ambiguous.svg",
@@ -298,7 +298,7 @@
     "id": "memory",
     "title": "확인 이력 재사용",
     "tag": "같은 작업만 참조",
-    "description": "모호한 수기를 같은 작업의 확인 기록으로 좁히는 경우",
+    "description": "모호한 표기를 같은 작업의 확인 기록으로 좁히는 경우",
     "image_url": "/examples/memory.svg",
     "source_kind": "synthetic_demo",
     "provider": "fixture_candidates",

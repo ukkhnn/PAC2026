@@ -29,3 +29,7 @@
 Python 표준 라이브러리의 HTTP 서버·SQLite와 HTML/CSS/JavaScript를 사용한다. API 키와 외부 패키지 설치 없이 실행한다. macOS에서는 Swift와 Apple Vision을 사용할 수 있을 때 업로드 이미지의 실제 OCR을 실행한다. OCR이 불가능한 경우 오류를 표시하며 모의 결과로 대체하지 않는다.
 
 입력 관측, 맥락, 규칙, 결정, 확인 이력을 각각 보존한다. 화면과 서버, 인식 어댑터, 판단 엔진, 저장소를 분리해 멘토링 이후 교체할 수 있게 한다.
+
+## OCR 구현 참고
+
+Apple Vision의 [VNRecognizeTextRequest](https://developer.apple.com/documentation/vision/vnrecognizetextrequest)와 [이미지 문자 인식 안내](https://developer.apple.com/documentation/vision/recognizing-text-in-images)를 참고한다. `vision_ocr.swift`는 실제 인식 후보와 신뢰 점수, 영역 좌표를 반환하며 서버는 원본과 함께 저장한다.

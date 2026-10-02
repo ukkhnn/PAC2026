@@ -1,6 +1,6 @@
 # 데이터 관리
 
-현재는 디렉토리 구조만 준비되어 있으며 데이터 파일은 없다. 기획서와 미션 원문은 [docs/references](../docs/references/)에 있다.
+현재 `examples/`에는 합성 SVG 5개와 준비된 인식 후보·맥락을 담은 `scenarios.json`, 실제 OCR 연결 시험용 합성 인쇄체 `ocr-printed.png`가 있다. `knowledge/demo-rules.json`의 약어와 프로그램은 시연용 가상 기준이다. 실제 현장 사진·표기 사전·WPS·평가셋은 없다. 기획서와 미션 원문은 [docs/references](../docs/references/)에 있다.
 
 ## 배치
 
