@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ContextWeld · 작업 맥락으로 읽는 표기</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="ContextWeld 홈"><span class="brand-icon">C<span>↗</span></span><span>ContextWeld<small>작업 맥락으로 읽는 표기</small></span></a>
+    <div class="nav-label">WORKSPACE</div>
+    <nav>
+      <button class="nav-item active" data-view="workspace"><span>⌗</span> 표기 분석</button>
+      <button class="nav-item" data-view="history"><span>◷</span> 확인 이력 <b id="history-count">0</b></button>
+      <button class="nav-item" data-view="guide"><span>▤</span> 데모 살펴보기</button>
+    </nav>
+    <div class="sidebar-case"><span class="tiny-label">CURRENT PROJECT</span><strong>선박 블록 표기 해석</strong><p>PAC 2026 · Mission 03<br>Static Duo</p><span class="outline-chip">SPIKE DEMO</span></div>
+    <div class="sidebar-bottom"><span class="connection-dot"></span><span id="connection">로컬 연결 확인 중</span><small>자료는 이 컴퓨터에 저장됩니다.</small></div>
+  </aside>
+
+  <main>
+    <header class="topbar"><span>선박 블록 <span class="slash">/</span> 작업지시 해석</span><div class="topbar-right"><span class="version">DEMO v0.1</span><span class="avatar">SD</span></div></header>
+    <div class="page">
+      <div class="page-heading"><div><div class="eyebrow">CONTEXT-AWARE INTERPRETATION</div><h1>표기에서 작업으로.</h1><p>이미지의 표기를 작업 맥락과 대조하고, 판단의 근거를 확인하세요.</p></div><span class="local-badge">● 로컬 프로토타입</span></div>
+      <div class="demo-notice"><span class="notice-icon">i</span><div><strong>시연용 표기·규칙을 사용합니다.</strong> 실제 현장 표기 사전과 승인된 WPS는 아직 없습니다. 전류·전압·이동속도는 확정하지 않습니다.</div></div>
+
+      <section id="workspace-view">
+        <div class="section-heading"><h2>시연 사례</h2><span>각 사례에서 맥락이 판단에 미치는 변화를 살펴보세요.</span></div>
+        <div class="scenario-grid" id="scenario-grid"></div>
+
+        <div class="workspace-grid">
+          <div class="image-column">
+            <section class="card image-card">
+              <div class="card-heading"><div><h2>입력 이미지</h2><p id="image-description">시연 사례를 선택하세요.</p></div><label class="upload-button" for="image-upload">↥ 사진 넣기<input id="image-upload" type="file" accept="image/png,image/jpeg" hidden></label></div>
+              <div class="image-viewer"><div class="image-stage" id="image-stage"><img id="source-image" alt="분석할 표기 이미지"><div id="overlays"></div></div><div id="image-loading" class="image-loading" hidden>사진의 표기를 읽고 있습니다…</div></div>
+              <div class="image-caption"><span id="source-badge" class="source-badge">시연 이미지 · 준비된 인식 후보</span><button class="text-button" id="overlay-toggle">영역 숨기기</button></div>
+            </section>
+            <section class="card observation-card"><div class="card-heading"><div><h2>표기 관측</h2><p>원본 인식 후보를 그대로 보존합니다.</p></div><span id="observation-count" class="count-chip">0개 영역</span></div><div id="observations"></div><p class="small-note">시연 후보 점수와 OCR 점수는 정답 확률이 아닙니다.</p></section>
+          </div>
+
+          <div class="decision-column">
+            <section class="card context-card"><div class="card-heading"><div><h2>작업 맥락</h2><p>이 사진에 연결할 계획과 적용 조건</p></div><span class="subtle-chip">직접 입력</span></div>
+              <form id="context-form" class="context-form">
+                <label>부재번호<input name="part_id" maxlength="64" autocomplete="off"></label>
+                <label>이음부<input name="seam_id" maxlength="64" autocomplete="off"></label>
+                <label>계획 치수 <span>mm</span><input name="expected_size_mm" type="number" min="1" max="30" placeholder="미지정"></label>
+                <label>작업 종류<select name="weld_type"><option value="FILLET">FILLET · 시연 FW</option><option value="BUTT">BUTT · 시연 BW</option></select></label>
+                <label>재질<input name="material" maxlength="64"></label>
+                <label>판 두께 <span>mm</span><input name="thickness_mm" type="number" min="1" max="200"></label>
+                <label>작업 자세<input name="position" maxlength="64"></label>
+                <label>계획 버전<input name="plan_revision" maxlength="64"></label>
+                <label class="check-label"><input name="preceding_complete" type="checkbox"> 선행작업 완료 정보가 있음</label>
+              </form>
+              <button class="primary-button" id="analyze-button">맥락과 함께 분석 <span>→</span></button>
+            </section>
+            <section class="card result-card" id="result-card"><div class="card-heading"><div><h2>판단 결과</h2><p>분석 후 후보와 확인할 항목이 나타납니다.</p></div><span id="result-status" class="status neutral">분석 전</span></div><div id="result-body" class="empty-result"><span class="empty-icon">⌗</span><strong>판단의 연결을 확인하세요.</strong><p>사진과 계획이 일치하는지,<br>어떤 기준이 적용되는지 확인합니다.</p></div></section>
+          </div>
+        </div>
+
+        <section class="card compare-card" id="compare-card" hidden><div class="card-heading"><div><h2>맥락 적용 전후</h2><p>같은 인식 후보에 작업계획과 확인 이력을 추가했을 때의 변화</p></div><span class="subtle-chip">표기 후보 고정</span></div><div class="comparison-table" id="comparison"></div></section>
+        <section class="card evidence-card" id="evidence-card" hidden><div class="card-heading"><div><h2>판단 근거</h2><p>키워드로 조회한 시연 기준과 적용 버전</p></div><span class="subtle-chip">추적 가능한 출처</span></div><div id="evidence" class="evidence-grid"></div></section>
+        <section class="card review-card" id="review-card" hidden><div class="card-heading"><div><h2>작업자 확인</h2><p>원본과 근거를 확인한 후 결과를 기록합니다.</p></div><button id="export-button" class="secondary-button">↓ 판단 기록 JSON</button></div>
+          <div class="review-grid"><label>치수 수정 <span>선택 · mm</span><input id="correction-size" type="number" min="1" max="30" placeholder="수정할 때만 입력"></label><label>확인 또는 보류 이유<input id="review-note" maxlength="2000" placeholder="원본을 어떻게 확인했는지 남겨주세요."></label></div>
+          <div class="review-footer"><p>확인은 시연 해석의 확인이며 실제 용접 실행을 승인하지 않습니다.</p><div><button id="hold-button" class="secondary-button">보류 기록</button><button id="approve-button" class="primary-button compact">결과 확인</button></div></div>
+          <div id="review-events"></div>
+        </section>
+      </section>
+
+      <section id="history-view" hidden><div class="section-heading"><h2>분석과 확인 이력</h2><button id="refresh-history" class="secondary-button">새로고침</button></div><div id="history-list"></div></section>
+      <section id="guide-view" hidden>
+        <section class="card guide-card"><h2>이 데모에서 확인할 것</h2><p>완성된 흐름을 따라가며 어디에 맥락이 도움이 되고, 언제 확인이 필요한지 살펴보세요.</p>
+          <ol><li><strong>정상 표기</strong><p>사진과 계획이 일치하면 시연 프로그램 후보가 나옵니다.</p></li><li><strong>모호한 수기</strong><p>준비된 6 / 8 후보에 계획 치수 6을 연결하면 후보가 좁혀집니다. 원본 확인은 계속 필요합니다.</p></li><li><strong>작업계획 충돌</strong><p>사진의 8을 계획의 6으로 덮어쓰지 않고 보류합니다. 시연에서 원본을 다시 확인했다고 가정한 경우에만 치수 수정과 이유를 기록하세요.</p></li><li><strong>확인 이력 재사용</strong><p>모호한 수기에서 결과를 확인한 뒤 이력 사례를 분석하세요. 같은 작업의 확인 기록을 참조합니다. 계획 버전을 바꾸면 재사용하지 않습니다.</p></li><li><strong>다른 부재의 계획</strong><p>사진과 계획의 부재가 다르면 후보를 확정하지 않습니다.</p></li></ol>
+          <div class="guide-details"><h3>실제로 동작하는 부분</h3><p>규칙 대조, 근거 조회, 작업자 확인·수정·보류, SQLite 이력 저장, 기록 내보내기. macOS에서는 업로드한 PNG/JPEG 사진에 Apple Vision OCR을 실행합니다.</p><h3>아직 검증하지 않은 부분</h3><p>실제 조선소 표기·수기 인식 성능, 현장 WPS 적합성, 임베딩 검색, VLM 의미 추론, 로봇 제어. 예제 이미지는 합성 자료이며 인식 후보가 준비되어 있습니다.</p></div>
+        </section>
+      </section>
+      <footer class="page-footer"><span>ContextWeld · Static Duo</span><span>시연용 규칙 / 현장 성능 미측정</span></footer>
+    </div>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
