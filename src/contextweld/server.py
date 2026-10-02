@@ -79,10 +79,12 @@ def create_server(port: int = 8765, root: Path = ROOT, database: Path | None = N
             # 이미지·작업 맥락이나 개인 입력을 로그에 출력하지 않는다.
             pass
 
-        def send_bytes(self, status: int, content: bytes, content_type: str) -> None:
+        def send_bytes(self, status: int, content: bytes, content_type: str, filename: str | None = None) -> None:
             self.send_response(status)
             self.send_header("Content-Type", content_type)
             self.send_header("Content-Length", str(len(content)))
+            if filename:
+                self.send_header("Content-Disposition", f'attachment; filename="{filename}"')
             self.send_header("Cache-Control", "no-store")
             self.send_header("X-Content-Type-Options", "nosniff")
             self.end_headers()
@@ -106,6 +108,13 @@ def create_server(port: int = 8765, root: Path = ROOT, database: Path | None = N
                 self.send_json(200, scenarios)
             elif path == "/api/history":
                 self.send_json(200, store.history())
+            elif re.fullmatch(r"/api/runs/[a-f0-9]{32}/export", path):
+                run_id = path.split("/")[3]
+                try:
+                    content = json.dumps(store.get(run_id), ensure_ascii=False, indent=2, allow_nan=False).encode()
+                    self.send_bytes(200, content, "application/json; charset=utf-8", f"contextweld-{run_id[:8]}.json")
+                except KeyError:
+                    self.send_json(404, {"error": "분석 기록이 없습니다."})
             elif re.fullmatch(r"/api/runs/[a-f0-9]{32}", path):
                 try:
                     self.send_json(200, store.get(path.rsplit("/", 1)[1]))

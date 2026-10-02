@@ -58,6 +58,15 @@ class APITests(unittest.TestCase):
         self.assertEqual(changed['contextual']['status'], 'blocked')
         self.assertEqual(self.request('/api/runs/' + run['id'])[1]['reviews'], saved['reviews'])
 
+    def test_export_download_preserves_stored_run(self):
+        run = self.analyze('normal')
+        with urlopen(self.base + '/api/runs/' + run['id'] + '/export', timeout=5) as response:
+            self.assertIn('attachment;', response.headers['Content-Disposition'])
+            exported = json.loads(response.read())
+        self.assertEqual(exported['observations'], run['observations'])
+        self.assertEqual(exported['contextual'], run['contextual'])
+        self.assertEqual(exported['source']['image_sha256'], run['source']['image_sha256'])
+
     def test_conflict_cannot_be_approved_and_original_survives_correction(self):
         run = self.analyze('conflict')
         review = {'run_id': run['id'], 'revision': 0, 'action': 'approve', 'note': '시험 재확인'}

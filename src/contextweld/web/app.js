@@ -176,10 +176,10 @@ async function upload(file) {
 }
 function exportRun() {
   if (!state.run) return;
-  const blob = new Blob([JSON.stringify(state.run, null, 2)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const anchor = document.createElement("a"); anchor.href = url; anchor.download = `contextweld-${state.run.id.slice(0, 8)}.json`; anchor.click();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  const anchor = document.createElement("a");
+  anchor.href = `/api/runs/${state.run.id}/export`;
+  anchor.download = `contextweld-${state.run.id.slice(0, 8)}.json`;
+  document.body.appendChild(anchor); anchor.click(); anchor.remove();
 }
 document.querySelectorAll("[data-view]").forEach((node) => node.addEventListener("click", () => showView(node.dataset.view)));
 $("#context-form").addEventListener("submit", (event) => { event.preventDefault(); analyze(); });
