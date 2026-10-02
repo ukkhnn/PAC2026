@@ -147,13 +147,14 @@ async function loadHistory() {
       state.selected = state.scenarios.find((item) => item.id === run.source.scenario_id) || null;
       state.upload = run.source.provider === "apple_vision_local" ? { upload_id: run.source.image_url.split("/").pop().split(".")[0] } : null;
       renderScenarios();
-      renderInput({ source: run.source, observations: run.observations });
+      renderInput({ source: run.source, observations: run.observations, description: state.selected?.description });
       renderRun(run);
       showView("workspace");
     } catch (error) { notify(error.message, true); }
   }));
 }
 function showView(view) {
+  window.scrollTo({ top: 0, behavior: "instant" });
   for (const name of ["workspace", "history", "guide"]) $(`#${name}-view`).hidden = name !== view;
   document.querySelectorAll("[data-view]").forEach((node) => node.classList.toggle("active", node.dataset.view === view));
 }
