@@ -1,0 +1,40 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+.DS_Store
+.local/
+.codex/
+.opencode/
+
+# Local collaboration notes and agent entry points
+/.cowork/
+/AGENTS.md
+/CLAUDE.md
+/CURRENT_TASK.md
+/PROJECT_STATE.md
+
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+tmp/
+*.log
+
+# Original field data
+/data/raw/*
+!/data/raw/.gitkeep
+
+# Generated results; publish selected artifacts under docs/
+/output/**
+!/output/**/
+!/output/**/.gitkeep
