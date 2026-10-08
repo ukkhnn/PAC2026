@@ -1,6 +1,6 @@
 # 데이터 관리
 
-현재는 디렉토리 구조만 준비되어 있으며 데이터 파일은 없다. 기획서와 미션 원문은 [docs/references](../docs/references/)에 있다.
+`examples/part-order-scene.json`에 직접 작성한 부재번호 후보와 가상 작업지시·개정 이력이 있다. `synthetic` / `synthetic_manual`로 구분하며 사진 OCR 결과나 현장 데이터가 아니다. 독립 평가셋은 아직 없다. 입력 규약은 [첫 장면 안내](../docs/FIRST_SCENE.md)를 따른다. 기획서와 미션 원문은 [docs/references](../docs/references/)에 있다.
 
 ## 배치
 

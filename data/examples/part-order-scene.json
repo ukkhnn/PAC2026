@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "dataset_kind": "synthetic",
+  "provenance": "직접 작성한 후보와 가상 작업지시. 사진 OCR 또는 현장 데이터가 아님.",
+  "orders": [
+    {
+      "project_id": "DEMO",
+      "block_id": "BLK-01",
+      "order_id": "WO-108",
+      "part_id": "B-108",
+      "revision": 1,
+      "valid_from": "2026-10-01T09:00:00+09:00",
+      "valid_until": null,
+      "state": "released",
+      "instruction": "도면 DEMO-D1 기준 준비"
+    },
+    {
+      "project_id": "DEMO",
+      "block_id": "BLK-01",
+      "order_id": "WO-108",
+      "part_id": "B-108",
+      "revision": 2,
+      "valid_from": "2026-10-08T09:00:00+09:00",
+      "valid_until": null,
+      "state": "released",
+      "instruction": "개정 도면 DEMO-D2 확인 후 준비"
+    },
+    {
+      "project_id": "DEMO",
+      "block_id": "BLK-01",
+      "order_id": "WO-103",
+      "part_id": "B-103",
+      "revision": 1,
+      "valid_from": "2026-10-01T09:00:00+09:00",
+      "valid_until": "2026-10-07T18:00:00+09:00",
+      "state": "released",
+      "instruction": "만료된 시연용 작업지시"
+    }
+  ],
+  "cases": [
+    {
+      "id": "normal",
+      "candidate_source": "synthetic_manual",
+      "candidates": [
+        "B-108"
+      ],
+      "project_id": "DEMO",
+      "block_id": "BLK-01",
+      "as_of": "2026-10-08T10:00:00+09:00"
+    },
+    {
+      "id": "ambiguous",
+      "candidate_source": "synthetic_manual",
+      "candidates": [
+        "B-108",
+        "B-103"
+      ],
+      "project_id": "DEMO",
+      "block_id": "BLK-01",
+      "as_of": "2026-10-08T10:00:00+09:00"
+    },
+    {
+      "id": "stale",
+      "candidate_source": "synthetic_manual",
+      "candidates": [
+        "B-103"
+      ],
+      "project_id": "DEMO",
+      "block_id": "BLK-01",
+      "as_of": "2026-10-08T10:00:00+09:00"
+    },
+    {
+      "id": "wrong-context",
+      "candidate_source": "synthetic_manual",
+      "candidates": [
+        "B-108"
+      ],
+      "project_id": "DEMO",
+      "block_id": "BLK-02",
+      "as_of": "2026-10-08T10:00:00+09:00"
+    }
+  ]
+}

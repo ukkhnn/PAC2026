@@ -6,7 +6,17 @@ ContextWeld는 선박 블록과 부재의 정형 마킹·수기 표기를 인식
 
 [PAC 2026](https://ainnov.co.kr/pac2026) 분과 02 기업 문제 해결형 IR 피칭 대회의 HD현대로보틱스 미션 03을 대상으로 한다. 참가팀은 **Static Duo**다.
 
-> 현재 단계: `dev`에서 공개 자료·작업 맥락 RAG 기반 개발을 새로 기획한다. 이전 spike 구현은 승계하지 않으며, 이 브랜치에는 실행 가능한 애플리케이션과 새 성능 결과가 아직 없다. 최신 범위는 [개발 기획](docs/DEVELOPMENT_PLAN.md)을 따른다. 기준일: 2026-10-08.
+> 현재 단계: `dev`의 첫 구현으로 부재번호 후보를 유효한 작업지시에 연결하는 CLI를 추가했다. 직접 작성한 후보·가상 지시로 동작을 검증했으며 실제 사진 OCR·문서 RAG·웹 화면은 아직 없다. [첫 장면 실행 안내](docs/FIRST_SCENE.md) · [개발 기획](docs/DEVELOPMENT_PLAN.md). 기준일: 2026-10-08.
+
+## 첫 장면 실행
+
+Python 3.10 이상에서 별도 설치 없이 저장소 루트에서 실행한다. 사진을 읽는 명령이 아니라 직접 작성한 후보와 가상 작업지시를 연결하는 예제다.
+
+```sh
+PYTHONPATH=src python3 -m contextweld data/examples/part-order-scene.json --case normal
+```
+
+`--case ambiguous`, `--case stale`, `--case wrong-context`로 확인 필요·만료·다른 블록 사례를 볼 수 있다.
 
 ## 해결하려는 문제
 
@@ -35,6 +45,7 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
 
 | 문서 | 내용 |
 |---|---|
+| [첫 장면 실행 안내](docs/FIRST_SCENE.md) | 후보·작업지시 입력, 판정 규칙, 실행·검증과 한계 |
 | [개발 기획](docs/DEVELOPMENT_PLAN.md) | 공개 자료 조사, 맥락 RAG 구조, 자체 제작 데이터, 새 개발 범위·평가 기준 |
 | [프로젝트 개요](docs/PROJECT_BRIEF.md) | 문제 정의, 미션 요구사항, 기능 범위, 평가 계획 |
 | [마일스톤](docs/MILESTONES.md) | 단계별 목표일, 완료 기준, 진행 상태 |
@@ -71,4 +82,4 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
     └── presentation/        # 발표자료
 ```
 
-현재 구현·데이터·산출물 폴더에는 구조 보존용 파일만 있다. 기술 스택과 설치·실행 방법은 구현 단계에서 추가한다. 원본 현장 자료와 생성 산출물은 기본적으로 Git 추적에서 제외한다. 데이터 공개 기준은 [데이터 안내](data/README.md)를 따른다.
+현재 `src/contextweld`에는 후보 연결 로직과 CLI, `tests`에는 자동 테스트, `data/examples`에는 가상 작업지시 예제가 있다. 사진 OCR·문서 검색·화면은 후속 범위다. 원본 현장 자료와 생성 산출물은 기본적으로 Git 추적에서 제외한다. 데이터 공개 기준은 [데이터 안내](data/README.md)를 따른다.
