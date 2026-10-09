@@ -309,16 +309,22 @@ def send_command(url: str, command: dict, timeout: float = 5) -> dict:
         connection.request("POST", "/commands", body=body, headers={"Content-Type": "application/json"})
         response = connection.getresponse()
         raw = response.read(MAX_BODY_BYTES + 1)
-        if len(raw) > MAX_BODY_BYTES or response.status not in {200, 409, 422}:
-            raise ValueError(f"예상하지 않은 모의 수신 응답: HTTP {response.status}")
-        ack = _parse_json(raw)
-        if (not isinstance(ack, dict) or ack.get("schema_version") != "demo-ack.v1"
-                or ack.get("command_id") != command.get("command_id")
-                or ack.get("status") != ("received" if response.status == 200 else "rejected")
-                or ack.get("execution_authorized") is not False or ack.get("application_authorized") is not False
-                or ack.get("purpose") != "demo_mock" or ack.get("evaluation_scope") != "document_review"
-                or ack.get("command_sha256") != hashlib.sha256(body).hexdigest()):
-            raise ValueError("모의 ACK 계약 또는 명령 연결이 일치하지 않습니다.")
+        try:
+            if len(raw) > MAX_BODY_BYTES or response.status not in {200, 409, 422}:
+                raise ValueError(f"예상하지 않은 모의 수신 응답: HTTP {response.status}")
+            ack = _parse_json(raw)
+            if (not isinstance(ack, dict) or ack.get("schema_version") != "demo-ack.v1"
+                    or ack.get("command_id") != command.get("command_id")
+                    or ack.get("status") != ("received" if response.status == 200 else "rejected")
+                    or ack.get("execution_authorized") is not False or ack.get("application_authorized") is not False
+                    or ack.get("purpose") != "demo_mock" or ack.get("evaluation_scope") != "document_review"
+                    or ack.get("command_sha256") != hashlib.sha256(body).hexdigest()):
+                raise ValueError("모의 ACK 계약 또는 명령 연결이 일치하지 않습니다.")
+        except ValueError as exc:
+            # 실패 원인을 남길 수 있도록 실제 받은 상태와 본문을 예외에 붙인다. 성공으로 바꾸지 않는다.
+            exc.http_status = response.status
+            exc.raw_response = raw[:MAX_BODY_BYTES].decode("utf-8", errors="replace")
+            raise
         return {"schema_version": "demo-delivery.v1", "transport": "http_loopback", "endpoint": url,
                 "sent_at_utc": sent_at, "elapsed_ms": round((time.monotonic() - started) * 1000, 3),
                 "http_status": response.status, "request_sha256": hashlib.sha256(body).hexdigest(),
