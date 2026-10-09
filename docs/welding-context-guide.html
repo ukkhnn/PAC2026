@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="용접 입문자를 위한 표기·용어·조선 생산 맥락과 ContextWeld의 맥락 설계 제안">
+<title>용접을 읽고, 맥락을 연결하다 · ContextWeld 도메인 가이드</title>
+<style>
+:root{--bg:#f5f3ed;--paper:#fffefa;--ink:#192e36;--muted:#53646b;--line:#d8dedb;--accent:#c04a26;--soft:#f9e9df;--blue:#1c6776;--blue-soft:#e8f1f1;--plate:#d9e1e2;--shadow:0 10px 32px #182e3608;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:16px;line-height:1.8;word-break:keep-all;overflow-wrap:anywhere}a{color:var(--blue);text-underline-offset:4px}a:hover{color:var(--accent)}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.skip{position:absolute;left:12px;top:-100px;background:var(--paper);padding:10px;z-index:10}.skip:focus{top:12px}.layout{max-width:1440px;margin:auto;display:grid;grid-template-columns:240px minmax(0,1fr);gap:50px;padding:36px 40px 80px}.rail{position:sticky;top:28px;align-self:start;font-size:14px}.brand{font-weight:800;letter-spacing:.08em;font-size:14px}.edition{color:var(--muted);font-size:12px;margin:2px 0 25px}.rail nav a{display:block;text-decoration:none;color:var(--muted);padding:8px 0;border-bottom:1px solid var(--line)}.rail nav a:hover{color:var(--accent)}.rail nav span{display:inline-block;width:26px;color:var(--accent);font-size:12px}.rail .print{margin-top:24px}.print,.choice{border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink);padding:9px 14px}.print:hover,.choice:hover{border-color:var(--blue)}main{min-width:0;max-width:1000px}.hero{padding:22px 0 40px;border-bottom:2px solid var(--ink)}.eyebrow{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.hero h1{font-size:clamp(34px,4.5vw,58px);line-height:1.17;letter-spacing:-.055em;margin:22px 0}.hero .lead{font-size:20px;max-width:700px;line-height:1.7}.meta{display:flex;flex-wrap:wrap;gap:8px 20px;color:var(--muted);font-size:13px;margin-top:24px}.intro{background:var(--blue-soft);padding:22px 26px;margin-top:28px;border-left:4px solid var(--blue)}.intro p{margin:0}.intro p+p{margin-top:10px}section{padding:50px 0 10px;scroll-margin-top:20px}h2{font-size:30px;letter-spacing:-.04em;line-height:1.4;margin:9px 0 24px}h3{font-size:21px;letter-spacing:-.025em;margin:28px 0 12px;line-height:1.5}h4{font-size:17px;margin:0 0 8px}p{margin:12px 0}strong{font-weight:750}.small,.source{font-size:13px;color:var(--muted)}.source{margin-top:14px}.source a{color:var(--muted)}.tag{font-size:12px;color:var(--accent);font-weight:700}.note{border-left:3px solid var(--accent);background:var(--soft);padding:17px 22px;margin:22px 0}.note p{margin:0}.note p+p{margin-top:8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:20px 0}.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:24px;box-shadow:var(--shadow)}.card p:last-child{margin-bottom:0}.card h3{margin:0 0 12px}.table-wrap{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px;background:var(--paper)}table{width:100%;border-collapse:collapse;font-size:14px;text-align:left}th{background:var(--blue-soft);font-weight:700}td,th{padding:13px 16px;vertical-align:top;border-bottom:1px solid var(--line)}tr:last-child td{border-bottom:0}th:first-child{min-width:125px}td:first-child{font-weight:650}caption{text-align:left;padding:12px 16px;font-weight:700}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em;background:var(--blue-soft);padding:2px 5px;border-radius:3px}ul,ol{padding-left:24px}li{padding:3px 0}.flow{display:flex;gap:8px;align-items:stretch;margin:20px 0;flex-wrap:wrap}.flow .step{flex:1;min-width:130px;background:var(--paper);border-top:3px solid var(--blue);padding:14px 16px}.flow .step span{display:block;color:var(--muted);font-size:13px}.flow .arrow{align-self:center;color:var(--accent)}figure{margin:0}.diagram{width:100%;height:auto;display:block}.diagram text{fill:var(--ink);font-family:inherit;font-size:14px}.diagram .line{fill:none;stroke:var(--ink);stroke-width:2}.diagram .guide{fill:none;stroke:var(--muted);stroke-width:1}.diagram .plate{fill:var(--plate);stroke:var(--ink);stroke-width:1.5}.diagram .weld{fill:#cce0e4;stroke:var(--blue);stroke-width:2}.diagram .measure{stroke:var(--accent);stroke-width:2;fill:none}figcaption{color:var(--muted);font-size:13px;margin-top:12px}.definition{border-top:1px solid var(--line);padding-top:12px}.searchbox{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:20px 0}.searchbox label{font-weight:700}.searchbox input{flex:1;min-width:180px;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:10px 12px;color:var(--ink)}.searchbox output{font-size:13px;color:var(--muted)}.glossary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 26px}.term{padding:16px 0;border-top:1px solid var(--line)}.term h4 small{display:block;font-size:12px;font-weight:400;color:var(--muted);letter-spacing:.02em}.term p{font-size:14px;margin:5px 0}.empty{color:var(--muted)}[hidden]{display:none!important}.choices{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.choice[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}.scenario{background:var(--paper);border:1px solid var(--line);padding:24px;border-radius:8px}.scenario h4{font-size:19px}.scenario .decision{margin-top:18px;border-top:1px solid var(--line);padding-top:15px;color:var(--blue);font-weight:700}.arch{margin:24px 0;display:grid;gap:12px}.arch-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.arch-node{border:1px solid var(--line);background:var(--paper);padding:17px 22px;border-radius:7px}.arch-node strong{display:block}.arch-node small{color:var(--muted)}.arch-node.focus{background:var(--blue-soft);border-color:var(--blue)}.arch-direction{text-align:center;color:var(--accent);font-size:14px}.arch-output{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.arch-output .arch-node{padding:14px}.quote{font-size:24px;line-height:1.65;border-left:4px solid var(--accent);padding:10px 0 10px 24px;margin:24px 0;letter-spacing:-.03em}.refs{font-size:13px;color:var(--muted);padding:30px 0;border-top:1px solid var(--line);margin-top:45px}.refs ol{padding-left:22px}.refs li{padding:6px 0}.refs a{overflow-wrap:anywhere}.footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:20px}.print-only{display:none}
+@media(max-width:1100px){.layout{grid-template-columns:190px minmax(0,1fr);gap:30px;padding:28px}.card{padding:18px}.diagram text{font-size:15px}}
+@media(max-width:800px){.layout{display:block;padding:20px}.rail{position:static;margin-bottom:25px}.edition{margin-bottom:12px}.rail nav{display:flex;gap:8px 16px;flex-wrap:wrap}.rail nav a{padding:3px 0;border:0;font-size:12px}.rail nav span{width:21px}.rail .print{margin-top:15px}.hero{padding-top:8px}.hero .lead{font-size:18px}.grid,.glossary{grid-template-columns:1fr}.arch-output{grid-template-columns:1fr}section{padding-top:38px}h2{font-size:27px}.table-wrap table{min-width:560px}.arch-row{grid-template-columns:1fr}.flow .arrow{display:none}}
+@media(max-width:400px){.layout{padding:16px}.hero h1{font-size:36px}.card{padding:12px}.note,.intro{padding:15px}.scenario{padding:16px}.quote{font-size:21px}.searchbox input{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{@page{size:A4;margin:16mm}body{background:white;font-size:10pt;line-height:1.6;color:#172d35}.layout{display:block;max-width:none;padding:0}.rail,.searchbox,.choices,.skip{display:none}main{max-width:none}.hero{padding:0 0 20px}.hero h1{font-size:32pt}.hero .lead{font-size:13pt}h2{font-size:20pt}h3{font-size:14pt}section{padding-top:25px}a{color:inherit;text-decoration:none}.card,.note,.intro,.scenario{box-shadow:none;break-inside:avoid}.grid{gap:12px}.table-wrap{overflow:visible;border-radius:0}table{font-size:9pt}thead{display:table-header-group}tr{break-inside:avoid}.table-wrap table{min-width:0}.glossary{grid-template-columns:1fr 1fr}.term[hidden],.scenario[hidden]{display:block!important}.scenario{margin:12px 0}.empty{display:none}.print-only{display:block}.refs{font-size:9pt}.arch{break-inside:avoid}h2,h3,h4{break-after:avoid}p{orphans:3;widows:3}}
+@media print{.refs{break-before:page}.term{break-inside:avoid}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 이동</a>
+<div class="layout">
+<aside class="rail" aria-label="문서 탐색">
+<div class="brand">CONTEXTWELD</div><div class="edition">DOMAIN GUIDE · 2026.10.05</div>
+<nav aria-label="목차">
+<a href="#map"><span>01</span>이 문제의 전체 지도</a>
+<a href="#basics"><span>02</span>용접의 네 가지 구분</a>
+<a href="#symbols"><span>03</span>용접 표기 읽기</a>
+<a href="#terms"><span>04</span>찾아보는 용어 사전</a>
+<a href="#yard"><span>05</span>조선 현장과 데이터</a>
+<a href="#documents"><span>06</span>작업 문서와 조건</a>
+<a href="#mission"><span>07</span>우리가 풀어야 할 문제</a>
+<a href="#context"><span>08</span>제안하는 맥락 구조</a>
+<a href="#poc"><span>09</span>PoC와 검증 방법</a>
+<a href="#direction"><span>10</span>최종 방향성</a>
+<a href="#sources"><span>↗</span>출처와 적용 범위</a>
+</nav>
+<button type="button" class="print" id="print">인쇄 / PDF 저장</button>
+</aside>
+<main id="main">
+<header class="hero">
+<div class="eyebrow">PAC2026 · HD현대로보틱스 미션 03</div>
+<h1>용접을 읽고,<br>맥락을 연결하다.</h1>
+<p class="lead">용접을 처음 접하는 개발자를 위한 도메인 가이드.<br>철판 위의 표기가 작업지시와 용접조건이 되기까지.</p>
+<div class="meta"><span>용어·표기·공정·문서·설계 제안</span><span>자료 확인일 2026년 10월 5일</span><span>단일 HTML · 오프라인 열람</span></div>
+</header>
+<div class="intro"><p><strong>핵심 제안:</strong> 맥락은 사진의 빈칸을 마음대로 채우는 배경지식이 아니라, <strong>“이 작업에 적용 가능한 근거”</strong>여야 해. 무엇을 읽었는지, 어떤 근거로 해석했는지, 무엇이 아직 미확정인지 각각 남기자.</p><p class="small">도메인 설명에는 출처를 붙였어. 설계 판단은 <strong>[추론]</strong>, 기업 현장에 확인할 사항은 <strong>[확인 필요]</strong>로 구분했어. 그림과 사례의 치수·ID는 학습용이며 실제 작업조건이 아니야.</p></div>
+
+<section id="map">
+<div class="eyebrow">01 / THE BIG PICTURE</div><h2>사진을 읽는 것과 작업을 결정하는 것은 달라</h2>
+<p>미션은 철판 위의 문자·숫자·기호·약어를 찾아내고, 부재·방향·위치·작업지시로 해석한 뒤, 입력된 기준에 맞는 용접조건이나 후보를 제시하는 일이야. 불확실한 판단은 작업자에게 확인하고 원본까지 추적할 수 있어야 해. <a href="#ref-mission">[1]</a></p>
+<div class="flow" aria-label="표기에서 조건 후보까지의 흐름"><div class="step"><strong>표기를 읽기</strong><span>무엇이 적혀 있나</span></div><div class="arrow">→</div><div class="step"><strong>의미를 해석</strong><span>어느 부재의 어떤 지시인가</span></div><div class="arrow">→</div><div class="step"><strong>기준과 대조</strong><span>이 작업에 적용 가능한가</span></div><div class="arrow">→</div><div class="step"><strong>조건 후보·확인</strong><span>근거와 미확정 항목 표시</span></div></div>
+<div class="grid"><div class="card"><h3>읽기는 맞았는데 틀리는 경우</h3><p><code>6</code>을 정확히 읽어도 그것이 부재번호인지, 판 두께인지, 용접 치수인지 모르면 작업을 잘못 해석할 수 있어.</p></div><div class="card"><h3>그럴듯한 맥락 때문에 틀리는 경우</h3><p>옆 부재의 작업지시서를 연결하면, 선명하게 보이는 숫자마저 “계획과 다르니 오인식”이라고 덮어쓸 수 있어. <span class="tag">[추론]</span></p></div></div>
+<p><strong>따라서 평가 대상도 두 가지야.</strong> 글자를 얼마나 잘 읽는지와, 그 글자를 얼마나 올바른 작업 의미에 연결하는지를 따로 봐야 해.</p>
+</section>
+
+<section id="basics">
+<div class="eyebrow">02 / FOUNDATIONS</div><h2>이음 · 용접 형태 · 공정 · 자세를 나누자</h2>
+<p>이 문서에서는 주로 철강 구조물의 용융 용접을 떠올리면 돼. 모재와 필요한 용가재를 녹여 접합부를 만들고, 식은 뒤 두 부재가 연결되는 방식이야. 모든 용접이 이 방식만 쓰는 것은 아니야. <a href="#ref-basics">[2]</a></p>
+<div class="table-wrap"><table><thead><tr><th>구분</th><th>답하는 질문</th><th>예시 / 혼동하면 생기는 일</th></tr></thead><tbody>
+<tr><td>이음 형태<br><span class="small">Joint configuration</span></td><td>두 부재가 어떻게 만나는가?</td><td>맞대기·T이음·겹치기. T자로 만난다고 용접 공정까지 정해지지는 않아.</td></tr>
+<tr><td>용접 형태<br><span class="small">Weld type</span></td><td>접합부를 어떤 형태로 만드는가?</td><td>필릿, 홈 용접 등. 필릿은 모서리를 대략 삼각 단면으로 채우는 형태야.</td></tr>
+<tr><td>용접 공정<br><span class="small">Process</span></td><td>어떤 방식으로 용접하는가?</td><td>아크 용접의 MIG/MAG·TIG·FCAW·SAW 등. 삼각형 기호만으로 공정을 확정하면 안 돼.</td></tr>
+<tr><td>용접 자세<br><span class="small">Position</span></td><td>중력에 대해 어떤 자세로 작업하는가?</td><td>아래보기·수평·수직·위보기 등. 사진이 회전했다고 실제 작업 자세가 바뀌는 건 아니야.</td></tr>
+</tbody></table></div>
+<p class="source">기초 용어: <a href="#ref-basics">TWI 용접 개요 [2]</a>. 네 항목을 별도 데이터로 보관하자는 것은 이 프로젝트의 설계 제안이야.</p>
+<div class="grid">
+<figure class="card"><h3>T이음 + 필릿 용접</h3>
+<svg class="diagram" viewBox="0 0 310 230" role="img" aria-label="수평 철판 위에 세운 철판의 오른쪽 모서리를 필릿 용접한 단면"><rect class="plate" x="25" y="174" width="260" height="24"/><rect class="plate" x="102" y="42" width="24" height="132"/><path class="weld" d="M126 174 V104 L196 174Z"/><text x="22" y="28">세운 판</text><path class="guide" d="M66 34L101 65"/><text x="207" y="127">필릿</text><path class="guide" d="M203 132L168 148"/><text x="32" y="220">철판 배치와 용접 형태는 서로 다른 정보</text></svg>
+<figcaption>접합부를 옆에서 자른 개념도. 그림의 삼각형은 실제 용접 경로가 아니라 채워진 단면을 나타내.</figcaption></figure>
+<figure class="card"><h3>맞대기 + V형 홈</h3>
+<svg class="diagram" viewBox="0 0 310 230" role="img" aria-label="두 철판의 모서리를 경사지게 가공하여 V형 홈을 만든 단면"><path class="plate" d="M25 108H110L144 164H25Z"/><path class="plate" d="M200 108H285V164H166Z"/><path class="guide" d="M116 101L153 160L194 101"/><text x="155" y="65" text-anchor="middle">V형 홈</text><path class="guide" d="M155 73V112"/><text x="155" y="198" text-anchor="middle">가공한 홈을 용접으로 채우는 구조</text></svg>
+<figcaption>용접 전 형상을 단순화한 그림. 홈 각도·간격·용입 요구는 별도 지시를 확인해야 해.</figcaption></figure>
+</div>
+</section>
+
+<section id="symbols">
+<div class="eyebrow">03 / READING THE MARKS</div><h2>용접 표기를 문장처럼 읽는 법</h2>
+<p><strong>도면의 표준 용접기호</strong>와 <strong>철판 위의 현장 약어</strong>는 구분해야 해. 전자는 적용 표준·도면 범례로 읽고, 후자는 현장 표기 규칙과 작업 문서를 확인해야 해. 미션은 정형 마킹과 비정형 수기를 모두 포함해. <a href="#ref-mission">[1]</a></p>
+<div class="grid">
+<figure class="card"><h3>기호의 구성</h3>
+<svg class="diagram" viewBox="0 0 310 270" role="img" aria-label="ISO 2553 System B 교육용 필릿 용접 표기: 기준선 아래 삼각형 왼쪽 a6 오른쪽 100"><text x="10" y="23">ISO 2553 System B · 단위 mm</text><path class="line" d="M68 99H266M266 99L290 84M266 99L290 114M68 99L24 171"/><path d="M24 171L27 154L39 162Z" fill="var(--ink)"/><path class="line" d="M160 99V125L186 99Z"/><text x="120" y="127">a6</text><text x="202" y="127">100</text><text x="78" y="66">기준선</text><path class="guide" d="M98 72V91"/><text x="259" y="60">꼬리</text><path class="guide" d="M272 66V86"/><text x="14" y="196">화살표</text><text x="145" y="186">필릿 기호</text><path class="guide" d="M169 136V166"/><text x="12" y="234">a6: 목두께 6 mm</text><text x="12" y="258">100: 용접 길이 100 mm</text></svg>
+<figcaption>이 체계에서 기준선 아래의 기호는 화살표 쪽 용접을 뜻해. 화살표 끝은 실제 도면의 대상 접합부를 가리켜. 여기서는 구성만 분리해 그렸어.</figcaption></figure>
+<figure class="card"><h3>각장 z와 목두께 a</h3>
+<svg class="diagram" viewBox="0 0 310 270" role="img" aria-label="동일 각장의 이상화된 필릿 단면에서 각장 z와 목두께 a의 차이"><rect class="plate" x="24" y="197" width="262" height="24"/><rect class="plate" x="92" y="54" width="24" height="143"/><path class="weld" d="M116 197V107L206 197Z"/><path class="measure" d="M116 197L161 152"/><path class="guide" d="M164 146L205 66M226 107V197M220 107H232M220 197H232M116 241H206M116 235V247M206 235V247"/><text x="152" y="50">a · 목두께</text><text x="237" y="158">z</text><text x="140" y="265">z · 각장</text><text x="29" y="214">판</text></svg>
+<figcaption>평평한 표면과 동일 각장을 가정한 학습용 단면. 이 경우 a = z / √2. 따라서 a6과 z6은 서로 다른 크기이며, 이 관계를 모든 실제 단면에 그대로 적용하지 않아.</figcaption></figure>
+</div>
+<div class="table-wrap"><table><thead><tr><th>보이는 요소</th><th>기본 의미</th><th>주의할 해석</th></tr></thead><tbody>
+<tr><td>화살표 / 기준선</td><td>접합부 지시 / 기호를 놓는 기준</td><td>기준선이 실물 용접선은 아니고, 화살표가 곧 로봇 진행 방향도 아니야.</td></tr>
+<tr><td>직각삼각형 / V</td><td>필릿 / V형 홈 용접 기호</td><td>철판 위의 손글씨 V도 같은 뜻인지는 현장 규칙을 확인해야 해.</td></tr>
+<tr><td>a / z / 숫자</td><td>목두께 / 각장 / 치수</td><td>판 두께와 용접 치수를 분리하고, 단위·위치까지 읽어야 해.</td></tr>
+<tr><td>접점의 원 / 깃발</td><td>둘레 용접 / 현장 용접</td><td>원은 화살표와 기준선의 접점에 붙는 보조기호야. 물체 전체를 용접하라는 뜻으로 확대하지 않아.</td></tr>
+<tr><td>기호 오른쪽 숫자</td><td>길이·개수·간격 관련 지시</td><td>단속 용접의 숫자 배열과 간격 정의는 적용 표준으로 읽어야 해.</td></tr>
+<tr><td>꼬리</td><td>공정·문서 참조 등 추가 정보</td><td>항상 같은 정보를 적는 고정 필드는 아니야.</td></tr>
+</tbody></table></div>
+<p class="source">기호 개요와 치수: <a href="#ref-symbols">TWI [3]</a> · 체계 및 정의: <a href="#ref-iso">ISO 2553:2019 [4]</a>. 표준 원문 전체를 대체하는 기호집은 아니야.</p>
+<div class="note"><p><strong>위·아래만 보고 뜻을 확정하지 말자.</strong> ISO 2553의 System B는 단일 기준선을 사용해 아래/위로 화살표 쪽/반대쪽을 구분하고, System A는 실선과 파선으로 구분해. 도면의 표기 체계와 단위를 먼저 확인해야 해. <a href="#ref-iso">[4]</a></p></div>
+</section>
+
+<section id="terms">
+<div class="eyebrow">04 / GLOSSARY</div><h2>개발하면서 다시 찾게 될 용어들</h2>
+<p>뜻과 함께 “우리 시스템에서 왜 필요한지”를 붙였어. 아래에서 한글·영문·약어로 찾을 수 있어.</p>
+<div class="searchbox"><label for="term-search">용어 찾기</label><input id="term-search" type="search" placeholder="예: WPS, 부재, 자세, 목두께" autocomplete="off"><output id="term-count" aria-live="polite"></output></div>
+<div class="glossary" id="glossary">
+<article class="term"><h4>부재 · 블록<small>Member / Part · Block</small></h4><p>부재는 구조를 구성하는 개별 요소, 블록은 여러 부재를 조립한 선체의 큰 제작 단위로 이해하면 돼.</p><p><strong>연결점:</strong> 표기를 어느 물체에 연결할지 정하는 식별 단위. 구체적인 번호 체계는 [확인 필요].</p></article>
+<article class="term"><h4>패널 · 보강재<small>Panel · Stiffener</small></h4><p>판 구조와 그 강성을 보강하는 부재. 자동화 설비는 패널·소조립 등 제작 대상에 따라 구성이 달라져. <a href="#ref-yard">[6]</a></p><p><strong>연결점:</strong> 촬영 장면과 작업 단위를 먼저 좁히는 기준.</p></article>
+<article class="term"><h4>모재 · 용가재<small>Base / Parent metal · Filler metal</small></h4><p>모재는 붙일 원래 재료, 용가재는 접합을 위해 추가하는 재료야. <a href="#ref-basics">[2]</a></p><p><strong>연결점:</strong> 겉모양이 비슷해도 적용 가능한 절차는 다를 수 있어.</p></article>
+<article class="term"><h4>비드 · 패스<small>Bead · Pass / Run</small></h4><p>비드는 용착 금속의 띠, 패스는 용접을 한 번 진행하는 단위로 이해하면 돼.</p><p><strong>연결점:</strong> 용접부 하나를 여러 번 나눠 채울 수 있어. “한 번 작업함”과 “완료”를 구분하자.</p></article>
+<article class="term"><h4>루트 · 토<small>Root · Toe</small></h4><p>루트는 용접의 뿌리 쪽, 토는 용접 표면과 모재 표면이 만나는 경계야. <a href="#ref-basics">[2]</a></p><p><strong>연결점:</strong> 치수와 결함 위치를 설명하는 기준.</p></article>
+<article class="term"><h4>열영향부<small>HAZ · Heat affected zone</small></h4><p>녹지는 않았지만 용접 열로 조직·성질이 영향을 받은 모재 영역이야. <a href="#ref-basics">[2]</a></p><p><strong>연결점:</strong> 사진 속 비드 모양만으로 전체 접합 품질을 판단할 수 없어.</p></article>
+<article class="term"><h4>용입<small>Penetration · CJP / PJP</small></h4><p>용접이 접합부 내부로 형성되는 정도와 관련돼. 완전용입과 부분용입 요구를 구분해. <a href="#ref-basics">[2]</a></p><p><strong>연결점:</strong> 겉으로 보이는 폭을 용입 깊이라고 읽으면 안 돼.</p></article>
+<article class="term"><h4>각장 · 목두께<small>Leg length z · Throat thickness a</small></h4><p>필릿 용접의 서로 다른 단면 치수. <code>a6</code>과 <code>z6</code>을 같은 값으로 저장하면 의미가 사라져. <a href="#ref-iso">[4]</a></p><p><strong>연결점:</strong> 숫자·단위·치수 종류를 함께 보관.</p></article>
+<article class="term"><h4>개선 · 루트 간격<small>Groove preparation · Root gap</small></h4><p>개선은 용접할 모서리를 가공하는 것, 루트 간격은 조립한 접합부 뿌리 쪽의 틈이야.</p><p><strong>연결점:</strong> 표기에 없는 형상 조건은 도면·측정 자료로 확인해야 해.</p></article>
+<article class="term"><h4>취부 · 가용접<small>Fit-up · Tack welding</small></h4><p>취부는 부재의 위치·간격을 맞추는 조립 작업, 가용접은 본 용접 전 위치를 유지하는 짧은 용접이야.</p><p><strong>연결점:</strong> 눈에 용접 자국이 있다고 본 용접 완료로 처리하면 안 돼.</p></article>
+<article class="term"><h4>용접 자세 · 진행 방향<small>Position · Travel direction</small></h4><p>자세는 중력에 대한 작업 배치, 진행 방향은 용접이 진행하는 방향이야.</p><p><strong>연결점:</strong> 이미지 좌표·선체 방향·로봇 좌표를 구분해야 해. 자세 코드는 적용 표준과 함께 보관.</p></article>
+<article class="term"><h4>연속 · 단속 용접<small>Continuous · Intermittent weld</small></h4><p>연속은 이어서, 단속은 구간을 나누어 용접하는 지시야. <a href="#ref-symbols">[3]</a></p><p><strong>연결점:</strong> 길이·구간 수·간격을 단순한 전체 길이 하나로 합치지 않아.</p></article>
+<article class="term"><h4>MIG · MAG<small>Metal inert / active gas welding · GMAW</small></h4><p>와이어를 공급하며 보호가스를 쓰는 아크 용접. MIG는 불활성 가스, MAG는 활성 가스 성분을 사용하는 구분이야. <a href="#ref-mig">[9]</a></p><p><strong>연결점:</strong> 용접 형태와 공정을 분리하고 가스·와이어 조건도 확인.</p></article>
+<article class="term"><h4>TIG<small>Tungsten inert gas welding · GTAW</small></h4><p>비소모성 텅스텐 전극을 쓰는 아크 용접. 필요하면 용가재를 별도로 공급해. <a href="#ref-tig">[10]</a></p><p><strong>연결점:</strong> 공정마다 전극·용가재·설정 체계가 달라.</p></article>
+<article class="term"><h4>FCAW<small>Flux-cored arc welding</small></h4><p>내부에 플럭스가 든 와이어를 사용하는 아크 용접. 외부 보호가스를 쓰는 방식과 자체 보호 방식이 있어. <a href="#ref-fcaw">[11]</a></p><p><strong>연결점:</strong> 와이어의 종류나 보호 방식이 다른 절차를 혼용하지 않아.</p></article>
+<article class="term"><h4>SAW<small>Submerged arc welding · 서브머지드 아크 용접</small></h4><p>입상 플럭스 아래에서 아크가 형성되는 용접 공정이야. 이름의 submerged는 물속 용접이라는 뜻이 아니야. <a href="#ref-saw">[12]</a></p><p><strong>연결점:</strong> 현장 공정이 무엇인지 먼저 알아야 입력과 조건 후보를 좁힐 수 있어.</p></article>
+<article class="term"><h4>예열 · 층간온도<small>Preheat · Interpass temperature</small></h4><p>예열은 용접 전 가열, 층간온도는 여러 패스 사이에 관리하는 온도야. <a href="#ref-temp">[13]</a></p><p><strong>연결점:</strong> 작업 조건에는 전류·전압뿐 아니라 온도와 작업 상태도 포함될 수 있어.</p></article>
+<article class="term"><h4>용접절차시방서<small>WPS · Welding Procedure Specification</small></h4><p>해당 작업에 사용할 용접 변수와 조건을 정한 절차 문서야. <a href="#ref-wps">[5]</a></p><p><strong>연결점:</strong> 조건 추천의 근거. 문서 ID·개정·적용 범위를 함께 확인.</p></article>
+<article class="term"><h4>절차 인정 기록<small>PQR / WPQR</small></h4><p>용접절차의 적합성을 뒷받침하는 시험·검증 기록. 명칭과 인정 경로는 적용 규정에 따라 달라져. <a href="#ref-wps">[5]</a></p><p><strong>연결점:</strong> WPS의 근거이지 개별 작업의 실행 로그는 아니야.</p></article>
+<article class="term"><h4>작업지시서 · 개정<small>Work instruction / Work order · Revision</small></h4><p>현재 수행할 대상·작업과 관련 문서의 변경 버전. 실제 문서 구성은 [확인 필요].</p><p><strong>연결점:</strong> 최신 문서라는 이유만으로 모든 부재에 소급 적용하지 않아.</p></article>
+<article class="term"><h4>공정 순서 · 변형<small>Sequence · Distortion</small></h4><p>열의 누적과 수축을 고려해 작업 순서·방향을 정하기도 해. <a href="#ref-sequence">[7]</a></p><p><strong>연결점:</strong> 로봇의 이동거리만 최소화해서 순서를 정하면 충분하지 않아.</p></article>
+<article class="term"><h4>전류 · 전압 · 이동속도<small>Current · Voltage · Travel speed</small></h4><p>용접조건을 구성하는 서로 다른 변수. 단위도 각각 A, V, 길이/시간으로 달라.</p><p><strong>연결점:</strong> 치수 하나로 세 값을 생성하지 말고 적용 가능한 절차·설정 근거에 연결.</p></article>
+<article class="term"><h4>비파괴검사<small>NDT · Non-destructive testing</small></h4><p>검사 대상을 파괴하지 않고 검사하는 방법군. 육안·초음파·방사선 등 여러 기법이 있어. <a href="#ref-ndt">[8]</a></p><p><strong>연결점:</strong> 표기 인식 성공은 용접 품질 검사 합격을 뜻하지 않아.</p></article>
+<article class="term"><h4>표기사전 · 적용 범위<small>Marking dictionary · Scope</small></h4><p>특정 약어의 뜻과 그것이 통하는 현장·공정·프로젝트 범위를 연결한 자료.</p><p><strong>연결점:</strong> <code>FW</code> 같은 약어도 해당 현장 규칙과 대조해 해석하자.</p></article>
+<article class="term"><h4>CAD · BOM · MES<small>설계 · 부품 구성 · 제조 실행 정보</small></h4><p>CAD는 형상·도면, BOM은 부품 구성, MES는 생산 실행 관련 정보를 다루는 시스템이야.</p><p><strong>연결점:</strong> 맥락 공급원이 될 수 있지만 현장 보유·연계 가능 여부는 [확인 필요].</p></article>
+<article class="term"><h4>추적성<small>Traceability</small></h4><p>추천 결과에서 원본 표기·해석·문서 근거·사람의 확인까지 거슬러 확인할 수 있는 성질.</p><p><strong>연결점:</strong> 미션의 필수 요구. 최종 결과만 저장하면 부족해. <a href="#ref-mission">[1]</a></p></article>
+<article class="term"><h4>사람의 확인<small>HITL · Human in the loop</small></h4><p>모호하거나 충돌하는 판단에 작업자가 개입하는 구조.</p><p><strong>연결점:</strong> 승인 버튼뿐 아니라 수정·보류, 근거 열람, 확인 범위와 이력도 필요해. <span class="tag">[추론]</span></p></article>
+<article class="term"><h4>RAG · 관계형 DB<small>검색 근거 생성 · Structured database</small></h4><p>RAG는 관련 문서 근거를 찾는 방식, 관계형 DB는 식별자·상태·관계를 구조적으로 관리하는 저장소야.</p><p><strong>연결점:</strong> 문서 검색과 정확한 부재 연결은 다른 문제. 둘의 역할을 나눠 설계하자. <span class="tag">[추론]</span></p></article>
+<article class="term"><h4>후보 점수 · 정답 확률<small>Score · Calibrated probability</small></h4><p>순위를 매기는 점수가 검증된 정답 확률을 뜻하지는 않아.</p><p><strong>연결점:</strong> “0.9”를 바로 “90% 맞음”으로 표시하지 말고, 평가 자료로 신뢰도를 확인해야 해.</p></article>
+</div><p class="empty" id="term-empty" hidden>일치하는 용어가 없어. 다른 표현이나 약어로 찾아봐.</p>
+</section>
+
+<section id="yard">
+<div class="eyebrow">05 / PRODUCTION REALITY</div><h2>“무맥락 벨트”를 업계 표준으로 가정할 이유는 없어</h2>
+<p>공개된 Pemamek의 MV Werften 사례에는 판넬 생산·로봇 용접뿐 아니라 형강의 절단·마킹·분류를 연결한 생산라인이 등장해. 이 사례는 <strong>조선에도 라인 자동화가 있고, 식별·마킹 작업이 공정에 포함될 수 있다</strong>는 근거야. 모든 조선소나 HD현대의 대상 현장이 같은 방식이라는 근거는 아니야. <a href="#ref-yard">[6]</a></p>
+<div class="note"><p><strong>운반 방식과 정보 제공 방식은 별개야.</strong> 벨트로 온다고 무맥락인 것도, 제자리에 있는 블록이라고 시스템이 ID를 아는 것도 아니야. 우리가 알아야 할 것은 “카메라 입력을 어떤 부재·작업 기록과 연결할 수 있느냐”야. <span class="tag">[추론]</span></p></div>
+<h3>현장을 이해하기 위한 공정 지도</h3>
+<p class="small">아래는 질문을 정리하기 위한 단순화된 지도야. 명칭·순서·검사 시점은 조선소와 제작 대상에 따라 달라지므로 대상 공정에서 확인해야 해.</p>
+<div class="flow"><div class="step"><strong>절단·마킹</strong><span>부재 식별과 형상</span></div><div class="step"><strong>취부·가용접</strong><span>위치·방향·간격</span></div><div class="step"><strong>본 용접</strong><span>작업·조건·순서</span></div><div class="step"><strong>검사·보수</strong><span>완료·재작업 상태</span></div><div class="step"><strong>블록 조립</strong><span>상위 구조로 연결</span></div></div>
+<div class="table-wrap"><table><thead><tr><th>대상 장면</th><th>가능한 맥락 연결 방법 <span class="tag">[추론]</span></th><th>반드시 확인할 것</th></tr></thead><tbody>
+<tr><td>라인으로 이동하는 부재</td><td>마킹 ID, 투입 기록, 스캔, 카메라 추적과 물류 이벤트</td><td>대기·우회·재투입·순서 변경 때 연결이 유지되는가?</td></tr>
+<tr><td>정지한 대형 블록</td><td>블록·부재 ID, 구역, 작업자 선택, 도면상의 위치</td><td>인접한 동일 형상 부재를 어떻게 구분하는가?</td></tr>
+<tr><td>사진만 단독 업로드</td><td>사진 내 ID와 표기 관계로 후보 생성, 필요시 추가 촬영·대상 선택 요청</td><td>대상을 모르면 어느 단계까지 출력해도 되는가?</td></tr>
+</tbody></table></div>
+<p><strong>시간 순서만으로 “다음 사진 = 다음 예정 부재”라고 연결하지 않는 게 좋아.</strong> [추론] 틀린 연결은 이후 판단을 모두 오염시키므로, 확실한 식별 근거가 부족하면 여러 후보를 유지해야 해.</p>
+</section>
+
+<section id="documents">
+<div class="eyebrow">06 / SOURCES OF AUTHORITY</div><h2>어느 문서가 무엇을 결정하는가</h2>
+<div class="table-wrap"><table><thead><tr><th>자료</th><th>답할 수 있는 질문</th><th>그 자료만으로 확정하기 어려운 것</th></tr></thead><tbody>
+<tr><td>도면·용접 상세</td><td>어디에 어떤 접합·치수가 요구되는가?</td><td>현재 촬영 부재가 이 도면의 대상인지, 작업이 완료됐는지</td></tr>
+<tr><td>현장 표기 규칙</td><td>약어·숫자·기호를 어떻게 읽는가?</td><td>특정 사진에 대한 정답, 모든 공정에 대한 보편 의미</td></tr>
+<tr><td>작업지시·계획</td><td>무엇을 언제 어떤 순서로 할 예정인가?</td><td>이미 실행된 사실, 현장 변경 승인 여부</td></tr>
+<tr><td>WPS</td><td>어떤 적용 범위와 용접 변수를 사용할 것인가?</td><td>문서 적용 대상 식별, 현재 설비의 실행 가능성</td></tr>
+<tr><td>PQR / WPQR</td><td>어떤 시험·검증이 절차의 근거가 되는가?</td><td>현재 생산품의 검사 결과</td></tr>
+<tr><td>설비 설정·프로그램</td><td>검증된 설정을 해당 설비에서 어떻게 실행하는가?</td><td>다른 장비·작업에 대한 자동 호환성</td></tr>
+<tr><td>작업·검사·보수 이력</td><td>언제 누가 무엇을 실행·확인·수정했는가?</td><td>다른 작업에 그대로 적용할 보편 규칙</td></tr>
+</tbody></table></div>
+<p class="source">WPS와 인정 기록의 역할: <a href="#ref-wps">TWI [5]</a>. 전체 표는 문서의 역할을 분리하기 위한 설계 관점이며, 기업의 실제 승인 체계는 [확인 필요].</p>
+<p>WPS의 적용에는 재료·공정·두께 범위·자세 같은 조건이 관계돼. 인정의 세부 요건은 적용 규정에 따라 달라져. 그러므로 “필릿 6 mm”만 읽어서 전류·전압·속도를 새로 생성하는 방식은 근거가 부족해. <a href="#ref-wps">[5]</a></p>
+<div class="note"><p><strong>추천하는 출력:</strong> 적용 가능한 절차·설정의 후보와 문서 근거를 제시하고, 확인되지 않은 조건은 미정으로 남겨. 이미지의 픽셀 위치를 로봇 경로로 바꾸려면 좌표 변환·보정·실제 접합부 위치·접근 가능성 등의 별도 검증도 필요해. <span class="tag">[추론]</span></p></div>
+</section>
+
+<section id="mission">
+<div class="eyebrow">07 / OUR PROBLEM</div><h2>이 과제에서 줄여야 하는 오류</h2>
+<div class="table-wrap"><table><thead><tr><th>오류 단계</th><th>실패 예시</th><th>필요한 정보·처리 <span class="tag">[추론]</span></th></tr></thead><tbody>
+<tr><td>표기 검출</td><td>스크래치를 글자로 읽거나 작은 표기를 누락</td><td>원본 영역, 주변 장면, 검출 누락 평가</td></tr>
+<tr><td>문자·기호 인식</td><td>6/8, a/z, 화살표·삼각형 혼동</td><td>복수 후보, 촬영 품질, 기호의 위치 관계</td></tr>
+<tr><td>대상 연결</td><td>옆 부재의 ID·지시를 가져옴</td><td>부재·용접부 식별 근거와 연결 신뢰성</td></tr>
+<tr><td>의미 해석</td><td>판 두께를 각장으로, 조립 방향을 용접 방향으로 해석</td><td>표기 규칙, 문법, 도면과 좌표 기준</td></tr>
+<tr><td>기준 적용</td><td>폐기된 버전이나 다른 재질용 절차 적용</td><td>문서 상태·개정·대상 범위 검증</td></tr>
+<tr><td>실행·완료 판단</td><td>계획된 작업을 완료로 취급, 가용접을 본 용접으로 오인</td><td>상태·이벤트·확인 이력 분리</td></tr>
+</tbody></table></div>
+<h3>미션에서 요구하는 것과 아직 모르는 것</h3>
+<div class="grid"><div class="card"><h4>원문에서 요구하는 것</h4><ul><li>정형 마킹과 비정형 수기 인식</li><li>복수 표기의 관계와 작업 의미 해석</li><li>제공된 규칙·기준과 대조</li><li>모호한 후보 제시와 작업자 확인</li><li>문자·의미 정확도, 원본부터 추천까지 추적성</li><li>향후 제어·프로그램 연계 가능한 데이터 구조</li></ul><p class="source"><a href="references/mission-03.pdf">미션 정의서 1~2쪽 [1]</a></p></div><div class="card"><h4>[확인 필요] 보장되지 않은 것</h4><ul><li>사진마다 부재 ID·MES 정보가 오는지</li><li>대상 공정이 라인인지, 블록 내 작업인지</li><li>실제 표기사전·WPS의 형식과 제공 범위</li><li>동일 형상 부재의 식별 방식</li><li>자동 설정의 허용 범위와 확인 권한</li><li>로봇 출력 형식 및 평가 정답의 단위</li></ul></div></div>
+<h3>회의에서 바로잡아야 할 지표 표현</h3>
+<p><strong>“오탐을 줄이려면 recall이 높아야 한다”는 말은 그대로 쓰기 어려워.</strong> 무엇을 양성으로 정의하는지 먼저 정해야 해. 예를 들어 “위험해서 사람에게 보내야 하는 사례”를 양성으로 잡으면, 그 사례를 놓치지 않는 비율이 위험 사례의 재현율이야. 반대로 표기 검출에서 오탐을 줄이는 문제는 정밀도와 직접 관계돼.</p>
+<p>[추론] 이 과제에서는 <strong>잘못된 자동 확정률</strong>과 <strong>자동 처리율</strong>을 함께 보고, 위험 사례 확인 요청 재현율·작업자 검토 시간까지 보자. 모든 것을 보류하면 오류율이 낮아져도 업무 개선이라고 말하기 어려워.</p>
+</section>
+
+<section id="context">
+<div class="eyebrow">08 / PROPOSED CONTEXT DESIGN</div><h2>맥락은 “근거를 연결하고 적용성을 검증하는 구조”</h2>
+<p><span class="tag">[추론]</span> 초기의 “비전 점수와 맥락 점수를 섞자”에서 한 단계 더 나아가야 해. <strong>잘못 연결된 문서는 높은 점수를 받아도 쓸 수 없고, 규칙 충돌은 평균 점수로 상쇄해서는 안 돼.</strong> 먼저 입력의 소속과 기준의 적용 가능성을 검증하고, 남은 후보의 순위를 정하는 편이 설득력 있어.</p>
+<h3>맥락을 다섯 층으로 나누기</h3>
+<div class="table-wrap"><table><thead><tr><th>맥락 층</th><th>포함할 정보</th><th>없거나 불확실할 때</th></tr></thead><tbody>
+<tr><td>① 이미지 안의 관계</td><td>문자·기호 위치, 화살표 연결, 이웃 표기, 촬영 품질</td><td>후보 유지·영역 확대·재촬영 요청</td></tr>
+<tr><td>② 작업 대상</td><td>프로젝트·블록·부재·용접부 ID와 연결 근거</td><td>미식별 상태 유지, 대상 선택 요청</td></tr>
+<tr><td>③ 적용 기준</td><td>표기 규칙, 도면, WPS의 버전·적용 범위·승인 상태</td><td>기준 미확인으로 조건 확정 제한</td></tr>
+<tr><td>④ 현재 작업 상태</td><td>예정·취부·가용접·본 용접·검사·보수, 상태 변경 시점</td><td>계획과 사실을 나눠 표시</td></tr>
+<tr><td>⑤ 확인 이력</td><td>누가 무엇을 확인했는지, 적용 범위, 취소·대체 기록</td><td>유사 사례로 참고하되 자동 규칙으로 승격하지 않음</td></tr>
+</tbody></table></div>
+<h3>추천 파이프라인</h3>
+<div class="arch" aria-label="맥락 기반 판단 구조">
+<div class="arch-row"><div class="arch-node"><strong>이미지 경로</strong><small>검출 → 문자·기호 후보 → 영역·관계 보존</small></div><div class="arch-node"><strong>맥락 경로</strong><small>작업 입력·식별 이벤트 → 문서·이력 후보 조회</small></div></div>
+<div class="arch-direction">↓ 두 경로는 병렬로 준비하고, 여기서 연결 검증 ↓</div>
+<div class="arch-node focus"><strong>대상 연결 및 적용성 검사</strong><small>같은 부재·용접부인가? 올바른 문서 버전인가? 현재 작업에 적용되는가?</small></div>
+<div class="arch-direction">↓ 참 / 거짓 / 미확인을 구분 ↓</div>
+<div class="arch-node"><strong>의미 후보 생성 · 제약 검사 · 후보 비교</strong><small>명확한 충돌은 표시하고, 불확실한 제약은 사람의 확인 대상으로 유지</small></div>
+<div class="arch-output"><div class="arch-node"><strong>근거 충족</strong><small>조건 후보와 적용 근거 제시</small></div><div class="arch-node"><strong>복수 해석</strong><small>후보 차이와 판별 질문 제시</small></div><div class="arch-node"><strong>충돌·누락</strong><small>보류 및 필요한 정보 요청</small></div></div>
+<div class="arch-direction">↓ 사람의 확인·수정·보류 → 원본과 함께 범위를 지정해 기록</div>
+</div>
+<p><strong>직렬·병렬은 양자택일이 아니야.</strong> [추론] 인식과 자료 조회는 병렬로 실행하되, 대상 연결과 기준 검증은 최종 추천 전에 반드시 거치도록 설계하자. DB가 없으면 이미지 안의 관계까지만 사용하고, 외부 정보가 확인될수록 해석 범위를 넓히면 돼.</p>
+<h3>관계형 DB, RAG, LLM의 역할</h3>
+<div class="table-wrap"><table><thead><tr><th>구성</th><th>맡길 일 <span class="tag">[추론]</span></th><th>구체적인 설계</th></tr></thead><tbody>
+<tr><td>관계형 DB</td><td>정확한 식별·버전·상태·참조 관계</td><td>부재 ID, 용접부 ID, 도면 개정, WPS ID, 작업 이벤트. 숫자 범위는 구조화해서 비교.</td></tr>
+<tr><td>문서 검색 / RAG</td><td>현장 규칙과 설명 문서의 근거 구간 찾기</td><td>승인 상태·프로젝트·버전으로 먼저 범위를 제한. 문단뿐 아니라 표 제목·단위·행·각주를 함께 유지.</td></tr>
+<tr><td>LLM / VLM</td><td>후보 의미 구성, 문맥 관계 해석, 설명과 확인 질문</td><td>원문 근거와 구조화된 출력을 요구. 모델 스스로 만든 가정을 사실 필드로 저장하지 않음.</td></tr>
+<tr><td>규칙 검사기</td><td>필수 항목·적용 범위·명시적 충돌 확인</td><td>출처가 확인된 제약만 사용. 미확인을 참으로 처리하지 않고, 그럴듯한 점수로 충돌을 덮지 않음.</td></tr>
+</tbody></table></div>
+<p><strong>DB 전체를 임베딩할 필요는 없어.</strong> [추론] 식별자와 버전은 정확 조회, 설명·예외 문구는 검색으로 맡기자. 예를 들어 <code>부재 ID → 도면 개정 → 용접부 → 적용 WPS</code> 연결은 관계로 관리하고, 해당 WPS의 주의사항을 근거 문단으로 조회하는 방식이야.</p>
+<h3>RRF를 핵심 판정기로 쓰지 않는 이유</h3>
+<p>[추론] RRF 같은 순위 결합은 검색 후보를 모으는 단계에서 비교해볼 수 있어. 하지만 시각적 해석 후보와 문서 검색 순위는 같은 대상을 매긴 순위가 아닐 수 있어. 같은 해석 후보로 정렬한 뒤에도, 순위만으로 적용 불가 문서를 배제하거나 신뢰도를 확률로 해석할 수는 없어.</p>
+<p>PoC에서는 <strong>규칙만 → 규칙+맥락 → 필요시 학습된 후보 순위화</strong> 순서로 비교하자. 신뢰할 수 있는 제약에 명확히 위배되는 후보는 자동 추천에서 제외하고, 입력 자체가 불확실해 제약 만족 여부를 모르면 사람에게 보낼 후보로 남겨두는 식이야.</p>
+<h3>같은 모호한 표기, 다른 맥락</h3>
+<p class="small">모두 설계 설명용 합성 사례야. 실제 인식 결과나 성능 수치가 아니야.</p>
+<div class="choices" role="group" aria-label="맥락 사례 선택"><button class="choice" data-case="none" aria-pressed="true">맥락 없음</button><button class="choice" data-case="match" aria-pressed="false">적용 가능한 맥락</button><button class="choice" data-case="conflict" aria-pressed="false">충돌하는 맥락</button></div>
+<div class="scenario" id="case-none"><h4>사진에서 ‘a6’ 또는 ‘a8’이 보임</h4><p>부재 ID와 현장 표기 규칙이 없어서 이 표기가 표준 치수 지시인지도 확정할 수 없어.</p><ul><li>두 문자 후보와 원본 영역을 남겨.</li><li>숫자 6이나 8을 용접조건으로 바로 넘기지 않아.</li><li>확인 질문: “대상 부재 ID 또는 연결할 작업지시를 알려줘.”</li></ul><div class="decision">출력: 문자·의미 후보 / 조건 미정 / 대상 연결 필요</div></div>
+<div class="scenario" id="case-match" hidden><h4>같은 용접부의 유효 도면에 a6 지시가 있음</h4><p>부재·용접부 연결과 도면 적용 범위가 확인됐고, 이미지 후보에도 a6이 있어.</p><ul><li>a6을 지지하는 근거로 도면 항목을 연결해.</li><li>사진에서 확실히 읽은 것과 문서가 지지한 것을 따로 보여줘.</li><li>WPS 적용 정보까지 충족될 때 조건 후보를 조회해. 자동 확정 허용 여부는 별도 정책과 검증으로 정해.</li></ul><div class="decision">출력: a6 해석 우선 후보 / 도면 근거 / 남은 조건 확인</div></div>
+<div class="scenario" id="case-conflict" hidden><h4>사진은 a8로 선명한데, 연결된 도면은 a6</h4><p>OCR 오류, 잘못된 부재 연결, 도면 개정 누락, 승인된 현장 변경 등 여러 가능성이 있어.</p><ul><li>평균 점수를 내서 a6으로 덮어쓰지 않아.</li><li>원본 a8 판독과 도면 a6 지시를 함께 표시해.</li><li>확인 질문: “이 도면이 현재 부재에 적용되는 버전인지, 변경 지시가 있는지 확인해줘.”</li></ul><div class="decision">출력: 불일치 보류 / 원인 후보 / 변경 근거 요청</div></div>
+<h3>추천 데이터 단위: 증거를 가진 주장</h3>
+<p>[추론] 최종 문자열 하나보다 <strong>값 + 출처 + 적용 대상 + 버전 + 상태</strong>를 한 묶음으로 저장하자.</p>
+<div class="table-wrap"><table><thead><tr><th>필드 묶음</th><th>예시</th><th>목적</th></tr></thead><tbody>
+<tr><td>관찰</td><td>원본 이미지·영역, 인식 후보, 모델 버전</td><td>맥락 적용 전 결과 보존</td></tr>
+<tr><td>연결</td><td>부재·용접부 ID, 연결 방법, 확인 상태</td><td>다른 작업의 정보 혼입 추적</td></tr>
+<tr><td>해석</td><td>목두께 6 mm 후보, 사용한 표기 규칙 ID</td><td>관찰과 추론 분리</td></tr>
+<tr><td>근거</td><td>문서 ID·개정·절·적용 대상·승인 상태</td><td>추천 재현 및 문서 변경 대응</td></tr>
+<tr><td>판정</td><td>제약별 참/거짓/미확인, 충돌, 보류 이유</td><td>총점 하나에 가려진 문제 표시</td></tr>
+<tr><td>사람의 결정</td><td>원래 값·수정 값·확인자·시점·범위·근거</td><td>수정의 책임 범위와 취소·대체 이력</td></tr>
+</tbody></table></div>
+<p><strong>사람의 피드백은 우선 범위가 있는 기록으로 환류하자.</strong> [추론] 오늘 부재 A의 숫자를 8로 수정했다고 모든 유사 표기를 8로 바꾸지 않아. 같은 작업의 후속 조회에는 근거로 제공하고, 사전·규칙 변경은 별도 검토와 버전 발행을 거치게 하자. 이것은 모델을 자동 재학습하는 것과도 달라.</p>
+</section>
+
+<section id="poc">
+<div class="eyebrow">09 / PROOF OF CONCEPT</div><h2>정확도보다 먼저, 비교 가능한 실험을 만들자</h2>
+<p><span class="tag">[추론]</span> 첫 PoC는 <strong>한 공정 · 한 표기 규칙 · 제한된 작업 후보</strong>에 집중하자. 같은 이미지 집합에서 맥락이 언제 도움이 되고 언제 해가 되는지를 보이는 게 핵심이야.</p>
+<div class="table-wrap"><table><thead><tr><th>비교 조건</th><th>보여줄 것</th><th>평가 질문</th></tr></thead><tbody>
+<tr><td>A · 이미지 + 공통 규칙</td><td>부재별 계획·이력 없이 해석</td><td>인식·일반 문법만으로 어디까지 가능한가?</td></tr>
+<tr><td>B · A + 유효한 맥락</td><td>대상이 확인된 도면·작업·이력 사용</td><td>의미 해석과 처리 가능 비율이 실제로 좋아지는가?</td></tr>
+<tr><td>C · A + 잘못된 맥락</td><td>다른 부재·구버전·충돌 정보 주입</td><td>틀린 맥락에 끌려 자동 확정하는가, 충돌을 잡는가?</td></tr>
+<tr><td>D · 맥락 일부 누락</td><td>ID·문서·상태 중 일부 제거</td><td>미확정 항목을 정확히 짚고 필요한 질문을 하는가?</td></tr>
+</tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>지표</th><th>분모까지 정의하기</th></tr></thead><tbody>
+<tr><td>의미 항목 정확도</td><td>정답인 의미 항목 수 / 평가한 의미 항목 수. 부재·치수 종류·값·단위·방향 등을 구분.</td></tr>
+<tr><td>잘못된 자동 확정률</td><td>틀린 자동 확정 건수 / 자동 확정 건수. 자동 확정이 0건이면 비율은 해당 없음으로 표시.</td></tr>
+<tr><td>자동 처리율</td><td>사람 개입 없이 확정한 건수 / 전체 건수. 후보 추천만 한 건을 확정에 포함하지 않음.</td></tr>
+<tr><td>위험 사례 확인 요청 재현율</td><td>사람에게 보낸 위험 사례 수 / 정답상 확인이 필요한 위험 사례 수.</td></tr>
+<tr><td>작업자 검토 부담</td><td>확인 건수, 확인에 걸린 시간, 잘못된 추천을 승인한 사례를 함께 기록.</td></tr>
+</tbody></table></div>
+<p>[추론] 개발 자료와 평가는 부재·원본 이미지 단위로 분리하고, 평가 정답이 확인 이력에 미리 들어가지 않게 하자. 사례 수와 분모를 함께 공개하고, 합성 자료의 결과를 현장 정확도로 말하지 않아. 자동 확정 정책을 아직 검증하지 못했다면 후보 추천·사람 확인만 시연해도 돼.</p>
+<h3>목적함수로 표현하면</h3>
+<p>[추론] “잘못된 확정의 비용 + 사람 검토 비용 + 처리 지연”을 줄이되, <strong>필수 근거 누락·기준 충돌 시 확정 금지</strong> 같은 제약을 둬. 바꿀 수 있는 것은 확인 임계값·후보 수·질문 방식·검토 순서이고, 임의로 바꾸면 안 되는 것은 승인 기준·재료의 사실·원본 관찰이야. 비용 비율과 허용 오류 수준은 멘토와 정할 항목이야.</p>
+<h3>작업자 확인 화면에 담을 최소 정보</h3>
+<ol><li><strong>원본 영역과 주변 장면:</strong> 무엇을 읽었고 어느 부재인지.</li><li><strong>대안 후보:</strong> a6/a8처럼 차이가 나는 항목을 선명하게 표시.</li><li><strong>맥락의 출처:</strong> 부재 연결 근거, 도면·WPS 버전과 해당 항목.</li><li><strong>확인 이유:</strong> 인식 모호 / 대상 미식별 / 기준 충돌 / 필수 정보 누락.</li><li><strong>결정과 범위:</strong> 승인·수정·보류, 현재 작업에만 적용할지, 추가 근거가 필요한지.</li></ol>
+<h3>멘토에게 우선 확인할 여섯 가지</h3>
+<ol><li><strong>한 장면 확보:</strong> 실제 사진과 그 사진의 올바른 작업 해석을 함께 볼 수 있는가?</li><li><strong>표기 규칙:</strong> 표준 기호와 자체 약어의 비율, 덧쓰기·취소 표기의 규칙은 무엇인가?</li><li><strong>대상 식별:</strong> 부재·용접부 ID를 촬영 시점에 어떻게 알 수 있는가?</li><li><strong>기준 자료:</strong> 도면·작업지시·WPS 중 무엇을 제공하며 개정·변경 승인은 어떻게 관리하는가?</li><li><strong>자동화 경계:</strong> 조건 후보, 프로그램 선택, 실제 제어 중 어디까지가 평가 대상인가?</li><li><strong>실패 비용:</strong> 무엇을 반드시 사람에게 보내야 하며, 정답 판정과 승인은 누가 하는가?</li></ol>
+<div class="note"><p><strong>현재 저장소와 제안은 구분해야 해.</strong> README와 검증 문서에 기록된 현재 spike는 합성 사례, 실제 사진 OCR 연결, 시연 규칙 조회, 확인 이력과 내보내기 흐름이야. 이 가이드의 현장 맥락 검증·실제 WPS 연계·독립 성능 평가는 구현 완료를 뜻하지 않아. <a href="../README.md">README</a> · <a href="VALIDATION.md">검증 기록</a></p></div>
+</section>
+
+<section id="direction">
+<div class="eyebrow">10 / RECOMMENDATION</div><h2>제안하는 맥락의 방향성</h2>
+<p class="quote">“현재 작업에 연결할 수 있는 근거만 사용하고,<br>근거가 부족하거나 충돌하면 무엇을 확인해야 하는지 알려주는 시스템.”</p>
+<p><span class="tag">[추론]</span> 우리의 차별점은 LLM이 문서를 많이 읽는다는 데 두기보다, <strong>사진 속 표기와 작업 문서를 올바르게 연결하고, 그 연결이 틀릴 가능성까지 다룬다는 데</strong> 두는 게 좋아.</p>
+<div class="grid"><div class="card"><h4>입력은 열린 구조</h4><p>사진만 받아도 후보를 만들고, ID·작업지시가 들어오면 확인된 범위만큼 맥락을 확장해. MES가 반드시 있어야만 작동하는 구조로 시작하지 않아.</p></div><div class="card"><h4>판정은 근거를 통과하는 구조</h4><p>대상·버전·적용 범위를 먼저 검사하고 후보를 비교해. 규칙 충돌을 높은 비전 점수나 문서 유사도로 상쇄하지 않아.</p></div><div class="card"><h4>사람의 개입은 구체적인 질문</h4><p>“확인하세요” 대신 “부재가 맞는지”, “도면 개정이 맞는지”, “a6인지 a8인지”처럼 미해결 항목을 좁혀서 보여줘.</p></div><div class="card"><h4>기억은 범위가 있는 기록</h4><p>사람의 수정을 원본·근거·대상·버전과 함께 저장해. 관련 후속 작업에서 참고하고, 전체 규칙 변경은 별도로 검증해.</p></div></div>
+<p><strong>첫 구현 단위:</strong> 실제 장면 하나의 <em>사진 → 표기 후보 → 대상 연결 → 기준 대조 → 후보 또는 확인 → 추적 가능한 출력</em>을 끝까지 만들자. 그 장면에서 맥락이 없을 때와 틀릴 때도 보여줘야 방향성이 검증돼.</p>
+<p><strong>7분 발표의 중심 문장:</strong> “우리는 표기를 읽는 데서 멈추지 않고, 적용 가능한 작업 근거와 연결해 조건 후보를 제시하며, 불확실한 연결은 작업자의 구체적인 확인으로 해결합니다.”</p>
+</section>
+
+<footer id="sources" class="refs">
+<h3>출처와 적용 범위</h3><p>외부 자료 확인일: 2026-10-05. 일반 용접 지식과 공급사의 공개 사례를 참고했으며, 대상 기업의 내부 운영 방식으로 일반화하지 않았어. 표준의 실제 적용판·계약 조건은 현장에서 확인해야 해.</p>
+<ol>
+<li id="ref-mission"><a href="references/mission-03.pdf">PAC2026 HD현대로보틱스 미션 03</a>, 1~2쪽. 요구 기능과 필수 고려사항. <a href="https://ainnov.co.kr/public/assets/download/pac/pac2026_hd-hyundai-robotics_mission_3.pdf">공식 원문 주소</a>. 로컬 PDF에는 예시 사진·영상·참고 링크가 채워져 있지 않아.</li>
+<li id="ref-basics"><a href="https://www.twi-global.com/technical-knowledge/faqs/what-is-welding">TWI · What is Welding?</a> 이음·모재·용가재·용입·열영향부 등의 기초 용어. 특정 현장 공정의 빈도나 적용 조건에 대한 근거는 아니야.</li>
+<li id="ref-symbols"><a href="https://www.twi-global.com/technical-knowledge/job-knowledge/weld-symbols">TWI · A review of the application of weld symbols on drawings</a> 표기 구조와 치수의 입문 설명. 구판 표준 설명이 포함되어 체계 구분은 ISO 자료와 함께 확인했어.</li>
+<li id="ref-iso"><a href="https://www.iso.org/obp/ui?_escaped_fragment_=iso:std:iso:2553:ed-5:v2:en">ISO 2553:2019 · 공개 개요와 용어</a> System A/B, 기호 구성과 치수 정의. 유료 표준 전체를 재현한 문서가 아니야.</li>
+<li id="ref-wps"><a href="https://www.twi-global.com/technical-knowledge/job-knowledge/welding-procedure-039">TWI · Welding Procedure</a> WPS, 인정 기록, 적용 변수의 역할. 대상 기업의 승인 절차와 실제 용접 수치는 제공하지 않아.</li>
+<li id="ref-yard"><a href="https://pemamek.com/us/customer-stories/automated-pema-production-lines-to-mv-werften-shipyards/">Pemamek · Automated PEMA Production Lines to MV Werften Shipyards</a> 패널·로봇 용접·절단·마킹·분류 생산라인 사례. 설비 공급사의 특정 고객 사례야.</li>
+<li id="ref-sequence"><a href="https://www.twi-global.com/technical-knowledge/faqs/faq-how-can-the-direction-sequence-of-welding-be-used-to-control-distortion">TWI · Direction and sequence of welding for distortion control</a> 순서·방향이 변형 제어와 관계된다는 설명. 실제 작업 순서의 설계 지침으로 직접 사용하지 않아.</li>
+<li id="ref-ndt"><a href="https://www.twi-global.com/what-we-do/services-and-support/asset-management/non-destructive-testing">TWI · Non-Destructive Testing</a> 검사 기법의 범위. 본 프로젝트는 용접 품질의 최종 검사 시스템으로 정의하지 않았어.</li>
+<li id="ref-mig"><a href="https://www.twi-global.com/technical-knowledge/faqs/faq-what-is-mig-mag-welding">TWI · What is MIG / MAG Welding?</a> 보호가스에 따른 공정 구분.</li>
+<li id="ref-tig"><a href="https://www.twi-global.com/technical-knowledge/faqs/mig-vs-tig-welding">TWI · MIG vs TIG Welding</a> TIG의 전극과 용가재 방식.</li>
+<li id="ref-fcaw"><a href="https://www.twi-global.com/technical-knowledge/faqs/flux-cored-arc-welding-fcaw">TWI · Flux-Cored Arc Welding</a> 플럭스 코어 와이어와 보호 방식.</li>
+<li id="ref-saw"><a href="https://www.twi-global.com/technical-knowledge/job-knowledge/submerged-arc-welding-process-005">TWI · Submerged Arc Welding Process</a> SAW의 기본 원리.</li>
+<li id="ref-temp"><a href="https://www.twi-global.com/technical-knowledge/faqs/faq-which-is-important-preheat-or-interpass">TWI · Preheat or interpass?</a> 예열·층간온도 관리의 의미. 실제 온도 기준은 승인된 절차에서 확인해야 해.</li>
+</ol>
+<p class="footer">ContextWeld · 용접 도메인 및 맥락 설계 학습 자료 · 단일 파일에 글·그림·검색·인쇄 기능 포함. 외부 링크는 온라인 연결이 필요하며, 로컬 참고 문서는 저장소 위치에서 열 때 연결돼.</p>
+</footer>
+</main></div>
+<script>
+(() => {
+  const search = document.getElementById('term-search');
+  const terms = Array.from(document.querySelectorAll('.term'));
+  const count = document.getElementById('term-count');
+  const empty = document.getElementById('term-empty');
+  function filterTerms() {
+    const query = search.value.trim().toLocaleLowerCase();
+    let visible = 0;
+    terms.forEach(term => {
+      const match = term.textContent.toLocaleLowerCase().includes(query);
+      term.hidden = !match;
+      if (match) visible++;
+    });
+    count.textContent = `${visible} / ${terms.length}개`;
+    empty.hidden = visible !== 0;
+  }
+  search.addEventListener('input', filterTerms);
+  filterTerms();
+  const buttons = Array.from(document.querySelectorAll('[data-case]'));
+  buttons.forEach(button => button.addEventListener('click', () => {
+    buttons.forEach(item => {
+      const selected = item === button;
+      item.setAttribute('aria-pressed', String(selected));
+      document.getElementById(`case-${item.dataset.case}`).hidden = !selected;
+    });
+  }));
+  document.getElementById('print').addEventListener('click', () => window.print());
+})();
+</script>
+</body>
+</html>
