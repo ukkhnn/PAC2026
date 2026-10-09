@@ -1,0 +1,131 @@
+{
+  "schema_version": "isaac-welding-scene.v1",
+  "scenario_id": "night-welding-glare-01",
+  "capture_mode": "pre_captured",
+  "scene_scope": "synthetic workplace and scheduled camera poses; no welding or automatic recognition feedback",
+  "marking": {
+    "text": "BISB30N-15",
+    "joint_label": "J01",
+    "source": "programmatically drawn synthetic marking; not a real steel-photo transcription"
+  },
+  "plate_center": [
+    0.7,
+    0.0,
+    0.65
+  ],
+  "plate_size": [
+    0.58,
+    0.42
+  ],
+  "robot": {
+    "base_position": [
+      0,
+      0,
+      0.3
+    ],
+    "position_tolerance_m": 0.015,
+    "camera_mount_translation": [
+      0.25,
+      0,
+      -0.15
+    ]
+  },
+  "views": {
+    "A": {
+      "camera_position": [
+        0.55,
+        -0.38,
+        1.05
+      ],
+      "look_at": [
+        0.7,
+        0.0,
+        0.65
+      ],
+      "intent": "fixed worklight specular reflection overlaps marking"
+    },
+    "B": {
+      "camera_position": [
+        0.85,
+        -0.15,
+        1.05
+      ],
+      "look_at": [
+        0.7,
+        0.0,
+        0.65
+      ],
+      "intent": "translated wrist camera moves highlight away from marking"
+    }
+  },
+  "metal": {
+    "metallic": 0.65,
+    "roughness": 0.13,
+    "clearcoat": 1.0,
+    "clearcoat_roughness": 0.06
+  },
+  "worklight": {
+    "position": [
+      0.85,
+      0.38,
+      1.05
+    ],
+    "look_at": [
+      0.7,
+      0.0,
+      0.65
+    ],
+    "width": 0.22,
+    "height": 0.16,
+    "intensity": 30000.0,
+    "color": [
+      1.0,
+      0.93,
+      0.8
+    ]
+  },
+  "ambient_intensity": 200.0,
+  "camera": {
+    "resolution_hw": [
+      720,
+      1280
+    ],
+    "focal_length_mm": 18.0,
+    "horizontal_aperture_mm": 36.0,
+    "tick_rate": 0.0
+  },
+  "overview": {
+    "position": [
+      2.0,
+      -2.4,
+      1.8
+    ],
+    "look_at": [
+      0.45,
+      0.05,
+      0.65
+    ],
+    "resolution_hw": [
+      720,
+      1280
+    ],
+    "focal_length_mm": 26.0
+  },
+  "render": {
+    "renderer": "RealTimePathTracing",
+    "samples_per_pixel": 16,
+    "warmup_steps": 80,
+    "settle_steps": 80,
+    "fixed_exposure": {
+      "film_iso": 200.0,
+      "shutter": 50.0,
+      "f_number": 4.0
+    }
+  },
+  "presentation": {
+    "hold_steps": 480,
+    "move_steps": 120,
+    "stream_every_steps": 12
+  },
+  "fill_intensity": 1800.0
+}
