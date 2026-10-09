@@ -6,7 +6,7 @@ ContextWeld는 선박 블록과 부재의 정형 마킹·수기 표기를 인식
 
 [PAC 2026](https://ainnov.co.kr/pac2026) 분과 02 기업 문제 해결형 IR 피칭 대회의 HD현대로보틱스 미션 03을 대상으로 한다. 참가팀은 **Static Duo**다.
 
-> 현재 단계: `dev`의 첫 구현으로 부재번호 후보를 유효한 작업지시에 연결하는 CLI를 추가했다. 직접 작성한 후보·가상 지시로 동작을 검증했으며 실제 사진 OCR·문서 RAG·웹 화면은 아직 없다. [첫 장면 실행 안내](docs/FIRST_SCENE.md) · [개발 기획](docs/DEVELOPMENT_PLAN.md). 기준일: 2026-10-08.
+> 현재 단계: `dev`의 첫 구현으로 부재번호 후보를 유효한 작업지시에 연결하는 CLI를 추가했다. 직접 작성한 후보·가상 지시로 동작을 검증했다. 제품의 사진 OCR 연결·문서 RAG·웹 화면은 아직 없다. 별도 [실험실](experiments/README.md)에서 공개 이미지 10장의 OCR 비교, 문서 제공 비교, 실제 OCR→가상 지시 연결과 출력 검사 파일럿을 수행했다. [통합 레포트](experiments/REPORT-2026-10-09.md). [첫 장면 실행 안내](docs/FIRST_SCENE.md) · [개발 기획](docs/DEVELOPMENT_PLAN.md). 기준일: 2026-10-09.
 
 ## 첫 장면 실행
 
@@ -46,6 +46,7 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
 | 문서 | 내용 |
 |---|---|
 | [첫 장면 실행 안내](docs/FIRST_SCENE.md) | 후보·작업지시 입력, 판정 규칙, 실행·검증과 한계 |
+| [실험실](experiments/README.md) | E1~E7 계획, 실제 OCR 실험 결과·실패 사례·재현 코드 |
 | [개발 기획](docs/DEVELOPMENT_PLAN.md) | 공개 자료 조사, 맥락 RAG 구조, 자체 제작 데이터, 새 개발 범위·평가 기준 |
 | [프로젝트 개요](docs/PROJECT_BRIEF.md) | 문제 정의, 미션 요구사항, 기능 범위, 평가 계획 |
 | [마일스톤](docs/MILESTONES.md) | 단계별 목표일, 완료 기준, 진행 상태 |
@@ -68,6 +69,7 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
 │   └── references/           # 기획서와 미션 원문
 ├── src/contextweld/          # 애플리케이션 구현
 ├── tests/                    # 핵심 기능 검증
+├── experiments/              # 기술 선택 실험·실제 출력·레포트
 ├── scripts/                  # 데이터 준비·실행·평가 보조 도구
 ├── configs/                  # 비밀정보를 제외한 설정
 ├── data/
@@ -82,4 +84,4 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
     └── presentation/        # 발표자료
 ```
 
-현재 `src/contextweld`에는 후보 연결 로직과 CLI, `tests`에는 자동 테스트, `data/examples`에는 가상 작업지시 예제가 있다. 사진 OCR·문서 검색·화면은 후속 범위다. 원본 현장 자료와 생성 산출물은 기본적으로 Git 추적에서 제외한다. 데이터 공개 기준은 [데이터 안내](data/README.md)를 따른다.
+현재 `src/contextweld`에는 후보 연결 로직과 CLI, `tests`에는 자동 테스트, `data/examples`에는 가상 작업지시 예제가 있다. 사진 OCR의 제품 연결·문서 검색·화면은 후속 범위다. experiments/의 OCR은 별도 실험용이다. 원본 현장 자료와 생성 산출물은 기본적으로 Git 추적에서 제외한다. 데이터 공개 기준은 [데이터 안내](data/README.md)를 따른다.
