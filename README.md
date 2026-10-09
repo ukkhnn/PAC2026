@@ -8,7 +8,9 @@ ContextWeld는 선박 블록과 부재의 정형 마킹·수기 표기를 인식
 
 [PAC 2026](https://ainnov.co.kr/pac2026) 분과 02 기업 문제 해결형 IR 피칭 대회의 HD현대로보틱스 미션 03을 대상으로 한다. 참가팀은 **Static Duo**다.
 
-> 현재 단계: [공개 사진 10장의 실제 OCR/VLM·원문 4개 74청크 검색](docs/RUNPOD_INFERENCE.md)에 이어, 저장된 실제 관측을 [모사 작업지시·도면→WPS 조건 범위→HTTP 모의 수신](docs/DOCUMENT_DEMO.md)으로 연결했다. 정상 사례는 수신 응답을 기록했고, 필수값 누락·문서 공정 충돌·개정 불일치·실제 판독 불일치는 전송을 보류했다. 로컬과 Runpod에서 각각 테스트 59개가 통과했다. WPS는 선택한 헤더·대표층 1의 전사 검수이며 사람의 적용 승인이 아니다. 사진의 실제 재질·두께·현장 WPS 적용성, A/B 재촬영·수정 재검토·관리자 화면은 미완료다. 별도 [실험실](experiments/README.md)의 과거 비교 결과와 이번 문서 연결 시연을 구분한다. 기준일: 2026-10-10.
+> 현재 단계: [공개 사진 10장의 실제 OCR/VLM·원문 4개 74청크 검색](docs/RUNPOD_INFERENCE.md)에 이어, 저장된 실제 관측을 [모사 작업지시·도면→WPS 조건 범위→HTTP 모의 수신](docs/DOCUMENT_DEMO.md)으로 연결했다. 정상 사례는 수신 응답을 기록했고, 필수값 누락·문서 공정 충돌·개정 불일치·실제 판독 불일치는 전송을 보류했다. 로컬과 Runpod에서 각각 테스트 59개가 통과했다. 별도 [Isaac 기준 장면](docs/ISAAC_SCENE.md)에서는 UR10 손목 카메라의 실제 A/B RGB·고정 반사·관절 이동과 Foxglove 손목/전체 장면 두 영상을 검증해 P1을 달성했다. 기존 정형 마킹·작업대 장면을 보존하고 조선소 병풍형 강판 패널·중앙 수기 메모로의 형상 개선은 대기 중이다. 기준일: 2026-10-10.
+
+WPS 검수는 선택한 헤더·대표층 1의 전사 확인이며 사람의 적용 승인이 아니다. 사진의 실제 재질·두께·현장 WPS 적용성과 기준 장면의 인식→재촬영 연결은 미확인이다. 팔의 A/B 이동은 `pre_captured`로 기록하는 예약 시연이며 모델 판단으로 움직이는 폐루프가 아니다. [문서 검토 한 건의 오프라인 HTML 조회](docs/DOCUMENT_REVIEW_VIEWER.md)는 구현해 정상 `received`·누락/관측 충돌 `blocked`의 실제 묶음 3개를 내보냈다. 원본 582개 파일 해시 보존·신규 테스트 6개와 HTML 구조·표시 내용 검사를 통과했으며, 브라우저 파일 URL 제한으로 시각 검수는 미완료다. 전체 P2·P3·P4와 수정 재검토·여러 실행 통합·A/B 관리자 재생은 미완료다. 별도 [실험실](experiments/README.md)의 과거 비교 결과와 현재 부분 실행을 구분한다.
 
 ## 첫 장면 실행
 
@@ -52,8 +54,10 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
 | [문서 적용 계획](docs/DOCUMENT_APPLICATION_PLAN.md) | 원문 확보·등록·표 검수, 정확 조회와 RAG, 필드별 근거·문서 검증 |
 | [용접 로봇 입력 상세 명세](docs/WELDING_ROBOT_INPUT_SPEC.md) | 현대·두산 공식 입력 항목·단위·조건부 제약의 기준. 실제 제어 지원을 뜻하지 않음 |
 | [Pod v1 환경 기록](docs/POD_VER1.md) | Runpod·Isaac·ROS·Foxglove 준비 안내, 실제 확인 결과와 남은 검증 |
+| [Isaac 기준 장면 실행](docs/ISAAC_SCENE.md) | UR10 손목 A/B RGB·고정 반사·Foxglove 두 영상의 검증 결과, 재실행·중단·보존 안내 |
 | [실제 인식·문서 검색 실행](docs/RUNPOD_INFERENCE.md) | 고정 모델·환경, OCR/VLM 실행·원문 위치 검색·결과 보존·검증 |
 | [문서 조건·모의 전달 실행](docs/DOCUMENT_DEMO.md) | 실제 관측과 모사 문서 연결, WPS 원문 범위·누락/충돌 검사, HTTP 모의 수신·별도 묶음 검증 |
+| [문서 실행 기록 오프라인 조회](docs/DOCUMENT_REVIEW_VIEWER.md) | 검증된 문서 묶음 한 건을 원본 이미지·모델 출력·WPS 근거·모의 수신 내역을 담은 단일 HTML로 내보내기 |
 | [Runpod 자료 준비](docs/RUNPOD_DATA_SETUP.md) | 사진·근거 원문 다운로드, 로컬 전송 대안, 실제 서버 확보 결과와 해시 확인 |
 | [첫 장면 실행 안내](docs/FIRST_SCENE.md) | 후보·작업지시 입력, 판정 규칙, 실행·검증과 한계 |
 | [실험실](experiments/README.md) | E1~E7 계획, 실제 OCR 실험 결과·실패 사례·재현 코드 |
@@ -95,4 +99,4 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
     └── presentation/        # 발표자료
 ```
 
-현재 `src/contextweld`에는 후보 연결, 실제 OCR/VLM 실행·기록, 문서 추출·검색, 문서 조건 검사와 모의 수신 모듈이 있다. `scripts`에서 인식·검색·문서 연결·묶음 검증을 실행한다. `configs/document_demo`에는 모사 작업지시·도면·범위 검토용 프로파일이 있고, `data/knowledge`에는 원문 위치와 검수 범위를 보존한 WPS 구조화 자료가 있다. `tests`에는 자동 테스트, `data/examples`에는 기존 가상 작업지시 예제가 있다. 전체 A/B 시나리오·수정 재검토·관리자 화면은 후속 범위다. experiments/의 OCR은 별도 실험용이다. 원본 현장 자료와 생성 산출물은 기본적으로 Git 추적에서 제외한다. 데이터 공개 기준은 [데이터 안내](data/README.md)를 따른다.
+현재 `src/contextweld`에는 후보 연결, 실제 OCR/VLM 실행·기록, 문서 추출·검색, 문서 조건 검사와 모의 수신 모듈이 있다. `scripts`에서 인식·검색·문서 연결·묶음 검증과 Isaac 장면 생성·ROS 영상 송출을 실행한다. `configs/document_demo`에는 모사 작업지시·도면·범위 검토용 프로파일이 있고, `configs/isaac_scene`에는 검증한 기준 장면 설정이 있다. `data/knowledge`에는 원문 위치와 검수 범위를 보존한 WPS 구조화 자료가 있다. `tests`에는 자동 테스트, `data/examples`에는 기존 가상 작업지시 예제가 있다. A/B 촬영과 인식·문서 처리를 한 실행으로 연결하는 작업, 수정 재검토·관리자 화면은 후속 범위다. experiments/의 OCR은 별도 실험용이다. 원본 현장 자료와 생성 산출물은 기본적으로 Git 추적에서 제외한다. 데이터 공개 기준은 [데이터 안내](data/README.md)를 따른다.
