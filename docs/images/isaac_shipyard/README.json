@@ -1,0 +1,43 @@
+{
+ "note": "downscaled JPEG previews of the live-03 run frames; originals are 1280x720 PNG under output/ (gitignored) and their SHA-256 is recorded here and in output/isaac-shipyard-20261010/live-03/manifest.json",
+ "shipyard-live-03-A-overview.jpg": {
+  "source": "output/isaac-shipyard-20261010/live-03/frames/A-overview.png",
+  "source_sha256": "87d2b9355f01d53de0dd70e2ffa227df551adefc1fcd4dd3d2cf6f60df7cd94a",
+  "preview_size": [
+   960,
+   540
+  ]
+ },
+ "shipyard-live-03-A-wrist.jpg": {
+  "source": "output/isaac-shipyard-20261010/live-03/frames/A-wrist.png",
+  "source_sha256": "8ee7e159d0723b89592272958924edaf5aecb6cba52d0bcf24eee9ff8fdb3802",
+  "preview_size": [
+   960,
+   540
+  ]
+ },
+ "shipyard-live-03-B-wrist.jpg": {
+  "source": "output/isaac-shipyard-20261010/live-03/frames/B-wrist.png",
+  "source_sha256": "2492583e4c354790765fef7f80aabcd8025edbfe8d020f13338942e6b34e70d8",
+  "preview_size": [
+   960,
+   540
+  ]
+ },
+ "shipyard-live-03-B-overview.jpg": {
+  "source": "output/isaac-shipyard-20261010/live-03/frames/B-overview.png",
+  "source_sha256": "a583e0ddea156385c6b6c1a9780e1f435d2088e305f5c5e407e1aefdafee6a19",
+  "preview_size": [
+   960,
+   540
+  ]
+ },
+ "shipyard-marking-preview.jpg": {
+  "source": "output/isaac-shipyard-20261010/live-03/assets/marking_preview.png",
+  "source_sha256": "d04b591f4aee4a81f3cc4ec96e95c1f9ab1b28241c85ad0b99471d786c2f28c0",
+  "preview_size": [
+   960,
+   519
+  ]
+ }
+}
