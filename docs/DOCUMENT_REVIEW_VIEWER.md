@@ -1,6 +1,6 @@
 # 문서 실행 기록 오프라인 조회
 
-`scripts/export_document_review.py`는 저장된 `document-demo-bundle.v1` 한 개를 검증하고 단일 HTML로 내보낸다. HTML은 서버·인터넷 없이 브라우저에서 직접 열 수 있다. Python 표준 라이브러리와 저장소의 기존 검증 함수만 사용하며 추가 패키지를 설치하지 않는다.
+`scripts/export_document_review.py`는 저장된 `document-demo-bundle.v1` 또는 `review-bundle.v1` 한 개를 스키마에 맞는 검증기로 검증하고 단일 HTML로 내보낸다. HTML은 서버·인터넷 없이 브라우저에서 직접 열 수 있다. Python 표준 라이브러리와 저장소의 기존 검증 함수만 사용하며 추가 패키지를 설치하지 않는다.
 
 ```bash
 python3 scripts/export_document_review.py \
@@ -46,3 +46,19 @@ PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_document_review_ex
 세 묶음의 모든 원본 파일 SHA-256이 생성 전후 일치했다. HTML과 확인 기록은 Git 제외 `output/document-review-20261010/`에 보관한다. 신규 테스트 6개가 통과했다. 이는 저장된 기록 내보내기와 표시 내용 검사 결과이며, 원문 문서의 현장 적용 승인이나 전체 관리자 기능 완료를 뜻하지 않는다.
 
 [확인 필요] 자동 브라우저의 로컬 파일 URL 제한으로 이번 실행에서 화면 렌더링의 시각 검수는 수행하지 못했다. 위 결과는 묶음 검증·HTML 구조·표시 내용·이미지 바이트 검사이며 브라우저 시각 검수를 대신하지 않는다.
+
+## 명시적 재검토 묶음 조회 (2026-10-10 추가)
+
+[명시적 재검토](EXPLICIT_REVIEW.md)의 `review-bundle.v1`도 같은 명령으로 내보낸다. exporter는 manifest의 스키마를 보고 `inspect_document_bundle` 또는 `inspect_review_bundle`을 생성 전후에 호출하며, 검증에 실패하면 HTML을 저장하지 않는다. 기존 문서 실행 HTML의 내용과 동작은 그대로다.
+
+```bash
+python3 scripts/export_document_review.py \
+  output/explicit-review-20261010/run_review-20261010-voltage-deliver-01 \
+  --output output/explicit-review-20261010/html/review-20261010-voltage-deliver-01.html
+```
+
+재검토 HTML은 출처를 표시로 구분한다: `원본 · model`(원래 인식 실행의 프레임·OCR/VLM 원문·관측 선택), `수정 · user` 또는 `수정 · demo_fixture (사람 검수 아님)`(수정 전후 값·작성 주체·사유·대상 실행/결과 해시), `재판단 · rule`(적용 식별자·적용 순서·작업지시 연결·새 명세·해결/잔존 이슈), `문서 · document`(정확 조회한 WPS 값과 원문 위치·복구 수정 ID). 명시적 재검토 요청(요청 ID·요청자·사유·선택 순서·`delivery_requested`), 실행 계보, 실제 모의 요청·ACK·수신기 원본 또는 전달 실패 기록, 전송 기록이 없다는 안내도 표시한다.
+
+2026-10-10 서버의 실제 재검토 묶음 4개(재검토만 `succeeded`, 전달 `received`, 문제 잔존 `blocked`, 결함 주입 `failed`)와 다른 디렉토리로 옮긴 전달 묶음 사본 1개를 내보냈다. 모든 HTML 머리말은 `시연 fixture 수정 (사람 검수 아님)`으로 표시되고 결함 주입 실행에는 `시연용 결함 주입: receiver_unavailable` 표시가 붙는다. 파일은 Git 제외 `output/explicit-review-20261010/html/`에 있다. 신규 테스트 3개(`tests/test_review_export.py`)가 이동 사본 조회·출처 표시·이스케이프·내보낸 뒤 전달 시 원본 불변을 확인한다.
+
+재검토 HTML도 JavaScript·폼·외부 자원이 없고 같은 CSP와 이스케이프를 사용한다. HTML을 열거나 섹션을 펼쳐도 모델 호출·수정 저장·재검토·전송이 일어나지 않는다. 여러 실행 통합 화면과 전체 관리자 기능은 여전히 범위 밖이다.
