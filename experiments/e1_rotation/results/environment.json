@@ -1,0 +1,13 @@
+{
+  "started_at": "2026-10-09T01:52:15.749098+09:00",
+  "manifest_sha256": "442a55a307d7796b71f5a2a51de18457412aeb71efca00ed4510804d81262bbe",
+  "source_sha256": {
+    "e1_rotation/rotation.py": "f7e443bc792c2ade50b782f2f265f834da0be19d2c33aa30681d5bb2b1bfd7e6",
+    "e1_rotation/run_rotation.py": "e5fdeb2e44e478c754eb77c97290dac8240eb5fa7a4cfeb82e6e52acb821d065",
+    "e1_rotation/PROTOCOL.md": "d4fcabcd3f709f3c638b4411c804f866b496d33ec3db642cda0ee025a441a11b",
+    "e1_ocr/vision.swift": "57ed045b706e0f89a6969259d306a2fbe01ccbb88e966bbd016b51c604507763",
+    "e1_ocr/run.py": "de19c043e283e914c9fab97f46682f492a6d257f984ca38edeaf523dda784885",
+    "e1_ocr/score.py": "54c65e02c9cf29cec555a70df286308bec9950d0d7e858cb7c9bcad57d2ac2be"
+  },
+  "binary_sha256": "a7714252a88adbeda651f87e1a4a13e66e857ef3220462a768496ff5d94f0ebc"
+}

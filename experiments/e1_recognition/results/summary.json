@@ -1,0 +1,23 @@
+{
+  "zero": {
+    "exact": 0,
+    "labels": 28,
+    "edits": 189,
+    "characters": 280,
+    "cer": 0.675,
+    "top3_exact": 0
+  },
+  "selected": {
+    "exact": 0,
+    "labels": 28,
+    "edits": 75,
+    "characters": 280,
+    "cer": 0.26785714285714285,
+    "top3_exact": 0
+  },
+  "all_candidates_exact": 0,
+  "ambiguous_targets": 28,
+  "mean_candidates": 3.4642857142857144,
+  "calls": 112,
+  "seconds": 4.313047496878426
+}

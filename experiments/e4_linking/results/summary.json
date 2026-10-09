@@ -1,0 +1,36 @@
+{
+  "normal": {
+    "observations": 42,
+    "statuses": {
+      "unmatched": 39,
+      "unreadable": 2,
+      "matched": 1
+    },
+    "linked_observations": 1,
+    "correct_part_links_on_scored_regions": 1,
+    "wrong_part_links_on_scored_regions": 0,
+    "execution_authorized": 0
+  },
+  "wrong_block": {
+    "observations": 42,
+    "statuses": {
+      "unmatched": 40,
+      "unreadable": 2
+    },
+    "linked_observations": 0,
+    "correct_part_links_on_scored_regions": 0,
+    "wrong_part_links_on_scored_regions": 0,
+    "execution_authorized": 0
+  },
+  "cancelled": {
+    "observations": 42,
+    "statuses": {
+      "unmatched": 40,
+      "unreadable": 2
+    },
+    "linked_observations": 0,
+    "correct_part_links_on_scored_regions": 0,
+    "wrong_part_links_on_scored_regions": 0,
+    "execution_authorized": 0
+  }
+}

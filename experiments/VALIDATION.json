@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-10-09T21:29:38.219445+09:00",
+  "tests_passed": 35,
+  "checks": [
+    "e1_ocr: 7 tests passed",
+    "e1_rotation: 4 tests passed",
+    "e2_documents: 2 tests passed",
+    "e4_linking: 4 tests passed",
+    "e5_output_checks: 4 tests passed",
+    "product: 14 tests passed",
+    "E1-002 raw outputs re-merged and re-scored",
+    "E1-003 raw outputs re-scored",
+    "E1-004 ranking and character scores replayed",
+    "E2 results: 27 output-bound reviews and retrieval replayed",
+    "E2 results-002: 27 output-bound reviews and retrieval replayed",
+    "E4-001 all 126 links replayed",
+    "E5-001 all 54 structural checks replayed",
+    "76 artifact hashes verified"
+  ]
+}

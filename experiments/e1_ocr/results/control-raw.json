@@ -1,0 +1,33 @@
+{
+  "engine" : "Apple Vision VNRecognizeTextRequest",
+  "languages" : [
+    "en-US"
+  ],
+  "minimumTextHeight" : 0,
+  "os" : "Version 26.5.1 (Build 25F80)",
+  "recognitionLevel" : "accurate",
+  "results" : [
+    {
+      "id" : "synthetic-control",
+      "observations" : [
+        {
+          "bbox" : [
+            0.0750000046130952,
+            0.3432835799768248,
+            0.7208333379464286,
+            0.6279999953820983
+          ],
+          "candidates" : [
+            {
+              "confidence" : 1,
+              "text" : "ABC123 B-108"
+            }
+          ]
+        }
+      ],
+      "seconds" : 0.2990132083214121
+    }
+  ],
+  "revision" : 3,
+  "usesLanguageCorrection" : false
+}

@@ -1,0 +1,737 @@
+{
+  "experiment": "E1-001",
+  "retrieved_date": "2026-10-09",
+  "dataset": "iput-tk230215/steel-ocr-dataset-960",
+  "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+  "split": "train",
+  "sample_rule": "first 10 train paths ordered by SHA256(UTF-8 path)",
+  "dataset_kind": "public_steel_images",
+  "purpose": "development_exploration",
+  "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+  "card_url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/README.md",
+  "card_sha256": "b699ac6d6187055cc70dd6827ccfb802b713d039d4973c16b5e9b40af51c26c2",
+  "labels_url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/train.txt",
+  "labels_sha256": "cff20945685ac20654313e58fb0d54fa99c7b559a10cbfc0d29964c7423c0fcb",
+  "train_rows_observed": 156,
+  "original_test_listing_revision": "cc1d729fc0e9e78945ee63463ee7f6e3e8d1b395",
+  "images": [
+    {
+      "id": "S01",
+      "source_path": "train_data/det/images/kanawa_IMG_0772.jpg",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/kanawa_IMG_0772.jpg",
+      "sha256": "92dced68e6c58ea172936d160547eecfead98c9af6a7e36703869c33a6fa8ecc",
+      "annotations": [
+        {
+          "transcription": "B1Sb30N-56",
+          "points": [
+            [
+              28,
+              377
+            ],
+            [
+              936,
+              377
+            ],
+            [
+              936,
+              590
+            ],
+            [
+              28,
+              590
+            ]
+          ],
+          "difficult": false
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "source_path": "train_data/det/images/kanawa_IMG_0770.jpg",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/kanawa_IMG_0770.jpg",
+      "sha256": "56180af3d6a82af02e88d1ef0e5ab3b8617bf03610299dfd71e1c2ae3ff55aed",
+      "annotations": [
+        {
+          "transcription": "B1Sb30N-58",
+          "points": [
+            [
+              937,
+              429
+            ],
+            [
+              35,
+              429
+            ],
+            [
+              35,
+              271
+            ],
+            [
+              937,
+              271
+            ]
+          ],
+          "difficult": false
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "source_path": "train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+      "sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+      "annotations": [
+        {
+          "transcription": "B1Sb30N-34",
+          "points": [
+            [
+              309,
+              679
+            ],
+            [
+              382,
+              679
+            ],
+            [
+              382,
+              427
+            ],
+            [
+              309,
+              427
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb30N-12",
+          "points": [
+            [
+              402,
+              633
+            ],
+            [
+              480,
+              633
+            ],
+            [
+              480,
+              340
+            ],
+            [
+              402,
+              340
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb30N-13",
+          "points": [
+            [
+              568,
+              588
+            ],
+            [
+              630,
+              588
+            ],
+            [
+              630,
+              800
+            ],
+            [
+              568,
+              800
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb30N-13A",
+          "points": [
+            [
+              520,
+              885
+            ],
+            [
+              509,
+              644
+            ],
+            [
+              477,
+              644
+            ],
+            [
+              474,
+              882
+            ]
+          ],
+          "difficult": false
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "source_path": "train_data/det/images/kamijo_IMG_1560.jpg",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/kamijo_IMG_1560.jpg",
+      "sha256": "5019aa229dab80e079704d210502b19336e30bc48610f0d188f5e9f5fe43b27c",
+      "annotations": [
+        {
+          "transcription": "B1Sb30N-15",
+          "points": [
+            [
+              682,
+              294
+            ],
+            [
+              340,
+              294
+            ],
+            [
+              340,
+              357
+            ],
+            [
+              682,
+              357
+            ]
+          ],
+          "difficult": false
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "source_path": "train_data/det/images/tsukimoto_IMG20250416152847.jpg",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416152847.jpg",
+      "sha256": "4ccda788e2a4f9958146cf1906218efbf73bba26e9dc86ed0918480294b91b00",
+      "annotations": [
+        {
+          "transcription": "B1Sb30N-29",
+          "points": [
+            [
+              295,
+              185
+            ],
+            [
+              420,
+              185
+            ],
+            [
+              420,
+              820
+            ],
+            [
+              295,
+              820
+            ]
+          ],
+          "difficult": false
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+      "sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+      "annotations": [
+        {
+          "transcription": "B1Sb30N-36",
+          "points": [
+            [
+              91,
+              374
+            ],
+            [
+              129,
+              366
+            ],
+            [
+              134,
+              270
+            ],
+            [
+              104,
+              277
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb30N-40",
+          "points": [
+            [
+              224,
+              310
+            ],
+            [
+              258,
+              304
+            ],
+            [
+              253,
+              222
+            ],
+            [
+              218,
+              227
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb30N-19",
+          "points": [
+            [
+              338,
+              359
+            ],
+            [
+              377,
+              351
+            ],
+            [
+              353,
+              253
+            ],
+            [
+              321,
+              259
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb30N-20",
+          "points": [
+            [
+              417,
+              274
+            ],
+            [
+              453,
+              270
+            ],
+            [
+              423,
+              189
+            ],
+            [
+              395,
+              192
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb30N-26",
+          "points": [
+            [
+              532,
+              355
+            ],
+            [
+              572,
+              345
+            ],
+            [
+              529,
+              242
+            ],
+            [
+              488,
+              248
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb30N-56",
+          "points": [
+            [
+              133,
+              677
+            ],
+            [
+              169,
+              671
+            ],
+            [
+              172,
+              534
+            ],
+            [
+              141,
+              539
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb30N-54",
+          "points": [
+            [
+              266,
+              628
+            ],
+            [
+              301,
+              623
+            ],
+            [
+              294,
+              506
+            ],
+            [
+              265,
+              510
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb30N-34",
+          "points": [
+            [
+              448,
+              585
+            ],
+            [
+              485,
+              580
+            ],
+            [
+              456,
+              480
+            ],
+            [
+              422,
+              487
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb30N-12",
+          "points": [
+            [
+              492,
+              560
+            ],
+            [
+              529,
+              554
+            ],
+            [
+              495,
+              442
+            ],
+            [
+              460,
+              446
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb30N-13A",
+          "points": [
+            [
+              586,
+              768
+            ],
+            [
+              616,
+              762
+            ],
+            [
+              566,
+              628
+            ],
+            [
+              543,
+              632
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb30N-13",
+          "points": [
+            [
+              667,
+              697
+            ],
+            [
+              619,
+              582
+            ],
+            [
+              589,
+              589
+            ],
+            [
+              634,
+              705
+            ]
+          ],
+          "difficult": false
+        }
+      ]
+    },
+    {
+      "id": "S07",
+      "source_path": "train_data/det/images/tsukimoto_IMG20250416152836.jpg",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416152836.jpg",
+      "sha256": "5c75e5b0db3439a79a373b7012aee0bb5defeb0a8291a87ec45ea29f37137cd8",
+      "annotations": [
+        {
+          "transcription": "B1Sb30N-15",
+          "points": [
+            [
+              131,
+              552
+            ],
+            [
+              725,
+              552
+            ],
+            [
+              725,
+              434
+            ],
+            [
+              131,
+              434
+            ]
+          ],
+          "difficult": false
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "source_path": "train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+      "sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+      "annotations": [
+        {
+          "transcription": "B1Sb40N-37",
+          "points": [
+            [
+              363,
+              160
+            ],
+            [
+              498,
+              153
+            ],
+            [
+              502,
+              146
+            ],
+            [
+              368,
+              153
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb40N-23",
+          "points": [
+            [
+              410,
+              193
+            ],
+            [
+              599,
+              183
+            ],
+            [
+              598,
+              176
+            ],
+            [
+              413,
+              186
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb40N-15",
+          "points": [
+            [
+              431,
+              212
+            ],
+            [
+              639,
+              203
+            ],
+            [
+              636,
+              193
+            ],
+            [
+              438,
+              202
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb40N-27",
+          "points": [
+            [
+              338,
+              229
+            ],
+            [
+              534,
+              220
+            ],
+            [
+              534,
+              232
+            ],
+            [
+              327,
+              241
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb40N-8",
+          "points": [
+            [
+              457,
+              327
+            ],
+            [
+              727,
+              319
+            ],
+            [
+              721,
+              295
+            ],
+            [
+              461,
+              304
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb40N-26",
+          "points": [
+            [
+              185,
+              395
+            ],
+            [
+              494,
+              390
+            ],
+            [
+              502,
+              359
+            ],
+            [
+              200,
+              365
+            ]
+          ],
+          "difficult": false
+        },
+        {
+          "transcription": "B1Sb40N-9",
+          "points": [
+            [
+              395,
+              622
+            ],
+            [
+              919,
+              624
+            ],
+            [
+              884,
+              551
+            ],
+            [
+              417,
+              546
+            ]
+          ],
+          "difficult": false
+        }
+      ]
+    },
+    {
+      "id": "S09",
+      "source_path": "train_data/det/images/tsukimoto_IMG20250416152830.jpg",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416152830.jpg",
+      "sha256": "b80718bc06102291bfc7e095d26d4e82912757bf98bbf451609662bb01d9379f",
+      "annotations": [
+        {
+          "transcription": "B1Sb30N-16",
+          "points": [
+            [
+              123,
+              520
+            ],
+            [
+              713,
+              520
+            ],
+            [
+              713,
+              396
+            ],
+            [
+              123,
+              396
+            ]
+          ],
+          "difficult": false
+        }
+      ]
+    },
+    {
+      "id": "S10",
+      "source_path": "train_data/det/images/watanabe2_solo_008_B15b30N-20_0deg_N_yellow.JPG",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/watanabe2_solo_008_B15b30N-20_0deg_N_yellow.JPG",
+      "sha256": "1a9494099122f59037d23661e7bbbf7d92e6b6d6f71b249fd2501d244e94a5cc",
+      "annotations": [
+        {
+          "transcription": "B1Sb30N-20",
+          "points": [
+            [
+              59,
+              604
+            ],
+            [
+              665,
+              557
+            ],
+            [
+              645,
+              433
+            ],
+            [
+              59,
+              465
+            ]
+          ],
+          "difficult": true
+        }
+      ]
+    }
+  ]
+}

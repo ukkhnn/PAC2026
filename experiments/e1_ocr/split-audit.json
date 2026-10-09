@@ -1,0 +1,23 @@
+{
+  "checked_date": "2026-10-09",
+  "source_url": "https://huggingface.co/api/datasets/iput-tk230215/steel-ocr-dataset/revision/cc1d729fc0e9e78945ee63463ee7f6e3e8d1b395",
+  "revision": "cc1d729fc0e9e78945ee63463ee7f6e3e8d1b395",
+  "test_image_paths": [
+    "test_data/det/images/eval_IMG_0787.jpg",
+    "test_data/det/images/kamijo_IMG_1536.jpg",
+    "test_data/det/images/kamijo_IMG_1537.jpg",
+    "test_data/det/images/kamijo_IMG_1548.jpg",
+    "test_data/det/images/kamijo_IMG_1571.jpg",
+    "test_data/det/images/kanawa_IMG_0771.jpg",
+    "test_data/det/images/nakatani_IMG_0422.jpg",
+    "test_data/det/images/products_M5sb24-10.jpg",
+    "test_data/det/images/products_N5G15-X1Y1.jpg",
+    "test_data/det/images/tsukimoto_IMG20250416153020.jpg",
+    "test_data/det/images/tsukimoto_IMG20250416160821.jpg",
+    "test_data/det/images/watanabe2_bundle_multi_001_sunny_yellow.JPG",
+    "test_data/det/images/watanabe2_bundle_multi_008_yellow_green.JPG",
+    "test_data/det/images/watanabe2_pair_015_B15b30N-41__B15b30N-7A_45deg_NW_yellow.JPG"
+  ],
+  "selected_filename_overlap": [],
+  "limitation": "filename-only check; visual/near-duplicate independence not guaranteed"
+}

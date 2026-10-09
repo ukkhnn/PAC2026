@@ -1,0 +1,1080 @@
+[
+  {
+    "experiment": "E2-001",
+    "condition": "none",
+    "question_id": "Q1",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "none",
+    "question_id": "Q2",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "none",
+    "question_id": "Q3",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "none",
+    "question_id": "Q4",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "none",
+    "question_id": "Q5",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "none",
+    "question_id": "Q6",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "none",
+    "question_id": "Q7",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "none",
+    "question_id": "Q8",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "none",
+    "question_id": "Q9",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "full",
+    "question_id": "Q1",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "```json\n{\n  \"answer\": \"MAG welding\",\n  \"sources\": [\"D3\"]\n}\n```",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": true,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "full",
+    "question_id": "Q2",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_schema",
+      "raw_output": "[{\"answer\": \"tail\", \"sources\": [\"D2\"]}]",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": true,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "full",
+    "question_id": "Q3",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "[answer] Weld count",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "full",
+    "question_id": "Q4",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "full",
+    "question_id": "Q5",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "D1",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "full",
+    "question_id": "Q6",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "full",
+    "question_id": "Q7",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "full",
+    "question_id": "Q8",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "full",
+    "question_id": "Q9",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "bm25",
+    "question_id": "Q1",
+    "provided_ids": [
+      "D3",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "bm25",
+    "question_id": "Q2",
+    "provided_ids": [
+      "D2",
+      "D1"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "```json\n{\n  \"answer\": \"[D2]\",\n  \"sources\": [\"[D2]\"]\n}\n```",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "bm25",
+    "question_id": "Q3",
+    "provided_ids": [
+      "D4",
+      "D5"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "D4",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "bm25",
+    "question_id": "Q4",
+    "provided_ids": [
+      "D5",
+      "D1"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "bm25",
+    "question_id": "Q5",
+    "provided_ids": [
+      "D1"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "bm25",
+    "question_id": "Q6",
+    "provided_ids": [
+      "D6",
+      "D1"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "bm25",
+    "question_id": "Q7",
+    "provided_ids": [
+      "D6",
+      "D3"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "bm25",
+    "question_id": "Q8",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-001",
+    "condition": "bm25",
+    "question_id": "Q9",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "none",
+    "question_id": "Q1",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "none",
+    "question_id": "Q2",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN\n\nSources:\n\nID: 0",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "none",
+    "question_id": "Q3",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "none",
+    "question_id": "Q4",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "none",
+    "question_id": "Q5",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "none",
+    "question_id": "Q6",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "none",
+    "question_id": "Q7",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN\n\nSources:\n- Not provided",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "none",
+    "question_id": "Q8",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN\n\nSources:\n[id missing]",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "none",
+    "question_id": "Q9",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "full",
+    "question_id": "Q1",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "```json\n{\n  \"answer\": \"MAG welding\",\n  \"sources\": [\"D3\"]\n}\n```",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": true,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "full",
+    "question_id": "Q2",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "candidate",
+      "reason": "structure_and_source_ids_valid",
+      "raw_output": "{\"answer\": \"In the tail of its welding symbol\", \"sources\": [\"D2\"]}",
+      "execution_authorized": false,
+      "semantic_verified": false,
+      "parsed": {
+        "answer": "In the tail of its welding symbol",
+        "sources": [
+          "D2"
+        ]
+      }
+    },
+    "answerable": true,
+    "factual_correct": true,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "full",
+    "question_id": "Q3",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "```json\n{\n  \"answer\": \"Weld count, segment length, and spacing\",\n  \"sources\": [\"D4\"]\n}\n```",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": true,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "full",
+    "question_id": "Q4",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "candidate",
+      "reason": "structure_and_source_ids_valid",
+      "raw_output": "{\"answer\": \"A Z crossing the reference line indicates a staggered arrangement.\", \"sources\": [\"D5\"]}",
+      "execution_authorized": false,
+      "semantic_verified": false,
+      "parsed": {
+        "answer": "A Z crossing the reference line indicates a staggered arrangement.",
+        "sources": [
+          "D5"
+        ]
+      }
+    },
+    "answerable": true,
+    "factual_correct": true,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "full",
+    "question_id": "Q5",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "candidate",
+      "reason": "structure_and_source_ids_valid",
+      "raw_output": "{\"answer\": \"component surfaces\", \"sources\": [\"D1\"]}",
+      "execution_authorized": false,
+      "semantic_verified": false,
+      "parsed": {
+        "answer": "component surfaces",
+        "sources": [
+          "D1"
+        ]
+      }
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "full",
+    "question_id": "Q6",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_schema",
+      "raw_output": "[\"below\"]",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": true,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "full",
+    "question_id": "Q7",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "full",
+    "question_id": "Q8",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "full",
+    "question_id": "Q9",
+    "provided_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "bm25",
+    "question_id": "Q1",
+    "provided_ids": [
+      "D3",
+      "D6"
+    ],
+    "check": {
+      "status": "candidate",
+      "reason": "structure_and_source_ids_valid",
+      "raw_output": "{\"answer\": \"MAG welding\", \"sources\": [\"D3\"]}",
+      "execution_authorized": false,
+      "semantic_verified": false,
+      "parsed": {
+        "answer": "MAG welding",
+        "sources": [
+          "D3"
+        ]
+      }
+    },
+    "answerable": true,
+    "factual_correct": true,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "bm25",
+    "question_id": "Q2",
+    "provided_ids": [
+      "D2",
+      "D1"
+    ],
+    "check": {
+      "status": "candidate",
+      "reason": "structure_and_source_ids_valid",
+      "raw_output": "{\"answer\": \"in the tail of its welding symbol\", \"sources\": [\"D2\"]}",
+      "execution_authorized": false,
+      "semantic_verified": false,
+      "parsed": {
+        "answer": "in the tail of its welding symbol",
+        "sources": [
+          "D2"
+        ]
+      }
+    },
+    "answerable": true,
+    "factual_correct": true,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "bm25",
+    "question_id": "Q3",
+    "provided_ids": [
+      "D4",
+      "D5"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "[\"Numbers to the right of a welding symbol describe longitudinal dimensions.\" - D4]",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "bm25",
+    "question_id": "Q4",
+    "provided_ids": [
+      "D5",
+      "D1"
+    ],
+    "check": {
+      "status": "candidate",
+      "reason": "structure_and_source_ids_valid",
+      "raw_output": "{\"answer\": \"A staggered arrangement\", \"sources\": [\"D5\"]}",
+      "execution_authorized": false,
+      "semantic_verified": false,
+      "parsed": {
+        "answer": "A staggered arrangement",
+        "sources": [
+          "D5"
+        ]
+      }
+    },
+    "answerable": true,
+    "factual_correct": true,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "bm25",
+    "question_id": "Q5",
+    "provided_ids": [
+      "D1"
+    ],
+    "check": {
+      "status": "candidate",
+      "reason": "structure_and_source_ids_valid",
+      "raw_output": "{\"answer\": \"the component surfaces\", \"sources\": [\"D1\"]}",
+      "execution_authorized": false,
+      "semantic_verified": false,
+      "parsed": {
+        "answer": "the component surfaces",
+        "sources": [
+          "D1"
+        ]
+      }
+    },
+    "answerable": true,
+    "factual_correct": false,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "bm25",
+    "question_id": "Q6",
+    "provided_ids": [
+      "D6",
+      "D1"
+    ],
+    "check": {
+      "status": "candidate",
+      "reason": "structure_and_source_ids_valid",
+      "raw_output": "{\"answer\": \"below the reference line\", \"sources\": [\"D6\"]}",
+      "execution_authorized": false,
+      "semantic_verified": false,
+      "parsed": {
+        "answer": "below the reference line",
+        "sources": [
+          "D6"
+        ]
+      }
+    },
+    "answerable": true,
+    "factual_correct": true,
+    "correct_abstention": null
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "bm25",
+    "question_id": "Q7",
+    "provided_ids": [
+      "D6",
+      "D3"
+    ],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "bm25",
+    "question_id": "Q8",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN\n\nSources:\n[id missing]",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  },
+  {
+    "experiment": "E2-002",
+    "condition": "bm25",
+    "question_id": "Q9",
+    "provided_ids": [],
+    "check": {
+      "status": "review_required",
+      "reason": "invalid_json",
+      "raw_output": "UNKNOWN",
+      "execution_authorized": false,
+      "semantic_verified": false
+    },
+    "answerable": false,
+    "factual_correct": null,
+    "correct_abstention": true
+  }
+]

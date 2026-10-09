@@ -1,0 +1,17 @@
+{
+  "finished_at": "2026-10-09T02:01:34.472431+09:00",
+  "python": "3.11.9",
+  "os": "26.5.1",
+  "manifest_sha256": "442a55a307d7796b71f5a2a51de18457412aeb71efca00ed4510804d81262bbe",
+  "source_sha256": {
+    "e1_alternative/run_alternative.py": "8e956e2f96eb5e6d3a7753a3a59c220b0bb9a4889da5090f72a5ab0bb2b13083",
+    "e1_alternative/PROTOCOL.md": "193da854f72b924d67304ffb5f07b1f9f8c89b56938ae78556aad64b79884fd3",
+    "e1_ocr/run.py": "de19c043e283e914c9fab97f46682f492a6d257f984ca38edeaf523dda784885",
+    "e1_ocr/score.py": "54c65e02c9cf29cec555a70df286308bec9950d0d7e858cb7c9bcad57d2ac2be"
+  },
+  "models": {
+    "PP-OCRv6_det_small.onnx": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+    "PP-OCRv6_rec_small.onnx": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+    "ch_ppocr_mobile_v2.0_cls_mobile.onnx": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c"
+  }
+}

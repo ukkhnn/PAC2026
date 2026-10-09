@@ -1,0 +1,276 @@
+{
+  "rotation0": {
+    "image_count": 10,
+    "label_count": 28,
+    "excluded_labels": 1,
+    "engine": {
+      "engine": "Apple Vision VNRecognizeTextRequest",
+      "languages": [
+        "en-US"
+      ],
+      "minimumTextHeight": 0,
+      "os": "Version 26.5.1 (Build 25F80)",
+      "recognitionLevel": "accurate",
+      "revision": 3,
+      "usesLanguageCorrection": false
+    },
+    "conditions": {
+      "full": {
+        "localized": 18,
+        "raw_exact": 0,
+        "normalized_exact": 0,
+        "top3_exact": 0,
+        "edit_count": 206,
+        "reference_characters": 280,
+        "cer": 0.7357142857142858,
+        "ocr_calls": 10,
+        "error_count": 0,
+        "unassigned_observations": 18,
+        "ocr_seconds_total": 1.7629044167115353,
+        "ocr_seconds_median": 0.1280127708305372,
+        "ocr_seconds_first": 0.5546253333450295,
+        "per_image": {
+          "S01": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S02": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S03": {
+            "exact": 0,
+            "labels": 4
+          },
+          "S04": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S05": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S06": {
+            "exact": 0,
+            "labels": 11
+          },
+          "S07": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S08": {
+            "exact": 0,
+            "labels": 7
+          },
+          "S09": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S10": {
+            "exact": 0,
+            "labels": 0
+          }
+        }
+      },
+      "crop": {
+        "localized": 17,
+        "raw_exact": 0,
+        "normalized_exact": 0,
+        "top3_exact": 0,
+        "edit_count": 205,
+        "reference_characters": 280,
+        "cer": 0.7321428571428571,
+        "ocr_calls": 28,
+        "error_count": 0,
+        "unassigned_observations": 1,
+        "ocr_seconds_total": 0.9613354583561886,
+        "ocr_seconds_median": 0.026527541660470888,
+        "ocr_seconds_first": 0.09196824999526143,
+        "per_image": {
+          "S01": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S02": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S03": {
+            "exact": 0,
+            "labels": 4
+          },
+          "S04": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S05": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S06": {
+            "exact": 0,
+            "labels": 11
+          },
+          "S07": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S08": {
+            "exact": 0,
+            "labels": 7
+          },
+          "S09": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S10": {
+            "exact": 0,
+            "labels": 0
+          }
+        }
+      }
+    }
+  },
+  "rotation_pool": {
+    "image_count": 10,
+    "label_count": 28,
+    "excluded_labels": 1,
+    "engine": {
+      "engine": "Apple Vision VNRecognizeTextRequest",
+      "languages": [
+        "en-US"
+      ],
+      "minimumTextHeight": 0,
+      "os": "Version 26.5.1 (Build 25F80)",
+      "recognitionLevel": "accurate",
+      "revision": 3,
+      "usesLanguageCorrection": false
+    },
+    "conditions": {
+      "full": {
+        "localized": 20,
+        "raw_exact": 0,
+        "normalized_exact": 0,
+        "top3_exact": 0,
+        "edit_count": 202,
+        "reference_characters": 280,
+        "cer": 0.7214285714285714,
+        "ocr_calls": 10,
+        "error_count": 0,
+        "unassigned_observations": 22,
+        "ocr_seconds_total": 6.204086875048233,
+        "ocr_seconds_median": 0.5401688541678595,
+        "ocr_seconds_first": 1.0335082083474845,
+        "per_image": {
+          "S01": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S02": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S03": {
+            "exact": 0,
+            "labels": 4
+          },
+          "S04": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S05": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S06": {
+            "exact": 0,
+            "labels": 11
+          },
+          "S07": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S08": {
+            "exact": 0,
+            "labels": 7
+          },
+          "S09": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S10": {
+            "exact": 0,
+            "labels": 0
+          }
+        },
+        "all_candidates_exact": 0,
+        "ambiguous_targets": 18,
+        "mean_candidates_per_target": 2.2142857142857144,
+        "max_candidates": 4,
+        "actual_ocr_calls": 40
+      },
+      "crop": {
+        "localized": 20,
+        "raw_exact": 0,
+        "normalized_exact": 0,
+        "top3_exact": 0,
+        "edit_count": 201,
+        "reference_characters": 280,
+        "cer": 0.7178571428571429,
+        "ocr_calls": 28,
+        "error_count": 0,
+        "unassigned_observations": 2,
+        "ocr_seconds_total": 3.745254833382205,
+        "ocr_seconds_median": 0.09995922915550182,
+        "ocr_seconds_first": 0.34144045831635594,
+        "per_image": {
+          "S01": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S02": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S03": {
+            "exact": 0,
+            "labels": 4
+          },
+          "S04": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S05": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S06": {
+            "exact": 0,
+            "labels": 11
+          },
+          "S07": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S08": {
+            "exact": 0,
+            "labels": 7
+          },
+          "S09": {
+            "exact": 0,
+            "labels": 1
+          },
+          "S10": {
+            "exact": 0,
+            "labels": 0
+          }
+        },
+        "all_candidates_exact": 0,
+        "ambiguous_targets": 15,
+        "mean_candidates_per_target": 2.107142857142857,
+        "max_candidates": 5,
+        "actual_ocr_calls": 112
+      }
+    }
+  }
+}

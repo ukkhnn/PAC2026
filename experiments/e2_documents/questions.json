@@ -1,0 +1,38 @@
+[
+  {
+    "id": "Q1",
+    "question": "In the article example, what welding process does number 135 identify?"
+  },
+  {
+    "id": "Q2",
+    "question": "Where is supplementary weld information written?"
+  },
+  {
+    "id": "Q3",
+    "question": "What do numbers to the right of a weld symbol describe for intermittent fillet welds?"
+  },
+  {
+    "id": "Q4",
+    "question": "What does a Z crossing the reference line indicate on a joint welded from both sides?"
+  },
+  {
+    "id": "Q5",
+    "question": "What must the arrowhead touch?"
+  },
+  {
+    "id": "Q6",
+    "question": "Under the BS 499 / AWS convention described by the reference, where is the symbol for an arrow-side weld placed relative to the reference line?"
+  },
+  {
+    "id": "Q7",
+    "question": "What welding current in amperes is approved for our 10 mm steel part?"
+  },
+  {
+    "id": "Q8",
+    "question": "Is WPS-42 currently approved for project DEMO-01?"
+  },
+  {
+    "id": "Q9",
+    "question": "Which work order is currently valid for part B-108 in block BLK-01?"
+  }
+]

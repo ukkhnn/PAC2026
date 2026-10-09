@@ -1,0 +1,132 @@
+{
+  "image_count": 10,
+  "label_count": 28,
+  "excluded_labels": 1,
+  "engine": {
+    "engine": "Apple Vision VNRecognizeTextRequest",
+    "languages": [
+      "en-US"
+    ],
+    "minimumTextHeight": 0,
+    "os": "Version 26.5.1 (Build 25F80)",
+    "recognitionLevel": "accurate",
+    "revision": 3,
+    "usesLanguageCorrection": false
+  },
+  "conditions": {
+    "full": {
+      "localized": 18,
+      "raw_exact": 0,
+      "normalized_exact": 0,
+      "top3_exact": 0,
+      "edit_count": 206,
+      "reference_characters": 280,
+      "cer": 0.7357142857142858,
+      "ocr_calls": 10,
+      "error_count": 0,
+      "unassigned_observations": 18,
+      "ocr_seconds_total": 3.735802874987712,
+      "ocr_seconds_median": 0.2577583541642525,
+      "ocr_seconds_first": 1.4976717499957886,
+      "per_image": {
+        "S01": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S02": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S03": {
+          "exact": 0,
+          "labels": 4
+        },
+        "S04": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S05": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S06": {
+          "exact": 0,
+          "labels": 11
+        },
+        "S07": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S08": {
+          "exact": 0,
+          "labels": 7
+        },
+        "S09": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S10": {
+          "exact": 0,
+          "labels": 0
+        }
+      }
+    },
+    "crop": {
+      "localized": 17,
+      "raw_exact": 0,
+      "normalized_exact": 0,
+      "top3_exact": 0,
+      "edit_count": 205,
+      "reference_characters": 280,
+      "cer": 0.7321428571428571,
+      "ocr_calls": 28,
+      "error_count": 0,
+      "unassigned_observations": 1,
+      "ocr_seconds_total": 2.1794287499942584,
+      "ocr_seconds_median": 0.05509993749728892,
+      "ocr_seconds_first": 0.2844772916578222,
+      "per_image": {
+        "S01": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S02": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S03": {
+          "exact": 0,
+          "labels": 4
+        },
+        "S04": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S05": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S06": {
+          "exact": 0,
+          "labels": 11
+        },
+        "S07": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S08": {
+          "exact": 0,
+          "labels": 7
+        },
+        "S09": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S10": {
+          "exact": 0,
+          "labels": 0
+        }
+      }
+    }
+  }
+}

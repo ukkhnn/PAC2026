@@ -1,0 +1,15 @@
+{
+  "manifest.json": "442a55a307d7796b71f5a2a51de18457412aeb71efca00ed4510804d81262bbe",
+  "split-audit.json": "b0f3a93ee57c6d9e6f2716dd3d6c16922f1be312aff0088bfde6465d6dcbcc63",
+  "prepare.py": "14a55c19f283d3787dac72c837fbc978c73ffdadd036720a0a8b0145ab7a4f78",
+  "vision.swift": "57ed045b706e0f89a6969259d306a2fbe01ccbb88e966bbd016b51c604507763",
+  "run.py": "de19c043e283e914c9fab97f46682f492a6d257f984ca38edeaf523dda784885",
+  "score.py": "54c65e02c9cf29cec555a70df286308bec9950d0d7e858cb7c9bcad57d2ac2be",
+  "PROTOCOL.md": "0242ead75509febb13ea3ef23264d32be06444c27c26822657363a7ca6192cb0",
+  "results/cases.json": "68039685a92db4d8d582839eeaf63b2ae6aebd9df4c05e44a9f1a64aa2e2c449",
+  "results/control-raw.json": "fa8b717ce7929e1fbbcabedfdb38042b5811d3610f363ceebc95a95fd994d1ac",
+  "results/control.json": "4a9fc00ed1b30fd6eb98e2fdf4936afbadba6f89b74c562be409a9e9d0dc7b9e",
+  "results/environment.json": "61192f0129d65e285918b469d27ce48ac13c073cc229e703e0189506060792aa",
+  "results/raw.json": "b8db7713af9fd0d94bc62599263b0ebb7c0cb7d3bf77b3019bbafdd64456092b",
+  "results/summary.json": "467faec6e174dcb7bd4b0a84371977c862aa252b3c6c2bbcf0c422a773370627"
+}

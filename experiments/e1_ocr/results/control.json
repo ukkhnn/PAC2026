@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "score": {
+    "prediction": "ABC123 B-108",
+    "candidates": [
+      {
+        "confidence": 1,
+        "text": "ABC123 B-108"
+      }
+    ],
+    "localized": true,
+    "raw_exact": true,
+    "normalized_exact": true,
+    "top3_exact": true,
+    "edits": 0,
+    "characters": 12
+  },
+  "provenance": {
+    "kind": "synthetic_printed_text",
+    "purpose": "engine and coordinate sanity check only; excluded from E1 metrics",
+    "expected": "ABC123 B-108",
+    "font": "/System/Library/Fonts/Monaco.ttf",
+    "font_size": 80,
+    "draw_origin": [
+      70,
+      70
+    ],
+    "text_bbox": [
+      70,
+      87,
+      646,
+      152
+    ],
+    "size": [
+      900,
+      250
+    ]
+  }
+}

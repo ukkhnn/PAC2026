@@ -1,0 +1,10 @@
+# 원본 공개 자료, 파생 이미지와 재실행 출력은 로컬에 보존한다.
+e1_ocr/inputs/
+e1_ocr/runs/
+e1_ocr/.build/
+
+# 후속 실험의 로컬 입력·실행·격리 환경
+*/inputs/
+*/runs/
+*/.build/
+.runtime/

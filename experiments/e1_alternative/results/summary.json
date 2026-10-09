@@ -1,0 +1,127 @@
+{
+  "image_count": 10,
+  "label_count": 28,
+  "excluded_labels": 1,
+  "engine": {
+    "engine": "RapidOCR",
+    "version": "3.10.0",
+    "onnxruntime": "1.30.0",
+    "device": "CPU"
+  },
+  "conditions": {
+    "full": {
+      "localized": 21,
+      "raw_exact": 1,
+      "normalized_exact": 1,
+      "top3_exact": 1,
+      "edit_count": 162,
+      "reference_characters": 280,
+      "cer": 0.5785714285714286,
+      "ocr_calls": 10,
+      "error_count": 0,
+      "unassigned_observations": 21,
+      "ocr_seconds_total": 29.38354579199222,
+      "ocr_seconds_median": 2.067893750499934,
+      "ocr_seconds_first": 7.028982582996832,
+      "per_image": {
+        "S01": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S02": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S03": {
+          "exact": 0,
+          "labels": 4
+        },
+        "S04": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S05": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S06": {
+          "exact": 0,
+          "labels": 11
+        },
+        "S07": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S08": {
+          "exact": 1,
+          "labels": 7
+        },
+        "S09": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S10": {
+          "exact": 0,
+          "labels": 0
+        }
+      }
+    },
+    "crop": {
+      "localized": 6,
+      "raw_exact": 0,
+      "normalized_exact": 0,
+      "top3_exact": 0,
+      "edit_count": 238,
+      "reference_characters": 280,
+      "cer": 0.85,
+      "ocr_calls": 28,
+      "error_count": 0,
+      "unassigned_observations": 1,
+      "ocr_seconds_total": 167.5498196240078,
+      "ocr_seconds_median": 4.127472874999512,
+      "ocr_seconds_first": 4.940855999986525,
+      "per_image": {
+        "S01": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S02": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S03": {
+          "exact": 0,
+          "labels": 4
+        },
+        "S04": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S05": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S06": {
+          "exact": 0,
+          "labels": 11
+        },
+        "S07": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S08": {
+          "exact": 0,
+          "labels": 7
+        },
+        "S09": {
+          "exact": 0,
+          "labels": 1
+        },
+        "S10": {
+          "exact": 0,
+          "labels": 0
+        }
+      }
+    }
+  }
+}

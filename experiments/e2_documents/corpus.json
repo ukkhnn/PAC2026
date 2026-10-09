@@ -1,0 +1,62 @@
+[
+  {
+    "id": "D1",
+    "title": "Arrow and reference line",
+    "text": "The basic welding-symbol arrangement includes an arrow line with an arrowhead and a reference line. The arrowhead touches the component surfaces at the intended weld location.",
+    "source_url": "https://www.twi-global.com/technical-knowledge/job-knowledge/weld-symbols",
+    "source_section": "Basic Requirements",
+    "source_date": "2020-04-27",
+    "retrieved_date": "2026-10-09",
+    "kind": "experiment_authored_paraphrase"
+  },
+  {
+    "id": "D2",
+    "title": "Supplementary information",
+    "text": "Extra details about a weld can be written in the tail of its welding symbol.",
+    "source_url": "https://www.twi-global.com/technical-knowledge/job-knowledge/weld-symbols",
+    "source_section": "Supplementary Symbols",
+    "source_date": "2020-04-27",
+    "retrieved_date": "2026-10-09",
+    "kind": "experiment_authored_paraphrase"
+  },
+  {
+    "id": "D3",
+    "title": "Process number example",
+    "text": "Welding-process identifiers can appear in the symbol tail. In the example discussed by the article, process number 135 denotes MAG welding.",
+    "source_url": "https://www.twi-global.com/technical-knowledge/job-knowledge/weld-symbols",
+    "source_section": "Welding Process Type",
+    "source_date": "2020-04-27",
+    "retrieved_date": "2026-10-09",
+    "kind": "experiment_authored_paraphrase"
+  },
+  {
+    "id": "D4",
+    "title": "Intermittent fillet dimensions",
+    "text": "Numbers to the right of a welding symbol describe longitudinal dimensions. For intermittent fillet welds these include weld count, segment length, and spacing.",
+    "source_url": "https://www.twi-global.com/technical-knowledge/job-knowledge/weld-symbols",
+    "source_section": "Joint and/or weld shape",
+    "source_date": "2020-04-27",
+    "retrieved_date": "2026-10-09",
+    "kind": "experiment_authored_paraphrase"
+  },
+  {
+    "id": "D5",
+    "title": "Staggered fillet arrangement",
+    "text": "For fillet welds on both faces of a joint, a Z crossing the reference line indicates a staggered arrangement.",
+    "source_url": "https://www.twi-global.com/technical-knowledge/job-knowledge/weld-symbols",
+    "source_section": "Joint and/or weld shape",
+    "source_date": "2020-04-27",
+    "retrieved_date": "2026-10-09",
+    "kind": "experiment_authored_paraphrase"
+  },
+  {
+    "id": "D6",
+    "title": "Side convention in the historical review",
+    "text": "The article describes BS 499 and AWS notation with symbols below the reference line for the arrow side and above it for the other side. This is a 2020 explanatory review, not the current standard text.",
+    "source_url": "https://www.twi-global.com/technical-knowledge/job-knowledge/weld-symbols",
+    "source_section": "The Broken Reference Line",
+    "source_date": "2020-04-27",
+    "retrieved_date": "2026-10-09",
+    "kind": "experiment_authored_paraphrase"
+  }
+]

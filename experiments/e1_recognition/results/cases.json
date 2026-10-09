@@ -1,0 +1,3091 @@
+[
+  {
+    "id": "S01-R00",
+    "image_id": "S01",
+    "expected": "B1Sb30N-56",
+    "source_path": "train_data/det/images/kanawa_IMG_0772.jpg",
+    "image_size": [
+      960,
+      720
+    ],
+    "source_sha256": "92dced68e6c58ea172936d160547eecfead98c9af6a7e36703869c33a6fa8ecc",
+    "polygon": [
+      [
+        28,
+        377
+      ],
+      [
+        936,
+        377
+      ],
+      [
+        936,
+        590
+      ],
+      [
+        28,
+        590
+      ]
+    ],
+    "full_bbox": [
+      0.029166666666666667,
+      0.5236111111111111,
+      0.975,
+      0.8194444444444444
+    ],
+    "crop_pixels": [
+      0,
+      366,
+      960,
+      601
+    ],
+    "crop_bbox": [
+      0.029166666666666667,
+      0.04680851063829787,
+      0.975,
+      0.9531914893617022
+    ],
+    "crop_sha256": "469e9adbd018011bc699d665ed12eec6a4484341e009e35d127173371a229b0d",
+    "zero": {
+      "prediction": "BISb30N-56",
+      "candidates": [
+        {
+          "text": "BISb30N-56",
+          "confidence": 0.90065,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BISb30N-56",
+      "candidates": [
+        {
+          "text": "BISb30N-56",
+          "confidence": 0.90065,
+          "angle": 0
+        },
+        {
+          "text": "9S-NE9S/S",
+          "confidence": 0.65231,
+          "angle": 180
+        },
+        {
+          "text": "20",
+          "confidence": 0.48638,
+          "angle": 90
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BISb30N-56",
+        "confidence": 0.90065,
+        "angle": 0
+      },
+      {
+        "text": "9S-NE9S/S",
+        "confidence": 0.65231,
+        "angle": 180
+      },
+      {
+        "text": "20",
+        "confidence": 0.48638,
+        "angle": 90
+      },
+      {
+        "text": "21",
+        "confidence": 0.16554,
+        "angle": 270
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S02-R00",
+    "image_id": "S02",
+    "expected": "B1Sb30N-58",
+    "source_path": "train_data/det/images/kanawa_IMG_0770.jpg",
+    "image_size": [
+      960,
+      720
+    ],
+    "source_sha256": "56180af3d6a82af02e88d1ef0e5ab3b8617bf03610299dfd71e1c2ae3ff55aed",
+    "polygon": [
+      [
+        937,
+        429
+      ],
+      [
+        35,
+        429
+      ],
+      [
+        35,
+        271
+      ],
+      [
+        937,
+        271
+      ]
+    ],
+    "full_bbox": [
+      0.036458333333333336,
+      0.3763888888888889,
+      0.9760416666666667,
+      0.5958333333333333
+    ],
+    "crop_pixels": [
+      0,
+      263,
+      960,
+      437
+    ],
+    "crop_bbox": [
+      0.036458333333333336,
+      0.04597701149425287,
+      0.9760416666666667,
+      0.9540229885057471
+    ],
+    "crop_sha256": "52e3b396d96d45027cad3562d71abbfb70677f299a3ad78750f7961d08825f61",
+    "zero": {
+      "prediction": "BISb3ON-58",
+      "candidates": [
+        {
+          "text": "BISb3ON-58",
+          "confidence": 0.97329,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 2,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BISb3ON-58",
+      "candidates": [
+        {
+          "text": "BISb3ON-58",
+          "confidence": 0.97329,
+          "angle": 0
+        },
+        {
+          "text": "I6-58",
+          "confidence": 0.52569,
+          "angle": 180
+        },
+        {
+          "text": "2",
+          "confidence": 0.27792,
+          "angle": 270
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 2,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BISb3ON-58",
+        "confidence": 0.97329,
+        "angle": 0
+      },
+      {
+        "text": "I6-58",
+        "confidence": 0.52569,
+        "angle": 180
+      },
+      {
+        "text": "2",
+        "confidence": 0.27792,
+        "angle": 270
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S03-R00",
+    "image_id": "S03",
+    "expected": "B1Sb30N-34",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+    "polygon": [
+      [
+        309,
+        679
+      ],
+      [
+        382,
+        679
+      ],
+      [
+        382,
+        427
+      ],
+      [
+        309,
+        427
+      ]
+    ],
+    "full_bbox": [
+      0.42916666666666664,
+      0.44479166666666664,
+      0.5305555555555556,
+      0.7072916666666667
+    ],
+    "crop_pixels": [
+      305,
+      414,
+      386,
+      692
+    ],
+    "crop_bbox": [
+      0.04938271604938271,
+      0.046762589928057555,
+      0.9506172839506173,
+      0.9532374100719424
+    ],
+    "crop_sha256": "f5f9fd945e794bf9fee9ed412b67e6b440409ef185d7fe347b3eed2d584e8b5d",
+    "zero": {
+      "prediction": "五0",
+      "candidates": [
+        {
+          "text": "五0",
+          "confidence": 0.36298,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 9,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BISb30N-34",
+      "candidates": [
+        {
+          "text": "BISb30N-34",
+          "confidence": 0.98489,
+          "angle": 270
+        },
+        {
+          "text": "B1E E4",
+          "confidence": 0.56661,
+          "angle": 90
+        },
+        {
+          "text": "20",
+          "confidence": 0.43507,
+          "angle": 180
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BISb30N-34",
+        "confidence": 0.98489,
+        "angle": 270
+      },
+      {
+        "text": "B1E E4",
+        "confidence": 0.56661,
+        "angle": 90
+      },
+      {
+        "text": "20",
+        "confidence": 0.43507,
+        "angle": 180
+      },
+      {
+        "text": "五0",
+        "confidence": 0.36298,
+        "angle": 0
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S03-R01",
+    "image_id": "S03",
+    "expected": "B1Sb30N-12",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+    "polygon": [
+      [
+        402,
+        633
+      ],
+      [
+        480,
+        633
+      ],
+      [
+        480,
+        340
+      ],
+      [
+        402,
+        340
+      ]
+    ],
+    "full_bbox": [
+      0.5583333333333333,
+      0.3541666666666667,
+      0.6666666666666666,
+      0.659375
+    ],
+    "crop_pixels": [
+      398,
+      325,
+      484,
+      648
+    ],
+    "crop_bbox": [
+      0.046511627906976744,
+      0.04643962848297214,
+      0.9534883720930233,
+      0.9535603715170279
+    ],
+    "crop_sha256": "7e6a20c3ebeaee4bf90484f2e8c188ae4fda1d62f8619760a49548c9847fbc28",
+    "zero": {
+      "prediction": "2",
+      "candidates": [
+        {
+          "text": "2",
+          "confidence": 0.31259,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 9,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BIS63ON-12",
+      "candidates": [
+        {
+          "text": "BIS63ON-12",
+          "confidence": 0.87086,
+          "angle": 90
+        },
+        {
+          "text": "2",
+          "confidence": 0.53335,
+          "angle": 180
+        },
+        {
+          "text": "C-NEISIC",
+          "confidence": 0.46138,
+          "angle": 270
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 3,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BIS63ON-12",
+        "confidence": 0.87086,
+        "angle": 90
+      },
+      {
+        "text": "2",
+        "confidence": 0.53335,
+        "angle": 180
+      },
+      {
+        "text": "C-NEISIC",
+        "confidence": 0.46138,
+        "angle": 270
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S03-R02",
+    "image_id": "S03",
+    "expected": "B1Sb30N-13",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+    "polygon": [
+      [
+        568,
+        588
+      ],
+      [
+        630,
+        588
+      ],
+      [
+        630,
+        800
+      ],
+      [
+        568,
+        800
+      ]
+    ],
+    "full_bbox": [
+      0.7888888888888889,
+      0.6125,
+      0.875,
+      0.8333333333333334
+    ],
+    "crop_pixels": [
+      564,
+      577,
+      634,
+      811
+    ],
+    "crop_bbox": [
+      0.05714285714285714,
+      0.04700854700854701,
+      0.9428571428571428,
+      0.9529914529914529
+    ],
+    "crop_sha256": "929150d4e75a78f8a8efc388d53737ed478d9f9d76d614d73d7ab43c3ce8d1f3",
+    "zero": {
+      "prediction": "",
+      "candidates": [
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 10,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BIS630N-13",
+      "candidates": [
+        {
+          "text": "BIS630N-13",
+          "confidence": 0.96074,
+          "angle": 270
+        },
+        {
+          "text": "B1-IE",
+          "confidence": 0.58286,
+          "angle": 90
+        },
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 2,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BIS630N-13",
+        "confidence": 0.96074,
+        "angle": 270
+      },
+      {
+        "text": "B1-IE",
+        "confidence": 0.58286,
+        "angle": 90
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S03-R03",
+    "image_id": "S03",
+    "expected": "B1Sb30N-13A",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+    "polygon": [
+      [
+        520,
+        885
+      ],
+      [
+        509,
+        644
+      ],
+      [
+        477,
+        644
+      ],
+      [
+        474,
+        882
+      ]
+    ],
+    "full_bbox": [
+      0.6583333333333333,
+      0.6708333333333333,
+      0.7222222222222222,
+      0.921875
+    ],
+    "crop_pixels": [
+      471,
+      631,
+      523,
+      898
+    ],
+    "crop_bbox": [
+      0.057692307692307696,
+      0.04868913857677903,
+      0.9423076923076923,
+      0.951310861423221
+    ],
+    "crop_sha256": "abafc1f9c2b71f7ba96410de17573ce7624609b061d2147ed60ecf2636925746",
+    "zero": {
+      "prediction": "",
+      "candidates": [
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 11,
+      "characters": 11
+    },
+    "selected": {
+      "prediction": "B15b30N-3A",
+      "candidates": [
+        {
+          "text": "B15b30N-3A",
+          "confidence": 0.8091,
+          "angle": 270
+        },
+        {
+          "text": "BE1NOE9S1E",
+          "confidence": 0.71706,
+          "angle": 90
+        },
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 2,
+      "characters": 11
+    },
+    "candidates": [
+      {
+        "text": "B15b30N-3A",
+        "confidence": 0.8091,
+        "angle": 270
+      },
+      {
+        "text": "BE1NOE9S1E",
+        "confidence": 0.71706,
+        "angle": 90
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S04-R00",
+    "image_id": "S04",
+    "expected": "B1Sb30N-15",
+    "source_path": "train_data/det/images/kamijo_IMG_1560.jpg",
+    "image_size": [
+      960,
+      720
+    ],
+    "source_sha256": "5019aa229dab80e079704d210502b19336e30bc48610f0d188f5e9f5fe43b27c",
+    "polygon": [
+      [
+        682,
+        294
+      ],
+      [
+        340,
+        294
+      ],
+      [
+        340,
+        357
+      ],
+      [
+        682,
+        357
+      ]
+    ],
+    "full_bbox": [
+      0.3541666666666667,
+      0.4083333333333333,
+      0.7104166666666667,
+      0.49583333333333335
+    ],
+    "crop_pixels": [
+      322,
+      290,
+      700,
+      361
+    ],
+    "crop_bbox": [
+      0.047619047619047616,
+      0.056338028169014086,
+      0.9523809523809523,
+      0.9436619718309859
+    ],
+    "crop_sha256": "734e793f2d8a1daa0ba614ca2a3fa2fcb4dab326e67442ff7e2dd5682ae062a5",
+    "zero": {
+      "prediction": "BI--IS",
+      "candidates": [
+        {
+          "text": "BI--IS",
+          "confidence": 0.63352,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 8,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BISb30N-15",
+      "candidates": [
+        {
+          "text": "BISb30N-15",
+          "confidence": 0.99666,
+          "angle": 180
+        },
+        {
+          "text": "BI--IS",
+          "confidence": 0.63352,
+          "angle": 0
+        },
+        {
+          "text": "20",
+          "confidence": 0.28208,
+          "angle": 90
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BISb30N-15",
+        "confidence": 0.99666,
+        "angle": 180
+      },
+      {
+        "text": "BI--IS",
+        "confidence": 0.63352,
+        "angle": 0
+      },
+      {
+        "text": "20",
+        "confidence": 0.28208,
+        "angle": 90
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S05-R00",
+    "image_id": "S05",
+    "expected": "B1Sb30N-29",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416152847.jpg",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "4ccda788e2a4f9958146cf1906218efbf73bba26e9dc86ed0918480294b91b00",
+    "polygon": [
+      [
+        295,
+        185
+      ],
+      [
+        420,
+        185
+      ],
+      [
+        420,
+        820
+      ],
+      [
+        295,
+        820
+      ]
+    ],
+    "full_bbox": [
+      0.4097222222222222,
+      0.19270833333333334,
+      0.5833333333333334,
+      0.8541666666666666
+    ],
+    "crop_pixels": [
+      288,
+      153,
+      427,
+      852
+    ],
+    "crop_bbox": [
+      0.050359712230215826,
+      0.045779685264663805,
+      0.9496402877697842,
+      0.9542203147353362
+    ],
+    "crop_sha256": "970ec0d1acb7cf93dcc069a1c75e77f17098c38cc38f423fdc4ed416268e537d",
+    "zero": {
+      "prediction": "20",
+      "candidates": [
+        {
+          "text": "20",
+          "confidence": 0.35524,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 9,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BISb30N-29",
+      "candidates": [
+        {
+          "text": "BISb30N-29",
+          "confidence": 0.98304,
+          "angle": 90
+        },
+        {
+          "text": "BISBS2Z",
+          "confidence": 0.65888,
+          "angle": 270
+        },
+        {
+          "text": "20",
+          "confidence": 0.53062,
+          "angle": 180
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BISb30N-29",
+        "confidence": 0.98304,
+        "angle": 90
+      },
+      {
+        "text": "BISBS2Z",
+        "confidence": 0.65888,
+        "angle": 270
+      },
+      {
+        "text": "20",
+        "confidence": 0.53062,
+        "angle": 180
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S06-R00",
+    "image_id": "S06",
+    "expected": "B1Sb30N-36",
+    "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+    "polygon": [
+      [
+        91,
+        374
+      ],
+      [
+        129,
+        366
+      ],
+      [
+        134,
+        270
+      ],
+      [
+        104,
+        277
+      ]
+    ],
+    "full_bbox": [
+      0.12638888888888888,
+      0.28125,
+      0.18611111111111112,
+      0.38958333333333334
+    ],
+    "crop_pixels": [
+      88,
+      264,
+      137,
+      380
+    ],
+    "crop_bbox": [
+      0.061224489795918366,
+      0.05172413793103448,
+      0.9387755102040817,
+      0.9482758620689655
+    ],
+    "crop_sha256": "46fd7d51e909bf99dfd3643e19c1c5e4408c1394904778f01730ddf57738e40a",
+    "zero": {
+      "prediction": "",
+      "candidates": [
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 10,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "Bisb3eN-36",
+      "candidates": [
+        {
+          "text": "Bisb3eN-36",
+          "confidence": 0.75843,
+          "angle": 90
+        },
+        {
+          "text": "A会",
+          "confidence": 0.29279,
+          "angle": 180
+        },
+        {
+          "text": "P5O-E",
+          "confidence": 0.28685,
+          "angle": 270
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 2,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "Bisb3eN-36",
+        "confidence": 0.75843,
+        "angle": 90
+      },
+      {
+        "text": "A会",
+        "confidence": 0.29279,
+        "angle": 180
+      },
+      {
+        "text": "P5O-E",
+        "confidence": 0.28685,
+        "angle": 270
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S06-R01",
+    "image_id": "S06",
+    "expected": "B1Sb30N-40",
+    "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+    "polygon": [
+      [
+        224,
+        310
+      ],
+      [
+        258,
+        304
+      ],
+      [
+        253,
+        222
+      ],
+      [
+        218,
+        227
+      ]
+    ],
+    "full_bbox": [
+      0.30277777777777776,
+      0.23125,
+      0.35833333333333334,
+      0.3229166666666667
+    ],
+    "crop_pixels": [
+      216,
+      217,
+      260,
+      315
+    ],
+    "crop_bbox": [
+      0.045454545454545456,
+      0.05102040816326531,
+      0.9545454545454546,
+      0.9489795918367347
+    ],
+    "crop_sha256": "69e0669ab39dc0ec5254fb97c231d5e876a3255b5baa15311ace69e5c6b78e08",
+    "zero": {
+      "prediction": "4级",
+      "candidates": [
+        {
+          "text": "4级",
+          "confidence": 0.32449,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 9,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BISb3ON-40",
+      "candidates": [
+        {
+          "text": "BISb3ON-40",
+          "confidence": 0.78588,
+          "angle": 270
+        },
+        {
+          "text": "OH-NOESI0",
+          "confidence": 0.5193,
+          "angle": 90
+        },
+        {
+          "text": "4级",
+          "confidence": 0.32449,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 2,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BISb3ON-40",
+        "confidence": 0.78588,
+        "angle": 270
+      },
+      {
+        "text": "OH-NOESI0",
+        "confidence": 0.5193,
+        "angle": 90
+      },
+      {
+        "text": "4级",
+        "confidence": 0.32449,
+        "angle": 0
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 180
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S06-R02",
+    "image_id": "S06",
+    "expected": "B1Sb30N-19",
+    "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+    "polygon": [
+      [
+        338,
+        359
+      ],
+      [
+        377,
+        351
+      ],
+      [
+        353,
+        253
+      ],
+      [
+        321,
+        259
+      ]
+    ],
+    "full_bbox": [
+      0.44583333333333336,
+      0.2635416666666667,
+      0.5236111111111111,
+      0.37395833333333334
+    ],
+    "crop_pixels": [
+      318,
+      247,
+      380,
+      365
+    ],
+    "crop_bbox": [
+      0.04838709677419355,
+      0.05084745762711865,
+      0.9516129032258065,
+      0.9491525423728814
+    ],
+    "crop_sha256": "bfc38b4a078f1962196d2e158748caf7e4faa36a64d22eb003bf51afffcfd434",
+    "zero": {
+      "prediction": "4A",
+      "candidates": [
+        {
+          "text": "4A",
+          "confidence": 0.23273,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 10,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BIS63N-19",
+      "candidates": [
+        {
+          "text": "BIS63N-19",
+          "confidence": 0.84918,
+          "angle": 270
+        },
+        {
+          "text": "B-NES19",
+          "confidence": 0.64162,
+          "angle": 90
+        },
+        {
+          "text": "4A",
+          "confidence": 0.23273,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 3,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BIS63N-19",
+        "confidence": 0.84918,
+        "angle": 270
+      },
+      {
+        "text": "B-NES19",
+        "confidence": 0.64162,
+        "angle": 90
+      },
+      {
+        "text": "4A",
+        "confidence": 0.23273,
+        "angle": 0
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 180
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S06-R03",
+    "image_id": "S06",
+    "expected": "B1Sb30N-20",
+    "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+    "polygon": [
+      [
+        417,
+        274
+      ],
+      [
+        453,
+        270
+      ],
+      [
+        423,
+        189
+      ],
+      [
+        395,
+        192
+      ]
+    ],
+    "full_bbox": [
+      0.5486111111111112,
+      0.196875,
+      0.6291666666666667,
+      0.28541666666666665
+    ],
+    "crop_pixels": [
+      392,
+      184,
+      456,
+      279
+    ],
+    "crop_bbox": [
+      0.046875,
+      0.05263157894736842,
+      0.953125,
+      0.9473684210526315
+    ],
+    "crop_sha256": "609fc6cf0b0b1bd13a8e4a91dcfa485c514a3b10871e05d422cdf9a746a057c4",
+    "zero": {
+      "prediction": "9",
+      "candidates": [
+        {
+          "text": "9",
+          "confidence": 0.13866,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 10,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "353304-20",
+      "candidates": [
+        {
+          "text": "353304-20",
+          "confidence": 0.68605,
+          "angle": 270
+        },
+        {
+          "text": "07-099",
+          "confidence": 0.58169,
+          "angle": 90
+        },
+        {
+          "text": "9",
+          "confidence": 0.13866,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 5,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "353304-20",
+        "confidence": 0.68605,
+        "angle": 270
+      },
+      {
+        "text": "07-099",
+        "confidence": 0.58169,
+        "angle": 90
+      },
+      {
+        "text": "9",
+        "confidence": 0.13866,
+        "angle": 0
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 180
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S06-R04",
+    "image_id": "S06",
+    "expected": "B1Sb30N-26",
+    "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+    "polygon": [
+      [
+        532,
+        355
+      ],
+      [
+        572,
+        345
+      ],
+      [
+        529,
+        242
+      ],
+      [
+        488,
+        248
+      ]
+    ],
+    "full_bbox": [
+      0.6777777777777778,
+      0.2520833333333333,
+      0.7944444444444444,
+      0.3697916666666667
+    ],
+    "crop_pixels": [
+      483,
+      236,
+      577,
+      361
+    ],
+    "crop_bbox": [
+      0.05319148936170213,
+      0.048,
+      0.9468085106382979,
+      0.952
+    ],
+    "crop_sha256": "82827c959c419b388a49d9d1fd4949552a2a28169b8a292e5743d17eb1efa5aa",
+    "zero": {
+      "prediction": "",
+      "candidates": [
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 10,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BIS6O0V-",
+      "candidates": [
+        {
+          "text": "BIS6O0V-",
+          "confidence": 0.56952,
+          "angle": 90
+        },
+        {
+          "text": "SCANCgg",
+          "confidence": 0.31068,
+          "angle": 270
+        },
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 6,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BIS6O0V-",
+        "confidence": 0.56952,
+        "angle": 90
+      },
+      {
+        "text": "SCANCgg",
+        "confidence": 0.31068,
+        "angle": 270
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S06-R05",
+    "image_id": "S06",
+    "expected": "B1Sb30N-56",
+    "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+    "polygon": [
+      [
+        133,
+        677
+      ],
+      [
+        169,
+        671
+      ],
+      [
+        172,
+        534
+      ],
+      [
+        141,
+        539
+      ]
+    ],
+    "full_bbox": [
+      0.18472222222222223,
+      0.55625,
+      0.2388888888888889,
+      0.7052083333333333
+    ],
+    "crop_pixels": [
+      131,
+      526,
+      174,
+      685
+    ],
+    "crop_bbox": [
+      0.046511627906976744,
+      0.050314465408805034,
+      0.9534883720930233,
+      0.949685534591195
+    ],
+    "crop_sha256": "92daa26a59d9249b4787c6eb2f4b76a114f72851368e4469cf2a4b0ab04dcb5e",
+    "zero": {
+      "prediction": "2",
+      "candidates": [
+        {
+          "text": "2",
+          "confidence": 0.28355,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 10,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BISb30N-56",
+      "candidates": [
+        {
+          "text": "BISb30N-56",
+          "confidence": 0.88792,
+          "angle": 90
+        },
+        {
+          "text": "2",
+          "confidence": 0.51509,
+          "angle": 180
+        },
+        {
+          "text": "9S-NE9S19",
+          "confidence": 0.50786,
+          "angle": 270
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BISb30N-56",
+        "confidence": 0.88792,
+        "angle": 90
+      },
+      {
+        "text": "2",
+        "confidence": 0.51509,
+        "angle": 180
+      },
+      {
+        "text": "9S-NE9S19",
+        "confidence": 0.50786,
+        "angle": 270
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S06-R06",
+    "image_id": "S06",
+    "expected": "B1Sb30N-54",
+    "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+    "polygon": [
+      [
+        266,
+        628
+      ],
+      [
+        301,
+        623
+      ],
+      [
+        294,
+        506
+      ],
+      [
+        265,
+        510
+      ]
+    ],
+    "full_bbox": [
+      0.3680555555555556,
+      0.5270833333333333,
+      0.41805555555555557,
+      0.6541666666666667
+    ],
+    "crop_pixels": [
+      263,
+      499,
+      303,
+      635
+    ],
+    "crop_bbox": [
+      0.05,
+      0.051470588235294115,
+      0.95,
+      0.9485294117647058
+    ],
+    "crop_sha256": "afae51629098d90ed058943f43d92875f401e63e70ce69adc405d6b609f67b16",
+    "zero": {
+      "prediction": "",
+      "candidates": [
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 10,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BISb30N-54",
+      "candidates": [
+        {
+          "text": "BISb30N-54",
+          "confidence": 0.91043,
+          "angle": 270
+        },
+        {
+          "text": "BS-E9SS",
+          "confidence": 0.50111,
+          "angle": 90
+        },
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BISb30N-54",
+        "confidence": 0.91043,
+        "angle": 270
+      },
+      {
+        "text": "BS-E9SS",
+        "confidence": 0.50111,
+        "angle": 90
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S06-R07",
+    "image_id": "S06",
+    "expected": "B1Sb30N-34",
+    "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+    "polygon": [
+      [
+        448,
+        585
+      ],
+      [
+        485,
+        580
+      ],
+      [
+        456,
+        480
+      ],
+      [
+        422,
+        487
+      ]
+    ],
+    "full_bbox": [
+      0.5861111111111111,
+      0.5,
+      0.6736111111111112,
+      0.609375
+    ],
+    "crop_pixels": [
+      418,
+      474,
+      489,
+      591
+    ],
+    "crop_bbox": [
+      0.056338028169014086,
+      0.05128205128205128,
+      0.9436619718309859,
+      0.9487179487179487
+    ],
+    "crop_sha256": "a587690a13ac6d96c98cde3f00ad81f6d3d3c24a9ccc1dec865a16e1cc937328",
+    "zero": {
+      "prediction": "事招",
+      "candidates": [
+        {
+          "text": "事招",
+          "confidence": 0.15219,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 10,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "B156301-34",
+      "candidates": [
+        {
+          "text": "B156301-34",
+          "confidence": 0.85268,
+          "angle": 270
+        },
+        {
+          "text": "最",
+          "confidence": 0.49573,
+          "angle": 180
+        },
+        {
+          "text": "te-10091E",
+          "confidence": 0.47957,
+          "angle": 90
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 3,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "B156301-34",
+        "confidence": 0.85268,
+        "angle": 270
+      },
+      {
+        "text": "最",
+        "confidence": 0.49573,
+        "angle": 180
+      },
+      {
+        "text": "te-10091E",
+        "confidence": 0.47957,
+        "angle": 90
+      },
+      {
+        "text": "事招",
+        "confidence": 0.15219,
+        "angle": 0
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S06-R08",
+    "image_id": "S06",
+    "expected": "B1Sb30N-12",
+    "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+    "polygon": [
+      [
+        492,
+        560
+      ],
+      [
+        529,
+        554
+      ],
+      [
+        495,
+        442
+      ],
+      [
+        460,
+        446
+      ]
+    ],
+    "full_bbox": [
+      0.6388888888888888,
+      0.46041666666666664,
+      0.7347222222222223,
+      0.5833333333333334
+    ],
+    "crop_pixels": [
+      456,
+      436,
+      533,
+      566
+    ],
+    "crop_bbox": [
+      0.05194805194805195,
+      0.046153846153846156,
+      0.948051948051948,
+      0.9538461538461539
+    ],
+    "crop_sha256": "37c638b19e8c475fb082c416cd8fb19c78e3f1a1089da6ab2b27d9ed68838a85",
+    "zero": {
+      "prediction": "",
+      "candidates": [
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 10,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BISBON-P",
+      "candidates": [
+        {
+          "text": "BISBON-P",
+          "confidence": 0.64038,
+          "angle": 90
+        },
+        {
+          "text": "DCH-Ns19",
+          "confidence": 0.54408,
+          "angle": 270
+        },
+        {
+          "text": "福",
+          "confidence": 0.13285,
+          "angle": 180
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 5,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BISBON-P",
+        "confidence": 0.64038,
+        "angle": 90
+      },
+      {
+        "text": "DCH-Ns19",
+        "confidence": 0.54408,
+        "angle": 270
+      },
+      {
+        "text": "福",
+        "confidence": 0.13285,
+        "angle": 180
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S06-R09",
+    "image_id": "S06",
+    "expected": "B1Sb30N-13A",
+    "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+    "polygon": [
+      [
+        586,
+        768
+      ],
+      [
+        616,
+        762
+      ],
+      [
+        566,
+        628
+      ],
+      [
+        543,
+        632
+      ]
+    ],
+    "full_bbox": [
+      0.7541666666666667,
+      0.6541666666666667,
+      0.8555555555555555,
+      0.8
+    ],
+    "crop_pixels": [
+      539,
+      621,
+      620,
+      775
+    ],
+    "crop_bbox": [
+      0.04938271604938271,
+      0.045454545454545456,
+      0.9506172839506173,
+      0.9545454545454546
+    ],
+    "crop_sha256": "e48d169b496c977c6888df9ae7513d9e66a7195fe019fd84166db30e7b362a59",
+    "zero": {
+      "prediction": "1",
+      "candidates": [
+        {
+          "text": "1",
+          "confidence": 0.13663,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 10,
+      "characters": 11
+    },
+    "selected": {
+      "prediction": "BIS-381",
+      "candidates": [
+        {
+          "text": "BIS-381",
+          "confidence": 0.68343,
+          "angle": 270
+        },
+        {
+          "text": "19",
+          "confidence": 0.49105,
+          "angle": 90
+        },
+        {
+          "text": "1",
+          "confidence": 0.4105,
+          "angle": 180
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 7,
+      "characters": 11
+    },
+    "candidates": [
+      {
+        "text": "BIS-381",
+        "confidence": 0.68343,
+        "angle": 270
+      },
+      {
+        "text": "19",
+        "confidence": 0.49105,
+        "angle": 90
+      },
+      {
+        "text": "1",
+        "confidence": 0.4105,
+        "angle": 180
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S06-R10",
+    "image_id": "S06",
+    "expected": "B1Sb30N-13",
+    "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+    "image_size": [
+      720,
+      960
+    ],
+    "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+    "polygon": [
+      [
+        667,
+        697
+      ],
+      [
+        619,
+        582
+      ],
+      [
+        589,
+        589
+      ],
+      [
+        634,
+        705
+      ]
+    ],
+    "full_bbox": [
+      0.8180555555555555,
+      0.60625,
+      0.9263888888888889,
+      0.734375
+    ],
+    "crop_pixels": [
+      585,
+      575,
+      671,
+      712
+    ],
+    "crop_bbox": [
+      0.046511627906976744,
+      0.051094890510948905,
+      0.9534883720930233,
+      0.948905109489051
+    ],
+    "crop_sha256": "4d4c91cd8e062e02cbd477a8842f6abb9b6d19cfdd8281168e6032e03b3dd9fa",
+    "zero": {
+      "prediction": "",
+      "candidates": [
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 10,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "B1S330-",
+      "candidates": [
+        {
+          "text": "B1S330-",
+          "confidence": 0.60675,
+          "angle": 270
+        },
+        {
+          "text": "AH-IA",
+          "confidence": 0.31467,
+          "angle": 90
+        },
+        {
+          "text": "福",
+          "confidence": 0.17217,
+          "angle": 180
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 4,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "B1S330-",
+        "confidence": 0.60675,
+        "angle": 270
+      },
+      {
+        "text": "AH-IA",
+        "confidence": 0.31467,
+        "angle": 90
+      },
+      {
+        "text": "福",
+        "confidence": 0.17217,
+        "angle": 180
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S07-R00",
+    "image_id": "S07",
+    "expected": "B1Sb30N-15",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416152836.jpg",
+    "image_size": [
+      960,
+      720
+    ],
+    "source_sha256": "5c75e5b0db3439a79a373b7012aee0bb5defeb0a8291a87ec45ea29f37137cd8",
+    "polygon": [
+      [
+        131,
+        552
+      ],
+      [
+        725,
+        552
+      ],
+      [
+        725,
+        434
+      ],
+      [
+        131,
+        434
+      ]
+    ],
+    "full_bbox": [
+      0.13645833333333332,
+      0.6027777777777777,
+      0.7552083333333334,
+      0.7666666666666667
+    ],
+    "crop_pixels": [
+      101,
+      428,
+      755,
+      558
+    ],
+    "crop_bbox": [
+      0.045871559633027525,
+      0.046153846153846156,
+      0.9541284403669725,
+      0.9538461538461539
+    ],
+    "crop_sha256": "5be44dc052f4b9c3ffdd1bdcf9c4cc9d08f893abed0eeb127c5651e12c1813db",
+    "zero": {
+      "prediction": "BISb30N-15",
+      "candidates": [
+        {
+          "text": "BISb30N-15",
+          "confidence": 0.9964,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BISb30N-15",
+      "candidates": [
+        {
+          "text": "BISb30N-15",
+          "confidence": 0.9964,
+          "angle": 0
+        },
+        {
+          "text": "BI-IS",
+          "confidence": 0.62512,
+          "angle": 180
+        },
+        {
+          "text": "20",
+          "confidence": 0.2399,
+          "angle": 270
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BISb30N-15",
+        "confidence": 0.9964,
+        "angle": 0
+      },
+      {
+        "text": "BI-IS",
+        "confidence": 0.62512,
+        "angle": 180
+      },
+      {
+        "text": "20",
+        "confidence": 0.2399,
+        "angle": 270
+      },
+      {
+        "text": "2",
+        "confidence": 0.18174,
+        "angle": 90
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S08-R00",
+    "image_id": "S08",
+    "expected": "B1Sb40N-37",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+    "image_size": [
+      960,
+      720
+    ],
+    "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+    "polygon": [
+      [
+        363,
+        160
+      ],
+      [
+        498,
+        153
+      ],
+      [
+        502,
+        146
+      ],
+      [
+        368,
+        153
+      ]
+    ],
+    "full_bbox": [
+      0.378125,
+      0.20277777777777778,
+      0.5229166666666667,
+      0.2222222222222222
+    ],
+    "crop_pixels": [
+      356,
+      144,
+      509,
+      162
+    ],
+    "crop_bbox": [
+      0.0457516339869281,
+      0.1111111111111111,
+      0.954248366013072,
+      0.8888888888888888
+    ],
+    "crop_sha256": "a45c8f13180ffb53345564a7c3595a1f20003f764c4226af549352a9cd191417",
+    "zero": {
+      "prediction": "ES-0SOY9",
+      "candidates": [
+        {
+          "text": "ES-0SOY9",
+          "confidence": 0.19284,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 8,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "Ce-ASLdCKE",
+      "candidates": [
+        {
+          "text": "Ce-ASLdCKE",
+          "confidence": 0.33606,
+          "angle": 180
+        },
+        {
+          "text": "ES-0SOY9",
+          "confidence": 0.19284,
+          "angle": 0
+        },
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 90
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 10,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "Ce-ASLdCKE",
+        "confidence": 0.33606,
+        "angle": 180
+      },
+      {
+        "text": "ES-0SOY9",
+        "confidence": 0.19284,
+        "angle": 0
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 90
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S08-R01",
+    "image_id": "S08",
+    "expected": "B1Sb40N-23",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+    "image_size": [
+      960,
+      720
+    ],
+    "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+    "polygon": [
+      [
+        410,
+        193
+      ],
+      [
+        599,
+        183
+      ],
+      [
+        598,
+        176
+      ],
+      [
+        413,
+        186
+      ]
+    ],
+    "full_bbox": [
+      0.4270833333333333,
+      0.24444444444444444,
+      0.6239583333333333,
+      0.26805555555555555
+    ],
+    "crop_pixels": [
+      400,
+      174,
+      609,
+      195
+    ],
+    "crop_bbox": [
+      0.04784688995215311,
+      0.09523809523809523,
+      0.9521531100478469,
+      0.9047619047619048
+    ],
+    "crop_sha256": "97d471a9ff66b2a67c4e9277de312aad4aaf26bd0d494d4761326ae01331e33a",
+    "zero": {
+      "prediction": "B1S640N23",
+      "candidates": [
+        {
+          "text": "B1S640N23",
+          "confidence": 0.87155,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 2,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "B1S640N23",
+      "candidates": [
+        {
+          "text": "B1S640N23",
+          "confidence": 0.87155,
+          "angle": 0
+        },
+        {
+          "text": "BE",
+          "confidence": 0.4031,
+          "angle": 180
+        },
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 90
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 2,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "B1S640N23",
+        "confidence": 0.87155,
+        "angle": 0
+      },
+      {
+        "text": "BE",
+        "confidence": 0.4031,
+        "angle": 180
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 90
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S08-R02",
+    "image_id": "S08",
+    "expected": "B1Sb40N-15",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+    "image_size": [
+      960,
+      720
+    ],
+    "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+    "polygon": [
+      [
+        431,
+        212
+      ],
+      [
+        639,
+        203
+      ],
+      [
+        636,
+        193
+      ],
+      [
+        438,
+        202
+      ]
+    ],
+    "full_bbox": [
+      0.44895833333333335,
+      0.26805555555555555,
+      0.665625,
+      0.29444444444444445
+    ],
+    "crop_pixels": [
+      420,
+      191,
+      650,
+      214
+    ],
+    "crop_bbox": [
+      0.04782608695652174,
+      0.08695652173913043,
+      0.9521739130434783,
+      0.9130434782608695
+    ],
+    "crop_sha256": "310ed756fbc5aeef20539d2051bea5d7e2f933b8fef1ae55733988be4c7a182e",
+    "zero": {
+      "prediction": "BSb40N-15",
+      "candidates": [
+        {
+          "text": "BSb40N-15",
+          "confidence": 0.94473,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BSb40N-15",
+      "candidates": [
+        {
+          "text": "BSb40N-15",
+          "confidence": 0.94473,
+          "angle": 0
+        },
+        {
+          "text": "FBI5",
+          "confidence": 0.52117,
+          "angle": 180
+        },
+        {
+          "text": "2",
+          "confidence": 0.31356,
+          "angle": 270
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BSb40N-15",
+        "confidence": 0.94473,
+        "angle": 0
+      },
+      {
+        "text": "FBI5",
+        "confidence": 0.52117,
+        "angle": 180
+      },
+      {
+        "text": "2",
+        "confidence": 0.31356,
+        "angle": 270
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 90
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S08-R03",
+    "image_id": "S08",
+    "expected": "B1Sb40N-27",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+    "image_size": [
+      960,
+      720
+    ],
+    "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+    "polygon": [
+      [
+        338,
+        229
+      ],
+      [
+        534,
+        220
+      ],
+      [
+        534,
+        232
+      ],
+      [
+        327,
+        241
+      ]
+    ],
+    "full_bbox": [
+      0.340625,
+      0.3055555555555556,
+      0.55625,
+      0.3347222222222222
+    ],
+    "crop_pixels": [
+      316,
+      218,
+      545,
+      243
+    ],
+    "crop_bbox": [
+      0.048034934497816595,
+      0.08,
+      0.9519650655021834,
+      0.92
+    ],
+    "crop_sha256": "29a54e87a7367102c756de3586add73802c9d2bb02d652585f393feadc1385de",
+    "zero": {
+      "prediction": "BIS640N27",
+      "candidates": [
+        {
+          "text": "BIS640N27",
+          "confidence": 0.80875,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 3,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BIS640N27",
+      "candidates": [
+        {
+          "text": "BIS640N27",
+          "confidence": 0.80875,
+          "angle": 0
+        },
+        {
+          "text": "B27",
+          "confidence": 0.536,
+          "angle": 180
+        },
+        {
+          "text": "2",
+          "confidence": 0.41313,
+          "angle": 90
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 3,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BIS640N27",
+        "confidence": 0.80875,
+        "angle": 0
+      },
+      {
+        "text": "B27",
+        "confidence": 0.536,
+        "angle": 180
+      },
+      {
+        "text": "2",
+        "confidence": 0.41313,
+        "angle": 90
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S08-R04",
+    "image_id": "S08",
+    "expected": "B1Sb40N-8",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+    "image_size": [
+      960,
+      720
+    ],
+    "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+    "polygon": [
+      [
+        457,
+        327
+      ],
+      [
+        727,
+        319
+      ],
+      [
+        721,
+        295
+      ],
+      [
+        461,
+        304
+      ]
+    ],
+    "full_bbox": [
+      0.47604166666666664,
+      0.4097222222222222,
+      0.7572916666666667,
+      0.45416666666666666
+    ],
+    "crop_pixels": [
+      443,
+      293,
+      741,
+      329
+    ],
+    "crop_bbox": [
+      0.04697986577181208,
+      0.05555555555555555,
+      0.9530201342281879,
+      0.9444444444444444
+    ],
+    "crop_sha256": "4f60846e8a6c0308a1fac4af6ad58e5714290b2655b2e71eee86bfaff064b89c",
+    "zero": {
+      "prediction": "B1SB4ON-8",
+      "candidates": [
+        {
+          "text": "B1SB4ON-8",
+          "confidence": 0.88587,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 9
+    },
+    "selected": {
+      "prediction": "B1SB4ON-8",
+      "candidates": [
+        {
+          "text": "B1SB4ON-8",
+          "confidence": 0.88587,
+          "angle": 0
+        },
+        {
+          "text": "BO8",
+          "confidence": 0.50043,
+          "angle": 180
+        },
+        {
+          "text": "2",
+          "confidence": 0.29543,
+          "angle": 270
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 9
+    },
+    "candidates": [
+      {
+        "text": "B1SB4ON-8",
+        "confidence": 0.88587,
+        "angle": 0
+      },
+      {
+        "text": "BO8",
+        "confidence": 0.50043,
+        "angle": 180
+      },
+      {
+        "text": "2",
+        "confidence": 0.29543,
+        "angle": 270
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 90
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S08-R05",
+    "image_id": "S08",
+    "expected": "B1Sb40N-26",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+    "image_size": [
+      960,
+      720
+    ],
+    "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+    "polygon": [
+      [
+        185,
+        395
+      ],
+      [
+        494,
+        390
+      ],
+      [
+        502,
+        359
+      ],
+      [
+        200,
+        365
+      ]
+    ],
+    "full_bbox": [
+      0.19270833333333334,
+      0.4986111111111111,
+      0.5229166666666667,
+      0.5486111111111112
+    ],
+    "crop_pixels": [
+      169,
+      357,
+      518,
+      397
+    ],
+    "crop_bbox": [
+      0.045845272206303724,
+      0.05,
+      0.9541547277936963,
+      0.95
+    ],
+    "crop_sha256": "e4540993c33ebfcb7774c8d83675bc445e319e7e8f691c5c1b3402d318d57057",
+    "zero": {
+      "prediction": "B/Sb40N-26",
+      "candidates": [
+        {
+          "text": "B/Sb40N-26",
+          "confidence": 0.86214,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "B/Sb40N-26",
+      "candidates": [
+        {
+          "text": "B/Sb40N-26",
+          "confidence": 0.86214,
+          "angle": 0
+        },
+        {
+          "text": "B-12",
+          "confidence": 0.63997,
+          "angle": 180
+        },
+        {
+          "text": "",
+          "confidence": 0.0,
+          "angle": 90
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 1,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "B/Sb40N-26",
+        "confidence": 0.86214,
+        "angle": 0
+      },
+      {
+        "text": "B-12",
+        "confidence": 0.63997,
+        "angle": 180
+      },
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 90
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S08-R06",
+    "image_id": "S08",
+    "expected": "B1Sb40N-9",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+    "image_size": [
+      960,
+      720
+    ],
+    "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+    "polygon": [
+      [
+        395,
+        622
+      ],
+      [
+        919,
+        624
+      ],
+      [
+        884,
+        551
+      ],
+      [
+        417,
+        546
+      ]
+    ],
+    "full_bbox": [
+      0.4114583333333333,
+      0.7583333333333333,
+      0.9572916666666667,
+      0.8666666666666667
+    ],
+    "crop_pixels": [
+      368,
+      542,
+      946,
+      628
+    ],
+    "crop_bbox": [
+      0.04671280276816609,
+      0.046511627906976744,
+      0.9532871972318339,
+      0.9534883720930233
+    ],
+    "crop_sha256": "f29f2f1e3d064528c8754beddbfa54e38ef100e28ce7c1a271776f796c769761",
+    "zero": {
+      "prediction": "BISb49N-9",
+      "candidates": [
+        {
+          "text": "BISb49N-9",
+          "confidence": 0.9273,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 2,
+      "characters": 9
+    },
+    "selected": {
+      "prediction": "BISb49N-9",
+      "candidates": [
+        {
+          "text": "BISb49N-9",
+          "confidence": 0.9273,
+          "angle": 0
+        },
+        {
+          "text": "B9",
+          "confidence": 0.74776,
+          "angle": 180
+        },
+        {
+          "text": "20",
+          "confidence": 0.27606,
+          "angle": 270
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 2,
+      "characters": 9
+    },
+    "candidates": [
+      {
+        "text": "BISb49N-9",
+        "confidence": 0.9273,
+        "angle": 0
+      },
+      {
+        "text": "B9",
+        "confidence": 0.74776,
+        "angle": 180
+      },
+      {
+        "text": "20",
+        "confidence": 0.27606,
+        "angle": 270
+      },
+      {
+        "text": "2",
+        "confidence": 0.23533,
+        "angle": 90
+      }
+    ],
+    "all_candidates_exact": false
+  },
+  {
+    "id": "S09-R00",
+    "image_id": "S09",
+    "expected": "B1Sb30N-16",
+    "source_path": "train_data/det/images/tsukimoto_IMG20250416152830.jpg",
+    "image_size": [
+      960,
+      720
+    ],
+    "source_sha256": "b80718bc06102291bfc7e095d26d4e82912757bf98bbf451609662bb01d9379f",
+    "polygon": [
+      [
+        123,
+        520
+      ],
+      [
+        713,
+        520
+      ],
+      [
+        713,
+        396
+      ],
+      [
+        123,
+        396
+      ]
+    ],
+    "full_bbox": [
+      0.128125,
+      0.55,
+      0.7427083333333333,
+      0.7222222222222222
+    ],
+    "crop_pixels": [
+      93,
+      389,
+      743,
+      527
+    ],
+    "crop_bbox": [
+      0.046153846153846156,
+      0.050724637681159424,
+      0.9538461538461539,
+      0.9492753623188406
+    ],
+    "crop_sha256": "809f92ed810a760c8015d9b283e53494df02afbd9d85cc13bf7cf1c594ffbd2d",
+    "zero": {
+      "prediction": "BIS630N-16",
+      "candidates": [
+        {
+          "text": "BIS630N-16",
+          "confidence": 0.98881,
+          "angle": 0
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 2,
+      "characters": 10
+    },
+    "selected": {
+      "prediction": "BIS630N-16",
+      "candidates": [
+        {
+          "text": "BIS630N-16",
+          "confidence": 0.98881,
+          "angle": 0
+        },
+        {
+          "text": "B-NOE9S1",
+          "confidence": 0.73704,
+          "angle": 180
+        },
+        {
+          "text": "20",
+          "confidence": 0.53879,
+          "angle": 90
+        }
+      ],
+      "localized": true,
+      "raw_exact": false,
+      "normalized_exact": false,
+      "top3_exact": false,
+      "edits": 2,
+      "characters": 10
+    },
+    "candidates": [
+      {
+        "text": "BIS630N-16",
+        "confidence": 0.98881,
+        "angle": 0
+      },
+      {
+        "text": "B-NOE9S1",
+        "confidence": 0.73704,
+        "angle": 180
+      },
+      {
+        "text": "20",
+        "confidence": 0.53879,
+        "angle": 90
+      }
+    ],
+    "all_candidates_exact": false
+  }
+]

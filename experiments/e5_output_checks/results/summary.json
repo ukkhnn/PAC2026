@@ -1,0 +1,62 @@
+{
+  "E2-001": {
+    "none": {
+      "responses": 9,
+      "statuses": {
+        "review_required": 9
+      },
+      "correct_factual_candidates": 0,
+      "incorrect_or_partial_factual_candidates": 0,
+      "correct_factual_answers_sent_to_review": 0
+    },
+    "full": {
+      "responses": 9,
+      "statuses": {
+        "review_required": 9
+      },
+      "correct_factual_candidates": 0,
+      "incorrect_or_partial_factual_candidates": 0,
+      "correct_factual_answers_sent_to_review": 2
+    },
+    "bm25": {
+      "responses": 9,
+      "statuses": {
+        "review_required": 9
+      },
+      "correct_factual_candidates": 0,
+      "incorrect_or_partial_factual_candidates": 0,
+      "correct_factual_answers_sent_to_review": 0
+    }
+  },
+  "E2-002": {
+    "none": {
+      "responses": 9,
+      "statuses": {
+        "review_required": 9
+      },
+      "correct_factual_candidates": 0,
+      "incorrect_or_partial_factual_candidates": 0,
+      "correct_factual_answers_sent_to_review": 0
+    },
+    "full": {
+      "responses": 9,
+      "statuses": {
+        "review_required": 6,
+        "candidate": 3
+      },
+      "correct_factual_candidates": 2,
+      "incorrect_or_partial_factual_candidates": 1,
+      "correct_factual_answers_sent_to_review": 3
+    },
+    "bm25": {
+      "responses": 9,
+      "statuses": {
+        "candidate": 5,
+        "review_required": 4
+      },
+      "correct_factual_candidates": 4,
+      "incorrect_or_partial_factual_candidates": 1,
+      "correct_factual_answers_sent_to_review": 0
+    }
+  }
+}

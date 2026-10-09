@@ -1,0 +1,5788 @@
+{
+  "engine": "Apple Vision VNRecognizeTextRequest",
+  "languages": [
+    "en-US"
+  ],
+  "minimumTextHeight": 0,
+  "os": "Version 26.5.1 (Build 25F80)",
+  "recognitionLevel": "accurate",
+  "revision": 3,
+  "usesLanguageCorrection": false,
+  "results": [
+    {
+      "id": "S01-R00-crop",
+      "seconds": 0.34144045831635594,
+      "observations": [
+        {
+          "bbox": [
+            0.03113118621284586,
+            0.09547939564342223,
+            0.9817848981675984,
+            0.9080565301152509
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.03113118621284586,
+                0.09547939564342223,
+                0.9817848981675984,
+                0.9080565301152509
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ONSL",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.01014442527405024,
+                0.0889250901636894,
+                0.9667566943577091,
+                0.9814044209700983
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ON-S6",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.03257694342030959,
+                0.004025090081128724,
+                0.9840897251992808,
+                0.9620766099599688
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ON-S61",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.0359926233978487,
+                0.10235322959376814,
+                0.9896867126515921,
+                0.9705998576600089
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ON-S6",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISb3ONSL",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISb3ON-S6",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISb3ON-S61",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S01-full",
+      "seconds": 1.0335082083474845,
+      "observations": [
+        {
+          "bbox": [
+            0.23541666715856474,
+            0.3111111106172839,
+            0.512500000491898,
+            0.4888888883950617
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.23541666715856474,
+                0.3111111106172839,
+                0.512500000491898,
+                0.4888888883950617
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "xа/",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.23407337809333717,
+                0.30650636127029635,
+                0.5502149516813906,
+                0.48976503250103637
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "ха/",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.23958333236979168,
+                0.3111110795303006,
+                0.547916665703125,
+                0.47777780977525497
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "xа/",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.2395833322991071,
+                0.3166666507820153,
+                0.5291666656324404,
+                0.48611112701560366
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "xа/",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "xа/",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "ха/",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.03333333018055562,
+            0.5361111110925927,
+            0.9791666635138889,
+            0.7972222222037038
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.03333333018055562,
+                0.5361111110925927,
+                0.9791666635138889,
+                0.7972222222037038
+              ],
+              "angle": 0,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ONSA",
+                  "angle": 0,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.008925309305096163,
+                0.5210681047060888,
+                0.9705571477857275,
+                0.839085725216614
+              ],
+              "angle": 90,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ON-S6",
+                  "angle": 90,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.02916666390931366,
+                0.5305554495999125,
+                0.9666666639093138,
+                0.7944445504164273
+              ],
+              "angle": 180,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ONSA",
+                  "angle": 180,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.03761981465594455,
+                0.5300865001720647,
+                0.9898812307732948,
+                0.8353970461993542
+              ],
+              "angle": 270,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ON-S6",
+                  "angle": 270,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISb3ONSA",
+              "angle": 0,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISb3ON-S6",
+              "angle": 90,
+              "observation_index": 1,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S02-R00-crop",
+      "seconds": 0.33345104167528916,
+      "observations": [
+        {
+          "bbox": [
+            0.0452451057540495,
+            0.10591182211411387,
+            0.9985048917241016,
+            0.9975364481860877
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.0452451057540495,
+                0.10591182211411387,
+                0.9985048917241016,
+                0.9975364481860877
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ON-58",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.01666666986805554,
+                0.1379307709787326,
+                0.9770833365347221,
+                0.9310347454197346
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ON-58",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.01987641953288155,
+                0.07058198398462256,
+                0.9842902531510457,
+                1.0213720384812999
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ON-58",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.045634116497708876,
+                0.15637588840380756,
+                0.9981698729267454,
+                0.9551798975015536
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ON-58",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISb3ON-58",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S02-full",
+      "seconds": 0.7340094583487371,
+      "observations": [
+        {
+          "bbox": [
+            0.04762490342552835,
+            0.3948456664807587,
+            0.9794584249505934,
+            0.6051543348292829
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.04762490342552835,
+                0.3948456664807587,
+                0.9794584249505934,
+                0.6051543348292829
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISD3ON-58",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.016666669707031345,
+                0.39444438077067046,
+                0.989583336373698,
+                0.5972222857050238
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ON-58",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.020054019590666217,
+                0.38494319920799713,
+                1.0007793079817795,
+                0.6067234675592341
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISD3ON-58",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.047648900573545316,
+                0.3921890074188943,
+                0.9981278358152444,
+                0.6002604405921799
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ON-58",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISD3ON-58",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISb3ON-58",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S03-R00-crop",
+      "seconds": 0.10857891663908958,
+      "observations": [
+        {
+          "bbox": [
+            0.14634129929137693,
+            0.0647481985611511,
+            0.7804879431393309,
+            0.9280575510791369
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.14634129929137693,
+                0.0647481985611511,
+                0.7804879431393309,
+                0.9280575510791369
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISL 30N-24",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.12273528340118578,
+                0.06317681614631565,
+                0.8528744807739945,
+                0.9296289303338718
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISS 30N-34",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.1287558673515744,
+                0.05629700240291311,
+                0.8956343443085699,
+                0.9293145124671274
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.5,
+                  "text": "BISS 30k-34",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.13044491875729392,
+                0.054742740669068146,
+                0.8840719515257296,
+                0.9312278379916007
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "B1S530N-341",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISL 30N-24",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISS 30N-34",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.5,
+              "text": "BISS 30k-34",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "B1S530N-341",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S03-R01-crop",
+      "seconds": 0.12029479168995749,
+      "observations": [
+        {
+          "bbox": [
+            0.12339347861095207,
+            0.07927383185700358,
+            0.8998623322287753,
+            0.9330718386447159
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.12339347861095207,
+                0.07927383185700358,
+                0.8998623322287753,
+                0.9330718386447159
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "CaBoc",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.1541170068659038,
+                0.07794268698647311,
+                0.9152130740727079,
+                0.9347316048105472
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BASOAE",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.15732397794256325,
+                0.09117781337580044,
+                0.9353772616339696,
+                0.9461829599204571
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "CРКООA",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "CaBoc",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BASOAE",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "CРКООA",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S03-R02-crop",
+      "seconds": 0.12728154168871697,
+      "observations": [
+        {
+          "bbox": [
+            -0.01382823511013273,
+            0.04261777805604361,
+            0.8860541087270604,
+            0.9420867461132684
+          ],
+          "members": [
+            {
+              "bbox": [
+                -0.01382823511013273,
+                0.04261777805604361,
+                0.8860541087270604,
+                0.9420867461132684
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BASAOA",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.06053675587570706,
+                0.057943722285057175,
+                0.9085544756894627,
+                0.9421040819855779
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BASTON1S",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.08571428238095247,
+                0.05128204864672359,
+                0.8857142823809524,
+                0.9401709375356125
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BISKORL",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "BASAOA",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BASTON1S",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BISKORL",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S03-R03-crop",
+      "seconds": 0.09982674999628216,
+      "observations": [
+        {
+          "bbox": [
+            0.0919543326285115,
+            0.10271234701310805,
+            0.8803037776780909,
+            0.9573652072845049
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.0919543326285115,
+                0.10271234701310805,
+                0.8803037776780909,
+                0.9573652072845049
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "B/ЗЬ3442",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.11538425147141662,
+                0.11194030373134319,
+                0.8846157542978139,
+                0.9477611992537313
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BISЬARE",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.17091477013375378,
+                0.1020129357284828,
+                0.9560914140922123,
+                0.9576361524998507
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "B/Sb34",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "B/ЗЬ3442",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BISЬARE",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "B/Sb34",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S03-full",
+      "seconds": 0.6756257916713366,
+      "observations": [
+        {
+          "bbox": [
+            0.43510252480716693,
+            0.44745078204261923,
+            0.5171980259651394,
+            0.7004833074230717
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.43510252480716693,
+                0.44745078204261923,
+                0.5171980259651394,
+                0.7004833074230717
+              ],
+              "angle": 0,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISL 30N-34",
+                  "angle": 0,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.43769637785005255,
+                0.4456254152628406,
+                0.5206369536616506,
+                0.7022912490539376
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "B1SL 30N-34",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.4388888892200855,
+                0.4499999991266025,
+                0.5250000003311966,
+                0.7020833324599359
+              ],
+              "angle": 270,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISS 30N-34",
+                  "angle": 270,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.43473893843691547,
+                0.4433032364049162,
+                0.5255863352875014,
+                0.704628516276539
+              ],
+              "angle": 180,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "V-Noe 1S19",
+                  "angle": 180,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISL 30N-34",
+              "angle": 0,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "B1SL 30N-34",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISS 30N-34",
+              "angle": 270,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "V-Noe 1S19",
+              "angle": 180,
+              "observation_index": 1,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.32222222240079357,
+            0.5895833337946428,
+            0.4166666668452381,
+            0.7187500004613094
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.32222222240079357,
+                0.5895833337946428,
+                0.4166666668452381,
+                0.7187500004613094
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.5,
+                  "text": "Akal",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.31944443361658165,
+                0.5833333328541668,
+                0.42222223258712205,
+                0.7270833328541667
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "AlaT",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.5,
+              "text": "Akal",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "AlaT",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.6628213202226922,
+            0.6726732845467699,
+            0.7170339433950285,
+            0.9212336654824388
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.6628213202226922,
+                0.6726732845467699,
+                0.7170339433950285,
+                0.9212336654824388
+              ],
+              "angle": 0,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BISЬOA",
+                  "angle": 0,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.6599850875645077,
+                0.6702265121820068,
+                0.7177230632148711,
+                0.9175814010980224
+              ],
+              "angle": 90,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "B/56304-",
+                  "angle": 90,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.664779973566107,
+                0.6765184986644024,
+                0.7202252472833515,
+                0.9215647645844056
+              ],
+              "angle": 180,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "B/SU3ONA",
+                  "angle": 180,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.6666666665509259,
+                0.6687499978819444,
+                0.7194444443287037,
+                0.9229166645486111
+              ],
+              "angle": 270,
+              "observation_index": 3,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BISЬЗAE",
+                  "angle": 270,
+                  "observation_index": 3,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "BISЬOA",
+              "angle": 0,
+              "observation_index": 2,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "B/56304-",
+              "angle": 90,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "B/SU3ONA",
+              "angle": 180,
+              "observation_index": 2,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BISЬЗAE",
+              "angle": 270,
+              "observation_index": 3,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.7860124623574197,
+            0.6122156886137461,
+            0.8693357450230963,
+            0.8257501550393239
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.7860124623574197,
+                0.6122156886137461,
+                0.8693357450230963,
+                0.8257501550393239
+              ],
+              "angle": 0,
+              "observation_index": 3,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BASASONGA",
+                  "angle": 0,
+                  "observation_index": 3,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.786455931931052,
+                0.6139511521466988,
+                0.8695402344094185,
+                0.8275143718529162
+              ],
+              "angle": 90,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BASASokaA",
+                  "angle": 90,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.7865905136311367,
+                0.6141814697892942,
+                0.8691906462554451,
+                0.8277707406989215
+              ],
+              "angle": 180,
+              "observation_index": 3,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BASASONeS",
+                  "angle": 180,
+                  "observation_index": 3,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.7966170826291101,
+                0.615640041642914,
+                0.857719245096219,
+                0.826081042899221
+              ],
+              "angle": 270,
+              "observation_index": 4,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BICASoNL",
+                  "angle": 270,
+                  "observation_index": 4,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "BASASONGA",
+              "angle": 0,
+              "observation_index": 3,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BASASokaA",
+              "angle": 90,
+              "observation_index": 2,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BASASONeS",
+              "angle": 180,
+              "observation_index": 3,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BICASoNL",
+              "angle": 270,
+              "observation_index": 4,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            -8.091961890678412e-09,
+            -2.8645841254615334e-10,
+            0.0694444522470545,
+            0.13749999971354165
+          ],
+          "members": [
+            {
+              "bbox": [
+                -8.091961890678412e-09,
+                -2.8645841254615334e-10,
+                0.0694444522470545,
+                0.13749999971354165
+              ],
+              "angle": 0,
+              "observation_index": 4,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "449",
+                  "angle": 0,
+                  "observation_index": 4,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "449",
+              "angle": 0,
+              "observation_index": 4,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.11188823666397146,
+            -0.008937613237677722,
+            0.2720561850689194,
+            0.17513575547061477
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.11188823666397146,
+                -0.008937613237677722,
+                0.2720561850689194,
+                0.17513575547061477
+              ],
+              "angle": 0,
+              "observation_index": 5,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "DIS",
+                  "angle": 0,
+                  "observation_index": 5,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "DIS",
+              "angle": 0,
+              "observation_index": 5,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.5722222011336263,
+            0.3645833342447917,
+            0.6666666879635958,
+            0.6562500009114584
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.5722222011336263,
+                0.3645833342447917,
+                0.6666666879635958,
+                0.6562500009114584
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "Bоваcа",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "Bоваcа",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.5694444443055556,
+            0.7687499993402778,
+            0.6222222220833333,
+            0.8874999993402778
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.5694444443055556,
+                0.7687499993402778,
+                0.6222222220833333,
+                0.8874999993402778
+              ],
+              "angle": 270,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "AYal",
+                  "angle": 270,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "AYal",
+              "angle": 270,
+              "observation_index": 2,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S04-R00-crop",
+      "seconds": 0.13016674999380484,
+      "observations": [
+        {
+          "bbox": [
+            0.046223717528869245,
+            0.014832765383715363,
+            0.9484852799771993,
+            0.9851672422785178
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.046223717528869245,
+                0.014832765383715363,
+                0.9484852799771993,
+                0.9851672422785178
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BIS5BON-15:",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.053762127078671895,
+                -0.08059435544086282,
+                1.0039969994021674,
+                0.9991313339173185
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BIS6B0N-151",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.06269001232041105,
+                0.00497431144991034,
+                0.9584740169758758,
+                0.9394701313894177
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "B:Sb3ON-15.",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.04458410839165583,
+                -0.0005115075772630373,
+                0.9560697299297676,
+                1.0272605481546162
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISbBON-15",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BIS5BON-15:",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BIS6B0N-151",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "B:Sb3ON-15.",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISbBON-15",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S04-full",
+      "seconds": 0.680689666653052,
+      "observations": [
+        {
+          "bbox": [
+            0.3558745527472658,
+            0.40560881779734226,
+            0.7087087774481936,
+            0.49994673682064406
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.3558745527472658,
+                0.40560881779734226,
+                0.7087087774481936,
+                0.49994673682064406
+              ],
+              "angle": 0,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BIS6BON-5*",
+                  "angle": 0,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.35649108819970476,
+                0.3959710839570271,
+                0.7105136228880184,
+                0.5053745140480373
+              ],
+              "angle": 90,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISbBON-15",
+                  "angle": 90,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.35966712853944927,
+                0.39993306792386474,
+                0.7132495425307416,
+                0.5000669320087443
+              ],
+              "angle": 180,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BIS6BON-1S:",
+                  "angle": 180,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.35643943836795,
+                0.3991094786294449,
+                0.710364793643422,
+                0.5079053651989979
+              ],
+              "angle": 270,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISbBON-5",
+                  "angle": 270,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BIS6BON-5*",
+              "angle": 0,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISbBON-15",
+              "angle": 90,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BIS6BON-1S:",
+              "angle": 180,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISbBON-5",
+              "angle": 270,
+              "observation_index": 1,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.2124999920462036,
+            0.39444443412584085,
+            0.3062500079407755,
+            0.4833333442074924
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.2124999920462036,
+                0.39444443412584085,
+                0.3062500079407755,
+                0.4833333442074924
+              ],
+              "angle": 0,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "15",
+                  "angle": 0,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.21250000028186278,
+                0.39166666118873744,
+                0.3083333336151962,
+                0.4805555606740076
+              ],
+              "angle": 90,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "15",
+                  "angle": 90,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.21249999952083343,
+                0.3916666668055556,
+                0.30833333285416675,
+                0.4805555556944445
+              ],
+              "angle": 180,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "15",
+                  "angle": 180,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.21458333306372546,
+                0.39444443929331263,
+                0.30624999973039213,
+                0.48333333877858276
+              ],
+              "angle": 270,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "15",
+                  "angle": 270,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "15",
+              "angle": 0,
+              "observation_index": 2,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.45416666695138885,
+            0.5361110796367821,
+            0.6895833336180555,
+            0.6305555876595142
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.45416666695138885,
+                0.5361110796367821,
+                0.6895833336180555,
+                0.6305555876595142
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "1 Xal",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.32902120503442334,
+                0.5273270318216557,
+                0.6942256346608882,
+                0.643909859919529
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "4 Xa1.",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.33395550527373774,
+                0.5337795422692257,
+                0.6917750624636791,
+                0.6394545031473859
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "2 Xа1",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.3286604013695946,
+                0.531598786830244,
+                0.6968637234622865,
+                0.6515717363880782
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "дXa l",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "1 Xal",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "4 Xa1.",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "2 Xа1",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "дXa l",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S05-R00-crop",
+      "seconds": 0.2531392500241054,
+      "observations": [
+        {
+          "bbox": [
+            0.07858161660538444,
+            0.055498607995037696,
+            0.9033833068432472,
+            0.9417670929280735
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.07858161660538444,
+                0.055498607995037696,
+                0.9033833068432472,
+                0.9417670929280735
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb30N-29",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.0903548918129532,
+                0.05108598708400783,
+                0.8953593931557267,
+                0.9260568645951684
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISЬ3ON-29",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.12693017244021176,
+                0.04810144060611332,
+                0.8909759422679183,
+                0.9290579486976313
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb30N-29",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.12603555426352242,
+                0.053719310624324,
+                0.9168215889838071,
+                0.9348521231243239
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb30N-29",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISb30N-29",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISЬ3ON-29",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S05-full",
+      "seconds": 0.4639524999947753,
+      "observations": [
+        {
+          "bbox": [
+            0.42136706452939876,
+            0.18262282467316238,
+            0.5749519050920072,
+            0.8424619461738134
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.42136706452939876,
+                0.18262282467316238,
+                0.5749519050920072,
+                0.8424619461738134
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb30N-29",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.41779909625083445,
+                0.19770123324060224,
+                0.5710897918651194,
+                0.8356321032967546
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISЬ3ON-29",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.4272709930707267,
+                0.1931864553301239,
+                0.5738888930714048,
+                0.8359865957109832
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ON-29",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.42324845513159826,
+                0.19977229235676786,
+                0.5767515446125281,
+                0.8418943702986624
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISЬ3ON-29",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISb30N-29",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISЬ3ON-29",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISb3ON-29",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S06-R00-crop",
+      "seconds": 0.10882245835091453,
+      "observations": [
+        {
+          "bbox": [
+            0.20599674894200293,
+            0.06830884349107591,
+            0.9035332937418076,
+            0.8406638902566336
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.20599674894200293,
+                0.06830884349107591,
+                0.9035332937418076,
+                0.8406638902566336
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "COBAA",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "COBAA",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S06-R01-crop",
+      "seconds": 0.08804241666803136,
+      "observations": []
+    },
+    {
+      "id": "S06-R02-crop",
+      "seconds": 0.10091762500815094,
+      "observations": [
+        {
+          "bbox": [
+            0.08083847485926729,
+            0.044538241197706774,
+            0.8935382542467106,
+            0.9343207103490906
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.08083847485926729,
+                0.044538241197706774,
+                0.8935382542467106,
+                0.9343207103490906
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "Bis-n",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "Bis-n",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S06-R03-crop",
+      "seconds": 0.07272650001686998,
+      "observations": []
+    },
+    {
+      "id": "S06-R04-crop",
+      "seconds": 0.09025204167119227,
+      "observations": [
+        {
+          "bbox": [
+            0.0999999511944259,
+            0.03015872782370521,
+            0.887234074911389,
+            1.00476198719793
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.0999999511944259,
+                0.03015872782370521,
+                0.887234074911389,
+                1.00476198719793
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "DENOCRS",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.08802377589683996,
+                0.01883967409116206,
+                0.9053609743571956,
+                1.024523451915443
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "DENOaSig",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.13404255485870964,
+                0.026984134202674093,
+                0.9021276287761797,
+                0.9587301175081058
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "B560v2)",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.06332617473626811,
+                -0.038696374806956646,
+                1.0032733436140524,
+                1.0563538920038693
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "Bpoove",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "DENOCRS",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "DENOaSig",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "B560v2)",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "Bpoove",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S06-R05-crop",
+      "seconds": 0.09674087501480244,
+      "observations": [
+        {
+          "bbox": [
+            0.07471114747104321,
+            0.09223067652388206,
+            0.8824711260255088,
+            0.9439917315165578
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.07471114747104321,
+                0.09223067652388206,
+                0.8824711260255088,
+                0.9439917315165578
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3oN-S6",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.048305563662545015,
+                0.09118341976050663,
+                0.8879505159164068,
+                0.9567455726230556
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "RISb3oN-S6",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.10283812073111287,
+                0.09073906301088497,
+                0.9324633371284852,
+                0.9451575314862268
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISbBoN-S6",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.2727271431353204,
+                0.10000000399999998,
+                0.8636364941374068,
+                0.500000004
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "RISЬ3",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISb3oN-S6",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "RISb3oN-S6",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISbBoN-S6",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "RISЬ3",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.18181809154908812,
+            0.4624999894183568,
+            0.6818182649444183,
+            0.7250000132602147
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.18181809154908812,
+                0.4624999894183568,
+                0.6818182649444183,
+                0.7250000132602147
+              ],
+              "angle": 270,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.5,
+                  "text": "bM-",
+                  "angle": 270,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.5,
+              "text": "bM-",
+              "angle": 270,
+              "observation_index": 1,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S06-R06-crop",
+      "seconds": 0.10163650001049973,
+      "observations": [
+        {
+          "bbox": [
+            0.19999994870517313,
+            0.4705882328431372,
+            0.8500000440726048,
+            0.9117647034313725
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.19999994870517313,
+                0.4705882328431372,
+                0.8500000440726048,
+                0.9117647034313725
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.19999976699808752,
+                0.058823534558823436,
+                0.8500002438352456,
+                0.9117647110294117
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3QN 5A",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.19999988329071028,
+                0.08823529877450964,
+                0.8500001217092895,
+                0.9264705928921567
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ON 5",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.3499999563162841,
+                0.5147058863235293,
+                0.7500000516837158,
+                0.9117647098529411
+              ],
+              "angle": 180,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "OSIS",
+                  "angle": 180,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.1999999954166668,
+                0.11764705208333348,
+                0.8499999954166668,
+                0.9264705814950982
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BISb3QN1",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISb3",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISb3QN 5A",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISb3ON 5",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "OSIS",
+              "angle": 180,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BISb3QN1",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S06-R07-crop",
+      "seconds": 0.09902045832131989,
+      "observations": [
+        {
+          "bbox": [
+            0.12029909266036537,
+            0.06258146445980695,
+            0.8948718359702341,
+            0.9826597420476976
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.12029909266036537,
+                0.06258146445980695,
+                0.8948718359702341,
+                0.9826597420476976
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "31563013",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.08386980565610225,
+                0.05750874020406841,
+                0.9276251568286553,
+                1.0017880391480567
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "3.50301",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.10721470847091097,
+                0.07184619829125971,
+                0.9226324220600495,
+                0.9955750765064675
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "31563013",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.07209736167722303,
+                0.053435180809363714,
+                0.926544037719568,
+                0.9976811173162493
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "3156 30)",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "31563013",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "3.50301",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "3156 30)",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S06-R08-crop",
+      "seconds": 0.09965745834051631,
+      "observations": [
+        {
+          "bbox": [
+            0.09351433745080776,
+            0.041628958397495586,
+            0.8506787301666532,
+            0.9628959543410052
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.09351433745080776,
+                0.041628958397495586,
+                0.8506787301666532,
+                0.9628959543410052
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "B/S63ON-2",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.09954747098875794,
+                0.04253393991100176,
+                0.8416289908736989,
+                0.9547511828121436
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "B/SBON-2",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.10580788233283012,
+                0.03947594347000127,
+                0.8371101925917444,
+                0.9613561666708726
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "B/S3ON-2",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.11152892798145508,
+                0.035138327893947,
+                0.7317396733772132,
+                0.8477716662352932
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BIS6ON",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "B/S63ON-2",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "B/SBON-2",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "B/S3ON-2",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BIS6ON",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S06-R09-crop",
+      "seconds": 0.09880666667595506,
+      "observations": [
+        {
+          "bbox": [
+            0.2008607996089825,
+            0.24334488385095987,
+            0.9346650836814864,
+            0.9535170664047343
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.2008607996089825,
+                0.24334488385095987,
+                0.9346650836814864,
+                0.9535170664047343
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "S/SA21",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "S/SA21",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S06-R10-crop",
+      "seconds": 0.10009170831472147,
+      "observations": []
+    },
+    {
+      "id": "S06-full",
+      "seconds": 0.5356467083474854,
+      "observations": [
+        {
+          "bbox": [
+            0.6397058827937118,
+            0.45637254725971477,
+            0.7263071878016463,
+            0.5875000001100565
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.6397058827937118,
+                0.45637254725971477,
+                0.7263071878016463,
+                0.5875000001100565
+              ],
+              "angle": 0,
+              "observation_index": 3,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISBON 2",
+                  "angle": 0,
+                  "observation_index": 3,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.6424158620165983,
+                0.4570712327266187,
+                0.7246081134339701,
+                0.5829961934988152
+              ],
+              "angle": 90,
+              "observation_index": 3,
+              "candidates": [
+                {
+                  "confidence": 0.5,
+                  "text": "BIS63ON-2",
+                  "angle": 90,
+                  "observation_index": 3,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.6430541471625072,
+                0.4587087535909087,
+                0.7298843763919045,
+                0.5875200971018543
+              ],
+              "angle": 180,
+              "observation_index": 4,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "dwogsg",
+                  "angle": 180,
+                  "observation_index": 4,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.6410442607148307,
+                0.45901625414799163,
+                0.7287690152602544,
+                0.5878544197490863
+              ],
+              "angle": 270,
+              "observation_index": 6,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "a Nogslg",
+                  "angle": 270,
+                  "observation_index": 6,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISBON 2",
+              "angle": 0,
+              "observation_index": 3,
+              "rank": 0
+            },
+            {
+              "confidence": 0.5,
+              "text": "BIS63ON-2",
+              "angle": 90,
+              "observation_index": 3,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "dwogsg",
+              "angle": 180,
+              "observation_index": 4,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "a Nogslg",
+              "angle": 270,
+              "observation_index": 6,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.37499999316121235,
+            0.5312499993518519,
+            0.4138888952955778,
+            0.6479166660185186
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.37499999316121235,
+                0.5312499993518519,
+                0.4138888952955778,
+                0.6479166660185186
+              ],
+              "angle": 0,
+              "observation_index": 7,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ONK",
+                  "angle": 0,
+                  "observation_index": 7,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.3735195808599684,
+                0.5309870919638459,
+                0.41536930796076454,
+                0.6502629082454824
+              ],
+              "angle": 270,
+              "observation_index": 3,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISb3ONS1",
+                  "angle": 270,
+                  "observation_index": 3,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.3736880954855444,
+                0.5310160286350701,
+                0.41520079408292254,
+                0.6502339727802727
+              ],
+              "angle": 90,
+              "observation_index": 7,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "A Nosasig",
+                  "angle": 90,
+                  "observation_index": 7,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.3749999935035243,
+                0.5333333338636363,
+                0.4138888956378899,
+                0.650000000530303
+              ],
+              "angle": 180,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BISb3ONS",
+                  "angle": 180,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISb3ONK",
+              "angle": 0,
+              "observation_index": 7,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISb3ONS1",
+              "angle": 270,
+              "observation_index": 3,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "A Nosasig",
+              "angle": 90,
+              "observation_index": 7,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BISb3ONS",
+              "angle": 180,
+              "observation_index": 1,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.18617174433403708,
+            0.5609595286572803,
+            0.23811202122171882,
+            0.7035840181236296
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.18617174433403708,
+                0.5609595286572803,
+                0.23811202122171882,
+                0.7035840181236296
+              ],
+              "angle": 0,
+              "observation_index": 9,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISbBoN-SG",
+                  "angle": 0,
+                  "observation_index": 9,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.18653411938538633,
+                0.5627749539530916,
+                0.23767625564128647,
+                0.7017660873250805
+              ],
+              "angle": 90,
+              "observation_index": 11,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISbBoN-SB",
+                  "angle": 90,
+                  "observation_index": 11,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.18674562614715395,
+                0.5629441647510784,
+                0.2378595601342416,
+                0.7037013599059043
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "95-Nos95",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.18625543599884642,
+                0.562889815302105,
+                0.23768953964671424,
+                0.7016359656367811
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "95-NºE95l9",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISbBoN-SG",
+              "angle": 0,
+              "observation_index": 9,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISbBoN-SB",
+              "angle": 90,
+              "observation_index": 11,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "95-Nos95",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "95-NºE95l9",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.7485983745847815,
+            0.2553899078561461,
+            0.8201070311925154,
+            0.32748470594421986
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.7485983745847815,
+                0.2553899078561461,
+                0.8201070311925154,
+                0.32748470594421986
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "YaLA",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.7505555605996163,
+                0.25500000690679775,
+                0.8266666653528986,
+                0.32541666403672126
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "JaL1",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "YaLA",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "JaL1",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.6800111394081972,
+            0.24673347972684379,
+            0.7933803499693138,
+            0.3786887457256841
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.6800111394081972,
+                0.24673347972684379,
+                0.7933803499693138,
+                0.3786887457256841
+              ],
+              "angle": 0,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BLbOVEN",
+                  "angle": 0,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.6820032255551332,
+                0.24816722281895393,
+                0.7862719565664178,
+                0.37016053406519006
+              ],
+              "angle": 90,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BД60V2",
+                  "angle": 90,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.6803048826474734,
+                0.24776930815955656,
+                0.7939566351193972,
+                0.37721544113736016
+              ],
+              "angle": 180,
+              "observation_index": 6,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "ДENOяT&",
+                  "angle": 180,
+                  "observation_index": 6,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.687008172912449,
+                0.2521065334855265,
+                0.7907386713323166,
+                0.3755057434617227
+              ],
+              "angle": 270,
+              "observation_index": 8,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "ПСЛОСЯЛЯ",
+                  "angle": 270,
+                  "observation_index": 8,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "BLbOVEN",
+              "angle": 0,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BД60V2",
+              "angle": 90,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "ДENOяT&",
+              "angle": 180,
+              "observation_index": 6,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "ПСЛОСЯЛЯ",
+              "angle": 270,
+              "observation_index": 8,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.7606283365451835,
+            0.6568400057944562,
+            0.8532805620395683,
+            0.8021368019573795
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.7606283365451835,
+                0.6568400057944562,
+                0.8532805620395683,
+                0.8021368019573795
+              ],
+              "angle": 0,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "6754-2",
+                  "angle": 0,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.7759174300758049,
+                0.6841934174750229,
+                0.853873597932657,
+                0.801395262326199
+              ],
+              "angle": 90,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "0015/9",
+                  "angle": 90,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.7608333257618218,
+                0.6616666649346712,
+                0.8536111183745334,
+                0.8020833347802522
+              ],
+              "angle": 180,
+              "observation_index": 5,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "S/SDO2E",
+                  "angle": 180,
+                  "observation_index": 5,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.7609009036343835,
+                0.6551013601234931,
+                0.8517717714695343,
+                0.8007882885546861
+              ],
+              "angle": 270,
+              "observation_index": 7,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "6ispe2i",
+                  "angle": 270,
+                  "observation_index": 7,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "6754-2",
+              "angle": 0,
+              "observation_index": 2,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "0015/9",
+              "angle": 90,
+              "observation_index": 2,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "S/SDO2E",
+              "angle": 180,
+              "observation_index": 5,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "6ispe2i",
+              "angle": 270,
+              "observation_index": 7,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.5870766825418471,
+            0.5008343828956151,
+            0.6722921928042305,
+            0.6148194842775527
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.5870766825418471,
+                0.5008343828956151,
+                0.6722921928042305,
+                0.6148194842775527
+              ],
+              "angle": 0,
+              "observation_index": 4,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "te-losagr8",
+                  "angle": 0,
+                  "observation_index": 4,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.5869050362098092,
+                0.4979107823871518,
+                0.6727044653615561,
+                0.6141231583459124
+              ],
+              "angle": 90,
+              "observation_index": 4,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "HЛos asiel",
+                  "angle": 90,
+                  "observation_index": 4,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.5895938662976339,
+                0.4958764365245152,
+                0.6718160948776849,
+                0.6165632219045607
+              ],
+              "angle": 180,
+              "observation_index": 3,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "3156 3003",
+                  "angle": 180,
+                  "observation_index": 3,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.5844291530247286,
+                0.4905581034949683,
+                0.6723241569792981,
+                0.6152140654853246
+              ],
+              "angle": 270,
+              "observation_index": 5,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "81S 3003",
+                  "angle": 270,
+                  "observation_index": 5,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "te-losagr8",
+              "angle": 0,
+              "observation_index": 4,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "HЛos asiel",
+              "angle": 90,
+              "observation_index": 4,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "3156 3003",
+              "angle": 180,
+              "observation_index": 3,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "81S 3003",
+              "angle": 270,
+              "observation_index": 5,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.4966493327355876,
+            0.5095934428245117,
+            0.5297323345081503,
+            0.5715265748371968
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.4966493327355876,
+                0.5095934428245117,
+                0.5297323345081503,
+                0.5715265748371968
+              ],
+              "angle": 0,
+              "observation_index": 5,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "KaI N",
+                  "angle": 0,
+                  "observation_index": 5,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.4972222225277778,
+                0.4999999999583333,
+                0.5277777780833335,
+                0.5708333332916666
+              ],
+              "angle": 90,
+              "observation_index": 5,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "MaL N",
+                  "angle": 90,
+                  "observation_index": 5,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "KaI N",
+              "angle": 0,
+              "observation_index": 5,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "MaL N",
+              "angle": 90,
+              "observation_index": 5,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.44033141909389967,
+            0.4933923352043089,
+            0.4972770715258115,
+            0.6082242516954995
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.44033141909389967,
+                0.4933923352043089,
+                0.4972770715258115,
+                0.6082242516954995
+              ],
+              "angle": 0,
+              "observation_index": 6,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "ISBON-SS",
+                  "angle": 0,
+                  "observation_index": 6,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.437575209599554,
+                0.48678549278900185,
+                0.49847172279671104,
+                0.6065192555300907
+              ],
+              "angle": 90,
+              "observation_index": 6,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "SboN-S4",
+                  "angle": 90,
+                  "observation_index": 6,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.44446077923386595,
+                0.4913480396309319,
+                0.5005555581424896,
+                0.6079779421527011
+              ],
+              "angle": 180,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "S-NOSST",
+                  "angle": 180,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.44237958745266304,
+                0.4937410599585602,
+                0.49429900006557814,
+                0.6041380570924509
+              ],
+              "angle": 270,
+              "observation_index": 4,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "SS-NOSST",
+                  "angle": 270,
+                  "observation_index": 4,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "ISBON-SS",
+              "angle": 0,
+              "observation_index": 6,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "SboN-S4",
+              "angle": 90,
+              "observation_index": 6,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "S-NOSST",
+              "angle": 180,
+              "observation_index": 2,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "SS-NOSST",
+              "angle": 270,
+              "observation_index": 4,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.22759950338738877,
+            0.585282964858416,
+            0.27648450976217176,
+            0.6695935441583427
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.22759950338738877,
+                0.585282964858416,
+                0.27648450976217176,
+                0.6695935441583427
+              ],
+              "angle": 0,
+              "observation_index": 8,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "NT0%",
+                  "angle": 0,
+                  "observation_index": 8,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.22805676777282724,
+                0.5829967260987013,
+                0.2766739453122289,
+                0.6674763441712112
+              ],
+              "angle": 90,
+              "observation_index": 10,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "xаI N",
+                  "angle": 90,
+                  "observation_index": 10,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.2335816996171084,
+                0.5858161816241705,
+                0.27756535512281855,
+                0.6708676466586554
+              ],
+              "angle": 270,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "N1o%",
+                  "angle": 270,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "NT0%",
+              "angle": 0,
+              "observation_index": 8,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "xаI N",
+              "angle": 90,
+              "observation_index": 10,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "N1o%",
+              "angle": 270,
+              "observation_index": 1,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.18905555612449987,
+            0.28879166738312717,
+            0.23672222236731133,
+            0.35504166579366997
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.18905555612449987,
+                0.28879166738312717,
+                0.23672222236731133,
+                0.35504166579366997
+              ],
+              "angle": 90,
+              "observation_index": 8,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "KeLN",
+                  "angle": 90,
+                  "observation_index": 8,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.1890170936940181,
+                0.29134615447930867,
+                0.2359401694759462,
+                0.3568269231598812
+              ],
+              "angle": 270,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "STON",
+                  "angle": 270,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "KeLN",
+              "angle": 90,
+              "observation_index": 8,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "STON",
+              "angle": 270,
+              "observation_index": 2,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.12907835702406867,
+            0.27892581927404897,
+            0.19139370448364978,
+            0.3889812102678031
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.12907835702406867,
+                0.27892581927404897,
+                0.19139370448364978,
+                0.3889812102678031
+              ],
+              "angle": 90,
+              "observation_index": 9,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BEBANSU",
+                  "angle": 90,
+                  "observation_index": 9,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "BEBANSU",
+              "angle": 90,
+              "observation_index": 9,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S07-R00-crop",
+      "seconds": 0.22901074998662807,
+      "observations": [
+        {
+          "bbox": [
+            0.053946028083627126,
+            0.07669419477203199,
+            0.9307634571857869,
+            0.9540750353669839
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.053946028083627126,
+                0.07669419477203199,
+                0.9307634571857869,
+                0.9540750353669839
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "3IS.0H5",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.05250047271333402,
+                0.036952318709910184,
+                0.9291891120362507,
+                0.9705571019881554
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BIS0H5",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.05728242636356118,
+                0.054364421835809806,
+                0.936601363612701,
+                0.930250957480341
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "SACSia",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.05787943140421825,
+                0.061726663778315705,
+                0.9415269184729778,
+                0.9966495716809599
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "3 5 0н5",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "3IS.0H5",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BIS0H5",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "SACSia",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "3 5 0н5",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S07-full",
+      "seconds": 0.5392084583290853,
+      "observations": [
+        {
+          "bbox": [
+            0.8354166670729166,
+            0.6305555554236112,
+            0.9979166670729166,
+            0.783333333201389
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.8354166670729166,
+                0.6305555554236112,
+                0.9979166670729166,
+                0.783333333201389
+              ],
+              "angle": 0,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "15",
+                  "angle": 0,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.839583333577474,
+                0.6222222114522299,
+                0.995833333577474,
+                0.7777777882005479
+              ],
+              "angle": 90,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "15",
+                  "angle": 90,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.8354166508207058,
+                0.6249999782979782,
+                1.000000015943183,
+                0.7777777984612811
+              ],
+              "angle": 180,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "15",
+                  "angle": 180,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.8354166661250001,
+                0.6305555451721372,
+                0.9979166661250001,
+                0.777777788587122
+              ],
+              "angle": 270,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "15",
+                  "angle": 270,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "15",
+              "angle": 0,
+              "observation_index": 2,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.16326770280652425,
+            0.37065811737664217,
+            0.5200827866281389,
+            0.5517885266173649
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.16326770280652425,
+                0.37065811737664217,
+                0.5200827866281389,
+                0.5517885266173649
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.5,
+                  "text": "2 Xa l",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.17291666772058825,
+                0.3999999996486928,
+                0.5312500010539216,
+                0.5527777774264706
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "1 Xa",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.17708333245039687,
+                0.39444440228378697,
+                0.5479166657837302,
+                0.5500000426103929
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "1 Xа!",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.17605418046133425,
+                0.35512503474628376,
+                0.7771978267015687,
+                0.5648479775224339
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "1 Xa l.",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.5,
+              "text": "2 Xa l",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "1 Xa",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "1 Xа!",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "1 Xa l.",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.1413565946024218,
+            0.6061859125619865,
+            0.7398934038879036,
+            0.7660363086123336
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.1413565946024218,
+                0.6061859125619865,
+                0.7398934038879036,
+                0.7660363086123336
+              ],
+              "angle": 0,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "3IS.00H5",
+                  "angle": 0,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.14507907147557708,
+                0.6001800108607224,
+                0.7382542601759352,
+                0.7637088770987865
+              ],
+              "angle": 180,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "3IS0N5",
+                  "angle": 180,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.14556003853415767,
+                0.6022298670522558,
+                0.7437212908738385,
+                0.774946474040103
+              ],
+              "angle": 270,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "35055",
+                  "angle": 270,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "3IS.00H5",
+              "angle": 0,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "3IS0N5",
+              "angle": 180,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "35055",
+              "angle": 270,
+              "observation_index": 1,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S08-R00-crop",
+      "seconds": 0.057957666664151475,
+      "observations": []
+    },
+    {
+      "id": "S08-R01-crop",
+      "seconds": 0.07382787500682753,
+      "observations": [
+        {
+          "bbox": [
+            0.47619047645502643,
+            0.2727270572457361,
+            0.7238095240740741,
+            0.7272729452795162
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.47619047645502643,
+                0.2727270572457361,
+                0.7238095240740741,
+                0.7272729452795162
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "TAKеRI",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "TAKеRI",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S08-R02-crop",
+      "seconds": 0.09140725001634564,
+      "observations": [
+        {
+          "bbox": [
+            0.45862067529592077,
+            0.03965517502905591,
+            0.9242578823271708,
+            0.83764366926632
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.45862067529592077,
+                0.03965517502905591,
+                0.9242578823271708,
+                0.83764366926632
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "4ONSS",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "4ONSS",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S08-R03-crop",
+      "seconds": 0.08162474998971447,
+      "observations": []
+    },
+    {
+      "id": "S08-R04-crop",
+      "seconds": 0.09913274997961707,
+      "observations": []
+    },
+    {
+      "id": "S08-R05-crop",
+      "seconds": 0.06898199998249765,
+      "observations": []
+    },
+    {
+      "id": "S08-R06-crop",
+      "seconds": 0.22093795835098717,
+      "observations": [
+        {
+          "bbox": [
+            0.03806228074971167,
+            0.11627907124031012,
+            0.9342560523760094,
+            0.9767441875193797
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.03806228074971167,
+                0.11627907124031012,
+                0.9342560523760094,
+                0.9767441875193797
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISBAON-9",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.05084303110091848,
+                0.01596645361951133,
+                0.9908297385309034,
+                1.0273982585426353
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISLAJN 9",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.05190311742461695,
+                0.06976690824822207,
+                0.9584775118882847,
+                1.0000005309544358
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISLAON9",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.026433410143712144,
+                0.08581627138982495,
+                0.9492681826958855,
+                1.057066938518277
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISLAN9",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISBAON-9",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISLAJN 9",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISLAON9",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISLAN9",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S08-full",
+      "seconds": 0.47525595834304113,
+      "observations": [
+        {
+          "bbox": [
+            0.20000000092261902,
+            0.5111111108730159,
+            0.3291666675892857,
+            0.5555555553174604
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.20000000092261902,
+                0.5111111108730159,
+                0.3291666675892857,
+                0.5555555553174604
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BlSb",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BlSb",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.5208333352604166,
+            0.402777777638889,
+            0.7520833352604167,
+            0.45833333319444447
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.5208333352604166,
+                0.402777777638889,
+                0.7520833352604167,
+                0.45833333319444447
+              ],
+              "angle": 0,
+              "observation_index": 4,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "ISB40N :8",
+                  "angle": 0,
+                  "observation_index": 4,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.5561153906587242,
+                0.39077320358332246,
+                0.770967946251579,
+                0.4508934629742595
+              ],
+              "angle": 180,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "B40N-8",
+                  "angle": 180,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "ISB40N :8",
+              "angle": 0,
+              "observation_index": 4,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "B40N-8",
+              "angle": 180,
+              "observation_index": 2,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.41249999820833333,
+            0.7638888890185184,
+            0.9499999982083334,
+            0.8750000001296295
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.41249999820833333,
+                0.7638888890185184,
+                0.9499999982083334,
+                0.8750000001296295
+              ],
+              "angle": 0,
+              "observation_index": 5,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISLAJN-9",
+                  "angle": 0,
+                  "observation_index": 5,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.43750000158854163,
+                0.7583333014400228,
+                0.945833334921875,
+                0.8694444761294217
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISLAN-9",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.4270833320208334,
+                0.7611110476786567,
+                0.9520833320208334,
+                0.8694445081685656
+              ],
+              "angle": 180,
+              "observation_index": 3,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISLAON9",
+                  "angle": 180,
+                  "observation_index": 3,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.4579274444677133,
+                0.7661223271475597,
+                0.9711338310338753,
+                0.8741562915165918
+              ],
+              "angle": 270,
+              "observation_index": 3,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "BISEAON-9",
+                  "angle": 270,
+                  "observation_index": 3,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "BISLAJN-9",
+              "angle": 0,
+              "observation_index": 5,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISLAN-9",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISLAON9",
+              "angle": 180,
+              "observation_index": 3,
+              "rank": 0
+            },
+            {
+              "confidence": 1,
+              "text": "BISEAON-9",
+              "angle": 270,
+              "observation_index": 3,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.5624999996041666,
+            0.26944443925736483,
+            0.6020833329375,
+            0.2916666720759683
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.5624999996041666,
+                0.26944443925736483,
+                0.6020833329375,
+                0.2916666720759683
+              ],
+              "angle": 180,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "ON",
+                  "angle": 180,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "ON",
+              "angle": 180,
+              "observation_index": 1,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.5284472906007364,
+            0.2642035012166357,
+            0.6610727432781452,
+            0.29808164484507405
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.5284472906007364,
+                0.2642035012166357,
+                0.6610727432781452,
+                0.29808164484507405
+              ],
+              "angle": 270,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "SHONAIS",
+                  "angle": 270,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.5020833353124999,
+                0.26111111097222217,
+                0.6604166686458333,
+                0.2944444443055556
+              ],
+              "angle": 0,
+              "observation_index": 3,
+              "candidates": [
+                {
+                  "confidence": 0.5,
+                  "text": "SSZONEE",
+                  "angle": 0,
+                  "observation_index": 3,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "SHONAIS",
+              "angle": 270,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 0.5,
+              "text": "SSZONEE",
+              "angle": 0,
+              "observation_index": 3,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.19791666755208331,
+            0.5583333331712963,
+            0.3041666675520833,
+            0.5999999998379629
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.19791666755208331,
+                0.5583333331712963,
+                0.3041666675520833,
+                0.5999999998379629
+              ],
+              "angle": 0,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "Kade",
+                  "angle": 0,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "Kade",
+              "angle": 0,
+              "observation_index": 1,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.058333334656249985,
+            0.7472222220833332,
+            0.3229166679895833,
+            0.8361111109722221
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.058333334656249985,
+                0.7472222220833332,
+                0.3229166679895833,
+                0.8361111109722221
+              ],
+              "angle": 0,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "ANe!",
+                  "angle": 0,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.07291666560416676,
+                0.7611110847868245,
+                0.2854166656041668,
+                0.8277778044353977
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "4N61",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.07083333227083333,
+                0.7583333229313964,
+                0.28333333227083335,
+                0.8361111219019368
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "Aд2!",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "ANe!",
+              "angle": 0,
+              "observation_index": 2,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "4N61",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "Aд2!",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.5916666655,
+            0.4166666601828173,
+            0.7083333321666667,
+            0.44722222898384945
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.5916666655,
+                0.4166666601828173,
+                0.7083333321666667,
+                0.44722222898384945
+              ],
+              "angle": 270,
+              "observation_index": 2,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "40N",
+                  "angle": 270,
+                  "observation_index": 2,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "40N",
+              "angle": 270,
+              "observation_index": 2,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S09-R00-crop",
+      "seconds": 0.25147962498886045,
+      "observations": [
+        {
+          "bbox": [
+            0.06429903479924554,
+            0.12278236361419947,
+            0.9418548115420342,
+            0.9496814083697758
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.06429903479924554,
+                0.12278236361419947,
+                0.9418548115420342,
+                0.9496814083697758
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BASION",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.06461538737500006,
+                0.11594186258562611,
+                0.9476923104519231,
+                0.8985508899506057
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BALONA",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.06722219394004803,
+                0.08998467372878893,
+                0.9481624170470191,
+                0.924508082038062
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BSLOMK",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.07076922901538463,
+                0.15942012492620594,
+                0.9476923059384615,
+                0.9130436450448087
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BALOMK",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "BASION",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BALONA",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BSLOMK",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BALOMK",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S09-full",
+      "seconds": 0.5411292500066338,
+      "observations": [
+        {
+          "bbox": [
+            0.1312500010138889,
+            0.33888888867592604,
+            0.43541666768055554,
+            0.5083333331203704
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.1312500010138889,
+                0.33888888867592604,
+                0.43541666768055554,
+                0.5083333331203704
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 1,
+                  "text": "AX",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 1,
+              "text": "AX",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.13947185054194228,
+            0.5630886024326138,
+            0.7646948195971182,
+            0.7202447307861566
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.13947185054194228,
+                0.5630886024326138,
+                0.7646948195971182,
+                0.7202447307861566
+              ],
+              "angle": 0,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BSLONK",
+                  "angle": 0,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.1458333292916668,
+                0.5555554606325683,
+                0.9541666626250002,
+                0.7222223180340983
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BSLONK16",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.14791666546875004,
+                0.5666666350591467,
+                0.7708333321354167,
+                0.7166666986374344
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BSLONK",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "BSLONK",
+              "angle": 0,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "BSLONK16",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S10-full",
+      "seconds": 0.5250608750066021,
+      "observations": [
+        {
+          "bbox": [
+            -0.000632550498779574,
+            0.1279734370337109,
+            0.3256325514638398,
+            0.22827656241518068
+          ],
+          "members": [
+            {
+              "bbox": [
+                -0.000632550498779574,
+                0.1279734370337109,
+                0.3256325514638398,
+                0.22827656241518068
+              ],
+              "angle": 0,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.5,
+                  "text": "V-17",
+                  "angle": 0,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.0027777784548610462,
+                0.12499999194420708,
+                0.327777778454861,
+                0.22708334117211235
+              ],
+              "angle": 90,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "57.-1",
+                  "angle": 90,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.002777768023410454,
+                0.12083330983001705,
+                0.3333333447717286,
+                0.2291666908470662
+              ],
+              "angle": 180,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "N-79",
+                  "angle": 180,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                -4.5910497625811786e-10,
+                0.12499999218002888,
+                0.3305555550964506,
+                0.2291666747412674
+              ],
+              "angle": 270,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "W-12",
+                  "angle": 270,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.5,
+              "text": "V-17",
+              "angle": 0,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "57.-1",
+              "angle": 90,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "N-79",
+              "angle": 180,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "W-12",
+              "angle": 270,
+              "observation_index": 0,
+              "rank": 0
+            }
+          ]
+        },
+        {
+          "bbox": [
+            0.09444444346230164,
+            0.4875000004464285,
+            0.8972222212400794,
+            0.6125000004464286
+          ],
+          "members": [
+            {
+              "bbox": [
+                0.09444444346230164,
+                0.4875000004464285,
+                0.8972222212400794,
+                0.6125000004464286
+              ],
+              "angle": 0,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "BSEN 20",
+                  "angle": 0,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.09056174232882741,
+                0.483055973312698,
+                0.8956667397517875,
+                0.6122185391798041
+              ],
+              "angle": 90,
+              "observation_index": 0,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "OCNOSE",
+                  "angle": 90,
+                  "observation_index": 0,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.09372007404877336,
+                0.47662761163397593,
+                0.8979465890769851,
+                0.612955720739404
+              ],
+              "angle": 180,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "OCNOSE",
+                  "angle": 180,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            },
+            {
+              "bbox": [
+                0.0932419165298598,
+                0.48182134820032274,
+                0.9007961191394518,
+                0.6167004604439751
+              ],
+              "angle": 270,
+              "observation_index": 1,
+              "candidates": [
+                {
+                  "confidence": 0.3,
+                  "text": "ORNOSE",
+                  "angle": 270,
+                  "observation_index": 1,
+                  "rank": 0
+                }
+              ]
+            }
+          ],
+          "candidates": [
+            {
+              "confidence": 0.3,
+              "text": "BSEN 20",
+              "angle": 0,
+              "observation_index": 1,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "OCNOSE",
+              "angle": 90,
+              "observation_index": 0,
+              "rank": 0
+            },
+            {
+              "confidence": 0.3,
+              "text": "ORNOSE",
+              "angle": 270,
+              "observation_index": 1,
+              "rank": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "finished_at": "2026-10-09T02:04:25.119827+09:00",
+  "reference_environment": "../e1_alternative/results/environment.json",
+  "source_sha256": {
+    "run_recognition.py": "bdf257300c90bf0b87c361b64a558a3aa40482f5aa434dac3d468933c714847f",
+    "PROTOCOL.md": "635ae0c63cc4bbf4860cc1b1c243fda48f9c2743c220f7e1bfda8e3e9b41c8d4"
+  },
+  "manifest_sha256": "442a55a307d7796b71f5a2a51de18457412aeb71efca00ed4510804d81262bbe"
+}

@@ -1,0 +1,1346 @@
+[
+  {
+    "id": "S01-R00",
+    "angle": 0,
+    "seconds": 0.745742541999789,
+    "candidates": [
+      {
+        "text": "BISb30N-56",
+        "confidence": 0.90065,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S01-R00",
+    "angle": 90,
+    "seconds": 0.01610870799049735,
+    "candidates": [
+      {
+        "text": "20",
+        "confidence": 0.48638,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S01-R00",
+    "angle": 180,
+    "seconds": 0.01566570799332112,
+    "candidates": [
+      {
+        "text": "9S-NE9S/S",
+        "confidence": 0.65231,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S01-R00",
+    "angle": 270,
+    "seconds": 0.015066082996781915,
+    "candidates": [
+      {
+        "text": "21",
+        "confidence": 0.16554,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S02-R00",
+    "angle": 0,
+    "seconds": 0.020131208992097527,
+    "candidates": [
+      {
+        "text": "BISb3ON-58",
+        "confidence": 0.97329,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S02-R00",
+    "angle": 90,
+    "seconds": 0.015919957993901335,
+    "candidates": [
+      {
+        "text": "2",
+        "confidence": 0.18263,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S02-R00",
+    "angle": 180,
+    "seconds": 0.016375249993870966,
+    "candidates": [
+      {
+        "text": "I6-58",
+        "confidence": 0.52569,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S02-R00",
+    "angle": 270,
+    "seconds": 0.015068583001266234,
+    "candidates": [
+      {
+        "text": "2",
+        "confidence": 0.27792,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S03-R00",
+    "angle": 0,
+    "seconds": 0.01560987500124611,
+    "candidates": [
+      {
+        "text": "五0",
+        "confidence": 0.36298,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S03-R00",
+    "angle": 90,
+    "seconds": 0.015333834002376534,
+    "candidates": [
+      {
+        "text": "B1E E4",
+        "confidence": 0.56661,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S03-R00",
+    "angle": 180,
+    "seconds": 0.01557899999897927,
+    "candidates": [
+      {
+        "text": "20",
+        "confidence": 0.43507,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S03-R00",
+    "angle": 270,
+    "seconds": 0.01621366699691862,
+    "candidates": [
+      {
+        "text": "BISb30N-34",
+        "confidence": 0.98489,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S03-R01",
+    "angle": 0,
+    "seconds": 0.017636958000366576,
+    "candidates": [
+      {
+        "text": "2",
+        "confidence": 0.31259,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S03-R01",
+    "angle": 90,
+    "seconds": 0.01576999999815598,
+    "candidates": [
+      {
+        "text": "BIS63ON-12",
+        "confidence": 0.87086,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S03-R01",
+    "angle": 180,
+    "seconds": 0.018929833007859997,
+    "candidates": [
+      {
+        "text": "2",
+        "confidence": 0.53335,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S03-R01",
+    "angle": 270,
+    "seconds": 0.0167004170070868,
+    "candidates": [
+      {
+        "text": "C-NEISIC",
+        "confidence": 0.46138,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S03-R02",
+    "angle": 0,
+    "seconds": 0.017824041991843842,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S03-R02",
+    "angle": 90,
+    "seconds": 0.017127041006460786,
+    "candidates": [
+      {
+        "text": "B1-IE",
+        "confidence": 0.58286,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S03-R02",
+    "angle": 180,
+    "seconds": 0.017042167004547082,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S03-R02",
+    "angle": 270,
+    "seconds": 0.017055208008969203,
+    "candidates": [
+      {
+        "text": "BIS630N-13",
+        "confidence": 0.96074,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S03-R03",
+    "angle": 0,
+    "seconds": 0.019269292009994388,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S03-R03",
+    "angle": 90,
+    "seconds": 0.017585708992555737,
+    "candidates": [
+      {
+        "text": "BE1NOE9S1E",
+        "confidence": 0.71706,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S03-R03",
+    "angle": 180,
+    "seconds": 0.017044624997652136,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S03-R03",
+    "angle": 270,
+    "seconds": 0.017432749998988584,
+    "candidates": [
+      {
+        "text": "B15b30N-3A",
+        "confidence": 0.8091,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S04-R00",
+    "angle": 0,
+    "seconds": 0.017702333003398962,
+    "candidates": [
+      {
+        "text": "BI--IS",
+        "confidence": 0.63352,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S04-R00",
+    "angle": 90,
+    "seconds": 0.016632832994218916,
+    "candidates": [
+      {
+        "text": "20",
+        "confidence": 0.28208,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S04-R00",
+    "angle": 180,
+    "seconds": 0.01729995799541939,
+    "candidates": [
+      {
+        "text": "BISb30N-15",
+        "confidence": 0.99666,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S04-R00",
+    "angle": 270,
+    "seconds": 0.01650675000564661,
+    "candidates": [
+      {
+        "text": "20",
+        "confidence": 0.22319,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S05-R00",
+    "angle": 0,
+    "seconds": 0.020519417012110353,
+    "candidates": [
+      {
+        "text": "20",
+        "confidence": 0.35524,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S05-R00",
+    "angle": 90,
+    "seconds": 0.017187166988151148,
+    "candidates": [
+      {
+        "text": "BISb30N-29",
+        "confidence": 0.98304,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S05-R00",
+    "angle": 180,
+    "seconds": 0.01794379200146068,
+    "candidates": [
+      {
+        "text": "20",
+        "confidence": 0.53062,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S05-R00",
+    "angle": 270,
+    "seconds": 0.0159710419975454,
+    "candidates": [
+      {
+        "text": "BISBS2Z",
+        "confidence": 0.65888,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S06-R00",
+    "angle": 0,
+    "seconds": 0.01594637500238605,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S06-R00",
+    "angle": 90,
+    "seconds": 0.01581216699560173,
+    "candidates": [
+      {
+        "text": "Bisb3eN-36",
+        "confidence": 0.75843,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S06-R00",
+    "angle": 180,
+    "seconds": 0.01620283401280176,
+    "candidates": [
+      {
+        "text": "A会",
+        "confidence": 0.29279,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S06-R00",
+    "angle": 270,
+    "seconds": 0.015819041000213474,
+    "candidates": [
+      {
+        "text": "P5O-E",
+        "confidence": 0.28685,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S06-R01",
+    "angle": 0,
+    "seconds": 0.015331167000113055,
+    "candidates": [
+      {
+        "text": "4级",
+        "confidence": 0.32449,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S06-R01",
+    "angle": 90,
+    "seconds": 0.015127874998142943,
+    "candidates": [
+      {
+        "text": "OH-NOESI0",
+        "confidence": 0.5193,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S06-R01",
+    "angle": 180,
+    "seconds": 0.015650999994250014,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S06-R01",
+    "angle": 270,
+    "seconds": 0.017063249993952923,
+    "candidates": [
+      {
+        "text": "BISb3ON-40",
+        "confidence": 0.78588,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S06-R02",
+    "angle": 0,
+    "seconds": 0.016364916999009438,
+    "candidates": [
+      {
+        "text": "4A",
+        "confidence": 0.23273,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S06-R02",
+    "angle": 90,
+    "seconds": 0.015734874992631376,
+    "candidates": [
+      {
+        "text": "B-NES19",
+        "confidence": 0.64162,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S06-R02",
+    "angle": 180,
+    "seconds": 0.016290083003696054,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S06-R02",
+    "angle": 270,
+    "seconds": 0.017632249990128912,
+    "candidates": [
+      {
+        "text": "BIS63N-19",
+        "confidence": 0.84918,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S06-R03",
+    "angle": 0,
+    "seconds": 0.017364416999043897,
+    "candidates": [
+      {
+        "text": "9",
+        "confidence": 0.13866,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S06-R03",
+    "angle": 90,
+    "seconds": 0.01810820800892543,
+    "candidates": [
+      {
+        "text": "07-099",
+        "confidence": 0.58169,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S06-R03",
+    "angle": 180,
+    "seconds": 0.02002399999764748,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S06-R03",
+    "angle": 270,
+    "seconds": 0.01713283399294596,
+    "candidates": [
+      {
+        "text": "353304-20",
+        "confidence": 0.68605,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S06-R04",
+    "angle": 0,
+    "seconds": 0.020268791005946696,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S06-R04",
+    "angle": 90,
+    "seconds": 0.019407999992836267,
+    "candidates": [
+      {
+        "text": "BIS6O0V-",
+        "confidence": 0.56952,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S06-R04",
+    "angle": 180,
+    "seconds": 0.01998075000301469,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S06-R04",
+    "angle": 270,
+    "seconds": 0.019625749991973862,
+    "candidates": [
+      {
+        "text": "SCANCgg",
+        "confidence": 0.31068,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S06-R05",
+    "angle": 0,
+    "seconds": 0.021006124996347353,
+    "candidates": [
+      {
+        "text": "2",
+        "confidence": 0.28355,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S06-R05",
+    "angle": 90,
+    "seconds": 0.019960500008892268,
+    "candidates": [
+      {
+        "text": "BISb30N-56",
+        "confidence": 0.88792,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S06-R05",
+    "angle": 180,
+    "seconds": 0.02368654200108722,
+    "candidates": [
+      {
+        "text": "2",
+        "confidence": 0.51509,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S06-R05",
+    "angle": 270,
+    "seconds": 0.02289208299771417,
+    "candidates": [
+      {
+        "text": "9S-NE9S19",
+        "confidence": 0.50786,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S06-R06",
+    "angle": 0,
+    "seconds": 0.018458124992321245,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S06-R06",
+    "angle": 90,
+    "seconds": 0.017726000005495735,
+    "candidates": [
+      {
+        "text": "BS-E9SS",
+        "confidence": 0.50111,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S06-R06",
+    "angle": 180,
+    "seconds": 0.019364374995348044,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S06-R06",
+    "angle": 270,
+    "seconds": 0.02145816700067371,
+    "candidates": [
+      {
+        "text": "BISb30N-54",
+        "confidence": 0.91043,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S06-R07",
+    "angle": 0,
+    "seconds": 0.0316532920114696,
+    "candidates": [
+      {
+        "text": "事招",
+        "confidence": 0.15219,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S06-R07",
+    "angle": 90,
+    "seconds": 0.046630708005977795,
+    "candidates": [
+      {
+        "text": "te-10091E",
+        "confidence": 0.47957,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S06-R07",
+    "angle": 180,
+    "seconds": 0.037399458000436425,
+    "candidates": [
+      {
+        "text": "最",
+        "confidence": 0.49573,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S06-R07",
+    "angle": 270,
+    "seconds": 0.04136470799858216,
+    "candidates": [
+      {
+        "text": "B156301-34",
+        "confidence": 0.85268,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S06-R08",
+    "angle": 0,
+    "seconds": 0.07046541600720957,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S06-R08",
+    "angle": 90,
+    "seconds": 0.03543449999415316,
+    "candidates": [
+      {
+        "text": "BISBON-P",
+        "confidence": 0.64038,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S06-R08",
+    "angle": 180,
+    "seconds": 0.03381637499842327,
+    "candidates": [
+      {
+        "text": "福",
+        "confidence": 0.13285,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S06-R08",
+    "angle": 270,
+    "seconds": 0.068098125004326,
+    "candidates": [
+      {
+        "text": "DCH-Ns19",
+        "confidence": 0.54408,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S06-R09",
+    "angle": 0,
+    "seconds": 0.05419895799423102,
+    "candidates": [
+      {
+        "text": "1",
+        "confidence": 0.13663,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S06-R09",
+    "angle": 90,
+    "seconds": 0.03470279100292828,
+    "candidates": [
+      {
+        "text": "19",
+        "confidence": 0.49105,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S06-R09",
+    "angle": 180,
+    "seconds": 0.05108062499493826,
+    "candidates": [
+      {
+        "text": "1",
+        "confidence": 0.4105,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S06-R09",
+    "angle": 270,
+    "seconds": 0.03321283299010247,
+    "candidates": [
+      {
+        "text": "BIS-381",
+        "confidence": 0.68343,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S06-R10",
+    "angle": 0,
+    "seconds": 0.04489324998576194,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S06-R10",
+    "angle": 90,
+    "seconds": 0.036662250000517815,
+    "candidates": [
+      {
+        "text": "AH-IA",
+        "confidence": 0.31467,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S06-R10",
+    "angle": 180,
+    "seconds": 0.05174941699078772,
+    "candidates": [
+      {
+        "text": "福",
+        "confidence": 0.17217,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S06-R10",
+    "angle": 270,
+    "seconds": 0.03891862499585841,
+    "candidates": [
+      {
+        "text": "B1S330-",
+        "confidence": 0.60675,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S07-R00",
+    "angle": 0,
+    "seconds": 0.044655167002929375,
+    "candidates": [
+      {
+        "text": "BISb30N-15",
+        "confidence": 0.9964,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S07-R00",
+    "angle": 90,
+    "seconds": 0.06112554199353326,
+    "candidates": [
+      {
+        "text": "2",
+        "confidence": 0.18174,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S07-R00",
+    "angle": 180,
+    "seconds": 0.04076000000350177,
+    "candidates": [
+      {
+        "text": "BI-IS",
+        "confidence": 0.62512,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S07-R00",
+    "angle": 270,
+    "seconds": 0.03785508399596438,
+    "candidates": [
+      {
+        "text": "20",
+        "confidence": 0.2399,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S08-R00",
+    "angle": 0,
+    "seconds": 0.054342792005627416,
+    "candidates": [
+      {
+        "text": "ES-0SOY9",
+        "confidence": 0.19284,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S08-R00",
+    "angle": 90,
+    "seconds": 0.036271958000725135,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S08-R00",
+    "angle": 180,
+    "seconds": 0.04094637499656528,
+    "candidates": [
+      {
+        "text": "Ce-ASLdCKE",
+        "confidence": 0.33606,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S08-R00",
+    "angle": 270,
+    "seconds": 0.04136758399545215,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S08-R01",
+    "angle": 0,
+    "seconds": 0.05726266698911786,
+    "candidates": [
+      {
+        "text": "B1S640N23",
+        "confidence": 0.87155,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S08-R01",
+    "angle": 90,
+    "seconds": 0.03924504198948853,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S08-R01",
+    "angle": 180,
+    "seconds": 0.07042191599612124,
+    "candidates": [
+      {
+        "text": "BE",
+        "confidence": 0.4031,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S08-R01",
+    "angle": 270,
+    "seconds": 0.05278308299602941,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S08-R02",
+    "angle": 0,
+    "seconds": 0.048404333007056266,
+    "candidates": [
+      {
+        "text": "BSb40N-15",
+        "confidence": 0.94473,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S08-R02",
+    "angle": 90,
+    "seconds": 0.05421975000353996,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S08-R02",
+    "angle": 180,
+    "seconds": 0.051747457997407764,
+    "candidates": [
+      {
+        "text": "FBI5",
+        "confidence": 0.52117,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S08-R02",
+    "angle": 270,
+    "seconds": 0.04161479100002907,
+    "candidates": [
+      {
+        "text": "2",
+        "confidence": 0.31356,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S08-R03",
+    "angle": 0,
+    "seconds": 0.05262491600296926,
+    "candidates": [
+      {
+        "text": "BIS640N27",
+        "confidence": 0.80875,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S08-R03",
+    "angle": 90,
+    "seconds": 0.04867191599623766,
+    "candidates": [
+      {
+        "text": "2",
+        "confidence": 0.41313,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S08-R03",
+    "angle": 180,
+    "seconds": 0.0514345000119647,
+    "candidates": [
+      {
+        "text": "B27",
+        "confidence": 0.536,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S08-R03",
+    "angle": 270,
+    "seconds": 0.06082429099478759,
+    "candidates": [
+      {
+        "text": "2",
+        "confidence": 0.29374,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S08-R04",
+    "angle": 0,
+    "seconds": 0.0570282499975292,
+    "candidates": [
+      {
+        "text": "B1SB4ON-8",
+        "confidence": 0.88587,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S08-R04",
+    "angle": 90,
+    "seconds": 0.050603249997948296,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S08-R04",
+    "angle": 180,
+    "seconds": 0.0680677500058664,
+    "candidates": [
+      {
+        "text": "BO8",
+        "confidence": 0.50043,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S08-R04",
+    "angle": 270,
+    "seconds": 0.04079087500576861,
+    "candidates": [
+      {
+        "text": "2",
+        "confidence": 0.29543,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S08-R05",
+    "angle": 0,
+    "seconds": 0.060199624989763834,
+    "candidates": [
+      {
+        "text": "B/Sb40N-26",
+        "confidence": 0.86214,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S08-R05",
+    "angle": 90,
+    "seconds": 0.04355183299048804,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S08-R05",
+    "angle": 180,
+    "seconds": 0.0662770419876324,
+    "candidates": [
+      {
+        "text": "B-12",
+        "confidence": 0.63997,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S08-R05",
+    "angle": 270,
+    "seconds": 0.038327707996359095,
+    "candidates": [
+      {
+        "text": "",
+        "confidence": 0.0,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S08-R06",
+    "angle": 0,
+    "seconds": 0.07824283299851231,
+    "candidates": [
+      {
+        "text": "BISb49N-9",
+        "confidence": 0.9273,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S08-R06",
+    "angle": 90,
+    "seconds": 0.037901375006185845,
+    "candidates": [
+      {
+        "text": "2",
+        "confidence": 0.23533,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S08-R06",
+    "angle": 180,
+    "seconds": 0.08901804199558683,
+    "candidates": [
+      {
+        "text": "B9",
+        "confidence": 0.74776,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S08-R06",
+    "angle": 270,
+    "seconds": 0.038213833002373576,
+    "candidates": [
+      {
+        "text": "20",
+        "confidence": 0.27606,
+        "angle": 270
+      }
+    ]
+  },
+  {
+    "id": "S09-R00",
+    "angle": 0,
+    "seconds": 0.041387459001271054,
+    "candidates": [
+      {
+        "text": "BIS630N-16",
+        "confidence": 0.98881,
+        "angle": 0
+      }
+    ]
+  },
+  {
+    "id": "S09-R00",
+    "angle": 90,
+    "seconds": 0.04753887499100529,
+    "candidates": [
+      {
+        "text": "20",
+        "confidence": 0.53879,
+        "angle": 90
+      }
+    ]
+  },
+  {
+    "id": "S09-R00",
+    "angle": 180,
+    "seconds": 0.03571708299568854,
+    "candidates": [
+      {
+        "text": "B-NOE9S1",
+        "confidence": 0.73704,
+        "angle": 180
+      }
+    ]
+  },
+  {
+    "id": "S09-R00",
+    "angle": 270,
+    "seconds": 0.04188491600507405,
+    "candidates": [
+      {
+        "text": "20",
+        "confidence": 0.48691,
+        "angle": 270
+      }
+    ]
+  }
+]

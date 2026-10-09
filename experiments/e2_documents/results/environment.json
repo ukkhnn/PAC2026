@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-10-09T01:59:39.460348+09:00",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "torch": "2.8.0",
+  "transformers": "4.56.1",
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 4,
+  "do_sample": false,
+  "max_new_tokens": 128,
+  "sha256": {
+    "corpus.json": "aff139ee687259ee004d9ba0cd5cf96f8c3f3d89e95f0e1764f1964639baf2c7",
+    "questions.json": "6d8fd19541c98738b279bf89da4335411a302f9fce75e6b7ddf508857660d4b8",
+    "PROTOCOL.md": "7e49042b2a1cef513d823b2be9299d7bcf468543f570fa3bbe49fc8a28a40a79",
+    "run_documents.py": "c8141d7d0954388d11fb63e74b0dc2b7e9053d6f8c7d6a5bb34b4cd88bd50baa",
+    "retrieve.py": "3d465271ea342cf034bdb91152944a3ae1685d38588f301f8c20764727934c44"
+  }
+}

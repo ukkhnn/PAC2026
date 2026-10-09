@@ -1,0 +1,89 @@
+[
+  {
+    "id": "Q1",
+    "answerable": true,
+    "evidence": [
+      "D3"
+    ],
+    "required_concepts": [
+      "MAG"
+    ]
+  },
+  {
+    "id": "Q2",
+    "answerable": true,
+    "evidence": [
+      "D2"
+    ],
+    "required_concepts": [
+      "tail"
+    ]
+  },
+  {
+    "id": "Q3",
+    "answerable": true,
+    "evidence": [
+      "D4"
+    ],
+    "required_concepts": [
+      "number/count",
+      "length",
+      "spacing"
+    ]
+  },
+  {
+    "id": "Q4",
+    "answerable": true,
+    "evidence": [
+      "D5"
+    ],
+    "required_concepts": [
+      "staggered"
+    ]
+  },
+  {
+    "id": "Q5",
+    "answerable": true,
+    "evidence": [
+      "D1"
+    ],
+    "required_concepts": [
+      "component surfaces",
+      "weld location"
+    ]
+  },
+  {
+    "id": "Q6",
+    "answerable": true,
+    "evidence": [
+      "D6"
+    ],
+    "required_concepts": [
+      "below the reference line"
+    ]
+  },
+  {
+    "id": "Q7",
+    "answerable": false,
+    "evidence": [],
+    "required_concepts": [
+      "abstain; no fabricated project value/status"
+    ]
+  },
+  {
+    "id": "Q8",
+    "answerable": false,
+    "evidence": [],
+    "required_concepts": [
+      "abstain; no fabricated project value/status"
+    ]
+  },
+  {
+    "id": "Q9",
+    "answerable": false,
+    "evidence": [],
+    "required_concepts": [
+      "abstain; no fabricated project value/status"
+    ]
+  }
+]
