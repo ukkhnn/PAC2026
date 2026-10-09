@@ -20,7 +20,7 @@
 <a class="skip" href="#main">본문으로 이동</a>
 <div class="layout">
 <aside class="rail" aria-label="문서 탐색">
-<div class="brand">CONTEXTWELD</div><div class="edition">DOMAIN GUIDE · 2026.10.05</div>
+<div class="brand">CONTEXTWELD</div><div class="edition">HISTORICAL DOMAIN GUIDE · 2026.10.05</div>
 <nav aria-label="목차">
 <a href="#map"><span>01</span>이 문제의 전체 지도</a>
 <a href="#basics"><span>02</span>용접의 네 가지 구분</a>
@@ -37,6 +37,8 @@
 <button type="button" class="print" id="print">인쇄 / PDF 저장</button>
 </aside>
 <main id="main">
+<div class="note" role="note"><p><strong>과거 설계·학습 자료 · 2026-10-10 현재 범위 구분</strong></p><p>이 문서는 2026-10-05의 조사와 설계 제안을 보존한 자료다. 현재 구현의 기준은 <a href="DEMO_SPEC.md">데모 스펙</a>, <a href="OCR_PIPELINE_SPEC.md">OCR 명세</a>, <a href="DOCUMENT_APPLICATION_PLAN.md">문서 적용 계획</a>, <a href="WELDING_ROBOT_INPUT_SPEC.md">제조사 입력 명세</a>다. 시뮬레이션·추론·모의 전달은 서버에서 실행·기록하고, 로컬 화면은 내려받은 기록을 읽기 전용으로 재생한다.</p><p>아래의 Work Memory·후속 작업 이력 참조·학습·현장 시스템 연동은 과거 확장 제안이며 현재 구현 범위가 아니다. 현재는 사용자 수정을 별도 저장하고, 명시적 요청에 한해 새 실행으로 재검토한다. 다른 작업 이력 자동 참조·자동 학습·자동 재전송은 제외한다. 현재 목표는 아이디어 피칭이며, 한 시나리오의 실제 모델·문서 근거·모의 전달 연결과 소량 기능 확인을 우선한다. 아래의 엄밀한 비교·독립 평가·정량 성능 기준은 후속 선택이며 데모 완료 조건이 아니다. 외부 자료는 최초 조사일의 기록이며 이번에 재검증하지 않았다.</p></div>
+
 <header class="hero">
 <div class="eyebrow">PAC2026 · HD현대로보틱스 미션 03</div>
 <h1>용접을 읽고,<br>맥락을 연결하다.</h1>
@@ -213,7 +215,7 @@
 <p><strong>DB 전체를 임베딩할 필요는 없어.</strong> [추론] 식별자와 버전은 정확 조회, 설명·예외 문구는 검색으로 맡기자. 예를 들어 <code>부재 ID → 도면 개정 → 용접부 → 적용 WPS</code> 연결은 관계로 관리하고, 해당 WPS의 주의사항을 근거 문단으로 조회하는 방식이야.</p>
 <h3>RRF를 핵심 판정기로 쓰지 않는 이유</h3>
 <p>[추론] RRF 같은 순위 결합은 검색 후보를 모으는 단계에서 비교해볼 수 있어. 하지만 시각적 해석 후보와 문서 검색 순위는 같은 대상을 매긴 순위가 아닐 수 있어. 같은 해석 후보로 정렬한 뒤에도, 순위만으로 적용 불가 문서를 배제하거나 신뢰도를 확률로 해석할 수는 없어.</p>
-<p>PoC에서는 <strong>규칙만 → 규칙+맥락 → 필요시 학습된 후보 순위화</strong> 순서로 비교하자. 신뢰할 수 있는 제약에 명확히 위배되는 후보는 자동 추천에서 제외하고, 입력 자체가 불확실해 제약 만족 여부를 모르면 사람에게 보낼 후보로 남겨두는 식이야.</p>
+<p>당시 제안은 <strong>규칙만 → 규칙+맥락 → 필요시 학습된 후보 순위화</strong> 비교였어. 학습된 후보 순위화는 현재 데모 범위에서 제외하며 최종 인식·관계·근거 검증은 현재 명세를 따라. 신뢰할 수 있는 제약에 명확히 위배되는 후보는 자동 추천에서 제외하고, 입력 자체가 불확실해 제약 만족 여부를 모르면 사람에게 보낼 후보로 남겨두는 식이야.</p>
 <h3>같은 모호한 표기, 다른 맥락</h3>
 <p class="small">모두 설계 설명용 합성 사례야. 실제 인식 결과나 성능 수치가 아니야.</p>
 <div class="choices" role="group" aria-label="맥락 사례 선택"><button class="choice" data-case="none" aria-pressed="true">맥락 없음</button><button class="choice" data-case="match" aria-pressed="false">적용 가능한 맥락</button><button class="choice" data-case="conflict" aria-pressed="false">충돌하는 맥락</button></div>
@@ -230,7 +232,7 @@
 <tr><td>판정</td><td>제약별 참/거짓/미확인, 충돌, 보류 이유</td><td>총점 하나에 가려진 문제 표시</td></tr>
 <tr><td>사람의 결정</td><td>원래 값·수정 값·확인자·시점·범위·근거</td><td>수정의 책임 범위와 취소·대체 이력</td></tr>
 </tbody></table></div>
-<p><strong>사람의 피드백은 우선 범위가 있는 기록으로 환류하자.</strong> [추론] 오늘 부재 A의 숫자를 8로 수정했다고 모든 유사 표기를 8로 바꾸지 않아. 같은 작업의 후속 조회에는 근거로 제공하고, 사전·규칙 변경은 별도 검토와 버전 발행을 거치게 하자. 이것은 모델을 자동 재학습하는 것과도 달라.</p>
+<p><strong>피드백 활용은 과거 제안과 현재 범위를 구분해.</strong> 이 가이드의 원래 제안에는 후속 조회 참조와 사전 개선이 있었지만, 현재는 수정을 원본과 분리해 저장하고 명시적 요청의 새 실행에서만 재검토해. 같은 대상이라는 이유로 자동 반영하거나, 다른 작업의 추론·RAG·학습에 사용하지 않아. 자동 명령 재전송도 하지 않아.</p>
 </section>
 
 <section id="poc">
@@ -256,14 +258,14 @@
 <ol><li><strong>원본 영역과 주변 장면:</strong> 무엇을 읽었고 어느 부재인지.</li><li><strong>대안 후보:</strong> a6/a8처럼 차이가 나는 항목을 선명하게 표시.</li><li><strong>맥락의 출처:</strong> 부재 연결 근거, 도면·WPS 버전과 해당 항목.</li><li><strong>확인 이유:</strong> 인식 모호 / 대상 미식별 / 기준 충돌 / 필수 정보 누락.</li><li><strong>결정과 범위:</strong> 승인·수정·보류, 현재 작업에만 적용할지, 추가 근거가 필요한지.</li></ol>
 <h3>멘토에게 우선 확인할 여섯 가지</h3>
 <ol><li><strong>한 장면 확보:</strong> 실제 사진과 그 사진의 올바른 작업 해석을 함께 볼 수 있는가?</li><li><strong>표기 규칙:</strong> 표준 기호와 자체 약어의 비율, 덧쓰기·취소 표기의 규칙은 무엇인가?</li><li><strong>대상 식별:</strong> 부재·용접부 ID를 촬영 시점에 어떻게 알 수 있는가?</li><li><strong>기준 자료:</strong> 도면·작업지시·WPS 중 무엇을 제공하며 개정·변경 승인은 어떻게 관리하는가?</li><li><strong>자동화 경계:</strong> 조건 후보, 프로그램 선택, 실제 제어 중 어디까지가 평가 대상인가?</li><li><strong>실패 비용:</strong> 무엇을 반드시 사람에게 보내야 하며, 정답 판정과 승인은 누가 하는가?</li></ol>
-<div class="note"><p><strong>현재 저장소와 제안은 구분해야 해.</strong> README와 검증 문서에 기록된 현재 spike는 합성 사례, 실제 사진 OCR 연결, 시연 규칙 조회, 확인 이력과 내보내기 흐름이야. 이 가이드의 현장 맥락 검증·실제 WPS 연계·독립 성능 평가는 구현 완료를 뜻하지 않아. <a href="../README.md">README</a> · <a href="VALIDATION.md">검증 기록</a></p></div>
+<div class="note"><p><strong>과거 spike-demo와 현재 dev는 달라.</strong> 10월 5일에 참고한 spike-demo에는 합성 사례·사진 OCR 연결·시연 규칙·확인 이력·내보내기가 있었지만 현재 dev로 승계하지 않았어. 현재 제품 기능은 <a href="FIRST_SCENE.md">후보 → 유효 작업지시 연결 CLI</a>이고, 별도 실험은 <a href="../experiments/REPORT-2026-10-09.md">개발 표본 레포트</a>를 봐. 이 가이드의 전체 흐름·현장 성능을 구현 완료로 취급하지 않아.</p></div>
 </section>
 
 <section id="direction">
 <div class="eyebrow">10 / RECOMMENDATION</div><h2>제안하는 맥락의 방향성</h2>
 <p class="quote">“현재 작업에 연결할 수 있는 근거만 사용하고,<br>근거가 부족하거나 충돌하면 무엇을 확인해야 하는지 알려주는 시스템.”</p>
 <p><span class="tag">[추론]</span> 우리의 차별점은 LLM이 문서를 많이 읽는다는 데 두기보다, <strong>사진 속 표기와 작업 문서를 올바르게 연결하고, 그 연결이 틀릴 가능성까지 다룬다는 데</strong> 두는 게 좋아.</p>
-<div class="grid"><div class="card"><h4>입력은 열린 구조</h4><p>사진만 받아도 후보를 만들고, ID·작업지시가 들어오면 확인된 범위만큼 맥락을 확장해. MES가 반드시 있어야만 작동하는 구조로 시작하지 않아.</p></div><div class="card"><h4>판정은 근거를 통과하는 구조</h4><p>대상·버전·적용 범위를 먼저 검사하고 후보를 비교해. 규칙 충돌을 높은 비전 점수나 문서 유사도로 상쇄하지 않아.</p></div><div class="card"><h4>사람의 개입은 구체적인 질문</h4><p>“확인하세요” 대신 “부재가 맞는지”, “도면 개정이 맞는지”, “a6인지 a8인지”처럼 미해결 항목을 좁혀서 보여줘.</p></div><div class="card"><h4>기억은 범위가 있는 기록</h4><p>사람의 수정을 원본·근거·대상·버전과 함께 저장해. 관련 후속 작업에서 참고하고, 전체 규칙 변경은 별도로 검증해.</p></div></div>
+<div class="grid"><div class="card"><h4>입력은 열린 구조</h4><p>사진만 받아도 후보를 만들고, ID·작업지시가 들어오면 확인된 범위만큼 맥락을 확장해. MES가 반드시 있어야만 작동하는 구조로 시작하지 않아.</p></div><div class="card"><h4>판정은 근거를 통과하는 구조</h4><p>대상·버전·적용 범위를 먼저 검사하고 후보를 비교해. 규칙 충돌을 높은 비전 점수나 문서 유사도로 상쇄하지 않아.</p></div><div class="card"><h4>사람의 개입은 구체적인 질문</h4><p>“확인하세요” 대신 “부재가 맞는지”, “도면 개정이 맞는지”, “a6인지 a8인지”처럼 미해결 항목을 좁혀서 보여줘.</p></div><div class="card"><h4>현재는 수정 저장과 명시적 재검토</h4><p>사람의 수정을 원본·근거·대상·버전과 함께 별도 저장해. 명시적 요청은 새 실행으로 남기고, 다른 작업의 자동 참조·학습·명령 재전송은 하지 않아.</p></div></div>
 <p><strong>첫 구현 단위:</strong> 실제 장면 하나의 <em>사진 → 표기 후보 → 대상 연결 → 기준 대조 → 후보 또는 확인 → 추적 가능한 출력</em>을 끝까지 만들자. 그 장면에서 맥락이 없을 때와 틀릴 때도 보여줘야 방향성이 검증돼.</p>
 <p><strong>7분 발표의 중심 문장:</strong> “우리는 표기를 읽는 데서 멈추지 않고, 적용 가능한 작업 근거와 연결해 조건 후보를 제시하며, 불확실한 연결은 작업자의 구체적인 확인으로 해결합니다.”</p>
 </section>
