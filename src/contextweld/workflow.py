@@ -408,7 +408,10 @@ def inspect_document_bundle(root: Path) -> dict[str, Any]:
                     or receipts[0]["http_status"] != 200 or receipts[0]["request_sha256"] != digest
                     or json.loads(receipts[0]["raw_request"]) != command):
                 raise ValueError("수신기 원본 요청/응답 불일치")
-    elif any((root / "commands").iterdir()):
+    # 빈 commands/는 복사·Git 정리 과정에서 사라질 수 있다. 없음과 빈 디렉토리만 같은 "명령 없음"으로 본다.
+    elif (root / "commands").is_symlink() or ((root / "commands").exists() and not (root / "commands").is_dir()):
+        raise ValueError("commands는 실제 디렉토리여야 합니다.")
+    elif (root / "commands").is_dir() and any((root / "commands").iterdir()):
         raise ValueError("미전송 실행에 명령/수신 기록이 있습니다.")
     expected_outcome = "needs_review" if spec["validation"]["issues"] else ("failed" if delivery["status"] == "failed" else "succeeded")
     if manifest["run_outcome"] != expected_outcome:
