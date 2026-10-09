@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430">
+<rect width="900" height="430" fill="#f5f6f8"/>
+<g font-family="sans-serif" fill="#15253a"><text x="40" y="45" font-size="24">SYNTHETIC DEMO DRAWING / REV 1</text>
+<text x="40" y="78" font-size="16">DRAWING-DEMO-015 | Document review only</text>
+<rect x="120" y="135" width="325" height="150" fill="#bdc8d5" stroke="#334155"/>
+<rect x="455" y="135" width="325" height="150" fill="#bdc8d5" stroke="#334155"/>
+<path d="M450 120V300" stroke="#dd6b20" stroke-width="4" stroke-dasharray="8 5"/>
+<text x="150" y="205" font-size="22">BISB30N-15</text>
+<text x="485" y="205" font-size="18">Fixture counterpart</text>
+<text x="315" y="330" font-size="18">JOINT-DEMO-01</text>
+<text x="40" y="374" font-size="16">FCAW / A-36 / flat: fixture context. Thickness: unknown.</text>
+<text x="40" y="404" font-size="15">Schematic only; no dimensions, weld symbol, camera geometry or execution approval.</text></g></svg>

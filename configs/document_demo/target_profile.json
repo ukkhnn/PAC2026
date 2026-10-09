@@ -1,0 +1,28 @@
+{
+  "schema_version": "demo-target-profile.v1",
+  "profile_id": "document-range-review.v1",
+  "contract_version": "1",
+  "purpose": "demo_mock",
+  "evaluation_scope": "document_review",
+  "parameters": {
+    "process": {
+      "kind": "enum",
+      "unit": null,
+      "allowed_values": [
+        "FCAW"
+      ]
+    },
+    "current": {
+      "kind": "range",
+      "unit": "A"
+    },
+    "voltage": {
+      "kind": "range",
+      "unit": "V"
+    },
+    "travel_speed": {
+      "kind": "range",
+      "unit": "in/min"
+    }
+  }
+}

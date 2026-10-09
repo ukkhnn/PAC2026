@@ -1,0 +1,1222 @@
+{
+  "schema_version": "reviewed-wps.v1",
+  "document_id": "lanl-wps-3501",
+  "revision": "1",
+  "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+  "document_origin": "public_document",
+  "document_role": "historical_wps_reference",
+  "source": {
+    "url": "https://engstandards.lanl.gov/esm/welding/welding_specs/3501-xxxx-1.pdf",
+    "relative_path": "documents/lanl/wps-3501-xxxx-1.pdf",
+    "relative_path_base": "data/raw/demo-bootstrap-v1",
+    "media_type": "application/pdf",
+    "page_count": 2,
+    "license_declared": "Publicly accessible; redistribution permission not verified"
+  },
+  "review": {
+    "method": "agent_text_and_render_crosscheck",
+    "reviewer_kind": "agent",
+    "completed_at_utc": "2026-10-09T20:02:31.837257Z",
+    "scope": "selected_header_applicability_fields_and_representative_layer_1",
+    "human_reviewed": false,
+    "process_approval": false,
+    "transcription_checked": true,
+    "application_authorized": false,
+    "statement": "텍스트 추출과 원문 페이지 렌더를 대조한 에이전트 전사검수다. 사람의 도메인 검토나 공정·현장 적용 승인이 아니다."
+  },
+  "header": {
+    "wps_id": {
+      "raw_value": "3501-xxxx-1",
+      "normalized": {
+        "value": "3501-xxxx-1",
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            44.0,
+            90.5,
+            132.0,
+            101.0
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "WPS header",
+          "label": "WPS"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false
+    },
+    "revision": {
+      "raw_value": "1",
+      "normalized": {
+        "value": "1",
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            260.0,
+            90.5,
+            310.0,
+            101.0
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "WPS header",
+          "label": "REV. NO."
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false
+    },
+    "issue_date": {
+      "raw_value": "1/21/2005",
+      "normalized": {
+        "value": "2005-01-21",
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            374.0,
+            90.5,
+            439.0,
+            101.0
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "WPS header",
+          "label": "DATE"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false,
+      "normalization_note": "원문 헤더 DATE의 날짜를 ISO 형식으로 바꿨다. 최초 발행일인지 별도로 확정하지 않는다."
+    },
+    "code": {
+      "raw_value": "ASME IX",
+      "normalized": {
+        "value": "ASME IX",
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            271.0,
+            102.5,
+            337.0,
+            113.0
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "WPS header",
+          "label": "CODE"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false
+    }
+  },
+  "applicability": {
+    "process": {
+      "raw_value": "FCAW and FCAW",
+      "normalized": {
+        "value": "FCAW",
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            44.0,
+            102.5,
+            231.0,
+            113.0
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "WPS header",
+          "label": "WELDING PROCESS"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false,
+      "normalization_note": "원문에 동일한 공정명이 두 번 기재되어 단일 공정명으로 정규화했다. 혼합공정을 추정하지 않았다."
+    },
+    "joint_type": {
+      "raw_value": "Butt/Fillet",
+      "normalized": {
+        "value": [
+          "Butt",
+          "Fillet"
+        ],
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            44.0,
+            170.5,
+            173.0,
+            181.0
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "JOINT",
+          "label": "Weld Joint Type"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false
+    },
+    "material_from": {
+      "raw_value": "A-36 CS- Plate, bars & shapes",
+      "normalized": {
+        "value": "A-36",
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            44.0,
+            375.5,
+            201.0,
+            386.0
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "BASE MATERIAL",
+          "label": "Spec. from"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false,
+      "normalization_note": "재질명에서 문서의 규격 식별자 A-36만 추출했다. 실제 사진 재질의 관측 결과가 아니다."
+    },
+    "material_to": {
+      "raw_value": "A-36 CS- Plate, bar & shapes",
+      "normalized": {
+        "value": "A-36",
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            330.0,
+            375.5,
+            492.0,
+            386.0
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "BASE MATERIAL",
+          "label": "Spec. to"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false,
+      "normalization_note": "재질명에서 문서의 규격 식별자 A-36만 추출했다. 실제 사진 재질의 관측 결과가 아니다."
+    },
+    "qualified_thickness_aws": {
+      "raw_value": "0.187 thru 2",
+      "normalized": {
+        "min": 0.187,
+        "max": 2,
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            44.0,
+            399.5,
+            301.0,
+            410.0
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "BASE MATERIAL",
+          "label": "Qualified Thickness Range: AWS"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false,
+      "unit_status": "not_explicit_in_selected_source_field",
+      "validation_use": "unavailable_until_unit_confirmed"
+    },
+    "qualified_thickness_asme": {
+      "raw_value": "0.187 thru 2",
+      "normalized": {
+        "min": 0.187,
+        "max": 2,
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            338.0,
+            399.5,
+            419.0,
+            410.0
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "BASE MATERIAL",
+          "label": "Qualified Thickness Range: ASME"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false,
+      "unit_status": "not_explicit_in_selected_source_field",
+      "validation_use": "unavailable_until_unit_confirmed"
+    },
+    "qualified_positions_aws": {
+      "raw_value": "All",
+      "normalized": {
+        "value": "All",
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            44.0,
+            425.5,
+            260.0,
+            436.5
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "QUALIFIED POSITIONS",
+          "label": "AWS"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false
+    },
+    "qualified_positions_asme": {
+      "raw_value": "All",
+      "normalized": {
+        "value": "All",
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            340.0,
+            425.5,
+            378.0,
+            436.5
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "QUALIFIED POSITIONS",
+          "label": "ASME"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false
+    },
+    "vertical_progression": {
+      "raw_value": "V/Up",
+      "normalized": {
+        "value": "V/Up",
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            450.0,
+            425.5,
+            516.0,
+            436.5
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "QUALIFIED POSITIONS",
+          "label": "Vert. Prog."
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false
+    },
+    "technique": {
+      "raw_value": "Semi-auto-man.",
+      "normalized": {
+        "value": "Semi-auto-man.",
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            44.0,
+            641.0,
+            201.0,
+            651.5
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "WELDING TECHNIQUE",
+          "label": "Technique"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false
+    },
+    "current_polarity": {
+      "raw_value": "DCEP and DCEP",
+      "normalized": {
+        "value": "DCEP",
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            44.0,
+            556.0,
+            180.0,
+            566.5
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "WELDING CHARACTERISTICS",
+          "label": "Current"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false
+    }
+  },
+  "pass_rows": [
+    {
+      "row_id": "layer-1",
+      "row_number": 1,
+      "row_kind": "representative_weld_layer",
+      "fields": {
+        "layer": {
+          "raw_value": "1",
+          "normalized": {
+            "value": 1,
+            "unit": null
+          },
+          "evidence": {
+            "document_id": "lanl-wps-3501",
+            "revision": "1",
+            "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+            "locator": {
+              "kind": "pdf_region",
+              "page": 2,
+              "bbox": [
+                61.0,
+                87.0,
+                69.0,
+                97.5
+              ],
+              "coordinate_system": "pdf_points_top_left",
+              "table": "weld_layer_conditions",
+              "row": 1,
+              "column": "Weld Layer"
+            }
+          },
+          "review_status": "agent_transcription_checked",
+          "application_authorized": false,
+          "header": {
+            "raw_value": "Weld Layer",
+            "evidence": {
+              "document_id": "lanl-wps-3501",
+              "revision": "1",
+              "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+              "locator": {
+                "kind": "pdf_region",
+                "page": 2,
+                "bbox": [
+                  44.0,
+                  66.0,
+                  68.0,
+                  85.5
+                ],
+                "coordinate_system": "pdf_points_top_left",
+                "table": "weld_layer_conditions",
+                "row": "header",
+                "column": "Weld Layer"
+              }
+            }
+          }
+        },
+        "process": {
+          "raw_value": "FCAW",
+          "normalized": {
+            "value": "FCAW",
+            "unit": null
+          },
+          "evidence": {
+            "document_id": "lanl-wps-3501",
+            "revision": "1",
+            "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+            "locator": {
+              "kind": "pdf_region",
+              "page": 2,
+              "bbox": [
+                74.0,
+                87.0,
+                101.0,
+                97.5
+              ],
+              "coordinate_system": "pdf_points_top_left",
+              "table": "weld_layer_conditions",
+              "row": 1,
+              "column": "Manual Process"
+            }
+          },
+          "review_status": "agent_transcription_checked",
+          "application_authorized": false,
+          "header": {
+            "raw_value": "Manual Process",
+            "evidence": {
+              "document_id": "lanl-wps-3501",
+              "revision": "1",
+              "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+              "locator": {
+                "kind": "pdf_region",
+                "page": 2,
+                "bbox": [
+                  75.0,
+                  66.0,
+                  109.0,
+                  85.5
+                ],
+                "coordinate_system": "pdf_points_top_left",
+                "table": "weld_layer_conditions",
+                "row": "header",
+                "column": "Manual Process"
+              }
+            }
+          }
+        },
+        "filler_metal": {
+          "raw_value": "E7XT-x",
+          "normalized": {
+            "value": "E7XT-x",
+            "unit": null
+          },
+          "evidence": {
+            "document_id": "lanl-wps-3501",
+            "revision": "1",
+            "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+            "locator": {
+              "kind": "pdf_region",
+              "page": 2,
+              "bbox": [
+                116.0,
+                87.0,
+                146.0,
+                97.5
+              ],
+              "coordinate_system": "pdf_points_top_left",
+              "table": "weld_layer_conditions",
+              "row": 1,
+              "column": "Filler Metals"
+            }
+          },
+          "review_status": "agent_transcription_checked",
+          "application_authorized": false,
+          "header": {
+            "raw_value": "Filler Metals",
+            "evidence": {
+              "document_id": "lanl-wps-3501",
+              "revision": "1",
+              "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+              "locator": {
+                "kind": "pdf_region",
+                "page": 2,
+                "bbox": [
+                  117.0,
+                  75.0,
+                  166.0,
+                  85.5
+                ],
+                "coordinate_system": "pdf_points_top_left",
+                "table": "weld_layer_conditions",
+                "row": "header",
+                "column": "Filler Metals"
+              }
+            }
+          }
+        },
+        "filler_size": {
+          "raw_value": "3/64",
+          "normalized": {
+            "value": "3/64",
+            "unit": null
+          },
+          "evidence": {
+            "document_id": "lanl-wps-3501",
+            "revision": "1",
+            "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+            "locator": {
+              "kind": "pdf_region",
+              "page": 2,
+              "bbox": [
+                173.0,
+                87.0,
+                193.0,
+                97.5
+              ],
+              "coordinate_system": "pdf_points_top_left",
+              "table": "weld_layer_conditions",
+              "row": 1,
+              "column": "Size"
+            }
+          },
+          "review_status": "agent_transcription_checked",
+          "application_authorized": false,
+          "unit_status": "not_explicit_in_selected_table_header",
+          "validation_use": "unavailable_until_unit_confirmed",
+          "header": {
+            "raw_value": "Size",
+            "evidence": {
+              "document_id": "lanl-wps-3501",
+              "revision": "1",
+              "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+              "locator": {
+                "kind": "pdf_region",
+                "page": 2,
+                "bbox": [
+                  174.0,
+                  75.0,
+                  193.0,
+                  85.5
+                ],
+                "coordinate_system": "pdf_points_top_left",
+                "table": "weld_layer_conditions",
+                "row": "header",
+                "column": "Size"
+              }
+            }
+          }
+        },
+        "current": {
+          "raw_value": "130 to 250",
+          "normalized": {
+            "min": 130,
+            "max": 250,
+            "unit": "A"
+          },
+          "evidence": {
+            "document_id": "lanl-wps-3501",
+            "revision": "1",
+            "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+            "locator": {
+              "kind": "pdf_region",
+              "page": 2,
+              "bbox": [
+                199.0,
+                87.0,
+                245.0,
+                97.5
+              ],
+              "coordinate_system": "pdf_points_top_left",
+              "table": "weld_layer_conditions",
+              "row": 1,
+              "column": "Amp Range"
+            }
+          },
+          "review_status": "agent_transcription_checked",
+          "application_authorized": false,
+          "header": {
+            "raw_value": "Amp Range",
+            "evidence": {
+              "document_id": "lanl-wps-3501",
+              "revision": "1",
+              "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+              "locator": {
+                "kind": "pdf_region",
+                "page": 2,
+                "bbox": [
+                  200.0,
+                  75.0,
+                  248.0,
+                  85.5
+                ],
+                "coordinate_system": "pdf_points_top_left",
+                "table": "weld_layer_conditions",
+                "row": "header",
+                "column": "Amp Range"
+              }
+            }
+          },
+          "unit_normalization": {
+            "raw_unit": "Amp",
+            "normalized_unit": "A",
+            "rule": "standard_symbol_only_no_numeric_conversion"
+          }
+        },
+        "voltage": {
+          "raw_value": "24 to 28",
+          "normalized": {
+            "min": 24,
+            "max": 28,
+            "unit": "V"
+          },
+          "evidence": {
+            "document_id": "lanl-wps-3501",
+            "revision": "1",
+            "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+            "locator": {
+              "kind": "pdf_region",
+              "page": 2,
+              "bbox": [
+                255.0,
+                87.0,
+                292.0,
+                97.5
+              ],
+              "coordinate_system": "pdf_points_top_left",
+              "table": "weld_layer_conditions",
+              "row": 1,
+              "column": "Volt Range"
+            }
+          },
+          "review_status": "agent_transcription_checked",
+          "application_authorized": false,
+          "header": {
+            "raw_value": "Volt Range",
+            "evidence": {
+              "document_id": "lanl-wps-3501",
+              "revision": "1",
+              "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+              "locator": {
+                "kind": "pdf_region",
+                "page": 2,
+                "bbox": [
+                  256.0,
+                  75.0,
+                  300.0,
+                  85.5
+                ],
+                "coordinate_system": "pdf_points_top_left",
+                "table": "weld_layer_conditions",
+                "row": "header",
+                "column": "Volt Range"
+              }
+            }
+          },
+          "unit_normalization": {
+            "raw_unit": "Volt",
+            "normalized_unit": "V",
+            "rule": "standard_symbol_only_no_numeric_conversion"
+          }
+        },
+        "travel_speed": {
+          "raw_value": "7 to 18",
+          "normalized": {
+            "min": 7,
+            "max": 18,
+            "unit": "in/min"
+          },
+          "evidence": {
+            "document_id": "lanl-wps-3501",
+            "revision": "1",
+            "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+            "locator": {
+              "kind": "pdf_region",
+              "page": 2,
+              "bbox": [
+                307.0,
+                87.0,
+                341.0,
+                97.5
+              ],
+              "coordinate_system": "pdf_points_top_left",
+              "table": "weld_layer_conditions",
+              "row": 1,
+              "column": "Travel/ipm"
+            }
+          },
+          "review_status": "agent_transcription_checked",
+          "application_authorized": false,
+          "header": {
+            "raw_value": "Travel/ipm",
+            "evidence": {
+              "document_id": "lanl-wps-3501",
+              "revision": "1",
+              "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+              "locator": {
+                "kind": "pdf_region",
+                "page": 2,
+                "bbox": [
+                  308.0,
+                  75.0,
+                  351.0,
+                  85.5
+                ],
+                "coordinate_system": "pdf_points_top_left",
+                "table": "weld_layer_conditions",
+                "row": "header",
+                "column": "Travel/ipm"
+              }
+            }
+          },
+          "unit_normalization": {
+            "raw_unit": "ipm",
+            "normalized_unit": "in/min",
+            "rule": "inches_per_minute_abbreviation_no_numeric_conversion"
+          }
+        },
+        "nozzle_angle": {
+          "raw_value": "5 to 15",
+          "normalized": {
+            "min": 5,
+            "max": 15,
+            "unit": null
+          },
+          "evidence": {
+            "document_id": "lanl-wps-3501",
+            "revision": "1",
+            "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+            "locator": {
+              "kind": "pdf_region",
+              "page": 2,
+              "bbox": [
+                358.0,
+                87.0,
+                391.0,
+                97.5
+              ],
+              "coordinate_system": "pdf_points_top_left",
+              "table": "weld_layer_conditions",
+              "row": 1,
+              "column": "Nozzle Angle"
+            }
+          },
+          "review_status": "agent_transcription_checked",
+          "application_authorized": false,
+          "unit_status": "not_explicit_in_selected_table_header",
+          "validation_use": "unavailable_until_unit_confirmed",
+          "header": {
+            "raw_value": "Nozzle Angle",
+            "evidence": {
+              "document_id": "lanl-wps-3501",
+              "revision": "1",
+              "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+              "locator": {
+                "kind": "pdf_region",
+                "page": 2,
+                "bbox": [
+                  361.0,
+                  66.0,
+                  389.0,
+                  85.5
+                ],
+                "coordinate_system": "pdf_points_top_left",
+                "table": "weld_layer_conditions",
+                "row": "header",
+                "column": "Nozzle Angle"
+              }
+            }
+          }
+        },
+        "other": {
+          "raw_value": "",
+          "normalized": {
+            "value": null,
+            "unit": null
+          },
+          "evidence": {
+            "document_id": "lanl-wps-3501",
+            "revision": "1",
+            "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+            "locator": {
+              "kind": "pdf_region",
+              "page": 2,
+              "bbox": [
+                399.0,
+                87.0,
+                423.0,
+                97.5
+              ],
+              "coordinate_system": "pdf_points_top_left",
+              "table": "weld_layer_conditions",
+              "row": 1,
+              "column": "Other"
+            }
+          },
+          "review_status": "agent_transcription_checked",
+          "application_authorized": false,
+          "value_status": "blank",
+          "normalization_note": "빈 셀이다. 0, N/A 또는 앞 행과 동일함으로 대체하지 않는다.",
+          "header": {
+            "raw_value": "Other",
+            "evidence": {
+              "document_id": "lanl-wps-3501",
+              "revision": "1",
+              "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+              "locator": {
+                "kind": "pdf_region",
+                "page": 2,
+                "bbox": [
+                  399.0,
+                  75.0,
+                  423.0,
+                  85.5
+                ],
+                "coordinate_system": "pdf_points_top_left",
+                "table": "weld_layer_conditions",
+                "row": "header",
+                "column": "Other"
+              }
+            }
+          }
+        }
+      },
+      "note_refs": [
+        "representative_layers",
+        "maximum_heat_input",
+        "gws_wfp_required",
+        "semi_automatic_technique",
+        "unconfirmed_dimension_units"
+      ]
+    }
+  ],
+  "other_document_values": {
+    "page1_current_summary": {
+      "raw_value": "130",
+      "normalized": {
+        "value": 130,
+        "unit": "A"
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            93.0,
+            568.0,
+            176.0,
+            578.5
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "WELDING CHARACTERISTICS",
+          "label": "Ranges: Amps"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false
+    },
+    "page1_voltage_summary": {
+      "raw_value": "24",
+      "normalized": {
+        "value": 24,
+        "unit": "V"
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            140.0,
+            580.0,
+            173.0,
+            590.5
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "WELDING CHARACTERISTICS",
+          "label": "Volts"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false
+    },
+    "pdf_print_timestamp": {
+      "raw_value": "10/28/2025, 4:02 PM",
+      "normalized": {
+        "value": "2025-10-28T16:02",
+        "unit": null
+      },
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            483.0,
+            781.0,
+            612.0,
+            792.0
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "printed footer",
+          "label": "print timestamp"
+        }
+      },
+      "review_status": "agent_transcription_checked",
+      "application_authorized": false
+    }
+  },
+  "constraints": [
+    {
+      "constraint_id": "representative_layers",
+      "meaning": "표의 용접층은 대표 예시이며 실제 패스 수와 층 순서는 달라질 수 있다. 층 1의 범위 보고이며 실행 패스 순서 생성이 아니다.",
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 2,
+          "bbox": [
+            44.0,
+            135.0,
+            424.0,
+            145.5
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "table note"
+        }
+      },
+      "effect": "report_ranges_only"
+    },
+    {
+      "constraint_id": "maximum_heat_input",
+      "field": {
+        "raw_value": "28 KJ/in",
+        "normalized": {
+          "value": 28,
+          "unit": "kJ/in"
+        },
+        "evidence": {
+          "document_id": "lanl-wps-3501",
+          "revision": "1",
+          "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+          "locator": {
+            "kind": "pdf_region",
+            "page": 1,
+            "bbox": [
+              44.0,
+              689.0,
+              205.0,
+              699.5
+            ],
+            "coordinate_system": "pdf_points_top_left",
+            "section": "WELDING TECHNIQUE",
+            "label": "Maximum K/J Heat Input"
+          }
+        },
+        "review_status": "agent_transcription_checked",
+        "application_authorized": false
+      },
+      "meaning": "열입력 상한을 보존한다. 전류·전압·속도 범위의 모든 조합을 허용한다는 뜻으로 해석하지 않는다. 이번 자료는 설정값·조합을 선택하지 않는다.",
+      "effect": "operating_combination_not_validated"
+    },
+    {
+      "constraint_id": "gws_wfp_required",
+      "meaning": "이음 상세와 제작·검사 등에는 GWS 및 WFP 참조가 필요하다. 해당 선행자료는 이 추출 예제의 검수 범위에 없다.",
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            44.0,
+            148.0,
+            549.0,
+            167.5
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "JOINT"
+        }
+      },
+      "effect": "field_application_unverified"
+    },
+    {
+      "constraint_id": "project_quality_review_required",
+      "meaning": "문서가 요구하는 프로젝트별 품질요건 부합 확인을 이 전사검수로 대체하지 않는다.",
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 2,
+          "bbox": [
+            44.0,
+            148.5,
+            510.0,
+            158.0
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "ML-1/2 note"
+        }
+      },
+      "effect": "project_approval_not_performed"
+    },
+    {
+      "constraint_id": "non_lanl_application",
+      "meaning": "공개 LANL 문서의 외부 작업 사용 관련 주석을 보존하며 현재 사진이나 현장에 대한 적용 승인을 부여하지 않는다.",
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 2,
+          "bbox": [
+            44.0,
+            165.5,
+            552.0,
+            192.0
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "non-LANL use note"
+        }
+      },
+      "effect": "field_application_unverified"
+    },
+    {
+      "constraint_id": "document_approval_not_demo_approval",
+      "field": {
+        "raw_value": "Signatures on file at ES-FE",
+        "normalized": {
+          "value": "Signatures on file at ES-FE",
+          "unit": null
+        },
+        "evidence": {
+          "document_id": "lanl-wps-3501",
+          "revision": "1",
+          "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+          "locator": {
+            "kind": "pdf_region",
+            "page": 2,
+            "bbox": [
+              44.0,
+              207.0,
+              235.0,
+              217.5
+            ],
+            "coordinate_system": "pdf_points_top_left",
+            "section": "APPROVAL"
+          }
+        },
+        "review_status": "agent_transcription_checked",
+        "application_authorized": false
+      },
+      "meaning": "원문 승인란에 있는 문구의 전사다. 현장 적용·시연 작업·로봇 실행에 대한 사람의 승인이 아니다.",
+      "effect": "no_execution_authorization"
+    },
+    {
+      "constraint_id": "semi_automatic_technique",
+      "meaning": "원문의 Semi-auto-man. 기법 표기를 보존한다. 로봇 자동용접의 적합성을 추정하지 않는다.",
+      "evidence": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "source_hash": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+        "locator": {
+          "kind": "pdf_region",
+          "page": 1,
+          "bbox": [
+            44.0,
+            641.0,
+            201.0,
+            651.5
+          ],
+          "coordinate_system": "pdf_points_top_left",
+          "section": "WELDING TECHNIQUE",
+          "label": "Technique"
+        }
+      },
+      "effect": "robotic_applicability_unverified"
+    },
+    {
+      "constraint_id": "unconfirmed_dimension_units",
+      "meaning": "두께·용가재 크기·노즐각의 선택 필드에 단위가 명시되지 않아 수치 비교나 단위변환에 사용하지 않는다.",
+      "field_refs": [
+        "applicability.qualified_thickness_aws",
+        "applicability.qualified_thickness_asme",
+        "pass_rows[0].fields.filler_size",
+        "pass_rows[0].fields.nozzle_angle"
+      ],
+      "effect": "dimension_validation_unavailable"
+    }
+  ],
+  "limitations": [
+    "현장 작업지시·도면·사진의 실제 재질·두께·자세·공정은 이 문서 전사에서 확인하지 않았다.",
+    "1쪽 130 A/24 V 요약값과 2쪽 대표층 1의 범위를 별도로 보존한다. 단일 설정값 선택이나 상충 해소를 수행하지 않았다.",
+    "원문 표의 2~4층은 이번 구조화 범위 밖이다.",
+    "1쪽 장식 제목의 일부 텍스트 글리프는 추출 시 cid로 보이지만 선택한 수치·헤더·단위의 렌더는 직접 대조했다.",
+    "인쇄 시각 2025-10-28은 문서 개정일 2005-01-21과 별개다. 인쇄 시각의 시간대는 원문에 없다."
+  ],
+  "purpose": "demo_document_range_review",
+  "range_combination_validated": false,
+  "physical_applicability": "unverified",
+  "application_authorized": false,
+  "execution_authorized": false
+}

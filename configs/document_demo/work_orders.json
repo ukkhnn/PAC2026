@@ -1,0 +1,37 @@
+{
+  "document_origin": "synthetic_demo",
+  "source_kind": "fixture",
+  "application_authorized": false,
+  "execution_authorized": false,
+  "schema_version": "demo-work-orders.v1",
+  "document_id": "DEMO-WORK-ORDERS",
+  "revision": "1",
+  "provenance": "실제 OCR 출력 문자열을 불투명 식별자로 사용해 직접 작성한 문서 연결 시연. 사진의 실제 작업지시나 정답을 뜻하지 않음.",
+  "orders": [
+    {
+      "project_id": "PAC-DEMO",
+      "block_id": "BLOCK-DEMO",
+      "order_id": "WO-DEMO-015",
+      "part_id": "BISB30N-15",
+      "revision": 1,
+      "valid_from": "2026-10-01T00:00:00Z",
+      "valid_until": null,
+      "state": "released",
+      "instruction": "모사 도면 및 공개 WPS의 조건 범위를 문서 검토용 수신기로 전달",
+      "joint_id": "JOINT-DEMO-01",
+      "drawing_ref": {
+        "document_id": "DRAWING-DEMO-015",
+        "revision": "1"
+      },
+      "wps_ref": {
+        "document_id": "lanl-wps-3501",
+        "revision": "1",
+        "row_id": "layer-1"
+      },
+      "process": "FCAW",
+      "material": "A-36",
+      "position": "flat",
+      "thickness": null
+    }
+  ]
+}

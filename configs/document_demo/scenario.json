@@ -1,0 +1,70 @@
+{
+  "schema_version": "document-demo-config.v1",
+  "scenario_id": "steel-document-review-v1",
+  "purpose": "demo_mock",
+  "evaluation_scope": "document_review",
+  "recognition_run_id": "steel-batch-20261010-02",
+  "frame_id": "frame-007",
+  "observation_policy": {
+    "identifier_regex": "^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)+$",
+    "vlm_text_iou_min": 0.1,
+    "policy_version": "opaque-marking-consensus.v1"
+  },
+  "context": {
+    "project_id": "PAC-DEMO",
+    "block_id": "BLOCK-DEMO",
+    "as_of": "2026-10-10T00:00:00Z"
+  },
+  "files": {
+    "work_orders": "work_orders.json",
+    "drawing": "drawing.json",
+    "drawing_render": "drawing.svg",
+    "target_profile": "target_profile.json"
+  },
+  "wps_file": "data/knowledge/lanl-wps-3501-reviewed.json",
+  "retrieval_query": "Welding parameters amperage voltage travel speed passes",
+  "cases": {
+    "normal": {
+      "description": "실제 저장 관측과 모사 문서 및 원문 범위값 연결",
+      "faults": []
+    },
+    "missing": {
+      "description": "시연용 필수 전압 필드 누락 주입",
+      "faults": [
+        {
+          "op": "omit_parameter",
+          "field": "voltage"
+        }
+      ]
+    },
+    "conflict": {
+      "description": "시연용 도면 공정 충돌 주입",
+      "faults": [
+        {
+          "op": "set_drawing_process",
+          "value": "GMAW"
+        }
+      ]
+    },
+    "revision-mismatch": {
+      "description": "존재하지 않는 WPS 개정 참조 주입",
+      "faults": [
+        {
+          "op": "set_wps_revision",
+          "value": "2"
+        }
+      ]
+    },
+    "observation-conflict": {
+      "description": "실제 OCR/VLM 문자열이 다른 별도 프레임 재사용",
+      "frame_id": "frame-005",
+      "faults": []
+    }
+  },
+  "limitations": [
+    "기존 결과에서 선정한 개발용 시연이며 독립 정확도 평가가 아님.",
+    "모사 작업문서는 선택된 관측 문자열에 맞춰 작성한 연결용 자료이며 현장 작업 매칭 성능 증거가 아님.",
+    "사진의 실제 재질/두께/이음과 WPS 적용성은 미확정.",
+    "문서 범위값 검토만 수행하며 단일 설정값·실기 명령을 만들지 않음."
+  ]
+}
