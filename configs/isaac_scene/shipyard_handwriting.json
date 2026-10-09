@@ -1,0 +1,333 @@
+{
+  "schema_version": "isaac-shipyard-scene.v1",
+  "scenario_id": "shipyard-handwriting-glare-01",
+  "capture_mode": "pre_captured",
+  "recognition_feedback_enabled": false,
+  "execution_authorized": false,
+  "scene_scope": "synthetic shipyard block-assembly bay with a vertical three-panel steel jig, hand-drawn memo and scheduled wrist-camera poses; no welding, no automatic recognition feedback, not a reconstruction of a real ship design",
+  "frame_note": "world is USD z-up metres; the robot faces +x, so +y is the viewer's LEFT and -y the viewer's RIGHT when reading the centre panel",
+  "marking": {
+    "text": "BISB30N-15",
+    "joint_label": "J01",
+    "style": "paint_marker",
+    "seed": 20261010,
+    "source": "procedural synthetic handwriting-style strokes drawn by scripts/isaac_shipyard_marking.py; not a transcription of a real steel photo",
+    "text_center_yz": [
+      0.1,
+      1.45
+    ],
+    "text_height_m": 0.09,
+    "label_center_yz": [
+      -0.12,
+      1.32
+    ],
+    "label_height_m": 0.07,
+    "circle_label": true,
+    "arrow_from_yz": [
+      -0.25,
+      1.32
+    ],
+    "arrow_to_yz": [
+      -0.385,
+      1.32
+    ],
+    "stroke_width_m": 0.011,
+    "slant": 0.12,
+    "text_angle_deg": -1.2,
+    "label_angle_deg": 1.8,
+    "color_rgb": [
+      238,
+      231,
+      196
+    ],
+    "primer_rgb": [
+      122,
+      128,
+      122
+    ],
+    "aux_notes": []
+  },
+  "panels": {
+    "center": {
+      "front_x": 1.2,
+      "width": 2.4,
+      "height": 1.8,
+      "thickness": 0.02,
+      "bottom_z": 0.06,
+      "seam_y": -0.4,
+      "seam_gap": 0.004,
+      "texture_size": [
+        4096,
+        3072
+      ],
+      "front_stiffener_y": [
+        0.95,
+        -0.95
+      ],
+      "back_stiffener_z": [
+        0.5,
+        1.0,
+        1.5
+      ],
+      "strongback_z": [
+        0.62,
+        1.74
+      ],
+      "tack_weld_z": [
+        0.25,
+        0.9,
+        1.12,
+        1.58
+      ],
+      "top_clamp_y": [
+        0.6,
+        -0.6
+      ]
+    },
+    "sides": {
+      "width": 1.2,
+      "height": 1.8,
+      "thickness": 0.02,
+      "angle_deg": 22.0,
+      "texture_size": [
+        2048,
+        1536
+      ],
+      "front_stiffener_fraction": [
+        0.36,
+        0.7
+      ]
+    }
+  },
+  "robot": {
+    "base_position": [
+      0.15,
+      0.0,
+      0.75
+    ],
+    "pedestal_size": [
+      0.42,
+      0.42
+    ],
+    "position_tolerance_m": 0.015,
+    "camera_mount_translation": [
+      0.25,
+      0,
+      -0.15
+    ]
+  },
+  "views": {
+    "A": {
+      "camera_position": [
+        0.7,
+        0.29,
+        1.28
+      ],
+      "look_at": [
+        1.2,
+        0.1,
+        1.45
+      ],
+      "intent": "fixed worklight specular reflection lands on the middle of the handwritten identifier"
+    },
+    "B": {
+      "camera_position": [
+        0.75,
+        0.0,
+        1.62
+      ],
+      "look_at": [
+        1.2,
+        0.0,
+        1.4
+      ],
+      "intent": "arm raises and squares the wrist camera over the memo and seam; the same reflection moves above the identifier"
+    }
+  },
+  "metal": {
+    "metallic": 0.65,
+    "roughness": 0.19,
+    "clearcoat": 1.0,
+    "clearcoat_roughness": 0.1
+  },
+  "worklight": {
+    "position": [
+      -0.15,
+      -0.75,
+      1.85
+    ],
+    "look_at": [
+      1.2,
+      0.05,
+      1.4
+    ],
+    "width": 0.36,
+    "height": 0.3,
+    "intensity": 120000.0,
+    "color": [
+      1.0,
+      0.95,
+      0.86
+    ],
+    "stand_base": [
+      -0.15,
+      -0.75,
+      0.0
+    ]
+  },
+  "ambient_intensity": 260.0,
+  "ambient_color": [
+    0.4,
+    0.5,
+    0.65
+  ],
+  "fill_light": {
+    "position": [
+      -1.5,
+      2.6,
+      3.2
+    ],
+    "look_at": [
+      0.9,
+      0.0,
+      1.0
+    ],
+    "width": 1.6,
+    "height": 1.1,
+    "intensity": 900.0,
+    "color": [
+      0.65,
+      0.78,
+      1.0
+    ]
+  },
+  "far_lights": [
+    {
+      "position": [
+        4.0,
+        -8.0,
+        6.5
+      ],
+      "radius": 0.3,
+      "intensity": 32000.0,
+      "color": [
+        1.0,
+        0.75,
+        0.45
+      ]
+    },
+    {
+      "position": [
+        7.0,
+        5.0,
+        6.5
+      ],
+      "radius": 0.3,
+      "intensity": 32000.0,
+      "color": [
+        1.0,
+        0.75,
+        0.45
+      ]
+    },
+    {
+      "position": [
+        -8.0,
+        6.0,
+        6.5
+      ],
+      "radius": 0.3,
+      "intensity": 24000.0,
+      "color": [
+        0.75,
+        0.85,
+        1.0
+      ]
+    },
+    {
+      "position": [
+        2.0,
+        -9.0,
+        8.4
+      ],
+      "radius": 0.3,
+      "intensity": 26000.0,
+      "color": [
+        1.0,
+        0.78,
+        0.5
+      ]
+    },
+    {
+      "position": [
+        10.0,
+        -1.0,
+        8.4
+      ],
+      "radius": 0.3,
+      "intensity": 26000.0,
+      "color": [
+        0.8,
+        0.88,
+        1.0
+      ]
+    },
+    {
+      "position": [
+        -1.0,
+        1.0,
+        8.6
+      ],
+      "radius": 0.3,
+      "intensity": 14000.0,
+      "color": [
+        0.85,
+        0.9,
+        1.0
+      ]
+    }
+  ],
+  "camera": {
+    "resolution_hw": [
+      720,
+      1280
+    ],
+    "focal_length_mm": 18.0,
+    "horizontal_aperture_mm": 36.0,
+    "tick_rate": 0.0
+  },
+  "overview": {
+    "position": [
+      -2.2,
+      3.4,
+      3.0
+    ],
+    "look_at": [
+      0.9,
+      -0.1,
+      1.25
+    ],
+    "resolution_hw": [
+      720,
+      1280
+    ],
+    "focal_length_mm": 26.0
+  },
+  "render": {
+    "renderer": "RealTimePathTracing",
+    "samples_per_pixel": 16,
+    "warmup_steps": 80,
+    "settle_steps": 80,
+    "fixed_exposure": {
+      "film_iso": 200.0,
+      "shutter": 50.0,
+      "f_number": 4.0
+    }
+  },
+  "presentation": {
+    "hold_steps": 480,
+    "move_steps": 120,
+    "stream_every_steps": 12
+  },
+  "kit_http_port": 8031
+}
