@@ -1,0 +1,750 @@
+{
+ "schema_version": "pv2-e1-scores.v1",
+ "policy": {
+  "identifier_regex": "^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)+$",
+  "vlm_text_iou_min": 0.1,
+  "policy_version": "opaque-marking-consensus.v1"
+ },
+ "bundles": {
+  "run_steel-batch-20261010-02": {
+   "summary": {
+    "images": 10,
+    "single_code_images": 7,
+    "policies": {
+     "D_gate": {
+      "HOLD": 5,
+      "PROCEED-wrong": 2
+     },
+     "D_ocr": {
+      "PROCEED-correct": 1,
+      "PROCEED-wrong": 4,
+      "HOLD": 2
+     },
+     "D_vlm": {
+      "PROCEED-wrong": 5,
+      "HOLD": 2
+     }
+    },
+    "ocr_exact_any": 1,
+    "vlm_exact_any": 0,
+    "ocr_confusable_any": 4,
+    "vlm_confusable_any": 6,
+    "document_refs_total": 0,
+    "frames_with_relations": 1,
+    "work_spec_fields_empty": 10,
+    "quality_issues_nonempty": 0
+   },
+   "rows": [
+    {
+     "bundle": "run_steel-batch-20261010-02",
+     "frame_id": "frame-001",
+     "image": "pv2-img-124",
+     "split": "train",
+     "seen_in_previous_pilots": true,
+     "truth": [
+      "B1SB30N-56"
+     ],
+     "ocr_ids": [
+      {
+       "text": "B1SB30N-56",
+       "score": 0.9471912384033203
+      }
+     ],
+     "vlm_text_ids": [
+      "BISB30N-56"
+     ],
+     "vlm_any_kind_ids": [
+      "BISB30N-56"
+     ],
+     "gate_issues": [
+      "ocr_vlm_disagreement"
+     ],
+     "gate_candidates": [
+      "B1SB30N-56",
+      "BISB30N-56"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": "B1SB30N-56",
+      "D_vlm": "BISB30N-56"
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "PROCEED-correct",
+      "D_vlm": "PROCEED-wrong"
+     },
+     "read_any": {
+      "ocr_exact": true,
+      "vlm_exact": false,
+      "ocr_confusable": true,
+      "vlm_confusable": true
+     },
+     "shared_wrong_agreement": false,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 13.631,
+       "output_tokens": 441
+      },
+      "relation": {
+       "seconds": 1.633,
+       "output_tokens": 44
+      }
+     }
+    },
+    {
+     "bundle": "run_steel-batch-20261010-02",
+     "frame_id": "frame-002",
+     "image": "pv2-img-067",
+     "split": "train",
+     "seen_in_previous_pilots": true,
+     "truth": [
+      "B1SB30N-58"
+     ],
+     "ocr_ids": [
+      {
+       "text": "BISB30N-58",
+       "score": 0.9447773694992065
+      }
+     ],
+     "vlm_text_ids": [
+      "BISB30N-58"
+     ],
+     "vlm_any_kind_ids": [
+      "BISB30N-58"
+     ],
+     "gate_issues": [],
+     "gate_candidates": [
+      "BISB30N-58"
+     ],
+     "decision": {
+      "D_gate": "BISB30N-58",
+      "D_ocr": "BISB30N-58",
+      "D_vlm": "BISB30N-58"
+     },
+     "outcome": {
+      "D_gate": "PROCEED-wrong",
+      "D_ocr": "PROCEED-wrong",
+      "D_vlm": "PROCEED-wrong"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": false,
+      "ocr_confusable": true,
+      "vlm_confusable": true
+     },
+     "shared_wrong_agreement": true,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 8.216,
+       "output_tokens": 274
+      },
+      "relation": {
+       "seconds": 1.577,
+       "output_tokens": 44
+      }
+     }
+    },
+    {
+     "bundle": "run_steel-batch-20261010-02",
+     "frame_id": "frame-003",
+     "image": "pv2-img-186",
+     "split": "train",
+     "seen_in_previous_pilots": true,
+     "truth": [
+      "B1SB30N-34",
+      "B1SB30N-12",
+      "B1SB30N-13",
+      "B1SB30N-13A"
+     ],
+     "ocr_ids": [
+      {
+       "text": "SB30N-20",
+       "score": 0.7834436297416687
+      },
+      {
+       "text": "B15630N-12",
+       "score": 0.9413782358169556
+      },
+      {
+       "text": "630N-54",
+       "score": 0.9409953355789185
+      },
+      {
+       "text": "B1SSON-13",
+       "score": 0.7612114548683167
+      }
+     ],
+     "vlm_text_ids": [
+      "BISB30N-34",
+      "BISB30N-12",
+      "B30N-54",
+      "BISB30N-13",
+      "BISB30N-20",
+      "BISB30N-13"
+     ],
+     "vlm_any_kind_ids": [
+      "BISB30N-34",
+      "BISB30N-12",
+      "B30N-54",
+      "BISB30N-13",
+      "BISB30N-20",
+      "BISB30N-13"
+     ],
+     "gate_issues": [
+      "ocr_vlm_disagreement",
+      "ocr_vlm_disagreement",
+      "ocr_vlm_disagreement",
+      "ocr_vlm_disagreement"
+     ],
+     "gate_candidates": [
+      "SB30N-20",
+      "BISB30N-20",
+      "B15630N-12",
+      "BISB30N-12",
+      "630N-54",
+      "B30N-54",
+      "B1SSON-13",
+      "BISB30N-13"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": null,
+      "D_vlm": null
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "HOLD",
+      "D_vlm": "HOLD"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": false,
+      "ocr_confusable": false,
+      "vlm_confusable": true
+     },
+     "shared_wrong_agreement": false,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 31.975,
+       "output_tokens": 1076
+      },
+      "relation": {
+       "seconds": 7.437,
+       "output_tokens": 184
+      }
+     }
+    },
+    {
+     "bundle": "run_steel-batch-20261010-02",
+     "frame_id": "frame-004",
+     "image": "pv2-img-064",
+     "split": "train",
+     "seen_in_previous_pilots": true,
+     "truth": [
+      "B1SB30N-15"
+     ],
+     "ocr_ids": [],
+     "vlm_text_ids": [],
+     "vlm_any_kind_ids": [],
+     "gate_issues": [
+      "no_supported_marking"
+     ],
+     "gate_candidates": [],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": null,
+      "D_vlm": null
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "HOLD",
+      "D_vlm": "HOLD"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": false,
+      "ocr_confusable": false,
+      "vlm_confusable": false
+     },
+     "shared_wrong_agreement": false,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 11.613,
+       "output_tokens": 391
+      },
+      "relation": {
+       "seconds": 2.047,
+       "output_tokens": 58
+      }
+     }
+    },
+    {
+     "bundle": "run_steel-batch-20261010-02",
+     "frame_id": "frame-005",
+     "image": "pv2-img-061",
+     "split": "train",
+     "seen_in_previous_pilots": true,
+     "truth": [
+      "B1SB30N-29"
+     ],
+     "ocr_ids": [
+      {
+       "text": "BISB30N-29",
+       "score": 0.9468282461166382
+      }
+     ],
+     "vlm_text_ids": [
+      "B1SB3ON-29"
+     ],
+     "vlm_any_kind_ids": [
+      "B1SB3ON-29"
+     ],
+     "gate_issues": [
+      "ocr_vlm_disagreement"
+     ],
+     "gate_candidates": [
+      "BISB30N-29",
+      "B1SB3ON-29"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": "BISB30N-29",
+      "D_vlm": "B1SB3ON-29"
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "PROCEED-wrong",
+      "D_vlm": "PROCEED-wrong"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": false,
+      "ocr_confusable": true,
+      "vlm_confusable": true
+     },
+     "shared_wrong_agreement": false,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 8.159,
+       "output_tokens": 274
+      },
+      "relation": {
+       "seconds": 1.56,
+       "output_tokens": 44
+      }
+     }
+    },
+    {
+     "bundle": "run_steel-batch-20261010-02",
+     "frame_id": "frame-006",
+     "image": "pv2-img-152",
+     "split": "train",
+     "seen_in_previous_pilots": true,
+     "truth": [
+      "B1SB30N-36",
+      "B1SB30N-40",
+      "B1SB30N-19",
+      "B1SB30N-20",
+      "B1SB30N-26",
+      "B1SB30N-56",
+      "B1SB30N-54",
+      "B1SB30N-34",
+      "B1SB30N-12",
+      "B1SB30N-13A",
+      "B1SB30N-13"
+     ],
+     "ocr_ids": [
+      {
+       "text": "BIS6BON-20",
+       "score": 0.7894359230995178
+      },
+      {
+       "text": "RMIS-NOEDNAO",
+       "score": 0.47288814187049866
+      },
+      {
+       "text": "BISNESN-1I",
+       "score": 0.7066268920898438
+      },
+      {
+       "text": "B1S630N-26",
+       "score": 0.8647944331169128
+      },
+      {
+       "text": "31S630N-36",
+       "score": 0.8164102435112
+      },
+      {
+       "text": "BISDON-O",
+       "score": 0.8292180299758911
+      },
+      {
+       "text": "B1S630N-12",
+       "score": 0.9344412088394165
+      },
+      {
+       "text": "1SB30N-54",
+       "score": 0.924124002456665
+      },
+      {
+       "text": "BISB3ON-59",
+       "score": 0.7087570428848267
+      },
+      {
+       "text": "BISB30N-56",
+       "score": 0.9457141160964966
+      }
+     ],
+     "vlm_text_ids": [],
+     "vlm_any_kind_ids": [
+      "BIS30N-36",
+      "BIS30N-40",
+      "BIS30N-18",
+      "BIS30N-3",
+      "BIS30N-56",
+      "BIS30N-59",
+      "BIS30N-55",
+      "BIS30N-24",
+      "BIS30N-12",
+      "BIS30N-18",
+      "BIS30N-18",
+      "BIS30N-18"
+     ],
+     "gate_issues": [
+      "no_vlm_identifier_support",
+      "no_vlm_identifier_support",
+      "no_vlm_identifier_support",
+      "no_vlm_identifier_support",
+      "no_vlm_identifier_support",
+      "no_vlm_identifier_support",
+      "no_vlm_identifier_support",
+      "no_vlm_identifier_support",
+      "no_vlm_identifier_support",
+      "no_vlm_identifier_support"
+     ],
+     "gate_candidates": [
+      "BIS6BON-20",
+      "RMIS-NOEDNAO",
+      "BISNESN-1I",
+      "B1S630N-26",
+      "31S630N-36",
+      "BISDON-O",
+      "B1S630N-12",
+      "1SB30N-54",
+      "BISB3ON-59",
+      "BISB30N-56"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": null,
+      "D_vlm": null
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "HOLD",
+      "D_vlm": "HOLD"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": false,
+      "ocr_confusable": true,
+      "vlm_confusable": false
+     },
+     "shared_wrong_agreement": false,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 30.062,
+       "output_tokens": 1010
+      },
+      "relation": {
+       "seconds": 11.714,
+       "output_tokens": 338
+      }
+     }
+    },
+    {
+     "bundle": "run_steel-batch-20261010-02",
+     "frame_id": "frame-007",
+     "image": "pv2-img-070",
+     "split": "train",
+     "seen_in_previous_pilots": true,
+     "truth": [
+      "B1SB30N-15"
+     ],
+     "ocr_ids": [
+      {
+       "text": "BISB30N-15",
+       "score": 0.9735389947891235
+      }
+     ],
+     "vlm_text_ids": [
+      "BISB30N-15"
+     ],
+     "vlm_any_kind_ids": [
+      "BISB30N-15"
+     ],
+     "gate_issues": [],
+     "gate_candidates": [
+      "BISB30N-15"
+     ],
+     "decision": {
+      "D_gate": "BISB30N-15",
+      "D_ocr": "BISB30N-15",
+      "D_vlm": "BISB30N-15"
+     },
+     "outcome": {
+      "D_gate": "PROCEED-wrong",
+      "D_ocr": "PROCEED-wrong",
+      "D_vlm": "PROCEED-wrong"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": false,
+      "ocr_confusable": true,
+      "vlm_confusable": true
+     },
+     "shared_wrong_agreement": true,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 15.965,
+       "output_tokens": 535
+      },
+      "relation": {
+       "seconds": 2.538,
+       "output_tokens": 72
+      }
+     }
+    },
+    {
+     "bundle": "run_steel-batch-20261010-02",
+     "frame_id": "frame-008",
+     "image": "pv2-img-043",
+     "split": "train",
+     "seen_in_previous_pilots": true,
+     "truth": [
+      "B1SB40N-37",
+      "B1SB40N-23",
+      "B1SB40N-15",
+      "B1SB40N-27",
+      "B1SB40N-8",
+      "B1SB40N-26",
+      "B1SB40N-9"
+     ],
+     "ocr_ids": [
+      {
+       "text": "BISB40N-9",
+       "score": 0.927591860294342
+      }
+     ],
+     "vlm_text_ids": [],
+     "vlm_any_kind_ids": [
+      "BISB40N-9",
+      "BISB40N-26",
+      "BISB40N-8",
+      "BISB40N-27",
+      "BISB40N-15",
+      "BISB40N-23",
+      "BISB40N-22",
+      "BISB40N-21",
+      "BISB40N-20",
+      "BISB40N-19",
+      "BISB40N-18",
+      "BISB40N-17"
+     ],
+     "gate_issues": [
+      "no_vlm_identifier_support"
+     ],
+     "gate_candidates": [
+      "BISB40N-9"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": "BISB40N-9",
+      "D_vlm": null
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "PROCEED-not-in-set",
+      "D_vlm": "HOLD"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": false,
+      "ocr_confusable": true,
+      "vlm_confusable": false
+     },
+     "shared_wrong_agreement": false,
+     "relations": 15,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 37.871,
+       "output_tokens": 1271
+      },
+      "relation": {
+       "seconds": 76.793,
+       "output_tokens": 2404
+      }
+     }
+    },
+    {
+     "bundle": "run_steel-batch-20261010-02",
+     "frame_id": "frame-009",
+     "image": "pv2-img-155",
+     "split": "train",
+     "seen_in_previous_pilots": true,
+     "truth": [
+      "B1SB30N-16"
+     ],
+     "ocr_ids": [
+      {
+       "text": "B1S630N-16",
+       "score": 0.9075409770011902
+      }
+     ],
+     "vlm_text_ids": [
+      "BISB30N-16"
+     ],
+     "vlm_any_kind_ids": [
+      "BISB30N-16"
+     ],
+     "gate_issues": [
+      "ocr_vlm_disagreement"
+     ],
+     "gate_candidates": [
+      "B1S630N-16",
+      "BISB30N-16"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": "B1S630N-16",
+      "D_vlm": "BISB30N-16"
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "PROCEED-wrong",
+      "D_vlm": "PROCEED-wrong"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": false,
+      "ocr_confusable": false,
+      "vlm_confusable": true
+     },
+     "shared_wrong_agreement": false,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 14.044,
+       "output_tokens": 471
+      },
+      "relation": {
+       "seconds": 2.085,
+       "output_tokens": 58
+      }
+     }
+    },
+    {
+     "bundle": "run_steel-batch-20261010-02",
+     "frame_id": "frame-010",
+     "image": "pv2-img-025",
+     "split": "train",
+     "seen_in_previous_pilots": true,
+     "truth": [
+      "B1SB30N-20"
+     ],
+     "ocr_ids": [
+      {
+       "text": "N-19",
+       "score": 0.9998851418495178
+      },
+      {
+       "text": "BIS630N-20",
+       "score": 0.9081805944442749
+      }
+     ],
+     "vlm_text_ids": [
+      "N-19",
+      "BISB3ON-20"
+     ],
+     "vlm_any_kind_ids": [
+      "N-19",
+      "BISB3ON-20"
+     ],
+     "gate_issues": [
+      "ocr_vlm_disagreement"
+     ],
+     "gate_candidates": [
+      "N-19",
+      "BIS630N-20",
+      "BISB3ON-20"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": null,
+      "D_vlm": null
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "HOLD",
+      "D_vlm": "HOLD"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": false,
+      "ocr_confusable": false,
+      "vlm_confusable": true
+     },
+     "shared_wrong_agreement": false,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 9.078,
+       "output_tokens": 305
+      },
+      "relation": {
+       "seconds": 1.635,
+       "output_tokens": 44
+      }
+     }
+    }
+   ]
+  }
+ }
+}

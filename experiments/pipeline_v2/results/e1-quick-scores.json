@@ -1,0 +1,496 @@
+{
+ "schema_version": "pv2-e1-scores.v1",
+ "policy": {
+  "identifier_regex": "^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)+$",
+  "vlm_text_iou_min": 0.1,
+  "policy_version": "opaque-marking-consensus.v1"
+ },
+ "bundles": {
+  "run_pv2-e1-quick-val01": {
+   "summary": {
+    "images": 8,
+    "single_code_images": 8,
+    "policies": {
+     "D_gate": {
+      "HOLD": 8
+     },
+     "D_ocr": {
+      "PROCEED-wrong": 5,
+      "PROCEED-correct": 2,
+      "HOLD": 1
+     },
+     "D_vlm": {
+      "PROCEED-wrong": 2,
+      "PROCEED-correct": 2,
+      "HOLD": 4
+     }
+    },
+    "ocr_exact_any": 2,
+    "vlm_exact_any": 2,
+    "ocr_confusable_any": 2,
+    "vlm_confusable_any": 3,
+    "document_refs_total": 0,
+    "frames_with_relations": 2,
+    "work_spec_fields_empty": 8,
+    "quality_issues_nonempty": 0
+   },
+   "rows": [
+    {
+     "bundle": "run_pv2-e1-quick-val01",
+     "frame_id": "frame-001",
+     "image": "pv2-img-004",
+     "split": "val",
+     "seen_in_previous_pilots": false,
+     "truth": [
+      "B1SB30N-8"
+     ],
+     "ocr_ids": [
+      {
+       "text": "BISBON-8",
+       "score": 0.7230103015899658
+      }
+     ],
+     "vlm_text_ids": [
+      "BISB30N-8"
+     ],
+     "vlm_any_kind_ids": [
+      "BISB30N-8",
+      "BISB30N-8"
+     ],
+     "gate_issues": [
+      "ocr_vlm_disagreement"
+     ],
+     "gate_candidates": [
+      "BISBON-8",
+      "BISB30N-8"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": "BISBON-8",
+      "D_vlm": "BISB30N-8"
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "PROCEED-wrong",
+      "D_vlm": "PROCEED-wrong"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": false,
+      "ocr_confusable": false,
+      "vlm_confusable": true
+     },
+     "shared_wrong_agreement": false,
+     "relations": 1,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 26.475,
+       "output_tokens": 509
+      },
+      "relation": {
+       "seconds": 9.945,
+       "output_tokens": 178
+      }
+     }
+    },
+    {
+     "bundle": "run_pv2-e1-quick-val01",
+     "frame_id": "frame-002",
+     "image": "pv2-img-009",
+     "split": "val",
+     "seen_in_previous_pilots": false,
+     "truth": [
+      "B1SB40N-23"
+     ],
+     "ocr_ids": [
+      {
+       "text": "B1IS-2",
+       "score": 0.6590741872787476
+      }
+     ],
+     "vlm_text_ids": [
+      "B1SB40N-23"
+     ],
+     "vlm_any_kind_ids": [
+      "B1SB40N-23"
+     ],
+     "gate_issues": [
+      "ocr_vlm_disagreement"
+     ],
+     "gate_candidates": [
+      "B1IS-2",
+      "B1SB40N-23"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": "B1IS-2",
+      "D_vlm": "B1SB40N-23"
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "PROCEED-wrong",
+      "D_vlm": "PROCEED-correct"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": true,
+      "ocr_confusable": false,
+      "vlm_confusable": true
+     },
+     "shared_wrong_agreement": false,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 20.108,
+       "output_tokens": 392
+      },
+      "relation": {
+       "seconds": 2.688,
+       "output_tokens": 44
+      }
+     }
+    },
+    {
+     "bundle": "run_pv2-e1-quick-val01",
+     "frame_id": "frame-003",
+     "image": "pv2-img-010",
+     "split": "val",
+     "seen_in_previous_pilots": false,
+     "truth": [
+      "B1SB30N-37A"
+     ],
+     "ocr_ids": [
+      {
+       "text": "BI563N-37A",
+       "score": 0.7700992822647095
+      }
+     ],
+     "vlm_text_ids": [],
+     "vlm_any_kind_ids": [],
+     "gate_issues": [
+      "no_vlm_identifier_support"
+     ],
+     "gate_candidates": [
+      "BI563N-37A"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": "BI563N-37A",
+      "D_vlm": null
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "PROCEED-wrong",
+      "D_vlm": "HOLD"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": false,
+      "ocr_confusable": false,
+      "vlm_confusable": false
+     },
+     "shared_wrong_agreement": false,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 69.659,
+       "output_tokens": 1359
+      },
+      "relation": {
+       "seconds": 3.73,
+       "output_tokens": 58
+      }
+     }
+    },
+    {
+     "bundle": "run_pv2-e1-quick-val01",
+     "frame_id": "frame-004",
+     "image": "pv2-img-034",
+     "split": "val",
+     "seen_in_previous_pilots": false,
+     "truth": [
+      "B1SB30N-37A"
+     ],
+     "ocr_ids": [
+      {
+       "text": "BI53N-37A",
+       "score": 0.6606472134590149
+      }
+     ],
+     "vlm_text_ids": [],
+     "vlm_any_kind_ids": [
+      "BISB30N-37A"
+     ],
+     "gate_issues": [
+      "no_vlm_identifier_support"
+     ],
+     "gate_candidates": [
+      "BI53N-37A"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": "BI53N-37A",
+      "D_vlm": null
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "PROCEED-wrong",
+      "D_vlm": "HOLD"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": false,
+      "ocr_confusable": false,
+      "vlm_confusable": false
+     },
+     "shared_wrong_agreement": false,
+     "relations": 3,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 22.986,
+       "output_tokens": 453
+      },
+      "relation": {
+       "seconds": 24.425,
+       "output_tokens": 454
+      }
+     }
+    },
+    {
+     "bundle": "run_pv2-e1-quick-val01",
+     "frame_id": "frame-005",
+     "image": "pv2-img-052",
+     "split": "val",
+     "seen_in_previous_pilots": false,
+     "truth": [
+      "M5SB24-16"
+     ],
+     "ocr_ids": [
+      {
+       "text": "M55624-16",
+       "score": 0.9787453413009644
+      }
+     ],
+     "vlm_text_ids": [
+      "M5SB24-16"
+     ],
+     "vlm_any_kind_ids": [
+      "M5SB24-16"
+     ],
+     "gate_issues": [
+      "ocr_vlm_disagreement"
+     ],
+     "gate_candidates": [
+      "M55624-16",
+      "M5SB24-16"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": "M55624-16",
+      "D_vlm": "M5SB24-16"
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "PROCEED-wrong",
+      "D_vlm": "PROCEED-correct"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": true,
+      "ocr_confusable": false,
+      "vlm_confusable": true
+     },
+     "shared_wrong_agreement": false,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 16.927,
+       "output_tokens": 339
+      },
+      "relation": {
+       "seconds": 2.728,
+       "output_tokens": 44
+      }
+     }
+    },
+    {
+     "bundle": "run_pv2-e1-quick-val01",
+     "frame_id": "frame-006",
+     "image": "pv2-img-053",
+     "split": "val",
+     "seen_in_previous_pilots": false,
+     "truth": [
+      "B1SB30N-16"
+     ],
+     "ocr_ids": [
+      {
+       "text": "B1SB30N-16",
+       "score": 0.9418740272521973
+      }
+     ],
+     "vlm_text_ids": [],
+     "vlm_any_kind_ids": [],
+     "gate_issues": [
+      "no_vlm_identifier_support"
+     ],
+     "gate_candidates": [
+      "B1SB30N-16"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": "B1SB30N-16",
+      "D_vlm": null
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "PROCEED-correct",
+      "D_vlm": "HOLD"
+     },
+     "read_any": {
+      "ocr_exact": true,
+      "vlm_exact": false,
+      "ocr_confusable": true,
+      "vlm_confusable": false
+     },
+     "shared_wrong_agreement": false,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 14.583,
+       "output_tokens": 294
+      },
+      "relation": {
+       "seconds": 4.741,
+       "output_tokens": 84
+      }
+     }
+    },
+    {
+     "bundle": "run_pv2-e1-quick-val01",
+     "frame_id": "frame-007",
+     "image": "pv2-img-057",
+     "split": "val",
+     "seen_in_previous_pilots": false,
+     "truth": [
+      "B1SB40N-45"
+     ],
+     "ocr_ids": [],
+     "vlm_text_ids": [
+      "B-1000"
+     ],
+     "vlm_any_kind_ids": [
+      "B-1000"
+     ],
+     "gate_issues": [
+      "no_supported_marking"
+     ],
+     "gate_candidates": [],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": null,
+      "D_vlm": "B-1000"
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "HOLD",
+      "D_vlm": "PROCEED-wrong"
+     },
+     "read_any": {
+      "ocr_exact": false,
+      "vlm_exact": false,
+      "ocr_confusable": false,
+      "vlm_confusable": false
+     },
+     "shared_wrong_agreement": false,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 18.285,
+       "output_tokens": 360
+      },
+      "relation": {
+       "seconds": 2.842,
+       "output_tokens": 48
+      }
+     }
+    },
+    {
+     "bundle": "run_pv2-e1-quick-val01",
+     "frame_id": "frame-008",
+     "image": "pv2-img-065",
+     "split": "val",
+     "seen_in_previous_pilots": false,
+     "truth": [
+      "B1SB30N-23"
+     ],
+     "ocr_ids": [
+      {
+       "text": "B1SB30N-23",
+       "score": 0.949598491191864
+      }
+     ],
+     "vlm_text_ids": [],
+     "vlm_any_kind_ids": [],
+     "gate_issues": [
+      "no_vlm_identifier_support"
+     ],
+     "gate_candidates": [
+      "B1SB30N-23"
+     ],
+     "decision": {
+      "D_gate": null,
+      "D_ocr": "B1SB30N-23",
+      "D_vlm": null
+     },
+     "outcome": {
+      "D_gate": "HOLD",
+      "D_ocr": "PROCEED-correct",
+      "D_vlm": "HOLD"
+     },
+     "read_any": {
+      "ocr_exact": true,
+      "vlm_exact": false,
+      "ocr_confusable": true,
+      "vlm_confusable": false
+     },
+     "shared_wrong_agreement": false,
+     "relations": 0,
+     "document_refs": 0,
+     "work_spec_fields_empty": true,
+     "quality_issues": [],
+     "timing": {
+      "visual": {
+       "seconds": 17.507,
+       "output_tokens": 344
+      },
+      "relation": {
+       "seconds": 2.686,
+       "output_tokens": 44
+      }
+     }
+    }
+   ]
+  }
+ }
+}

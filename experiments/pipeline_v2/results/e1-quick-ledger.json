@@ -1,0 +1,85 @@
+{
+ "schema_version": "pv2-e1-ledger.v1",
+ "plan": [
+  {
+   "run_id": "pv2-e1-quick-val01",
+   "images": [
+    "pv2-img-004",
+    "pv2-img-009",
+    "pv2-img-010",
+    "pv2-img-034",
+    "pv2-img-052",
+    "pv2-img-053",
+    "pv2-img-057",
+    "pv2-img-065"
+   ],
+   "kind": "unseen_val_single_quick"
+  }
+ ],
+ "runs": [
+  {
+   "run_id": "pv2-e1-quick-val01",
+   "images": [
+    "pv2-img-004",
+    "pv2-img-009",
+    "pv2-img-010",
+    "pv2-img-034",
+    "pv2-img-052",
+    "pv2-img-053",
+    "pv2-img-057",
+    "pv2-img-065"
+   ],
+   "argv": [
+    "nice",
+    "-n",
+    "19",
+    "/workspace/venvs/contextweld-inference/bin/python",
+    "-u",
+    "/workspace/PAC2026/experiments/pipeline_v2/tools/cli_wrapper.py",
+    "/workspace/PAC2026/scripts/run_recognition.py",
+    "--data-root",
+    "/workspace/PAC2026/output/pipeline-v2-20261010/data/root",
+    "--sources",
+    "/workspace/PAC2026/output/pipeline-v2-20261010/data/sources.json",
+    "--output-root",
+    "/workspace/PAC2026/output/pipeline-v2-20261010/runs/e1",
+    "--run-id",
+    "pv2-e1-quick-val01",
+    "--image-ids",
+    "pv2-img-004",
+    "pv2-img-009",
+    "pv2-img-010",
+    "pv2-img-034",
+    "pv2-img-052",
+    "pv2-img-053",
+    "pv2-img-057",
+    "pv2-img-065",
+    "--document-index",
+    "/workspace/PAC2026/output/document-rag/server-v1/index.json",
+    "--ocr-device",
+    "cpu",
+    "--max-new-tokens",
+    "4096",
+    "--det-model-dir",
+    "/workspace/models/contextweld/PP-OCRv6_medium_det/8e0f56fb2ef86b461d99cfc7ac5c137738985f61",
+    "--det-revision",
+    "8e0f56fb2ef86b461d99cfc7ac5c137738985f61",
+    "--rec-model-dir",
+    "/workspace/models/contextweld/PP-OCRv6_medium_rec/e5a92bcbc5cc1b494628e458d267778f0704fd7c",
+    "--rec-revision",
+    "e5a92bcbc5cc1b494628e458d267778f0704fd7c",
+    "--vlm-model-dir",
+    "/workspace/models/contextweld/Qwen3-VL-8B-Instruct/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "--vlm-revision",
+    "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b"
+   ],
+   "started_at_utc": "2026-10-10T00:37:45.340481Z",
+   "finished_at_utc": "2026-10-10T00:42:58.580952Z",
+   "wall_seconds": 313.24,
+   "exit_code": 0,
+   "status": "succeeded"
+  }
+ ],
+ "failures": [],
+ "result_runs": {}
+}

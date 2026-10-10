@@ -1,0 +1,58 @@
+{
+ "schema_version": "pv2-protection-compare.v1",
+ "before": "output/pipeline-v2-20261010/preflight/protection-before.json",
+ "after": "output/pipeline-v2-20261010/postflight/protection-after.json",
+ "files": {
+  "compared": 3535,
+  "changed": [
+   "output/isaac-scene-20261010/live-01.log",
+   "output/isaac-shipyard-20261010/live-03-publisher.log",
+   "output/isaac-shipyard-20261010/live-03.log"
+  ],
+  "removed": [],
+  "added": [
+   "docs/ADMIN_DASHBOARD.md",
+   "scripts/export_admin_dashboard.py",
+   "src/contextweld_dashboard/__init__.py",
+   "src/contextweld_dashboard/__main__.py",
+   "src/contextweld_dashboard/adapters/__init__.py",
+   "src/contextweld_dashboard/adapters/common.py",
+   "src/contextweld_dashboard/bundle_io.py",
+   "src/contextweld_dashboard/catalog.py",
+   "src/contextweld_dashboard/integrity.py",
+   "src/contextweld_dashboard/model.py",
+   "src/contextweld_dashboard/package.py",
+   "src/contextweld_dashboard/package_tools/README-offline.md",
+   "src/contextweld_dashboard/package_tools/__init__.py",
+   "src/contextweld_dashboard/package_tools/serve_package.py",
+   "src/contextweld_dashboard/package_tools/verify_package.py",
+   "src/contextweld_dashboard/web/app.css",
+   "src/contextweld_dashboard/web/app.js",
+   "src/contextweld_dashboard/web/index.html",
+   "tests/admin_dashboard_support.py"
+  ]
+ },
+ "external_files": {
+  "compared": 3,
+  "changed": [],
+  "removed": [],
+  "added": []
+ },
+ "processes": {
+  "before": 9,
+  "after": 8,
+  "missing": [
+   {
+    "pid": 56811,
+    "cmdline": "/usr/bin/python3 -c from ros2cli.daemon.daemonize import main; main() --name ros2-daemon --ros-domain-id 26 --rmw-implementation rmw_fastrtps_cpp"
+   }
+  ],
+  "new": []
+ },
+ "git": {
+  "head_before": "945132109b01ea7da38f6ebff68637b0c73fa9cd",
+  "head_after": "705cd51ec18ee11e501e9f69dbfef9b1db1f77b3",
+  "tracked_diff_unchanged": false
+ },
+ "protected_unchanged": false
+}
