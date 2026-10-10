@@ -1,0 +1,418 @@
+{
+  "schema_version": "context-ablation-ground-truth.v1",
+  "experiment_id": "CTX-001",
+  "usage": "scoring_and_fixture_freeze_only_never_model_prompt",
+  "label_provenance": "public_dataset_not_independently_human_reannotated",
+  "normalization": {
+    "text_exact": "strip_outer_whitespace_and_uppercase",
+    "text_exact_case_sensitive": "strip_outer_whitespace_only",
+    "member_id": "strip_outer_whitespace_and_uppercase",
+    "character_substitutions": false
+  },
+  "source_manifest_sha256": "442a55a307d7796b71f5a2a51de18457412aeb71efca00ed4510804d81262bbe",
+  "targets": {
+    "S01-R00": {
+      "text": "B1Sb30N-56",
+      "image_id": "S01",
+      "roi_index": 0,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-56",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        },
+        "absent": {
+          "target_in_roster": false,
+          "preferred_outcome": "out_of_roster_or_needs_review"
+        },
+        "wrong_context": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_with_conflict_or_needs_review"
+        }
+      }
+    },
+    "S02-R00": {
+      "text": "B1Sb30N-58",
+      "image_id": "S02",
+      "roi_index": 0,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-58",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S03-R00": {
+      "text": "B1Sb30N-34",
+      "image_id": "S03",
+      "roi_index": 0,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-34",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        },
+        "absent": {
+          "target_in_roster": false,
+          "preferred_outcome": "out_of_roster_or_needs_review"
+        },
+        "wrong_context": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_with_conflict_or_needs_review"
+        }
+      }
+    },
+    "S03-R01": {
+      "text": "B1Sb30N-12",
+      "image_id": "S03",
+      "roi_index": 1,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-12",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S03-R02": {
+      "text": "B1Sb30N-13",
+      "image_id": "S03",
+      "roi_index": 2,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-13",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S03-R03": {
+      "text": "B1Sb30N-13A",
+      "image_id": "S03",
+      "roi_index": 3,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-13A",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S04-R00": {
+      "text": "B1Sb30N-15",
+      "image_id": "S04",
+      "roi_index": 0,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-15",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S05-R00": {
+      "text": "B1Sb30N-29",
+      "image_id": "S05",
+      "roi_index": 0,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-29",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S06-R00": {
+      "text": "B1Sb30N-36",
+      "image_id": "S06",
+      "roi_index": 0,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-36",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        },
+        "absent": {
+          "target_in_roster": false,
+          "preferred_outcome": "out_of_roster_or_needs_review"
+        },
+        "wrong_context": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_with_conflict_or_needs_review"
+        }
+      }
+    },
+    "S06-R01": {
+      "text": "B1Sb30N-40",
+      "image_id": "S06",
+      "roi_index": 1,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-40",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S06-R02": {
+      "text": "B1Sb30N-19",
+      "image_id": "S06",
+      "roi_index": 2,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-19",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S06-R03": {
+      "text": "B1Sb30N-20",
+      "image_id": "S06",
+      "roi_index": 3,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-20",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S06-R04": {
+      "text": "B1Sb30N-26",
+      "image_id": "S06",
+      "roi_index": 4,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-26",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S06-R05": {
+      "text": "B1Sb30N-56",
+      "image_id": "S06",
+      "roi_index": 5,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-56",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S06-R06": {
+      "text": "B1Sb30N-54",
+      "image_id": "S06",
+      "roi_index": 6,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-54",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S06-R07": {
+      "text": "B1Sb30N-34",
+      "image_id": "S06",
+      "roi_index": 7,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-34",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S06-R08": {
+      "text": "B1Sb30N-12",
+      "image_id": "S06",
+      "roi_index": 8,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-12",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S06-R09": {
+      "text": "B1Sb30N-13A",
+      "image_id": "S06",
+      "roi_index": 9,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-13A",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S06-R10": {
+      "text": "B1Sb30N-13",
+      "image_id": "S06",
+      "roi_index": 10,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-13",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S07-R00": {
+      "text": "B1Sb30N-15",
+      "image_id": "S07",
+      "roi_index": 0,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-15",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S08-R00": {
+      "text": "B1Sb40N-37",
+      "image_id": "S08",
+      "roi_index": 0,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb40N-37",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        },
+        "absent": {
+          "target_in_roster": false,
+          "preferred_outcome": "out_of_roster_or_needs_review"
+        },
+        "wrong_context": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_with_conflict_or_needs_review"
+        }
+      }
+    },
+    "S08-R01": {
+      "text": "B1Sb40N-23",
+      "image_id": "S08",
+      "roi_index": 1,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb40N-23",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S08-R02": {
+      "text": "B1Sb40N-15",
+      "image_id": "S08",
+      "roi_index": 2,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb40N-15",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S08-R03": {
+      "text": "B1Sb40N-27",
+      "image_id": "S08",
+      "roi_index": 3,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb40N-27",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S08-R04": {
+      "text": "B1Sb40N-8",
+      "image_id": "S08",
+      "roi_index": 4,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb40N-8",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S08-R05": {
+      "text": "B1Sb40N-26",
+      "image_id": "S08",
+      "roi_index": 5,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb40N-26",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S08-R06": {
+      "text": "B1Sb40N-9",
+      "image_id": "S08",
+      "roi_index": 6,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb40N-9",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    },
+    "S09-R00": {
+      "text": "B1Sb30N-16",
+      "image_id": "S09",
+      "roi_index": 0,
+      "difficult": false,
+      "indistinguishable_context_candidate": "BISb30N-16",
+      "variant_expectations": {
+        "normal": {
+          "target_in_roster": true,
+          "preferred_outcome": "correct_or_needs_review"
+        }
+      }
+    }
+  },
+  "excluded": [
+    {
+      "sample_id": "S10-R00",
+      "image_id": "S10",
+      "reason": "dataset_difficult_true"
+    }
+  ]
+}

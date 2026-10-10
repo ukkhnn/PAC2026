@@ -1,0 +1,3296 @@
+{
+  "schema_version": "context-ablation-fixtures.v1",
+  "experiment_id": "CTX-001",
+  "source_kind": "synthetic_demo",
+  "generated_from_model_outputs": false,
+  "construction": "label_derived_candidates_and_coarse_placements_frozen_before_new_inference",
+  "candidate_count": 6,
+  "negative_sample_ids": [
+    "S01-R00",
+    "S03-R00",
+    "S06-R00",
+    "S08-R00"
+  ],
+  "fixtures": {
+    "S01-R00": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-55",
+            "B1Sb30N-57",
+            "B1Sb3ON-56",
+            "BISb30N-56",
+            "B1Sb30N-58",
+            "B1Sb30N-56"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S01",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-55",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-57",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-56",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-56",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-58",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-56",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        },
+        "absent": {
+          "candidate_ids": [
+            "B1Sb30N-55",
+            "B1Sb30N-57",
+            "B1Sb3ON-56",
+            "BISb30N-56",
+            "B1Sb30N-58",
+            "B1Sb30N-73"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S01",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-55",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-57",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-56",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-56",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-58",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-73",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        },
+        "wrong_context": {
+          "candidate_ids": [
+            "B1Sb30N-55",
+            "B1Sb30N-57",
+            "B1Sb3ON-56",
+            "BISb30N-56",
+            "B1Sb30N-58",
+            "B1Sb30N-56"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S01",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-55",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-57",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-56",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-56",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-58",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-56",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S02-R00": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-57",
+            "B1Sb30N-59",
+            "B1Sb30N-58",
+            "B1Sb30N-60",
+            "BISb30N-58",
+            "B1Sb3ON-58"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S02",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-57",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-59",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-58",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-60",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-58",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-58",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S03-R00": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-13A",
+            "B1Sb3ON-34",
+            "B1Sb30N-34",
+            "B1Sb30N-12",
+            "BISb30N-34",
+            "B1Sb30N-35"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S03",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-13A",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-34",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-34",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-12",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-12",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-34",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-34",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-12",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-35",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        },
+        "absent": {
+          "candidate_ids": [
+            "B1Sb30N-13A",
+            "B1Sb3ON-34",
+            "B1Sb30N-51",
+            "B1Sb30N-12",
+            "BISb30N-34",
+            "B1Sb30N-35"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S03",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-13A",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-34",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-51",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-12",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-12",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-34",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-12",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-35",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        },
+        "wrong_context": {
+          "candidate_ids": [
+            "B1Sb30N-13A",
+            "B1Sb3ON-34",
+            "B1Sb30N-34",
+            "B1Sb30N-12",
+            "BISb30N-34",
+            "B1Sb30N-35"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S03",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-13A",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-34",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-34",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-12",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-34",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-34",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-12",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-35",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S03-R01": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-34",
+            "BISb30N-12",
+            "B1Sb30N-11",
+            "B1Sb30N-13",
+            "B1Sb30N-12",
+            "B1Sb3ON-12"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S03",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-34",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-12",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-12",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-34",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-11",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-13",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13A",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-12",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-34",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-12",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S03-R02": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-14",
+            "B1Sb3ON-13",
+            "BISb30N-13",
+            "B1Sb30N-13A",
+            "B1Sb30N-12",
+            "B1Sb30N-13"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S03",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-14",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-13",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-13",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13A",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-13A",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-12",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-34",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-13",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13A",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S03-R03": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-14A",
+            "B1Sb3ON-13A",
+            "BISb30N-13A",
+            "B1Sb30N-13A",
+            "B1Sb30N-13",
+            "B1Sb30N-34"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S03",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-14A",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-13A",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-13A",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-13A",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-13",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13A",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-34",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-12",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S04-R00": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb3ON-15",
+            "B1Sb30N-16",
+            "B1Sb30N-14",
+            "B1Sb30N-17",
+            "BISb30N-15",
+            "B1Sb30N-15"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S04",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb3ON-15",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-16",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-14",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-17",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-15",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-15",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S05-R00": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-28",
+            "B1Sb3ON-29",
+            "B1Sb30N-30",
+            "B1Sb30N-31",
+            "B1Sb30N-29",
+            "BISb30N-29"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S05",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-28",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-29",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-30",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-31",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-29",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-29",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S06-R00": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-36",
+            "B1Sb30N-19",
+            "B1Sb3ON-36",
+            "BISb30N-36",
+            "B1Sb30N-40",
+            "B1Sb30N-37"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S06",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-36",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-40",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-19",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-20",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-36",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-36",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-40",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-40",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-19",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-37",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        },
+        "absent": {
+          "candidate_ids": [
+            "B1Sb30N-53",
+            "B1Sb30N-19",
+            "B1Sb3ON-36",
+            "BISb30N-36",
+            "B1Sb30N-40",
+            "B1Sb30N-37"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S06",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-53",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-40",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-19",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-20",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-36",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-36",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-40",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-40",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-19",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-37",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        },
+        "wrong_context": {
+          "candidate_ids": [
+            "B1Sb30N-36",
+            "B1Sb30N-19",
+            "B1Sb3ON-36",
+            "BISb30N-36",
+            "B1Sb30N-40",
+            "B1Sb30N-37"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S06",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-36",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-19",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-20",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-36",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-36",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-40",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-40",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-19",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-37",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S06-R01": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-41",
+            "B1Sb30N-19",
+            "B1Sb30N-40",
+            "BISb30N-40",
+            "B1Sb30N-36",
+            "B1Sb3ON-40"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S06",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-41",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-19",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-20",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-40",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-19",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-40",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-19",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-36",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-40",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-40",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S06-R02": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-19",
+            "B1Sb3ON-19",
+            "B1Sb30N-40",
+            "B1Sb30N-18",
+            "B1Sb30N-20",
+            "BISb30N-19"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S06",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-19",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-20",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-19",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-40",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-19",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-18",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-20",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-19",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-19",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-20",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S06-R03": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-19",
+            "B1Sb3ON-20",
+            "B1Sb30N-26",
+            "BISb30N-20",
+            "B1Sb30N-21",
+            "B1Sb30N-20"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S06",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-19",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-20",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-20",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-26",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-20",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-20",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-19",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-21",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-20",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-19",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S06-R04": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "BISb30N-26",
+            "B1Sb30N-20",
+            "B1Sb30N-26",
+            "B1Sb30N-19",
+            "B1Sb3ON-26",
+            "B1Sb30N-27"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S06",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "BISb30N-26",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-20",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-20",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-19",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-26",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-20",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-19",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-20",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-26",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-27",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S06-R05": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-54",
+            "B1Sb3ON-56",
+            "BISb30N-56",
+            "B1Sb30N-36",
+            "B1Sb30N-56",
+            "B1Sb30N-57"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S06",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-54",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-56",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-56",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-56",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-54",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-36",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-40",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-56",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-54",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-57",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S06-R06": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "BISb30N-54",
+            "B1Sb30N-54",
+            "B1Sb3ON-54",
+            "B1Sb30N-55",
+            "B1Sb30N-34",
+            "B1Sb30N-56"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S06",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "BISb30N-54",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-56",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-54",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-56",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-54",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-55",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-34",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-12",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-56",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-54",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S06-R07": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "BISb30N-34",
+            "B1Sb30N-54",
+            "B1Sb30N-12",
+            "B1Sb30N-35",
+            "B1Sb30N-34",
+            "B1Sb3ON-34"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S06",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "BISb30N-34",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-12",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-54",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-56",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-12",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-34",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-35",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-34",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-12",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-34",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S06-R08": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-13",
+            "B1Sb30N-34",
+            "BISb30N-12",
+            "B1Sb30N-11",
+            "B1Sb30N-12",
+            "B1Sb3ON-12"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S06",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-13",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13A",
+                    "relative_to_candidate": "below"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-34",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-12",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-12",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-34",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-11",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-12",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-34",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-12",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S06-R09": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-13",
+            "B1Sb3ON-13A",
+            "B1Sb30N-34",
+            "BISb30N-13A",
+            "B1Sb30N-13A",
+            "B1Sb30N-14A"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S06",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-13",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13A",
+                    "relative_to_candidate": "below"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-13A",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-34",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-12",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-13A",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-13A",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-14A",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S06-R10": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb3ON-13",
+            "B1Sb30N-13",
+            "B1Sb30N-12",
+            "B1Sb30N-14",
+            "B1Sb30N-13A",
+            "BISb30N-13"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S06",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb3ON-13",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-13",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13A",
+                    "relative_to_candidate": "below"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-12",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-34",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-14",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-13A",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-13",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb30N-13A",
+                    "relative_to_candidate": "below"
+                  }
+                ],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S07-R00": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-15",
+            "B1Sb30N-14",
+            "B1Sb3ON-15",
+            "BISb30N-15",
+            "B1Sb30N-17",
+            "B1Sb30N-16"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S07",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-15",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-14",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-15",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-15",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-17",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-16",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S08-R00": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb4ON-37",
+            "B1Sb40N-38",
+            "B1Sb40N-23",
+            "BISb40N-37",
+            "B1Sb40N-27",
+            "B1Sb40N-37"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S08",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb4ON-37",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-38",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-23",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-15",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb40N-37",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-27",
+                    "relative_to_candidate": "below"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-27",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-37",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-37",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-27",
+                    "relative_to_candidate": "below"
+                  }
+                ],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        },
+        "absent": {
+          "candidate_ids": [
+            "B1Sb4ON-37",
+            "B1Sb40N-38",
+            "B1Sb40N-23",
+            "BISb40N-37",
+            "B1Sb40N-27",
+            "B1Sb40N-54"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S08",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb4ON-37",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-38",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-23",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-15",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb40N-37",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-27",
+                    "relative_to_candidate": "below"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-27",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-54",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-27",
+                    "relative_to_candidate": "below"
+                  }
+                ],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        },
+        "wrong_context": {
+          "candidate_ids": [
+            "B1Sb4ON-37",
+            "B1Sb40N-38",
+            "B1Sb40N-23",
+            "BISb40N-37",
+            "B1Sb40N-27",
+            "B1Sb40N-37"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S08",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb4ON-37",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-38",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-23",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-15",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb40N-37",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-27",
+                    "relative_to_candidate": "below"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-27",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-37",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-37",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S08-R01": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb40N-37",
+            "B1Sb40N-24",
+            "B1Sb40N-15",
+            "BISb40N-23",
+            "B1Sb40N-23",
+            "B1Sb4ON-23"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S08",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb40N-37",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-27",
+                    "relative_to_candidate": "below"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-24",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-15",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-23",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb40N-23",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-15",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-23",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-15",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb4ON-23",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S08-R02": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb40N-16",
+            "B1Sb40N-23",
+            "BISb40N-15",
+            "B1Sb40N-15",
+            "B1Sb4ON-15",
+            "B1Sb40N-27"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S08",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb40N-16",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-23",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-15",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb40N-15",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-23",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-15",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-23",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb4ON-15",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-27",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-37",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S08-R03": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb40N-37",
+            "B1Sb40N-23",
+            "B1Sb4ON-27",
+            "B1Sb40N-27",
+            "B1Sb40N-28",
+            "BISb40N-27"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S08",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb40N-37",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-27",
+                    "relative_to_candidate": "below"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-23",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-15",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb4ON-27",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-27",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-37",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-28",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb40N-27",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-37",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S08-R04": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb40N-8",
+            "B1Sb40N-15",
+            "B1Sb40N-23",
+            "B1Sb4ON-8",
+            "BISb40N-8",
+            "B1Sb40N-9"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S08",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb40N-8",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-15",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-15",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-23",
+                    "relative_to_candidate": "left"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-23",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-15",
+                    "relative_to_candidate": "right"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb4ON-8",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb40N-8",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-15",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-9",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-8",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S08-R05": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb40N-37",
+            "B1Sb40N-26",
+            "B1Sb40N-27",
+            "B1Sb4ON-26",
+            "BISb40N-26",
+            "B1Sb40N-25"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S08",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb40N-37",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-27",
+                    "relative_to_candidate": "below"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-26",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-27",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-27",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-37",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb4ON-26",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb40N-26",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-27",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-25",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S08-R06": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb4ON-9",
+            "B1Sb40N-26",
+            "B1Sb40N-9",
+            "B1Sb40N-8",
+            "B1Sb40N-10",
+            "BISb40N-9"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S08",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb4ON-9",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-26",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-27",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-9",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-8",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-8",
+                "position": {
+                  "horizontal": "middle",
+                  "vertical": "middle"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-15",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb40N-10",
+                "position": {
+                  "horizontal": "left",
+                  "vertical": "upper"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb40N-9",
+                "position": {
+                  "horizontal": "right",
+                  "vertical": "lower"
+                },
+                "nearby_markings": [
+                  {
+                    "marking": "B1Sb40N-8",
+                    "relative_to_candidate": "above"
+                  }
+                ],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "S09-R00": {
+      "variants": {
+        "normal": {
+          "candidate_ids": [
+            "B1Sb30N-16",
+            "B1Sb30N-18",
+            "B1Sb30N-15",
+            "B1Sb30N-17",
+            "B1Sb3ON-16",
+            "BISb30N-16"
+          ],
+          "work_context": {
+            "document_id": "DEMO-LAYOUT-S09",
+            "source_kind": "synthetic_demo",
+            "placement_basis": "annotation_derived_coarse_image_layout",
+            "real_work_order": false,
+            "instruction": "Identify the target marking by comparing its visible text and image surroundings with this provisional staging list. The list may be incomplete or inconsistent. Positions are coarse image-relative hints, not surveyed physical coordinates. Some entries share a staging position. Do not choose a candidate solely because it is listed. Do not assert a unique identity when evidence conflicts or remains ambiguous. No welding operation or material specification is authorized by this document.",
+            "candidate_rows": [
+              {
+                "candidate_id": "B1Sb30N-16",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-18",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-15",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb30N-17",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "B1Sb3ON-16",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              },
+              {
+                "candidate_id": "BISb30N-16",
+                "position": {
+                  "horizontal": "unspecified",
+                  "vertical": "unspecified"
+                },
+                "nearby_markings": [],
+                "task": "marking_identity_review"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

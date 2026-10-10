@@ -1,0 +1,34 @@
+{
+  "server_local_counts_and_cases_identical": true,
+  "server_local_scores_equal_with_float_tolerance_1e_12": true,
+  "floating_sum_differences": [
+    {
+      "path": "/per_condition/A_ocr/elapsed_seconds_total",
+      "local": 11.641999999999998,
+      "server": 11.642,
+      "absolute_difference": 1.7763568394002505e-15
+    },
+    {
+      "path": "/per_condition/B_crop/elapsed_seconds_total",
+      "local": 119.23400000000001,
+      "server": 119.234,
+      "absolute_difference": 1.4210854715202004e-14
+    },
+    {
+      "path": "/per_condition/C_scene/elapsed_seconds_total",
+      "local": 150.54899999999995,
+      "server": 150.549,
+      "absolute_difference": 5.684341886080802e-14
+    }
+  ],
+  "core_sources_unchanged": {
+    "inputs.json": true,
+    "fixtures.json": true,
+    "ground_truth.json": true,
+    "PROTOCOL.md": true,
+    "prepare.py": true,
+    "run.py": true
+  },
+  "bundle_files_verified": 574,
+  "records": 204
+}

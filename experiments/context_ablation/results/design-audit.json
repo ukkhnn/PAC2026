@@ -1,0 +1,239 @@
+{
+  "schema_version": "context-ablation-design-audit.v1",
+  "created_at": "2026-10-09T23:07:58.110809+00:00",
+  "scope": "Frozen definitions only; no actual model outputs read or changed by this audit.",
+  "source_sha256": {
+    "inputs.json": "8f7b9a992ff1abd129b4a9e84c12692ead2a6537e719fcd67969b280165351f7",
+    "fixtures.json": "f56a2933d21263b9adbf0a61639b871168dbf5b4f9a98e05ff78e5a33c8fb34d",
+    "ground_truth.json": "16a90f0b47d45df89b8a02c70ca56ff7b7e16f9a3e5a7887e6d9240d7def4105",
+    "PROTOCOL.md": "e77a4c0586e3657711603f6c4f15f358a473208e88a876fe773e3513a8ffc963",
+    "prepare.py": "af8c974787290f5a9ea940d32651bb45b8ca134666fca5cae3d43dc4c10abb2a"
+  },
+  "target_count": 28,
+  "scorable_photos": 9,
+  "targets_per_image": {
+    "S01": 1,
+    "S02": 1,
+    "S03": 4,
+    "S04": 1,
+    "S05": 1,
+    "S06": 11,
+    "S07": 1,
+    "S08": 7,
+    "S09": 1
+  },
+  "truth_twin_self_row_equivalence": {
+    "count": 28,
+    "sample_ids": [
+      "S01-R00",
+      "S02-R00",
+      "S03-R00",
+      "S03-R01",
+      "S03-R02",
+      "S03-R03",
+      "S04-R00",
+      "S05-R00",
+      "S06-R00",
+      "S06-R01",
+      "S06-R02",
+      "S06-R03",
+      "S06-R04",
+      "S06-R05",
+      "S06-R06",
+      "S06-R07",
+      "S06-R08",
+      "S06-R09",
+      "S06-R10",
+      "S07-R00",
+      "S08-R00",
+      "S08-R01",
+      "S08-R02",
+      "S08-R03",
+      "S08-R04",
+      "S08-R05",
+      "S08-R06",
+      "S09-R00"
+    ],
+    "method": "Compare normal work_context candidate_rows for the ground-truth ID and indistinguishable_context_candidate, ignoring only candidate_id."
+  },
+  "neutral_single_marking_context": {
+    "count": 6,
+    "sample_ids": [
+      "S01-R00",
+      "S02-R00",
+      "S04-R00",
+      "S05-R00",
+      "S07-R00",
+      "S09-R00"
+    ],
+    "method": "Every candidate has horizontal=unspecified, vertical=unspecified, and nearby_markings=[]."
+  },
+  "context_with_position_information": {
+    "count": 22,
+    "sample_ids": [
+      "S03-R00",
+      "S03-R01",
+      "S03-R02",
+      "S03-R03",
+      "S06-R00",
+      "S06-R01",
+      "S06-R02",
+      "S06-R03",
+      "S06-R04",
+      "S06-R05",
+      "S06-R06",
+      "S06-R07",
+      "S06-R08",
+      "S06-R09",
+      "S06-R10",
+      "S08-R00",
+      "S08-R01",
+      "S08-R02",
+      "S08-R03",
+      "S08-R04",
+      "S08-R05",
+      "S08-R06"
+    ]
+  },
+  "ground_truth_id_in_other_candidate_anchors": {
+    "count": 18,
+    "cases": [
+      {
+        "sample_id": "S03-R00",
+        "truth": "B1Sb30N-34",
+        "referencing_candidate_ids": [
+          "B1Sb30N-12"
+        ]
+      },
+      {
+        "sample_id": "S03-R01",
+        "truth": "B1Sb30N-12",
+        "referencing_candidate_ids": [
+          "B1Sb30N-34"
+        ]
+      },
+      {
+        "sample_id": "S03-R02",
+        "truth": "B1Sb30N-13",
+        "referencing_candidate_ids": [
+          "B1Sb30N-13A"
+        ]
+      },
+      {
+        "sample_id": "S03-R03",
+        "truth": "B1Sb30N-13A",
+        "referencing_candidate_ids": [
+          "B1Sb30N-13"
+        ]
+      },
+      {
+        "sample_id": "S06-R01",
+        "truth": "B1Sb30N-40",
+        "referencing_candidate_ids": [
+          "B1Sb30N-36"
+        ]
+      },
+      {
+        "sample_id": "S06-R02",
+        "truth": "B1Sb30N-19",
+        "referencing_candidate_ids": [
+          "B1Sb30N-40",
+          "B1Sb30N-20"
+        ]
+      },
+      {
+        "sample_id": "S06-R03",
+        "truth": "B1Sb30N-20",
+        "referencing_candidate_ids": [
+          "B1Sb30N-19",
+          "B1Sb30N-26"
+        ]
+      },
+      {
+        "sample_id": "S06-R05",
+        "truth": "B1Sb30N-56",
+        "referencing_candidate_ids": [
+          "B1Sb30N-54"
+        ]
+      },
+      {
+        "sample_id": "S06-R06",
+        "truth": "B1Sb30N-54",
+        "referencing_candidate_ids": [
+          "B1Sb30N-56"
+        ]
+      },
+      {
+        "sample_id": "S06-R07",
+        "truth": "B1Sb30N-34",
+        "referencing_candidate_ids": [
+          "B1Sb30N-12"
+        ]
+      },
+      {
+        "sample_id": "S06-R08",
+        "truth": "B1Sb30N-12",
+        "referencing_candidate_ids": [
+          "B1Sb30N-34"
+        ]
+      },
+      {
+        "sample_id": "S06-R09",
+        "truth": "B1Sb30N-13A",
+        "referencing_candidate_ids": [
+          "B1Sb30N-13"
+        ]
+      },
+      {
+        "sample_id": "S06-R10",
+        "truth": "B1Sb30N-13",
+        "referencing_candidate_ids": [
+          "B1Sb30N-13A"
+        ]
+      },
+      {
+        "sample_id": "S08-R00",
+        "truth": "B1Sb40N-37",
+        "referencing_candidate_ids": [
+          "B1Sb40N-27"
+        ]
+      },
+      {
+        "sample_id": "S08-R01",
+        "truth": "B1Sb40N-23",
+        "referencing_candidate_ids": [
+          "B1Sb40N-15"
+        ]
+      },
+      {
+        "sample_id": "S08-R02",
+        "truth": "B1Sb40N-15",
+        "referencing_candidate_ids": [
+          "B1Sb40N-23"
+        ]
+      },
+      {
+        "sample_id": "S08-R03",
+        "truth": "B1Sb40N-27",
+        "referencing_candidate_ids": [
+          "B1Sb40N-37"
+        ]
+      },
+      {
+        "sample_id": "S08-R04",
+        "truth": "B1Sb40N-8",
+        "referencing_candidate_ids": [
+          "B1Sb40N-9"
+        ]
+      }
+    ],
+    "method": "Exact string equality between ground_truth.targets[sample_id].text and a nearby_markings[].marking in another candidate row of the normal fixture."
+  },
+  "interpretation_limits": [
+    "Self-row equality of the truth and 1/I twin does not prove that the entire document cannot distinguish them: other rows can refer to the true ID.",
+    "E improvements can include synthetic label-derived cross-reference and supplied-ROI shortcuts. F retains OCR, candidate IDs, document, target ROI coordinates and scene size, while removing image bytes.",
+    "Candidate rosters contain the truth by construction in normal conditions; this is a diagnostic, not independently retrieved real work-order performance.",
+    "28 regions come from 9 scorable photos; 18 are from S06/S08. Image-macro and per-image outcomes are required."
+  ],
+  "changes_to_frozen_definitions": false
+}
