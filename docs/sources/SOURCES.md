@@ -13,6 +13,7 @@
 | [문서 적용 계획](../plan/DOCUMENT_APPLICATION_PLAN.md) | 인식·해석 단계별 근거 자료, 원문·구조화 값·조회와 검수 계약 |
 | [OCR 구성 명세](../spec/OCR_PIPELINE_SPEC.md) | 초기 OCR·VLM 구성, 관측·관계 계약과 소량 기능 확인 |
 | [제조사 입력 상세 명세](../spec/WELDING_ROBOT_INPUT_SPEC.md) | 현대·두산 입력 필드·단위·조건과 공식 출처. 이전 요약과 충돌할 때 우선 |
+| [데이터·모델 출처](DATA_MODEL_PROVENANCE.md) | 실제 확보한 파일·모델의 원출처·revision·해시·가공 과정. 이 목록이 조사 단계라면 그쪽은 확보 결과다 |
 
 PDF는 원본 내용을 유지하고 저장 위치와 파일명만 정리했다. 기획서는 제출 당시 제안 구조의 근거이며 현재 구현 명세·완료·성능의 근거가 아니다. Work Memory 등 현재 범위와 다른 제안은 [데모 스펙](../plan/DEMO_SPEC.md)이 대체한다. 미션 정의서에는 예시 사진·영상·참고 링크가 제공되지 않았다.
 
@@ -41,7 +42,7 @@ PDF는 원본 내용을 유지하고 저장 위치와 파일명만 정리했다.
 
 | 구분 | 현재 확보·확인 범위 | 우선 활용 |
 |---|---|---|
-| 실제 철골 수기 이미지 | Steel OCR 960px 원본 10장과 배포 정답이 로컬에 있음 | 문자·영역 인식 비교 |
+| 실제 철골 수기 이미지 | Steel OCR 960px 원본 10장과 배포 정답. 2026-10-10 기준 로컬과 Runpod 서버 양쪽에 확보 | 문자·영역 인식 비교 |
 | 추가 산업 이미지 | Steel OCR 원본판, MPSC 배포 안내 확인 | 고해상도·다른 금속 표면으로 평가 확장 |
 | 용접기호 그림·도면 | TWI 설명 그림, 공개 기호 검출 프로젝트·데이터 후보 | 기호 사전과 제한된 도면 인식 |
 | 용접 지식·기준 | 한국선급 목록, TWI 해설, KOBELCO 표 확인 | 원문 근거 검색·맥락별 참고 자료 선택 |
@@ -78,7 +79,7 @@ PDF는 원본 내용을 유지하고 저장 위치와 파일명만 정리했다.
 | [한국선급 2026 규칙](https://www.krs.co.kr/KRRules/KRRules2026/KRRulesK.html) → 제2편 재료 및 용접 | 국문 규칙·적용지침. 별도 유효 회보 목록도 있음 | 공식 목록 확인. 이번 PDF 직접 열기는 도구 오류. 10/6에는 361쪽 다운로드·본문 추출 기록이 있으나 현재 프로젝트 안에 해당 PDF는 없음 | 국문 문서 검색의 우선 후보. 확보 시 판본·조항·회보·적용 시점을 기록. 실제 현장 승인 WPS와 구분 |
 | [TWI Welding procedure](https://www.twi-global.com/technical-knowledge/job-knowledge/welding-procedure-039) | WPS의 역할과 절차 관련 설명 | 웹 본문 접근 확인 | 개념 설명과 질문·근거 구성. 특정 현장 설정값의 근거로 확대하지 않음 |
 | [KOBELCO 조선용 용접재료 안내](https://www.kobelco-welding.jp/products/recommended-materials/index.html) | 조선 공정·부재/이음·자세·용접법·용접재료 대응표와 그림 | Shipbuilding 절과 표 본문 확인 | 작업 맥락이 달라지면 참고할 표 행도 달라지는 시연에 적합. 제조사 권장표이며 기업 승인 절차를 대신하지 않음 |
-| [LANL WPS 3501-xxxx-1](https://engstandards.lanl.gov/esm/welding/welding_specs/3501-xxxx-1.pdf) | 기입된 WPS 예제, 2쪽 | 첫 열기에서 PDF·페이지 수 확인, 재열기는 오류. 10/6 본문 추출·시각 검수 기록 있음. 현재 프로젝트 안에 원문 PDF는 없음 | 표·단위·적용범위 추출 후보. 실제 파일 확보와 개정 확인 후 사용. 조선소 적용 기준으로 간주하지 않음 |
+| [LANL WPS 3501-xxxx-1](https://engstandards.lanl.gov/esm/welding/welding_specs/3501-xxxx-1.pdf) | 기입된 WPS 예제, 2쪽 | 첫 열기에서 PDF·페이지 수 확인, 재열기는 오류. 10/6 본문 추출·시각 검수 기록 있음. 2026-10-10 원문 PDF를 `data/raw/demo-bootstrap-v1/documents/lanl/`에 확보(해시는 [데이터·모델 출처](DATA_MODEL_PROVENANCE.md)). 해당 경로는 Git 제외 | 표·단위·적용범위 추출 후보. 실제 파일 확보와 개정 확인 후 사용. 조선소 적용 기준으로 간주하지 않음 |
 | [LANL Chapter 13](https://engstandards.lanl.gov/ESM_Ch13.shtml) | WPS, 작업별 WTS, Weld Tracking Chart, Weld Inspection Record 등 문서·양식 목록 | 공개 목록과 WTS 설명 확인. 개별 양식 파일은 이번에 전수 다운로드하지 않음 | 가상 작업지시·용접 추적·검사기록의 항목 설계 참고. 빈 양식·절차 문서는 실제 작업 이력이 아님. 일부 링크는 LANL 내부용 |
 
 공개 열람 가능과 자유로운 원문·그림 재배포는 구분한다. 별도 라이선스를 확인하지 않은 문서는 원문 링크·필요한 요약·페이지/조항 참조를 중심으로 관리하고, 배포할 원문·그림의 이용조건은 [확인 필요]로 남긴다.
