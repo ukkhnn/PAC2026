@@ -1,0 +1,31 @@
+{
+  "schema_version": "robot-input-profile.v1",
+  "profile_id": "doosan-drl-3.7-analog-preview.v1",
+  "manufacturer": "Doosan Robotics",
+  "controller": "DRL",
+  "software_version": "3.7.0",
+  "interface": "analog",
+  "purpose": "input_mapping_preview",
+  "modes": {"voltage": "absolute_V", "wire_feed": "m/min"},
+  "mode_origin": "presentation_scenario",
+  "hardware_verified": false,
+  "robot_model": null,
+  "welder_model": null,
+  "execution_authorized": false,
+  "command_defaults": {
+    "flag_dry_run": 1,
+    "velocity_limits": "equal_selected_target",
+    "weld_proc_param": [0.2, 0.2, 0.5, 0.5, 0.5, 0.2, 0.2, 0.5, 0.5],
+    "weld_proc_param_origin": "manufacturer_function_default"
+  },
+  "reference": {
+    "url": "https://manual.doosanrobotics.com/ko/programming-manual/3.7.0/publish/app_weld_set_weld_cond_analog-flag_dry_run-0-v_tar",
+    "checked_on": "2026-10-10"
+  },
+  "limitations": [
+    "전류 A는 참조값이며 목표 송급속도로 변환하지 않는다.",
+    "송급속도는 작업지시와 연결된 별도 시연 레시피 값이다.",
+    "모의용접 플래그도 실제 모션을 허용할 수 있으므로 이 결과는 전송하거나 실행하지 않는다.",
+    "활성화 구간·결선·용접기·경로·시작종료 조건은 실기 검증되지 않았다."
+  ]
+}

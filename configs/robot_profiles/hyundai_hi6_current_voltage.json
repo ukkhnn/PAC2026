@@ -1,0 +1,31 @@
+{
+  "schema_version": "robot-input-profile.v1",
+  "profile_id": "hyundai-hi6-current-voltage-preview.v1",
+  "manufacturer": "HD Hyundai Robotics",
+  "controller": "Hi6",
+  "purpose": "input_mapping_preview",
+  "modes": {
+    "current": "current_A",
+    "voltage": "absolute_V"
+  },
+  "mode_origin": "presentation_scenario",
+  "hardware_verified": false,
+  "robot_model": null,
+  "controller_version": null,
+  "welder_model": null,
+  "welder_limits": null,
+  "execution_authorized": false,
+  "reference": {
+    "url": "https://github.com/hyundai-robotics/doc-arc-weld/blob/ko/2_Command/5_arccond.md",
+    "local_path": "data/raw/demo-bootstrap-v1/documents/hyundai/arccond.md",
+    "sha256": "bd47b532b6784d7d301e3ffe4e3befa5400e54940b55cd43133a6082a379d199",
+    "checked_on": "2026-10-10",
+    "locator": "2.5 arccond: 파라미터 및 cnd 없는 D 사용 예"
+  },
+  "limitations": [
+    "A 및 절대 V를 받는 모드의 입력 미리보기이며 설치 용접기의 설정 확인을 대신하지 않는다.",
+    "cur와 vol의 실제 범위 및 물리량은 용접기 설정에 따라 다르다.",
+    "범위 안의 선택은 물리적 적용성이나 범위 조합의 승인을 뜻하지 않는다.",
+    "arccond D만 미리보기로 생성하며 아크 시작, 경로, 통신 기능은 없다."
+  ]
+}

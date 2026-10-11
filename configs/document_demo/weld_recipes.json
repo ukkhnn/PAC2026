@@ -1,0 +1,31 @@
+{
+  "schema_version": "demo-weld-recipes.v1",
+  "document_id": "DEMO-WELD-RECIPES",
+  "revision": "1",
+  "source_kind": "fixture",
+  "document_origin": "synthetic_demo",
+  "application_authorized": false,
+  "execution_authorized": false,
+  "recipes": [
+    {
+      "recipe_id": "RECIPE-DEMO-015",
+      "source_kind": "fixture",
+      "order_ref": {"order_id": "WO-DEMO-015", "revision": 1},
+      "wps_ref": {"document_id": "lanl-wps-3501", "revision": "1", "row_id": "layer-1"},
+      "setpoints": {
+        "current": {"value": "180", "unit": "A"},
+        "voltage": {"value": "26", "unit": "V"},
+        "travel_speed": {"value": "10", "unit": "in/min"},
+        "wire_feed": {"value": "6", "unit": "m/min"}
+      },
+      "selection_method": "explicit_scenario_recipe",
+      "wire_feed_basis": "independent_recipe_value_not_current_conversion",
+      "evidence": {
+        "source_kind": "fixture",
+        "document_id": "DEMO-WELD-RECIPES",
+        "revision": "1",
+        "locator": {"kind": "json_pointer", "path": "configs/document_demo/weld_recipes.json", "pointer": "/recipes/0"}
+      }
+    }
+  ]
+}
