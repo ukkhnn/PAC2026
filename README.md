@@ -8,13 +8,17 @@ ContextWeld는 선박 블록과 부재의 정형 마킹·수기 표기를 인식
 
 [PAC 2026](https://ainnov.co.kr/pac2026) 분과 02 기업 문제 해결형 IR 피칭 대회의 HD현대로보틱스 미션 03을 대상으로 한다. 참가팀은 **Static Duo**다.
 
-> 현재 단계: [공개 사진 10장의 실제 OCR/VLM·원문 4개 74청크 검색](docs/runs/RUNPOD_INFERENCE.md)에 이어, 저장된 실제 관측을 [모사 작업지시·도면→WPS 조건 범위→HTTP 모의 수신](docs/runs/DOCUMENT_DEMO.md)으로 연결했다. 정상 사례는 수신 응답을 기록했고, 필수값 누락·문서 공정 충돌·개정 불일치·실제 판독 불일치는 전송을 보류했다. 이어서 [사용자 수정 저장 → 명시적 재검토 → 선택적 모의 전달](docs/runs/EXPLICIT_REVIEW.md)을 서버 CLI로 구현해 실제 저장 묶음에서 재검토만 성공(`succeeded`·`not_requested`), 별도 전달 요청으로 `received`, 수정 뒤에도 문제가 남아 `blocked`, 수신기 미가동 결함 주입 시 `failed`를 확인했다. 원본 입력 1,173개 파일 해시는 그대로이며 문서 범위 규칙 재검토의 새 모델 호출은 0회다. Runpod 테스트 83개와 로컬 재검증 83개가 통과했다. 기준일: 2026-10-10.
+이 README의 저장소 상태 기준일은 **2026-10-11**이다. 아래 단락은 실행 순서대로 쌓여 있으며, 뒤 단락이 앞 단락의 한계를 해소한 경우 그 자리에 갱신을 표시한다.
 
-> 장면 구성: 기존 [정형 마킹·작업대 기준 장면](docs/runs/ISAAC_SCENE.md)을 보존하고, [조선소 수직 3면 강판·중앙 수기 메모 장면](docs/runs/ISAAC_SHIPYARD_SCENE.md)의 `live-03`을 구성했다. UR10 손목 카메라의 실제 관절 이동·A/B RGB와 고정 작업등의 금속반사, Foxglove 손목/전체 장면 영상 수신을 검증했다. A에서는 반사가 합성 식별자의 일부를 가리고 B에서는 같은 표기와 `J01`·화살표가 육안으로 보인다. 이 장면의 OCR/VLM 판독과 문서 연결은 아직 수행하지 않았다.
+> 현재 단계: [공개 사진 10장의 실제 OCR/VLM·원문 4개 74청크 검색](docs/runs/RUNPOD_INFERENCE.md)에 이어, 저장된 실제 관측을 [모사 작업지시·도면→WPS 조건 범위→HTTP 모의 수신](docs/runs/DOCUMENT_DEMO.md)으로 연결했다. 정상 사례는 수신 응답을 기록했고, 필수값 누락·문서 공정 충돌·개정 불일치·실제 판독 불일치는 전송을 보류했다. 이어서 [사용자 수정 저장 → 명시적 재검토 → 선택적 모의 전달](docs/runs/EXPLICIT_REVIEW.md)을 서버 CLI로 구현해 실제 저장 묶음에서 재검토만 성공(`succeeded`·`not_requested`), 별도 전달 요청으로 `received`, 수정 뒤에도 문제가 남아 `blocked`, 수신기 미가동 결함 주입 시 `failed`를 확인했다. 원본 입력 1,173개 파일 해시는 그대로이며 문서 범위 규칙 재검토의 새 모델 호출은 0회다. Runpod 테스트 83개와 로컬 재검증 83개가 통과했다. 이 단락의 기준일은 2026-10-10이다.
 
-> 최신 인식 실험: [CTX-001 고정 이미지 맥락 비교](experiments/context_ablation/REPORT.md)를 실제 Runpod 모델로 완료했다. 공개 사진 9장·주어진 표기 위치 28개에서 OCR 완전 일치 2개, 이미지·후보 목록의 올바른 선택 16개, 합성 작업 문서 추가 시 14개였다. 정답이 없는 목록에서는 3/4개를 잘못 확정했다. 후보 기반 복구 사례와 문서 추가의 악화를 함께 기록했으며, 실제 현장 정확도나 Isaac 장면 성능을 뜻하지 않는다. 과거 서버 이전 파일럿 성적은 현재 발표 근거에서 제외한다.
+> 장면 구성: 기존 [정형 마킹·작업대 기준 장면](docs/runs/ISAAC_SCENE.md)을 보존하고, [조선소 수직 3면 강판·중앙 수기 메모 장면](docs/runs/ISAAC_SHIPYARD_SCENE.md)의 `live-03`을 구성했다. UR10 손목 카메라의 실제 관절 이동·A/B RGB와 고정 작업등의 금속반사, Foxglove 손목/전체 장면 영상 수신을 검증했다. A에서는 반사가 합성 식별자의 일부를 가리고 B에서는 같은 표기와 `J01`·화살표가 육안으로 보인다. 이 장면의 저장 프레임을 대상으로 한 OCR/VLM 판독과 문서 연결은 아래 [통합 파이프라인](docs/runs/WELD_PIPELINE.md)에서 수행했다.
 
-WPS 검수는 선택한 헤더·대표층 1의 전사 확인이며 사람의 적용 승인이 아니다. 사진의 실제 재질·두께·현장 WPS 적용성은 미확인이고, 합성 장면의 `J01`과 문서의 `JOINT-DEMO-01`도 아직 연결하지 않았다. 팔의 A/B 이동은 `pre_captured`로 기록하는 예약 시연이며 모델 판단으로 움직이는 폐루프가 아니다. [문서 검토 한 건의 오프라인 HTML 조회](docs/runs/DOCUMENT_REVIEW_VIEWER.md)는 구현해 정상 `received`·누락/관측 충돌 `blocked`의 실제 묶음 3개를 내보냈다. 원본 582개 파일 해시 보존·신규 테스트 6개와 HTML 구조·표시 내용 검사를 통과했으며, 브라우저 파일 URL 제한으로 시각 검수는 미완료다. 명시적 재검토는 문서 범위 규칙 재검토이며 시각 관계의 모델 재해석과 수정 입력 화면은 구현하지 않았다. P1 장면·RGB 생성은 달성했지만 전체 P2·P3·P4와 여러 실행 통합·A/B 관리자 재생은 미완료다. 별도 [실험실](experiments/README.md)의 과거 비교 결과와 현재 부분 실행을 구분한다.
+> 최신 인식 실험: [PV2 축소 실행](experiments/pipeline_v2/REPORT.md)을 사용 이력이 없는 공개 사진 8장으로 수행했다. 단독 판독은 OCR 5/8·VLM 2/8을 맞혔지만, 현재 합의 게이트의 **잘못된 자동 확정은 0/8**이고 8장 모두 작업자 확인으로 보냈다. 보류 8장 중 4장은 후보 목록에 정답 ID가 들어 있었다. 대가는 낮은 자동화율이며, 두 판독기가 같은 오답에 합의해 게이트를 통과한 반례도 2건 기록했다. 8장 표본의 개발 진단이고 현장 성능이 아니다.
+>
+> 앞선 [CTX-001 고정 이미지 맥락 비교](experiments/context_ablation/REPORT.md)는 **평가 설계가 무효화된 상태로 보존한다.** 후보 목록에 정답이 들어 있어 후보 선택 결과를 인식 성능으로 해석할 수 없다. 실행 기록과 모델 사용 이력은 출처 추적을 위해 남기고, 현재 성능·발표 근거에서는 제외한다. 2026-10-09 이전 파일럿 성적도 같은 이유로 제외한다.
+
+WPS 검수는 선택한 헤더·대표층 1의 전사 확인이며 사람의 적용 승인이 아니다. 사진의 실제 재질·두께·현장 WPS 적용성은 미확인이다. 합성 장면의 `J01`과 문서의 `JOINT-DEMO-01`은 시연 도면의 `joint_marking_map`으로만 연결했고, 실제 이음을 확인한 연결이 아니다. 팔의 A/B 이동은 `pre_captured`로 기록하는 예약 시연이며 모델 판단으로 움직이는 폐루프가 아니다. [문서 검토 한 건의 오프라인 HTML 조회](docs/runs/DOCUMENT_REVIEW_VIEWER.md)는 구현해 정상 `received`·누락/관측 충돌 `blocked`의 실제 묶음 3개를 내보냈다. 원본 582개 파일 해시 보존·신규 테스트 6개와 HTML 구조·표시 내용 검사를 통과했으며, 브라우저 파일 URL 제한으로 시각 검수는 미완료다. 명시적 재검토는 문서 범위 규칙 재검토이며 시각 관계의 모델 재해석은 구현하지 않았다. 수정 입력은 서버 CLI와 [제조사 변환 화면](docs/runs/ROBOT_INPUT_PREVIEW.md)의 작업조건 카드에 있고, 인식 결과 자체를 화면에서 고치는 입력은 없다. P1과 여러 실행을 담는 [오프라인 관리자 패키지](docs/runs/ADMIN_DASHBOARD.md)는 달성했고, 전체 P2·P3·P4와 A/B 재촬영 재생은 미완료다. 별도 [실험실](experiments/README.md)의 과거 비교 결과와 현재 부분 실행을 구분한다.
 
 실제 조선소 저장 A/B의 마킹에서 작업지시·공통명세·현대/두산 입력·HTTP 수신까지 연결한 최신 실행은 [통합 파이프라인](docs/runs/WELD_PIPELINE.md)을 따른다. B의 `BISB30N-15`·`J01`·지시 대상을 판독해 대상과 제조사 명령을 함께 전달했고 양쪽 `received`를 확인했다. 위의 이전 부분 구현 설명 중 조선소 인식·문서·전달 미연결 상태는 이 실행으로 갱신됐다. 실제 팔 이동·실기 용접·좌표 경로 생성은 별도다.
 
@@ -53,58 +57,69 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
 
 ## 문서
 
+전체 목록과 읽는 순서는 **[문서 색인](docs/README.md)**에 있다. 아래는 자주 보는 문서다.
+
 | 문서 | 내용 |
 |---|---|
-| [현재 데모 구현 기준](docs/plan/DEMO_SPEC.md) | 확정 범위, 단일 시나리오, 데이터 계약, 관리자 재생, Runpod 인계, 완료 기준·미정 항목 |
-| [OCR와 시각 관계 인식 구성](docs/spec/OCR_PIPELINE_SPEC.md) | 초기 모델 구성, 문자·화살표·기호·대상 관계, 입출력·재촬영·명시적 재검토·검증 기준 |
-| [문서 적용 계획](docs/plan/DOCUMENT_APPLICATION_PLAN.md) | 원문 확보·등록·표 검수, 정확 조회와 RAG, 필드별 근거·문서 검증 |
-| [용접 로봇 입력 상세 명세](docs/spec/WELDING_ROBOT_INPUT_SPEC.md) | 현대·두산 공식 입력 항목·단위·조건부 제약의 기준. 실제 제어 지원을 뜻하지 않음 |
-| [Pod v1 환경 기록](docs/setup/POD_VER1.md) | Runpod·Isaac·ROS·Foxglove 준비 안내, 실제 확인 결과와 남은 검증 |
-| [Isaac 기준 장면 실행](docs/runs/ISAAC_SCENE.md) | UR10 손목 A/B RGB·고정 반사·Foxglove 두 영상의 검증 결과, 재실행·중단·보존 안내 |
-| [Isaac 조선소 수기 장면](docs/runs/ISAAC_SHIPYARD_SCENE.md) | 수직 3면 강판·수기 메모·고정 반사의 A/B 원본 RGB, `live-03` 구성·Foxglove 수신 검증과 기존 장면 보존 |
-| [실제 인식·문서 검색 실행](docs/runs/RUNPOD_INFERENCE.md) | 고정 모델·환경, OCR/VLM 실행·원문 위치 검색·결과 보존·검증 |
-| [문서 조건·모의 전달 실행](docs/runs/DOCUMENT_DEMO.md) | 실제 관측과 모사 문서 연결, WPS 원문 범위·누락/충돌 검사, HTTP 모의 수신·별도 묶음 검증 |
-| [사용자 수정·명시적 재검토](docs/runs/EXPLICIT_REVIEW.md) | 수정 저장 → 선택 수정만 쓰는 새 재검토 → `--deliver` 때만 모의 전달의 CLI, `review-bundle.v1` 계약·검증, 실제 서버 실행 결과와 한계 |
-| [문서 실행 기록 오프라인 조회](docs/runs/DOCUMENT_REVIEW_VIEWER.md) | 검증된 문서·재검토 묶음 한 건을 원본 이미지·모델 출력·수정 기록·WPS 근거·모의 수신 내역을 담은 단일 HTML로 내보내기 |
-| [Runpod 자료 준비](docs/setup/RUNPOD_DATA_SETUP.md) | 사진·근거 원문 다운로드, 로컬 전송 대안, 실제 서버 확보 결과와 해시 확인 |
-| [첫 장면 실행 안내](docs/runs/FIRST_SCENE.md) | 후보·작업지시 입력, 판정 규칙, 실행·검증과 한계 |
-| [실험실](experiments/README.md) | 최신 CTX-001 실제 비교·실패 사례·재현 코드, 과거 파일럿의 보존·제외 범위 |
-| [개발 기획](docs/plan/DEVELOPMENT_PLAN.md) | 초기 조사·실험의 배경과 최신 범위에 맞춘 적용 구분 |
-| [프로젝트 개요](docs/plan/PROJECT_BRIEF.md) | 문제 정의, 미션 요구사항, 기능 범위, 평가 계획 |
-| [마일스톤](docs/plan/MILESTONES.md) | 현재 완료 기준·실제 진행 상태와 세분화 논의 항목. 새 일정은 미확정 |
-| [데이터 요구사항](docs/plan/DATA_REQUIREMENTS.md) | 필요한 자료와 현장 검증 항목 |
-| [참고 자료](docs/sources/SOURCES.md) | 대회·도메인 출처와 적용 범위 |
-| [공개 자료·시나리오 조사](docs/plan/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md) | 이전 모델 후보·PCC 검증 예시의 조사 기록. 현재 구현 명세보다 우선하지 않음 |
-| [제출 기획서](docs/references/idea-proposal.pdf) | ContextWeld 아이디어 요약서 |
-| [미션 정의서](docs/references/mission-03.pdf) | HD현대로보틱스 미션 03 원문 |
+| [현재 데모 구현 기준](docs/plan/DEMO_SPEC.md) | 확정 범위, 단일 시나리오, 데이터 계약, 관리자 재생, 완료 기준·미정 항목 |
+| [마일스톤](docs/plan/MILESTONES.md) | 실제 진행 상태와 P0~P5 완료 기준 |
+| [통합 파이프라인](docs/runs/WELD_PIPELINE.md) | 마킹 판독부터 제조사 입력·HTTP 모의 수신까지의 최신 종단 실행 |
+| [작업조건·제조사 변환](docs/runs/ROBOT_INPUT_PREVIEW.md) | 등록조건 자동 적용과 현대 Hi6·두산 DRL 입력 변환 화면 |
+| [오프라인 관리자 패키지](docs/runs/ADMIN_DASHBOARD.md) | 여러 실행을 서버 없이 조회·재생하는 내보내기 패키지 |
+| [OCR와 시각 관계 인식 구성](docs/spec/OCR_PIPELINE_SPEC.md) | 모델 구성, 문자·화살표·기호·대상 관계, 입출력·재촬영·검증 기준 |
+| [용접 로봇 입력 상세 명세](docs/spec/WELDING_ROBOT_INPUT_SPEC.md) | 현대·두산 공식 입력 항목·단위·제약의 기준. 실제 제어 지원을 뜻하지 않음 |
+| [데이터·모델 출처](docs/sources/DATA_MODEL_PROVENANCE.md) | 확보 파일·모델의 원출처·revision·해시·가공 과정 |
+| [Pod v1 환경 기록](docs/setup/POD_VER1.md) | Runpod·Isaac·ROS·Foxglove 준비와 확인 결과 |
+| [실험실](experiments/README.md) | PV2 축소 실행, 설계가 무효화된 CTX-001, 과거 파일럿의 보존 범위 |
+| [제출 기획서](docs/references/idea-proposal.pdf) · [미션 정의서](docs/references/mission-03.pdf) | 대회 제출물과 미션 원문 |
 
 ## 디렉토리 구조
 
 ```text
 .
 ├── README.md
-├── .gitignore
+├── conftest.py               # 테스트가 src/를 찾도록 경로 설정
 ├── docs/
-│   ├── PROJECT_BRIEF.md
-│   ├── MILESTONES.md
-│   ├── DATA_REQUIREMENTS.md
-│   ├── SOURCES.md
+│   ├── README.md             # 문서 색인
+│   ├── plan/                 # 범위·기획·요구사항·과거 조사
+│   ├── spec/                 # 인식 구성·제조사 입력 명세
+│   ├── runs/                 # 실제 실행 기록
+│   ├── setup/                # Runpod 환경·자료 준비
+│   ├── sources/              # 외부 출처와 데이터·모델 이력
+│   ├── assets/               # 2026-10-05 단독 HTML 기획서·안내
+│   ├── images/               # 장면 미리보기 이미지
 │   └── references/           # 기획서와 미션 원문
-├── src/contextweld/          # 애플리케이션 구현
+├── src/
+│   ├── contextweld/          # 인식·문서·검증·전달 구현
+│   └── contextweld_dashboard/  # 오프라인 관리자 패키지 생성기
+├── scripts/
+│   ├── isaac/                # Isaac 장면 생성·ROS 송출·수신 점검
+│   ├── prepare/              # 자료·모델·색인 준비
+│   ├── run/                  # 인식·문서·재검토·통합 실행
+│   ├── export/               # 오프라인 조회·관리자 내보내기
+│   └── verify/               # 저장 묶음 검증
 ├── tests/                    # 핵심 기능 검증
 ├── experiments/              # 기술 선택 실험·실제 출력·레포트
-├── scripts/                  # 데이터 준비·실행·평가 보조 도구
 ├── configs/                  # 비밀정보를 제외한 설정
+│   ├── document_demo/        # 모사 작업지시·도면·등록조건·범위 프로파일
+│   ├── isaac_scene/          # 작업대·조선소 장면 설정
+│   ├── robot_profiles/       # 현대 Hi6·두산 DRL 입력 프로파일
+│   └── shipyard_pipeline/    # 통합 실행용 시연 도면
 ├── data/
-│   ├── README.md
-│   ├── raw/                 # 원본 현장 자료, Git 제외
-│   ├── examples/            # 공개 가능한 개발·시연 사례
-│   ├── knowledge/           # 공개 가능한 표기 규칙·기준 자료
-│   └── eval/                # 공개 가능한 평가 사례·정답
-└── output/
-    ├── evaluations/         # 평가 결과
-    ├── demo/                # 시연 영상·스크린샷
-    └── presentation/        # 발표자료
+│   ├── raw/                  # 원본 현장 자료, Git 제외
+│   ├── examples/             # 공개 가능한 개발·시연 사례
+│   ├── knowledge/            # 공개 가능한 표기 규칙·기준 자료
+│   └── eval/                 # 공개 가능한 평가 사례·정답
+└── output/                   # 생성 산출물, Git 제외
+    ├── evaluations/
+    ├── demo/
+    └── presentation/
 ```
 
-현재 `src/contextweld`에는 후보 연결, 실제 OCR/VLM 실행·기록, 문서 추출·검색, 문서 조건 검사와 모의 수신, 수정 저장(`corrections.py`)·명시적 재검토(`review.py`) 모듈이 있다. `scripts`에서 인식·검색·문서 연결·묶음 검증과 Isaac 장면 생성·ROS 영상 송출을 실행한다. `configs/document_demo`에는 모사 작업지시·도면·범위 검토용 프로파일이 있고, `configs/isaac_scene`에는 기존 작업대와 새 조선소 수기 장면의 설정을 각각 보존한다. `data/knowledge`에는 원문 위치와 검수 범위를 보존한 WPS 구조화 자료가 있다. `tests`에는 자동 테스트, `data/examples`에는 기존 가상 작업지시 예제가 있다. A/B 촬영과 인식·문서 처리를 한 실행으로 연결하는 작업, 시각 관계 재해석·수정 입력 화면·관리자 화면은 후속 범위다. experiments/의 OCR은 별도 실험용이다. 원본 현장 자료와 생성 산출물은 기본적으로 Git 추적에서 제외한다. 데이터 공개 기준은 [데이터 안내](data/README.md)를 따른다.
+`src/contextweld`에는 후보 연결(`matching.py`), 실제 OCR/VLM 실행·기록(`recognition.py`), 문서 추출·검색(`documents.py`), 문서 조건 검사와 모의 수신(`workflow.py`·`mock_delivery.py`), 수정 저장(`corrections.py`)·명시적 재검토(`review.py`), 등록조건의 제조사 입력 변환(`robot_input.py`)과 마킹부터 전달까지의 통합 실행(`weld_pipeline.py`)이 있다. `src/contextweld_dashboard`는 검증된 실행 묶음을 서버 없이 여는 관리자 패키지를 만든다.
+
+`scripts`는 역할별로 나뉘어 있다. 준비는 `prepare/`, 인식·문서·재검토·통합 실행은 `run/`, Isaac 장면과 ROS 송출은 `isaac/`, 오프라인 조회·관리자 내보내기는 `export/`, 저장 묶음 검증은 `verify/`에 있다.
+
+`configs/document_demo`에는 모사 작업지시·도면·등록조건과 범위 검토용 프로파일이, `configs/isaac_scene`에는 기존 작업대와 조선소 수기 장면의 설정이, `configs/robot_profiles`에는 현대·두산 입력 프로파일이 있다. `data/knowledge`에는 원문 위치와 검수 범위를 보존한 WPS 구조화 자료가, `data/examples`에는 가상 작업지시 예제가 있다.
+
+시각 관계의 모델 재해석, 인식 결과를 화면에서 고치는 입력, 모델 판단에 따른 재촬영 폐루프는 후속 범위다. `experiments/`의 실험 코드는 제품 경로와 분리해 보존한다. 원본 현장 자료와 생성 산출물은 기본적으로 Git 추적에서 제외하며, 데이터 공개 기준은 [데이터 안내](data/README.md)를 따른다.
