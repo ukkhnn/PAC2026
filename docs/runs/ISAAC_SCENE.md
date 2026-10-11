@@ -1,6 +1,6 @@
 # Isaac 야간 작업장 A/B 영상
 
-기준일: **2026-10-10**. Isaac Sim 6.1에서 UR10 손목 카메라가 두 자세로 이동하고, 고정 작업등의 금속 반사를 실제 RGB로 렌더링한다. ROS Jazzy가 저장된 RGB를 기존 Foxglove 연결로 송출한다. [데모 명세](DEMO_SPEC.md)의 장면·촬영 부분 실행이며, 기존 [문서 검토 실행](DOCUMENT_DEMO.md)과 아직 자동 연결되지 않았다.
+기준일: **2026-10-10**. Isaac Sim 6.1에서 UR10 손목 카메라가 두 자세로 이동하고, 고정 작업등의 금속 반사를 실제 RGB로 렌더링한다. ROS Jazzy가 저장된 RGB를 기존 Foxglove 연결로 송출한다. [데모 명세](../plan/DEMO_SPEC.md)의 장면·촬영 부분 실행이며, 기존 [문서 검토 실행](DOCUMENT_DEMO.md)과 아직 자동 연결되지 않았다.
 
 ## 확인 상태
 
@@ -30,7 +30,7 @@
 
 ## 장면과 경계
 
-실행 설정은 [night_welding.json](../configs/isaac_scene/night_welding.json), 장면 생성은 [run_isaac_welding_scene.py](../scripts/isaac/run_isaac_welding_scene.py), 로봇 이동은 [isaac_scene_robot.py](../scripts/isaac/isaac_scene_robot.py)다.
+실행 설정은 [night_welding.json](../../configs/isaac_scene/night_welding.json), 장면 생성은 [run_isaac_welding_scene.py](../../scripts/isaac/run_isaac_welding_scene.py), 로봇 이동은 [isaac_scene_robot.py](../../scripts/isaac/isaac_scene_robot.py)다.
 
 | 항목 | 현재 설정 |
 |---|---|
@@ -53,7 +53,7 @@
 
 ## Runpod에서 시작
 
-기존 [Pod 환경](POD_VER1.md)의 `/workspace/PAC2026`, Isaac 6.1 전용 환경, ROS Jazzy·domain 26·FastDDS, Foxglove bridge를 재사용한다. 아래는 **서버 Bash**용이다. ROS 설정은 `set -u` 상태에서 실패할 수 있으므로 먼저 해제하고 source한다. Isaac와 송출기는 서로 다른 Python을 쓴다. 새 설치나 기존 bridge 재기동은 필요 없다.
+기존 [Pod 환경](../setup/POD_VER1.md)의 `/workspace/PAC2026`, Isaac 6.1 전용 환경, ROS Jazzy·domain 26·FastDDS, Foxglove bridge를 재사용한다. 아래는 **서버 Bash**용이다. ROS 설정은 `set -u` 상태에서 실패할 수 있으므로 먼저 해제하고 source한다. Isaac와 송출기는 서로 다른 Python을 쓴다. 새 설치나 기존 bridge 재기동은 필요 없다.
 
 매번 비어 있는 새 출력 디렉토리를 만든다. 실패한 실행도 보존하고 새 디렉토리로 재시도한다. 기존 `manifest.json`이 있으면 장면 실행기가 거절하며, 미완성 디렉토리도 재사용하지 않는다.
 
@@ -85,9 +85,9 @@ printf '%s\n' "$!" >"$scene_out/publisher.pid"
 
 ## 연결과 결과 확인
 
-[기준 Foxglove 레이아웃](../configs/isaac_scene/foxglove-baseline-layout.json)은 실제 앱에서 내보낸 두 Image 패널 설정이다. `Import from file…`로 불러오고 기존 `ws://localhost:8765` 연결을 선택하면 복구할 수 있다. 앱의 임시 변경 표시와 별도로 이 파일을 보존한다.
+[기준 Foxglove 레이아웃](../../configs/isaac_scene/foxglove-baseline-layout.json)은 실제 앱에서 내보낸 두 Image 패널 설정이다. `Import from file…`로 불러오고 기존 `ws://localhost:8765` 연결을 선택하면 복구할 수 있다. 앱의 임시 변경 표시와 별도로 이 파일을 보존한다.
 
-서버 bridge는 `127.0.0.1:8765`, Mac의 기존 SSH 터널은 `localhost:8765`를 사용한다. 열린 Foxglove 연결 `ws://localhost:8765`를 재사용한다. 터널이 없을 때만 [Pod 환경의 6.4절](POD_VER1.md)대로 연결하며 공개 포트를 추가하지 않는다.
+서버 bridge는 `127.0.0.1:8765`, Mac의 기존 SSH 터널은 `localhost:8765`를 사용한다. 열린 Foxglove 연결 `ws://localhost:8765`를 재사용한다. 터널이 없을 때만 [Pod 환경의 6.4절](../setup/POD_VER1.md)대로 연결하며 공개 포트를 추가하지 않는다.
 
 | Foxglove 항목 | 토픽·프레임 |
 |---|---|

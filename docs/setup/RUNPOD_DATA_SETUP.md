@@ -2,11 +2,11 @@
 
 기준일: **2026-10-10**. 모델 추론·문서 처리·시뮬레이션은 Runpod에서 진행한다. 이 단계는 데모용 사진과 근거 원문을 서버에 준비하는 작업이며, 모델 설치·추론이나 RAG 구축 완료를 뜻하지 않는다.
 
-아이디어 피칭이 목적이므로 이미 확보한 소량 사진부터 연결한다. 전체 데이터셋 다운로드나 독립 성능 평가를 선행 조건으로 두지 않는다. 환경 기준은 [Pod v1](POD_VER1.md), 전체 범위는 [데모 스펙](DEMO_SPEC.md)을 따른다.
+아이디어 피칭이 목적이므로 이미 확보한 소량 사진부터 연결한다. 전체 데이터셋 다운로드나 독립 성능 평가를 선행 조건으로 두지 않는다. 환경 기준은 [Pod v1](POD_VER1.md), 전체 범위는 [데모 스펙](../plan/DEMO_SPEC.md)을 따른다.
 
 ## 1. 이번 준비 묶음
 
-출처 목록은 [configs/demo_data_sources.json](../configs/demo_data_sources.json), 실행 도구는 [scripts/prepare/prepare_demo_data.py](../scripts/prepare/prepare_demo_data.py)다. Python 3.10 이상 표준 라이브러리만 사용한다.
+출처 목록은 [configs/demo_data_sources.json](../../configs/demo_data_sources.json), 실행 도구는 [scripts/prepare/prepare_demo_data.py](../../scripts/prepare/prepare_demo_data.py)다. Python 3.10 이상 표준 라이브러리만 사용한다.
 
 | 묶음 | 내용 | 용도 |
 |---|---|---|
@@ -14,9 +14,9 @@
 | `steel-metadata` | 같은 revision의 배포 카드·train 라벨 | 출처·이용조건 표기와 사진의 문자/영역 확인 |
 | `documents` | TWI 기호 해설 HTML, LANL WTS 양식·WPS PDF, 현대 `arccond` 원문 | 문서 추출·근거 연결을 시작할 원문 |
 
-사진은 기존 [E1 manifest](../experiments/e1_ocr/manifest.json)의 URL과 SHA-256을 재사용한다. 원래 실험 파일은 변경하지 않는다. 배포 라벨에는 내려받지 않은 사진의 항목도 있으므로 이미지 목록은 새 출처 목록의 10개 항목을 기준으로 사용한다. 정답 라벨은 검토용이며 모델에 정답으로 주입하지 않는다.
+사진은 기존 [E1 manifest](../../experiments/e1_ocr/manifest.json)의 URL과 SHA-256을 재사용한다. 원래 실험 파일은 변경하지 않는다. 배포 라벨에는 내려받지 않은 사진의 항목도 있으므로 이미지 목록은 새 출처 목록의 10개 항목을 기준으로 사용한다. 정답 라벨은 검토용이며 모델에 정답으로 주입하지 않는다.
 
-문서는 우선 다운로드 가능성을 확인하는 선택 항목이다. 실패가 있어도 사진 준비는 진행할 수 있으며, 실패한 문서는 manifest에 남는다. 원문을 확보한 뒤에야 [문서 적용 계획](DOCUMENT_APPLICATION_PLAN.md)의 페이지·표·단위 검수를 진행한다. 공개 WPS는 현장 승인조건이 아니고, 제조사 설명의 예시도 실제 장비 등록값이 아니다.
+문서는 우선 다운로드 가능성을 확인하는 선택 항목이다. 실패가 있어도 사진 준비는 진행할 수 있으며, 실패한 문서는 manifest에 남는다. 원문을 확보한 뒤에야 [문서 적용 계획](../plan/DOCUMENT_APPLICATION_PLAN.md)의 페이지·표·단위 검수를 진행한다. 공개 WPS는 현장 승인조건이 아니고, 제조사 설명의 예시도 실제 장비 등록값이 아니다.
 
 ## 2. 서버에서 직접 받기
 
@@ -120,4 +120,4 @@ python3 scripts/prepare/prepare_demo_data.py \
 
 ### 후속 구현 상태
 
-2026-10-10 기존 작업파일·원본·로그 보존 후 서버 Git을 `577faa6`으로 정합했다. 원문4개와 사진·메타데이터를 로컬에도 복사해 해시와 원문 위치를 검토했다. 실제 OCR/VLM·문서 추출·검색 명령과 결과는 [Runpod 인식·검색 안내](RUNPOD_INFERENCE.md)를 따른다. 앞 절의 미실행 표시는 최초 자료 준비 당시 상태다.
+2026-10-10 기존 작업파일·원본·로그 보존 후 서버 Git을 `577faa6`으로 정합했다. 원문4개와 사진·메타데이터를 로컬에도 복사해 해시와 원문 위치를 검토했다. 실제 OCR/VLM·문서 추출·검색 명령과 결과는 [Runpod 인식·검색 안내](../runs/RUNPOD_INFERENCE.md)를 따른다. 앞 절의 미실행 표시는 최초 자료 준비 당시 상태다.

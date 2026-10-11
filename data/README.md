@@ -1,8 +1,8 @@
 # 데이터 관리
 
-Runpod에서 데모 자료를 받는 시작점은 [자료 준비 안내](../docs/RUNPOD_DATA_SETUP.md)다. `scripts/prepare/prepare_demo_data.py`가 `configs/demo_data_sources.json`의 고정 Steel OCR 사진과 근거 원문을 `data/raw/demo-bootstrap-v1/`에 준비하고 실제 파일 해시를 기록한다. 서버 실행 결과와 확보 상태는 안내 문서에 남긴다.
+Runpod에서 데모 자료를 받는 시작점은 [자료 준비 안내](../docs/setup/RUNPOD_DATA_SETUP.md)다. `scripts/prepare/prepare_demo_data.py`가 `configs/demo_data_sources.json`의 고정 Steel OCR 사진과 근거 원문을 `data/raw/demo-bootstrap-v1/`에 준비하고 실제 파일 해시를 기록한다. 서버 실행 결과와 확보 상태는 안내 문서에 남긴다.
 
-`examples/part-order-scene.json`에 직접 작성한 부재번호 후보와 가상 작업지시·개정 이력이 있다. `synthetic` / `synthetic_manual`로 구분하며 사진 OCR 결과나 현장 데이터가 아니다. 독립 평가셋은 아직 없다. 입력 규약은 [첫 장면 안내](../docs/FIRST_SCENE.md)를 따른다. 기획서와 미션 원문은 [docs/references](../docs/references/)에 있다.
+`examples/part-order-scene.json`에 직접 작성한 부재번호 후보와 가상 작업지시·개정 이력이 있다. `synthetic` / `synthetic_manual`로 구분하며 사진 OCR 결과나 현장 데이터가 아니다. 독립 평가셋은 아직 없다. 입력 규약은 [첫 장면 안내](../docs/runs/FIRST_SCENE.md)를 따른다. 기획서와 미션 원문은 [docs/references](../docs/references)에 있다.
 
 ## 배치
 

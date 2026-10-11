@@ -1,6 +1,6 @@
 # 실제 관측에서 문서 조건과 모의 수신까지
 
-기준일: **2026-10-10**. [데모 v1.4](DEMO_SPEC.md), [문서 적용 v1.3](DOCUMENT_APPLICATION_PLAN.md)의 **문서 검토용 부분 실행**이다. 실제 저장 관측 → 모사 작업지시·도면 → 공개 WPS의 필드·원문 위치 → 필수값·충돌 검사 → 실제 loopback HTTP 모의 수신을 연결했다.
+기준일: **2026-10-10**. [데모 v1.4](../plan/DEMO_SPEC.md), [문서 적용 v1.3](../plan/DOCUMENT_APPLICATION_PLAN.md)의 **문서 검토용 부분 실행**이다. 실제 저장 관측 → 모사 작업지시·도면 → 공개 WPS의 필드·원문 위치 → 필수값·충돌 검사 → 실제 loopback HTTP 모의 수신을 연결했다.
 
 A/B 촬영·재촬영·사용자 수정/재검토는 아직 이 실행에 포함되지 않는다. 저장된 문서 실행은 [오프라인 조회 HTML](DOCUMENT_REVIEW_VIEWER.md)로 내보낼 수 있으며 전체 관리자 재생 기능은 미완료다. 모의 ACK는 문서 범위값의 수신·형식 확인이며 사진의 실제 작업이나 용접 적용 승인, 용접 실행 성공을 뜻하지 않는다.
 
@@ -11,13 +11,13 @@ A/B 촬영·재촬영·사용자 수정/재검토는 아직 이 실행에 포함
 | 원관측 | `steel-batch-20261010-02`의 frame-007, OCR `BISb30N-15`와 겹치는 VLM 텍스트가 일치 | 이전 Runpod 실제 모델 출력 재사용. 새 모델 호출 0회 |
 | 후보 처리 | 하이픈으로 나뉜 영숫자 식별자, 양끝 공백 제거·대문자 정규화 | `I/1`, `S/5`, `O/0` 교정 없음. 다른 관측 후보도 버리지 않음 |
 | 작업지시 | `WO-DEMO-015`, `PAC-DEMO/BLOCK-DEMO`, `BISB30N-15`, 개정 1 | 직접 작성한 시연 자료. 사진의 실제 업무·정답이 아님 |
-| 도면 | `DRAWING-DEMO-015` 개정 1, `JOINT-DEMO-01` | [구조화 도면](../configs/document_demo/drawing.json)과 [설명용 그림](../configs/document_demo/drawing.svg). 사진 형상 복원·이음 검출이 아님 |
-| WPS | LANL `3501-xxxx-1`, 원문 헤더 REV. NO. 1, 대표층 1 | [원문 필드 전사](../data/knowledge/lanl-wps-3501-reviewed.json). 사람의 공정 승인 아님 |
-| 출력 | `document-range-review.v1` | [문서 범위 검토용 프로파일](../configs/document_demo/target_profile.json), 실기 제어 지원 아님 |
+| 도면 | `DRAWING-DEMO-015` 개정 1, `JOINT-DEMO-01` | [구조화 도면](../../configs/document_demo/drawing.json)과 [설명용 그림](../../configs/document_demo/drawing.svg). 사진 형상 복원·이음 검출이 아님 |
+| WPS | LANL `3501-xxxx-1`, 원문 헤더 REV. NO. 1, 대표층 1 | [원문 필드 전사](../../data/knowledge/lanl-wps-3501-reviewed.json). 사람의 공정 승인 아님 |
+| 출력 | `document-range-review.v1` | [문서 범위 검토용 프로파일](../../configs/document_demo/target_profile.json), 실기 제어 지원 아님 |
 
 관측을 확인한 뒤 연결 예제를 만들기 위해 모사 작업지시를 작성했다. 따라서 이 사례는 실제 작업지시 매칭 정확도의 독립 평가가 아니다. 사진의 부재가 실제로 어떤 식별자·재질·두께·접합부인지는 이 실행으로 확정하지 않는다. 영상에서 확인되지 않은 이음 ID는 `fixture` 출처의 도면 참조로 남긴다.
 
-실행 입력은 [scenario.json](../configs/document_demo/scenario.json)과 [work_orders.json](../configs/document_demo/work_orders.json)이다. 원래 인식 묶음과 원문을 변경하지 않고, 새 실행에 입력 스냅샷과 원래 모델 출력을 포함한다. 공개 사진 bootstrap의 모델 설정과 생성 원문은 [인식 실행 안내](RUNPOD_INFERENCE.md)를 따른다.
+실행 입력은 [scenario.json](../../configs/document_demo/scenario.json)과 [work_orders.json](../../configs/document_demo/work_orders.json)이다. 원래 인식 묶음과 원문을 변경하지 않고, 새 실행에 입력 스냅샷과 원래 모델 출력을 포함한다. 공개 사진 bootstrap의 모델 설정과 생성 원문은 [인식 실행 안내](RUNPOD_INFERENCE.md)를 따른다.
 
 ## 2. WPS 필드와 검증 범위
 
@@ -40,7 +40,7 @@ WPS 숫자는 검수된 구조화 행에서 정확히 조회한다. 기존 BM25�
 
 ## 3. 실행
 
-Runpod의 기존 `/workspace/venvs/contextweld-inference/bin/python`을 사용했다. 이 후속 연결은 Python 표준 라이브러리로 실행되며 GPU·모델 재로딩·새 패키지 설치가 필요하지 않다. 사전에 [자료 준비](RUNPOD_DATA_SETUP.md)와 [실제 인식·색인 생성](RUNPOD_INFERENCE.md)이 완료되어 있어야 한다. 원본/색인/기존 실행 묶음은 일반 Git에 포함되지 않는다.
+Runpod의 기존 `/workspace/venvs/contextweld-inference/bin/python`을 사용했다. 이 후속 연결은 Python 표준 라이브러리로 실행되며 GPU·모델 재로딩·새 패키지 설치가 필요하지 않다. 사전에 [자료 준비](../setup/RUNPOD_DATA_SETUP.md)와 [실제 인식·색인 생성](RUNPOD_INFERENCE.md)이 완료되어 있어야 한다. 원본/색인/기존 실행 묶음은 일반 Git에 포함되지 않는다.
 
 저장소 루트에서 실행한다. 예시 run ID를 이미 사용했다면 새 이름으로 바꾼다.
 

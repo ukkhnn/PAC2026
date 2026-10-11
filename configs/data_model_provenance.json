@@ -2331,56 +2331,56 @@
         "source_url": "https://huggingface.co/PaddlePaddle/korean_PP-OCRv5_mobile_rec",
         "status": "investigated_only_no_execution_evidence",
         "revision": null,
-        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+        "evidence_path": "docs/plan/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
       },
       {
         "model_id": "PaddlePaddle/PaddleOCR-VL-1.6",
         "source_url": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.6",
         "status": "investigated_only_no_execution_evidence",
         "revision": null,
-        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+        "evidence_path": "docs/plan/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
       },
       {
         "model_id": "ibm-granite/granite-docling-258M",
         "source_url": "https://huggingface.co/ibm-granite/granite-docling-258M",
         "status": "investigated_only_no_execution_evidence",
         "revision": null,
-        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+        "evidence_path": "docs/plan/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
       },
       {
         "model_id": "Qwen/Qwen3-VL-4B-Instruct",
         "source_url": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct",
         "status": "investigated_only_no_execution_evidence",
         "revision": null,
-        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+        "evidence_path": "docs/plan/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
       },
       {
         "model_id": "IDEA-Research/grounding-dino-tiny",
         "source_url": "https://huggingface.co/IDEA-Research/grounding-dino-tiny",
         "status": "investigated_only_no_execution_evidence",
         "revision": null,
-        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+        "evidence_path": "docs/plan/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
       },
       {
         "model_id": "facebook/sam2.1-hiera-tiny",
         "source_url": "https://huggingface.co/facebook/sam2.1-hiera-tiny",
         "status": "investigated_only_no_execution_evidence",
         "revision": null,
-        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+        "evidence_path": "docs/plan/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
       },
       {
         "model_id": "PekingU/rtdetr_v2_r18vd",
         "source_url": "https://huggingface.co/PekingU/rtdetr_v2_r18vd",
         "status": "investigated_only_no_execution_evidence",
         "revision": null,
-        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+        "evidence_path": "docs/plan/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
       },
       {
         "model_id": "BAAI/bge-m3",
         "source_url": "https://huggingface.co/BAAI/bge-m3",
         "status": "investigated_only_no_execution_evidence",
         "revision": null,
-        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+        "evidence_path": "docs/plan/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
       }
     ],
     "tools": [

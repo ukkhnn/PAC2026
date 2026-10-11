@@ -13,7 +13,7 @@
 
 현대는 전류 A·절대전압 V를 받는 모드를 프로파일에 명시한다. 실제 `cur`·`vol` 의미와 허용 범위는 연결 용접기 설정에 따라 다르다. 두산은 DRL 3.7.0의 아날로그 함수만 지원하며, 전류를 송급속도로 환산하지 않는다. `f_target`은 등록조건의 독립 값을 읽는다. 두 프로파일 모두 특정 로봇 본체나 용접기 모델을 선정하지 않았고 Isaac의 UR10 장면과 별개의 출력 형식이다.
 
-근거는 [현대 공식 arccond 문서](https://github.com/hyundai-robotics/doc-arc-weld/blob/ko/2_Command/5_arccond.md), [두산 공식 아날로그 용접조건 문서](https://manual.doosanrobotics.com/ko/programming-manual/3.7.0/publish/app_weld_set_weld_cond_analog-flag_dry_run-0-v_tar), [제조사 입력 상세 명세](WELDING_ROBOT_INPUT_SPEC.md)다. 현대의 확보 원문 SHA-256은 프로파일에 보존한다. 아크 시작·활성화·경로·통신·Job 등록은 생성하지 않는다.
+근거는 [현대 공식 arccond 문서](https://github.com/hyundai-robotics/doc-arc-weld/blob/ko/2_Command/5_arccond.md), [두산 공식 아날로그 용접조건 문서](https://manual.doosanrobotics.com/ko/programming-manual/3.7.0/publish/app_weld_set_weld_cond_analog-flag_dry_run-0-v_tar), [제조사 입력 상세 명세](../spec/WELDING_ROBOT_INPUT_SPEC.md)다. 현대의 확보 원문 SHA-256은 프로파일에 보존한다. 아크 시작·활성화·경로·통신·Job 등록은 생성하지 않는다.
 
 ## 기본값의 기준과 인식 연결 상태
 

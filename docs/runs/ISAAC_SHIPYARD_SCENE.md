@@ -1,18 +1,18 @@
 # Isaac 조선소 수직 강판·수기 메모 A/B 영상
 
-기준일: **2026-10-10**. 기존 [야간 작업장 기준 장면](ISAAC_SCENE.md)의 작은 수평 작업대를 **조선소 블록 조립장을 연상시키는 수직 3면 강판 지그**로 바꾸고, 가운데 강판의 작업자 눈높이에 **페인트 마커풍 수기 메모**를 배치한 장면이다. Isaac Sim 6.1에서 UR10 손목 카메라가 두 자세 A/B로 이동하고, 고정 작업등의 금속 정반사가 A에서 메모 일부를 가리고 B에서 같은 메모가 읽히는 과정을 실제 RGB로 렌더링한다. ROS Jazzy 송출기가 저장된 RGB를 기존 Foxglove 연결로 내보낸다. [데모 명세](DEMO_SPEC.md)의 장면·촬영 부분 실행이며, 렌더링 결과는 **모사 장면**이다. A/B는 사전 정의된 자세 순서(`capture_mode=pre_captured`, `recognition_feedback_enabled=false`)이고 인식 판단에 따른 재촬영 폐루프, 이 장면의 인식→문서 검토 연결, 실제 용접·실기 제어는 포함하지 않는다. `execution_authorized=false`를 유지한다.
+기준일: **2026-10-10**. 기존 [야간 작업장 기준 장면](ISAAC_SCENE.md)의 작은 수평 작업대를 **조선소 블록 조립장을 연상시키는 수직 3면 강판 지그**로 바꾸고, 가운데 강판의 작업자 눈높이에 **페인트 마커풍 수기 메모**를 배치한 장면이다. Isaac Sim 6.1에서 UR10 손목 카메라가 두 자세 A/B로 이동하고, 고정 작업등의 금속 정반사가 A에서 메모 일부를 가리고 B에서 같은 메모가 읽히는 과정을 실제 RGB로 렌더링한다. ROS Jazzy 송출기가 저장된 RGB를 기존 Foxglove 연결로 내보낸다. [데모 명세](../plan/DEMO_SPEC.md)의 장면·촬영 부분 실행이며, 렌더링 결과는 **모사 장면**이다. A/B는 사전 정의된 자세 순서(`capture_mode=pre_captured`, `recognition_feedback_enabled=false`)이고 인식 판단에 따른 재촬영 폐루프, 이 장면의 인식→문서 검토 연결, 실제 용접·실기 제어는 포함하지 않는다. `execution_authorized=false`를 유지한다.
 
-**기존 기준 장면은 비교·복구용으로 그대로 둔다.** `output/isaac-scene-20261010/live-01/`의 설정·소스 사본·`scene.usda`·`assets/marking.png`·`frames/`·`*-capture.json`, 튜닝 결과 `tune-01`~`tune-07`, [night_welding.json](../configs/isaac_scene/night_welding.json)과 기존 runner·helper·송출기 코드는 수정하지 않았다. 새 장면은 별도 설정 [shipyard_handwriting.json](../configs/isaac_scene/shipyard_handwriting.json), 별도 runner [run_isaac_shipyard_scene.py](../scripts/isaac/run_isaac_shipyard_scene.py), 마킹 생성기 [isaac_shipyard_marking.py](../scripts/isaac/isaac_shipyard_marking.py), 새 출력 루트 `output/isaac-shipyard-20261010/`를 사용한다.
+**기존 기준 장면은 비교·복구용으로 그대로 둔다.** `output/isaac-scene-20261010/live-01/`의 설정·소스 사본·`scene.usda`·`assets/marking.png`·`frames/`·`*-capture.json`, 튜닝 결과 `tune-01`~`tune-07`, [night_welding.json](../../configs/isaac_scene/night_welding.json)과 기존 runner·helper·송출기 코드는 수정하지 않았다. 새 장면은 별도 설정 [shipyard_handwriting.json](../../configs/isaac_scene/shipyard_handwriting.json), 별도 runner [run_isaac_shipyard_scene.py](../../scripts/isaac/run_isaac_shipyard_scene.py), 마킹 생성기 [isaac_shipyard_marking.py](../../scripts/isaac/isaac_shipyard_marking.py), 새 출력 루트 `output/isaac-shipyard-20261010/`를 사용한다.
 
 ## 확인 상태
 
-최종 기준 실행은 **`output/isaac-shipyard-20261010/live-03/`**이다(`--live`, 2026-10-09 22:37:50 UTC 시작). 이에 앞서 `draft-01`(초안 전체 장면 1장), `pair-01`·`pair-02`(A/B 튜닝), `live-01`(1차 Foxglove 전환 실행, 독립 리뷰 반영 전), `live-02`(리뷰 반영 중 GPU 경합으로 중단)를 각각 새 디렉토리로 실행했고 모두 보존한다. 저장소의 설정·코드 파일은 `live-03`의 `config.json`·`source/` 사본과 SHA-256이 같다. 아래 세 이미지가 최종 실행의 최초 정착 A/B와 전체 장면이며, 저장소에는 축소 JPEG 미리보기만 포함한다. 원본 1280×720 PNG는 `output/`(Git 제외)에 있고 SHA-256은 `manifest.json`과 [docs/images/isaac_shipyard/README.json](images/isaac_shipyard/README.json)에 기록했다.
+최종 기준 실행은 **`output/isaac-shipyard-20261010/live-03/`**이다(`--live`, 2026-10-09 22:37:50 UTC 시작). 이에 앞서 `draft-01`(초안 전체 장면 1장), `pair-01`·`pair-02`(A/B 튜닝), `live-01`(1차 Foxglove 전환 실행, 독립 리뷰 반영 전), `live-02`(리뷰 반영 중 GPU 경합으로 중단)를 각각 새 디렉토리로 실행했고 모두 보존한다. 저장소의 설정·코드 파일은 `live-03`의 `config.json`·`source/` 사본과 SHA-256이 같다. 아래 세 이미지가 최종 실행의 최초 정착 A/B와 전체 장면이며, 저장소에는 축소 JPEG 미리보기만 포함한다. 원본 1280×720 PNG는 `output/`(Git 제외)에 있고 SHA-256은 `manifest.json`과 [docs/images/isaac_shipyard/README.json](../images/isaac_shipyard/README.json)에 기록했다.
 
 | 이미지 | 미리보기 | 원본 |
 |---|---|---|
-| 전체 장면(A 자세) | ![전체 장면](images/isaac_shipyard/shipyard-live-03-A-overview.jpg) | `live-03/frames/A-overview.png` |
-| 손목 A — 반사가 메모 일부를 가림 | ![A 손목](images/isaac_shipyard/shipyard-live-03-A-wrist.jpg) | `live-03/frames/A-wrist.png` |
-| 손목 B — 같은 메모가 읽힘 | ![B 손목](images/isaac_shipyard/shipyard-live-03-B-wrist.jpg) | `live-03/frames/B-wrist.png` |
+| 전체 장면(A 자세) | ![전체 장면](../images/isaac_shipyard/shipyard-live-03-A-overview.jpg) | `live-03/frames/A-overview.png` |
+| 손목 A — 반사가 메모 일부를 가림 | ![A 손목](../images/isaac_shipyard/shipyard-live-03-A-wrist.jpg) | `live-03/frames/A-wrist.png` |
+| 손목 B — 같은 메모가 읽힘 | ![B 손목](../images/isaac_shipyard/shipyard-live-03-B-wrist.jpg) | `live-03/frames/B-wrist.png` |
 
 육안 검수 결과: A 손목 영상에서는 고정 작업등의 정반사 덩어리가 `BISB30N-15`의 `0N-` 부근에 겹쳐 식별자를 끝까지 읽을 수 없고(`BISB3`과 `15`는 보임), 동그라미 친 `J01`과 이음부로 향한 화살표는 보인다. B 손목 영상에서는 `BISB30N-15`, `J01`, 화살표, 이음부(가접·strongback)가 모두 보이고 반사는 메모 위쪽 프레임 상단으로 옮겨 가 있다. 전체 장면에서는 수직 3면 강판, 보강재, 이음부, 받침·클램프, 로봇 받침대, 삼각대 작업등, 바닥 케이블, 용접 전원·가스통, 어두운 대형 작업장이 보인다. **글자 확인은 육안 검수이며 OCR/VLM 측정 결과가 아니다.** 새 프레임에 대한 인식 실행은 하지 않았다.
 
@@ -32,7 +32,7 @@
 | ROS·Foxglove 스트림 | 아래 수신 표 참조 | Mac Foxglove 화면 자체의 육안 확인(서버 WebSocket 수신으로 대체) |
 | 인식·문서 연결 | 없음 | 이 장면의 인식→문서 검토→모의 전달, 자동 재촬영 폐루프 |
 
-서버 Foxglove WebSocket(`ws://127.0.0.1:8765`, subprotocol `foxglove.sdk.v1`)에 Foxglove 클라이언트와 같은 방식으로 접속해 수신을 검증했다. 검사 도구는 [check_isaac_scene_stream.py](../scripts/isaac/check_isaac_scene_stream.py)이며 CDR 페이로드를 직접 복호해 PNG를 디코딩한다.
+서버 Foxglove WebSocket(`ws://127.0.0.1:8765`, subprotocol `foxglove.sdk.v1`)에 Foxglove 클라이언트와 같은 방식으로 접속해 수신을 검증했다. 검사 도구는 [check_isaac_scene_stream.py](../../scripts/isaac/check_isaac_scene_stream.py)이며 CDR 페이로드를 직접 복호해 PNG를 디코딩한다.
 
 | 확인 항목 | live-03 결과 |
 |---|---|
@@ -47,7 +47,7 @@
 
 ## 장면과 경계
 
-실행 설정은 [shipyard_handwriting.json](../configs/isaac_scene/shipyard_handwriting.json), 장면 생성·촬영은 [run_isaac_shipyard_scene.py](../scripts/isaac/run_isaac_shipyard_scene.py), 수기 마킹·그라임 텍스처는 [isaac_shipyard_marking.py](../scripts/isaac/isaac_shipyard_marking.py), 로봇 이동은 기존 [isaac_scene_robot.py](../scripts/isaac/isaac_scene_robot.py)를 읽기 재사용한다. 좌표계는 USD z-up, 단위 m, 회전은 quaternion `wxyz`이며 로봇은 +x를 바라본다. 가운데 강판을 읽는 방향 기준으로 **+y가 왼쪽, -y가 오른쪽**이다.
+실행 설정은 [shipyard_handwriting.json](../../configs/isaac_scene/shipyard_handwriting.json), 장면 생성·촬영은 [run_isaac_shipyard_scene.py](../../scripts/isaac/run_isaac_shipyard_scene.py), 수기 마킹·그라임 텍스처는 [isaac_shipyard_marking.py](../../scripts/isaac/isaac_shipyard_marking.py), 로봇 이동은 기존 [isaac_scene_robot.py](../../scripts/isaac/isaac_scene_robot.py)를 읽기 재사용한다. 좌표계는 USD z-up, 단위 m, 회전은 quaternion `wxyz`이며 로봇은 +x를 바라본다. 가운데 강판을 읽는 방향 기준으로 **+y가 왼쪽, -y가 오른쪽**이다.
 
 | 항목 | 현재 설정 | 기존 기준 장면과의 관계 |
 |---|---|---|
@@ -73,7 +73,7 @@ A/B 사이에 형상·마킹·조명 위치와 세기·재질·노출을 바꾸�
 
 ### 합성 마킹과 자산 출처
 
-표기 `BISB30N-15`, `J01`, 동그라미, 화살표는 이 장면을 위해 그린 **합성 텍스처**다. TrueType 폰트를 쓰지 않고 [isaac_shipyard_marking.py](../scripts/isaac/isaac_shipyard_marking.py)에 직접 정의한 단일 획 글리프(`shipyard-stroke-glyphs.v2`)를 seed `20261010`으로 흔들어 그렸다. 획마다 폭·압력 변화, 시작부 고임, 획 폭보다 긴 실제 끊김(글자당 최대 1회), 마른 획의 결 무늬, 흔들림을 넣고 행 기울기(-1.56°, +2.80°)·자간·기울임을 어긋나게 했으며, 미세 입자, 방향성 번짐, 흘림, 고인 부분의 어두워짐을 더했다. 생성은 seed로 결정적이며 같은 입력에서 같은 파일 해시가 나온다(numpy 2.1/2.3, Pillow 11/12에서 확인). 바탕은 샵프라이머 색 (122, 128, 122)의 얼룩·롤러 자국·녹·긁힘을 절차적으로 생성했다. 식별자는 기존 시연 문서와의 후속 연결을 위한 합성 입력이며 실제 사진 정답이 아니다. 문서에 없는 용접 전류·재질·두께는 쓰지 않았다. 생성 방식·seed·문구·파일 해시는 실행마다 `assets/marking.json`과 `manifest.json`의 `asset_provenance`에 저장된다.
+표기 `BISB30N-15`, `J01`, 동그라미, 화살표는 이 장면을 위해 그린 **합성 텍스처**다. TrueType 폰트를 쓰지 않고 [isaac_shipyard_marking.py](../../scripts/isaac/isaac_shipyard_marking.py)에 직접 정의한 단일 획 글리프(`shipyard-stroke-glyphs.v2`)를 seed `20261010`으로 흔들어 그렸다. 획마다 폭·압력 변화, 시작부 고임, 획 폭보다 긴 실제 끊김(글자당 최대 1회), 마른 획의 결 무늬, 흔들림을 넣고 행 기울기(-1.56°, +2.80°)·자간·기울임을 어긋나게 했으며, 미세 입자, 방향성 번짐, 흘림, 고인 부분의 어두워짐을 더했다. 생성은 seed로 결정적이며 같은 입력에서 같은 파일 해시가 나온다(numpy 2.1/2.3, Pillow 11/12에서 확인). 바탕은 샵프라이머 색 (122, 128, 122)의 얼룩·롤러 자국·녹·긁힘을 절차적으로 생성했다. 식별자는 기존 시연 문서와의 후속 연결을 위한 합성 입력이며 실제 사진 정답이 아니다. 문서에 없는 용접 전류·재질·두께는 쓰지 않았다. 생성 방식·seed·문구·파일 해시는 실행마다 `assets/marking.json`과 `manifest.json`의 `asset_provenance`에 저장된다.
 
 | 자산 | 출처·생성 방식 |
 |---|---|
@@ -92,7 +92,7 @@ J01과 기존 문서 검토 자료의 `JOINT-DEMO-01` 연결은 `[확인 필요]
 
 ## Runpod에서 시작
 
-기존 [Pod 환경](POD_VER1.md)의 `/workspace/PAC2026`, Isaac 6.1 전용 환경, ROS Jazzy·domain 26·FastDDS, Foxglove bridge를 재사용한다. 새 설치·새 Pod·패키지 변경·bridge 재기동은 없었다. 아래는 서버 Bash용이며 실제 live-01에 사용한 명령이다. ROS 설정은 `set -u` 상태에서 실패할 수 있으므로 먼저 해제한다. Isaac runner와 송출기는 서로 다른 Python을 쓴다.
+기존 [Pod 환경](../setup/POD_VER1.md)의 `/workspace/PAC2026`, Isaac 6.1 전용 환경, ROS Jazzy·domain 26·FastDDS, Foxglove bridge를 재사용한다. 새 설치·새 Pod·패키지 변경·bridge 재기동은 없었다. 아래는 서버 Bash용이며 실제 live-01에 사용한 명령이다. ROS 설정은 `set -u` 상태에서 실패할 수 있으므로 먼저 해제한다. Isaac runner와 송출기는 서로 다른 Python을 쓴다.
 
 매번 **비어 있는 새 출력 디렉토리**를 만든다. runner는 `manifest.json` 유무와 관계없이 비어 있지 않은 디렉토리를 거절하므로, 로그·PID 파일은 출력 디렉토리 **밖**(아래처럼 `$scene_out.log`, `$scene_out.pid`)에 둔다. 기준 장면 문서처럼 `>"$scene_out/scene.log"`로 리다이렉트하면 셸이 먼저 파일을 만들어 실행이 거절된다. 실패한 실행도 보존하고 새 디렉토리로 재시도한다.
 
@@ -136,7 +136,7 @@ printf '%s\n' "$!" >"$scene_out-publisher.pid"
 
 ## 연결과 결과 확인
 
-Foxglove 토픽·타입·프레임은 기준 장면과 같다. 기존 레이아웃 `ContextWeld · 기준 장면 AB`([foxglove-baseline-layout.json](../configs/isaac_scene/foxglove-baseline-layout.json))를 그대로 쓰면 왼쪽 전체 장면·오른쪽 손목 Image 패널에 새 장면이 보인다. 서버 bridge는 `127.0.0.1:8765`, Mac의 기존 터널은 `ws://localhost:8765`다. 새 bridge·공개 포트는 만들지 않았다.
+Foxglove 토픽·타입·프레임은 기준 장면과 같다. 기존 레이아웃 `ContextWeld · 기준 장면 AB`([foxglove-baseline-layout.json](../../configs/isaac_scene/foxglove-baseline-layout.json))를 그대로 쓰면 왼쪽 전체 장면·오른쪽 손목 Image 패널에 새 장면이 보인다. 서버 bridge는 `127.0.0.1:8765`, Mac의 기존 터널은 `ws://localhost:8765`다. 새 bridge·공개 포트는 만들지 않았다.
 
 | Foxglove 항목 | 토픽·프레임 |
 |---|---|

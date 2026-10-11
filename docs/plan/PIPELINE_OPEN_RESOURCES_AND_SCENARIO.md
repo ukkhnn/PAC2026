@@ -2,7 +2,7 @@
 
 작성·웹 확인일: **2026-10-09**. 문서 정합 갱신일: **2026-10-10**. 입력은 사용자가 제공한 `mermaid-diagram.png`의 파이프라인이다. 공개 자료 탐색과 당시 확장 설계를 보존한 문서이며 새 모델 추론·로봇 프로그램 실행 결과가 아니다. 아래 외부 자료의 조사일은 10월 9일이며, 정합 갱신이 외부 자료 전체의 재조회를 뜻하지 않는다.
 
-**현재 구현은 [데모 스펙 v1.2](DEMO_SPEC.md), [OCR 구성 v1.1](OCR_PIPELINE_SPEC.md), [문서 적용 계획 v1.1](DOCUMENT_APPLICATION_PLAN.md)을 따른다.** 단일 반사·재촬영 시나리오를 실행·기록하고 로컬 관리자 화면에서 조회·재생한다. 아이디어 피칭이 목적이므로 실제 모델·문서 근거로 데모 흐름을 연결하는 것을 우선한다. 추가 사진·정량 비교·독립 평가는 선택 사항이다. 제조사 입력의 기준은 [현대·두산 입력 상세 명세](WELDING_ROBOT_INPUT_SPEC.md)다.
+**현재 구현은 [데모 스펙 v1.2](DEMO_SPEC.md), [OCR 구성 v1.1](../spec/OCR_PIPELINE_SPEC.md), [문서 적용 계획 v1.1](DOCUMENT_APPLICATION_PLAN.md)을 따른다.** 단일 반사·재촬영 시나리오를 실행·기록하고 로컬 관리자 화면에서 조회·재생한다. 아이디어 피칭이 목적이므로 실제 모델·문서 근거로 데모 흐름을 연결하는 것을 우선한다. 추가 사진·정량 비교·독립 평가는 선택 사항이다. 제조사 입력의 기준은 [현대·두산 입력 상세 명세](../spec/WELDING_ROBOT_INPUT_SPEC.md)다.
 
 | 이 조사 문서의 내용 | 현재 기준에서의 역할 |
 |---|---|
@@ -83,7 +83,7 @@ YOLO 계열을 쓸 수도 있다. 다만 [Ultralytics](https://github.com/ultral
 | [ezdxf](https://github.com/mozman/ezdxf), MIT | DXF TEXT/MTEXT·[LEADER](https://ezdxf.readthedocs.io/en/stable/dxfentities/leader.html)·[MLEADER](https://ezdxf.readthedocs.io/en/stable/dxfentities/mleader.html) | 블록·사용자 기호·분해된 선의 의미 대응. DXF가 있으면 원래 문자와 엔티티를 먼저 읽음 |
 | [Pydantic](https://github.com/pydantic/pydantic), MIT | 타입·필수 필드·구조 검증 | 단위 정규화, 문서 적용성·개정·상충 값 검사. JSON 형식 통과는 용접조건 승인과 다름 |
 
-**현재 초기 구성:** 사진 문자에는 PP-OCRv6 medium, 비문자 관측·관계 해석에는 Qwen3-VL-8B를 검증한다. OpenCV 등의 보조 처리와 전용 검출기 추가는 실제 오류를 보고 판단한다. 정확한 역할·관측/해석 분리·모델 고정·검증 기준은 [OCR 구성](OCR_PIPELINE_SPEC.md)에서 관리한다. 화살표·접합부 영역을 사람이 지정한 경우 그 사실을 표시한다. DINO/SAM과 RT-DETRv2는 조사 후보이며 현재 필수 구현으로 간주하지 않는다.
+**현재 초기 구성:** 사진 문자에는 PP-OCRv6 medium, 비문자 관측·관계 해석에는 Qwen3-VL-8B를 검증한다. OpenCV 등의 보조 처리와 전용 검출기 추가는 실제 오류를 보고 판단한다. 정확한 역할·관측/해석 분리·모델 고정·검증 기준은 [OCR 구성](../spec/OCR_PIPELINE_SPEC.md)에서 관리한다. 화살표·접합부 영역을 사람이 지정한 경우 그 사실을 표시한다. DINO/SAM과 RT-DETRv2는 조사 후보이며 현재 필수 구현으로 간주하지 않는다.
 
 문서 처리에는 텍스트 PDF 직접 추출, 스캔 문서 OCR, 표의 구조화·검수를 구분한다. **현재 문서 구성은 RAG와 정확 조회를 함께 구현하는 방향**이며, 작은 자료집의 전문 제공은 비교 기준선으로만 사용한다. 현재 작업·개정·WPS 연결은 정확 조회로 제한하고, 관련 설명·조항은 근거 검색으로 찾는다. BM25·다국어 임베딩의 후보·적재 계약·검증 기준은 [문서 적용 계획](DOCUMENT_APPLICATION_PLAN.md)을 따른다. 원문 페이지·표 셀·개정이 생성 답변까지 따라오도록 구성한다.
 
@@ -148,7 +148,7 @@ WPS, WPDS, PQR, 빈 양식을 동일한 “용접조건 정답 문서”로 취�
 | [LANL CAD Symbols](https://engstandards.lanl.gov/DM_symbols.shtml) | arrow-side/both-side fillet 등 DWG 기호 목록 | 목록·DWG 링크 확인. 개별 DWG 렌더·내용 추출은 [확인 필요] |
 | [AWS 무료 양식](https://www.aws.org/standards-and-publications/free-resources/) | 규격별 WPS·PQR 등 양식 | 공식 목록 확인. 무료 양식과 무료 승인 조건집은 다름 |
 | [TWI 용접기호](https://www.twi-global.com/technical-knowledge/job-knowledge/weld-symbols) | leader·기준선·보조기호·치수 이해 | 공식 해설 확인. 기업 수기 약어나 최신 표준 전문의 대체물은 아님 |
-| [한국선급 2026 규칙](https://www.krs.co.kr/KRRules/KRRules2026/KRRulesK.html) | 제2편 재료 및 용접 등 국문 기준 | 기존 [출처 조사](SOURCES.md)의 후보. 적용 규칙·회보와 실제 승인 WPS는 별도. 이번 조사에서는 개별 조항을 검수하지 않음 |
+| [한국선급 2026 규칙](https://www.krs.co.kr/KRRules/KRRules2026/KRRulesK.html) | 제2편 재료 및 용접 등 국문 기준 | 기존 [출처 조사](../sources/SOURCES.md)의 후보. 적용 규칙·회보와 실제 승인 WPS는 별도. 이번 조사에서는 개별 조항을 검수하지 않음 |
 | [KOBELCO 조선용 재료표](https://www.kobelco-welding.jp/products/recommended-materials/index.html) | 부위·이음·자세·공정·용접재료 대응 | 기존 출처 조사의 보조 후보. 제조사 권장표를 대상 현장의 승인조건으로 바꾸지 않음 |
 
 CWB는 문서에 저작권 보유를 표시하고 LANL도 사이트에 권리 고지를 둔다. 따라서 **공개 열람 가능**과 **자유 재배포·학습 허용**을 구분한다. 이번 산출물은 링크와 필요한 사실 요약만 포함하며 원문 PDF·그림을 묶어 재배포하지 않는다. ISO/AWS 표준 전문을 무료 공개 데이터셋으로 간주하지 않는다.
@@ -265,7 +265,7 @@ CWB는 문서에 저작권 보유를 표시하고 LANL도 사이트에 권리 �
 | 패스·위빙 | 패스별 경로와 위빙 수치 미확인 | 시작·종료·위빙/WDB 조건번호 미확인 |
 | 출력 | 가상 등록 작업 `DOOSAN_DEMO_PCC005` 후보 | 가상 등록 작업 `HYUNDAI_DEMO_PCC005` 후보 |
 
-두 등록명은 직접 만든 예시다. 실제 로봇에 존재하거나 실행 가능한 프로그램이 아니다. 자세한 매핑은 [제조사 입력 상세 명세](WELDING_ROBOT_INPUT_SPEC.md)에 있다.
+두 등록명은 직접 만든 예시다. 실제 로봇에 존재하거나 실행 가능한 프로그램이 아니다. 자세한 매핑은 [제조사 입력 상세 명세](../spec/WELDING_ROBOT_INPUT_SPEC.md)에 있다.
 
 ### 5.6 같은 시나리오에서 확인할 분기
 
@@ -288,7 +288,7 @@ CWB는 문서에 저작권 보유를 표시하고 LANL도 사이트에 권리 �
 | Open3D | CAD에서 얻은 점군과 센서 점군 정합, ICP 등 | 초기 정렬·겹치는 형상·점군 품질 필요. 정합 결과의 오차와 실패 검사를 별도로 둠 | [코드, MIT](https://github.com/isl-org/Open3D), [ICP](https://www.open3d.org/docs/release/tutorial/pipelines/icp_registration.html) |
 | Open CASCADE | STEP 등 CAD 형상과 면·모서리 처리 | CAD의 모서리가 실제 용접 대상이라는 의미는 별도 작업 명세에서 부여 | [OCCT](https://github.com/Open-Cascade-SAS/OCCT); LGPL-2.1 및 예외 조항은 저장소 확인 |
 | MoveIt 2 | 로봇 기구학·도달성·자기/환경 충돌 검토 | URDF/SRDF, 실제 토치·지그·환경·관절 상태 필요. 용접조건 승인 기능은 아님 | [코드](https://github.com/moveit/moveit2), [Planning Scene](https://moveit.picknik.ai/main/doc/examples/planning_scene/planning_scene_tutorial.html) |
-| 제조사 템플릿·장비 프로파일 | 공통 작업을 DRL·Hi6 조건/작업에 대응 | 제어기 버전과 용접기 인터페이스별 매핑 필요 | [제조사 입력 상세 명세](WELDING_ROBOT_INPUT_SPEC.md) |
+| 제조사 템플릿·장비 프로파일 | 공통 작업을 DRL·Hi6 조건/작업에 대응 | 제어기 버전과 용접기 인터페이스별 매핑 필요 | [제조사 입력 상세 명세](../spec/WELDING_ROBOT_INPUT_SPEC.md) |
 
 **현재 시연의 마지막 출력은 데모 스펙에서 정한 파라미터 생성·모의 수신이다.** 위 도구는 향후 실제 용접 경로를 생성할 때의 조사 후보이며, 현재 데모를 완료하기 위한 설치 목록이 아니다. 실제 등록 작업을 선택·실행하는 경우에는 해당 셀·지그·개정, TCP·토치 자세·접근/이탈 경로를 별도로 확인해야 한다.
 
@@ -296,7 +296,7 @@ CWB는 문서에 저작권 보유를 표시하고 LANL도 사이트에 권리 �
 
 ## 7. 당시 조사에서 제안한 검증 단위
 
-아래 표는 조사 후보를 시험할 때의 참고 순서다. 현재 데모의 필수·선택 범위와 실행 순서는 [데모 스펙](DEMO_SPEC.md), [OCR 구성](OCR_PIPELINE_SPEC.md), [문서 적용 계획](DOCUMENT_APPLICATION_PLAN.md), [마일스톤](MILESTONES.md)을 따른다. 특히 6번의 실기 검토는 현재 데모 완료 조건에 포함하지 않는다.
+아래 표는 조사 후보를 시험할 때의 참고 순서다. 현재 데모의 필수·선택 범위와 실행 순서는 [데모 스펙](DEMO_SPEC.md), [OCR 구성](../spec/OCR_PIPELINE_SPEC.md), [문서 적용 계획](DOCUMENT_APPLICATION_PLAN.md), [마일스톤](MILESTONES.md)을 따른다. 특히 6번의 실기 검토는 현재 데모 완료 조건에 포함하지 않는다.
 
 | 순서 | 작은 검증 단위 | 기록할 결과 |
 |---|---|---|
@@ -307,6 +307,6 @@ CWB는 문서에 저작권 보유를 표시하고 LANL도 사이트에 권리 �
 | 5 | 두산·현대 변환안 비교 | 필드/단위 대응, 지원하지 않는 값, 필요한 등록 조건 |
 | 6 | 실제 장비 정보를 받은 뒤 좌표·경로 검토 | 보정 오차, 도달성, 충돌, 장비별 dry run 결과 |
 
-현재 저장소의 [기존 인식 실험](../experiments/REPORT-2026-10-09.md)은 공개 사진 10장 중 채점 대상 9장·28개 표기에서 전체 이미지 인식의 최고 완전 일치가 1/28이었다. 따라서 새 모델을 적용하면 해결된다고 가정하지 않는다. 기존 10장은 개발 표본으로 유지하고 새 촬영 묶음에서 검증한다.
+현재 저장소의 [기존 인식 실험](../../experiments/REPORT-2026-10-09.md)은 공개 사진 10장 중 채점 대상 9장·28개 표기에서 전체 이미지 인식의 최고 완전 일치가 1/28이었다. 따라서 새 모델을 적용하면 해결된다고 가정하지 않는다. 기존 10장은 개발 표본으로 유지하고 새 촬영 묶음에서 검증한다.
 
 이번 문서에서 제안한 모델·시나리오의 성능은 **미측정**이다. 문서에 나타난 예시 출력과 합성 작업지시는 실제 모델 출력·실제 현장 작업·실행 승인으로 사용하지 않는다.

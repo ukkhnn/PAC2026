@@ -54,4 +54,4 @@ python3 experiments/verify.py
 - 회전본·같은 부재의 사진을 새 독립 표본으로 세지 않는다.
 - 필요한 비교만 진행한다. 미실행 항목을 계획표에서 완료로 표시하지 않는다.
 
-설계 배경은 [개발 기획](../docs/DEVELOPMENT_PLAN.md)에 있다.
+설계 배경은 [개발 기획](../docs/plan/DEVELOPMENT_PLAN.md)에 있다.

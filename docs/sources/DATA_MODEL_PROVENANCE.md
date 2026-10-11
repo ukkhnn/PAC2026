@@ -2,7 +2,7 @@
 
 확인일: **2026-10-10 (Asia/Seoul)**. 저장소 기준 커밋: `945132109b01ea7da38f6ebff68637b0c73fa9cd`.
 
-실제 확보 파일, 실행 설정, 결과에 남은 출처를 모았다. 원문 주소·고정 revision·파일 SHA-256·가공 과정·사용 실행·라이선스 확인 수준을 [기계 판독용 출처 목록](../configs/data_model_provenance.json)에 함께 보존한다. 이 문서는 그 목록을 읽기 위한 안내다.
+실제 확보 파일, 실행 설정, 결과에 남은 출처를 모았다. 원문 주소·고정 revision·파일 SHA-256·가공 과정·사용 실행·라이선스 확인 수준을 [기계 판독용 출처 목록](../../configs/data_model_provenance.json)에 함께 보존한다. 이 문서는 그 목록을 읽기 위한 안내다.
 
 현재 데모 입력, 과거 실험, 설계가 무효화된 CTX-001, 검토만 한 후보를 구분한다. 과거 실험 결과는 현재 성능 근거에서 제외하며, 원본 기록은 출처 추적을 위해 보존한다. 진행 중인 새 실험의 최종 입력·모델 manifest는 이번 목록에 아직 고정하지 않았다. `[확인 필요]`는 확인하지 못한 사실이며, 빈 revision이나 해시를 추정해서 채우지 않는다.
 
@@ -24,7 +24,7 @@
 - 배포 페이지: [Steel OCR Dataset 960](https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960).
 - 사용 revision: `37725284f40deeaccbdeb3734be7b0e90e974305`.
 - 배포자 카드가 연결한 관련 코드: [image-recog](https://github.com/solution-futureindustry-2025-teamB/image-recog). 계정명만으로 원 촬영자·촬영 사업장·권리자를 확정하지 않는다.
-- 선택 규칙: `train` 이미지 경로의 UTF-8 문자열을 SHA-256으로 정렬한 앞 10개. [원본 manifest](../experiments/e1_ocr/manifest.json)와 [확보 설정](../configs/demo_data_sources.json)에 기록되어 있다.
+- 선택 규칙: `train` 이미지 경로의 UTF-8 문자열을 SHA-256으로 정렬한 앞 10개. [원본 manifest](../../experiments/e1_ocr/manifest.json)와 [확보 설정](../../configs/demo_data_sources.json)에 기록되어 있다.
 - 배포자 문자·다각형 정답을 사용한다. 과거 E1의 채점 대상은 28개 표기이며, `difficult=true`인 S10의 표기 1개는 제외했다. 독립 재라벨링은 하지 않았다.
 - 고정 다운로드의 `train.txt`는 156행, 데이터 카드 설명은 학습 이미지 222장이다. `[확인 필요]` 이 차이를 전체 표본 수로 해석하지 않으며, 실제 사용 수는 manifest의 10장이다.
 
@@ -47,7 +47,7 @@
 
 **라이선스 확인 수준:** 고정 카드의 YAML과 현재 배포 페이지는 MIT를 선언한다. 고정 파일 목록에 별도 LICENSE 파일은 확인되지 않았고, 원 사진의 촬영자·촬영 위치·별도 권리 관계는 `[확인 필요]`다. 사진만으로 재질·두께·적용 WPS를 확정하지 않는다.
 
-원본 크기 데이터셋 [steel-ocr-dataset](https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset)의 revision `cc1d729fc0e9e78945ee63463ee7f6e3e8d1b395`에서는 **test 파일명 14개 목록만** 확인했다. [분할 점검 기록](../experiments/e1_ocr/split-audit.json)의 파일명 중복 확인에 사용했으며, 이 test 이미지로 평가한 기록은 없다. 파일명 중복이 없다는 사실이 시각적 독립성을 보장하지는 않는다.
+원본 크기 데이터셋 [steel-ocr-dataset](https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset)의 revision `cc1d729fc0e9e78945ee63463ee7f6e3e8d1b395`에서는 **test 파일명 14개 목록만** 확인했다. [분할 점검 기록](../../experiments/e1_ocr/split-audit.json)의 파일명 중복 확인에 사용했으며, 이 test 이미지로 평가한 기록은 없다. 파일명 중복이 없다는 사실이 시각적 독립성을 보장하지는 않는다.
 
 ## 3. 공개 문서와 원문 근거
 
@@ -69,7 +69,7 @@
 
 PDF는 `pdfplumber 0.11.10`으로 페이지·단어 좌표·표를 추출했다. 자동 표 분할은 전부 검수된 것이 아니다. TWI의 텍스트 추출에는 그림 속 기호가 포함되지 않는다. 일반 인덱스의 `revision=null`은 원래 값을 유지한다. 이후 확인한 WTS 표제와 WPS 검수본의 개정 정보를 별도 필드에 기록했다. Hyundai 자료는 원격 commit이 고정되지 않은 브랜치 URL이므로, 확보 당시 파일의 동일성은 위 해시로 구분한다.
 
-WPS의 파생 검수본은 [lanl-wps-3501-reviewed.json](../data/knowledge/lanl-wps-3501-reviewed.json)이다. 원문 SHA, 페이지, bounding box, 원문 값과 정규화 값을 연결한다. 텍스트·페이지 렌더를 대조한 선택 필드의 전사 검수이며, 사람의 도메인 검토나 현장 적용 승인을 뜻하지 않는다. 검수 범위 밖의 필드까지 검수된 것으로 확장하지 않는다.
+WPS의 파생 검수본은 [lanl-wps-3501-reviewed.json](../../data/knowledge/lanl-wps-3501-reviewed.json)이다. 원문 SHA, 페이지, bounding box, 원문 값과 정규화 값을 연결한다. 텍스트·페이지 렌더를 대조한 선택 필드의 전사 검수이며, 사람의 도메인 검토나 현장 적용 승인을 뜻하지 않는다. 검수 범위 밖의 필드까지 검수된 것으로 확장하지 않는다.
 
 4개 문서는 공식 원문 접근을 확인했다. 별도 재배포 라이선스는 `[확인 필요]`로 기록한다. 다운로드 당시의 `content_reviewed=false` 등은 JSON의 `acquisition_review_snapshot`에 보존하고, 이후 추출 및 선택 WPS 전사 검수와 구분한다.
 
@@ -108,10 +108,10 @@ RapidOCR의 3개 ONNX는 로컬 바이트를 다시 해시하여 당시 실행 �
 |---|---|---|
 | `e1-derived-roi-rotations` | 공개 정답 다각형에서 28개 ROI, 여백 5%·최소 2px, 회전 입력 생성 | JSON에 원본 ID·좌표·crop 해시. GT 위치를 사용하는 진단을 전체 검출 성능으로 해석하지 않음 |
 | `e1-control-image` | `ABC123 B-108`을 Monaco 글꼴로 그린 제어 이미지 | 엔진 동작 확인용, 본 채점 제외. 실제 글꼴 버전·해시 미보존 |
-| `e2-authored-corpus-questions` | TWI 글을 바탕으로 작성한 영문 요약 6개·140단어, 질문 9개·평가기준 | [corpus](../experiments/e2_documents/corpus.json), [questions](../experiments/e2_documents/questions.json), [rubric](../experiments/e2_documents/rubric.json). 원문 전체나 독립 전문가 평가셋이 아님 |
-| `e4-synthetic-orders` | 공개 사진의 정답 부재번호에서 가상 작업지시 작성 | [E4 자료](../experiments/e4_linking/). 실제 생산 지시와의 일치 정답이 아님. E5는 저장된 E2 출력·검사 fixture 사용 |
-| `first-scene-fixture` | 수동 문자 후보·지시·revision을 작성 | [part-order-scene.json](../data/examples/part-order-scene.json). 초기 동작 예시 |
-| `document-demo-fixtures` | 저장된 S07 / `frame-007` 관측을 키로 시연 지시·도면 작성 | [work_orders](../configs/document_demo/work_orders.json), [drawing](../configs/document_demo/drawing.json), [SVG](../configs/document_demo/drawing.svg), [scenario](../configs/document_demo/scenario.json), [target_profile](../configs/document_demo/target_profile.json) |
+| `e2-authored-corpus-questions` | TWI 글을 바탕으로 작성한 영문 요약 6개·140단어, 질문 9개·평가기준 | [corpus](../../experiments/e2_documents/corpus.json), [questions](../../experiments/e2_documents/questions.json), [rubric](../../experiments/e2_documents/rubric.json). 원문 전체나 독립 전문가 평가셋이 아님 |
+| `e4-synthetic-orders` | 공개 사진의 정답 부재번호에서 가상 작업지시 작성 | [E4 자료](../../experiments/e4_linking). 실제 생산 지시와의 일치 정답이 아님. E5는 저장된 E2 출력·검사 fixture 사용 |
+| `first-scene-fixture` | 수동 문자 후보·지시·revision을 작성 | [part-order-scene.json](../../data/examples/part-order-scene.json). 초기 동작 예시 |
+| `document-demo-fixtures` | 저장된 S07 / `frame-007` 관측을 키로 시연 지시·도면 작성 | [work_orders](../../configs/document_demo/work_orders.json), [drawing](../../configs/document_demo/drawing.json), [SVG](../../configs/document_demo/drawing.svg), [scenario](../../configs/document_demo/scenario.json), [target_profile](../../configs/document_demo/target_profile.json) |
 | `unit-test-fixtures` | 코드에서 작성한 이미지·관측·문서 조각·응답 | 테스트 입력. 실제 모델 추론 결과나 현장 표본으로 합산하지 않음 |
 
 시연 문서의 `BISB30N-15`는 저장된 실제 인식 결과를 그대로 연결한 키다. 배포자 정답으로 교정한 값이라고 주장하지 않는다. `WO-DEMO-015`, `DRAWING-DEMO-015`, `JOINT-DEMO-01`과 FCAW/A36/flat 등의 조건은 작성한 시연 가정이다. 해당 사진에서 실측한 형상·재질·두께나 현장 승인 문서를 뜻하지 않는다.
@@ -124,8 +124,8 @@ RapidOCR의 3개 ONNX는 로컬 바이트를 다시 해시하여 당시 실행 �
 
 | 장면 | 입력·생성 출처 | 보존 위치 |
 |---|---|---|
-| 기존 야간 작업장 `night-welding-glare-01` | [설정](../configs/isaac_scene/night_welding.json), [생성 코드](../scripts/isaac/run_isaac_welding_scene.py), DejaVuSansMono-Bold 텍스처 | `output/isaac-scene-20261010/live-01/manifest.json` 및 A/B wrist·overview PNG |
-| 조선소 수기 `shipyard-handwriting-glare-01` | [설정](../configs/isaac_scene/shipyard_handwriting.json), [장면 코드](../scripts/isaac/run_isaac_shipyard_scene.py), [수기 생성 코드](../scripts/isaac/isaac_shipyard_marking.py) | `output/context-ablation-20261010/isaac-live-03/manifest.json` 및 A/B wrist·overview PNG |
+| 기존 야간 작업장 `night-welding-glare-01` | [설정](../../configs/isaac_scene/night_welding.json), [생성 코드](../../scripts/isaac/run_isaac_welding_scene.py), DejaVuSansMono-Bold 텍스처 | `output/isaac-scene-20261010/live-01/manifest.json` 및 A/B wrist·overview PNG |
+| 조선소 수기 `shipyard-handwriting-glare-01` | [설정](../../configs/isaac_scene/shipyard_handwriting.json), [장면 코드](../../scripts/isaac/run_isaac_shipyard_scene.py), [수기 생성 코드](../../scripts/isaac/isaac_shipyard_marking.py) | `output/context-ablation-20261010/isaac-live-03/manifest.json` 및 A/B wrist·overview PNG |
 
 조선소 수기는 실제 사진의 문자를 베낀 것이 아니라 `shipyard-stroke-glyphs.v2`, seed `20261010`으로 생성한 획이다. 이 수기 생성에는 외부 글꼴을 사용하지 않는다. 패널·작업장 형상은 USD 기본 도형으로 작성했으며, 외부 로봇 모델은 [NVIDIA Isaac 6.1 자산 라이브러리의 UR10 USD](https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.1/Isaac/Robots/UniversalRobots/ur10/ur10.usd)를 참조한다.
 
@@ -134,7 +134,7 @@ RapidOCR의 3개 ONNX는 로컬 바이트를 다시 해시하여 당시 실행 �
 - A: `8ee7e159d0723b89592272958924edaf5aecb6cba52d0bcf24eee9ff8fdb3802`
 - B: `2492583e4c354790765fef7f80aabcd8025edbfe8d020f13338942e6b34e70d8`
 
-[공개 JPEG 미리보기 기록](images/isaac_shipyard/README.json)은 이 PNG의 파생물이다. `output/recapture-handoff-20261010/inputs`도 같은 저장 프레임의 사본이며, 새로 수집한 데이터가 아니다. 해당 재촬영 연결 준비물에는 실제 모델 추론 완료 기록이 없다.
+[공개 JPEG 미리보기 기록](../images/isaac_shipyard/README.json)은 이 PNG의 파생물이다. `output/recapture-handoff-20261010/inputs`도 같은 저장 프레임의 사본이며, 새로 수집한 데이터가 아니다. 해당 재촬영 연결 준비물에는 실제 모델 추론 완료 기록이 없다.
 
 Isaac 코드와 추가 구성 요소·자산·텍스처의 조건은 [공식 법적 고지](https://docs.isaacsim.omniverse.nvidia.com/latest/common/legal.html)와 [추가 소프트웨어·자료 라이선스](https://www.nvidia.com/en-us/agreements/enterprise-software/isaac-sim-additional-software-and-materials-license/)를 구분해 기록했다. UR10 본체·하위 자산의 정확한 파일 해시와 개별 조건은 `[확인 필요]`다. 기존 장면의 [DejaVu 라이선스](https://dejavu-fonts.github.io/License.html)는 확인했지만 실제 설치 글꼴 파일의 버전·해시는 남지 않았다. manifest의 marking 해시는 **생성 이미지의 해시**이며 글꼴 해시가 아니다.
 
@@ -158,7 +158,7 @@ Isaac 코드와 추가 구성 요소·자산·텍스처의 조건은 [공식 법
 
 실행 근거가 없는 모델은 `investigated_not_used`에 분리했다. Korean PP-OCRv5 recognizer, PaddleOCR-VL-1.6, Granite Docling, Qwen3-VL-4B, Grounding DINO, SAM2.1, RT-DETRv2, BGE-M3가 해당한다. Docling·YOLO도 조사 항목이며 사용 checkpoint가 확정된 실행으로 기록하지 않는다.
 
-MPSC/RFN, KR Rules 2026, KOBELCO 자료, weldCalloutIdentifier, Zenodo shipyard 자료는 조사한 후보 출처다. 실제 사용 파일로 편입했다는 근거가 없어 다운로드·실행 목록에 합치지 않았다. 기존 후보 검토는 [오픈 자원·시나리오 문서](PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md), 원출처 URL은 JSON에서 확인할 수 있다.
+MPSC/RFN, KR Rules 2026, KOBELCO 자료, weldCalloutIdentifier, Zenodo shipyard 자료는 조사한 후보 출처다. 실제 사용 파일로 편입했다는 근거가 없어 다운로드·실행 목록에 합치지 않았다. 기존 후보 검토는 [오픈 자원·시나리오 문서](../plan/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md), 원출처 URL은 JSON에서 확인할 수 있다.
 
 ## 9. 이번 점검 결과와 남은 출처 정보
 

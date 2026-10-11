@@ -37,7 +37,7 @@
 <button type="button" class="print" id="print">인쇄 / PDF 저장</button>
 </aside>
 <main id="main">
-<div class="note" role="note"><p><strong>과거 설계·학습 자료 · 2026-10-10 현재 범위 구분</strong></p><p>이 문서는 2026-10-05의 조사와 설계 제안을 보존한 자료다. 현재 구현의 기준은 <a href="DEMO_SPEC.md">데모 스펙</a>, <a href="OCR_PIPELINE_SPEC.md">OCR 명세</a>, <a href="DOCUMENT_APPLICATION_PLAN.md">문서 적용 계획</a>, <a href="WELDING_ROBOT_INPUT_SPEC.md">제조사 입력 명세</a>다. 시뮬레이션·추론·모의 전달은 서버에서 실행·기록하고, 로컬 화면은 내려받은 기록을 읽기 전용으로 재생한다.</p><p>아래의 Work Memory·후속 작업 이력 참조·학습·현장 시스템 연동은 과거 확장 제안이며 현재 구현 범위가 아니다. 현재는 사용자 수정을 별도 저장하고, 명시적 요청에 한해 새 실행으로 재검토한다. 다른 작업 이력 자동 참조·자동 학습·자동 재전송은 제외한다. 현재 목표는 아이디어 피칭이며, 한 시나리오의 실제 모델·문서 근거·모의 전달 연결과 소량 기능 확인을 우선한다. 아래의 엄밀한 비교·독립 평가·정량 성능 기준은 후속 선택이며 데모 완료 조건이 아니다. 외부 자료는 최초 조사일의 기록이며 이번에 재검증하지 않았다.</p></div>
+<div class="note" role="note"><p><strong>과거 설계·학습 자료 · 2026-10-10 현재 범위 구분</strong></p><p>이 문서는 2026-10-05의 조사와 설계 제안을 보존한 자료다. 현재 구현의 기준은 <a href="../plan/DEMO_SPEC.md">데모 스펙</a>, <a href="../spec/OCR_PIPELINE_SPEC.md">OCR 명세</a>, <a href="../plan/DOCUMENT_APPLICATION_PLAN.md">문서 적용 계획</a>, <a href="../spec/WELDING_ROBOT_INPUT_SPEC.md">제조사 입력 명세</a>다. 시뮬레이션·추론·모의 전달은 서버에서 실행·기록하고, 로컬 화면은 내려받은 기록을 읽기 전용으로 재생한다.</p><p>아래의 Work Memory·후속 작업 이력 참조·학습·현장 시스템 연동은 과거 확장 제안이며 현재 구현 범위가 아니다. 현재는 사용자 수정을 별도 저장하고, 명시적 요청에 한해 새 실행으로 재검토한다. 다른 작업 이력 자동 참조·자동 학습·자동 재전송은 제외한다. 현재 목표는 아이디어 피칭이며, 한 시나리오의 실제 모델·문서 근거·모의 전달 연결과 소량 기능 확인을 우선한다. 아래의 엄밀한 비교·독립 평가·정량 성능 기준은 후속 선택이며 데모 완료 조건이 아니다. 외부 자료는 최초 조사일의 기록이며 이번에 재검증하지 않았다.</p></div>
 
 <header class="hero">
 <div class="eyebrow">PAC2026 · HD현대로보틱스 미션 03</div>
@@ -177,7 +177,7 @@
 <tr><td>실행·완료 판단</td><td>계획된 작업을 완료로 취급, 가용접을 본 용접으로 오인</td><td>상태·이벤트·확인 이력 분리</td></tr>
 </tbody></table></div>
 <h3>미션에서 요구하는 것과 아직 모르는 것</h3>
-<div class="grid"><div class="card"><h4>원문에서 요구하는 것</h4><ul><li>정형 마킹과 비정형 수기 인식</li><li>복수 표기의 관계와 작업 의미 해석</li><li>제공된 규칙·기준과 대조</li><li>모호한 후보 제시와 작업자 확인</li><li>문자·의미 정확도, 원본부터 추천까지 추적성</li><li>향후 제어·프로그램 연계 가능한 데이터 구조</li></ul><p class="source"><a href="references/mission-03.pdf">미션 정의서 1~2쪽 [1]</a></p></div><div class="card"><h4>[확인 필요] 보장되지 않은 것</h4><ul><li>사진마다 부재 ID·MES 정보가 오는지</li><li>대상 공정이 라인인지, 블록 내 작업인지</li><li>실제 표기사전·WPS의 형식과 제공 범위</li><li>동일 형상 부재의 식별 방식</li><li>자동 설정의 허용 범위와 확인 권한</li><li>로봇 출력 형식 및 평가 정답의 단위</li></ul></div></div>
+<div class="grid"><div class="card"><h4>원문에서 요구하는 것</h4><ul><li>정형 마킹과 비정형 수기 인식</li><li>복수 표기의 관계와 작업 의미 해석</li><li>제공된 규칙·기준과 대조</li><li>모호한 후보 제시와 작업자 확인</li><li>문자·의미 정확도, 원본부터 추천까지 추적성</li><li>향후 제어·프로그램 연계 가능한 데이터 구조</li></ul><p class="source"><a href="../references/mission-03.pdf">미션 정의서 1~2쪽 [1]</a></p></div><div class="card"><h4>[확인 필요] 보장되지 않은 것</h4><ul><li>사진마다 부재 ID·MES 정보가 오는지</li><li>대상 공정이 라인인지, 블록 내 작업인지</li><li>실제 표기사전·WPS의 형식과 제공 범위</li><li>동일 형상 부재의 식별 방식</li><li>자동 설정의 허용 범위와 확인 권한</li><li>로봇 출력 형식 및 평가 정답의 단위</li></ul></div></div>
 <h3>회의에서 바로잡아야 할 지표 표현</h3>
 <p><strong>“오탐을 줄이려면 recall이 높아야 한다”는 말은 그대로 쓰기 어려워.</strong> 무엇을 양성으로 정의하는지 먼저 정해야 해. 예를 들어 “위험해서 사람에게 보내야 하는 사례”를 양성으로 잡으면, 그 사례를 놓치지 않는 비율이 위험 사례의 재현율이야. 반대로 표기 검출에서 오탐을 줄이는 문제는 정밀도와 직접 관계돼.</p>
 <p>[추론] 이 과제에서는 <strong>잘못된 자동 확정률</strong>과 <strong>자동 처리율</strong>을 함께 보고, 위험 사례 확인 요청 재현율·작업자 검토 시간까지 보자. 모든 것을 보류하면 오류율이 낮아져도 업무 개선이라고 말하기 어려워.</p>
@@ -258,7 +258,7 @@
 <ol><li><strong>원본 영역과 주변 장면:</strong> 무엇을 읽었고 어느 부재인지.</li><li><strong>대안 후보:</strong> a6/a8처럼 차이가 나는 항목을 선명하게 표시.</li><li><strong>맥락의 출처:</strong> 부재 연결 근거, 도면·WPS 버전과 해당 항목.</li><li><strong>확인 이유:</strong> 인식 모호 / 대상 미식별 / 기준 충돌 / 필수 정보 누락.</li><li><strong>결정과 범위:</strong> 승인·수정·보류, 현재 작업에만 적용할지, 추가 근거가 필요한지.</li></ol>
 <h3>멘토에게 우선 확인할 여섯 가지</h3>
 <ol><li><strong>한 장면 확보:</strong> 실제 사진과 그 사진의 올바른 작업 해석을 함께 볼 수 있는가?</li><li><strong>표기 규칙:</strong> 표준 기호와 자체 약어의 비율, 덧쓰기·취소 표기의 규칙은 무엇인가?</li><li><strong>대상 식별:</strong> 부재·용접부 ID를 촬영 시점에 어떻게 알 수 있는가?</li><li><strong>기준 자료:</strong> 도면·작업지시·WPS 중 무엇을 제공하며 개정·변경 승인은 어떻게 관리하는가?</li><li><strong>자동화 경계:</strong> 조건 후보, 프로그램 선택, 실제 제어 중 어디까지가 평가 대상인가?</li><li><strong>실패 비용:</strong> 무엇을 반드시 사람에게 보내야 하며, 정답 판정과 승인은 누가 하는가?</li></ol>
-<div class="note"><p><strong>과거 spike-demo와 현재 dev는 달라.</strong> 10월 5일에 참고한 spike-demo에는 합성 사례·사진 OCR 연결·시연 규칙·확인 이력·내보내기가 있었지만 현재 dev로 승계하지 않았어. 현재 제품 기능은 <a href="FIRST_SCENE.md">후보 → 유효 작업지시 연결 CLI</a>이고, 별도 실험은 <a href="../experiments/REPORT-2026-10-09.md">개발 표본 레포트</a>를 봐. 이 가이드의 전체 흐름·현장 성능을 구현 완료로 취급하지 않아.</p></div>
+<div class="note"><p><strong>과거 spike-demo와 현재 dev는 달라.</strong> 10월 5일에 참고한 spike-demo에는 합성 사례·사진 OCR 연결·시연 규칙·확인 이력·내보내기가 있었지만 현재 dev로 승계하지 않았어. 현재 제품 기능은 <a href="../runs/FIRST_SCENE.md">후보 → 유효 작업지시 연결 CLI</a>이고, 별도 실험은 <a href="../../experiments/REPORT-2026-10-09.md">개발 표본 레포트</a>를 봐. 이 가이드의 전체 흐름·현장 성능을 구현 완료로 취급하지 않아.</p></div>
 </section>
 
 <section id="direction">
@@ -273,7 +273,7 @@
 <footer id="sources" class="refs">
 <h3>출처와 적용 범위</h3><p>외부 자료 확인일: 2026-10-05. 일반 용접 지식과 공급사의 공개 사례를 참고했으며, 대상 기업의 내부 운영 방식으로 일반화하지 않았어. 표준의 실제 적용판·계약 조건은 현장에서 확인해야 해.</p>
 <ol>
-<li id="ref-mission"><a href="references/mission-03.pdf">PAC2026 HD현대로보틱스 미션 03</a>, 1~2쪽. 요구 기능과 필수 고려사항. <a href="https://ainnov.co.kr/public/assets/download/pac/pac2026_hd-hyundai-robotics_mission_3.pdf">공식 원문 주소</a>. 로컬 PDF에는 예시 사진·영상·참고 링크가 채워져 있지 않아.</li>
+<li id="ref-mission"><a href="../references/mission-03.pdf">PAC2026 HD현대로보틱스 미션 03</a>, 1~2쪽. 요구 기능과 필수 고려사항. <a href="https://ainnov.co.kr/public/assets/download/pac/pac2026_hd-hyundai-robotics_mission_3.pdf">공식 원문 주소</a>. 로컬 PDF에는 예시 사진·영상·참고 링크가 채워져 있지 않아.</li>
 <li id="ref-basics"><a href="https://www.twi-global.com/technical-knowledge/faqs/what-is-welding">TWI · What is Welding?</a> 이음·모재·용가재·용입·열영향부 등의 기초 용어. 특정 현장 공정의 빈도나 적용 조건에 대한 근거는 아니야.</li>
 <li id="ref-symbols"><a href="https://www.twi-global.com/technical-knowledge/job-knowledge/weld-symbols">TWI · A review of the application of weld symbols on drawings</a> 표기 구조와 치수의 입문 설명. 구판 표준 설명이 포함되어 체계 구분은 ISO 자료와 함께 확인했어.</li>
 <li id="ref-iso"><a href="https://www.iso.org/obp/ui?_escaped_fragment_=iso:std:iso:2553:ed-5:v2:en">ISO 2553:2019 · 공개 개요와 용어</a> System A/B, 기호 구성과 치수 정의. 유료 표준 전체를 재현한 문서가 아니야.</li>

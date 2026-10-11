@@ -1,6 +1,6 @@
 # Runpod 실제 인식과 문서 검색
 
-기준일: **2026-10-10**. [자료 준비](RUNPOD_DATA_SETUP.md) 뒤에 수행하는 구현 단계다. 확보한 Steel OCR 사진을 실제 모델에 입력하고, 다운로드한 원문에서 검색한 근거를 별도 관계 해석 호출에 제공한다. 시뮬레이터 A/B·카메라 이동·모의 전달·관리자 화면을 완료했다는 뜻은 아니다.
+기준일: **2026-10-10**. [자료 준비](../setup/RUNPOD_DATA_SETUP.md) 뒤에 수행하는 구현 단계다. 확보한 Steel OCR 사진을 실제 모델에 입력하고, 다운로드한 원문에서 검색한 근거를 별도 관계 해석 호출에 제공한다. 시뮬레이터 A/B·카메라 이동·모의 전달·관리자 화면을 완료했다는 뜻은 아니다.
 
 ## 이번 실행 계약
 
@@ -14,7 +14,7 @@
 | 결과 | 원본 사진, 호출별 프롬프트·원문·구조화 결과, 검색 근거, 사건·해시를 실행 묶음으로 저장 |
 | 판단 | 공개 사진과 작업문서의 적용 관계는 미확정. 실제 작업·WPS나 용접조건을 임의 승인하지 않음 |
 
-[데모 스펙](DEMO_SPEC.md)의 일반 저장 구조를 사용하며 부분 실행을 나타내는 `run_kind=bootstrap`, `capture_mode=public_dataset`, `delivery_requested=false`를 추가한다. 이 값은 전체 시나리오나 수정 재검토가 아니다. `run_outcome=needs_review`로 관측·검색은 확인했지만 작업 대상·조건은 미확정임을 나타낼 수 있다. 기술 실패는 `failed`다. `export_status=complete`는 저장 묶음의 완전성만 나타낸다.
+[데모 스펙](../plan/DEMO_SPEC.md)의 일반 저장 구조를 사용하며 부분 실행을 나타내는 `run_kind=bootstrap`, `capture_mode=public_dataset`, `delivery_requested=false`를 추가한다. 이 값은 전체 시나리오나 수정 재검토가 아니다. `run_outcome=needs_review`로 관측·검색은 확인했지만 작업 대상·조건은 미확정임을 나타낼 수 있다. 기술 실패는 `failed`다. `export_status=complete`는 저장 묶음의 완전성만 나타낸다.
 
 문서의 미확인 개정은 `null`로 남긴다. 다운로드 시점이나 파일 해시를 문서 개정번호로 표시하지 않는다. WTS는 빈 양식이고, LANL WPS는 공개 참고 절차다. 검색 점수·모델 응답은 해당 철골 사진의 적용 WPS나 실제 로봇 실행 승인이 아니다.
 
@@ -50,7 +50,7 @@
 | `PaddlePaddle/PP-OCRv6_medium_rec` | `e5a92bcbc5cc1b494628e458d267778f0704fd7c` |
 | `Qwen/Qwen3-VL-8B-Instruct` | `0c351dd01ed87e9c1b53cbc748cba10e6187ff3b` |
 
-[고정 요구사항](../configs/requirements-inference.txt)과 [모델 준비 도구](../scripts/prepare/prepare_inference_models.py)를 사용한다. 이번 서버는 새 venv가 기본 환경의 torch/torchvision을 읽어서 재사용한다. 기존 Isaac 환경은 변경하지 않았다. 새 서버에서 기본 CUDA torch가 없다면 위 torch/torchvision과 CUDA 조합을 먼저 준비해야 한다. CPU torch 설치 상태를 같은 실행환경으로 취급하지 않는다.
+[고정 요구사항](../../configs/requirements-inference.txt)과 [모델 준비 도구](../../scripts/prepare/prepare_inference_models.py)를 사용한다. 이번 서버는 새 venv가 기본 환경의 torch/torchvision을 읽어서 재사용한다. 기존 Isaac 환경은 변경하지 않았다. 새 서버에서 기본 CUDA torch가 없다면 위 torch/torchvision과 CUDA 조합을 먼저 준비해야 한다. CPU torch 설치 상태를 같은 실행환경으로 취급하지 않는다.
 
 이번 환경의 `pip check`에는 기본 환경부터 존재하던 colcon-core와 setuptools 버전 경고가 남는다. 추론 실행과 테스트는 통과했으며 ROS 환경을 임의 변경하지 않았다. 전체 패키지 잠금과 경고는 `output/implementation-20261010/model-setup/`에 있다.
 
