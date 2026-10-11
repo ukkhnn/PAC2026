@@ -1,10 +1,10 @@
 # 데이터·모델 출처 기록
 
-확인일: **2026-10-10 (Asia/Seoul)**. 저장소 기준 커밋: `945132109b01ea7da38f6ebff68637b0c73fa9cd`.
+확인일: **2026-10-10 (Asia/Seoul)**. 확인 당시 저장소 커밋: `945132109b01ea7da38f6ebff68637b0c73fa9cd`. 2026-10-11에 아래 표시한 항목만 갱신했고 해시·revision 재확인은 하지 않았다.
 
 실제 확보 파일, 실행 설정, 결과에 남은 출처를 모았다. 원문 주소·고정 revision·파일 SHA-256·가공 과정·사용 실행·라이선스 확인 수준을 [기계 판독용 출처 목록](../../configs/data_model_provenance.json)에 함께 보존한다. 이 문서는 그 목록을 읽기 위한 안내다.
 
-현재 데모 입력, 과거 실험, 설계가 무효화된 CTX-001, 검토만 한 후보를 구분한다. 과거 실험 결과는 현재 성능 근거에서 제외하며, 원본 기록은 출처 추적을 위해 보존한다. 진행 중인 새 실험의 최종 입력·모델 manifest는 이번 목록에 아직 고정하지 않았다. `[확인 필요]`는 확인하지 못한 사실이며, 빈 revision이나 해시를 추정해서 채우지 않는다.
+현재 데모 입력, 과거 실험, 설계가 무효화된 CTX-001, 검토만 한 후보를 구분한다. 과거 실험 결과는 현재 성능 근거에서 제외하며, 원본 기록은 출처 추적을 위해 보존한다. 확인일 시점에 진행 중이던 실험은 [PV2](../../experiments/pipeline_v2/REPORT.md)이며 그 입력·모델 manifest는 이 목록에 고정하지 않았다. PV2 자체의 기록은 `experiments/pipeline_v2/results/`에 있다. `[확인 필요]`는 확인하지 못한 사실이며, 빈 revision이나 해시를 추정해서 채우지 않는다.
 
 ## 1. 전체 구성
 
@@ -13,7 +13,8 @@
 | 공개 철골 사진 10장·배포자 정답 | Hugging Face `iput-tk230215/steel-ocr-dataset-960` | OCR/VLM 입력, 과거 개발 실험 | 고정 revision, 원본 파일·라벨 해시, S01–S10 |
 | 공개 문서 4개 | TWI, LANL, Hyundai Robotics | 문서 추출·검색, WPS 원문 근거 | 원본 해시, 문서 ID, 페이지·영역 또는 문단 |
 | 과거 ROI·회전 이미지·문항·가상 지시 | PAC2026에서 원본·정답·공개 글로부터 파생 | E1/E2/E4/E5 개발 실험 | 부모 원본, 좌표·변환, 작성 파일 |
-| 현재 시연 작업지시·도면 | PAC2026 작성 | 저장된 실제 인식 결과와 WPS 필드 연결 | fixture 해시, 원본 관측 ID |
+| 현재 시연 작업지시·도면·등록조건 | PAC2026 작성 | 저장된 실제 인식 결과와 WPS 필드 연결, 제조사 입력 변환의 기본값 | fixture 해시, 원본 관측 ID |
+| 제조사 입력 프로파일 2개 | 현대 Hyundai Robotics·두산 공식 문서에서 작성 | 공통 명세의 현대 Hi6·두산 DRL 변환 | 공식 문서 URL·확인일, 현대 원문 SHA-256 |
 | Isaac 야간 작업장·조선소 장면 | PAC2026 생성 코드 + NVIDIA Isaac Sim 자산 | 반사·재촬영 흐름 시연용 합성 RGB | 장면 설정·생성기·seed·렌더 이미지 해시 |
 | 실제 실행 모델 9개 | PaddlePaddle, Qwen, RapidAI 배포 모델, Apple Vision | 현재 3개 + 과거 6개 | 고정 checkpoint 또는 배포/OS 버전 |
 
@@ -112,6 +113,9 @@ RapidOCR의 3개 ONNX는 로컬 바이트를 다시 해시하여 당시 실행 �
 | `e4-synthetic-orders` | 공개 사진의 정답 부재번호에서 가상 작업지시 작성 | [E4 자료](../../experiments/e4_linking). 실제 생산 지시와의 일치 정답이 아님. E5는 저장된 E2 출력·검사 fixture 사용 |
 | `first-scene-fixture` | 수동 문자 후보·지시·revision을 작성 | [part-order-scene.json](../../data/examples/part-order-scene.json). 초기 동작 예시 |
 | `document-demo-fixtures` | 저장된 S07 / `frame-007` 관측을 키로 시연 지시·도면 작성 | [work_orders](../../configs/document_demo/work_orders.json), [drawing](../../configs/document_demo/drawing.json), [SVG](../../configs/document_demo/drawing.svg), [scenario](../../configs/document_demo/scenario.json), [target_profile](../../configs/document_demo/target_profile.json) |
+| `weld-recipe-fixtures` | 사용자가 허용한 시연 기본값. `WO-DEMO-015` 개정 1과 LANL WPS 개정 1 `layer-1`에 연결. WPS 범위의 중간값을 자동 선정한 값이 아님 | [weld_recipes](../../configs/document_demo/weld_recipes.json) |
+| `shipyard-pipeline-fixtures` | 통합 실행용 시연 도면. `J01` 표기를 업무 ID `JOINT-DEMO-01`에 잇는 `joint_marking_map` 포함. 사진의 실제 형상 복원이 아님 | [drawing](../../configs/shipyard_pipeline/drawing.json) |
+| `robot-input-profiles` | 현대·두산 공식 문서에서 작성한 입력 프로파일. 특정 로봇 본체·용접기 모델을 선정하지 않음 | [hyundai_hi6](../../configs/robot_profiles/hyundai_hi6_current_voltage.json), [doosan_drl](../../configs/robot_profiles/doosan_drl_analog.json) |
 | `unit-test-fixtures` | 코드에서 작성한 이미지·관측·문서 조각·응답 | 테스트 입력. 실제 모델 추론 결과나 현장 표본으로 합산하지 않음 |
 
 시연 문서의 `BISB30N-15`는 저장된 실제 인식 결과를 그대로 연결한 키다. 배포자 정답으로 교정한 값이라고 주장하지 않는다. `WO-DEMO-015`, `DRAWING-DEMO-015`, `JOINT-DEMO-01`과 FCAW/A36/flat 등의 조건은 작성한 시연 가정이다. 해당 사진에서 실측한 형상·재질·두께나 현장 승인 문서를 뜻하지 않는다.
@@ -134,7 +138,7 @@ RapidOCR의 3개 ONNX는 로컬 바이트를 다시 해시하여 당시 실행 �
 - A: `8ee7e159d0723b89592272958924edaf5aecb6cba52d0bcf24eee9ff8fdb3802`
 - B: `2492583e4c354790765fef7f80aabcd8025edbfe8d020f13338942e6b34e70d8`
 
-[공개 JPEG 미리보기 기록](../images/isaac_shipyard/README.json)은 이 PNG의 파생물이다. `output/recapture-handoff-20261010/inputs`도 같은 저장 프레임의 사본이며, 새로 수집한 데이터가 아니다. 해당 재촬영 연결 준비물에는 실제 모델 추론 완료 기록이 없다.
+[공개 JPEG 미리보기 기록](../images/isaac_shipyard/README.json)은 이 PNG의 파생물이다. `output/recapture-handoff-20261010/inputs`도 같은 저장 프레임의 사본이며, 새로 수집한 데이터가 아니다. 2026-10-10 확인 시점에는 이 준비물에 모델 추론 기록이 없었으나, 이후 [통합 파이프라인](../runs/WELD_PIPELINE.md)이 `--capture-inputs`로 같은 경로를 입력 삼아 실제 판독을 수행했다.
 
 Isaac 코드와 추가 구성 요소·자산·텍스처의 조건은 [공식 법적 고지](https://docs.isaacsim.omniverse.nvidia.com/latest/common/legal.html)와 [추가 소프트웨어·자료 라이선스](https://www.nvidia.com/en-us/agreements/enterprise-software/isaac-sim-additional-software-and-materials-license/)를 구분해 기록했다. UR10 본체·하위 자산의 정확한 파일 해시와 개별 조건은 `[확인 필요]`다. 기존 장면의 [DejaVu 라이선스](https://dejavu-fonts.github.io/License.html)는 확인했지만 실제 설치 글꼴 파일의 버전·해시는 남지 않았다. manifest의 marking 해시는 **생성 이미지의 해시**이며 글꼴 해시가 아니다.
 
@@ -166,7 +170,7 @@ MPSC/RFN, KR Rules 2026, KOBELCO 자료, weldCalloutIdentifier, Zenodo shipyard 
 
 다음 정보는 `[확인 필요]`로 남겼다.
 
-1. 진행 중인 새 실험에서 최종 확정한 입력·모델·가공 manifest와 추가 자원.
+1. [PV2](../../experiments/pipeline_v2/REPORT.md)에서 확정한 입력·모델·가공 manifest와 추가 자원. 현재는 실험 폴더에만 있고 이 목록에 고정하지 않았다.
 2. 철골 사진의 원 촬영자·촬영 장소·별도 권리 관계, 카드와 라벨 파일의 표본 수 차이.
 3. 공개 문서의 별도 재배포 조건, RapidOCR 배포 ONNX 가중치의 개별 라이선스.
 4. Apple Vision 내부 checkpoint, UR10 하위 자산 및 기존 글꼴의 정확한 버전·해시.
