@@ -1,10 +1,10 @@
 # ContextWeld 관리자 대시보드 (오프라인 기록 재생)
 
-작성 2026-10-10. 기준 저장소 `dev` HEAD `945132109b01ea7da38f6ebff68637b0c73fa9cd`(README·MILESTONES·OCR 명세·실험 README
-미커밋 수정 포함 작업 트리). 인계 문서 `admin-dashboard-20261010`의 관리자 대시보드 작업 기록이다.
+작성 2026-10-10, 갱신 2026-10-11. 구현 당시 기준은 `dev` `9451321`의 작업 트리였고, 그때 미커밋이던 README·마일스톤·OCR 명세·실험 README 수정은 이후 커밋됐다. 인계 문서 `admin-dashboard-20261010`의 관리자 대시보드 작업 기록이다.
 
-> 상태 요약 — 아래 [검증 결과](#7-검증-결과)와 [미구현·미기록](#9-미구현미기록-표시)을 함께 읽는다.
-> <!-- STATUS-SUMMARY -->
+> **상태:** 패키지 생성기·화면·검증 연결은 구현했고 `scripts/export/export_admin_dashboard.py export|verify`로 실행한다.
+> 아래 4·5절은 코드에서 확인한 구성이다. **6~11절의 실행 기록은 작성되지 않았다**([미작성 절](#6-11절-미작성) 참고).
+> 빠진 내용을 구현 완료로 읽지 않는다.
 
 ## 1. 목적과 경계
 
@@ -17,8 +17,11 @@
 - 기존 단건 HTML exporter(`scripts/export/export_document_review.py`)와 검증기(`verify_*.py`, `inspect_*`)는 바꾸지 않고
   그대로 호출한다. 패키지에는 기존 exporter로 만든 단건 화면도 함께 넣는다.
 - 인식 bootstrap(공개 사진)·문서 검토·명시적 재검토·Isaac 장면 자료는 서로 다른 종류로 표시하고 합치지 않는다.
-  장면 `J01`과 문서 `JOINT-DEMO-01`은 연결된 기록이 없으므로 미연결로 표시한다.
-- CTX-001 후보 목록 실험(`output/context-ablation-20261010`)은 사용자가 거부했으므로 대시보드에 넣지 않았다.
+  기본 자료만 넣은 패키지에는 장면 `J01`과 문서 `JOINT-DEMO-01`을 잇는 기록이 없어 미연결로 표시한다.
+  이후 [통합 파이프라인](WELD_PIPELINE.md) 실행이 시연 도면의 `joint_marking_map`으로 둘을 연결했고,
+  그 묶음은 `scripts/export/export_weld_pipeline_dashboard.py`로 패키지에 추가한다.
+- CTX-001 후보 목록 실험(`output/context-ablation-20261010`)은 대시보드에 넣지 않는다. 사용자가 거부했고, 후보 목록에
+  정답이 들어 있어 평가 설계가 무효화된 상태다. 제외 규칙은 `catalog.py`의 `EXCLUDED_BY_POLICY`에 있다.
 
 ## 2. 실행 방법
 
@@ -60,8 +63,12 @@ Mac에서의 최종 확인 절차는 [10절](#10-mac-최종-확인-절차)에 �
 | `src/contextweld_dashboard/web/` | 화면(`index.html`, `app.css`, `app.js`): 바닐라 JS, 빌드 단계·외부 자원 없음 |
 | `src/contextweld_dashboard/package_tools/` | 패키지에 들어가는 독립 도구(`verify_package.py`, `serve_package.py`, 안내문) |
 | `scripts/export/export_admin_dashboard.py` | CLI(`export`, `verify`) |
-| `scripts/check_admin_dashboard_browser.py` | 브라우저 검수 자동화(Playwright, UI 전용 격리 환경) |
-| `tests/test_admin_dashboard_*.py`, `tests/admin_dashboard_*.py` | 단위·통합 테스트와 공통 도우미 |
+| `scripts/export/export_weld_pipeline_dashboard.py` | 검증한 통합 전달 실행을 기존 패키지에 새 실행으로 추가 |
+| `scripts/export/add_robot_dashboard_preview.py` | 내보낸 사본에 [제조사 입력 변환 카드](ROBOT_INPUT_PREVIEW.md) 설치 |
+| `tests/admin_dashboard_support.py` | 화면 모델의 모든 저장 값을 원본 파일에서 다시 읽어 대조하는 공통 도우미(`assert_linkage`) |
+
+대시보드 전용 단위·통합 테스트 파일은 저장소에 없다. 위 도우미만 보존되어 있고 `python3 -m pytest tests`의 108개
+테스트에는 대시보드 패키지 생성 경로가 포함되지 않는다.
 
 ### 3.1 데이터 흐름
 
@@ -89,34 +96,49 @@ Mac에서의 최종 확인 절차는 [10절](#10-mac-최종-확인-절차)에 �
   보고서 `forbidden_calls`에 남는다. 정상 내보내기의 값은 빈 목록이어야 한다.
 - 완료 묶음은 불변이다. 패키지·보고서·스크린샷은 모두 원본 밖 새 경로에만 쓴다. 기존 출력은 덮어쓰지 않는다.
 
-## 4. 화면 구성 (DEMO_SPEC 8절 8개 요소)
+## 4. 화면 구성
 
-<!-- SCREEN-SECTION -->
+`model.py`의 `TAB_KEYS`가 실행 하나당 탭 7개를 정의한다. 각 탭은 `available`·`partial`·`absent` 중 하나이며,
+`absent`일 때는 비운 이유(`absent_reason`)를 함께 표시한다.
+
+| 탭 키 | 라벨 |
+|---|---|
+| `summary` | 실행 요약 |
+| `capture` | 촬영 전후 비교 |
+| `timeline` | 단계 타임라인 |
+| `recapture` | 재촬영 설명 |
+| `evidence` | 해석·문서 근거 |
+| `delivery` | 전달 내역 |
+| `corrections` | 수정·재검토 이력 |
+
+블록 형식은 `notice`, `fields`, `table`, `image`, `image_pair`, `cards`, `stages`, `diff`, `lineage`, `text`,
+`json`, `raw_files`, `flow`, `group`, `video`다. 알림 수준은 `info`·`warning`·`serious`·`critical`,
+단계 상태는 `done`·`not_done`·`failed`·`absent`·`unknown`이다.
 
 ## 5. 표시 계약
 
-<!-- CONTRACT-SECTION -->
+- 화면에 보이는 모든 저장 값은 `{"v", "src"}`로 감싼다. `src`는 원본 파일 경로와 JSON pointer다.
+- 대시보드가 계산한 값은 `src=None`이며 `origin=dashboard`와 설명을 함께 둬야 한다.
+- `tests/admin_dashboard_support.py`의 `assert_linkage`가 이 계약을 검사한다. 모든 `{"v","src"}` 값을 원본
+  파일에서 다시 읽어 같은지 대조하고, `src=None`인 값에 출처 표시가 있는지 확인한다.
+- 기본 자료 목록과 종류 분류, 제외 정책은 `catalog.py`의 `DEFAULT_SOURCES`·`DEFAULT_REFERENCES`·
+  `SCENE_EXCLUDED`·`EXCLUDED_BY_POLICY`에 있다.
 
-## 6. 요구사항 대응표
+## 6~11절 (미작성)
 
-<!-- REQUIREMENTS-TABLE -->
+원래 계획했던 **요구사항 대응표, 검증 결과, 원본 보존 기록, 미구현·미기록 표시, Mac 최종 확인 절차,
+새 결과 연결 입력 계약**은 작성되지 않았다. 빈 자리 표시만 남아 있던 것을 이 절로 대체한다.
 
-## 7. 검증 결과
+지금 확인할 수 있는 것과 없는 것을 나눈다.
 
-<!-- VERIFICATION -->
+| 항목 | 상태 |
+|---|---|
+| 패키지 생성·검증 CLI | 구현됨. `export_admin_dashboard.py export`·`verify` |
+| 사본 동일성 확인 | 패키지 안의 `SHA256SUMS`와 `tools/verify_package.py`로 확인 |
+| 화면 모델 ↔ 원본 연결 검사 | `tests/admin_dashboard_support.py`의 도우미는 있으나 이를 호출하는 테스트 파일이 없음 |
+| 실제 내보내기 실행 기록 | **미기록.** 어떤 묶음으로 언제 패키지를 만들었고 보고서의 `forbidden_calls`가 비어 있었는지 남아 있지 않음 |
+| 원본 보존 전·후 해시 비교 | **미기록** |
+| Mac 브라우저 시각 검수 | **미기록.** 2절의 열기 절차만 적혀 있고 실제 수행 결과는 없음 |
+| 새 결과 연결 입력 계약 | **미작성.** 현재는 `--add <묶음 폴더>` 사용법만 2절에 있음 |
 
-## 8. 원본 보존 기록
-
-<!-- PRESERVATION -->
-
-## 9. 미구현·미기록 표시
-
-<!-- GAPS -->
-
-## 10. Mac 최종 확인 절차
-
-<!-- MAC -->
-
-## 11. 새 결과 연결 입력 계약
-
-<!-- INPUT-CONTRACT -->
+이 기록을 채우려면 2절의 명령을 실행하고 `export-report.json`과 사본 재검증 결과를 이 문서에 옮겨 적는다.
