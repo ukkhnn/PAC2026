@@ -1,6 +1,6 @@
 # Runpod 실제 인식과 문서 검색
 
-기준일: **2026-10-10**. [자료 준비](../setup/RUNPOD_DATA_SETUP.md) 뒤에 수행하는 구현 단계다. 확보한 Steel OCR 사진을 실제 모델에 입력하고, 다운로드한 원문에서 검색한 근거를 별도 관계 해석 호출에 제공한다. 시뮬레이터 A/B·카메라 이동·모의 전달·관리자 화면을 완료했다는 뜻은 아니다.
+기준일: **2026-10-10**. [자료 준비](../setup/RUNPOD_DATA_SETUP.md) 뒤에 수행하는 구현 단계다. 확보한 Steel OCR 사진을 실제 모델에 입력하고, 다운로드한 원문에서 검색한 근거를 별도 관계 해석 호출에 제공한다. 이 실행만으로 시뮬레이터 A/B·카메라 이동·모의 전달·관리자 화면을 완료했다는 뜻은 아니다. 그 항목들은 이후 별도 실행에서 다뤘고 161행의 후속 범위 표시를 함께 읽는다.
 
 ## 이번 실행 계약
 
@@ -158,4 +158,6 @@ python3 scripts/verify/verify_run_bundle.py output/recognition/run_steel-new-run
 
 서버의 이전 작업 백업은 `/workspace/pac-backups/before-sync-20261009T185726Z/`와 Git stash에 유지하며, 같은 백업의 로컬 사본은 `output/implementation-20261010/server-preservation/`에 있다. 로컬 협업 기록은 서버·공개 Git으로 보내지 않는다. 최초 실행 기록의 기반 커밋은 `577faa6`이며 당시 구현 변경은 미커밋 상태였다. 이후 커밋 여부와 무관하게 완료된 실행 기록은 수정하지 않는다.
 
-후속 [문서 연결 실행](DOCUMENT_DEMO.md)에서 기존 관측→모사 작업지시/도면→WPS 대표층의 범위값·원문 위치→검증→모의 HTTP 수신을 연결했다. 위 bootstrap 기록과 모델 출력은 변경하지 않았다. 사진의 실제 물성·WPS 적용성, A/B RGB·재촬영·사용자 수정 재검토·관리자 화면은 후속 범위다.
+후속 [문서 연결 실행](DOCUMENT_DEMO.md)에서 기존 관측→모사 작업지시/도면→WPS 대표층의 범위값·원문 위치→검증→모의 HTTP 수신을 연결했다. 위 bootstrap 기록과 모델 출력은 변경하지 않았다. 사진의 실제 물성·WPS 적용성은 계속 미확인이다.
+
+> 2026-10-10 갱신: 당시 후속 범위로 적었던 A/B RGB는 [기존 장면](ISAAC_SCENE.md)·[조선소 장면](ISAAC_SHIPYARD_SCENE.md)에서, 사용자 수정 재검토는 [명시적 재검토](EXPLICIT_REVIEW.md)에서, 관리자 화면은 [오프라인 관리자 패키지](ADMIN_DASHBOARD.md)에서 구현했다. 저장 A/B 프레임의 판독부터 제조사 전달까지는 [통합 파이프라인](WELD_PIPELINE.md)이 연결한다. 모델 판단에 따른 재촬영은 아직 남아 있다.

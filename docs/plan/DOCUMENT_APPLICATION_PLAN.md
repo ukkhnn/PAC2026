@@ -268,6 +268,6 @@ D4는 기록 구조에 반영하고 D8은 작업자 확인 항목으로 연결�
 | 없는 WPS 개정 참조 | `needs_review`, 전달 `blocked`, 다른 개정으로 대체하지 않음 |
 | 실제 판독 불일치 | `frame-005`의 OCR/VLM 문자열 차이를 보존, `needs_review`, 전달 `blocked` |
 
-성공 범위는 `run_kind=document_demo`, `capture_mode=public_dataset`, `evaluation_scope=document_review`의 조건 검토와 모의 전달뿐이다. `application_authorized=false`, `execution_authorized=false`, `demo_complete=false`를 유지한다. 실제 WPS 적용 승인, 표기→실제 이음의 시각 관계 검증, A/B 재촬영, 수정·명시적 재검토와 관리자 화면은 미완료다.
+성공 범위는 `run_kind=document_demo`, `capture_mode=public_dataset`, `evaluation_scope=document_review`의 조건 검토와 모의 전달뿐이다. `application_authorized=false`, `execution_authorized=false`, `demo_complete=false`를 유지한다. 실제 WPS 적용 승인, 표기→실제 이음의 시각 관계 검증, 모델 판단에 따른 A/B 재촬영은 미완료다. 수정·명시적 재검토는 위 176·209행대로 문서 범위에서 구현했고, 관리자 화면은 [오프라인 관리자 패키지](../runs/ADMIN_DASHBOARD.md)로 구현했다.
 
 새 묶음은 기존 인식 묶음 사본·모사 문서·전사 근거·검색 발췌·검증·HTTP 명령과 응답을 보존한다. 전체 원문 PDF는 포함하지 않으며 미포함을 표시한다. 저장·해시 검증 성공을 오프라인 원문 조회나 관리자 재생 완료로 해석하지 않는다.

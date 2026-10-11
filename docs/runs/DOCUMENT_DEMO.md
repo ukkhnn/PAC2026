@@ -2,7 +2,7 @@
 
 기준일: **2026-10-10**. 실행 당시 [데모 스펙](../plan/DEMO_SPEC.md) v1.4, [문서 적용 계획](../plan/DOCUMENT_APPLICATION_PLAN.md) v1.3 기준의 **문서 검토용 부분 실행**이다. 데모 스펙은 이후 v1.5가 됐고 이 묶음은 생산 당시의 `demo-1.4+ocr-1.2+documents-1.3`을 그대로 기록한다. 실제 저장 관측 → 모사 작업지시·도면 → 공개 WPS의 필드·원문 위치 → 필수값·충돌 검사 → 실제 loopback HTTP 모의 수신을 연결했다.
 
-A/B 촬영·재촬영·사용자 수정/재검토는 아직 이 실행에 포함되지 않는다. 저장된 문서 실행은 [오프라인 조회 HTML](DOCUMENT_REVIEW_VIEWER.md)로 내보낼 수 있으며 전체 관리자 재생 기능은 미완료다. 모의 ACK는 문서 범위값의 수신·형식 확인이며 사진의 실제 작업이나 용접 적용 승인, 용접 실행 성공을 뜻하지 않는다.
+A/B 촬영·재촬영·사용자 수정/재검토는 이 실행에 포함되지 않는다. 저장된 문서 실행은 [오프라인 조회 HTML](DOCUMENT_REVIEW_VIEWER.md)로 내보내고, 여러 실행을 묶어 재생하는 일은 이후 [오프라인 관리자 패키지](ADMIN_DASHBOARD.md)가 맡는다. 모의 ACK는 문서 범위값의 수신·형식 확인이며 사진의 실제 작업이나 용접 적용 승인, 용접 실행 성공을 뜻하지 않는다.
 
 ## 1. 실제 입력과 모사 입력
 
@@ -99,7 +99,7 @@ PYTHONPATH=src python3 -m unittest discover -s tests -v
 | `output/document-demo-20261010/server-results.json` | 로컬 오프라인 검증 결과 요약 |
 | `output/document-demo-20261010/source-review/` | PDF 렌더와 전사 영역 대조 기록 |
 
-묶음 스키마는 `document-demo-bundle.v1`, `run_kind=document_demo`, `capture_mode=public_dataset`, `evaluation_scope=document_review`다. 기존 bootstrap과 전체 `scenario`, 사용자 수정 `review`를 구분한다. `succeeded`는 요청한 문서 검토·모의 수신 범위만의 성공이다. 모든 사례에서 `demo_complete=false`이며 P2 전체·A/B·수정 재검토·관리자 화면 완료를 뜻하지 않는다.
+묶음 스키마는 `document-demo-bundle.v1`, `run_kind=document_demo`, `capture_mode=public_dataset`, `evaluation_scope=document_review`다. 기존 bootstrap과 전체 `scenario`, 사용자 수정 `review`를 구분한다. `succeeded`는 요청한 문서 검토·모의 수신 범위만의 성공이다. 모든 사례에서 `demo_complete=false`이며 이 실행만으로 P2 전체 완료를 뜻하지 않는다. A/B 연결은 [통합 파이프라인](WELD_PIPELINE.md), 수정 재검토는 [명시적 재검토](EXPLICIT_REVIEW.md), 관리자 화면은 [오프라인 관리자 패키지](ADMIN_DASHBOARD.md)에서 별도로 다뤘다.
 
 필요한 관측 원문과 문서 발췌·필드·페이지 참조는 묶음에 있고 WPS 전체 PDF는 포함하지 않는다. 원문 재배포 허가가 확인되지 않았다는 등록 정보를 유지한다. 해시·파일 누락과 기록 불일치는 오류로 처리하고 완료된 묶음을 덮어쓰지 않는다.
 

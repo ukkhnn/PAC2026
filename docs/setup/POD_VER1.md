@@ -43,7 +43,7 @@ PAC2026의 시뮬레이션 구현에 사용하는 일회성 Runpod Pod의 사양
 
 상세 근거는 `output/isaac-scene-20261010/env-audit/`의 `live-01-reception-01-summary.json`, `live-01-crosscheck.json`, `live-01-preservation-check-final.json`이다. 실행·ROS source 순서·토픽·시각 의미·소유 PID 확인 후 중단은 [Isaac 기준 장면 안내](../runs/ISAAC_SCENE.md)에 있다. 기존 bridge·터널·앱을 일괄 재시작하지 않는다.
 
-P1은 기존 기준 장면에서 달성했다. 기존 정형 마킹·작업대 결과를 보존하고 조선소 병풍형 강판 패널·중앙 수기 메모 개선은 별도 구현 대기 상태다. 현재 A/B는 `capture_mode=pre_captured`인 예약 시연이며 모델 판단으로 팔을 움직이는 폐루프가 아니다. [문서 한 건의 오프라인 HTML 조회](../runs/DOCUMENT_REVIEW_VIEWER.md)는 별도 부분 구현이며 브라우저 시각 검수는 미완료다. 전체 P2·P3·P4와 여러 실행 통합·A/B 관리자 재생도 미완료다. 초기 호환성 검사 전체 PASS나 Isaac native ROS 영상 경로의 검증으로 확대하지 않는다.
+P1은 기존 기준 장면에서 달성했고, 기존 정형 마킹·작업대 결과를 보존한 채 [조선소 수기 장면](../runs/ISAAC_SHIPYARD_SCENE.md)을 추가로 구성했다. 현재 A/B는 `capture_mode=pre_captured`인 예약 시연이며 모델 판단으로 팔을 움직이는 폐루프가 아니다. [문서 한 건의 오프라인 HTML 조회](../runs/DOCUMENT_REVIEW_VIEWER.md)는 별도 부분 구현이며 브라우저 시각 검수는 미완료다. 여러 실행 통합은 [오프라인 관리자 패키지](../runs/ADMIN_DASHBOARD.md)로 구현했고, 전체 P2·P4와 A/B 재촬영 재생은 미완료다. 초기 호환성 검사 전체 PASS나 Isaac native ROS 영상 경로의 검증으로 확대하지 않는다.
 
 ## 2. 서버 사양과 경로
 
