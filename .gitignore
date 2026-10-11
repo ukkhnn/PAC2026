@@ -38,3 +38,9 @@ tmp/
 /output/**
 !/output/**/
 !/output/**/.gitkeep
+
+# Presentation deliverables; publish under output/presentation/
+/*.pptx
+
+# pptx chart data conversion scratch output
+/.chart-data-*/
