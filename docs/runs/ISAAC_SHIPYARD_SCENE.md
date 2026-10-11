@@ -30,7 +30,7 @@
 | 조명·반사 | 고정 작업등 하나의 실제 정반사가 A에서 메모 일부를 가리고 B에서 벗어남(육안) | 다른 노출·재질 조합에서의 재현 |
 | 손목 카메라·UR10 | A/B 도달, 고정 장착 변환 검증, 팔·브래킷·토치가 손목 영상을 가리지 않음, 종료 신호 중 이동이 가짜 IK 실패로 끝나지 않음(`live-02`에서 이전 코드의 실패 재현 후 수정) | 충돌 없는 경로, 실기 적합성 |
 | ROS·Foxglove 스트림 | 아래 수신 표 참조 | Mac Foxglove 화면 자체의 육안 확인(서버 WebSocket 수신으로 대체) |
-| 인식·문서 연결 | 없음 | 이 장면의 인식→문서 검토→모의 전달, 자동 재촬영 폐루프 |
+| 인식·문서 연결 | 저장 A/B 프레임의 판독→작업지시 조회→WPS 검증→제조사 전달까지 [통합 파이프라인](WELD_PIPELINE.md)에서 실행 | 라이브 송출과 인식의 직접 연결, 모델 판단에 따른 자동 재촬영 폐루프 |
 
 서버 Foxglove WebSocket(`ws://127.0.0.1:8765`, subprotocol `foxglove.sdk.v1`)에 Foxglove 클라이언트와 같은 방식으로 접속해 수신을 검증했다. 검사 도구는 [check_isaac_scene_stream.py](../../scripts/isaac/check_isaac_scene_stream.py)이며 CDR 페이로드를 직접 복호해 PNG를 디코딩한다.
 
@@ -88,7 +88,9 @@ A/B 사이에 형상·마킹·조명 위치와 세기·재질·노출을 바꾸�
 |---|---|---|---|
 | 이번 장면(`--live` 포함) | `pre_captured`, `presentation_mode=scheduled_pose_loop` | 같은 장면·센서의 A/B 원본 RGB, 실제 관절 이동, 고정 반사의 시점 의존성 | 인식 판단이 팔 이동을 일으켰다는 사실 |
 
-J01과 기존 문서 검토 자료의 `JOINT-DEMO-01` 연결은 `[확인 필요]`이며 이 문서는 연결을 주장하지 않는다. 미완료 항목: 자동 OCR 판단→재촬영 폐루프, 이 장면 프레임의 인식·문서 검토 실행, 실제 용접·실기 제어, 관리자 UI, `--native-ros`, 충돌 없는 경로 검증, OCR/VLM 판독성 측정.
+`J01`과 기존 문서 검토 자료의 `JOINT-DEMO-01`은 이 장면 자체가 주장하는 연결이 아니다. [통합 파이프라인](WELD_PIPELINE.md)이 시연 도면의 `joint_marking_map`으로 둘을 잇고, 실제 이음을 확인한 연결이 아님을 그 문서에 함께 적는다.
+
+미완료 항목: 자동 OCR 판단→재촬영 폐루프, 실제 용접·실기 제어, `--native-ros`, 충돌 없는 경로 검증, OCR/VLM 판독성 측정. 저장 프레임의 인식·문서 검토 실행과 관리자 화면은 이후 구현했다.
 
 ## Runpod에서 시작
 
@@ -182,7 +184,9 @@ ps -p "$publisher_pid" -o pid=,args=
 kill -TERM "$scene_pid" "$publisher_pid"   # 소유 확인 후
 ```
 
-현재 서버 상태(2026-10-09 22:20 UTC 1차 전환, 22:39 UTC `live-03`로 재전환): 새 장면 runner는 `output/isaac-shipyard-20261010/live-03.pid`, 새 송출기는 `live-03-publisher.pid`로 실행 중이다. 이 세션이 시작한 이전 runner(`live-01.pid`, `live-02.pid`)와 송출기(`live-01-publisher.pid`)는 소유 확인 후 종료했다. 기존 기준 장면 송출기(`output/isaac-scene-20261010/ros-publisher-01.pid`)는 소유 확인 후 22:20 UTC에 종료했고, 기존 기준 장면 runner(`output/isaac-scene-20261010/live-01.pid`)는 그대로 실행 중이어서 `output/isaac-scene-20261010/live-01/stream/`은 계속 갱신되지만 Foxglove에는 발행되지 않는다. 기준 장면으로 복구하려면 새 송출기를 종료하고 기존 송출기 명령을 다시 실행한다.
+**아래는 2026-10-09 시점의 서버 프로세스 스냅샷이며 현재 상태가 아니다.** 실제 상태는 서버에서 직접 확인한다.
+
+2026-10-09 22:20 UTC 1차 전환, 22:39 UTC `live-03`로 재전환 시점: 새 장면 runner는 `output/isaac-shipyard-20261010/live-03.pid`, 새 송출기는 `live-03-publisher.pid`로 실행 중이다. 이 세션이 시작한 이전 runner(`live-01.pid`, `live-02.pid`)와 송출기(`live-01-publisher.pid`)는 소유 확인 후 종료했다. 기존 기준 장면 송출기(`output/isaac-scene-20261010/ros-publisher-01.pid`)는 소유 확인 후 22:20 UTC에 종료했고, 기존 기준 장면 runner(`output/isaac-scene-20261010/live-01.pid`)는 그대로 실행 중이어서 `output/isaac-scene-20261010/live-01/stream/`은 계속 갱신되지만 Foxglove에는 발행되지 않는다. 기준 장면으로 복구하려면 새 송출기를 종료하고 기존 송출기 명령을 다시 실행한다.
 
 ```bash
 kill -TERM "$(cat output/isaac-shipyard-20261010/live-03-publisher.pid)"

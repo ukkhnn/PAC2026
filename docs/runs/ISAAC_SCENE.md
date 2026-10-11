@@ -26,7 +26,7 @@
 
 근거는 `output/isaac-scene-20261010/env-audit/`의 `live-01-reception-01.json`, `live-01-reception-01-summary.json`, `live-01-crosscheck.json`, `live-01-preservation-check-final.json`이다. 파일 교체 시점의 일시적 읽기 재시도 로그가 있었지만 위 수신 구간의 연속성·해시·시각 대조는 통과했다. 이 검증은 해당 실행과 수신 구간에 대한 확인이다.
 
-**기존 정형 마킹·작업대 장면을 기준 장면으로 보존한다.** `live-01`의 설정·소스 사본·장면·이미지와 이전 튜닝 결과를 덮어쓰지 않는다. 후속 요청인 조선소 병풍형 강판 패널·중앙 수기 메모·기존 빛 반사를 유지하는 장면은 아직 구현하지 않았다. 후속 구현은 별도 설정과 새 출력 디렉토리로 분리한다.
+**기존 정형 마킹·작업대 장면을 기준 장면으로 보존한다.** `live-01`의 설정·소스 사본·장면·이미지와 이전 튜닝 결과를 덮어쓰지 않는다. 후속 요청인 조선소 수직 3면 강판 패널·중앙 수기 메모·기존 빛 반사를 유지하는 장면은 [조선소 수기 장면 `live-03`](ISAAC_SHIPYARD_SCENE.md)으로 구현했고, 별도 설정과 새 출력 디렉토리로 분리했다. 이 문서의 `live-01`은 그대로 보존한다.
 
 ## 장면과 경계
 
@@ -49,7 +49,7 @@
 
 표기 `BISB30N-15`, `J01`, 화살표는 이 장면을 위해 그린 합성 텍스처다. 공개 철골 사진을 전사하거나 실제 이음 형상을 복원한 자료가 아니다. 조명·재질·노출은 A/B 사이 고정이며 저장 RGB에 반사나 글자를 사후 합성하지 않는다.
 
-`--live`도 **`capture_mode=pre_captured`, `presentation_mode=scheduled_pose_loop`**다. 새 RGB와 로봇 이동을 계속 보여 주지만 A/B 순서는 사전 정의되어 있다. 자동 OCR 판단→재촬영 폐루프, 이 장면의 인식→문서 검토 자동 연결, 실제 용접·실기 제어, 새 관리자 UI는 미완료다. `execution_authorized=false`를 유지한다.
+`--live`도 **`capture_mode=pre_captured`, `presentation_mode=scheduled_pose_loop`**다. 새 RGB와 로봇 이동을 계속 보여 주지만 A/B 순서는 사전 정의되어 있다. 자동 OCR 판단→재촬영 폐루프와 실제 용접·실기 제어는 미완료다. 저장 프레임의 인식→문서 검토 연결은 조선소 장면을 대상으로 [통합 파이프라인](WELD_PIPELINE.md)에서 수행했고, 관리자 화면은 [오프라인 관리자 패키지](ADMIN_DASHBOARD.md)로 구현했다. 이 `live-01` 장면 자체의 판독은 수행하지 않았다. `execution_authorized=false`를 유지한다.
 
 ## Runpod에서 시작
 
