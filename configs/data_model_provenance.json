@@ -1,0 +1,2632 @@
+{
+  "schema_version": "data-model-provenance.v1",
+  "checked_date": "2026-10-10",
+  "timezone": "Asia/Seoul",
+  "repository_commit": "945132109b01ea7da38f6ebff68637b0c73fa9cd",
+  "coverage": {
+    "description": "Audited retained current demo and historical experiment records. External source declarations are checked separately from downloaded file identity.",
+    "current_completed_runs": [
+      "steel-smoke-20261010-01",
+      "steel-batch-20261010-02",
+      "document-demo-20261010",
+      "explicit-review-20261010"
+    ],
+    "historical_runs": [
+      "E1-001",
+      "E1-002",
+      "E1-003",
+      "E1-004",
+      "E2-001",
+      "E2-002",
+      "E4-001",
+      "E5-001"
+    ],
+    "invalidated_designs": [
+      "CTX-001"
+    ],
+    "saved_scene_runs": [
+      "night-welding live-01",
+      "shipyard-handwriting live-03"
+    ],
+    "prepared_not_inferred": [
+      "recapture-handoff-20261010/inputs"
+    ],
+    "in_progress_runs": "[확인 필요] no final new-run manifest included; do not infer completeness for runs still being written",
+    "failed_attempts": [
+      {
+        "path": "experiments/e1_ocr/runs/2026-10-09-sandbox",
+        "status": "failed",
+        "reason": "Vision 38/38 nilError; separate preserved attempt, not successful recognition"
+      },
+      {
+        "path": "output/recognition/run_steel-batch-20261010-01.incomplete",
+        "status": "incomplete",
+        "reason": "JSONDecodeError; not a completed batch"
+      }
+    ]
+  },
+  "data_families": [
+    {
+      "id": "steel-ocr-960-subset",
+      "kind": "public_photographs_and_distributor_annotations",
+      "provider": "iput-tk230215 (Hugging Face publisher; original photographers/rights owner not independently confirmed)",
+      "upstream_urls": [
+        "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960",
+        "https://github.com/solution-futureindustry-2025-teamB/image-recog"
+      ],
+      "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+      "retrieved_date": "2026-10-09",
+      "local_evidence": [
+        {
+          "path": "experiments/e1_ocr/manifest.json",
+          "sha256": "442a55a307d7796b71f5a2a51de18457412aeb71efca00ed4510804d81262bbe",
+          "exists": true
+        },
+        {
+          "path": "configs/demo_data_sources.json",
+          "sha256": "14b57798d413f3dcc030909d856e31df3ca577f929ef5793fa2c5273a65c4f25",
+          "exists": true
+        },
+        {
+          "path": "data/raw/demo-bootstrap-v1/asset-manifest.json",
+          "sha256": "d53a5ffc8c8555a098724992ef39e3e0caae61853b19097498823fa6609856cb",
+          "exists": true
+        }
+      ],
+      "license": {
+        "declared": "MIT",
+        "evidence": "fixed downloaded card YAML and current HF landing page both declare MIT",
+        "standalone_license": "not present according to fixed manifest; not independently rediscovery-verified this turn",
+        "rights_verification": "no additional original-photo rights investigation"
+      },
+      "subset": {
+        "split": "publisher train (our inference/development use, not model training)",
+        "selection": "first 10 train paths ordered by SHA256(UTF-8 path)",
+        "observed_train_rows": 156,
+        "selected_images": 10,
+        "scorable_regions": 28,
+        "excluded_regions": 1,
+        "excluded_reason": "S10 difficult=true",
+        "ground_truth": "distributor supplied; not independently reannotated",
+        "independent_evaluation": false
+      },
+      "limitations": [
+        "Publisher card describes 222 train images while fixed downloaded train.txt actually has 156 rows; counts must use inspected bytes.",
+        "Original camera/capture site/date/subject material/WPS applicability not confirmed.",
+        "No training or fine tuning evidenced in inspected experiment/product code."
+      ],
+      "used_in": [
+        "E1-001",
+        "E1-002 rotation",
+        "E1-003 RapidOCR",
+        "E1-004 recognition-only",
+        "E4-001",
+        "CTX-001 rejected",
+        "steel-smoke-20261010-01",
+        "steel-batch-20261010-01 incomplete",
+        "steel-batch-20261010-02",
+        "document-demo/review immutable source frames"
+      ],
+      "status": "current_development_input; historical results excluded from current performance; in-progress runs not frozen",
+      "assets": [
+        {
+          "source_kind": "public_dataset",
+          "dataset": "iput-tk230215/steel-ocr-dataset-960",
+          "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+          "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+          "purpose": "pitch_development",
+          "required": true,
+          "id": "steel-S01",
+          "group": "steel-images",
+          "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/kanawa_IMG_0772.jpg",
+          "relative_path": "steel_ocr/train_data/det/images/kanawa_IMG_0772.jpg",
+          "source_path": "train_data/det/images/kanawa_IMG_0772.jpg",
+          "sha256": "92dced68e6c58ea172936d160547eecfead98c9af6a7e36703869c33a6fa8ecc",
+          "media_type": "image/jpeg",
+          "local_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/kanawa_IMG_0772.jpg",
+          "verified_sha256": "92dced68e6c58ea172936d160547eecfead98c9af6a7e36703869c33a6fa8ecc",
+          "sha256_matches_expected": true
+        },
+        {
+          "source_kind": "public_dataset",
+          "dataset": "iput-tk230215/steel-ocr-dataset-960",
+          "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+          "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+          "purpose": "pitch_development",
+          "required": true,
+          "id": "steel-S02",
+          "group": "steel-images",
+          "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/kanawa_IMG_0770.jpg",
+          "relative_path": "steel_ocr/train_data/det/images/kanawa_IMG_0770.jpg",
+          "source_path": "train_data/det/images/kanawa_IMG_0770.jpg",
+          "sha256": "56180af3d6a82af02e88d1ef0e5ab3b8617bf03610299dfd71e1c2ae3ff55aed",
+          "media_type": "image/jpeg",
+          "local_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/kanawa_IMG_0770.jpg",
+          "verified_sha256": "56180af3d6a82af02e88d1ef0e5ab3b8617bf03610299dfd71e1c2ae3ff55aed",
+          "sha256_matches_expected": true
+        },
+        {
+          "source_kind": "public_dataset",
+          "dataset": "iput-tk230215/steel-ocr-dataset-960",
+          "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+          "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+          "purpose": "pitch_development",
+          "required": true,
+          "id": "steel-S03",
+          "group": "steel-images",
+          "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+          "relative_path": "steel_ocr/train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+          "source_path": "train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+          "sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+          "media_type": "image/jpeg",
+          "local_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+          "verified_sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+          "sha256_matches_expected": true
+        },
+        {
+          "source_kind": "public_dataset",
+          "dataset": "iput-tk230215/steel-ocr-dataset-960",
+          "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+          "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+          "purpose": "pitch_development",
+          "required": true,
+          "id": "steel-S04",
+          "group": "steel-images",
+          "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/kamijo_IMG_1560.jpg",
+          "relative_path": "steel_ocr/train_data/det/images/kamijo_IMG_1560.jpg",
+          "source_path": "train_data/det/images/kamijo_IMG_1560.jpg",
+          "sha256": "5019aa229dab80e079704d210502b19336e30bc48610f0d188f5e9f5fe43b27c",
+          "media_type": "image/jpeg",
+          "local_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/kamijo_IMG_1560.jpg",
+          "verified_sha256": "5019aa229dab80e079704d210502b19336e30bc48610f0d188f5e9f5fe43b27c",
+          "sha256_matches_expected": true
+        },
+        {
+          "source_kind": "public_dataset",
+          "dataset": "iput-tk230215/steel-ocr-dataset-960",
+          "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+          "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+          "purpose": "pitch_development",
+          "required": true,
+          "id": "steel-S05",
+          "group": "steel-images",
+          "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416152847.jpg",
+          "relative_path": "steel_ocr/train_data/det/images/tsukimoto_IMG20250416152847.jpg",
+          "source_path": "train_data/det/images/tsukimoto_IMG20250416152847.jpg",
+          "sha256": "4ccda788e2a4f9958146cf1906218efbf73bba26e9dc86ed0918480294b91b00",
+          "media_type": "image/jpeg",
+          "local_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/tsukimoto_IMG20250416152847.jpg",
+          "verified_sha256": "4ccda788e2a4f9958146cf1906218efbf73bba26e9dc86ed0918480294b91b00",
+          "sha256_matches_expected": true
+        },
+        {
+          "source_kind": "public_dataset",
+          "dataset": "iput-tk230215/steel-ocr-dataset-960",
+          "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+          "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+          "purpose": "pitch_development",
+          "required": true,
+          "id": "steel-S06",
+          "group": "steel-images",
+          "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+          "relative_path": "steel_ocr/train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+          "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+          "sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+          "media_type": "image/jpeg",
+          "local_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+          "verified_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+          "sha256_matches_expected": true
+        },
+        {
+          "source_kind": "public_dataset",
+          "dataset": "iput-tk230215/steel-ocr-dataset-960",
+          "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+          "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+          "purpose": "pitch_development",
+          "required": true,
+          "id": "steel-S07",
+          "group": "steel-images",
+          "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416152836.jpg",
+          "relative_path": "steel_ocr/train_data/det/images/tsukimoto_IMG20250416152836.jpg",
+          "source_path": "train_data/det/images/tsukimoto_IMG20250416152836.jpg",
+          "sha256": "5c75e5b0db3439a79a373b7012aee0bb5defeb0a8291a87ec45ea29f37137cd8",
+          "media_type": "image/jpeg",
+          "local_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/tsukimoto_IMG20250416152836.jpg",
+          "verified_sha256": "5c75e5b0db3439a79a373b7012aee0bb5defeb0a8291a87ec45ea29f37137cd8",
+          "sha256_matches_expected": true
+        },
+        {
+          "source_kind": "public_dataset",
+          "dataset": "iput-tk230215/steel-ocr-dataset-960",
+          "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+          "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+          "purpose": "pitch_development",
+          "required": true,
+          "id": "steel-S08",
+          "group": "steel-images",
+          "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+          "relative_path": "steel_ocr/train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+          "source_path": "train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+          "sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+          "media_type": "image/jpeg",
+          "local_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+          "verified_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+          "sha256_matches_expected": true
+        },
+        {
+          "source_kind": "public_dataset",
+          "dataset": "iput-tk230215/steel-ocr-dataset-960",
+          "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+          "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+          "purpose": "pitch_development",
+          "required": true,
+          "id": "steel-S09",
+          "group": "steel-images",
+          "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416152830.jpg",
+          "relative_path": "steel_ocr/train_data/det/images/tsukimoto_IMG20250416152830.jpg",
+          "source_path": "train_data/det/images/tsukimoto_IMG20250416152830.jpg",
+          "sha256": "b80718bc06102291bfc7e095d26d4e82912757bf98bbf451609662bb01d9379f",
+          "media_type": "image/jpeg",
+          "local_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/tsukimoto_IMG20250416152830.jpg",
+          "verified_sha256": "b80718bc06102291bfc7e095d26d4e82912757bf98bbf451609662bb01d9379f",
+          "sha256_matches_expected": true
+        },
+        {
+          "source_kind": "public_dataset",
+          "dataset": "iput-tk230215/steel-ocr-dataset-960",
+          "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+          "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+          "purpose": "pitch_development",
+          "required": true,
+          "id": "steel-S10",
+          "group": "steel-images",
+          "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/watanabe2_solo_008_B15b30N-20_0deg_N_yellow.JPG",
+          "relative_path": "steel_ocr/train_data/det/images/watanabe2_solo_008_B15b30N-20_0deg_N_yellow.JPG",
+          "source_path": "train_data/det/images/watanabe2_solo_008_B15b30N-20_0deg_N_yellow.JPG",
+          "sha256": "1a9494099122f59037d23661e7bbbf7d92e6b6d6f71b249fd2501d244e94a5cc",
+          "media_type": "image/jpeg",
+          "local_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/watanabe2_solo_008_B15b30N-20_0deg_N_yellow.JPG",
+          "verified_sha256": "1a9494099122f59037d23661e7bbbf7d92e6b6d6f71b249fd2501d244e94a5cc",
+          "sha256_matches_expected": true
+        },
+        {
+          "source_kind": "public_dataset",
+          "dataset": "iput-tk230215/steel-ocr-dataset-960",
+          "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+          "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+          "purpose": "pitch_development",
+          "required": true,
+          "id": "steel-card",
+          "group": "steel-metadata",
+          "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/README.md",
+          "relative_path": "steel_ocr/README.md",
+          "source_path": "README.md",
+          "sha256": "b699ac6d6187055cc70dd6827ccfb802b713d039d4973c16b5e9b40af51c26c2",
+          "media_type": "text/plain",
+          "local_path": "data/raw/demo-bootstrap-v1/steel_ocr/README.md",
+          "verified_sha256": "b699ac6d6187055cc70dd6827ccfb802b713d039d4973c16b5e9b40af51c26c2",
+          "sha256_matches_expected": true
+        },
+        {
+          "source_kind": "public_dataset",
+          "dataset": "iput-tk230215/steel-ocr-dataset-960",
+          "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+          "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+          "purpose": "pitch_development",
+          "required": true,
+          "id": "steel-labels",
+          "group": "steel-metadata",
+          "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/train.txt",
+          "relative_path": "steel_ocr/train_data/det/train.txt",
+          "source_path": "train_data/det/train.txt",
+          "sha256": "cff20945685ac20654313e58fb0d54fa99c7b559a10cbfc0d29964c7423c0fcb",
+          "media_type": "text/plain",
+          "local_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/train.txt",
+          "verified_sha256": "cff20945685ac20654313e58fb0d54fa99c7b559a10cbfc0d29964c7423c0fcb",
+          "sha256_matches_expected": true
+        }
+      ]
+    },
+    {
+      "id": "steel-original-test-list-only",
+      "kind": "reference_inventory_not_test_input",
+      "provider": "iput-tk230215",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset",
+      "revision": "cc1d729fc0e9e78945ee63463ee7f6e3e8d1b395",
+      "evidence": {
+        "path": "experiments/e1_ocr/split-audit.json",
+        "sha256": "b0f3a93ee57c6d9e6f2716dd3d6c16922f1be312aff0088bfde6465d6dcbcc63",
+        "exists": true
+      },
+      "usage": "14 test image filenames queried for name overlap only; no final test images used in inspected experiments",
+      "limitation": "Filename disjointness does not establish visual near-duplicate independence."
+    },
+    {
+      "id": "e1-derived-roi-rotations",
+      "kind": "derived_images",
+      "parent": "steel-ocr-960-subset",
+      "status": "historical development diagnostics, retired as current performance evidence",
+      "transform": "GT annotation axis-aligned bbox, each-axis 5 percent/minimum 2px margin, clip to image; RGB PNG. E1-002/E1-004 also transpose 0/90/180/270 degrees. Not independent images or detector results.",
+      "used_in": [
+        "E1-001",
+        "E1-002",
+        "E1-003",
+        "E1-004"
+      ],
+      "provenance_paths": [
+        {
+          "path": "experiments/e1_ocr/runs/2026-10-09-local/targets.json",
+          "sha256": "92760bc459c09b9954ded5518568fed326d923da20241754617673da42a3c247",
+          "exists": true
+        },
+        {
+          "path": "experiments/e1_alternative/results/targets.json",
+          "sha256": "e56026c6541ee3dd68270e7fc4e4c2a9047ae8556743fc84378ca0a56c9bcdea",
+          "exists": true
+        },
+        {
+          "path": "experiments/e1_rotation/results/targets.json",
+          "sha256": "92760bc459c09b9954ded5518568fed326d923da20241754617673da42a3c247",
+          "exists": true
+        }
+      ],
+      "crops": [
+        {
+          "id": "S01-R00",
+          "source_sha256": "92dced68e6c58ea172936d160547eecfead98c9af6a7e36703869c33a6fa8ecc",
+          "crop_pixels": [
+            0,
+            366,
+            960,
+            601
+          ],
+          "crop_sha256": "469e9adbd018011bc699d665ed12eec6a4484341e009e35d127173371a229b0d"
+        },
+        {
+          "id": "S02-R00",
+          "source_sha256": "56180af3d6a82af02e88d1ef0e5ab3b8617bf03610299dfd71e1c2ae3ff55aed",
+          "crop_pixels": [
+            0,
+            263,
+            960,
+            437
+          ],
+          "crop_sha256": "52e3b396d96d45027cad3562d71abbfb70677f299a3ad78750f7961d08825f61"
+        },
+        {
+          "id": "S03-R00",
+          "source_sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+          "crop_pixels": [
+            305,
+            414,
+            386,
+            692
+          ],
+          "crop_sha256": "bc155ce776104290e9ec61a347b3fbe0a83cb3423384160e2e8929be3bdd19d0"
+        },
+        {
+          "id": "S03-R01",
+          "source_sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+          "crop_pixels": [
+            398,
+            325,
+            484,
+            648
+          ],
+          "crop_sha256": "7e6a20c3ebeaee4bf90484f2e8c188ae4fda1d62f8619760a49548c9847fbc28"
+        },
+        {
+          "id": "S03-R02",
+          "source_sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+          "crop_pixels": [
+            564,
+            577,
+            634,
+            811
+          ],
+          "crop_sha256": "929150d4e75a78f8a8efc388d53737ed478d9f9d76d614d73d7ab43c3ce8d1f3"
+        },
+        {
+          "id": "S03-R03",
+          "source_sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+          "crop_pixels": [
+            471,
+            631,
+            523,
+            898
+          ],
+          "crop_sha256": "abafc1f9c2b71f7ba96410de17573ce7624609b061d2147ed60ecf2636925746"
+        },
+        {
+          "id": "S04-R00",
+          "source_sha256": "5019aa229dab80e079704d210502b19336e30bc48610f0d188f5e9f5fe43b27c",
+          "crop_pixels": [
+            322,
+            290,
+            700,
+            361
+          ],
+          "crop_sha256": "87a1f962d0e7628ea701000044a3acd205e88b2357f878d5dd26275e920fb2f0"
+        },
+        {
+          "id": "S05-R00",
+          "source_sha256": "4ccda788e2a4f9958146cf1906218efbf73bba26e9dc86ed0918480294b91b00",
+          "crop_pixels": [
+            288,
+            153,
+            427,
+            852
+          ],
+          "crop_sha256": "970ec0d1acb7cf93dcc069a1c75e77f17098c38cc38f423fdc4ed416268e537d"
+        },
+        {
+          "id": "S06-R00",
+          "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+          "crop_pixels": [
+            88,
+            264,
+            137,
+            380
+          ],
+          "crop_sha256": "46fd7d51e909bf99dfd3643e19c1c5e4408c1394904778f01730ddf57738e40a"
+        },
+        {
+          "id": "S06-R01",
+          "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+          "crop_pixels": [
+            216,
+            217,
+            260,
+            315
+          ],
+          "crop_sha256": "69e0669ab39dc0ec5254fb97c231d5e876a3255b5baa15311ace69e5c6b78e08"
+        },
+        {
+          "id": "S06-R02",
+          "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+          "crop_pixels": [
+            318,
+            247,
+            380,
+            365
+          ],
+          "crop_sha256": "bfc38b4a078f1962196d2e158748caf7e4faa36a64d22eb003bf51afffcfd434"
+        },
+        {
+          "id": "S06-R03",
+          "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+          "crop_pixels": [
+            392,
+            184,
+            456,
+            279
+          ],
+          "crop_sha256": "609fc6cf0b0b1bd13a8e4a91dcfa485c514a3b10871e05d422cdf9a746a057c4"
+        },
+        {
+          "id": "S06-R04",
+          "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+          "crop_pixels": [
+            483,
+            236,
+            577,
+            361
+          ],
+          "crop_sha256": "82827c959c419b388a49d9d1fd4949552a2a28169b8a292e5743d17eb1efa5aa"
+        },
+        {
+          "id": "S06-R05",
+          "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+          "crop_pixels": [
+            131,
+            526,
+            174,
+            685
+          ],
+          "crop_sha256": "ad2ac85701536c84300f4a22e0dfdc73eea5af5721d899be2db3568f344ce830"
+        },
+        {
+          "id": "S06-R06",
+          "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+          "crop_pixels": [
+            263,
+            499,
+            303,
+            635
+          ],
+          "crop_sha256": "afae51629098d90ed058943f43d92875f401e63e70ce69adc405d6b609f67b16"
+        },
+        {
+          "id": "S06-R07",
+          "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+          "crop_pixels": [
+            418,
+            474,
+            489,
+            591
+          ],
+          "crop_sha256": "a587690a13ac6d96c98cde3f00ad81f6d3d3c24a9ccc1dec865a16e1cc937328"
+        },
+        {
+          "id": "S06-R08",
+          "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+          "crop_pixels": [
+            456,
+            436,
+            533,
+            566
+          ],
+          "crop_sha256": "37c638b19e8c475fb082c416cd8fb19c78e3f1a1089da6ab2b27d9ed68838a85"
+        },
+        {
+          "id": "S06-R09",
+          "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+          "crop_pixels": [
+            539,
+            621,
+            620,
+            775
+          ],
+          "crop_sha256": "e48d169b496c977c6888df9ae7513d9e66a7195fe019fd84166db30e7b362a59"
+        },
+        {
+          "id": "S06-R10",
+          "source_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+          "crop_pixels": [
+            585,
+            575,
+            671,
+            712
+          ],
+          "crop_sha256": "4d4c91cd8e062e02cbd477a8842f6abb9b6d19cfdd8281168e6032e03b3dd9fa"
+        },
+        {
+          "id": "S07-R00",
+          "source_sha256": "5c75e5b0db3439a79a373b7012aee0bb5defeb0a8291a87ec45ea29f37137cd8",
+          "crop_pixels": [
+            101,
+            428,
+            755,
+            558
+          ],
+          "crop_sha256": "5be44dc052f4b9c3ffdd1bdcf9c4cc9d08f893abed0eeb127c5651e12c1813db"
+        },
+        {
+          "id": "S08-R00",
+          "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+          "crop_pixels": [
+            356,
+            144,
+            509,
+            162
+          ],
+          "crop_sha256": "f943a5378c5621b9555d42dc763bec3f32d1daffdaff74f4b21bf9dc07c98799"
+        },
+        {
+          "id": "S08-R01",
+          "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+          "crop_pixels": [
+            400,
+            174,
+            609,
+            195
+          ],
+          "crop_sha256": "97d471a9ff66b2a67c4e9277de312aad4aaf26bd0d494d4761326ae01331e33a"
+        },
+        {
+          "id": "S08-R02",
+          "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+          "crop_pixels": [
+            420,
+            191,
+            650,
+            214
+          ],
+          "crop_sha256": "310ed756fbc5aeef20539d2051bea5d7e2f933b8fef1ae55733988be4c7a182e"
+        },
+        {
+          "id": "S08-R03",
+          "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+          "crop_pixels": [
+            316,
+            218,
+            545,
+            243
+          ],
+          "crop_sha256": "6c8f15af4ac5ebfdc7c1d9f4dd95572f5d27cd12fea04e083b67dabf71eb2914"
+        },
+        {
+          "id": "S08-R04",
+          "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+          "crop_pixels": [
+            443,
+            293,
+            741,
+            329
+          ],
+          "crop_sha256": "4f60846e8a6c0308a1fac4af6ad58e5714290b2655b2e71eee86bfaff064b89c"
+        },
+        {
+          "id": "S08-R05",
+          "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+          "crop_pixels": [
+            169,
+            357,
+            518,
+            397
+          ],
+          "crop_sha256": "e4540993c33ebfcb7774c8d83675bc445e319e7e8f691c5c1b3402d318d57057"
+        },
+        {
+          "id": "S08-R06",
+          "source_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+          "crop_pixels": [
+            368,
+            542,
+            946,
+            628
+          ],
+          "crop_sha256": "f29f2f1e3d064528c8754beddbfa54e38ef100e28ce7c1a271776f796c769761"
+        },
+        {
+          "id": "S09-R00",
+          "source_sha256": "b80718bc06102291bfc7e095d26d4e82912757bf98bbf451609662bb01d9379f",
+          "crop_pixels": [
+            93,
+            389,
+            743,
+            527
+          ],
+          "crop_sha256": "b88d0153e40760e51feba81a90610966953dbfd42714e70d992ac0da5a50a857"
+        }
+      ]
+    },
+    {
+      "id": "e1-control-image",
+      "kind": "synthetic_test_fixture",
+      "creator": "PAC2026 authored rendering",
+      "text": "ABC123 B-108",
+      "purpose": "engine/coordinate sanity only; excluded from OCR metrics",
+      "font": "macOS Monaco.ttf (font file version/hash and redistribution rights not recorded)",
+      "evidence": [
+        {
+          "path": "experiments/e1_ocr/runs/control/control.png",
+          "sha256": "01e5e9fffe273375502f852b760a7caabe3d3479fb412fcd80e9b732c6239d23",
+          "exists": true
+        },
+        {
+          "path": "experiments/e1_ocr/results/control.json",
+          "sha256": "4a9fc00ed1b30fd6eb98e2fdf4936afbadba6f89b74c562be409a9e9d0dc7b9e",
+          "exists": true
+        }
+      ],
+      "status": "historical control"
+    },
+    {
+      "id": "ctx001-invalidated-derived-inputs",
+      "kind": "gt_derived_crops_candidates_synthetic_context",
+      "parent": "steel-ocr-960-subset",
+      "status": "invalidated_design; not usable as pipeline performance or presentation evidence",
+      "creator": "PAC2026 experiments/context_ablation/prepare.py",
+      "transform": "GT target ROIs 28 from 9 images; axis-aligned bbox with 8 percent/minimum 4px margin, no resize/rotate/rectify; six label-derived candidate IDs including truth/confusers/neighbors; coarse layout/neighbor text synthetic work context from same annotations; normal/absent/wrong-context variants",
+      "evidence": [
+        {
+          "path": "experiments/context_ablation/inputs.json",
+          "sha256": "8f7b9a992ff1abd129b4a9e84c12692ead2a6537e719fcd67969b280165351f7",
+          "exists": true
+        },
+        {
+          "path": "experiments/context_ablation/fixtures.json",
+          "sha256": "f56a2933d21263b9adbf0a61639b871168dbf5b4f9a98e05ff78e5a33c8fb34d",
+          "exists": true
+        },
+        {
+          "path": "experiments/context_ablation/ground_truth.json",
+          "sha256": "16a90f0b47d45df89b8a02c70ca56ff7b7e16f9a3e5a7887e6d9240d7def4105",
+          "exists": true
+        },
+        {
+          "path": "experiments/context_ablation/prepare.py",
+          "sha256": "af8c974787290f5a9ea940d32651bb45b8ca134666fca5cae3d43dc4c10abb2a",
+          "exists": true
+        },
+        {
+          "path": "experiments/context_ablation/results/design-audit.json",
+          "sha256": "5ad745c647f5455d06b2cb4b1476b8340d1597c1d4abca4e6f9ee07badba820d",
+          "exists": true
+        },
+        {
+          "path": "output/context-ablation-20261010/run-01/checksums.json",
+          "sha256": "d6bce75b57d2896938827630f46b5fe2a4d7295390c3a7432be34f9f86284d82",
+          "exists": true
+        }
+      ],
+      "label_review": "original public labels, no independent reannotation",
+      "originals_preserved": true,
+      "invalidation_reason": "Candidate roster injected correct answer and is not an exhaustive real-world task constraint; cannot interpret closed-set choice jump as pipeline OCR/context improvement."
+    },
+    {
+      "id": "e2-authored-corpus-questions",
+      "kind": "authored_paraphrase_and_development_questions",
+      "provider": "TWI article for source concepts; PAC2026 authored paraphrase/questions/rubric",
+      "source_url": "https://www.twi-global.com/technical-knowledge/job-knowledge/weld-symbols",
+      "article_date_recorded": "2020-04-27",
+      "retrieved_date_recorded": "2026-10-09",
+      "used_in": [
+        "E2-001",
+        "E2-002",
+        "E5-001 consumes E2 generated outputs"
+      ],
+      "count": {
+        "paraphrases": 6,
+        "words_protocol": 140,
+        "questions": 9,
+        "answerable": 6,
+        "unanswerable": 3
+      },
+      "evidence": [
+        {
+          "path": "experiments/e2_documents/corpus.json",
+          "sha256": "aff139ee687259ee004d9ba0cd5cf96f8c3f3d89e95f0e1764f1964639baf2c7",
+          "exists": true
+        },
+        {
+          "path": "experiments/e2_documents/questions.json",
+          "sha256": "6d8fd19541c98738b279bf89da4335411a302f9fce75e6b7ddf508857660d4b8",
+          "exists": true
+        },
+        {
+          "path": "experiments/e2_documents/rubric.json",
+          "sha256": "9ff988a91ca30d6e740452ae4b4309cbd81171d78f7e2bd617d2f7eed44bb362",
+          "exists": true
+        }
+      ],
+      "source_sections": [
+        {
+          "id": "D1",
+          "source_section": "Basic Requirements",
+          "kind": "experiment_authored_paraphrase"
+        },
+        {
+          "id": "D2",
+          "source_section": "Supplementary Symbols",
+          "kind": "experiment_authored_paraphrase"
+        },
+        {
+          "id": "D3",
+          "source_section": "Welding Process Type",
+          "kind": "experiment_authored_paraphrase"
+        },
+        {
+          "id": "D4",
+          "source_section": "Joint and/or weld shape",
+          "kind": "experiment_authored_paraphrase"
+        },
+        {
+          "id": "D5",
+          "source_section": "Joint and/or weld shape",
+          "kind": "experiment_authored_paraphrase"
+        },
+        {
+          "id": "D6",
+          "source_section": "The Broken Reference Line",
+          "kind": "experiment_authored_paraphrase"
+        }
+      ],
+      "license": "public access to source, redistribution permission unverified; corpus is authored paraphrase not raw article/full standard",
+      "status": "historical retired pilot; not real WPS/current-standard/independent-domain evaluation"
+    },
+    {
+      "id": "e4-synthetic-orders",
+      "kind": "synthetic_from_dataset_labels",
+      "parent": "steel-ocr-960-subset",
+      "creator": "PAC2026 experiments/e4_linking/run_linking.py",
+      "used_in": [
+        "E4-001"
+      ],
+      "evidence": [
+        {
+          "path": "experiments/e4_linking/results/synthetic-orders.json",
+          "sha256": "e6a25969feb2d2998e7cf06476945bd696244256d7a71847af5002b779bcf638",
+          "exists": true
+        },
+        {
+          "path": "experiments/e4_linking/PROTOCOL.md",
+          "sha256": "cda81b24c2bf0d743e43742d8ad7a447ddc11b90311985674fe959c1c164d73c",
+          "exists": true
+        }
+      ],
+      "description": "Distributor label part IDs made into per-image synthetic work orders; joined to actual E1-003 full-frame observations. Normal/nonexistent block/cancelled order scenarios.",
+      "status": "historical pipeline-path fixture; not real production match or independent accuracy evidence"
+    },
+    {
+      "id": "first-scene-fixture",
+      "kind": "synthetic_manual",
+      "creator": "PAC2026",
+      "evidence": {
+        "path": "data/examples/part-order-scene.json",
+        "sha256": "003181591a2528fd9c173d2ce5e4137a27cb77e97c9c46a032c9e65a06ed15e4",
+        "exists": true
+      },
+      "description": "Directly authored B-108/B-103 candidates, three synthetic orders/revisions and normal/ambiguous/stale/wrong-context cases. No photo OCR or field data.",
+      "status": "development example"
+    },
+    {
+      "id": "document-demo-fixtures",
+      "kind": "synthetic_demo",
+      "creator": "PAC2026",
+      "parent": "steel-batch-20261010-02 frame-007 stored model observation (source photograph S07)",
+      "evidence": [
+        {
+          "path": "configs/document_demo/work_orders.json",
+          "sha256": "b1009644add31261af0c700d2c26709310336f9de11820c0ba28429ab435cc5b",
+          "exists": true
+        },
+        {
+          "path": "configs/document_demo/drawing.json",
+          "sha256": "0c88bf36d06bdda30165ed78f5e2b19c51252ed8f1ebeb869a16e6a83d131cd4",
+          "exists": true
+        },
+        {
+          "path": "configs/document_demo/drawing.svg",
+          "sha256": "3862ab71115a4311ff498ac0057bd9a1d2cd7aa634bbcc9c72d37ebacb59466b",
+          "exists": true
+        },
+        {
+          "path": "configs/document_demo/scenario.json",
+          "sha256": "ab81d2d1e9b37670d56b91d4938ff7d3c3b4c8e58f34ca10f5edf1d1b53e32cf",
+          "exists": true
+        },
+        {
+          "path": "configs/document_demo/target_profile.json",
+          "sha256": "9a7445535a5635d4ed4e9ab6832b7a7e7b398ecd40296aee3b204fd8cf98e047",
+          "exists": true
+        }
+      ],
+      "description": "Work order WO-DEMO-015, drawing DRAWING-DEMO-015 and target-profile authored for document range review. BISB30N-15 comes from actual OCR output as opaque key, not corrected label truth. Selected observed example, not independent matching test. Fault injections missing voltage/process conflict/revision mismatch/observation conflict.",
+      "application_authorized": false,
+      "field_authenticity": "A-36/FCAW/flat values are fixture assumptions; actual photographed member material/thickness/joint and WPS suitability unknown. J01 Isaac to JOINT-DEMO-01 mapping not yet connected in inspected source.",
+      "used_in": [
+        "document-demo",
+        "explicit-review",
+        "stored inputs for offline replay"
+      ],
+      "status": "current synthetic demo context"
+    },
+    {
+      "id": "isaac-night-baseline",
+      "kind": "synthetic_simulator_render",
+      "creator": "PAC2026 scene scripts in NVIDIA Isaac Sim 6.1",
+      "scenario_id": "night-welding-glare-01",
+      "evidence": [
+        {
+          "path": "output/isaac-scene-20261010/live-01/manifest.json",
+          "sha256": "10882f2785563c12aee59d9e4a5323bfd3effde06f4c193dcca5efc7ea76dab7",
+          "exists": true
+        },
+        {
+          "path": "configs/isaac_scene/night_welding.json",
+          "sha256": "d3c34ec1f6d5f556d094c139eced396630cd2b141f7eba12e1744104bb4ab7b8",
+          "exists": true
+        },
+        {
+          "path": "scripts/run_isaac_welding_scene.py",
+          "sha256": "020d0c71d6dfa312a728574349cb6dcd324f3769e90a8bef662e178910cf22d1",
+          "exists": true
+        }
+      ],
+      "capture_mode": "pre_captured",
+      "recognition_feedback_enabled": false,
+      "physical_scope": "Scheduled actual simulated joint movement; not inference-triggered robot feedback, not real shipyard photography or welding.",
+      "status": "preserved baseline",
+      "simulator_source_commit_recorded": "a8ac4d8df1ad13cefa4535e6e409194ce6a2b928",
+      "simulator_source_dirty_recorded": true,
+      "frame_assets": [
+        {
+          "view": "A",
+          "camera": "wrist",
+          "path": "output/isaac-scene-20261010/live-01/frames/A-wrist.png",
+          "sha256": "6633ff9bd1766a7148737751e38d39b3cb48327ba672bf70207bf872da778155",
+          "captured_at_utc": "2026-10-09T21:04:16.860420+00:00"
+        },
+        {
+          "view": "A",
+          "camera": "overview",
+          "path": "output/isaac-scene-20261010/live-01/frames/A-overview.png",
+          "sha256": "79dba75c8202fe490dbd2da5607b7d2afd0129d2ebdd4aaa6f3fcd428e504ffd",
+          "captured_at_utc": "2026-10-09T21:04:16.860420+00:00"
+        },
+        {
+          "view": "B",
+          "camera": "wrist",
+          "path": "output/isaac-scene-20261010/live-01/frames/B-wrist.png",
+          "sha256": "053ff1fbd5a29b984d62474fc929534c0a33085a13277d65da4f5b26780aa41e",
+          "captured_at_utc": "2026-10-09T21:04:25.214481+00:00"
+        },
+        {
+          "view": "B",
+          "camera": "overview",
+          "path": "output/isaac-scene-20261010/live-01/frames/B-overview.png",
+          "sha256": "a76590f3bd0ba1e7823068a6549962f7337c745da305a3c5f38674cbd7a806a0",
+          "captured_at_utc": "2026-10-09T21:04:25.214481+00:00"
+        }
+      ],
+      "marking": {
+        "font": "DejaVuSansMono-Bold.ttf",
+        "sha256": "72848cebcd807a7017d1d07de85201f0c7d93c9181c5d71afc7ed82590c2a0db",
+        "source": "programmatically drawn synthetic marking; not a real steel-photo transcription",
+        "size": [
+          2048,
+          1024
+        ]
+      },
+      "font_dependency": "DejaVuSansMono-Bold.ttf; actual font version/hash/license not saved; manifest marking.sha256 is generated image hash",
+      "external_asset": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.1/Isaac/Robots/UniversalRobots/ur10/ur10.usd",
+      "capture_source_hashes": {
+        "source/run_isaac_welding_scene.py": "020d0c71d6dfa312a728574349cb6dcd324f3769e90a8bef662e178910cf22d1",
+        "source/isaac_scene_robot.py": "7603368955d5705571e9f1c2b50c28cdc4f465fadd9d8f05cf88f3c4345bafef"
+      },
+      "captured_config_sha256": "d3c34ec1f6d5f556d094c139eced396630cd2b141f7eba12e1744104bb4ab7b8",
+      "current_source_verification": {
+        "checked_at": "2026-10-10",
+        "source_files": [
+          {
+            "repository_path": "scripts/run_isaac_welding_scene.py",
+            "archived_path": "output/isaac-scene-20261010/live-01/source/run_isaac_welding_scene.py",
+            "sha256": "020d0c71d6dfa312a728574349cb6dcd324f3769e90a8bef662e178910cf22d1",
+            "matches_capture": true
+          },
+          {
+            "repository_path": "scripts/isaac_scene_robot.py",
+            "archived_path": "output/isaac-scene-20261010/live-01/source/isaac_scene_robot.py",
+            "sha256": "7603368955d5705571e9f1c2b50c28cdc4f465fadd9d8f05cf88f3c4345bafef",
+            "matches_capture": true
+          }
+        ],
+        "config_path": "configs/isaac_scene/night_welding.json",
+        "config_matches_capture": true,
+        "note": "Capture-time dirty Git commit differs from audit HEAD; checked code and config bytes nevertheless match the capture manifest."
+      }
+    },
+    {
+      "id": "isaac-shipyard-live03",
+      "kind": "synthetic_simulator_render",
+      "creator": "PAC2026 scene scripts in NVIDIA Isaac Sim 6.1",
+      "scenario_id": "shipyard-handwriting-glare-01",
+      "evidence": [
+        {
+          "path": "output/context-ablation-20261010/isaac-live-03/manifest.json",
+          "sha256": "61dedee65b3fdedc0c3c90a622291294c63b8b5c0759f791481e613c2dc45e00",
+          "exists": true
+        },
+        {
+          "path": "configs/isaac_scene/shipyard_handwriting.json",
+          "sha256": "afef8c34ccda30465f4a78b0e42880804e4ffe6350df808cdde9135f2ca6905f",
+          "exists": true
+        },
+        {
+          "path": "scripts/run_isaac_shipyard_scene.py",
+          "sha256": "6af6eee4b2ac260d721723ef9720665b578c3d31c000c3723a9e0f76fcfc6b1f",
+          "exists": true
+        }
+      ],
+      "capture_mode": "pre_captured",
+      "recognition_feedback_enabled": false,
+      "physical_scope": "Scheduled actual simulated joint movement; not inference-triggered robot feedback, not real shipyard photography or welding.",
+      "status": "current saved RGB input; model inference not run in recapture handoff",
+      "simulator_source_commit_recorded": "8beaa569a4c38745b4ff42754084b53059f54292",
+      "simulator_source_dirty_recorded": true,
+      "frame_assets": [
+        {
+          "view": "A",
+          "camera": "wrist",
+          "path": "output/context-ablation-20261010/isaac-live-03/frames/A-wrist.png",
+          "sha256": "8ee7e159d0723b89592272958924edaf5aecb6cba52d0bcf24eee9ff8fdb3802",
+          "captured_at_utc": "2026-10-09T22:38:23.365005+00:00"
+        },
+        {
+          "view": "A",
+          "camera": "overview",
+          "path": "output/context-ablation-20261010/isaac-live-03/frames/A-overview.png",
+          "sha256": "87d2b9355f01d53de0dd70e2ffa227df551adefc1fcd4dd3d2cf6f60df7cd94a",
+          "captured_at_utc": "2026-10-09T22:38:23.365005+00:00"
+        },
+        {
+          "view": "B",
+          "camera": "wrist",
+          "path": "output/context-ablation-20261010/isaac-live-03/frames/B-wrist.png",
+          "sha256": "2492583e4c354790765fef7f80aabcd8025edbfe8d020f13338942e6b34e70d8",
+          "captured_at_utc": "2026-10-09T22:38:32.066895+00:00"
+        },
+        {
+          "view": "B",
+          "camera": "overview",
+          "path": "output/context-ablation-20261010/isaac-live-03/frames/B-overview.png",
+          "sha256": "a583e0ddea156385c6b6c1a9780e1f435d2088e305f5c5e407e1aefdafee6a19",
+          "captured_at_utc": "2026-10-09T22:38:32.066895+00:00"
+        }
+      ],
+      "generator": "scripts/isaac_shipyard_marking.py",
+      "glyph_set": "shipyard-stroke-glyphs.v2",
+      "seed": 20261010,
+      "font_dependency": null,
+      "asset_provenance": {
+        "marking_textures": {
+          "panel_center_albedo.png": {
+            "path": "assets/panel_center_albedo.png",
+            "sha256": "9b94cc0dfef423083297643f389567245020af5b0e3f84bde70c5dda22c0c65d"
+          },
+          "panel_side_albedo.png": {
+            "path": "assets/panel_side_albedo.png",
+            "sha256": "a54e53dd7a757e18ac63ca0e1fcfd81f773e849bad4365bce550c66bb7e74eb1"
+          },
+          "marking_layer.png": {
+            "path": "assets/marking_layer.png",
+            "sha256": "05d51e141c9ad8e2aeb0023d9851f9572730bd66ee791ff50a04a7a980610aad"
+          },
+          "marking_preview.png": {
+            "path": "assets/marking_preview.png",
+            "sha256": "d04b591f4aee4a81f3cc4ec96e95c1f9ab1b28241c85ad0b99471d786c2f28c0"
+          }
+        },
+        "marking_generation": {
+          "generator": "scripts/isaac_shipyard_marking.py",
+          "generator_sha256": "c03e3cc90ef1621d20bb8cad5ec08bf54581328448de7b747751a76eed2669d8",
+          "glyph_set_version": "shipyard-stroke-glyphs.v2",
+          "seed": 20261010,
+          "style": "paint_marker",
+          "synthetic": true,
+          "source": "procedural synthetic handwriting-style strokes drawn by scripts/isaac_shipyard_marking.py; not a transcription of a real steel photo"
+        },
+        "external_assets": [
+          {
+            "name": "Universal Robots UR10",
+            "kind": "USD reference",
+            "path": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.1/Isaac/Robots/UniversalRobots/ur10/ur10.usd",
+            "provider": "NVIDIA Isaac Sim 6.1 asset library",
+            "copied_into_output": false
+          }
+        ],
+        "procedural_geometry": "all workshop geometry is USD primitives authored by scripts/run_isaac_shipyard_scene.py; no external meshes except the UR10"
+      },
+      "copy_evidence": {
+        "path": "output/recapture-handoff-20261010/inputs/inputs.json",
+        "sha256": "320888b1e0603fe33e9e8ef5ef2fe29a9f37f8b2dd5be5357abe8bc1a1230e96",
+        "exists": true
+      },
+      "preview_evidence": {
+        "path": "docs/images/isaac_shipyard/README.json",
+        "sha256": "d23ccc2811c56a70e0b684d5e87aaf74ad1644860d2b19488af9e25502a93ae9",
+        "exists": true
+      },
+      "capture_source_hashes": {
+        "source/run_isaac_shipyard_scene.py": "6af6eee4b2ac260d721723ef9720665b578c3d31c000c3723a9e0f76fcfc6b1f",
+        "source/isaac_scene_robot.py": "7603368955d5705571e9f1c2b50c28cdc4f465fadd9d8f05cf88f3c4345bafef",
+        "source/isaac_shipyard_marking.py": "c03e3cc90ef1621d20bb8cad5ec08bf54581328448de7b747751a76eed2669d8"
+      },
+      "captured_config_sha256": "afef8c34ccda30465f4a78b0e42880804e4ffe6350df808cdde9135f2ca6905f",
+      "current_source_verification": {
+        "checked_at": "2026-10-10",
+        "source_files": [
+          {
+            "repository_path": "scripts/run_isaac_shipyard_scene.py",
+            "archived_path": "output/context-ablation-20261010/isaac-live-03/source/run_isaac_shipyard_scene.py",
+            "sha256": "6af6eee4b2ac260d721723ef9720665b578c3d31c000c3723a9e0f76fcfc6b1f",
+            "matches_capture": true
+          },
+          {
+            "repository_path": "scripts/isaac_scene_robot.py",
+            "archived_path": "output/context-ablation-20261010/isaac-live-03/source/isaac_scene_robot.py",
+            "sha256": "7603368955d5705571e9f1c2b50c28cdc4f465fadd9d8f05cf88f3c4345bafef",
+            "matches_capture": true
+          },
+          {
+            "repository_path": "scripts/isaac_shipyard_marking.py",
+            "archived_path": "output/context-ablation-20261010/isaac-live-03/source/isaac_shipyard_marking.py",
+            "sha256": "c03e3cc90ef1621d20bb8cad5ec08bf54581328448de7b747751a76eed2669d8",
+            "matches_capture": true
+          }
+        ],
+        "config_path": "configs/isaac_scene/shipyard_handwriting.json",
+        "config_matches_capture": true,
+        "note": "Capture-time dirty Git commit differs from audit HEAD; checked code and config bytes nevertheless match the capture manifest."
+      }
+    },
+    {
+      "id": "unit-test-fixtures",
+      "kind": "authored_synthetic_test_cases",
+      "creator": "PAC2026 tests and experiment test scripts",
+      "evidence_paths": [
+        "tests/",
+        "experiments/e1_ocr/test_score.py",
+        "experiments/e1_rotation/test_rotation.py",
+        "experiments/e2_documents/test_retrieve.py",
+        "experiments/e4_linking/test_adapter.py",
+        "experiments/e5_output_checks/test_checks.py",
+        "output/recapture-handoff-20261010/code/tests/"
+      ],
+      "description": "Locally generated images/observations/doc snippets/response fixtures for behavior verification; not runtime model output or field evaluation samples.",
+      "status": "test only"
+    }
+  ],
+  "acquired_assets": [
+    {
+      "source_kind": "public_dataset",
+      "dataset": "iput-tk230215/steel-ocr-dataset-960",
+      "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+      "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+      "purpose": "pitch_development",
+      "required": true,
+      "id": "steel-S01",
+      "group": "steel-images",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/kanawa_IMG_0772.jpg",
+      "relative_path": "steel_ocr/train_data/det/images/kanawa_IMG_0772.jpg",
+      "source_path": "train_data/det/images/kanawa_IMG_0772.jpg",
+      "sha256": "92dced68e6c58ea172936d160547eecfead98c9af6a7e36703869c33a6fa8ecc",
+      "media_type": "image/jpeg",
+      "declared_sha256": "92dced68e6c58ea172936d160547eecfead98c9af6a7e36703869c33a6fa8ecc",
+      "size_bytes": 179721,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:30.041534Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/kanawa_IMG_0772.jpg",
+      "audit_sha256": "92dced68e6c58ea172936d160547eecfead98c9af6a7e36703869c33a6fa8ecc",
+      "audit_match": true
+    },
+    {
+      "source_kind": "public_dataset",
+      "dataset": "iput-tk230215/steel-ocr-dataset-960",
+      "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+      "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+      "purpose": "pitch_development",
+      "required": true,
+      "id": "steel-S02",
+      "group": "steel-images",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/kanawa_IMG_0770.jpg",
+      "relative_path": "steel_ocr/train_data/det/images/kanawa_IMG_0770.jpg",
+      "source_path": "train_data/det/images/kanawa_IMG_0770.jpg",
+      "sha256": "56180af3d6a82af02e88d1ef0e5ab3b8617bf03610299dfd71e1c2ae3ff55aed",
+      "media_type": "image/jpeg",
+      "declared_sha256": "56180af3d6a82af02e88d1ef0e5ab3b8617bf03610299dfd71e1c2ae3ff55aed",
+      "size_bytes": 257150,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:30.852131Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/kanawa_IMG_0770.jpg",
+      "audit_sha256": "56180af3d6a82af02e88d1ef0e5ab3b8617bf03610299dfd71e1c2ae3ff55aed",
+      "audit_match": true
+    },
+    {
+      "source_kind": "public_dataset",
+      "dataset": "iput-tk230215/steel-ocr-dataset-960",
+      "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+      "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+      "purpose": "pitch_development",
+      "required": true,
+      "id": "steel-S03",
+      "group": "steel-images",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+      "relative_path": "steel_ocr/train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+      "source_path": "train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+      "sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+      "media_type": "image/jpeg",
+      "declared_sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+      "size_bytes": 206537,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:31.707656Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/tsukimoto_IMG20250416160808.jpg",
+      "audit_sha256": "d245b46699ab92e4ef31ce37e51710cf0a63028c8b6d19ffc4d0aaf83ef3d28b",
+      "audit_match": true
+    },
+    {
+      "source_kind": "public_dataset",
+      "dataset": "iput-tk230215/steel-ocr-dataset-960",
+      "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+      "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+      "purpose": "pitch_development",
+      "required": true,
+      "id": "steel-S04",
+      "group": "steel-images",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/kamijo_IMG_1560.jpg",
+      "relative_path": "steel_ocr/train_data/det/images/kamijo_IMG_1560.jpg",
+      "source_path": "train_data/det/images/kamijo_IMG_1560.jpg",
+      "sha256": "5019aa229dab80e079704d210502b19336e30bc48610f0d188f5e9f5fe43b27c",
+      "media_type": "image/jpeg",
+      "declared_sha256": "5019aa229dab80e079704d210502b19336e30bc48610f0d188f5e9f5fe43b27c",
+      "size_bytes": 480985,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:32.480837Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/kamijo_IMG_1560.jpg",
+      "audit_sha256": "5019aa229dab80e079704d210502b19336e30bc48610f0d188f5e9f5fe43b27c",
+      "audit_match": true
+    },
+    {
+      "source_kind": "public_dataset",
+      "dataset": "iput-tk230215/steel-ocr-dataset-960",
+      "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+      "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+      "purpose": "pitch_development",
+      "required": true,
+      "id": "steel-S05",
+      "group": "steel-images",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416152847.jpg",
+      "relative_path": "steel_ocr/train_data/det/images/tsukimoto_IMG20250416152847.jpg",
+      "source_path": "train_data/det/images/tsukimoto_IMG20250416152847.jpg",
+      "sha256": "4ccda788e2a4f9958146cf1906218efbf73bba26e9dc86ed0918480294b91b00",
+      "media_type": "image/jpeg",
+      "declared_sha256": "4ccda788e2a4f9958146cf1906218efbf73bba26e9dc86ed0918480294b91b00",
+      "size_bytes": 205779,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:33.205665Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/tsukimoto_IMG20250416152847.jpg",
+      "audit_sha256": "4ccda788e2a4f9958146cf1906218efbf73bba26e9dc86ed0918480294b91b00",
+      "audit_match": true
+    },
+    {
+      "source_kind": "public_dataset",
+      "dataset": "iput-tk230215/steel-ocr-dataset-960",
+      "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+      "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+      "purpose": "pitch_development",
+      "required": true,
+      "id": "steel-S06",
+      "group": "steel-images",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+      "relative_path": "steel_ocr/train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+      "source_path": "train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+      "sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+      "media_type": "image/jpeg",
+      "declared_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+      "size_bytes": 259993,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:33.998387Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/watanabe2_bundle_multi_005_yellow.JPG",
+      "audit_sha256": "b32e563a74977c6fb5697f59828007bc535d3b36f404377ac2381888d380c353",
+      "audit_match": true
+    },
+    {
+      "source_kind": "public_dataset",
+      "dataset": "iput-tk230215/steel-ocr-dataset-960",
+      "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+      "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+      "purpose": "pitch_development",
+      "required": true,
+      "id": "steel-S07",
+      "group": "steel-images",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416152836.jpg",
+      "relative_path": "steel_ocr/train_data/det/images/tsukimoto_IMG20250416152836.jpg",
+      "source_path": "train_data/det/images/tsukimoto_IMG20250416152836.jpg",
+      "sha256": "5c75e5b0db3439a79a373b7012aee0bb5defeb0a8291a87ec45ea29f37137cd8",
+      "media_type": "image/jpeg",
+      "declared_sha256": "5c75e5b0db3439a79a373b7012aee0bb5defeb0a8291a87ec45ea29f37137cd8",
+      "size_bytes": 330189,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:34.813601Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/tsukimoto_IMG20250416152836.jpg",
+      "audit_sha256": "5c75e5b0db3439a79a373b7012aee0bb5defeb0a8291a87ec45ea29f37137cd8",
+      "audit_match": true
+    },
+    {
+      "source_kind": "public_dataset",
+      "dataset": "iput-tk230215/steel-ocr-dataset-960",
+      "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+      "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+      "purpose": "pitch_development",
+      "required": true,
+      "id": "steel-S08",
+      "group": "steel-images",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+      "relative_path": "steel_ocr/train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+      "source_path": "train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+      "sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+      "media_type": "image/jpeg",
+      "declared_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+      "size_bytes": 207174,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:35.571114Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/tsukimoto_IMG20250416160730.jpg",
+      "audit_sha256": "3055ff8b47bd20d7ddf9037c0c8054d0bfb8914b5aa31c5cfd72b43bfae0121e",
+      "audit_match": true
+    },
+    {
+      "source_kind": "public_dataset",
+      "dataset": "iput-tk230215/steel-ocr-dataset-960",
+      "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+      "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+      "purpose": "pitch_development",
+      "required": true,
+      "id": "steel-S09",
+      "group": "steel-images",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/tsukimoto_IMG20250416152830.jpg",
+      "relative_path": "steel_ocr/train_data/det/images/tsukimoto_IMG20250416152830.jpg",
+      "source_path": "train_data/det/images/tsukimoto_IMG20250416152830.jpg",
+      "sha256": "b80718bc06102291bfc7e095d26d4e82912757bf98bbf451609662bb01d9379f",
+      "media_type": "image/jpeg",
+      "declared_sha256": "b80718bc06102291bfc7e095d26d4e82912757bf98bbf451609662bb01d9379f",
+      "size_bytes": 330535,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:36.370462Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/tsukimoto_IMG20250416152830.jpg",
+      "audit_sha256": "b80718bc06102291bfc7e095d26d4e82912757bf98bbf451609662bb01d9379f",
+      "audit_match": true
+    },
+    {
+      "source_kind": "public_dataset",
+      "dataset": "iput-tk230215/steel-ocr-dataset-960",
+      "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+      "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+      "purpose": "pitch_development",
+      "required": true,
+      "id": "steel-S10",
+      "group": "steel-images",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/images/watanabe2_solo_008_B15b30N-20_0deg_N_yellow.JPG",
+      "relative_path": "steel_ocr/train_data/det/images/watanabe2_solo_008_B15b30N-20_0deg_N_yellow.JPG",
+      "source_path": "train_data/det/images/watanabe2_solo_008_B15b30N-20_0deg_N_yellow.JPG",
+      "sha256": "1a9494099122f59037d23661e7bbbf7d92e6b6d6f71b249fd2501d244e94a5cc",
+      "media_type": "image/jpeg",
+      "declared_sha256": "1a9494099122f59037d23661e7bbbf7d92e6b6d6f71b249fd2501d244e94a5cc",
+      "size_bytes": 129319,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:37.268605Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/images/watanabe2_solo_008_B15b30N-20_0deg_N_yellow.JPG",
+      "audit_sha256": "1a9494099122f59037d23661e7bbbf7d92e6b6d6f71b249fd2501d244e94a5cc",
+      "audit_match": true
+    },
+    {
+      "source_kind": "public_dataset",
+      "dataset": "iput-tk230215/steel-ocr-dataset-960",
+      "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+      "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+      "purpose": "pitch_development",
+      "required": true,
+      "id": "steel-card",
+      "group": "steel-metadata",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/README.md",
+      "relative_path": "steel_ocr/README.md",
+      "source_path": "README.md",
+      "sha256": "b699ac6d6187055cc70dd6827ccfb802b713d039d4973c16b5e9b40af51c26c2",
+      "media_type": "text/plain",
+      "declared_sha256": "b699ac6d6187055cc70dd6827ccfb802b713d039d4973c16b5e9b40af51c26c2",
+      "size_bytes": 2903,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:37.622371Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/steel_ocr/README.md",
+      "audit_sha256": "b699ac6d6187055cc70dd6827ccfb802b713d039d4973c16b5e9b40af51c26c2",
+      "audit_match": true
+    },
+    {
+      "source_kind": "public_dataset",
+      "dataset": "iput-tk230215/steel-ocr-dataset-960",
+      "revision": "37725284f40deeaccbdeb3734be7b0e90e974305",
+      "license_declared": "MIT (dataset card metadata); no standalone LICENSE in file listing",
+      "purpose": "pitch_development",
+      "required": true,
+      "id": "steel-labels",
+      "group": "steel-metadata",
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960/resolve/37725284f40deeaccbdeb3734be7b0e90e974305/train_data/det/train.txt",
+      "relative_path": "steel_ocr/train_data/det/train.txt",
+      "source_path": "train_data/det/train.txt",
+      "sha256": "cff20945685ac20654313e58fb0d54fa99c7b559a10cbfc0d29964c7423c0fcb",
+      "media_type": "text/plain",
+      "declared_sha256": "cff20945685ac20654313e58fb0d54fa99c7b559a10cbfc0d29964c7423c0fcb",
+      "size_bytes": 45130,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:37.951804Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/steel_ocr/train_data/det/train.txt",
+      "audit_sha256": "cff20945685ac20654313e58fb0d54fa99c7b559a10cbfc0d29964c7423c0fcb",
+      "audit_match": true
+    },
+    {
+      "id": "twi-weld-symbols",
+      "group": "documents",
+      "title": "TWI Weld symbols",
+      "url": "https://www.twi-global.com/technical-knowledge/job-knowledge/weld-symbols",
+      "relative_path": "documents/twi/weld-symbols.html",
+      "sha256": "e1956080eb25e3b7b6f317807ff60dcf044309f90db97b8a1f8e6c4107121b94",
+      "media_type": "text/html",
+      "required": false,
+      "source_kind": "public_document",
+      "license_declared": "Publicly accessible; redistribution permission not verified",
+      "declared_sha256": null,
+      "size_bytes": 226855,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:38.242511Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/documents/twi/weld-symbols.html",
+      "audit_sha256": "e1956080eb25e3b7b6f317807ff60dcf044309f90db97b8a1f8e6c4107121b94",
+      "audit_match": true,
+      "acquisition_review_snapshot": {
+        "purpose": "source_review_pending",
+        "content_reviewed": false,
+        "note": "Original acquisition flags; see documents and derived_document_records for later extraction and selected transcription review."
+      }
+    },
+    {
+      "id": "lanl-wts",
+      "group": "documents",
+      "title": "LANL WTS blank form Rev.1",
+      "url": "https://engstandards.lanl.gov/esm/welding/vol4/4-01-Att-1-R1.pdf",
+      "relative_path": "documents/lanl/wts-rev1.pdf",
+      "sha256": "d1dfdcf01435d55260783401edee7d42008d9d251a6ced5bf88caace2f9746a2",
+      "media_type": "application/pdf",
+      "required": false,
+      "source_kind": "public_document",
+      "license_declared": "Publicly accessible; redistribution permission not verified",
+      "declared_sha256": null,
+      "size_bytes": 57366,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:39.645310Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/documents/lanl/wts-rev1.pdf",
+      "audit_sha256": "d1dfdcf01435d55260783401edee7d42008d9d251a6ced5bf88caace2f9746a2",
+      "audit_match": true,
+      "acquisition_review_snapshot": {
+        "purpose": "source_review_pending",
+        "content_reviewed": false,
+        "note": "Original acquisition flags; see documents and derived_document_records for later extraction and selected transcription review."
+      }
+    },
+    {
+      "id": "lanl-wps-3501",
+      "group": "documents",
+      "title": "LANL WPS 3501-xxxx-1",
+      "url": "https://engstandards.lanl.gov/esm/welding/welding_specs/3501-xxxx-1.pdf",
+      "relative_path": "documents/lanl/wps-3501-xxxx-1.pdf",
+      "sha256": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+      "media_type": "application/pdf",
+      "required": false,
+      "source_kind": "public_document",
+      "license_declared": "Publicly accessible; redistribution permission not verified",
+      "declared_sha256": null,
+      "size_bytes": 167301,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:41.824765Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/documents/lanl/wps-3501-xxxx-1.pdf",
+      "audit_sha256": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+      "audit_match": true,
+      "acquisition_review_snapshot": {
+        "purpose": "source_review_pending",
+        "content_reviewed": false,
+        "note": "Original acquisition flags; see documents and derived_document_records for later extraction and selected transcription review."
+      }
+    },
+    {
+      "id": "hyundai-arccond",
+      "group": "documents",
+      "title": "Hyundai arccond command",
+      "url": "https://raw.githubusercontent.com/hyundai-robotics/doc-arc-weld/ko/2_Command/5_arccond.md",
+      "relative_path": "documents/hyundai/arccond.md",
+      "sha256": "bd47b532b6784d7d301e3ffe4e3befa5400e54940b55cd43133a6082a379d199",
+      "media_type": "text/plain",
+      "required": false,
+      "source_kind": "public_document",
+      "license_declared": "Publicly accessible; redistribution permission not verified",
+      "declared_sha256": null,
+      "size_bytes": 2578,
+      "status": "downloaded",
+      "checked_at_utc": "2026-10-09T18:44:42.114757Z",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/documents/hyundai/arccond.md",
+      "audit_sha256": "bd47b532b6784d7d301e3ffe4e3befa5400e54940b55cd43133a6082a379d199",
+      "audit_match": true,
+      "acquisition_review_snapshot": {
+        "purpose": "source_review_pending",
+        "content_reviewed": false,
+        "note": "Original acquisition flags; see documents and derived_document_records for later extraction and selected transcription review."
+      }
+    }
+  ],
+  "documents": [
+    {
+      "id": "twi-weld-symbols",
+      "group": "documents",
+      "title": "TWI Weld symbols",
+      "url": "https://www.twi-global.com/technical-knowledge/job-knowledge/weld-symbols",
+      "relative_path": "documents/twi/weld-symbols.html",
+      "sha256": "e1956080eb25e3b7b6f317807ff60dcf044309f90db97b8a1f8e6c4107121b94",
+      "media_type": "text/html",
+      "required": false,
+      "source_kind": "public_document",
+      "license_declared": "Publicly accessible; redistribution permission not verified",
+      "publisher": "TWI",
+      "acquired_at_utc": "2026-10-09T18:44:38.242511Z",
+      "acquisition_evidence": "output/data-setup/server-asset-manifest.json",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/documents/twi/weld-symbols.html",
+      "extraction": {
+        "name": "stdlib.html.parser",
+        "mode": "semantic_blocks",
+        "limitations": [
+          "nontext_figures_not_extracted"
+        ]
+      },
+      "chunk_count": 60,
+      "index_revision": null,
+      "revision_observed": null,
+      "usage_status": "downloaded_extracted_and_query_checked; not all documents supplied to every model call",
+      "model_use": "bootstrap relation call query default: twi-weld-symbols; records contain actual used/cited evidence IDs",
+      "license_verification": "public access confirmed; no redistribution license established",
+      "web_checked_at": "2026-10-10",
+      "acquisition_review_snapshot": {
+        "purpose": "source_review_pending",
+        "content_reviewed": false,
+        "note": "Copied from original acquisition config; later extraction and selected WPS transcription review are recorded separately."
+      }
+    },
+    {
+      "id": "lanl-wts",
+      "group": "documents",
+      "title": "LANL WTS blank form Rev.1",
+      "url": "https://engstandards.lanl.gov/esm/welding/vol4/4-01-Att-1-R1.pdf",
+      "relative_path": "documents/lanl/wts-rev1.pdf",
+      "sha256": "d1dfdcf01435d55260783401edee7d42008d9d251a6ced5bf88caace2f9746a2",
+      "media_type": "application/pdf",
+      "required": false,
+      "source_kind": "public_document",
+      "license_declared": "Publicly accessible; redistribution permission not verified",
+      "publisher": "Los Alamos National Laboratory",
+      "acquired_at_utc": "2026-10-09T18:44:39.645310Z",
+      "acquisition_evidence": "output/data-setup/server-asset-manifest.json",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/documents/lanl/wts-rev1.pdf",
+      "extraction": {
+        "name": "pdfplumber",
+        "version": "0.11.10",
+        "mode": "whole_page_with_words_and_tables",
+        "limitations": [
+          "automatic_tables_unreviewed",
+          "unruled_tables_may_not_be_segmented"
+        ]
+      },
+      "chunk_count": 1,
+      "index_revision": null,
+      "revision_observed": "Rev.1, 2006-10-27 (source header); generic index revision remains null",
+      "usage_status": "downloaded_extracted_and_query_checked; not all documents supplied to every model call",
+      "model_use": "extraction/search resource; no evidence of use by every bootstrap model call",
+      "license_verification": "public access confirmed; no redistribution license established",
+      "web_checked_at": "2026-10-10",
+      "acquisition_review_snapshot": {
+        "purpose": "source_review_pending",
+        "content_reviewed": false,
+        "note": "Copied from original acquisition config; later extraction and selected WPS transcription review are recorded separately."
+      }
+    },
+    {
+      "id": "lanl-wps-3501",
+      "group": "documents",
+      "title": "LANL WPS 3501-xxxx-1",
+      "url": "https://engstandards.lanl.gov/esm/welding/welding_specs/3501-xxxx-1.pdf",
+      "relative_path": "documents/lanl/wps-3501-xxxx-1.pdf",
+      "sha256": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+      "media_type": "application/pdf",
+      "required": false,
+      "source_kind": "public_document",
+      "license_declared": "Publicly accessible; redistribution permission not verified",
+      "publisher": "Los Alamos National Laboratory",
+      "acquired_at_utc": "2026-10-09T18:44:41.824765Z",
+      "acquisition_evidence": "output/data-setup/server-asset-manifest.json",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/documents/lanl/wps-3501-xxxx-1.pdf",
+      "extraction": {
+        "name": "pdfplumber",
+        "version": "0.11.10",
+        "mode": "whole_page_with_words_and_tables",
+        "limitations": [
+          "automatic_tables_unreviewed",
+          "unruled_tables_may_not_be_segmented"
+        ]
+      },
+      "chunk_count": 2,
+      "index_revision": null,
+      "revision_observed": "Rev.1 (agent checked transcription; not human application approval)",
+      "usage_status": "downloaded_extracted_and_query_checked; not all documents supplied to every model call",
+      "model_use": "document-demo reviewed representative layer 1, provenance at page/bbox",
+      "license_verification": "public access confirmed; no redistribution license established",
+      "web_checked_at": "2026-10-10",
+      "acquisition_review_snapshot": {
+        "purpose": "source_review_pending",
+        "content_reviewed": false,
+        "note": "Copied from original acquisition config; later extraction and selected WPS transcription review are recorded separately."
+      }
+    },
+    {
+      "id": "hyundai-arccond",
+      "group": "documents",
+      "title": "Hyundai arccond command",
+      "url": "https://raw.githubusercontent.com/hyundai-robotics/doc-arc-weld/ko/2_Command/5_arccond.md",
+      "relative_path": "documents/hyundai/arccond.md",
+      "sha256": "bd47b532b6784d7d301e3ffe4e3befa5400e54940b55cd43133a6082a379d199",
+      "media_type": "text/plain",
+      "required": false,
+      "source_kind": "public_document",
+      "license_declared": "Publicly accessible; redistribution permission not verified",
+      "publisher": "Hyundai Robotics",
+      "acquired_at_utc": "2026-10-09T18:44:42.114757Z",
+      "acquisition_evidence": "output/data-setup/server-asset-manifest.json",
+      "local_raw_path": "data/raw/demo-bootstrap-v1/documents/hyundai/arccond.md",
+      "extraction": {
+        "name": "stdlib",
+        "mode": "markdown_blocks_whole_tables"
+      },
+      "chunk_count": 11,
+      "index_revision": null,
+      "revision_observed": null,
+      "usage_status": "downloaded_extracted_and_query_checked; not all documents supplied to every model call",
+      "model_use": "extraction/search resource; no evidence of use by every bootstrap model call",
+      "license_verification": "public access confirmed; no redistribution license established",
+      "web_checked_at": "2026-10-10",
+      "acquisition_review_snapshot": {
+        "purpose": "source_review_pending",
+        "content_reviewed": false,
+        "note": "Copied from original acquisition config; later extraction and selected WPS transcription review are recorded separately."
+      }
+    }
+  ],
+  "derived_document_records": [
+    {
+      "id": "lanl-wps-3501-reviewed",
+      "origin_kind": "derived_agent_transcription",
+      "parent_id": "lanl-wps-3501",
+      "evidence": {
+        "path": "data/knowledge/lanl-wps-3501-reviewed.json",
+        "sha256": "25735227f1126448bacaacde2796f80e24221fe0bc759c9359b8e78bea51f28c",
+        "availability": "repository"
+      },
+      "source_sha256": "608db44080beab287dc1cd7e5a0b44744d63b0c51058e7ea159503af5b8dae10",
+      "review": {
+        "method": "agent_text_and_render_crosscheck",
+        "reviewer_kind": "agent",
+        "completed_at_utc": "2026-10-09T20:02:31.837257Z",
+        "scope": "selected_header_applicability_fields_and_representative_layer_1",
+        "human_reviewed": false,
+        "process_approval": false,
+        "transcription_checked": true,
+        "application_authorized": false,
+        "statement": "텍스트 추출과 원문 페이지 렌더를 대조한 에이전트 전사검수다. 사람의 도메인 검토나 공정·현장 적용 승인이 아니다."
+      },
+      "license": "inherits source considerations; no separate source redistribution permission established"
+    }
+  ],
+  "models": [
+    {
+      "role": "text_detection",
+      "repo_id": "PaddlePaddle/PP-OCRv6_medium_det",
+      "revision": "8e0f56fb2ef86b461d99cfc7ac5c137738985f61",
+      "relative_path": "PP-OCRv6_medium_det/8e0f56fb2ef86b461d99cfc7ac5c137738985f61",
+      "source_url": "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_det/tree/8e0f56fb2ef86b461d99cfc7ac5c137738985f61",
+      "files": [
+        {
+          "path": "README.md",
+          "bytes": 23247,
+          "sha256": "59f37b08a9a49aa6c1275e7b0363991353582f4dc7676539a5d2b05aab57e744"
+        },
+        {
+          "path": "inference.json",
+          "bytes": 312150,
+          "sha256": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5"
+        },
+        {
+          "path": "inference.pdiparams",
+          "bytes": 61960476,
+          "sha256": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960"
+        },
+        {
+          "path": "inference.yml",
+          "bytes": 886,
+          "sha256": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+        }
+      ],
+      "publisher": "PaddlePaddle (Baidu)",
+      "usage_status": "current_executed",
+      "usage": [
+        "bootstrap steel-smoke-20261010-01",
+        "bootstrap steel-batch-20261010-02",
+        "CTX-001 (rejected evaluation design; retain provenance only)"
+      ],
+      "weights_license_declared": "Apache-2.0",
+      "license_basis": "official current model card; pinned URL did not render in web tool",
+      "license_source_url": "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_det",
+      "checked_date": "2026-10-10",
+      "evidence_paths": [
+        "output/implementation-20261010/model-setup/model-manifest.json",
+        "output/recognition/run_steel-batch-20261010-02/results/inference-config.json",
+        "scripts/prepare_inference_models.py",
+        "output/context-ablation-20261010/run-01/inputs/model-manifest.json"
+      ],
+      "license_notes": "No standalone LICENSE included in downloaded 23-file manifest. Do not confuse runtime code license with checkpoint card declaration.",
+      "hash_verification_scope": "stored downloaded inventory and executed inference-config hashes agree; weights not downloaded/rehashed in this audit",
+      "origin_kind": "pretrained_external_model",
+      "project_usage": "inference/development evaluation; no project fine-tuning evidenced in audited runs",
+      "verified_at": "2026-10-10",
+      "id": "ppocr-v6-medium-det"
+    },
+    {
+      "role": "text_recognition",
+      "repo_id": "PaddlePaddle/PP-OCRv6_medium_rec",
+      "revision": "e5a92bcbc5cc1b494628e458d267778f0704fd7c",
+      "relative_path": "PP-OCRv6_medium_rec/e5a92bcbc5cc1b494628e458d267778f0704fd7c",
+      "source_url": "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_rec/tree/e5a92bcbc5cc1b494628e458d267778f0704fd7c",
+      "files": [
+        {
+          "path": "README.md",
+          "bytes": 23474,
+          "sha256": "75ff9c4853ed171f36224127805062f9bcd1cfbbcacae3d577344866df74f6d3"
+        },
+        {
+          "path": "inference.json",
+          "bytes": 221814,
+          "sha256": "0b2e25e990bd072f1bf77d59d67d508bce6c4bd44af6624e0fb27d6da2cd00e8"
+        },
+        {
+          "path": "inference.pdiparams",
+          "bytes": 76465087,
+          "sha256": "1b01c79a914587933f615569e75de54f2e638ebb5d3f3b3c1b38c24ede8c7319"
+        },
+        {
+          "path": "inference.yml",
+          "bytes": 150580,
+          "sha256": "991b700facf5b50a7de193468207d5f4255b538dde0d312ae3b7c7a9b6873129"
+        }
+      ],
+      "publisher": "PaddlePaddle (Baidu)",
+      "usage_status": "current_executed",
+      "usage": [
+        "bootstrap steel-smoke-20261010-01",
+        "bootstrap steel-batch-20261010-02",
+        "CTX-001 (rejected evaluation design; retain provenance only)"
+      ],
+      "weights_license_declared": "Apache-2.0",
+      "license_basis": "official current model card; pinned URL did not render in web tool",
+      "license_source_url": "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_rec",
+      "checked_date": "2026-10-10",
+      "evidence_paths": [
+        "output/implementation-20261010/model-setup/model-manifest.json",
+        "output/recognition/run_steel-batch-20261010-02/results/inference-config.json",
+        "scripts/prepare_inference_models.py",
+        "output/context-ablation-20261010/run-01/inputs/model-manifest.json"
+      ],
+      "license_notes": "No standalone LICENSE included in downloaded 23-file manifest. Do not confuse runtime code license with checkpoint card declaration.",
+      "hash_verification_scope": "stored downloaded inventory and executed inference-config hashes agree; weights not downloaded/rehashed in this audit",
+      "origin_kind": "pretrained_external_model",
+      "project_usage": "inference/development evaluation; no project fine-tuning evidenced in audited runs",
+      "verified_at": "2026-10-10",
+      "id": "ppocr-v6-medium-rec"
+    },
+    {
+      "role": "vision_language",
+      "repo_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "relative_path": "Qwen3-VL-8B-Instruct/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "source_url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct/tree/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "files": [
+        {
+          "path": "README.md",
+          "bytes": 7133,
+          "sha256": "6d5d06e0c3f069097002445d30dce9ee107db3afaf15563f09e6df49b8dcb4d7"
+        },
+        {
+          "path": "chat_template.json",
+          "bytes": 5499,
+          "sha256": "5c72a170d2a4a1a3bc5adad2e689ae28138a9700e5b8c96c0266331e86c0acce"
+        },
+        {
+          "path": "config.json",
+          "bytes": 1474,
+          "sha256": "5cd452860dc1e9c29dd71cc3cef7f39b338b7a40793f7a260655c2d3568f3661"
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 269,
+          "sha256": "8469742d1fce0de951c8909b26a2c0c0d8490837ce476efb114da9e0cefc4d44"
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1671839,
+          "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+        },
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "bytes": 4902275944,
+          "sha256": "d5d0aef0eb170fc7453a296c43c0849a56f510555d3588e4fd662bb35490aefa"
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "bytes": 4915962496,
+          "sha256": "8be88fb5501e4d5719a6d4cc212e6a13480330e74f3e8c77daa1a68f199106b5"
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "bytes": 4999831048,
+          "sha256": "83de00eafe6e0d57ccd009dbcf71c9974d74df2f016c27afb7e95aafd16b2192"
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "bytes": 2716270024,
+          "sha256": "0a88b98e9f96270973f567e6a2c103ede6ccdf915ca3075e21c755604d0377a5"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 67759,
+          "sha256": "520b2e05079402e9468a8701d03d1154d14b2599593afb6effa7fb60c1bff070"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 7032403,
+          "sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 10868,
+          "sha256": "c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399"
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        }
+      ],
+      "publisher": "Qwen / Alibaba Cloud",
+      "usage_status": "current_executed",
+      "usage": [
+        "bootstrap steel-smoke-20261010-01",
+        "bootstrap steel-batch-20261010-02",
+        "CTX-001 (rejected evaluation design; retain provenance only)"
+      ],
+      "weights_license_declared": "Apache-2.0",
+      "license_basis": "official README metadata at executed pinned revision",
+      "license_source_url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct/blob/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/README.md",
+      "checked_date": "2026-10-10",
+      "evidence_paths": [
+        "output/implementation-20261010/model-setup/model-manifest.json",
+        "output/recognition/run_steel-batch-20261010-02/results/inference-config.json",
+        "scripts/prepare_inference_models.py",
+        "output/context-ablation-20261010/run-01/inputs/model-manifest.json"
+      ],
+      "license_notes": "No standalone LICENSE included in downloaded 23-file manifest. Do not confuse runtime code license with checkpoint card declaration.",
+      "hash_verification_scope": "stored downloaded inventory and executed inference-config hashes agree; weights not downloaded/rehashed in this audit",
+      "origin_kind": "pretrained_external_model",
+      "project_usage": "inference/development evaluation; no project fine-tuning evidenced in audited runs",
+      "verified_at": "2026-10-10",
+      "id": "qwen3-vl-8b-instruct"
+    },
+    {
+      "repo_id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "publisher": "Qwen / Alibaba Cloud",
+      "usage_status": "historical_executed_excluded_from_current_performance",
+      "usage": [
+        "E2-001 CPU float32 greedy"
+      ],
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/tree/7ae557604adf67be50417f59c2c2f167def9a775",
+      "weights_license_declared": "Apache-2.0",
+      "license_basis": "standalone LICENSE at executed pinned revision, local manifest hash and local LICENSE",
+      "license_source_url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/blob/7ae557604adf67be50417f59c2c2f167def9a775/LICENSE",
+      "checked_date": "2026-10-10",
+      "files": [
+        {
+          "path": "LICENSE",
+          "bytes": 11343,
+          "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+        },
+        {
+          "path": "README.md",
+          "bytes": 4917,
+          "sha256": "b19c806a904db6dc878a0462e70b551f6b7ac78dfbb88c2eb966ca2b9109ae15"
+        },
+        {
+          "path": "config.json",
+          "bytes": 659,
+          "sha256": "18e18afcaccafade98daf13a54092927904649e1dd4eba8299ab717d5d94ff45"
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 242,
+          "sha256": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6"
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1671839,
+          "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 988097824,
+          "sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 7031645,
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 7305,
+          "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        }
+      ],
+      "evidence_paths": [
+        "experiments/e2_documents/model-manifest.json",
+        "experiments/e2_documents/results/environment.json"
+      ],
+      "origin_kind": "pretrained_external_model",
+      "project_usage": "inference/development evaluation; no project fine-tuning evidenced in audited runs",
+      "verified_at": "2026-10-10",
+      "id": "qwen25-05b-instruct"
+    },
+    {
+      "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "publisher": "Qwen / Alibaba Cloud",
+      "usage_status": "historical_executed_excluded_from_current_performance",
+      "usage": [
+        "E2-002 MPS float16 greedy"
+      ],
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/tree/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "weights_license_declared": "Apache-2.0",
+      "license_basis": "standalone LICENSE at executed pinned revision, local manifest hash and local LICENSE",
+      "license_source_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/blob/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/LICENSE",
+      "checked_date": "2026-10-10",
+      "files": [
+        {
+          "path": "README.md",
+          "bytes": 4917,
+          "sha256": "2e1bcd8bd964728a820be709fa0f7b9dd54817a94fd2254c535df70c5e67fada",
+          "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 11343,
+          "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/LICENSE"
+        },
+        {
+          "path": "config.json",
+          "bytes": 660,
+          "sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+          "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json"
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 242,
+          "sha256": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6",
+          "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json"
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1671839,
+          "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+          "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/merges.txt"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 3087467144,
+          "sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+          "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/model.safetensors"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 7031645,
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer.json"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 7305,
+          "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+          "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json"
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/vocab.json"
+        }
+      ],
+      "evidence_paths": [
+        "experiments/e2_documents/model-large-manifest.json",
+        "experiments/e2_documents/results-002/environment.json"
+      ],
+      "origin_kind": "pretrained_external_model",
+      "project_usage": "inference/development evaluation; no project fine-tuning evidenced in audited runs",
+      "verified_at": "2026-10-10",
+      "id": "qwen25-15b-instruct"
+    },
+    {
+      "model_id": "PP-OCRv6_det_small.onnx",
+      "publisher": "PaddlePaddle original models; RapidAI converted/distributed ONNX",
+      "distribution": "RapidAI/RapidOCR on ModelScope",
+      "distribution_revision": "v3.10.0",
+      "upstream_checkpoint_commit": null,
+      "source_url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv6/det/PP-OCRv6_det_small.onnx",
+      "url_evidence": "https://github.com/RapidAI/RapidOCR/blob/v3.10.0/python/rapidocr/default_models.yaml",
+      "usage_status": "historical_executed_excluded_from_current_performance",
+      "usage": [
+        "E1-003 default pipeline"
+      ],
+      "files": [
+        {
+          "path": "PP-OCRv6_det_small.onnx",
+          "bytes": 9929594,
+          "sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f"
+        }
+      ],
+      "weights_license_declared": null,
+      "license_notes": "[확인 필요] exact distributed ONNX weights separate license; package code Apache-2.0 does not by itself establish all weight terms. Upstream PP-OCR family uses Apache-2.0; no separate ONNX license captured locally.",
+      "runtime_code_license": "Apache-2.0",
+      "runtime_license_source_url": "https://github.com/RapidAI/RapidOCR/blob/v3.10.0/LICENSE",
+      "checked_date": "2026-10-10",
+      "evidence_paths": [
+        "experiments/e1_alternative/results/environment.json",
+        "experiments/e1_alternative/results/requirements-lock.txt",
+        "experiments/e1_recognition/results/environment.json",
+        "experiments/.runtime/ocr/lib/python3.11/site-packages/rapidocr/default_models.yaml"
+      ],
+      "hash_verification_scope": "local ONNX weight bytes rehashed in audit; all three match stored run manifest and official versioned default_models.yaml",
+      "origin_kind": "pretrained_external_model",
+      "project_usage": "inference/development evaluation; no project fine-tuning evidenced in audited runs",
+      "verified_at": "2026-10-10",
+      "id": "rapid-ppocr-v6-det-small"
+    },
+    {
+      "model_id": "PP-OCRv6_rec_small.onnx",
+      "publisher": "PaddlePaddle original models; RapidAI converted/distributed ONNX",
+      "distribution": "RapidAI/RapidOCR on ModelScope",
+      "distribution_revision": "v3.10.0",
+      "upstream_checkpoint_commit": null,
+      "source_url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv6/rec/PP-OCRv6_rec_small.onnx",
+      "url_evidence": "https://github.com/RapidAI/RapidOCR/blob/v3.10.0/python/rapidocr/default_models.yaml",
+      "usage_status": "historical_executed_excluded_from_current_performance",
+      "usage": [
+        "E1-003 default pipeline",
+        "E1-004 recognition-only rotation, use_det=False,use_cls=False"
+      ],
+      "files": [
+        {
+          "path": "PP-OCRv6_rec_small.onnx",
+          "bytes": 21234383,
+          "sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884"
+        }
+      ],
+      "weights_license_declared": null,
+      "license_notes": "[확인 필요] exact distributed ONNX weights separate license; package code Apache-2.0 does not by itself establish all weight terms. Upstream PP-OCR family uses Apache-2.0; no separate ONNX license captured locally.",
+      "runtime_code_license": "Apache-2.0",
+      "runtime_license_source_url": "https://github.com/RapidAI/RapidOCR/blob/v3.10.0/LICENSE",
+      "checked_date": "2026-10-10",
+      "evidence_paths": [
+        "experiments/e1_alternative/results/environment.json",
+        "experiments/e1_alternative/results/requirements-lock.txt",
+        "experiments/e1_recognition/results/environment.json",
+        "experiments/.runtime/ocr/lib/python3.11/site-packages/rapidocr/default_models.yaml"
+      ],
+      "hash_verification_scope": "local ONNX weight bytes rehashed in audit; all three match stored run manifest and official versioned default_models.yaml",
+      "origin_kind": "pretrained_external_model",
+      "project_usage": "inference/development evaluation; no project fine-tuning evidenced in audited runs",
+      "verified_at": "2026-10-10",
+      "id": "rapid-ppocr-v6-rec-small"
+    },
+    {
+      "model_id": "ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+      "publisher": "PaddlePaddle original models; RapidAI converted/distributed ONNX",
+      "distribution": "RapidAI/RapidOCR on ModelScope",
+      "distribution_revision": "v3.10.0",
+      "upstream_checkpoint_commit": null,
+      "source_url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv4/cls/ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+      "url_evidence": "https://github.com/RapidAI/RapidOCR/blob/v3.10.0/python/rapidocr/default_models.yaml",
+      "usage_status": "historical_executed_excluded_from_current_performance",
+      "usage": [
+        "E1-003 default pipeline"
+      ],
+      "files": [
+        {
+          "path": "ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+          "bytes": 585532,
+          "sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c"
+        }
+      ],
+      "weights_license_declared": null,
+      "license_notes": "[확인 필요] exact distributed ONNX weights separate license; package code Apache-2.0 does not by itself establish all weight terms. Upstream PP-OCR family uses Apache-2.0; no separate ONNX license captured locally.",
+      "runtime_code_license": "Apache-2.0",
+      "runtime_license_source_url": "https://github.com/RapidAI/RapidOCR/blob/v3.10.0/LICENSE",
+      "checked_date": "2026-10-10",
+      "evidence_paths": [
+        "experiments/e1_alternative/results/environment.json",
+        "experiments/e1_alternative/results/requirements-lock.txt",
+        "experiments/e1_recognition/results/environment.json",
+        "experiments/.runtime/ocr/lib/python3.11/site-packages/rapidocr/default_models.yaml"
+      ],
+      "hash_verification_scope": "local ONNX weight bytes rehashed in audit; all three match stored run manifest and official versioned default_models.yaml",
+      "origin_kind": "pretrained_external_model",
+      "project_usage": "inference/development evaluation; no project fine-tuning evidenced in audited runs",
+      "verified_at": "2026-10-10",
+      "id": "rapid-ppocr-v2-cls-mobile"
+    },
+    {
+      "model_id": "Apple Vision VNRecognizeTextRequest",
+      "publisher": "Apple",
+      "request_revision": 3,
+      "checkpoint_revision": null,
+      "checkpoint_sha256": null,
+      "os": "macOS 26.5.1 (Build 25F80)",
+      "source_url": "https://developer.apple.com/documentation/vision/vnrecognizetextrequest",
+      "usage_status": "historical_executed_excluded_from_current_performance",
+      "usage": [
+        "E1-001",
+        "E1-002"
+      ],
+      "configuration": {
+        "recognition_level": "accurate",
+        "languages": [
+          "en-US"
+        ],
+        "uses_language_correction": false
+      },
+      "weights_license_declared": null,
+      "license_notes": "Apple OS framework. No separately downloaded/open weight artifact in project; do not mark Apache/MIT. Separate checkpoint version/hash unavailable.",
+      "evidence_paths": [
+        "experiments/e1_ocr/results/environment.json",
+        "experiments/e1_ocr/results/raw.json",
+        "experiments/e1_rotation/results/environment.json",
+        "experiments/e1_ocr/vision.swift"
+      ],
+      "checked_date": "2026-10-10",
+      "origin_kind": "os_framework_model",
+      "project_usage": "inference/development evaluation; no project fine-tuning evidenced in audited runs",
+      "verified_at": "2026-10-10",
+      "id": "apple-vision-text-r3"
+    }
+  ],
+  "runtime": {
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle": "3.3.1",
+      "paddlepaddle-gpu": null,
+      "torch": "2.8.0+cu128",
+      "torchvision": "0.23.0+cu128",
+      "transformers": "4.57.6",
+      "accelerate": "1.12.0",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.1.2",
+      "Pillow": "12.2.0",
+      "pdfplumber": "0.11.10"
+    },
+    "evidence": {
+      "path": "output/recognition/run_steel-batch-20261010-02/results/inference-config.json",
+      "sha256": "c6cf4fd4fb12d8bd39e850c224859d8ad638458487e398131604b5b59cd811cf",
+      "availability": "local_ignored"
+    },
+    "license_source_records": [
+      {
+        "name": "paddleocr",
+        "version": "3.7.0",
+        "license": "Apache-2.0",
+        "source_url": "https://github.com/PaddlePaddle/PaddleOCR/blob/v3.7.0/LICENSE",
+        "checked_date": "2026-10-10",
+        "usage_scope": "current_completed_demo"
+      },
+      {
+        "name": "paddlex",
+        "version": "3.7.2",
+        "license": "Apache-2.0",
+        "source_url": "https://github.com/PaddlePaddle/PaddleX/blob/v3.7.2/LICENSE",
+        "checked_date": "2026-10-10",
+        "usage_scope": "current_completed_demo"
+      },
+      {
+        "name": "paddlepaddle",
+        "version": "3.3.1",
+        "license": "Apache-2.0",
+        "source_url": "https://github.com/PaddlePaddle/Paddle/blob/v3.3.1/LICENSE",
+        "checked_date": "2026-10-10",
+        "usage_scope": "current_completed_demo"
+      },
+      {
+        "name": "transformers",
+        "version": "4.57.6",
+        "license": "Apache-2.0",
+        "source_url": "https://github.com/huggingface/transformers/blob/v4.57.6/LICENSE",
+        "checked_date": "2026-10-10",
+        "usage_scope": "current_completed_demo"
+      },
+      {
+        "name": "torch",
+        "version": "2.8.0+cu128",
+        "license": "BSD-style license with third-party notices; see source LICENSE",
+        "source_url": "https://github.com/pytorch/pytorch/blob/v2.8.0/LICENSE",
+        "checked_date": "2026-10-10",
+        "usage_scope": "current_completed_demo"
+      },
+      {
+        "name": "rapidocr",
+        "version": "3.10.0",
+        "license": "Apache-2.0",
+        "source_url": "https://github.com/RapidAI/RapidOCR/blob/v3.10.0/LICENSE",
+        "checked_date": "2026-10-10",
+        "usage_scope": "historical_E1"
+      },
+      {
+        "name": "onnxruntime",
+        "version": "1.30.0",
+        "license": "MIT",
+        "source_url": "https://github.com/microsoft/onnxruntime/blob/v1.30.0/LICENSE",
+        "checked_date": "2026-10-10",
+        "usage_scope": "historical_E1"
+      }
+    ],
+    "retrieval": "Current documents.py and old E2 retrieve.py use lexical/BM25-style retrieval. BGE-M3 is candidate only; no executed embedding model found."
+  },
+  "simulation_and_asset_dependencies": {
+    "simulator": "NVIDIA Isaac Sim 6.1",
+    "simulator_license_reference": "https://docs.isaacsim.omniverse.nvidia.com/latest/common/legal.html",
+    "asset_license_reference": "https://www.nvidia.com/en-us/agreements/enterprise-software/isaac-sim-additional-software-and-materials-license/",
+    "license_note": "Additional components, assets and textures have terms separate from open-source simulator code; exact UR10 subasset license/hash not captured.",
+    "asset_provenance": {
+      "marking_textures": {
+        "panel_center_albedo.png": {
+          "path": "assets/panel_center_albedo.png",
+          "sha256": "9b94cc0dfef423083297643f389567245020af5b0e3f84bde70c5dda22c0c65d"
+        },
+        "panel_side_albedo.png": {
+          "path": "assets/panel_side_albedo.png",
+          "sha256": "a54e53dd7a757e18ac63ca0e1fcfd81f773e849bad4365bce550c66bb7e74eb1"
+        },
+        "marking_layer.png": {
+          "path": "assets/marking_layer.png",
+          "sha256": "05d51e141c9ad8e2aeb0023d9851f9572730bd66ee791ff50a04a7a980610aad"
+        },
+        "marking_preview.png": {
+          "path": "assets/marking_preview.png",
+          "sha256": "d04b591f4aee4a81f3cc4ec96e95c1f9ab1b28241c85ad0b99471d786c2f28c0"
+        }
+      },
+      "marking_generation": {
+        "generator": "scripts/isaac_shipyard_marking.py",
+        "generator_sha256": "c03e3cc90ef1621d20bb8cad5ec08bf54581328448de7b747751a76eed2669d8",
+        "glyph_set_version": "shipyard-stroke-glyphs.v2",
+        "seed": 20261010,
+        "style": "paint_marker",
+        "synthetic": true,
+        "source": "procedural synthetic handwriting-style strokes drawn by scripts/isaac_shipyard_marking.py; not a transcription of a real steel photo"
+      },
+      "external_assets": [
+        {
+          "name": "Universal Robots UR10",
+          "kind": "USD reference",
+          "path": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.1/Isaac/Robots/UniversalRobots/ur10/ur10.usd",
+          "provider": "NVIDIA Isaac Sim 6.1 asset library",
+          "copied_into_output": false
+        }
+      ],
+      "procedural_geometry": "all workshop geometry is USD primitives authored by scripts/run_isaac_shipyard_scene.py; no external meshes except the UR10"
+    },
+    "legacy_font": {
+      "name": "DejaVuSansMono-Bold.ttf",
+      "source_url": "https://dejavu-fonts.github.io/License.html",
+      "font_file_sha256": null,
+      "note": "captured manifest hash is generated image hash, not font hash"
+    },
+    "control_font": {
+      "name": "Monaco.ttf",
+      "provider": "Apple/macOS",
+      "font_file_sha256": null,
+      "license": "[확인 필요] OS-bundled font, not an Apache/MIT weight; font binary not redistributed"
+    },
+    "source_evidence": {
+      "path": "output/context-ablation-20261010/isaac-live-03/manifest.json",
+      "sha256": "61dedee65b3fdedc0c3c90a622291294c63b8b5c0759f791481e613c2dc45e00",
+      "availability": "local_ignored"
+    }
+  },
+  "investigated_not_used": {
+    "models": [
+      {
+        "model_id": "PaddlePaddle/korean_PP-OCRv5_mobile_rec",
+        "source_url": "https://huggingface.co/PaddlePaddle/korean_PP-OCRv5_mobile_rec",
+        "status": "investigated_only_no_execution_evidence",
+        "revision": null,
+        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+      },
+      {
+        "model_id": "PaddlePaddle/PaddleOCR-VL-1.6",
+        "source_url": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.6",
+        "status": "investigated_only_no_execution_evidence",
+        "revision": null,
+        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+      },
+      {
+        "model_id": "ibm-granite/granite-docling-258M",
+        "source_url": "https://huggingface.co/ibm-granite/granite-docling-258M",
+        "status": "investigated_only_no_execution_evidence",
+        "revision": null,
+        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+      },
+      {
+        "model_id": "Qwen/Qwen3-VL-4B-Instruct",
+        "source_url": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct",
+        "status": "investigated_only_no_execution_evidence",
+        "revision": null,
+        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+      },
+      {
+        "model_id": "IDEA-Research/grounding-dino-tiny",
+        "source_url": "https://huggingface.co/IDEA-Research/grounding-dino-tiny",
+        "status": "investigated_only_no_execution_evidence",
+        "revision": null,
+        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+      },
+      {
+        "model_id": "facebook/sam2.1-hiera-tiny",
+        "source_url": "https://huggingface.co/facebook/sam2.1-hiera-tiny",
+        "status": "investigated_only_no_execution_evidence",
+        "revision": null,
+        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+      },
+      {
+        "model_id": "PekingU/rtdetr_v2_r18vd",
+        "source_url": "https://huggingface.co/PekingU/rtdetr_v2_r18vd",
+        "status": "investigated_only_no_execution_evidence",
+        "revision": null,
+        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+      },
+      {
+        "model_id": "BAAI/bge-m3",
+        "source_url": "https://huggingface.co/BAAI/bge-m3",
+        "status": "investigated_only_no_execution_evidence",
+        "revision": null,
+        "evidence_path": "docs/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md"
+      }
+    ],
+    "tools": [
+      "Docling",
+      "Ultralytics YOLO (no exact checkpoint selected)"
+    ],
+    "datasets_and_documents": [
+      {
+        "name": "MPSC / RFN",
+        "url": "https://github.com/TongkunGuan/RFN/blob/main/IndustrialTextDataset.md"
+      },
+      {
+        "name": "KR Rules 2026",
+        "url": "https://www.krs.co.kr/KRRules/KRRules2026/KRRulesK.html"
+      },
+      {
+        "name": "KOBELCO shipbuilding materials",
+        "url": "https://www.kobelco-welding.jp/products/recommended-materials/index.html"
+      },
+      {
+        "name": "weldCalloutIdentifier",
+        "url": "https://github.com/RylanBosquez/weldCalloutIdentifier"
+      },
+      {
+        "name": "Shipyards process comparisons",
+        "url": "https://zenodo.org/records/14591358"
+      }
+    ],
+    "note": "Referenced as candidates; no executed use established in this audit."
+  },
+  "audit_verification": {
+    "data_asset_sha256_verified": 16,
+    "data_asset_sha256_matched": 16,
+    "current_model_files_metadata_crosschecked": 23,
+    "current_model_weight_bytes_rehashed": false,
+    "historical_rapid_weight_bytes_rehashed": 3,
+    "historical_qwen_weight_bytes_rehashed": false,
+    "training_or_finetuning_evidenced_in_audited_runs": false,
+    "independent_evaluation_dataset_evidenced_in_audited_completed_runs": false,
+    "scene_capture_png_sha256_matched": 8,
+    "scene_source_entries_capture_archive_current_matched": 5,
+    "scene_configs_capture_current_matched": 2
+  },
+  "known_gaps": [
+    "[확인 필요] in-progress experiment final input/model manifests and any new resources",
+    "[확인 필요] original photographer/site and independent rights chain of the Steel OCR pictures",
+    "[확인 필요] separate document redistribution permissions; public availability is not a license",
+    "[확인 필요] exact standalone license for distributed RapidOCR ONNX weights",
+    "[확인 필요] Apple Vision checkpoint hash/version beyond OS and request revision",
+    "[확인 필요] UR10 asset and subasset hashes/revisions, legacy font versions/hashes",
+    "[확인 필요] immutable upstream commit for Hyundai ko branch document; downloaded bytes are pinned by SHA",
+    "[확인 필요] dataset-card count 222 versus fixed train.txt 156 rows; use manifest subset size for actual runs"
+  ],
+  "source_checks": [
+    {
+      "url": "https://www.twi-global.com/technical-knowledge/job-knowledge/weld-symbols",
+      "checked_at": "2026-10-10",
+      "result": "official article accessible; version date not newly asserted"
+    },
+    {
+      "url": "https://engstandards.lanl.gov/esm/welding/vol4/4-01-Att-1-R1.pdf",
+      "checked_at": "2026-10-10",
+      "result": "official Chapter 13 link resolves, 1-page form; Rev.1 2006-10-27"
+    },
+    {
+      "url": "https://engstandards.lanl.gov/esm/welding/welding_specs/3501-xxxx-1.pdf",
+      "checked_at": "2026-10-10",
+      "result": "official 2-page PDF accessible"
+    },
+    {
+      "url": "https://github.com/hyundai-robotics/doc-arc-weld/blob/ko/2_Command/5_arccond.md",
+      "checked_at": "2026-10-10",
+      "result": "official repository file accessible, raw URL tool error; stored bytes unchanged"
+    },
+    {
+      "url": "https://docs.isaacsim.omniverse.nvidia.com/latest/common/legal.html",
+      "checked_at": "2026-10-10",
+      "result": "official code/additional material license references accessible"
+    },
+    {
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset-960",
+      "checked_date": "2026-10-10",
+      "result": "current card MIT; long-edge960 resizing incl boxes; related repository link. Do not infer new current counts from pinned run."
+    },
+    {
+      "url": "https://huggingface.co/datasets/iput-tk230215/steel-ocr-dataset",
+      "checked_date": "2026-10-10",
+      "result": "current card MIT; original test14 images,42crops; original dataset images not used in inspected experiments."
+    }
+  ],
+  "path_conventions": {
+    "evidence_paths": "Repository-relative unless explicitly a URL; local_ignored files are retained run artifacts, not included in a fresh clone.",
+    "model_files": "files[].path is relative to each model snapshot directory (relative_path when present), not repository root.",
+    "simulation_texture_paths": "asset_provenance.marking_textures paths are relative to the originating Isaac run directory.",
+    "historical_evidence": "Stored capture-time hashes or source declarations do not automatically assert that a current working copy has the same bytes."
+  },
+  "run_source_mapping": [
+    {
+      "run_ids": [
+        "steel-smoke-20261010-01",
+        "steel-batch-20261010-02"
+      ],
+      "data_ids": [
+        "steel-ocr-960-subset"
+      ],
+      "document_ids": [
+        "twi-weld-symbols"
+      ],
+      "model_ids": [
+        "ppocr-v6-medium-det",
+        "ppocr-v6-medium-rec",
+        "qwen3-vl-8b-instruct"
+      ],
+      "scope": "Actual per-call retrieved/provided/cited evidence IDs determine document use; model registry does not imply all documents were provided."
+    },
+    {
+      "run_ids": [
+        "document-demo-20261010",
+        "explicit-review-20261010"
+      ],
+      "data_ids": [
+        "document-demo-fixtures"
+      ],
+      "document_ids": [
+        "lanl-wps-3501"
+      ],
+      "model_ids": [],
+      "scope": "Reuse saved steel-batch-20261010-02 model observations plus reviewed WPS transcription; not new model inference."
+    },
+    {
+      "run_ids": [
+        "E1-001",
+        "E1-002"
+      ],
+      "data_ids": [
+        "steel-ocr-960-subset",
+        "e1-derived-roi-rotations",
+        "e1-control-image"
+      ],
+      "model_ids": [
+        "apple-vision-text-r3"
+      ],
+      "status": "historical"
+    },
+    {
+      "run_ids": [
+        "E1-003"
+      ],
+      "data_ids": [
+        "steel-ocr-960-subset",
+        "e1-derived-roi-rotations"
+      ],
+      "model_ids": [
+        "rapid-ppocr-v6-det-small",
+        "rapid-ppocr-v6-rec-small",
+        "rapid-ppocr-v2-cls-mobile"
+      ],
+      "status": "historical"
+    },
+    {
+      "run_ids": [
+        "E1-004"
+      ],
+      "data_ids": [
+        "e1-derived-roi-rotations"
+      ],
+      "model_ids": [
+        "rapid-ppocr-v6-rec-small"
+      ],
+      "status": "historical"
+    },
+    {
+      "run_ids": [
+        "E2-001",
+        "E2-002"
+      ],
+      "data_ids": [
+        "e2-authored-corpus-questions"
+      ],
+      "model_ids": [
+        "qwen25-05b-instruct",
+        "qwen25-15b-instruct"
+      ],
+      "scope": "E2-001 uses 0.5B, E2-002 uses 1.5B; different runtime device/precision.",
+      "status": "historical"
+    },
+    {
+      "run_ids": [
+        "E4-001"
+      ],
+      "data_ids": [
+        "steel-ocr-960-subset",
+        "e4-synthetic-orders"
+      ],
+      "model_ids": [],
+      "scope": "Consumes stored E1 output plus synthetic orders; no additional model inference.",
+      "status": "historical"
+    },
+    {
+      "run_ids": [
+        "E5-001"
+      ],
+      "data_ids": [
+        "e2-authored-corpus-questions",
+        "unit-test-fixtures"
+      ],
+      "model_ids": [],
+      "scope": "Consumes stored E2 output plus output-check fixtures; no additional model inference.",
+      "status": "historical"
+    },
+    {
+      "run_ids": [
+        "CTX-001"
+      ],
+      "data_ids": [
+        "steel-ocr-960-subset",
+        "ctx001-invalidated-derived-inputs"
+      ],
+      "model_ids": [
+        "ppocr-v6-medium-det",
+        "ppocr-v6-medium-rec",
+        "qwen3-vl-8b-instruct"
+      ],
+      "status": "invalidated_design"
+    },
+    {
+      "run_ids": [
+        "night-welding live-01",
+        "shipyard-handwriting live-03"
+      ],
+      "data_ids": [
+        "isaac-night-baseline",
+        "isaac-shipyard-live03"
+      ],
+      "model_ids": [],
+      "scope": "Simulator captures, not OCR/VLM execution evidence."
+    },
+    {
+      "run_ids": [
+        "recapture-handoff-20261010/inputs"
+      ],
+      "data_ids": [
+        "isaac-shipyard-live03"
+      ],
+      "model_ids": [],
+      "scope": "Prepared copies of saved capture frames; model inference not performed in the handoff."
+    }
+  ]
+}
