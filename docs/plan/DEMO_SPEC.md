@@ -1,6 +1,6 @@
 # ContextWeld 데모 구현 기준
 
-문서 버전: **1.5** · 기준일: **2026-10-10** · 상태: **기능 범위 확정, 부분 구현·검증 완료, 전체 데모 미완료**
+문서 버전: **1.6** · 기준일: **2026-10-11** · 상태: **기능 범위 확정, 부분 구현·검증 완료, 전체 데모 미완료**
 
 **Runpod에서 모사 작업장 촬영·인식·해석·재촬영·파라미터 전달을 수행하고 실행 기록을 저장한다. 기록을 내려받아 로컬 관리자 화면에서 조회·재생하며 하나의 시나리오를 영상으로 보여준다.**
 
@@ -8,7 +8,7 @@
 
 인식 단계의 모델 구성·좌표·입출력·재촬영·재검토는 [OCR 구성 v1.2](../spec/OCR_PIPELINE_SPEC.md), 근거 원문 확보·정확 조회·RAG는 [문서 적용 계획 v1.3](DOCUMENT_APPLICATION_PLAN.md)을 따른다. 제조사 입력은 [용접 로봇 입력 상세 명세](../spec/WELDING_ROBOT_INPUT_SPEC.md), 확인된 서버 환경은 [Pod v1 기록](../setup/POD_VER1.md)이 기준이다. 수정 저장만으로 자동 실행하지 않고, 작업자가 명시적으로 요청한 별도 실행에서 관계·명세·조건을 다시 검토한다.
 
-**현재 구현 상태:** [Isaac 기준 장면 live-01](../runs/ISAAC_SCENE.md)에서 UR10 손목 카메라의 실제 A/B RGB·고정 반사·관절 이동과 Foxglove 손목/전체 장면 두 영상을 검증했다. P1은 기존 정형 마킹·작업대 장면에서 달성했다. 이 기준 장면을 보존하고 조선소 병풍형 강판 패널·중앙 수기 메모로의 형상 개선은 대기 중이다. 예약 A/B 이동은 `pre_captured`이며 인식 판단에 따른 폐루프가 아니다. [문서 검토 한 건의 오프라인 HTML 조회](../runs/DOCUMENT_REVIEW_VIEWER.md)는 부분 구현을 마쳤으며 HTML 구조·표시 내용을 검증했다. [수정 저장 → 명시적 재검토 → 선택적 모의 전달](../runs/EXPLICIT_REVIEW.md)은 서버 CLI로 문서 범위 규칙 재검토까지 구현·실행했다(O07 결정, v1.5). 시각 관계의 모델 재해석과 입력 화면은 구현하지 않았다. 브라우저 시각 검수와 전체 P2·P3·P4, 여러 실행 통합·A/B 관리자 재생은 미완료다.
+**현재 구현 상태:** [Isaac 기준 장면 live-01](../runs/ISAAC_SCENE.md)에서 UR10 손목 카메라의 실제 A/B RGB·고정 반사·관절 이동과 Foxglove 손목/전체 장면 두 영상을 검증했다. P1은 기존 정형 마킹·작업대 장면에서 달성했고, 이 장면을 보존한 채 [조선소 수직 3면 강판·중앙 수기 메모 장면 live-03](../runs/ISAAC_SHIPYARD_SCENE.md)을 추가로 구성했다. 예약 A/B 이동은 `pre_captured`이며 인식 판단에 따른 폐루프가 아니다. [문서 검토 한 건의 오프라인 HTML 조회](../runs/DOCUMENT_REVIEW_VIEWER.md)는 부분 구현을 마쳤으며 HTML 구조·표시 내용을 검증했다. [수정 저장 → 명시적 재검토 → 선택적 모의 전달](../runs/EXPLICIT_REVIEW.md)은 서버 CLI로 문서 범위 규칙 재검토까지 구현·실행했다(O07 결정, v1.5). 시각 관계의 모델 재해석과 인식 결과 입력 화면은 구현하지 않았다. 저장 A/B 프레임의 판독부터 제조사 전달까지는 [통합 파이프라인](../runs/WELD_PIPELINE.md)으로 연결했고, 여러 실행을 담는 [오프라인 관리자 패키지](../runs/ADMIN_DASHBOARD.md)로 P3를 달성했다. 패키지 전체의 브라우저 시각 검수, 전체 P2·P4, 모델 판단에 따른 재촬영과 A/B 재생은 미완료다.
 
 ## 1. 읽는 순서와 명세의 효력
 
@@ -237,7 +237,7 @@ run_<run_id>/
 | 묶음 | 기록할 내용 |
 |---|---|
 | 식별·버전 | `run_id`, `scenario_id`, `spec_version`, `schema_version`, Git commit, 미커밋 변경 여부. 재검토는 `parent_run_id`, `review_request_id`, `correction_ids`도 기록 |
-| 요청 범위 | `run_kind`: `scenario` / `review` / `bootstrap` / `document_demo`, `delivery_requested`: 명시적으로 파라미터 전달까지 요청됐는지. 재검토의 기본값은 `false` |
+| 요청 범위 | `run_kind`: `scenario` / `review` / `bootstrap` / `document_demo`, `delivery_requested`: 명시적으로 파라미터 전달까지 요청됐는지. 재검토의 기본값은 `false`. 통합 실행은 `run_kind` 대신 `schema_version=weld-pipeline-bundle.v1`과 `delivery_status`로 구분한다 |
 | 실행 방식 | `capture_mode`, 시뮬레이터·로봇·센서·렌더러 버전, 장면 설정과 자산 식별자 |
 | 추론 | 모델 ID·revision, 전처리·프롬프트·생성 설정과 버전, 사용 정밀도, 단계별 처리시간 |
 | 문서 | 실제 사용한 문서 스냅샷·개정·해시·출처·모사 여부, 코퍼스·검색 설정 버전 |
@@ -254,6 +254,10 @@ run_<run_id>/
 문서 검토 후속 실행은 `run_kind=document_demo`, `capture_mode=public_dataset`, `evaluation_scope=document_review`로 기록한다. 저장된 실제 모델 출력을 재사용하고 모사 작업지시·도면과 WPS 대표층의 범위값을 연결한다. `delivery_requested=true`일 때 검증 후 실제 loopback HTTP 모의 수신까지 확인한다. 현장 적용 미확인과 `application_authorized=false`는 유지하며, 문서 검토 범위 성공을 전체 데모 성공으로 표시하지 않는다. 별도 `document-demo-bundle.v1`과 검증기를 사용한다. 자세한 계약·실제 결과는 [문서 연결 실행](../runs/DOCUMENT_DEMO.md)에 있다.
 
 명시적 재검토는 `run_kind=review`, `schema_version=review-bundle.v1`, `review_scope=document_rule_review`로 기록한다. 즉시 부모 `parent_run_id`와 별도로 원래 문서 실행 `origin_run_id`, 원래 인식 실행 `recognition_run_id`, 전체 계보 `results/lineage.json`을 남긴다. 기존 document_demo 검증기의 원래 인식 실행 대조는 그대로 두고, 부모 묶음 사본(`inputs/parent/`)을 스키마별 검증기로 재귀 검증한다. `review_request_id`, 사용자가 선택한 `correction_ids`, `delivery_requested`(기본 `false`)를 기록하며 `capture_mode`는 원래 실행을 따른다. 새 모델 호출은 0이며 `new_model_calls`, `relation_reinterpretation=not_performed`로 표시한다. 계약·실제 결과는 [명시적 재검토](../runs/EXPLICIT_REVIEW.md)에 있다.
+
+마킹 판독부터 제조사 전달까지의 통합 실행은 `schema_version=weld-pipeline-bundle.v1`로 기록한다. `capture_mode`는 저장 장면 프레임을 쓰면 `pre_captured`, 공개 사진을 쓰면 `public_dataset`이다. `source_kind=actual_model`과 `input_reused=true`로 기존 실제 판독을 재사용했음을 남기고, `execution_authorized`·`application_authorized`·`physical_movement_triggered`는 모두 `false`다. 전달 결과는 `delivery_status`(`received` / `blocked`)로, 실행 상태는 `run_outcome`으로 따로 기록한다. 묶음은 `inputs`·`results`·`evidence`·`commands`·`events.jsonl`·`manifest.json`·`checksums.json`을 보존하고 `verify_pipeline()`이 파일 해시·인식 출처·송수신 패킷·ACK를 교차 확인한다. 계약과 실제 결과는 [통합 파이프라인](../runs/WELD_PIPELINE.md)에 있다.
+
+등록 작업조건에서 만든 공통 작업명세와 제조사 변환 미리보기는 `common-weld-spec-preview.v1`로 기록한다. 화면 편집용 현재 값이며 전송 기록이 아니다. `execution_authorized=false`를 유지하고 과거 전송 묶음을 바꾸지 않는다. 계약과 변환 규칙은 [작업조건·제조사 변환](../runs/ROBOT_INPUT_PREVIEW.md)에 있다.
 
 ### 7.3 사건과 결과 연결
 
@@ -302,7 +306,7 @@ MCAP는 Foxglove에서 센서 흐름을 함께 보고 싶을 때 추가할 수 �
 
 ## 8. 로컬 관리자 화면
 
-화면의 목적은 “무엇을 보고, 왜 재촬영했고, 다시 무엇을 읽어 어떤 파라미터를 보냈는가”를 설명하는 것이다. 현재 Foxglove는 기준 장면의 손목·전체 장면 실시간 영상을 보여 주는 용도로 검증했다. 별도 [문서 조회 exporter](../runs/DOCUMENT_REVIEW_VIEWER.md)는 문서 검토 묶음 한 건을 서버·인터넷 없이 조회할 단일 HTML로 만든다. 실제 정상 `received`와 누락/관측 충돌 `blocked` 묶음 3개를 내보내 원본 582개 파일 해시 보존·신규 테스트 6개·HTML 구조·표시 내용 검사를 통과했다. 브라우저 파일 URL 제한으로 시각 검수는 미완료이며, 여러 실행 통합·A/B 재생·전체 관리자 화면 완료는 아니다. 같은 exporter는 `review-bundle.v1`도 스키마를 구분해 검증한 뒤 원래 관측(model)·수정 기록(user/demo_fixture)·재판단(rule)·요청·전달 기록을 나눠 표시한다. 특정 시각화 도구가 파이프라인의 필수 실행 의존성이 되어서는 안 된다.
+화면의 목적은 “무엇을 보고, 왜 재촬영했고, 다시 무엇을 읽어 어떤 파라미터를 보냈는가”를 설명하는 것이다. 현재 Foxglove는 기준 장면의 손목·전체 장면 실시간 영상을 보여 주는 용도로 검증했다. 별도 [문서 조회 exporter](../runs/DOCUMENT_REVIEW_VIEWER.md)는 문서 검토 묶음 한 건을 서버·인터넷 없이 조회할 단일 HTML로 만든다. 실제 정상 `received`와 누락/관측 충돌 `blocked` 묶음 3개를 내보내 원본 582개 파일 해시 보존·신규 테스트 6개·HTML 구조·표시 내용 검사를 통과했다. 브라우저 파일 URL 제한으로 시각 검수는 미완료다. 여러 실행을 한 패키지로 묶어 서버 없이 여는 [오프라인 관리자 패키지](../runs/ADMIN_DASHBOARD.md)는 이후 구현했고, A/B 재촬영 재생은 남아 있다. 같은 exporter는 `review-bundle.v1`도 스키마를 구분해 검증한 뒤 원래 관측(model)·수정 기록(user/demo_fixture)·재판단(rule)·요청·전달 기록을 나눠 표시한다. 특정 시각화 도구가 파이프라인의 필수 실행 의존성이 되어서는 안 된다.
 
 | 화면 요소 | 필수 동작 |
 |---|---|
@@ -323,7 +327,7 @@ MCAP는 Foxglove에서 센서 흐름을 함께 보고 싶을 때 추가할 수 �
 
 ### 9.1 현재 준비된 것과 아직 없는 것
 
-공개 사진 bootstrap은 `577faa6` 기반에서 시작했고, 문서 연결 후속 구현은 `dev/9bcb89a` 기반에서 수행했다. 기존 후보→작업지시 CLI와 [OCR/VLM·최소 RAG](../runs/RUNPOD_INFERENCE.md)를 유지하고, 실제 저장 관측→모사 작업문서→WPS 원문 범위값→검증→HTTP 모의 수신을 [문서 검토 부분 실행](../runs/DOCUMENT_DEMO.md)으로 연결했다. 후속 [Isaac 기준 장면](../runs/ISAAC_SCENE.md)은 `a8ac4d8` 기반의 별도 실행으로 실제 A/B 촬영·예약 관절 이동·Foxglove 두 영상까지 확인했다. 전체 관리자 화면·A/B 인식/문서 통합·판단에 따른 재촬영·사용자 수정 재검토는 미완료다. [첫 장면](../runs/FIRST_SCENE.md), [실험 결과](../../experiments/REPORT-2026-10-09.md)를 구분해 읽는다.
+공개 사진 bootstrap은 `577faa6` 기반에서 시작했고, 문서 연결 후속 구현은 `dev/9bcb89a` 기반에서 수행했다. 기존 후보→작업지시 CLI와 [OCR/VLM·최소 RAG](../runs/RUNPOD_INFERENCE.md)를 유지하고, 실제 저장 관측→모사 작업문서→WPS 원문 범위값→검증→HTTP 모의 수신을 [문서 검토 부분 실행](../runs/DOCUMENT_DEMO.md)으로 연결했다. 후속 [Isaac 기준 장면](../runs/ISAAC_SCENE.md)은 `a8ac4d8` 기반의 별도 실행으로 실제 A/B 촬영·예약 관절 이동·Foxglove 두 영상까지 확인했다. 그 뒤 사용자 수정 재검토(`ce0d47f`), 조선소 장면(`f9b2fa8`), A/B 인식·문서·전달 통합(`2ddb723`)을 구현했고 관리자 패키지는 `94c4856`에 있다. 모델 판단에 따른 재촬영은 미완료다. [첫 장면](../runs/FIRST_SCENE.md), [실험 결과](../../experiments/REPORT-2026-10-09.md)를 구분해 읽는다.
 
 2026-10-10 Runpod의 `data/raw/demo-bootstrap-v1/`에 Steel OCR 사진 10장·메타데이터 2개와 TWI·LANL WTS/WPS·현대 `arccond` 원문 4개를 확보하고 해시를 확인했다. [자료 준비 안내](../setup/RUNPOD_DATA_SETUP.md)에 재실행·전송 방법과 실제 결과가 있다. 원문4개를 추출한 74청크 검색 색인은 `output/document-rag/`에 있다. `data/knowledge/lanl-wps-3501-reviewed.json`에 원문 개정 1의 대표층 필드를 전사하고 `configs/document_demo/`에 모사 작업지시·도면·범위 검토용 프로파일을 등록했다. 전사 검수는 사람의 공정 승인이 아니며 실제 사진·A/B 장면의 WPS 적용성은 미확인이다. 과거 짧은 문서 실험이 이를 대신하지 않는다. Runpod의 초기 환경 확인은 [Pod v1](../setup/POD_VER1.md)에, 후속 실제 RGB 저장·UR10 손목 카메라·ROS/Foxglove 수신과 로컬 두 영상 확인은 [Isaac 실행 기록](../runs/ISAAC_SCENE.md)에 구분해 남겼다.
 
@@ -357,7 +361,7 @@ git rev-parse HEAD
 - 장면 생성·A/B 촬영·추론·통합 실행·기록 내보내기·로컬 재생 명령.
 - 한 번의 검증된 실행에 사용한 설정과 실행 결과 요약. 명령이 실제 동작한 환경을 명시한다.
 
-환경 준비 안내와 확인 범위는 [Pod v1](../setup/POD_VER1.md)에 있다. 공개 사진의 모델 실행·문서 위치 검색 스크립트는 [실행 안내](../runs/RUNPOD_INFERENCE.md), 기준 장면의 A/B 생성·ROS 송출·Foxglove 확인·중단은 [Isaac 실행 안내](../runs/ISAAC_SCENE.md)에 있다. A/B 인식부터 문서·모의 전달·재생까지의 종단 실행은 아직 `[확인 필요]`다. 존재하지 않는 스크립트를 실행 안내로 제시하지 않는다. 최종 구현 인계 때는 원격 환경에서 문서 순서대로 실행되는지 확인한다.
+환경 준비 안내와 확인 범위는 [Pod v1](../setup/POD_VER1.md)에 있다. 공개 사진의 모델 실행·문서 위치 검색 스크립트는 [실행 안내](../runs/RUNPOD_INFERENCE.md), 기준 장면의 A/B 생성·ROS 송출·Foxglove 확인·중단은 [Isaac 실행 안내](../runs/ISAAC_SCENE.md)에 있다. 저장 A/B 프레임의 인식부터 문서·모의 전달까지는 [통합 파이프라인](../runs/WELD_PIPELINE.md)의 `shipyard-connected-01`로 실행했다. 모델 판단에 따른 재촬영을 포함한 종단 실행은 아직 `[확인 필요]`다. 존재하지 않는 스크립트를 실행 안내로 제시하지 않는다. 최종 구현 인계 때는 원격 환경에서 문서 순서대로 실행되는지 확인한다.
 
 ## 10. Runpod 실행·저장 제약
 
@@ -374,15 +378,15 @@ git rev-parse HEAD
 
 | ID | 항목과 현재 확인 상태 | 결정·검증 시점 | 남은 영향 |
 |---|---|---|---|
-| O01 | 기준 장면의 합성 정형 마킹·작업대와 A/B 설정 고정. 조선소 병풍형 강판 패널·중앙 수기 메모 개선은 대기 | 후속 장면 제작 전 | 새 형상·표기의 모델 판독과 문서 연결은 별도 확인 필요 |
-| O02 | Isaac Sim 6.1·UR10 손목 카메라의 실제 A/B RGB·자산과 Foxglove 두 영상 검증 완료. [실행 기록](../runs/ISAAC_SCENE.md) | 기존 기준 장면 확인 완료 | 기준 장면 보존, 후속 형상 개선의 시야·도달·반사 재확인 필요 |
+| O01 | **완료.** 기준 장면의 합성 정형 마킹·작업대 A/B 설정을 보존하고 조선소 수직 3면 강판·수기 메모 `live-03`을 구성([장면 기록](../runs/ISAAC_SHIPYARD_SCENE.md)) | 2026-10-09 장면 제작 | 새 형상의 판독·문서 연결은 저장 프레임 기준으로 확인([통합 파이프라인](../runs/WELD_PIPELINE.md)). 실제 현장 형상은 아님 |
+| O02 | Isaac Sim 6.1·UR10 손목 카메라의 실제 A/B RGB·자산과 Foxglove 두 영상 검증 완료. [기존 장면](../runs/ISAAC_SCENE.md)·[조선소 장면](../runs/ISAAC_SHIPYARD_SCENE.md) | 두 장면 모두 확인 완료 | 기준 장면 보존. 반사가 A에서 식별자를 가리고 B에서 보이는 구성까지 확인 |
 | O03 | 공개 사진 실행의 모델 revision·런타임·예산 고정. [실행 안내](../runs/RUNPOD_INFERENCE.md). A/B 입력의 예산·품질 분기는 후속 확인 | A/B 통합 시 | 공개 사진 실행 가능, A/B 동작·현장 정확도 미확정 |
 | O04 | 기준 장면 A/B 자세·이동완료 오차는 고정. 인식에 따른 재촬영 판정 규칙·임계값·요청 타임아웃은 후속 확인 | 카메라 연동 전 | 예약 이동 확인만으로 인식 요청·실패 판정·오래된 프레임 배제를 보장하지 않음 |
 | O05 | 문서 검토용 모사 작업지시·도면과 WPS 개정 1/대표층 1의 필드·근거 연결 완료. 실제 A/B 장면의 적용조건은 미확인 | A/B 문서 연결 전 | 문서 범위값 검토를 현장 적용 승인으로 볼 수 없음 |
 | O06 | `document-range-review.v1`: 공정·전류/전압/이동속도 범위·단위·근거, HTTP 모의 수신 구현. 단일 설정값/실기 프로파일 미지원 | A/B 통합 시 재확인 | 문서 검토용 전달과 실제 운전 조건을 구분 |
 | O07 | **결정(v1.5):** 수정 저장·명시적 재검토·전달 요청은 서버 CLI와 JSON 요청 파일. [명시적 재검토](../runs/EXPLICIT_REVIEW.md). 이번 영상의 수정 장면 포함 여부는 미정 | 영상 구성 전 | 로컬 조회는 읽기 전용 유지. 입력 화면·시각 관계 재해석은 미구현 |
 | O08 | 최종 시연 수준: 사전 촬영 또는 실제 재촬영 연동 | 통합 완료 판정 전 | 두 수준을 같은 구현 성과로 표현할 위험 |
-| O09 | Foxglove 두 영상과 문서 한 건의 오프라인 HTML 조회 부분 구현 완료. HTML 시각 검수·여러 실행 통합·A/B 재생·전체 관리자·MCAP 적용은 남음 | 관리자 화면 구현 전 | 부분 조회·실시간 영상 확인만으로 P3 완료가 되지 않음 |
+| O09 | Foxglove 두 영상, 문서 한 건의 오프라인 HTML 조회, 여러 실행을 담는 [오프라인 관리자 패키지](../runs/ADMIN_DASHBOARD.md) 구현 완료. 패키지의 브라우저 시각 검수·A/B 재생·MCAP 적용은 남음 | 관리자 패키지 구현 완료 | 실행 기록이 작성되지 않은 검증 항목은 관리자 문서 6~11절에 표시 |
 | O10 | BM25 원문4개74청크와 검수 WPS 필드의 정확 조회를 연결. 모사 작업/도면 개정 1과 원문 WPS 개정 1을 대조 | 실제 A/B 시나리오 적용 전 | 문서 연결 가능, 실제 작업의 적용성은 미확인 |
 
 각 항목은 해당 단계에 들어가기 전에 작은 실행으로 결정한다. 문서 확보·인식 실행 확인·시뮬레이터 RGB 확인은 병렬로 진행할 수 있다. O07~O09가 남아 있다고 앞선 검증까지 중단할 필요는 없다. 선택 결과와 변경 이유는 이 문서를 갱신하고 실행 설정에 반영한다.
@@ -400,7 +404,7 @@ git rev-parse HEAD
 
 이 표는 범위별 완료 기준이다. 작업을 더 작게 나누는 마일스톤과 일정은 [마일스톤](MILESTONES.md)에서 별도로 논의한다. P1→P2→P3는 사전 촬영 방식으로 먼저 완주할 수 있으며, 문서·인식 검증은 P1을 기다리지 않고 시작할 수 있다. P4를 통과해야 실제 재촬영 연동 완료로 표기한다. P4 미완료 시 허용 대안을 사용했다는 사실과 미완료 항목을 남긴다. 단일 사례의 성공은 현장 정확도나 일반화 성능의 증거가 아니다.
 
-현재 P1은 [기존 기준 장면](../runs/ISAAC_SCENE.md)에서 달성했고 조선소 수기 형상 개선은 대기 중이다. P2의 수정 저장·명시적 재검토는 공개 사진 기반 문서 범위에서 [CLI로 구현·실행](../runs/EXPLICIT_REVIEW.md)했으나 A/B 관계 재해석과 통합은 남아 있다. 예약 A/B 렌더·송출은 P4의 인식 요청 기반 이동이 아니며, 공개 사진·문서의 부분 실행과 합쳐 전체 P2·P3·P4 완료로 표시하지 않는다.
+현재 P1은 [기존 기준 장면](../runs/ISAAC_SCENE.md)과 [조선소 장면](../runs/ISAAC_SHIPYARD_SCENE.md) 양쪽에서 달성했다. P2의 수정 저장·명시적 재검토는 공개 사진 기반 문서 범위에서 [CLI로 구현·실행](../runs/EXPLICIT_REVIEW.md)했고, 저장 A/B 프레임의 판독→문서→제조사 전달은 [통합 파이프라인](../runs/WELD_PIPELINE.md)으로 연결했다. 시각 관계의 모델 재해석은 남아 있다. P3는 [오프라인 관리자 패키지](../runs/ADMIN_DASHBOARD.md)로 달성했다. 예약 A/B 렌더·송출은 P4의 인식 요청 기반 이동이 아니며, 부분 실행을 합쳐 P2·P4 완료로 표시하지 않는다.
 
 ### 필요한 동작 검증
 
@@ -458,6 +462,7 @@ git rev-parse HEAD
 
 | 버전·날짜 | 내용 |
 |---|---|
+| 1.6 · 2026-10-11 | 저장 A/B 마킹부터 제조사 입력·HTTP 모의 수신까지의 통합 실행(`weld-pipeline-bundle.v1`)과 등록조건→공통 명세→제조사 변환(`common-weld-spec-preview.v1`)을 7.2절 묶음 종류에 추가. 여러 실행을 담는 오프라인 관리자 패키지로 P3 달성을 반영하고 O01·O02·O09를 갱신. 모델 판단에 따른 재촬영(P4)과 시각 관계 재해석은 계속 미완료 |
 | 1.5 · 2026-10-10 | O07을 서버 CLI·JSON 요청으로 결정. 수정 저장·명시적 재검토(`run_kind=review`, `review-bundle.v1`)·선택적 모의 전달을 분리 구현하고 계보·재계산 검증기와 읽기 전용 조회를 추가. document_demo·bootstrap 계약과 과거 묶음은 변경하지 않음 |
 | 1.4 · 2026-10-10 | 실제 저장 관측→모사 문서/WPS 범위 검토→모의 HTTP 수신의 document_demo 부분 실행 추가. 현장 적용 미확인·원본 불변·별도 묶음과 검증기 명시 |
 | 1.3 · 2026-10-10 | 공개 사진·문서 최소 연결을 위한 bootstrap/public_dataset 부분 실행 계약 추가. 새 실행은 전체 시나리오·모의 전달 완료와 구분 |
