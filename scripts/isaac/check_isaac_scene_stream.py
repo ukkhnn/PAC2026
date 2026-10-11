@@ -9,7 +9,7 @@ Bridge advertisement alone is never counted as reception.
 
 Run with a Python that has ``websockets`` and ``Pillow`` (the Isaac Sim 6.1 venv does):
 
-    /workspace/venvs/isaacsim-6.1/bin/python scripts/check_isaac_scene_stream.py \
+    /workspace/venvs/isaacsim-6.1/bin/python scripts/isaac/check_isaac_scene_stream.py \
         --seconds 40 --expect-scenario shipyard-handwriting-glare-01 \
         --report output/isaac-shipyard-20261010/<run>/reception-01.json
 

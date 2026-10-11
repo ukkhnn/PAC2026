@@ -111,7 +111,7 @@ E1을 고른 이유는 세 가지다.
 
 ## 5. 측정 검증과 한계
 
-- 제품 코드(`src/`, `scripts/`, `configs/`)는 바꾸지 않았다. 새 묶음은 제품 CLI가 스스로 해시를 검증한 `bootstrap-bundle.v1`이다. `scripts/verify_run_bundle.py`로 다시 검증했다(6절).
+- 제품 코드(`src/`, `scripts/`, `configs/`)는 바꾸지 않았다. 새 묶음은 제품 CLI가 스스로 해시를 검증한 `bootstrap-bundle.v1`이다. `scripts/verify/verify_run_bundle.py`로 다시 검증했다(6절).
 - 채점기는 새 출력을 보기 전에 기존 묶음으로 시험했다. 단위 테스트와 독립 재계산은 시간 제한으로 하지 못했다 `[확인 필요]`.
 - 표본 8장으로는 비율·유의성을 말할 수 없다. 건수 사례로만 쓴다.
 - 문서 데모의 작업지시가 오독 문자열로 쓰였으므로, 관측 게이트를 통과한 오독이 실제 업무에서 막힐지는 알 수 없다. 실제 작업지시 목록에 그 ID가 있느냐에 달렸다 `[확인 필요]`.
@@ -151,7 +151,7 @@ cd /workspace/PAC2026
 PYTHONDONTWRITEBYTECODE=1 /workspace/venvs/contextweld-inference/bin/python -B \
   experiments/pipeline_v2/score.py output/pipeline-v2-20261010/runs/e1/run_pv2-e1-quick-val01 \
   --out output/pipeline-v2-20261010/scores/e1-quick.json
-python3 scripts/verify_run_bundle.py output/pipeline-v2-20261010/runs/e1/run_pv2-e1-quick-val01
+python3 scripts/verify/verify_run_bundle.py output/pipeline-v2-20261010/runs/e1/run_pv2-e1-quick-val01
 python3 experiments/pipeline_v2/tools/snapshot.py compare \
   output/pipeline-v2-20261010/preflight/protection-before.json output/pipeline-v2-20261010/postflight/protection-after.json
 ```

@@ -46,7 +46,7 @@ class WorkflowTests(unittest.TestCase):
         self.index = self.root / 'index.json'
         write_json(self.index, build_index(self.raw, registry))
         for relative in ['src/contextweld/workflow.py', 'src/contextweld/mock_delivery.py', 'src/contextweld/matching.py',
-                         'src/contextweld/documents.py', 'scripts/run_document_demo.py', 'scripts/verify_document_demo.py']:
+                         'src/contextweld/documents.py', 'scripts/run/run_document_demo.py', 'scripts/verify/verify_document_demo.py']:
             path = self.repo / relative
             path.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / relative, path)

@@ -23,7 +23,7 @@ python3 tools/verify_package.py       # MANIFEST·원본 묶음 해시 목록 �
 ```
 
 `verify_package.py`는 파일 동일성만 확인한다. 스키마별 의미 검증(재계산 대조)은 저장소에서
-`python3 scripts/export_admin_dashboard.py verify <이 폴더>`로 다시 실행할 수 있다.
+`python3 scripts/export/export_admin_dashboard.py verify <이 폴더>`로 다시 실행할 수 있다.
 
 ## 구성
 

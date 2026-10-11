@@ -1,9 +1,9 @@
 # 문서 실행 기록 오프라인 조회
 
-`scripts/export_document_review.py`는 저장된 `document-demo-bundle.v1` 또는 `review-bundle.v1` 한 개를 스키마에 맞는 검증기로 검증하고 단일 HTML로 내보낸다. HTML은 서버·인터넷 없이 브라우저에서 직접 열 수 있다. Python 표준 라이브러리와 저장소의 기존 검증 함수만 사용하며 추가 패키지를 설치하지 않는다.
+`scripts/export/export_document_review.py`는 저장된 `document-demo-bundle.v1` 또는 `review-bundle.v1` 한 개를 스키마에 맞는 검증기로 검증하고 단일 HTML로 내보낸다. HTML은 서버·인터넷 없이 브라우저에서 직접 열 수 있다. Python 표준 라이브러리와 저장소의 기존 검증 함수만 사용하며 추가 패키지를 설치하지 않는다.
 
 ```bash
-python3 scripts/export_document_review.py \
+python3 scripts/export/export_document_review.py \
   output/document-demo-20261010/server/run_document-normal-server-01 \
   --output output/document-review-20261010/normal.html
 ```
@@ -52,7 +52,7 @@ PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_document_review_ex
 [명시적 재검토](EXPLICIT_REVIEW.md)의 `review-bundle.v1`도 같은 명령으로 내보낸다. exporter는 manifest의 스키마를 보고 `inspect_document_bundle` 또는 `inspect_review_bundle`을 생성 전후에 호출하며, 검증에 실패하면 HTML을 저장하지 않는다. 기존 문서 실행 HTML의 내용과 동작은 그대로다.
 
 ```bash
-python3 scripts/export_document_review.py \
+python3 scripts/export/export_document_review.py \
   output/explicit-review-20261010/run_review-20261010-voltage-deliver-01 \
   --output output/explicit-review-20261010/html/review-20261010-voltage-deliver-01.html
 ```

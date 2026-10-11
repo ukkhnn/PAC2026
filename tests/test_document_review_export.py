@@ -12,7 +12,7 @@ import unittest
 import test_workflow as workflow_fixtures
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULE_SPEC = importlib.util.spec_from_file_location("document_review_export", ROOT / "scripts/export_document_review.py")
+MODULE_SPEC = importlib.util.spec_from_file_location("document_review_export", ROOT / "scripts/export/export_document_review.py")
 assert MODULE_SPEC and MODULE_SPEC.loader
 viewer = importlib.util.module_from_spec(MODULE_SPEC)
 MODULE_SPEC.loader.exec_module(viewer)

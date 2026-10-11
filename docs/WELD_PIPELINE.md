@@ -17,7 +17,7 @@ A/B RGB → 실제 OCR/VLM 원문 → 부재번호·이음 표기·지시 대상
 
 ```sh
 PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK=True HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
-/workspace/venvs/contextweld-inference/bin/python scripts/run_weld_pipeline.py \
+/workspace/venvs/contextweld-inference/bin/python scripts/run/run_weld_pipeline.py \
   --capture-inputs output/recapture-handoff-20261010/inputs --source-kind capture \
   --output output/shipyard-connected-01 \
   --data-root /workspace/PAC2026/data/raw/demo-bootstrap-v1 \
@@ -45,7 +45,7 @@ PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK=True HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE
 `weld-pipeline-bundle.v1`은 `inputs`, `results`, `evidence`, `commands`, `events.jsonl`, `manifest.json`, `checksums.json`을 보존한다. `verify_pipeline()`은 파일 해시, 인식 출처, 송신/수신 패킷, ACK의 ID·해시와 변환을 교차 확인한다.
 
 ```sh
-python3 scripts/export_weld_pipeline_dashboard.py \
+python3 scripts/export/export_weld_pipeline_dashboard.py \
   --package output/dashboard-preview-20261010/pac-admin-dashboard \
   --bundle output/weld-pipeline-20261010/shipyard-connected-01 \
   --key shipyard-connected-01

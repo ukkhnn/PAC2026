@@ -138,7 +138,7 @@ class DocumentsTests(unittest.TestCase):
             write_json_exclusive(path, {"replacement": True})
         self.assertEqual(path.read_bytes(), before)
         output = self.root / "search.json"
-        command = [sys.executable, str(ROOT / "scripts/query_documents.py"), "--index", str(path),
+        command = [sys.executable, str(ROOT / "scripts/run/query_documents.py"), "--index", str(path),
                    "--data-root", str(self.root), "--query", "arrow", "--document-id", "missing",
                    "--output", str(output)]
         completed = subprocess.run(command, capture_output=True, text=True)

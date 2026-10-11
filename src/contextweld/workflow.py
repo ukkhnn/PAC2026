@@ -281,7 +281,7 @@ def run_document_demo(*, repo: Path, scenario_path: Path, recognition_bundle: Pa
         source_fingerprints = {str(p.relative_to(repo)): sha256(p) for p in
                                [repo / "src/contextweld/workflow.py", repo / "src/contextweld/mock_delivery.py",
                                 repo / "src/contextweld/matching.py", repo / "src/contextweld/documents.py",
-                                repo / "scripts/run_document_demo.py", repo / "scripts/verify_document_demo.py"]}
+                                repo / "scripts/run/run_document_demo.py", repo / "scripts/verify/verify_document_demo.py"]}
         write_json(bundle.root / "inputs/environment.json", {"environment": environment_record(repo),
                    "code_hashes": source_fingerprints, "document_index_hash": index["index_hash"],
                    "source_manifest_hash": source_manifest_hash, "source_bundle_checksums_hash": sha256(recognition_bundle / "checksums.json")})

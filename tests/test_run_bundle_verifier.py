@@ -7,7 +7,7 @@ import unittest
 
 from contextweld.recognition import Bundle, sha256, write_json
 
-spec = importlib.util.spec_from_file_location("bundle_verifier", Path(__file__).resolve().parents[1] / "scripts/verify_run_bundle.py")
+spec = importlib.util.spec_from_file_location("bundle_verifier", Path(__file__).resolve().parents[1] / "scripts/verify/verify_run_bundle.py")
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 

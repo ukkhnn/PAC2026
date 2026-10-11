@@ -5,7 +5,7 @@ import argparse
 import json
 from pathlib import Path
 import sys
-REPO = Path(__file__).resolve().parents[1]
+REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / 'src'))
 from contextweld.corrections import CorrectionConflict, CorrectionError, write_rejection
 from contextweld.review import DELIVERY_FAULTS, run_review

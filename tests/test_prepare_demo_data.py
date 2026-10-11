@@ -11,7 +11,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-SCRIPT = Path(__file__).resolve().parents[1] / "scripts/prepare_demo_data.py"
+SCRIPT = Path(__file__).resolve().parents[1] / "scripts/prepare/prepare_demo_data.py"
 SPEC = importlib.util.spec_from_file_location("prepare_demo_data", SCRIPT)
 assert SPEC and SPEC.loader
 prepare_data = importlib.util.module_from_spec(SPEC)

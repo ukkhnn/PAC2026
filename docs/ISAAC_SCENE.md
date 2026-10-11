@@ -30,7 +30,7 @@
 
 ## 장면과 경계
 
-실행 설정은 [night_welding.json](../configs/isaac_scene/night_welding.json), 장면 생성은 [run_isaac_welding_scene.py](../scripts/run_isaac_welding_scene.py), 로봇 이동은 [isaac_scene_robot.py](../scripts/isaac_scene_robot.py)다.
+실행 설정은 [night_welding.json](../configs/isaac_scene/night_welding.json), 장면 생성은 [run_isaac_welding_scene.py](../scripts/isaac/run_isaac_welding_scene.py), 로봇 이동은 [isaac_scene_robot.py](../scripts/isaac/isaac_scene_robot.py)다.
 
 | 항목 | 현재 설정 |
 |---|---|
@@ -67,12 +67,12 @@ scene_out=$(mktemp -d "$scene_root/run-XXXXXXXX")
 printf '%s\n' "$scene_out"
 
 OMNI_KIT_ACCEPT_EULA=YES OMNI_KIT_ALLOW_ROOT=1 \
-  /workspace/venvs/isaacsim-6.1/bin/python scripts/run_isaac_welding_scene.py \
+  /workspace/venvs/isaacsim-6.1/bin/python scripts/isaac/run_isaac_welding_scene.py \
   --config configs/isaac_scene/night_welding.json \
   --output "$scene_out" --live >"$scene_out/scene.log" 2>&1 &
 printf '%s\n' "$!" >"$scene_out/scene.pid"
 
-/usr/bin/python3 scripts/serve_isaac_scene_ros.py \
+/usr/bin/python3 scripts/isaac/serve_isaac_scene_ros.py \
   --output-root "$scene_out" --camera-alias /camera \
   --publish-map-tf --publish-link-markers --repeat-interval 1 \
   >"$scene_out/publisher.log" 2>&1 &
@@ -100,7 +100,7 @@ printf '%s\n' "$!" >"$scene_out/publisher.pid"
 같은 실행 디렉토리를 지정해 확인한다. 다른 터미널에서는 `scene_out`을 방금 출력된 디렉토리로 설정한다.
 
 ```bash
-/usr/bin/python3 scripts/serve_isaac_scene_ros.py \
+/usr/bin/python3 scripts/isaac/serve_isaac_scene_ros.py \
   --output-root "$scene_out" --check-input
 ros2 topic list -t
 ros2 topic echo --once /contextweld/status

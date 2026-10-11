@@ -6,7 +6,7 @@
 
 ## 1. 이번 준비 묶음
 
-출처 목록은 [configs/demo_data_sources.json](../configs/demo_data_sources.json), 실행 도구는 [scripts/prepare_demo_data.py](../scripts/prepare_demo_data.py)다. Python 3.10 이상 표준 라이브러리만 사용한다.
+출처 목록은 [configs/demo_data_sources.json](../configs/demo_data_sources.json), 실행 도구는 [scripts/prepare/prepare_demo_data.py](../scripts/prepare/prepare_demo_data.py)다. Python 3.10 이상 표준 라이브러리만 사용한다.
 
 | 묶음 | 내용 | 용도 |
 |---|---|---|
@@ -24,8 +24,8 @@ Runpod의 `/workspace/PAC2026`에서 실행한다. 아래 스크립트·설정 �
 
 ```bash
 cd /workspace/PAC2026
-python3 scripts/prepare_demo_data.py
-python3 scripts/prepare_demo_data.py --verify-only
+python3 scripts/prepare/prepare_demo_data.py
+python3 scripts/prepare/prepare_demo_data.py --verify-only
 ```
 
 실행 출력을 파일로 남기려면 Bash에서 다음과 같이 실행한다. 로그 폴더는 스크립트가 자동으로 만들지 않는다.
@@ -33,14 +33,14 @@ python3 scripts/prepare_demo_data.py --verify-only
 ```bash
 set -o pipefail
 mkdir -p output/data-setup
-python3 scripts/prepare_demo_data.py 2>&1 | tee output/data-setup/bootstrap.log
-python3 scripts/prepare_demo_data.py --verify-only 2>&1 | tee output/data-setup/verify.log
+python3 scripts/prepare/prepare_demo_data.py 2>&1 | tee output/data-setup/bootstrap.log
+python3 scripts/prepare/prepare_demo_data.py --verify-only 2>&1 | tee output/data-setup/verify.log
 ```
 
 사진과 배포 메타데이터만 먼저 받을 수도 있다.
 
 ```bash
-python3 scripts/prepare_demo_data.py \
+python3 scripts/prepare/prepare_demo_data.py \
   --group steel-images --group steel-metadata
 ```
 
@@ -72,7 +72,7 @@ Mac의 프로젝트 루트에서 다음 두 파일과 기존 입력만 옮긴다
 
 ```bash
 ssh runpod 'mkdir -p /workspace/PAC2026/scripts /workspace/PAC2026/configs /workspace/data-import/steel-ocr'
-scp scripts/prepare_demo_data.py runpod:/workspace/PAC2026/scripts/
+scp scripts/prepare/prepare_demo_data.py runpod:/workspace/PAC2026/scripts/
 scp configs/demo_data_sources.json runpod:/workspace/PAC2026/configs/
 rsync -a experiments/e1_ocr/inputs/ runpod:/workspace/data-import/steel-ocr/
 ```
@@ -81,7 +81,7 @@ Runpod에서 전송한 파일을 검증해 준비 묶음으로 복사한다. 로
 
 ```bash
 cd /workspace/PAC2026
-python3 scripts/prepare_demo_data.py \
+python3 scripts/prepare/prepare_demo_data.py \
   --local-steel-root /workspace/data-import/steel-ocr \
   --group steel-images --group steel-metadata
 ```

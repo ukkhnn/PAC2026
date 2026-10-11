@@ -50,7 +50,7 @@
 | `PaddlePaddle/PP-OCRv6_medium_rec` | `e5a92bcbc5cc1b494628e458d267778f0704fd7c` |
 | `Qwen/Qwen3-VL-8B-Instruct` | `0c351dd01ed87e9c1b53cbc748cba10e6187ff3b` |
 
-[고정 요구사항](../configs/requirements-inference.txt)과 [모델 준비 도구](../scripts/prepare_inference_models.py)를 사용한다. 이번 서버는 새 venv가 기본 환경의 torch/torchvision을 읽어서 재사용한다. 기존 Isaac 환경은 변경하지 않았다. 새 서버에서 기본 CUDA torch가 없다면 위 torch/torchvision과 CUDA 조합을 먼저 준비해야 한다. CPU torch 설치 상태를 같은 실행환경으로 취급하지 않는다.
+[고정 요구사항](../configs/requirements-inference.txt)과 [모델 준비 도구](../scripts/prepare/prepare_inference_models.py)를 사용한다. 이번 서버는 새 venv가 기본 환경의 torch/torchvision을 읽어서 재사용한다. 기존 Isaac 환경은 변경하지 않았다. 새 서버에서 기본 CUDA torch가 없다면 위 torch/torchvision과 CUDA 조합을 먼저 준비해야 한다. CPU torch 설치 상태를 같은 실행환경으로 취급하지 않는다.
 
 이번 환경의 `pip check`에는 기본 환경부터 존재하던 colcon-core와 setuptools 버전 경고가 남는다. 추론 실행과 테스트는 통과했으며 ROS 환경을 임의 변경하지 않았다. 전체 패키지 잠금과 경고는 `output/implementation-20261010/model-setup/`에 있다.
 
@@ -65,16 +65,16 @@
 ```bash
 python3 -m venv --system-site-packages /workspace/venvs/contextweld-inference
 /workspace/venvs/contextweld-inference/bin/python -m pip install -r configs/requirements-inference.txt
-/workspace/venvs/contextweld-inference/bin/python scripts/prepare_inference_models.py
-/workspace/venvs/contextweld-inference/bin/python scripts/prepare_inference_models.py --verify-only
+/workspace/venvs/contextweld-inference/bin/python scripts/prepare/prepare_inference_models.py
+/workspace/venvs/contextweld-inference/bin/python scripts/prepare/prepare_inference_models.py --verify-only
 ```
 
 원문 추출과 위치 검색:
 
 ```bash
-/workspace/venvs/contextweld-inference/bin/python scripts/build_document_index.py \
+/workspace/venvs/contextweld-inference/bin/python scripts/prepare/build_document_index.py \
   --output output/document-rag/new-run/index.json
-/workspace/venvs/contextweld-inference/bin/python scripts/query_documents.py \
+/workspace/venvs/contextweld-inference/bin/python scripts/run/query_documents.py \
   --index output/document-rag/new-run/index.json \
   --data-root data/raw/demo-bootstrap-v1 \
   --document-id twi-weld-symbols --query "arrow reference line other side" \
@@ -87,7 +87,7 @@ python3 -m venv --system-site-packages /workspace/venvs/contextweld-inference
 export PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK=True
 export HF_HUB_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
-/workspace/venvs/contextweld-inference/bin/python scripts/run_recognition.py \
+/workspace/venvs/contextweld-inference/bin/python scripts/run/run_recognition.py \
   --data-root data/raw/demo-bootstrap-v1 \
   --output-root output/recognition --run-id steel-new-run --limit 10 \
   --det-model-dir /workspace/models/contextweld/PP-OCRv6_medium_det/8e0f56fb2ef86b461d99cfc7ac5c137738985f61 \
@@ -98,7 +98,7 @@ export TRANSFORMERS_OFFLINE=1
   --vlm-revision 0c351dd01ed87e9c1b53cbc748cba10e6187ff3b \
   --document-index output/document-rag/new-run/index.json \
   --document-ids twi-weld-symbols --ocr-device cpu
-python3 scripts/verify_run_bundle.py output/recognition/run_steel-new-run
+python3 scripts/verify/verify_run_bundle.py output/recognition/run_steel-new-run
 ```
 
 `--limit 1`로 첫 사진부터 확인하거나 `--image-ids steel-S01 steel-S10`처럼 고정 ID를 고를 수 있다. 모델에는 원본 파일명의 표기 정보나 배포 라벨을 제공하지 않는다. OCR은 배열, VLM은 이미지 객체를 받는다. OCR·VLM의 다른 판독은 별도 관측으로 보존하며 평균 점수나 임의 정답으로 합치지 않는다.

@@ -45,7 +45,7 @@ Runpod의 기존 `/workspace/venvs/contextweld-inference/bin/python`을 사용�
 저장소 루트에서 실행한다. 예시 run ID를 이미 사용했다면 새 이름으로 바꾼다.
 
 ```sh
-/workspace/venvs/contextweld-inference/bin/python scripts/run_document_demo.py \
+/workspace/venvs/contextweld-inference/bin/python scripts/run/run_document_demo.py \
   --recognition-bundle output/recognition/run_steel-batch-20261010-02 \
   --document-index output/document-rag/server-v1/index.json \
   --output-root output/document-demo \
@@ -60,7 +60,7 @@ Runpod의 기존 `/workspace/venvs/contextweld-inference/bin/python`을 사용�
 서버 없이 내려받은 묶음을 검사할 수 있다. 이 명령은 추론·송신을 호출하지 않는다.
 
 ```sh
-python3 scripts/verify_document_demo.py \
+python3 scripts/verify/verify_document_demo.py \
   output/document-demo/run_document-normal-demo-001
 ```
 

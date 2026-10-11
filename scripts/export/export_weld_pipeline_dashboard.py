@@ -3,7 +3,7 @@
 from pathlib import Path
 from copy import deepcopy
 import argparse,json,shutil,sys
-REPO=Path(__file__).resolve().parents[1];sys.path.insert(0,str(REPO/'scripts'));sys.path.insert(0,str(REPO/'src'))
+REPO=Path(__file__).resolve().parents[2];sys.path.insert(0,str(Path(__file__).resolve().parent));sys.path.insert(0,str(REPO/'src'))
 from add_robot_dashboard_preview import read_assignment,write_assignment,read_json,digest,write_json
 from contextweld.weld_pipeline import verify_pipeline
 

@@ -124,8 +124,8 @@ RapidOCR의 3개 ONNX는 로컬 바이트를 다시 해시하여 당시 실행 �
 
 | 장면 | 입력·생성 출처 | 보존 위치 |
 |---|---|---|
-| 기존 야간 작업장 `night-welding-glare-01` | [설정](../configs/isaac_scene/night_welding.json), [생성 코드](../scripts/run_isaac_welding_scene.py), DejaVuSansMono-Bold 텍스처 | `output/isaac-scene-20261010/live-01/manifest.json` 및 A/B wrist·overview PNG |
-| 조선소 수기 `shipyard-handwriting-glare-01` | [설정](../configs/isaac_scene/shipyard_handwriting.json), [장면 코드](../scripts/run_isaac_shipyard_scene.py), [수기 생성 코드](../scripts/isaac_shipyard_marking.py) | `output/context-ablation-20261010/isaac-live-03/manifest.json` 및 A/B wrist·overview PNG |
+| 기존 야간 작업장 `night-welding-glare-01` | [설정](../configs/isaac_scene/night_welding.json), [생성 코드](../scripts/isaac/run_isaac_welding_scene.py), DejaVuSansMono-Bold 텍스처 | `output/isaac-scene-20261010/live-01/manifest.json` 및 A/B wrist·overview PNG |
+| 조선소 수기 `shipyard-handwriting-glare-01` | [설정](../configs/isaac_scene/shipyard_handwriting.json), [장면 코드](../scripts/isaac/run_isaac_shipyard_scene.py), [수기 생성 코드](../scripts/isaac/isaac_shipyard_marking.py) | `output/context-ablation-20261010/isaac-live-03/manifest.json` 및 A/B wrist·overview PNG |
 
 조선소 수기는 실제 사진의 문자를 베낀 것이 아니라 `shipyard-stroke-glyphs.v2`, seed `20261010`으로 생성한 획이다. 이 수기 생성에는 외부 글꼴을 사용하지 않는다. 패널·작업장 형상은 USD 기본 도형으로 작성했으며, 외부 로봇 모델은 [NVIDIA Isaac 6.1 자산 라이브러리의 UR10 USD](https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.1/Isaac/Robots/UniversalRobots/ur10/ur10.usd)를 참조한다.
 

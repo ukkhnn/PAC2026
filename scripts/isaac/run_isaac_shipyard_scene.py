@@ -144,7 +144,7 @@ def main() -> int:
     if args.output is None:
         parser.error("--output is required unless --predict is used")
     out = args.output.resolve()
-    repo_root = SCRIPT_DIR.parent
+    repo_root = SCRIPT_DIR.parents[1]
     try:
         git_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True, cwd=repo_root).strip()
         git_dirty = bool(subprocess.check_output(["git", "status", "--porcelain"], text=True, cwd=repo_root).strip())
@@ -568,7 +568,7 @@ def main() -> int:
                                    "style": marking_meta["style"], "synthetic": True, "source": marking_meta["source"]},
             "external_assets": [{"name": "Universal Robots UR10", "kind": "USD reference", "path": robot.asset_path,
                                  "provider": "NVIDIA Isaac Sim 6.1 asset library", "copied_into_output": False}],
-            "procedural_geometry": "all workshop geometry is USD primitives authored by scripts/run_isaac_shipyard_scene.py; no external meshes except the UR10",
+            "procedural_geometry": "all workshop geometry is USD primitives authored by scripts/isaac/run_isaac_shipyard_scene.py; no external meshes except the UR10",
         },
         "prediction": prediction,
         "camera_paths": camera_paths,

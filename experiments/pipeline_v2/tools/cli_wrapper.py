@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """제품 CLI를 코드 수정 없이 실행하면서 CUDA 메모리 상한과 최대 사용량만 기록한다.
 
-사용: python cli_wrapper.py scripts/run_recognition.py <제품 CLI 인자...>
+사용: python cli_wrapper.py scripts/run/run_recognition.py <제품 CLI 인자...>
 환경 변수 PV2_WRAPPER_REPORT(필수), PV2_CUDA_FRACTION(기본 0.6).
 상한은 Isaac와 GPU를 공유할 때 이 프로세스만 OOM으로 실패하게 하는 보호 장치이며 출력값을 바꾸지 않는다.
 """

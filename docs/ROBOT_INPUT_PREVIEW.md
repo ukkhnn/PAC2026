@@ -60,7 +60,7 @@ arccond D, cur=180, vol=26, spd=25.4
 기존 관리자 내보내기 패키지와 `shipyard-recapture` 시나리오가 있는 상태에서 실행한다.
 
 ```sh
-python3 scripts/add_robot_dashboard_preview.py \
+python3 scripts/export/add_robot_dashboard_preview.py \
   --package output/dashboard-preview-20261010/pac-admin-dashboard
 ```
 

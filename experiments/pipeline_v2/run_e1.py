@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""E1: 수정하지 않은 제품 CLI(scripts/run_recognition.py)를 10장 묶음으로 실행한다.
+"""E1: 수정하지 않은 제품 CLI(scripts/run/run_recognition.py)를 10장 묶음으로 실행한다.
 
 - 사용 이력 10장 묶음(pv2-e1-seen)을 먼저, 미사용 216장을 중립 ID 순서로 22묶음 실행한다.
 - 실패한 묶음(run_*.incomplete)은 보존하고, 실패 프레임을 찾아 나머지를 새 run ID로 다시 실행하며
@@ -56,7 +56,7 @@ def plan() -> list[dict]:
 
 def command(run_id: str, images: list[str]) -> list[str]:
     argv = ["nice", "-n", "19", PY, "-u", str(REPO / "experiments/pipeline_v2/tools/cli_wrapper.py"),
-            str(REPO / "scripts/run_recognition.py"),
+            str(REPO / "scripts/run/run_recognition.py"),
             "--data-root", str(DATA / "root"), "--sources", str(DATA / "sources.json"),
             "--output-root", str(RUNS), "--run-id", run_id, "--image-ids", *images,
             "--document-index", str(INDEX), "--ocr-device", "cpu", "--max-new-tokens", "4096"]

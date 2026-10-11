@@ -2,7 +2,7 @@
 """고정 A/B RGB의 실제 OCR/VLM 판독을 저장한다. 문서 정답은 입력하지 않는다."""
 from pathlib import Path
 import argparse, json, sys, time
-REPO = Path(__file__).resolve().parents[1]
+REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / 'src'))
 from contextweld.recognition import PaddleEngine, QwenEngine, sha256, utc_now, parse_json
 PROMPT = '''Read the visible handwritten markings in this photograph and identify their indicated physical target.

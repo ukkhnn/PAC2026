@@ -2,7 +2,7 @@
 
 기준일: **2026-10-10**. 기존 [야간 작업장 기준 장면](ISAAC_SCENE.md)의 작은 수평 작업대를 **조선소 블록 조립장을 연상시키는 수직 3면 강판 지그**로 바꾸고, 가운데 강판의 작업자 눈높이에 **페인트 마커풍 수기 메모**를 배치한 장면이다. Isaac Sim 6.1에서 UR10 손목 카메라가 두 자세 A/B로 이동하고, 고정 작업등의 금속 정반사가 A에서 메모 일부를 가리고 B에서 같은 메모가 읽히는 과정을 실제 RGB로 렌더링한다. ROS Jazzy 송출기가 저장된 RGB를 기존 Foxglove 연결로 내보낸다. [데모 명세](DEMO_SPEC.md)의 장면·촬영 부분 실행이며, 렌더링 결과는 **모사 장면**이다. A/B는 사전 정의된 자세 순서(`capture_mode=pre_captured`, `recognition_feedback_enabled=false`)이고 인식 판단에 따른 재촬영 폐루프, 이 장면의 인식→문서 검토 연결, 실제 용접·실기 제어는 포함하지 않는다. `execution_authorized=false`를 유지한다.
 
-**기존 기준 장면은 비교·복구용으로 그대로 둔다.** `output/isaac-scene-20261010/live-01/`의 설정·소스 사본·`scene.usda`·`assets/marking.png`·`frames/`·`*-capture.json`, 튜닝 결과 `tune-01`~`tune-07`, [night_welding.json](../configs/isaac_scene/night_welding.json)과 기존 runner·helper·송출기 코드는 수정하지 않았다. 새 장면은 별도 설정 [shipyard_handwriting.json](../configs/isaac_scene/shipyard_handwriting.json), 별도 runner [run_isaac_shipyard_scene.py](../scripts/run_isaac_shipyard_scene.py), 마킹 생성기 [isaac_shipyard_marking.py](../scripts/isaac_shipyard_marking.py), 새 출력 루트 `output/isaac-shipyard-20261010/`를 사용한다.
+**기존 기준 장면은 비교·복구용으로 그대로 둔다.** `output/isaac-scene-20261010/live-01/`의 설정·소스 사본·`scene.usda`·`assets/marking.png`·`frames/`·`*-capture.json`, 튜닝 결과 `tune-01`~`tune-07`, [night_welding.json](../configs/isaac_scene/night_welding.json)과 기존 runner·helper·송출기 코드는 수정하지 않았다. 새 장면은 별도 설정 [shipyard_handwriting.json](../configs/isaac_scene/shipyard_handwriting.json), 별도 runner [run_isaac_shipyard_scene.py](../scripts/isaac/run_isaac_shipyard_scene.py), 마킹 생성기 [isaac_shipyard_marking.py](../scripts/isaac/isaac_shipyard_marking.py), 새 출력 루트 `output/isaac-shipyard-20261010/`를 사용한다.
 
 ## 확인 상태
 
@@ -32,7 +32,7 @@
 | ROS·Foxglove 스트림 | 아래 수신 표 참조 | Mac Foxglove 화면 자체의 육안 확인(서버 WebSocket 수신으로 대체) |
 | 인식·문서 연결 | 없음 | 이 장면의 인식→문서 검토→모의 전달, 자동 재촬영 폐루프 |
 
-서버 Foxglove WebSocket(`ws://127.0.0.1:8765`, subprotocol `foxglove.sdk.v1`)에 Foxglove 클라이언트와 같은 방식으로 접속해 수신을 검증했다. 검사 도구는 [check_isaac_scene_stream.py](../scripts/check_isaac_scene_stream.py)이며 CDR 페이로드를 직접 복호해 PNG를 디코딩한다.
+서버 Foxglove WebSocket(`ws://127.0.0.1:8765`, subprotocol `foxglove.sdk.v1`)에 Foxglove 클라이언트와 같은 방식으로 접속해 수신을 검증했다. 검사 도구는 [check_isaac_scene_stream.py](../scripts/isaac/check_isaac_scene_stream.py)이며 CDR 페이로드를 직접 복호해 PNG를 디코딩한다.
 
 | 확인 항목 | live-03 결과 |
 |---|---|
@@ -47,7 +47,7 @@
 
 ## 장면과 경계
 
-실행 설정은 [shipyard_handwriting.json](../configs/isaac_scene/shipyard_handwriting.json), 장면 생성·촬영은 [run_isaac_shipyard_scene.py](../scripts/run_isaac_shipyard_scene.py), 수기 마킹·그라임 텍스처는 [isaac_shipyard_marking.py](../scripts/isaac_shipyard_marking.py), 로봇 이동은 기존 [isaac_scene_robot.py](../scripts/isaac_scene_robot.py)를 읽기 재사용한다. 좌표계는 USD z-up, 단위 m, 회전은 quaternion `wxyz`이며 로봇은 +x를 바라본다. 가운데 강판을 읽는 방향 기준으로 **+y가 왼쪽, -y가 오른쪽**이다.
+실행 설정은 [shipyard_handwriting.json](../configs/isaac_scene/shipyard_handwriting.json), 장면 생성·촬영은 [run_isaac_shipyard_scene.py](../scripts/isaac/run_isaac_shipyard_scene.py), 수기 마킹·그라임 텍스처는 [isaac_shipyard_marking.py](../scripts/isaac/isaac_shipyard_marking.py), 로봇 이동은 기존 [isaac_scene_robot.py](../scripts/isaac/isaac_scene_robot.py)를 읽기 재사용한다. 좌표계는 USD z-up, 단위 m, 회전은 quaternion `wxyz`이며 로봇은 +x를 바라본다. 가운데 강판을 읽는 방향 기준으로 **+y가 왼쪽, -y가 오른쪽**이다.
 
 | 항목 | 현재 설정 | 기존 기준 장면과의 관계 |
 |---|---|---|
@@ -73,7 +73,7 @@ A/B 사이에 형상·마킹·조명 위치와 세기·재질·노출을 바꾸�
 
 ### 합성 마킹과 자산 출처
 
-표기 `BISB30N-15`, `J01`, 동그라미, 화살표는 이 장면을 위해 그린 **합성 텍스처**다. TrueType 폰트를 쓰지 않고 [isaac_shipyard_marking.py](../scripts/isaac_shipyard_marking.py)에 직접 정의한 단일 획 글리프(`shipyard-stroke-glyphs.v2`)를 seed `20261010`으로 흔들어 그렸다. 획마다 폭·압력 변화, 시작부 고임, 획 폭보다 긴 실제 끊김(글자당 최대 1회), 마른 획의 결 무늬, 흔들림을 넣고 행 기울기(-1.56°, +2.80°)·자간·기울임을 어긋나게 했으며, 미세 입자, 방향성 번짐, 흘림, 고인 부분의 어두워짐을 더했다. 생성은 seed로 결정적이며 같은 입력에서 같은 파일 해시가 나온다(numpy 2.1/2.3, Pillow 11/12에서 확인). 바탕은 샵프라이머 색 (122, 128, 122)의 얼룩·롤러 자국·녹·긁힘을 절차적으로 생성했다. 식별자는 기존 시연 문서와의 후속 연결을 위한 합성 입력이며 실제 사진 정답이 아니다. 문서에 없는 용접 전류·재질·두께는 쓰지 않았다. 생성 방식·seed·문구·파일 해시는 실행마다 `assets/marking.json`과 `manifest.json`의 `asset_provenance`에 저장된다.
+표기 `BISB30N-15`, `J01`, 동그라미, 화살표는 이 장면을 위해 그린 **합성 텍스처**다. TrueType 폰트를 쓰지 않고 [isaac_shipyard_marking.py](../scripts/isaac/isaac_shipyard_marking.py)에 직접 정의한 단일 획 글리프(`shipyard-stroke-glyphs.v2`)를 seed `20261010`으로 흔들어 그렸다. 획마다 폭·압력 변화, 시작부 고임, 획 폭보다 긴 실제 끊김(글자당 최대 1회), 마른 획의 결 무늬, 흔들림을 넣고 행 기울기(-1.56°, +2.80°)·자간·기울임을 어긋나게 했으며, 미세 입자, 방향성 번짐, 흘림, 고인 부분의 어두워짐을 더했다. 생성은 seed로 결정적이며 같은 입력에서 같은 파일 해시가 나온다(numpy 2.1/2.3, Pillow 11/12에서 확인). 바탕은 샵프라이머 색 (122, 128, 122)의 얼룩·롤러 자국·녹·긁힘을 절차적으로 생성했다. 식별자는 기존 시연 문서와의 후속 연결을 위한 합성 입력이며 실제 사진 정답이 아니다. 문서에 없는 용접 전류·재질·두께는 쓰지 않았다. 생성 방식·seed·문구·파일 해시는 실행마다 `assets/marking.json`과 `manifest.json`의 `asset_provenance`에 저장된다.
 
 | 자산 | 출처·생성 방식 |
 |---|---|
@@ -107,27 +107,27 @@ rmdir "$scene_out"   # runner가 직접 만들도록 비워 둔다
 printf '%s\n' "$scene_out"
 
 # 반사 위치·도달 예측만(Isaac 불필요)
-/usr/bin/python3 scripts/run_isaac_shipyard_scene.py --config configs/isaac_scene/shipyard_handwriting.json --predict
+/usr/bin/python3 scripts/isaac/run_isaac_shipyard_scene.py --config configs/isaac_scene/shipyard_handwriting.json --predict
 
 # 초안 1장(팔 이동 없이 두 카메라의 워밍업 RGB 저장 후 종료)
 OMNI_KIT_ACCEPT_EULA=YES OMNI_KIT_ALLOW_ROOT=1 \
-  /workspace/venvs/isaacsim-6.1/bin/python -u scripts/run_isaac_shipyard_scene.py \
+  /workspace/venvs/isaacsim-6.1/bin/python -u scripts/isaac/run_isaac_shipyard_scene.py \
   --config configs/isaac_scene/shipyard_handwriting.json --output "$scene_out" --draft
 
 # A/B 반복 시연(새 디렉토리로 다시 지정)
 OMNI_KIT_ACCEPT_EULA=YES OMNI_KIT_ALLOW_ROOT=1 \
-  /workspace/venvs/isaacsim-6.1/bin/python -u scripts/run_isaac_shipyard_scene.py \
+  /workspace/venvs/isaacsim-6.1/bin/python -u scripts/isaac/run_isaac_shipyard_scene.py \
   --config configs/isaac_scene/shipyard_handwriting.json \
   --output "$scene_out" --live >"$scene_out.log" 2>&1 &
 printf '%s\n' "$!" >"$scene_out.pid"
 ```
 
-`OMNI_KIT_ACCEPT_EULA=YES`는 기존 환경의 NVIDIA 약관 동의를 전제한다. Kit 내부 HTTP 포트는 설정의 `kit_http_port`(8031)이며 기존 데모 Isaac(8021)·사용자 Isaac 앱(8011)과 겹치지 않게 했고 공개 포트는 추가하지 않았다. 로그에서 `MARKING_GENERATED`, `SCENE_READY`, 두 `SENSOR_WARMUP [720, 1280, 3]`, `CAPTURED A`, `CAPTURED B`, `PAIR_COMPLETE`(초안은 `DRAFT_COMPLETE`)를 확인한다. 미도달 시 `ROBOT_IK_FAILED_STATE`와 함께 실패한다. 수기 텍스처만 다시 그려 보려면 Isaac 없이 `/usr/bin/python3 scripts/isaac_shipyard_marking.py --out <새 디렉토리>`를 실행한다.
+`OMNI_KIT_ACCEPT_EULA=YES`는 기존 환경의 NVIDIA 약관 동의를 전제한다. Kit 내부 HTTP 포트는 설정의 `kit_http_port`(8031)이며 기존 데모 Isaac(8021)·사용자 Isaac 앱(8011)과 겹치지 않게 했고 공개 포트는 추가하지 않았다. 로그에서 `MARKING_GENERATED`, `SCENE_READY`, 두 `SENSOR_WARMUP [720, 1280, 3]`, `CAPTURED A`, `CAPTURED B`, `PAIR_COMPLETE`(초안은 `DRAFT_COMPLETE`)를 확인한다. 미도달 시 `ROBOT_IK_FAILED_STATE`와 함께 실패한다. 수기 텍스처만 다시 그려 보려면 Isaac 없이 `/usr/bin/python3 scripts/isaac/isaac_shipyard_marking.py --out <새 디렉토리>`를 실행한다.
 
 송출기는 기존 송출기를 종료한 뒤 하나만 실행한다. 같은 토픽·TF에 두 송출기가 동시에 발행하지 않게 한다.
 
 ```bash
-/usr/bin/python3 -u scripts/serve_isaac_scene_ros.py \
+/usr/bin/python3 -u scripts/isaac/serve_isaac_scene_ros.py \
   --output-root "$scene_out" --camera-alias /camera \
   --publish-map-tf --publish-link-markers --repeat-interval 1 \
   >"$scene_out-publisher.log" 2>&1 &
@@ -149,10 +149,10 @@ Foxglove 토픽·타입·프레임은 기준 장면과 같다. 기존 레이아�
 `stream/current.json`은 기존 필드명·타입을 그대로 유지하고 `scenario_id`, `scene_schema_version`, `execution_authorized`를 추가했다. 송출기 입력 계약은 `--check-input`으로 확인한다.
 
 ```bash
-/usr/bin/python3 scripts/serve_isaac_scene_ros.py --output-root "$scene_out" --check-input
+/usr/bin/python3 scripts/isaac/serve_isaac_scene_ros.py --output-root "$scene_out" --check-input
 ros2 topic list -t
 ros2 topic echo --once /contextweld/status
-/workspace/venvs/isaacsim-6.1/bin/python scripts/check_isaac_scene_stream.py \
+/workspace/venvs/isaacsim-6.1/bin/python scripts/isaac/check_isaac_scene_stream.py \
   --seconds 60 --expect-scenario shipyard-handwriting-glare-01 \
   --report "$scene_out-reception-01.json"
 ```
@@ -186,7 +186,7 @@ kill -TERM "$scene_pid" "$publisher_pid"   # 소유 확인 후
 
 ```bash
 kill -TERM "$(cat output/isaac-shipyard-20261010/live-03-publisher.pid)"
-/usr/bin/python3 -u scripts/serve_isaac_scene_ros.py \
+/usr/bin/python3 -u scripts/isaac/serve_isaac_scene_ros.py \
   --output-root output/isaac-scene-20261010/live-01 --camera-alias /camera \
   --publish-map-tf --publish-link-markers --repeat-interval 1 \
   >output/isaac-scene-20261010/ros-publisher-02.log 2>&1 &

@@ -13,7 +13,7 @@ from test_explicit_review import ReviewFixture, inventory
 from contextweld.review import inspect_review_bundle
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULE_SPEC = importlib.util.spec_from_file_location("review_export", ROOT / "scripts/export_document_review.py")
+MODULE_SPEC = importlib.util.spec_from_file_location("review_export", ROOT / "scripts/export/export_document_review.py")
 assert MODULE_SPEC and MODULE_SPEC.loader
 viewer = importlib.util.module_from_spec(MODULE_SPEC)
 MODULE_SPEC.loader.exec_module(viewer)

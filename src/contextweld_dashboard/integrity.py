@@ -1,6 +1,6 @@
 """묶음 검증. 스키마별 기존 검증기를 그대로 호출하고, 실패해도 무엇이 빠졌는지 보이도록 파일 목록을 따로 대조한다.
 
-* ``bootstrap-bundle.v1`` → ``scripts/verify_run_bundle.py`` 의 ``inspect_bundle`` (인식 bootstrap)
+* ``bootstrap-bundle.v1`` → ``scripts/verify/verify_run_bundle.py`` 의 ``inspect_bundle`` (인식 bootstrap)
 * ``document-demo-bundle.v1`` → ``contextweld.workflow.inspect_document_bundle``
 * ``review-bundle.v1`` → ``contextweld.review.inspect_review_bundle``
 * Isaac 장면 자료 → 전용 검증기 없음. manifest에 기록된 SHA-256만 대조하고 ``partial``로 표시한다.
@@ -33,10 +33,10 @@ STATE_LABELS = {
 
 
 def _bootstrap_inspector() -> Callable[[Path], dict[str, Any]]:
-    script = REPO / "scripts" / "verify_run_bundle.py"
+    script = REPO / "scripts" / "verify" / "verify_run_bundle.py"
     spec = importlib.util.spec_from_file_location("contextweld_dashboard_verify_run_bundle", script)
     if spec is None or spec.loader is None:  # pragma: no cover - 저장소 구조가 깨진 경우
-        raise RuntimeError("scripts/verify_run_bundle.py를 불러올 수 없습니다.")
+        raise RuntimeError("scripts/verify/verify_run_bundle.py를 불러올 수 없습니다.")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module.inspect_bundle
@@ -53,7 +53,7 @@ def _review_inspector() -> Callable[[Path], dict[str, Any]]:
 
 
 VERIFIERS: dict[str, tuple[str, Callable[[], Callable[[Path], dict[str, Any]]]]] = {
-    "bootstrap-bundle.v1": ("scripts/verify_run_bundle.py:inspect_bundle", _bootstrap_inspector),
+    "bootstrap-bundle.v1": ("scripts/verify/verify_run_bundle.py:inspect_bundle", _bootstrap_inspector),
     "document-demo-bundle.v1": ("contextweld.workflow.inspect_document_bundle", _document_inspector),
     "review-bundle.v1": ("contextweld.review.inspect_review_bundle", _review_inspector),
 }

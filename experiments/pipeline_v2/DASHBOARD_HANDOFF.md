@@ -15,7 +15,7 @@
 검증 명령:
 
 ```sh
-python3 scripts/verify_run_bundle.py output/pipeline-v2-20261010/runs/e1/run_pv2-e1-quick-val01
+python3 scripts/verify/verify_run_bundle.py output/pipeline-v2-20261010/runs/e1/run_pv2-e1-quick-val01
 ```
 
 ## 표시 한계(반드시 지킬 것)

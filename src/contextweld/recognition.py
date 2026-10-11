@@ -426,8 +426,8 @@ def environment_record(repo: Path) -> dict:
             "python": platform.python_version(), "platform": platform.platform(), "packages": packages,
             "implementation_sha256": {str(path.relative_to(repo)): sha256(path) for path in
                                        (repo / "src/contextweld/recognition.py", repo / "src/contextweld/documents.py",
-                                        repo / "scripts/run_recognition.py", repo / "scripts/build_document_index.py",
-                                        repo / "scripts/query_documents.py", repo / "scripts/prepare_inference_models.py")
+                                        repo / "scripts/run/run_recognition.py", repo / "scripts/prepare/build_document_index.py",
+                                        repo / "scripts/run/query_documents.py", repo / "scripts/prepare/prepare_inference_models.py")
                                        if path.is_file()}}
 
 

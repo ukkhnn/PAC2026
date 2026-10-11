@@ -82,8 +82,8 @@
   - VLM 프로세스는 한 번에 하나만 띄운다.
   - 래퍼에서 CUDA 메모리 상한 0.6을 두고 최대 메모리를 기록한다.
   - GPU·CPU 사용량과 cgroup 제한 통계를 10초마다 기록한다.
-  - 실행 전후와 중간에 `scripts/check_isaac_scene_stream.py`로 송출 수신을 확인한다. 보고서는 이 실험 경로에 둔다.
-- 제품 CLI 실행(E1)은 `scripts/run_recognition.py`를 수정 없이 부르고 `--sources`·`--data-root`·`--output-root`·`--image-ids`만 실험 경로로 지정한다. 문서 색인 검증을 위해 데이터 루트에 원문 4개의 동일 해시 사본을 둔다.
+  - 실행 전후와 중간에 `scripts/isaac/check_isaac_scene_stream.py`로 송출 수신을 확인한다. 보고서는 이 실험 경로에 둔다.
+- 제품 CLI 실행(E1)은 `scripts/run/run_recognition.py`를 수정 없이 부르고 `--sources`·`--data-root`·`--output-root`·`--image-ids`만 실험 경로로 지정한다. 문서 색인 검증을 위해 데이터 루트에 원문 4개의 동일 해시 사본을 둔다.
 - 하네스 실행(E1-R·E2·E3·E4)은 같은 제품 엔진(`PaddleEngine`, `QwenEngine`), 프롬프트, 정규화·검증 함수, `infer_json`의 1회 구문 재시도를 import해서 쓴다. CLI와 같은 입력에서 원문 출력이 같은지 재현성 대조로 확인한다(6절).
 - 실패 처리(E1): 제품 CLI는 한 프레임의 JSON·스키마 실패로 묶음 전체를 실패시킨다. 처리 순서는 다음과 같다.
   1. 10장씩 실행한다.

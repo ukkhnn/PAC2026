@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from urllib.parse import urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
-REPO = Path(__file__).resolve().parents[1]
+REPO = Path(__file__).resolve().parents[2]
 SUCCESS = {"downloaded", "copied", "verified"}
 MEDIA = {"image/jpeg", "image/png", "application/pdf", "text/html", "text/plain"}
 

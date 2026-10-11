@@ -590,7 +590,7 @@ def generate_panel_textures(marking: dict[str, Any], panels: dict[str, Any], out
         return [round(float(center["width"]) / 2 - x / px_per_m_x, 4), round(float(center["bottom_z"]) + (tex_h - y) / px_per_m_y, 4)]
 
     provenance = {
-        "generator": "scripts/isaac_shipyard_marking.py",
+        "generator": "scripts/isaac/isaac_shipyard_marking.py",
         "generator_sha256": _sha256(Path(__file__)),
         "glyph_set_version": GLYPH_SET_VERSION,
         "source": marking.get("source", "procedural synthetic handwriting-style strokes; not a transcription of a real steel photo"),

@@ -45,7 +45,7 @@ STAGE_STATES = ("done", "not_done", "failed", "absent", "unknown")
 STEP_CLASSES = ("success", "undetermined", "failure", "recorded")
 INTEGRITY_STATES = ("verified", "failed", "unverifiable", "partial")
 
-# 출처 라벨. 기존 exporter(scripts/export_document_review.py KIND_TAGS)의 표기를 그대로 따르고
+# 출처 라벨. 기존 exporter(scripts/export/export_document_review.py KIND_TAGS)의 표기를 그대로 따르고
 # 대시보드에서 새로 필요한 출처만 추가한다.
 ORIGIN_LABELS = {
     "model": "원본 · model",

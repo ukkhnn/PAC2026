@@ -26,6 +26,10 @@ from contextweld.workflow import build_spec, command_from_spec, inspect_document
 SCHEMA = REVIEW_BUNDLE
 SPEC_VERSION = "demo-1.5+ocr-1.2+documents-1.3"
 REQUEST_SCHEMA = "review-request.v1"
+REQUEST_INTERFACE = "cli:scripts/run/run_review.py"
+# 스크립트를 역할별 하위 폴더로 옮기기 전에 저장한 묶음은 옛 경로를 기록하고 있다.
+# 요청 스냅샷 해시는 그 값으로 계산됐으므로 과거 기록도 그대로 검증한다.
+ACCEPTED_REQUEST_INTERFACES = (REQUEST_INTERFACE, "cli:scripts/run_review.py")
 PARENT_REF = "inputs/parent"
 DELIVERY_FAULTS = ("receiver_unavailable",)
 REQUEST_CONTENT_KEYS = {"schema_version", "review_request_id", "parent_run_id", "parent_schema_version",
@@ -334,7 +338,7 @@ def request_content(*, review_request_id: str, parent: Path, records: list[dict]
             "correction_ids": [record["correction_id"] for record in records],
             "correction_record_sha256": {record["correction_id"]: digest(record) for record in records},
             "delivery_requested": bool(deliver), "delivery_fault_injection": delivery_fault,
-            "requested_by": deepcopy(requested_by), "reason": reason, "interface": "cli:scripts/run_review.py"}
+            "requested_by": deepcopy(requested_by), "reason": reason, "interface": REQUEST_INTERFACE}
 
 
 class ReviewRun:
@@ -550,8 +554,8 @@ def run_review(*, repo: Path, parent_bundle: Path, store: Path, correction_ids: 
             for record, _ in loaded:
                 stream.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
         source_files = ["src/contextweld/review.py", "src/contextweld/corrections.py", "src/contextweld/workflow.py",
-                        "src/contextweld/mock_delivery.py", "src/contextweld/matching.py", "scripts/run_review.py",
-                        "scripts/record_correction.py", "scripts/verify_review_bundle.py"]
+                        "src/contextweld/mock_delivery.py", "src/contextweld/matching.py", "scripts/run/run_review.py",
+                        "scripts/run/record_correction.py", "scripts/verify/verify_review_bundle.py"]
         write_json(run.root / "inputs/environment.json", {
             "environment": environment_record(repo),
             "code_hashes": {name: sha256(repo / name) for name in source_files if (repo / name).is_file()},
@@ -662,7 +666,7 @@ def inspect_review_bundle(root: Path) -> dict[str, Any]:
     content = {key: request.get(key) for key in REQUEST_CONTENT_KEYS}
     if (set(request) != REQUEST_CONTENT_KEYS | {"request_sha256", "run_id", "requested_at_utc"}
             or request["request_sha256"] != digest(content) or request["run_id"] != manifest["run_id"]
-            or request["schema_version"] != REQUEST_SCHEMA or request["interface"] != "cli:scripts/run_review.py"
+            or request["schema_version"] != REQUEST_SCHEMA or request["interface"] not in ACCEPTED_REQUEST_INTERFACES
             or request["requested_at_utc"] != manifest["started_at_utc"] or not isinstance(request["reason"], str)
             or not request["reason"].strip()):
         raise ValueError("재검토 요청 스냅샷 불일치")

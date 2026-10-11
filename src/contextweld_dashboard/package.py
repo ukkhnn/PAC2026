@@ -360,8 +360,8 @@ def _file_entries(reader: BundleReader, source: Source) -> tuple[list[dict[str, 
 
 
 def _existing_viewer(bundle: Path, output: Path) -> dict[str, Any] | None:
-    """기존 단건 HTML 조회기(scripts/export_document_review.py)로 같은 사본을 내보낸다(대체·수정 없음)."""
-    script = REPO / "scripts" / "export_document_review.py"
+    """기존 단건 HTML 조회기(scripts/export/export_document_review.py)로 같은 사본을 내보낸다(대체·수정 없음)."""
+    script = REPO / "scripts" / "export" / "export_document_review.py"
     spec = importlib.util.spec_from_file_location("contextweld_dashboard_existing_viewer", script)
     if spec is None or spec.loader is None:
         return None

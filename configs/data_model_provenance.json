@@ -910,7 +910,7 @@
           "exists": true
         },
         {
-          "path": "scripts/run_isaac_welding_scene.py",
+          "path": "scripts/isaac/run_isaac_welding_scene.py",
           "sha256": "020d0c71d6dfa312a728574349cb6dcd324f3769e90a8bef662e178910cf22d1",
           "exists": true
         }
@@ -971,13 +971,13 @@
         "checked_at": "2026-10-10",
         "source_files": [
           {
-            "repository_path": "scripts/run_isaac_welding_scene.py",
+            "repository_path": "scripts/isaac/run_isaac_welding_scene.py",
             "archived_path": "output/isaac-scene-20261010/live-01/source/run_isaac_welding_scene.py",
             "sha256": "020d0c71d6dfa312a728574349cb6dcd324f3769e90a8bef662e178910cf22d1",
             "matches_capture": true
           },
           {
-            "repository_path": "scripts/isaac_scene_robot.py",
+            "repository_path": "scripts/isaac/isaac_scene_robot.py",
             "archived_path": "output/isaac-scene-20261010/live-01/source/isaac_scene_robot.py",
             "sha256": "7603368955d5705571e9f1c2b50c28cdc4f465fadd9d8f05cf88f3c4345bafef",
             "matches_capture": true
@@ -1005,7 +1005,7 @@
           "exists": true
         },
         {
-          "path": "scripts/run_isaac_shipyard_scene.py",
+          "path": "scripts/isaac/run_isaac_shipyard_scene.py",
           "sha256": "6af6eee4b2ac260d721723ef9720665b578c3d31c000c3723a9e0f76fcfc6b1f",
           "exists": true
         }
@@ -1046,7 +1046,7 @@
           "captured_at_utc": "2026-10-09T22:38:32.066895+00:00"
         }
       ],
-      "generator": "scripts/isaac_shipyard_marking.py",
+      "generator": "scripts/isaac/isaac_shipyard_marking.py",
       "glyph_set": "shipyard-stroke-glyphs.v2",
       "seed": 20261010,
       "font_dependency": null,
@@ -1070,13 +1070,13 @@
           }
         },
         "marking_generation": {
-          "generator": "scripts/isaac_shipyard_marking.py",
+          "generator": "scripts/isaac/isaac_shipyard_marking.py",
           "generator_sha256": "c03e3cc90ef1621d20bb8cad5ec08bf54581328448de7b747751a76eed2669d8",
           "glyph_set_version": "shipyard-stroke-glyphs.v2",
           "seed": 20261010,
           "style": "paint_marker",
           "synthetic": true,
-          "source": "procedural synthetic handwriting-style strokes drawn by scripts/isaac_shipyard_marking.py; not a transcription of a real steel photo"
+          "source": "procedural synthetic handwriting-style strokes drawn by scripts/isaac/isaac_shipyard_marking.py; not a transcription of a real steel photo"
         },
         "external_assets": [
           {
@@ -1087,7 +1087,7 @@
             "copied_into_output": false
           }
         ],
-        "procedural_geometry": "all workshop geometry is USD primitives authored by scripts/run_isaac_shipyard_scene.py; no external meshes except the UR10"
+        "procedural_geometry": "all workshop geometry is USD primitives authored by scripts/isaac/run_isaac_shipyard_scene.py; no external meshes except the UR10"
       },
       "copy_evidence": {
         "path": "output/recapture-handoff-20261010/inputs/inputs.json",
@@ -1109,19 +1109,19 @@
         "checked_at": "2026-10-10",
         "source_files": [
           {
-            "repository_path": "scripts/run_isaac_shipyard_scene.py",
+            "repository_path": "scripts/isaac/run_isaac_shipyard_scene.py",
             "archived_path": "output/context-ablation-20261010/isaac-live-03/source/run_isaac_shipyard_scene.py",
             "sha256": "6af6eee4b2ac260d721723ef9720665b578c3d31c000c3723a9e0f76fcfc6b1f",
             "matches_capture": true
           },
           {
-            "repository_path": "scripts/isaac_scene_robot.py",
+            "repository_path": "scripts/isaac/isaac_scene_robot.py",
             "archived_path": "output/context-ablation-20261010/isaac-live-03/source/isaac_scene_robot.py",
             "sha256": "7603368955d5705571e9f1c2b50c28cdc4f465fadd9d8f05cf88f3c4345bafef",
             "matches_capture": true
           },
           {
-            "repository_path": "scripts/isaac_shipyard_marking.py",
+            "repository_path": "scripts/isaac/isaac_shipyard_marking.py",
             "archived_path": "output/context-ablation-20261010/isaac-live-03/source/isaac_shipyard_marking.py",
             "sha256": "c03e3cc90ef1621d20bb8cad5ec08bf54581328448de7b747751a76eed2669d8",
             "matches_capture": true
@@ -1722,7 +1722,7 @@
       "evidence_paths": [
         "output/implementation-20261010/model-setup/model-manifest.json",
         "output/recognition/run_steel-batch-20261010-02/results/inference-config.json",
-        "scripts/prepare_inference_models.py",
+        "scripts/prepare/prepare_inference_models.py",
         "output/context-ablation-20261010/run-01/inputs/model-manifest.json"
       ],
       "license_notes": "No standalone LICENSE included in downloaded 23-file manifest. Do not confuse runtime code license with checkpoint card declaration.",
@@ -1774,7 +1774,7 @@
       "evidence_paths": [
         "output/implementation-20261010/model-setup/model-manifest.json",
         "output/recognition/run_steel-batch-20261010-02/results/inference-config.json",
-        "scripts/prepare_inference_models.py",
+        "scripts/prepare/prepare_inference_models.py",
         "output/context-ablation-20261010/run-01/inputs/model-manifest.json"
       ],
       "license_notes": "No standalone LICENSE included in downloaded 23-file manifest. Do not confuse runtime code license with checkpoint card declaration.",
@@ -1881,7 +1881,7 @@
       "evidence_paths": [
         "output/implementation-20261010/model-setup/model-manifest.json",
         "output/recognition/run_steel-batch-20261010-02/results/inference-config.json",
-        "scripts/prepare_inference_models.py",
+        "scripts/prepare/prepare_inference_models.py",
         "output/context-ablation-20261010/run-01/inputs/model-manifest.json"
       ],
       "license_notes": "No standalone LICENSE included in downloaded 23-file manifest. Do not confuse runtime code license with checkpoint card declaration.",
@@ -2287,13 +2287,13 @@
         }
       },
       "marking_generation": {
-        "generator": "scripts/isaac_shipyard_marking.py",
+        "generator": "scripts/isaac/isaac_shipyard_marking.py",
         "generator_sha256": "c03e3cc90ef1621d20bb8cad5ec08bf54581328448de7b747751a76eed2669d8",
         "glyph_set_version": "shipyard-stroke-glyphs.v2",
         "seed": 20261010,
         "style": "paint_marker",
         "synthetic": true,
-        "source": "procedural synthetic handwriting-style strokes drawn by scripts/isaac_shipyard_marking.py; not a transcription of a real steel photo"
+        "source": "procedural synthetic handwriting-style strokes drawn by scripts/isaac/isaac_shipyard_marking.py; not a transcription of a real steel photo"
       },
       "external_assets": [
         {
@@ -2304,7 +2304,7 @@
           "copied_into_output": false
         }
       ],
-      "procedural_geometry": "all workshop geometry is USD primitives authored by scripts/run_isaac_shipyard_scene.py; no external meshes except the UR10"
+      "procedural_geometry": "all workshop geometry is USD primitives authored by scripts/isaac/run_isaac_shipyard_scene.py; no external meshes except the UR10"
     },
     "legacy_font": {
       "name": "DejaVuSansMono-Bold.ttf",

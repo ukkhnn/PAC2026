@@ -14,7 +14,7 @@
 
 - 재생은 기록 읽기다. OCR/VLM, 문서 재검색, 카메라 이동, 명령 송신, 수정 저장, 명시적 재검토를 호출하지 않는다.
 - Foxglove·ROS·GPU·Isaac은 실행 의존성이 아니다. 기존 Foxglove 설정·토픽·브리지와 실행 중 장면 프로세스는 건드리지 않았다.
-- 기존 단건 HTML exporter(`scripts/export_document_review.py`)와 검증기(`verify_*.py`, `inspect_*`)는 바꾸지 않고
+- 기존 단건 HTML exporter(`scripts/export/export_document_review.py`)와 검증기(`verify_*.py`, `inspect_*`)는 바꾸지 않고
   그대로 호출한다. 패키지에는 기존 exporter로 만든 단건 화면도 함께 넣는다.
 - 인식 bootstrap(공개 사진)·문서 검토·명시적 재검토·Isaac 장면 자료는 서로 다른 종류로 표시하고 합치지 않는다.
   장면 `J01`과 문서 `JOINT-DEMO-01`은 연결된 기록이 없으므로 미연결로 표시한다.
@@ -28,11 +28,11 @@
 
 ```bash
 cd /workspace/PAC2026
-python3 scripts/export_admin_dashboard.py export \
+python3 scripts/export/export_admin_dashboard.py export \
   --output output/admin-dashboard-20261010/package/pac-admin-dashboard \
   --zip output/admin-dashboard-20261010/package/pac-admin-dashboard.zip \
   --report output/admin-dashboard-20261010/package/export-report.json
-python3 scripts/export_admin_dashboard.py verify output/admin-dashboard-20261010/package/pac-admin-dashboard
+python3 scripts/export/export_admin_dashboard.py verify output/admin-dashboard-20261010/package/pac-admin-dashboard
 ```
 
 새 묶음을 더할 때는 `--add <묶음 폴더>`(반복 가능), 기본 자료 일부만 넣을 때는 `--only <key,...>`.
@@ -59,7 +59,7 @@ Mac에서의 최종 확인 절차는 [10절](#10-mac-최종-확인-절차)에 �
 | `src/contextweld_dashboard/package.py` | 패키지 생성(검증 → 바이트 동일 복사 → 사본 재검증 → 화면 모델 → 기존 HTML 조회기 → MANIFEST/SHA256SUMS) |
 | `src/contextweld_dashboard/web/` | 화면(`index.html`, `app.css`, `app.js`): 바닐라 JS, 빌드 단계·외부 자원 없음 |
 | `src/contextweld_dashboard/package_tools/` | 패키지에 들어가는 독립 도구(`verify_package.py`, `serve_package.py`, 안내문) |
-| `scripts/export_admin_dashboard.py` | CLI(`export`, `verify`) |
+| `scripts/export/export_admin_dashboard.py` | CLI(`export`, `verify`) |
 | `scripts/check_admin_dashboard_browser.py` | 브라우저 검수 자동화(Playwright, UI 전용 격리 환경) |
 | `tests/test_admin_dashboard_*.py`, `tests/admin_dashboard_*.py` | 단위·통합 테스트와 공통 도우미 |
 

@@ -35,28 +35,28 @@ SRV=output/document-demo-20261010/server
 OUT=output/explicit-review-20261010
 
 # 0) 수정 가능한 대상·수정 전 값·결과 해시를 요청 서식으로 확인 (읽기 전용)
-$PY scripts/record_correction.py targets --bundle $SRV/run_document-missing-server-01 > targets.json
+$PY scripts/run/record_correction.py targets --bundle $SRV/run_document-missing-server-01 > targets.json
 #    targets.json의 templates[].request 하나를 파일로 저장하고 correction_id·after·reason·author를 채운다.
 
 # 1) 수정 저장만 한다. 재검토·모델 호출·전송 없음
-$PY scripts/record_correction.py record --bundle $SRV/run_document-missing-server-01 \
+$PY scripts/run/record_correction.py record --bundle $SRV/run_document-missing-server-01 \
   --request voltage-request.json --store $OUT/correction-store
 
 # 2) 선택한 수정으로 재검토만 한다 (전달 미요청)
-$PY scripts/run_review.py --parent-bundle $SRV/run_document-missing-server-01 \
+$PY scripts/run/run_review.py --parent-bundle $SRV/run_document-missing-server-01 \
   --store $OUT/correction-store --correction corr-voltage-01 \
   --review-request-id rr-voltage-01 --run-id review-voltage-01 --output-root $OUT \
   --requested-by operator-01 --requester-kind user --reason "전압 누락을 WPS 근거로 복구해 재검토"
 
 # 3) 이미 내보낸 재검토를 나중에 전달하려면 그 묶음을 부모로 새 재검토·전달 실행을 만든다
-$PY scripts/run_review.py --parent-bundle $OUT/run_review-voltage-01 \
+$PY scripts/run/run_review.py --parent-bundle $OUT/run_review-voltage-01 \
   --store $OUT/correction-store --correction corr-voltage-01 \
   --review-request-id rr-voltage-deliver-01 --run-id review-voltage-deliver-01 --output-root $OUT \
   --requested-by operator-01 --requester-kind user --reason "재검토 결과를 모의 수신기로 전달" --deliver
 
 # 4) 추론·전송 없이 검증, 5) 읽기 전용 HTML 내보내기
-python3 scripts/verify_review_bundle.py $OUT/run_review-voltage-deliver-01
-python3 scripts/export_document_review.py $OUT/run_review-voltage-deliver-01 \
+python3 scripts/verify/verify_review_bundle.py $OUT/run_review-voltage-deliver-01
+python3 scripts/export/export_document_review.py $OUT/run_review-voltage-deliver-01 \
   --output $OUT/html/review-voltage-deliver-01.html
 ```
 
