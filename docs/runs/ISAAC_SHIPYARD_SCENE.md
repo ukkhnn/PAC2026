@@ -13,8 +13,10 @@
 | 전체 장면(A 자세) | ![전체 장면](../images/isaac_shipyard/shipyard-live-03-A-overview.jpg) | `live-03/frames/A-overview.png` |
 | 손목 A — 반사가 메모 일부를 가림 | ![A 손목](../images/isaac_shipyard/shipyard-live-03-A-wrist.jpg) | `live-03/frames/A-wrist.png` |
 | 손목 B — 같은 메모가 읽힘 | ![B 손목](../images/isaac_shipyard/shipyard-live-03-B-wrist.jpg) | `live-03/frames/B-wrist.png` |
+| 전체 장면(B 자세) | ![전체 장면 B](../images/isaac_shipyard/shipyard-live-03-B-overview.jpg) | `live-03/frames/B-overview.png` |
+| 중앙 수기 메모 확대 | ![마킹 미리보기](../images/isaac_shipyard/shipyard-marking-preview.jpg) | 생성한 패널 텍스처 |
 
-육안 검수 결과: A 손목 영상에서는 고정 작업등의 정반사 덩어리가 `BISB30N-15`의 `0N-` 부근에 겹쳐 식별자를 끝까지 읽을 수 없고(`BISB3`과 `15`는 보임), 동그라미 친 `J01`과 이음부로 향한 화살표는 보인다. B 손목 영상에서는 `BISB30N-15`, `J01`, 화살표, 이음부(가접·strongback)가 모두 보이고 반사는 메모 위쪽 프레임 상단으로 옮겨 가 있다. 전체 장면에서는 수직 3면 강판, 보강재, 이음부, 받침·클램프, 로봇 받침대, 삼각대 작업등, 바닥 케이블, 용접 전원·가스통, 어두운 대형 작업장이 보인다. **글자 확인은 육안 검수이며 OCR/VLM 측정 결과가 아니다.** 새 프레임에 대한 인식 실행은 하지 않았다.
+육안 검수 결과: A 손목 영상에서는 고정 작업등의 정반사 덩어리가 `BISB30N-15`의 `0N-` 부근에 겹쳐 식별자를 끝까지 읽을 수 없고(`BISB3`과 `15`는 보임), 동그라미 친 `J01`과 이음부로 향한 화살표는 보인다. B 손목 영상에서는 `BISB30N-15`, `J01`, 화살표, 이음부(가접·strongback)가 모두 보이고 반사는 메모 위쪽 프레임 상단으로 옮겨 가 있다. 전체 장면에서는 수직 3면 강판, 보강재, 이음부, 받침·클램프, 로봇 받침대, 삼각대 작업등, 바닥 케이블, 용접 전원·가스통, 어두운 대형 작업장이 보인다. **글자 확인은 육안 검수이며 OCR/VLM 측정 결과가 아니다.** 이 장면의 저장 프레임에 대한 실제 판독은 이후 [통합 파이프라인](WELD_PIPELINE.md)에서 수행했고, 거기서도 판독성 측정은 하지 않았다.
 
 | live-03 최초 정착 촬영 | 요청 카메라 위치 (m) | 실제 카메라 위치 (m) | 위치 오차 | 회전 오차 | 고정 장착·USD/PhysX 대조 |
 |---|---|---|---:|---:|---|
