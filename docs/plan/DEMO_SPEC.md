@@ -351,7 +351,7 @@ git switch dev && git pull --ff-only origin dev
 git rev-parse HEAD
 ```
 
-처음 읽을 문서는 `README.md`와 `docs/DEMO_SPEC.md`다. 로컬 전용 `AGENTS.md`, `CURRENT_TASK.md`, `.cowork/`가 새 clone에 없더라도 프로젝트 스펙을 이해할 수 있어야 한다. 실행별 실제 커밋·스펙 버전은 manifest에 기록한다.
+처음 읽을 문서는 `README.md`, `docs/README.md`(문서 색인), `docs/plan/DEMO_SPEC.md`다. 로컬 전용 `AGENTS.md`, `CURRENT_TASK.md`, `.cowork/`가 새 clone에 없더라도 프로젝트 스펙을 이해할 수 있어야 한다. 실행별 실제 커밋·스펙 버전은 manifest에 기록한다.
 
 ### 9.3 구현하면서 반드시 추가할 재현 자료
 
