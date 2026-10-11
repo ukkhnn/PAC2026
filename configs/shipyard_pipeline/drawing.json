@@ -1,0 +1,26 @@
+{
+  "document_origin": "synthetic_demo",
+  "source_kind": "fixture",
+  "application_authorized": false,
+  "execution_authorized": false,
+  "schema_version": "demo-drawing.v1",
+  "document_id": "DRAWING-DEMO-015",
+  "revision": "1",
+  "render_ref": "drawing.svg",
+  "provenance": "설명용 모사 도면. 실제 사진의 형상·재질·두께·접합부를 복원한 것이 아님.",
+  "part_id": "BISB30N-15",
+  "joint_id": "JOINT-DEMO-01",
+  "process": "FCAW",
+  "material": "A-36",
+  "position": "flat",
+  "thickness": null,
+  "geometry": {
+    "type": "schematic_two_plate_joint",
+    "dimensions": null,
+    "source_kind": "fixture"
+  },
+  "joint_marking_map": {
+    "J01": "JOINT-DEMO-01"
+  },
+  "joint_mapping_origin": "synthetic_demo_drawing"
+}

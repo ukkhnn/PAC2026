@@ -162,6 +162,9 @@ def validate_command(command: Any, profile: dict) -> list[dict[str, str]]:
         else:
             if "min" in field or "max" in field or field.get("value") not in definition["allowed_values"]:
                 error(path, "unsupported_enum_value")
+    if "robot_input" in command:
+        from contextweld.weld_pipeline import validate_robot_extension
+        errors.extend(validate_robot_extension(command))
     return errors
 
 
