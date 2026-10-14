@@ -61,6 +61,15 @@
 | [DATA_MODEL_PROVENANCE](sources/DATA_MODEL_PROVENANCE.md) | **출처 기준.** 확보 파일·모델의 원출처·revision·SHA-256·가공 과정. 기계 판독용 목록은 [`configs/data_model_provenance.json`](../configs/data_model_provenance.json) |
 | [SOURCES](sources/SOURCES.md) | 대회·도메인 참고 자료 목록과 적용 범위 |
 
+## audit/ — 진단·처방
+
+현재 종단 연결의 문제를 사실(진단)과 제안(처방)으로 구분해 정리한다. 처방과 지시서 항목은 `(claude 제안사항)`이며 실행 여부는 별도 판단 대상이다.
+
+| 문서 | 내용 |
+|---|---|
+| [DIAGNOSIS_AND_REMEDIATION](audit/DIAGNOSIS_AND_REMEDIATION.md) | 재촬영 미병합·서사 불일치·라벨 오독 파생·OCR 미사용·서버 유실·목업·검증 허점의 진단과 처방 |
+| [INSTRUCTIONS/](audit/INSTRUCTIONS/) | 영역별 복구 지시서(recapture-loop, recognition-and-binding, server-artifact-recovery, dashboard-mock-data, verification-integrity) |
+
 ## 그 밖에
 
 | 경로 | 내용 |
