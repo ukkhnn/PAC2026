@@ -269,6 +269,7 @@
         c.appendChild(txt("div", "t", s.title)); c.appendChild(txt("div", "s", r.kind_label + (s.scenario_id && s.scenario_id.v ? " · " + s.scenario_id.v : "") + (s.note ? " · " + s.note : "")));
         var ch = el("div", "chips");
         if (r.group !== "scene" && r.group !== "reference") { ch.appendChild(enumChip(s.run_outcome, OUTCOME)); ch.appendChild(enumChip(s.export_status, EXPORT)); if (s.delivery_status && !s.delivery_status.absent) ch.appendChild(enumChip(s.delivery_status, DELIV)); }
+        if (s.run_kind && s.run_kind.v === "presentation_scenario") ch.appendChild(chip("목업 · 실제 실행 아님", "warning"));
         var ig = INTEG[r.integrity.state] || ["? " + r.integrity.state, "neutral"]; ch.appendChild(chip(ig[0], ig[1]));
         c.appendChild(ch); side.appendChild(c);
       });
@@ -298,6 +299,15 @@
       var m = el("div", "modal", [el("div", "mh", [txt("b", null, "무결성 검사 · " + S.key), btn("닫기 (Esc)", function () { m.remove(); })]), txt("pre", null, lines.filter(Boolean).join("\n"))]); document.body.appendChild(m); }, "chip tone-" + ig[1]);
     ch.appendChild(ib);
     head.appendChild(ch);
+    // 시연 시나리오 목업은 실제 종단 실행과 혼동되지 않도록 화면에서 분리 표시한다(2026-10-15).
+    if (s.run_kind && s.run_kind.v === "presentation_scenario") {
+      var mb = el("div", "notice warning");
+      mb.appendChild(txt("span", "lv", NOTICE.warning));
+      mb.appendChild(txt("b", null, "목업(시연 시나리오) — 실제 실행 기록이 아닙니다. "));
+      mb.appendChild(document.createTextNode("run_outcome·delivery_status·단계는 시나리오 정의값이며 모델 원문·추론 시간·전송 ACK가 없습니다."));
+      if (hasRun("shipyard-connected-01")) mb.appendChild(btn("실제 종단 실행 shipyard-connected-01 열기 →", function () { select("shipyard-connected-01"); }, "chip"));
+      head.appendChild(mb);
+    }
     var fl = el("div", "chips"); (s.flags || []).forEach(function (f) { fl.appendChild(el("span", "chip", [f.label + ": ", renderValue(f.value)])); }); head.appendChild(fl);
     if (entry && entry.viewer_html) { var a = el("a"); a.href = entry.viewer_html; a.target = "_blank"; a.rel = "noopener"; a.textContent = "기존 단건 HTML 조회기로 보기(기존 exporter 화면, 새 탭)"; head.appendChild(a); }
     main.appendChild(head); main.appendChild(bar(r));
