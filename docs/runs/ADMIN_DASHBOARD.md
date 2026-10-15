@@ -142,3 +142,21 @@ Mac에서의 최종 확인 절차는 [10절](#10-mac-최종-확인-절차)에 �
 | 새 결과 연결 입력 계약 | **미작성.** 현재는 `--add <묶음 폴더>` 사용법만 2절에 있음 |
 
 이 기록을 채우려면 2절의 명령을 실행하고 `export-report.json`과 사본 재검증 결과를 이 문서에 옮겨 적는다.
+
+## 12. 목업·실제 실행 분리 표시 (2026-10-15 정정)
+
+진단·처방 P2-2([지시서](../audit/INSTRUCTIONS/dashboard-mock-data.md)) 실행 기록이다. 재관측 시연
+(`shipyard-recapture`)이 실제 반사 감지·재촬영 성공처럼 보이지 않도록 화면과 데이터에 목업 표시를 넣었다.
+
+- `src/contextweld_dashboard/web/app.js`: `run_kind.v === "presentation_scenario"`인 실행은
+  사이드바 카드에 `목업 · 실제 실행 아님`(warning) 칩을, 실행 화면 머리에 경고 배너를 표시한다. 배너에는
+  "run_outcome·delivery_status·단계는 시나리오 정의값이며 모델 원문·추론 시간·전송 ACK가 없습니다"라는 문구와
+  실제 종단 실행(`shipyard-connected-01`)을 여는 버튼을 함께 둔다. 실제 실행·기타 실행에는 영향이 없다.
+- 로컬 사본 생성기 `output/dashboard-preview-20261010/add_recapture_scenario.py`(미추적): 시나리오 `mock_note`,
+  `summary.note`, 요약 탭 첫 블록 notice, `data/index.js` 전역 안내(중복 방지 포함)를 추가했다. 재생성해도
+  분리 표시가 유지된다. 생성기 안의 낡은 `scripts/add_robot_dashboard_preview.py` 경로를 `scripts/export/`로 고쳤다.
+- 사본 재생성 뒤 `tools/verify_package.py` 통과(파일 4,892개, MANIFEST·해시 일치)를 확인했다.
+
+**알려진 공백(이번 정정 범위 아님):** 통합 파이프라인·시연 시나리오 묶음은 MANIFEST `roots`에 등록되지 않는다
+(두 exporter 모두 기존 동작). 파일 자체는 MANIFEST `files`·SHA256SUMS로 해시 검증되지만 묶음 단위
+`checksums.json` 대조 대상에는 나타나지 않는다. 필요하면 별도 항목으로 다룬다.
