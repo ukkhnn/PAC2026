@@ -8,7 +8,7 @@ ContextWeld는 선박 블록과 부재의 정형 마킹·수기 표기를 인식
 
 [PAC 2026](https://ainnov.co.kr/pac2026) 분과 02 기업 문제 해결형 IR 피칭 대회의 HD현대로보틱스 미션 03을 대상으로 한다. 참가팀은 **Static Duo**다.
 
-이 README의 저장소 상태 기준일은 **2026-10-11**이다. 아래 단락은 실행 순서대로 쌓여 있으며, 뒤 단락이 앞 단락의 한계를 해소한 경우 그 자리에 갱신을 표시한다.
+이 README의 저장소 상태 기준일은 **2026-10-15**이다. 아래 단락은 실행 순서대로 쌓여 있으며, 뒤 단락이 앞 단락의 한계를 해소한 경우 그 자리에 갱신을 표시한다.
 
 > 현재 단계: [공개 사진 10장의 실제 OCR/VLM·원문 4개 74청크 검색](docs/runs/RUNPOD_INFERENCE.md)에 이어, 저장된 실제 관측을 [모사 작업지시·도면→WPS 조건 범위→HTTP 모의 수신](docs/runs/DOCUMENT_DEMO.md)으로 연결했다. 정상 사례는 수신 응답을 기록했고, 필수값 누락·문서 공정 충돌·개정 불일치·실제 판독 불일치는 전송을 보류했다. 이어서 [사용자 수정 저장 → 명시적 재검토 → 선택적 모의 전달](docs/runs/EXPLICIT_REVIEW.md)을 서버 CLI로 구현해 실제 저장 묶음에서 재검토만 성공(`succeeded`·`not_requested`), 별도 전달 요청으로 `received`, 수정 뒤에도 문제가 남아 `blocked`, 수신기 미가동 결함 주입 시 `failed`를 확인했다. 원본 입력 1,173개 파일 해시는 그대로이며 문서 범위 규칙 재검토의 새 모델 호출은 0회다. Runpod 테스트 83개와 로컬 재검증 83개가 통과했다. 이 단락의 기준일은 2026-10-10이다.
 
@@ -21,6 +21,8 @@ ContextWeld는 선박 블록과 부재의 정형 마킹·수기 표기를 인식
 WPS 검수는 선택한 헤더·대표층 1의 전사 확인이며 사람의 적용 승인이 아니다. 사진의 실제 재질·두께·현장 WPS 적용성은 미확인이다. 합성 장면의 `J01`과 문서의 `JOINT-DEMO-01`은 시연 도면의 `joint_marking_map`으로만 연결했고, 실제 이음을 확인한 연결이 아니다. 팔의 A/B 이동은 `pre_captured`로 기록하는 예약 시연이며 모델 판단으로 움직이는 폐루프가 아니다. [문서 검토 한 건의 오프라인 HTML 조회](docs/runs/DOCUMENT_REVIEW_VIEWER.md)는 구현해 정상 `received`·누락/관측 충돌 `blocked`의 실제 묶음 3개를 내보냈다. 원본 582개 파일 해시 보존·신규 테스트 6개와 HTML 구조·표시 내용 검사를 통과했으며, 브라우저 파일 URL 제한으로 시각 검수는 미완료다. 명시적 재검토는 문서 범위 규칙 재검토이며 시각 관계의 모델 재해석은 구현하지 않았다. 수정 입력은 서버 CLI와 [제조사 변환 화면](docs/runs/ROBOT_INPUT_PREVIEW.md)의 작업조건 카드에 있고, 인식 결과 자체를 화면에서 고치는 입력은 없다. P1과 여러 실행을 담는 [오프라인 관리자 패키지](docs/runs/ADMIN_DASHBOARD.md)는 달성했고, 전체 P2·P3·P4와 A/B 재촬영 재생은 미완료다. 별도 [실험실](experiments/README.md)의 과거 비교 결과와 현재 부분 실행을 구분한다.
 
 실제 조선소 저장 A/B의 마킹에서 작업지시·공통명세·현대/두산 입력·HTTP 수신까지 연결한 최신 실행은 [통합 파이프라인](docs/runs/WELD_PIPELINE.md)을 따른다. B의 `BISB30N-15`·`J01`·지시 대상을 판독해 대상과 제조사 명령을 함께 전달했고 양쪽 `received`를 확인했다. 위의 이전 부분 구현 설명 중 조선소 인식·문서·전달 미연결 상태는 이 실행으로 갱신됐다. 실제 팔 이동·실기 용접·좌표 경로 생성은 별도다.
+
+> 정정·보강 (2026-10-15): 종단 진단·처방의 P0·P2를 반영했다. [저장 A/B 재촬영 루프](docs/runs/RECAPTURE_LOOP.md) 8개 파일을 dev에 병합했다. 실제 실행·대시보드 어댑터 연결은 아직이며 `capture_binding()`의 `requires_recapture` 예외 유지 결정과 사유는 [WELD_PIPELINE](docs/runs/WELD_PIPELINE.md)에 기록했다. A 뒤 저장 B 선택의 실제 사유는 `unresolved_target_identity_or_capture_quality`(정확 조회 실패)이며 시스템의 반사 감지 성공으로 표시하지 않는다. 시연 기준값 `BISB30N-15`는 실제 라벨 `B1Sb30N-15`의 오독 정규화 파생값임을 configs와 [WELD_PIPELINE](docs/runs/WELD_PIPELINE.md)에 명시했다. 문서 검증 목록의 `observation_consensus` 표기는 실제 판독 경로(VLM 단독)에 맞게 정정했고, 번들 검증은 `checksums.json` 미등재 파일을 탐지하도록 보강했다.
 
 ## 첫 장면 실행
 

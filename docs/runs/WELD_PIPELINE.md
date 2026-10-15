@@ -32,6 +32,12 @@ PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK=True HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE
 
 용접 수치는 마킹에서 만든 값이 아니다. 마킹으로 선택한 작업지시에 연결된 [등록조건](../../configs/document_demo/weld_recipes.json)을 사용한다. 시연 작업지시·도면·등록조건의 출처는 데이터에 보존한다. 판독 결과·문서 조건·사용자 수정의 근거는 구분한다. 원본 WPS와 실제 적용성은 별개의 검증 범위다.
 
+## 부재 표기 계보와 재촬영 결정 (2026-10-15 정정)
+
+시연 기준값 `BISB30N-15`는 실제 라벨 표기 `B1Sb30N-15`를 OCR/VLM이 `BISb30N-15`로 읽은 것을 대문자로 정규화한 파생 문자열이다. A 프레임 판독 `BISB3015`는 오독으로 작업지시 정확 조회에 실패했고, B 프레임 판독 `BISB30N-15`가 기준값과 일치해 연결했다. 파생 기준값의 출처와 A/B 판독 원문은 configs와 실행 묶음에 각각 보존한다. 자세한 계보는 [인식과 연결](RECOGNITION_AND_BINDING.md)에 있다.
+
+`capture_binding()`은 `requires_recapture=true`일 때 예외를 발생시켜 실행을 중단한다. 2026-10-15 진단·처방에서 이 동작을 유지하기로 결정했다. 재촬영 뒤에도 판독이 미확정인 상태를 조용히 진행하지 않는 것이 기록 무결성에 안전하고, 병합한 [재촬영 루프](RECAPTURE_LOOP.md) 모듈이 아직 `capture_binding()`에 연결되지 않았기 때문이다. 예외를 루프 재시도로 대체할지는 후속 통합에서 별도 판단한다.
+
 ## 수신 패킷과 기록
 
 기존 `demo-command.v1`에 다음을 추가한다.
