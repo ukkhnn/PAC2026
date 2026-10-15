@@ -84,6 +84,8 @@ def run_pipeline(*,repo:Path,output:Path,source:Path,source_kind:str,data_root:P
     orders=read_json(repo/'configs/document_demo/work_orders.json');drawing=read_json(repo/('configs/shipyard_pipeline/drawing.json' if source_kind=='capture' else 'configs/document_demo/drawing.json'))
     profile=read_json(repo/'configs/document_demo/target_profile.json');wps=read_json(repo/'data/knowledge/lanl-wps-3501-reviewed.json')
     scenario=read_json(repo/'configs/document_demo/scenario.json')
+    deliveries={}
+    delivery_failures={}
     try:
         if source_kind=='capture':
             shutil.copytree(source,output/'inputs/capture');capture=read_json(source/'capture.json');binding=capture_binding(capture,orders,drawing)
@@ -116,7 +118,6 @@ def run_pipeline(*,repo:Path,output:Path,source:Path,source_kind:str,data_root:P
         common['target_evidence']=binding
         converted['marking_binding']=binding
         write_json(output/'results/robot-input.json',converted);event('manufacturer_conversion','results/robot-input.json')
-        deliveries={}
         for key,preview in converted['previews'].items():
             command=command_from_spec(spec,profile);command['command_id']=run_id+'-'+key
             command.update(marking_binding=binding,common_spec=common,robot_input=preview,
@@ -124,14 +125,28 @@ def run_pipeline(*,repo:Path,output:Path,source:Path,source_kind:str,data_root:P
                             'target_description':binding.get('visual_relation',{}).get('target_description'),'source_kind':'document_and_model'})
             # 기존 문서 검증 계약에 제조사 입력을 추가하고 양쪽을 수신기에서 검사한다.
             write_json(output/f'commands/{key}-request.json',command);event('command_built',f'commands/{key}-request.json')
-            with MockReceiver(profile,output/f'commands/{key}-receiver.jsonl') as receiver:delivery=send_command(receiver.url,command)
-            deliveries[key]=delivery;write_json(output/f'commands/{key}-delivery.json',delivery);event('delivery_ack',f'commands/{key}-delivery.json')
-            if delivery['ack']['status']!='received':raise ValueError('수신기 검증 거절')
+            try:
+                with MockReceiver(profile,output/f'commands/{key}-receiver.jsonl') as receiver:delivery=send_command(receiver.url,command)
+            except Exception:
+                delivery_failures[key]='delivery_error'
+                raise
+            write_json(output/f'commands/{key}-delivery.json',delivery);event('delivery_ack',f'commands/{key}-delivery.json')
+            if delivery['ack']['status']!='received':
+                delivery_failures[key]=delivery['ack']['status']
+                raise ValueError('수신기 검증 거절')
+            deliveries[key]=delivery
         write_json(output/'results/deliveries.json',deliveries)
         manifest.update(run_outcome='succeeded',delivery_status='received',manufacturers=list(deliveries))
     except Exception as exc:
         write_json(output/'results/error.json',{'type':type(exc).__name__,'message':str(exc)})
-        event('blocked','results/error.json');manifest.update(run_outcome='needs_review',delivery_status='blocked')
+        event('blocked','results/error.json')
+        # 한쪽이라도 수신된 부분 전달은 blocked가 아니라 실제 상태(partial)로 기록한다.
+        if deliveries:
+            write_json(output/'results/deliveries.json',deliveries)
+            manifest.update(run_outcome='needs_review',delivery_status='partial',
+                            manufacturers=list(deliveries),delivery_failures=delivery_failures)
+        else:
+            manifest.update(run_outcome='needs_review',delivery_status='blocked')
     manifest['finished_at_utc']=utc_now();manifest['export_status']='complete'
     write_json(output/'manifest.json',manifest)
     (output/'events.jsonl').write_text(''.join(json.dumps(e,ensure_ascii=False)+'\n' for e in events))
@@ -142,6 +157,9 @@ def run_pipeline(*,repo:Path,output:Path,source:Path,source_kind:str,data_root:P
 def verify_pipeline(root: Path) -> dict[str, Any]:
     """전송 패킷·수신 원문·ACK·인식 출처와 파일 해시를 교차 확인한다."""
     sums=read_json(root/'checksums.json')
+    actual={str(p.relative_to(root)) for p in root.rglob('*') if p.is_file() and p!=root/'checksums.json'}
+    extra=sorted(actual-set(sums))
+    if extra:raise ValueError('통합 묶음 미등재 파일: '+', '.join(extra))
     for name,digest in sums.items():
         if sha256(root/name)!=digest:raise ValueError('통합 묶음 해시 불일치: '+name)
     manifest=read_json(root/'manifest.json')
