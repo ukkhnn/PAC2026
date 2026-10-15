@@ -118,7 +118,7 @@ RapidOCR의 3개 ONNX는 로컬 바이트를 다시 해시하여 당시 실행 �
 | `robot-input-profiles` | 현대·두산 공식 문서에서 작성한 입력 프로파일. 특정 로봇 본체·용접기 모델을 선정하지 않음 | [hyundai_hi6](../../configs/robot_profiles/hyundai_hi6_current_voltage.json), [doosan_drl](../../configs/robot_profiles/doosan_drl_analog.json) |
 | `unit-test-fixtures` | 코드에서 작성한 이미지·관측·문서 조각·응답 | 테스트 입력. 실제 모델 추론 결과나 현장 표본으로 합산하지 않음 |
 
-시연 문서의 `BISB30N-15`는 저장된 실제 인식 결과를 그대로 연결한 키다. 배포자 정답으로 교정한 값이라고 주장하지 않는다. `WO-DEMO-015`, `DRAWING-DEMO-015`, `JOINT-DEMO-01`과 FCAW/A36/flat 등의 조건은 작성한 시연 가정이다. 해당 사진에서 실측한 형상·재질·두께나 현장 승인 문서를 뜻하지 않는다.
+시연 문서의 `BISB30N-15`는 저장된 실제 인식 결과를 그대로 연결한 키다. 배포자 정답으로 교정한 값이라고 주장하지 않는다. 실제 라벨 표기는 `B1Sb30N-15`이며 저장된 인식 원문은 `BISb30N-15`(오독)로, 이를 대문자로 정규화한 `BISB30N-15`가 시연 키다(계보: [인식과 연결](../../runs/RECOGNITION_AND_BINDING.md)). `WO-DEMO-015`, `DRAWING-DEMO-015`, `JOINT-DEMO-01`과 FCAW/A36/flat 등의 조건은 작성한 시연 가정이다. 해당 사진에서 실측한 형상·재질·두께나 현장 승인 문서를 뜻하지 않는다.
 
 **CTX-001은 설계 무효화 상태로 별도 보존한다.** 9장/28개 GT ROI와 정답 라벨에서 만든 6개 부재 목록·배치 맥락을 사용했다. ROI는 여백 8%·최소 4px로 별도 생성했으며, E1의 crop·회전물과 구분한다. 정답이 포함된 후보 선택을 파이프라인의 인식 개선으로 해석할 수 없으므로 현재 정확도나 발표의 모델 당위성 근거로 사용하지 않는다. 출처 목록의 `ctx001-invalidated-derived-inputs`는 이 계보를 남기기 위한 항목이다. 관련 입력·결과·정답 파일은 변경하지 않았다.
 
