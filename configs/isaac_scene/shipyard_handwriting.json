@@ -11,7 +11,7 @@
     "joint_label": "J01",
     "style": "paint_marker",
     "seed": 20261010,
-    "source": "procedural synthetic handwriting-style strokes drawn by scripts/isaac/isaac_shipyard_marking.py; not a transcription of a real steel photo",
+    "source": "procedural synthetic handwriting-style strokes drawn by scripts/isaac/isaac_shipyard_marking.py; not a transcription of a real steel photo. The text is the demo baseline string BISB30N-15, the uppercase-normalized OCR/VLM misread (BISb30N-15) of the actual photo label B1Sb30N-15",
     "text_center_yz": [
       0.1,
       1.45

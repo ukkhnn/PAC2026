@@ -6,7 +6,7 @@
   "marking": {
     "text": "BISB30N-15",
     "joint_label": "J01",
-    "source": "programmatically drawn synthetic marking; not a real steel-photo transcription"
+    "source": "programmatically drawn synthetic marking; not a real steel-photo transcription. The text is the demo baseline string BISB30N-15, the uppercase-normalized OCR/VLM misread (BISb30N-15) of the actual photo label B1Sb30N-15"
   },
   "plate_center": [
     0.7,

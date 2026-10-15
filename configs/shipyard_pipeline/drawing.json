@@ -7,7 +7,7 @@
   "document_id": "DRAWING-DEMO-015",
   "revision": "1",
   "render_ref": "drawing.svg",
-  "provenance": "설명용 모사 도면. 실제 사진의 형상·재질·두께·접합부를 복원한 것이 아님.",
+  "provenance": "설명용 모사 도면. 실제 사진의 형상·재질·두께·접합부를 복원한 것이 아님. part_id의 BISB30N-15는 실제 라벨 B1Sb30N-15의 OCR/VLM 오독 BISb30N-15를 대문자로 정규화한 시연 기준값이다.",
   "part_id": "BISB30N-15",
   "joint_id": "JOINT-DEMO-01",
   "process": "FCAW",

@@ -6,7 +6,7 @@
   "schema_version": "demo-work-orders.v1",
   "document_id": "DEMO-WORK-ORDERS",
   "revision": "1",
-  "provenance": "실제 OCR 출력 문자열을 불투명 식별자로 사용해 직접 작성한 문서 연결 시연. 사진의 실제 작업지시나 정답을 뜻하지 않음.",
+  "provenance": "시연 기준값 BISB30N-15는 실제 라벨 표기 B1Sb30N-15를 OCR/VLM이 BISb30N-15로 읽은 것의 대문자 정규화 파생 문자열이며, 이를 불투명 식별자로 사용해 직접 작성한 문서 연결 시연. 사진의 실제 작업지시나 정답을 뜻하지 않음.",
   "orders": [
     {
       "project_id": "PAC-DEMO",
