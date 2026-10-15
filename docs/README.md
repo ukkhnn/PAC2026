@@ -37,6 +37,8 @@
 | 문서 | 내용 |
 |---|---|
 | [WELD_PIPELINE](runs/WELD_PIPELINE.md) | **최신.** 저장 A/B 마킹 판독 → 작업지시 조회 → WPS 검증 → 공통 명세 → 현대/두산 변환 → HTTP 모의 수신 |
+| [RECAPTURE_LOOP](runs/RECAPTURE_LOOP.md) | 저장 A/B 재촬영 분기 모듈의 dev 병합과 해시 대조 기록. 실제 모델 실행·대시보드 연결은 미완료 |
+| [RECOGNITION_AND_BINDING](runs/RECOGNITION_AND_BINDING.md) | 판독·연결 경로와 라벨 계보 정정: OCR 원문 보존·VLM 단독 판독, `B1Sb30N-15`→`BISB30N-15` 계보 명시 |
 | [ROBOT_INPUT_PREVIEW](runs/ROBOT_INPUT_PREVIEW.md) | 등록 작업조건 자동 적용과 제조사 입력 변환 화면 |
 | [ADMIN_DASHBOARD](runs/ADMIN_DASHBOARD.md) | 여러 실행을 담는 오프라인 관리자 패키지 |
 | [ISAAC_SHIPYARD_SCENE](runs/ISAAC_SHIPYARD_SCENE.md) | 조선소 수직 3면 강판·수기 메모 장면 `live-03`의 A/B RGB |
