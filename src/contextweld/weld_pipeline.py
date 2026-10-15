@@ -48,7 +48,12 @@ def validate_robot_extension(command: dict[str, Any]) -> list[dict[str, str]]:
 
 
 def capture_binding(capture: dict, orders: dict, drawing: dict) -> dict:
-    """실제 판독 문자열을 정확 조회한다. 문서의 정답으로 판독을 고치지 않는다."""
+    """실제 판독 문자열을 정확 조회한다. 문서의 정답으로 판독을 고치지 않는다.
+
+    판독 결정은 VLM `read['markings']` 단독이며 OCR 원문은 capture.json에 보존하되 판단에
+    사용하지 않는다(계보·결정: docs/runs/RECOGNITION_AND_BINDING.md). `requires_recapture=true`
+    예외 유지는 2026-10-15 진단·처방의 결정이다: 재관측 뒤에도 미확정인 상태를 조용히 진행하지
+    않는다. 병합한 recapture_loop 모듈은 아직 여기에 연결하지 않는다."""
     if capture.get('source_kind')!='model' or not capture.get('frames'):raise ValueError('실제 인식 기록 필요')
     f=capture['frames'][-1];read=f['readout']
     if read['quality']['requires_recapture']:raise ValueError('재관측 뒤에도 판독 미확정')

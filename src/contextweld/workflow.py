@@ -168,10 +168,13 @@ def build_spec(*, run_id: str, observed: dict[str, Any], scenario: dict[str, Any
     for validation in validate_command(prototype, profile):
         errors.append({**validation, "field": validation.get("path", "$"),
                        "kind": "missing" if validation["code"] in {"required_parameter_missing", "nonempty_string_required", "nonempty_reference_array_required"} else "invalid"})
+    # 판독 결정은 VLM markings 단독이며 OCR 원문은 보존하되 판단에 쓰지 않는다.
+    # 과거 기록의 "observation_consensus" 표기는 실제 경로와 달라 2026-10-15에 정정했다
+    # (docs/runs/RECOGNITION_AND_BINDING.md).
     spec["validation"] = {"status": "ready_for_mock" if not errors else "needs_review",
                           "scope": "document_review_only", "issues": errors,
                           "missing_fields": [item.get("field") for item in errors if item.get("kind") == "missing"],
-                          "checks": ["observation_consensus", "exact_work_order_scope_and_revision",
+                          "checks": ["marking_observation_evidence_recorded", "exact_work_order_scope_and_revision",
                                      "drawing_and_wps_references", "fixture_document_consistency",
                                      "transcribed_parameter_schema_units_and_evidence"],
                           "field_application_approved": False}
