@@ -10,6 +10,7 @@ from contextweld.robot_input import build_work_order_input_previews
 from contextweld.workflow import build_spec, command_from_spec, inspect_document_bundle, read_json
 from contextweld.documents import load_index, search_documents
 from contextweld.mock_delivery import MockReceiver, send_command
+from contextweld.recapture_bridge import run_recapture_step
 
 
 def validate_robot_extension(command: dict[str, Any]) -> list[dict[str, str]]:
@@ -53,7 +54,9 @@ def capture_binding(capture: dict, orders: dict, drawing: dict) -> dict:
     판독 결정은 VLM `read['markings']` 단독이며 OCR 원문은 capture.json에 보존하되 판단에
     사용하지 않는다(계보·결정: docs/runs/RECOGNITION_AND_BINDING.md). `requires_recapture=true`
     예외 유지는 2026-10-15 진단·처방의 결정이다: 재관측 뒤에도 미확정인 상태를 조용히 진행하지
-    않는다. 병합한 recapture_loop 모듈은 아직 여기에 연결하지 않는다."""
+    않는다. 2026-10-16 연결(Option 1): run_pipeline이 이 예외를 받아 recapture_bridge로
+    재촬영 루프를 기록 단계로 실행하고 번들을 보존한다. 루프 판정은 여기의 판독 결정을
+    대체하지 않으며 이 함수는 여전히 예외를 던진다."""
     if capture.get('source_kind')!='model' or not capture.get('frames'):raise ValueError('실제 인식 기록 필요')
     f=capture['frames'][-1];read=f['readout']
     if read['quality']['requires_recapture']:raise ValueError('재관측 뒤에도 판독 미확정')
@@ -73,7 +76,11 @@ def capture_binding(capture: dict, orders: dict, drawing: dict) -> dict:
             'visual_relation':deepcopy(relations[0]),'joint_mapping_source':'drawing.joint_marking_map','order_id':order['order_id']}
 
 
-def run_pipeline(*,repo:Path,output:Path,source:Path,source_kind:str,data_root:Path,index_path:Path) -> Path:
+def run_pipeline(*,repo:Path,output:Path,source:Path,source_kind:str,data_root:Path,index_path:Path,
+                 recapture:dict[str,Any]|None=None) -> Path:
+    """전체 단계를 실행한다. `recapture`가 주어지면(입력·출력 루트·run_id·observer·config)
+    capture_binding의 `requires_recapture` 예외를 받아 재촬영 루프를 기록 단계로 실행한다.
+    루프 판정은 판독 결정을 대체하지 않으며 예외 의미(needs_review/blocked)는 그대로다."""
     if output.exists():raise FileExistsError('새 실행 경로 필요')
     output.mkdir(parents=True)
     for d in ('inputs','results','evidence','commands'):(output/d).mkdir()
@@ -88,7 +95,21 @@ def run_pipeline(*,repo:Path,output:Path,source:Path,source_kind:str,data_root:P
     delivery_failures={}
     try:
         if source_kind=='capture':
-            shutil.copytree(source,output/'inputs/capture');capture=read_json(source/'capture.json');binding=capture_binding(capture,orders,drawing)
+            shutil.copytree(source,output/'inputs/capture');capture=read_json(source/'capture.json')
+            try:
+                binding=capture_binding(capture,orders,drawing)
+            except ValueError as exc:
+                if recapture is None or '재관측 뒤에도 판독 미확정' not in str(exc):
+                    raise
+                # recapture_loop 연결(Option 1): 루프를 기록 단계로 실행하고 번들을 보존한다.
+                # 루프 판정은 판독 결정을 대체하지 않으며 예외 의미(needs_review/blocked)도 그대로다.
+                step=run_recapture_step(capture=capture,**recapture)
+                shutil.copytree(step['bundle_path'],output/'inputs/recapture-bundle')
+                manifest['recapture_bundle_ref']='inputs/recapture-bundle'
+                manifest['recapture_run_id']=step['recapture_run_id']
+                manifest['recapture_outcome']=step['recapture_outcome']
+                manifest['recapture_visual_outcome']=step['recapture_visual_outcome']
+                raise ValueError(f"{exc} — 재촬영 루프 기록: inputs/recapture-bundle")
             binding['source_hash']=sha256(output/'inputs/capture/capture.json')
             observed={'candidates':[binding['part_id']],'observations':binding['observations'],'issues':[]}
             order_path=output/'inputs/work_orders.json';draw_path=output/'inputs/drawing.json'
