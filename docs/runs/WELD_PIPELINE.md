@@ -26,6 +26,8 @@ PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK=True HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE
 
 `--capture-inputs`는 실제 판독 실행을 먼저 수행하고 그 결과를 연결한다. `--source`는 저장된 실제 인식 또는 문서 실행을 재사용한다. 둘 중 하나만 지정한다. 기존 실행 경로는 덮어쓰지 않는다. 등록 부재와 일치하지 않는 A 판독은 저장 B를 추가 관측한다. 이 선택은 `unresolved_target_identity_or_capture_quality`로 기록하며 모델의 반사 판정이나 실제 팔 이동으로 표시하지 않는다. A가 정확 조회되고 시각 관계가 관측되면 B를 호출하지 않는다.
 
+`--recapture-inputs`를 함께 주면 `requires_recapture` 예외를 받아 재촬영 루프를 기록 단계로 실행한다. 실제 모델 호출이므로 `--recapture-det/rec/vlm-model-dir`·`-revision`이 필수고 값은 [재촬영 루프](RECAPTURE_LOOP.md)의 실행 예와 같다. 루프 완료 번들은 묶음의 `inputs/recapture-bundle/`에 보존되며 실행은 그대로 `needs_review`로 끝난다.
+
 모델 입력에는 정답 ID나 가능한 부재 목록을 제공하지 않는다. 판독 뒤 부재번호로 작업지시를 정확 조회한다. 실제 이음 표기 `J01`은 시연 도면의 `joint_marking_map`을 통해 업무 ID `JOINT-DEMO-01`과 연결한다. 이음 표기·지시 관계가 누락되거나 여러 개이면 전송하지 않는다. 다른 부재 표기를 기본 부재로 치환하지 않는다.
 
 입력 장면은 [조선소 수기 장면 `live-03`](ISAAC_SHIPYARD_SCENE.md)의 저장 A/B 프레임이다. 제조사 변환 규칙과 화면은 [작업조건·제조사 변환](ROBOT_INPUT_PREVIEW.md)에 있다.
@@ -36,7 +38,7 @@ PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK=True HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE
 
 시연 기준값 `BISB30N-15`는 실제 라벨 표기 `B1Sb30N-15`를 OCR/VLM이 `BISb30N-15`로 읽은 것을 대문자로 정규화한 파생 문자열이다. A 프레임 판독 `BISB3015`는 오독으로 작업지시 정확 조회에 실패했고, B 프레임 판독 `BISB30N-15`가 기준값과 일치해 연결했다. 파생 기준값의 출처와 A/B 판독 원문은 configs와 실행 묶음에 각각 보존한다. 자세한 계보는 [인식과 연결](RECOGNITION_AND_BINDING.md)에 있다.
 
-`capture_binding()`은 `requires_recapture=true`일 때 예외를 발생시켜 실행을 중단한다. 2026-10-15 진단·처방에서 이 동작을 유지하기로 결정했다. 재촬영 뒤에도 판독이 미확정인 상태를 조용히 진행하지 않는 것이 기록 무결성에 안전하고, 병합한 [재촬영 루프](RECAPTURE_LOOP.md) 모듈이 아직 `capture_binding()`에 연결되지 않았기 때문이다. 예외를 루프 재시도로 대체할지는 후속 통합에서 별도 판단한다.
+`capture_binding()`은 `requires_recapture=true`일 때 예외를 발생시켜 실행을 중단한다. 2026-10-15 진단·처방에서 이 동작을 유지하기로 결정했다. 재촬영 뒤에도 판독이 미확정인 상태를 조용히 진행하지 않는 것이 기록 무결성에 안전하기 때문이다. 2026-10-16 연결(Option 1): `run_pipeline()`에 `recapture` 입력을 주면 이 예외를 받아 [재촬영 루프](RECAPTURE_LOOP.md)를 기록 단계로 실행하고 완료 번들을 `inputs/recapture-bundle/`에 보존한다(`src/contextweld/recapture_bridge.py`, 촬영 프레임 해시가 재촬영 입력과 일치할 때만). 루프 판정은 판독 결정을 대체하지 않으며 예외 의미는 그대로라 실행은 `needs_review`/`blocked`로 끝난다. 예외를 루프 재시도로 대체하는 것은 여전히 별도 판단이다.
 
 ## 수신 패킷과 기록
 

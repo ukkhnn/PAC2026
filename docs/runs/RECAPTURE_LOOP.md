@@ -43,7 +43,7 @@
 | `scripts/run/run_recapture_loop.py` | `REPO` 기준만 `parents[1]`→`parents[2]`로 수정 (원본 SHA-256 `abb51beb…2a851e`) |
 | `docs/runs/RECAPTURE_LOOP.md` | 문서 내 스크립트 경로·링크를 dev 체계로 수정 (원본 SHA-256 `2aa6f544…c737fa`) |
 
-기존 `capture_binding()`의 `requires_recapture=true` 예외는 유지한다(결정과 사유는 [WELD_PIPELINE.md](WELD_PIPELINE.md)의 재촬영 결정 문단 참조). 이 모듈은 아직 `capture_binding()`에서 호출되지 않으며, 연결 여부는 후속 통합에서 별도 판단한다.
+기존 `capture_binding()`의 `requires_recapture=true` 예외는 유지한다(결정과 사유는 [WELD_PIPELINE.md](WELD_PIPELINE.md)의 재촬영 결정 문단 참조). 2026-10-16 연결(Option 1): `run_pipeline()`이 이 예외를 받아 이 모듈을 기록 단계로 실행하고(`src/contextweld/recapture_bridge.py`) 완료 번들을 weld 묶음의 `inputs/recapture-bundle/`에 보존한다. 루프 판정은 weld 판독 결정을 대체하지 않으며 연결은 기록만이다.
 
 ## 파일과 실행
 
@@ -119,6 +119,8 @@ run_<id>/
 UI는 새 묶음을 읽기만 하며 추론·검색·ROS·전송을 실행하지 않는다. 원본 기록을 고치지 않고, 모델/규칙/시뮬레이터/테스트 fixture를 구분한다. `evidence_kind=test_fixture`는 모델 결과로 표시하지 않는다.
 
 ## 후속 통합 순서
+
+2026-10-16 기준 weld 파이프라인 연결(기록 단계, Option 1)은 완료됐다. 아래 1~4는 남은 단계이며 실제 A/B 루프 1회(2번)는 서버 접근 재개 후 실행한다.
 
 1. 대시보드 작업 완료 뒤 새 파일만 반영하고 기존 변경은 보존한다.
 2. 공유 GPU 사용이 겹치지 않는 시점에 실제 A/B 루프를 한 번 실행한다. 강제로 A 실패/B 성공을 만들지 않는다.
