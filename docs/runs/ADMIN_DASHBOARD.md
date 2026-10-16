@@ -159,4 +159,29 @@ Mac에서의 최종 확인 절차는 [10절](#10-mac-최종-확인-절차)에 �
 
 **알려진 공백(이번 정정 범위 아님):** 통합 파이프라인·시연 시나리오 묶음은 MANIFEST `roots`에 등록되지 않는다
 (두 exporter 모두 기존 동작). 파일 자체는 MANIFEST `files`·SHA256SUMS로 해시 검증되지만 묶음 단위
-`checksums.json` 대조 대상에는 나타나지 않는다. 필요하면 별도 항목으로 다룬다.
+`checksums.json` 대조 대상에는 나타나지 않는다. 이 공백은 2026-10-16에 닫혔다([13절](#13-manifest-roots-등록-2026-10-16)).
+
+## 13. MANIFEST roots 등록 (2026-10-16)
+
+12절의 "알려진 공백"을 닫은 기록이다. 통합 파이프라인·시연 묶음 3개를 MANIFEST `roots`에 등록해
+`verify` CLI가 묶음 단위로 추적하게 했다.
+
+- `scripts/export/export_weld_pipeline_dashboard.py`: 실행 추가 뒤 패키지 `MANIFEST.json`의 `roots`에
+  `{group:'connected', kind:'weld_pipeline', source:<묶음 경로>, package_dir:'bundles/<key>'}`를 등록한다.
+  대상은 `shipyard-connected-01`(checksums 21)·`marking-delivery-02`(checksums 208)다.
+- 로컬 사본 생성기 `output/dashboard-preview-20261010/add_recapture_scenario.py`(미추적):
+  `shipyard-recapture`를 `{group:'presentation', kind:'presentation_scenario'}`로 등록하고, 격리 재빌드용
+  대상 패키지 인자를 받는다.
+- `src/contextweld_dashboard/__main__.py` `verify`: `expected_failures`를 갱신했다. 신규 3개는
+  `weld-pipeline-bundle.v1` 전용 검증기 부재, 시나리오 묶음은 `manifest.json` 부재라는 기존
+  `rec-batch-01-incomplete`와 같은 공백이다. 2026-10-10 생성 묶음 9개(doc 5 + review 4)는 P0 계보 정정
+  ([RECOGNITION_AND_BINDING.md](RECOGNITION_AND_BINDING.md)) 뒤 강화된 검증기 재계산과 불일치하는데,
+  P0 지시서대로 과거 기재를 재작성하지 않으므로 재실행 전까지 expected로 둔다.
+- 주의: `marking-delivery-02`는 2026-10-10 생성 당시 검증기가 중첩 `checksums.json` 2개를 sums에서
+  빠뜨렸던 공백(진단 71행, 2026-10-15 `8828c4b`로 닫힘)이 남아 현재 `verify_pipeline`을 통과하지 못한다.
+  원본 묶음과 실제 사본은 수정하지 않았고, 격리 재빌드에서만 빌드 사본에 두 항목을 sums에 보충해
+  내보냈다(기록 해시는 바꾸지 않음).
+
+검증: 실제 사본과 격리 재빌드 모두 `tools/verify_package.py` "결과: 통과"(roots 22줄, 신규 3줄은
+`shipyard-connected-01` pass·`marking-delivery-02` pass·`shipyard-recapture` no_checksums, 파일 4,892개)와
+`export_admin_dashboard.py verify` exit 0(17묶음: verified 2 · partial 2 · expected failed 13)을 확인했다.
