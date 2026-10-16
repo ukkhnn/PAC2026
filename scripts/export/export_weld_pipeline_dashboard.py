@@ -65,6 +65,14 @@ def export(package:Path,bundle:Path,key:str):
     run.update(key=key,roots={key:f'bundles/{key}'},summary=summary,integrity=integrity,steps=steps,files=raw,tabs={'summary':tab([fields('마킹 · 전달 대상',targetrows),fields('수신 확인',ackrows)]),'capture':tab(captureblocks),'timeline':tab([]),'recapture':tab([]),'evidence':tab([fields('문서 원문 위치',evidencerows),{'type':'raw_files','title':'명세 · 판독 근거','files':[{'root':key,'path':p} for p in ['results/marking-binding.json','results/document-spec.json','results/robot-input.json','evidence/retrieval.json']]}]),'delivery':tab(deliveryblocks),'corrections':tab([])})
     write_assignment(package/'data/runs'/f'{key}.js',f'runs[{json.dumps(key)}]',run)
     index=read_assignment(package/'data/index.js');index['groups']=[{'key':'connected','label':'통합 파이프라인'}]+[g for g in index['groups'] if g['key']!='connected'];index['runs']=[{'key':key,'data_file':f'data/runs/{key}.js','bundle_dir':f'bundles/{key}','group':'connected','kind':'weld_pipeline','kind_label':'통합 전달 실행','integrity':integrity,'steps':len(steps),'summary':summary,'tab_availability':{k:v['availability'] for k,v in run['tabs'].items()},'viewer_html':None}]+index['runs'];write_assignment(package/'data/index.js','index',index)
+    # 관리자 패키지 MANIFEST roots에도 등록해 verify CLI가 사본을 추적하게 한다.
+    man_path=package/'MANIFEST.json'
+    man=read_json(man_path) if man_path.is_file() else {'schema':'contextweld-admin-dashboard.package.v1','roots':[],'files':[],'volatile_files':[],'local_preview':None}
+    try:source=str(bundle.resolve().relative_to(REPO))
+    except ValueError:source=str(bundle)
+    entry={'copied_subset':None,'excluded':[],'group':'connected','key':key,'kind':'weld_pipeline','package_dir':f'bundles/{key}','source':source}
+    man['roots']=[r for r in man.get('roots',[]) if r.get('key')!=key]+[entry]
+    write_json(man_path,man)
     print(f'Exported {key}: marking binding, 2 manufacturers, real HTTP ACK')
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--package',type=Path,required=True);p.add_argument('--bundle',type=Path,required=True);p.add_argument('--key',required=True);a=p.parse_args();export(a.package,a.bundle,a.key)
