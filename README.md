@@ -2,27 +2,35 @@
 
 **작업 맥락 기반 용접표기 해석 및 조건 추천 시스템**
 
-> **현재 구현 기준: [데모 스펙 v1.5](docs/plan/DEMO_SPEC.md) (2026-10-10).** Runpod에서 단일 시나리오의 인식·해석·재촬영·모의 파라미터 전달을 실행·기록하고, 로컬 관리자 화면에서 조회·재생한다. 근거 원문 적재·정확 조회/RAG도 구성한다. 아이디어 피칭이 목적이며, 데모의 실제 흐름·근거 설명을 우선하고 정확도 목표·독립 평가를 완료 조건으로 요구하지 않는다. 새 환경에서는 이 문서를 먼저 읽는다. 범위는 확정됐으며 전체 데모 구현은 아직 완료되지 않았다. 기존 기획과 충돌하면 데모 스펙이 우선한다.
+> **현재 구현 기준: [데모 스펙 v1.7](docs/plan/DEMO_SPEC.md) (2026-10-17).** Runpod에서 단일 시나리오의 인식·해석·재촬영·모의 파라미터 전달을 실행·기록하고, 로컬 관리자 화면에서 조회·재생한다. 근거 원문 적재·정확 조회/RAG도 구성한다. 아이디어 피칭이 목적이며, 데모의 실제 흐름·근거 설명을 우선하고 정확도 목표·독립 평가를 완료 조건으로 요구하지 않는다. 새 환경에서는 이 문서를 먼저 읽는다. 범위는 확정됐으며 전체 데모 구현은 아직 완료되지 않았다. 기존 기획과 충돌하면 데모 스펙이 우선한다.
 
 ContextWeld는 선박 블록과 부재의 정형 마킹·수기 표기를 인식하고, 현재 작업지시·도면·용접 기준을 함께 검토해 작업과 용접조건 후보를 제안하는 프로젝트다. 판단 근거가 부족하거나 정보가 충돌하면 작업자에게 확인을 요청하고 그 결과를 기록한다. 사용자 수정은 별도로 저장하며, 명시적 재검토 요청에서 선택한 기록만 참조한다. 자동 학습·이력 자동 재사용은 이번 범위가 아니다.
 
 [PAC 2026](https://ainnov.co.kr/pac2026) 분과 02 기업 문제 해결형 IR 피칭 대회의 HD현대로보틱스 미션 03을 대상으로 한다. 참가팀은 **Static Duo**다.
 
-이 README의 저장소 상태 기준일은 **2026-10-15**이다. 아래 단락은 실행 순서대로 쌓여 있으며, 뒤 단락이 앞 단락의 한계를 해소한 경우 그 자리에 갱신을 표시한다.
+이 README의 문서 갱신일은 **2026-10-17**, 최신 개발 반영일은 **2026-10-16**이다. 전체 데모는 부분 완료 상태다.
 
-> 현재 단계: [공개 사진 10장의 실제 OCR/VLM·원문 4개 74청크 검색](docs/runs/RUNPOD_INFERENCE.md)에 이어, 저장된 실제 관측을 [모사 작업지시·도면→WPS 조건 범위→HTTP 모의 수신](docs/runs/DOCUMENT_DEMO.md)으로 연결했다. 정상 사례는 수신 응답을 기록했고, 필수값 누락·문서 공정 충돌·개정 불일치·실제 판독 불일치는 전송을 보류했다. 이어서 [사용자 수정 저장 → 명시적 재검토 → 선택적 모의 전달](docs/runs/EXPLICIT_REVIEW.md)을 서버 CLI로 구현해 실제 저장 묶음에서 재검토만 성공(`succeeded`·`not_requested`), 별도 전달 요청으로 `received`, 수정 뒤에도 문제가 남아 `blocked`, 수신기 미가동 결함 주입 시 `failed`를 확인했다. 원본 입력 1,173개 파일 해시는 그대로이며 문서 범위 규칙 재검토의 새 모델 호출은 0회다. Runpod 테스트 83개와 로컬 재검증 83개가 통과했다. 이 단락의 기준일은 2026-10-10이다.
+## 현재 구현 상태
 
-> 장면 구성: 기존 [정형 마킹·작업대 기준 장면](docs/runs/ISAAC_SCENE.md)을 보존하고, [조선소 수직 3면 강판·중앙 수기 메모 장면](docs/runs/ISAAC_SHIPYARD_SCENE.md)의 `live-03`을 구성했다. UR10 손목 카메라의 실제 관절 이동·A/B RGB와 고정 작업등의 금속반사, Foxglove 손목/전체 장면 영상 수신을 검증했다. A에서는 반사가 합성 식별자의 일부를 가리고 B에서는 같은 표기와 `J01`·화살표가 육안으로 보인다. 이 장면의 저장 프레임을 대상으로 한 OCR/VLM 판독과 문서 연결은 아래 [통합 파이프라인](docs/runs/WELD_PIPELINE.md)에서 수행했다.
+| 영역 | 완료된 내용 | 남은 내용 |
+|---|---|---|
+| 인식 → 문서 → 전달 | [조선소 저장 A/B 마킹](docs/runs/WELD_PIPELINE.md)에서 작업지시·시연 도면·WPS 검증·등록조건·현대/두산 입력으로 연결하고, 양쪽 loopback HTTP200 `received`와 원문·ACK 일치 확인 | 실제 작업 적용성, 실기 용접·좌표 경로 생성 |
+| 재촬영 | [저장 A/B 분기 모듈](docs/runs/RECAPTURE_LOOP.md) dev 병합, `requires_recapture` 예외 시 루프를 실행·보존하는 기록 단계와 CLI 추가 | 실제 GPU 루프 실행, 루프 결과로 문서·전달을 계속하는 연결, 대시보드 어댑터, 요청에 따른 실제 팔 이동 |
+| 수정·재검토 | [서버 CLI 수정 저장·명시적 재검토·선택적 전달](docs/runs/EXPLICIT_REVIEW.md), [작업조건 편집·제조사 변환 화면](docs/runs/ROBOT_INPUT_PREVIEW.md) | 인식 결과 자체를 고치는 화면, 시각 관계의 모델 재해석 |
+| 관리자 재생 | [오프라인 패키지](docs/runs/ADMIN_DASHBOARD.md), 목업/실제 실행 구분, 통합·시연 실행의 `MANIFEST.roots` 등록 | 실제 재촬영 묶음의 A/B 재생, 패키지 전체 브라우저 시각 검수 |
+| 자료 보존 | [서버 복구 로컬 준비](docs/audit/INSTRUCTIONS/server-artifact-recovery-local-prep.md): 보존 사본 5건 해시 재대조, 회수 후보·기대 해시·서버 명령 정리 | Runpod 재개 후 서버 실물 대조·회수, 모델 가중치·원본 자료 확인 |
 
-> 최신 인식 실험: [PV2 축소 실행](experiments/pipeline_v2/REPORT.md)을 사용 이력이 없는 공개 사진 8장으로 수행했다. 단독 판독은 OCR 5/8·VLM 2/8을 맞혔지만, 현재 합의 게이트의 **잘못된 자동 확정은 0/8**이고 8장 모두 작업자 확인으로 보냈다. 보류 8장 중 4장은 후보 목록에 정답 ID가 들어 있었다. 대가는 낮은 자동화율이며, 두 판독기가 같은 오답에 합의해 게이트를 통과한 반례도 2건 기록했다. 8장 표본의 개발 진단이고 현장 성능이 아니다.
->
-> 앞선 [CTX-001 고정 이미지 맥락 비교](experiments/context_ablation/REPORT.md)는 **평가 설계가 무효화된 상태로 보존한다.** 후보 목록에 정답이 들어 있어 후보 선택 결과를 인식 성능으로 해석할 수 없다. 실행 기록과 모델 사용 이력은 출처 추적을 위해 남기고, 현재 성능·발표 근거에서는 제외한다. 2026-10-09 이전 파일럿 성적도 같은 이유로 제외한다.
+2026-10-16 개발 기록의 로컬 회귀 테스트는 **161개 통과**다. 관리자 사본·격리 재빌드의 파일 해시 검사는 통과했으며, 묶음 의미 검사는 `verified 2 · partial 2 · expected failed 13`이었다. `verify` 종료 코드 0은 허용된 실패 항목을 포함하므로 모든 묶음의 의미 검증 성공을 뜻하지 않는다. 자세한 범위는 [관리자 패키지 검증 기록](docs/runs/ADMIN_DASHBOARD.md#13-manifest-roots-등록-2026-10-16)을 따른다.
 
-WPS 검수는 선택한 헤더·대표층 1의 전사 확인이며 사람의 적용 승인이 아니다. 사진의 실제 재질·두께·현장 WPS 적용성은 미확인이다. 합성 장면의 `J01`과 문서의 `JOINT-DEMO-01`은 시연 도면의 `joint_marking_map`으로만 연결했고, 실제 이음을 확인한 연결이 아니다. 팔의 A/B 이동은 `pre_captured`로 기록하는 예약 시연이며 모델 판단으로 움직이는 폐루프가 아니다. [문서 검토 한 건의 오프라인 HTML 조회](docs/runs/DOCUMENT_REVIEW_VIEWER.md)는 구현해 정상 `received`·누락/관측 충돌 `blocked`의 실제 묶음 3개를 내보냈다. 원본 582개 파일 해시 보존·신규 테스트 6개와 HTML 구조·표시 내용 검사를 통과했으며, 브라우저 파일 URL 제한으로 시각 검수는 미완료다. 명시적 재검토는 문서 범위 규칙 재검토이며 시각 관계의 모델 재해석은 구현하지 않았다. 수정 입력은 서버 CLI와 [제조사 변환 화면](docs/runs/ROBOT_INPUT_PREVIEW.md)의 작업조건 카드에 있고, 인식 결과 자체를 화면에서 고치는 입력은 없다. P1과 여러 실행을 담는 [오프라인 관리자 패키지](docs/runs/ADMIN_DASHBOARD.md)는 달성했고, 전체 P2·P3·P4와 A/B 재촬영 재생은 미완료다. 별도 [실험실](experiments/README.md)의 과거 비교 결과와 현재 부분 실행을 구분한다.
+## 실행 근거와 해석 범위
 
-실제 조선소 저장 A/B의 마킹에서 작업지시·공통명세·현대/두산 입력·HTTP 수신까지 연결한 최신 실행은 [통합 파이프라인](docs/runs/WELD_PIPELINE.md)을 따른다. B의 `BISB30N-15`·`J01`·지시 대상을 판독해 대상과 제조사 명령을 함께 전달했고 양쪽 `received`를 확인했다. 위의 이전 부분 구현 설명 중 조선소 인식·문서·전달 미연결 상태는 이 실행으로 갱신됐다. 실제 팔 이동·실기 용접·좌표 경로 생성은 별도다.
+실제 통합 실행 `shipyard-connected-01`에서 A 판독 `BISB3015`는 등록 부재 정확 조회에 실패했고 저장 B의 `BISB30N-15`·`J01`·지시 대상을 읽어 연결했다. B 선택 사유는 `unresolved_target_identity_or_capture_quality`이며 반사 감지 성공으로 해석하지 않는다. 시연 기준값 `BISB30N-15`는 실제 라벨 `B1Sb30N-15`의 오독·정규화 파생값이다([판독·연결 계보](docs/runs/RECOGNITION_AND_BINDING.md)). OCR 원문을 보존하지만 통합 판독은 VLM 단독이며 OCR/VLM 합의로 표시하지 않는다.
 
-> 정정·보강 (2026-10-15): 종단 진단·처방의 P0·P2를 반영했다. [저장 A/B 재촬영 루프](docs/runs/RECAPTURE_LOOP.md) 8개 파일을 dev에 병합했다. 실제 실행·대시보드 어댑터 연결은 아직이며 `capture_binding()`의 `requires_recapture` 예외 유지 결정과 사유는 [WELD_PIPELINE](docs/runs/WELD_PIPELINE.md)에 기록했다. A 뒤 저장 B 선택의 실제 사유는 `unresolved_target_identity_or_capture_quality`(정확 조회 실패)이며 시스템의 반사 감지 성공으로 표시하지 않는다. 시연 기준값 `BISB30N-15`는 실제 라벨 `B1Sb30N-15`의 오독 정규화 파생값임을 configs와 [WELD_PIPELINE](docs/runs/WELD_PIPELINE.md)에 명시했다. 문서 검증 목록의 `observation_consensus` 표기는 실제 판독 경로(VLM 단독)에 맞게 정정했고, 번들 검증은 `checksums.json` 미등재 파일을 탐지하도록 보강했다.
+재촬영 브리지는 마지막 판독의 `requires_recapture=true`로 연결이 중단된 경우에만 선택적으로 실행한다. 촬영 프레임 해시를 대조하고 루프 번들을 `inputs/recapture-bundle/`에 보존한다. 루프 결과가 `continue`여도 기존 판독 결정을 대체하지 않으며 통합 실행은 `needs_review`·전달 `blocked`로 끝난다. 이 경로는 로컬 테스트로 확인했고 실제 GPU 실행은 남아 있다.
+
+[조선소 `live-03`](docs/runs/ISAAC_SHIPYARD_SCENE.md)의 UR10 손목 A/B RGB·예약 관절 이동·Foxglove 영상 수신은 확인했다. 현재 `pre_captured` 방식은 모델 판단에 따른 팔 이동 폐루프가 아니다. 합성 표기 `J01`은 시연 도면의 `joint_marking_map`으로만 `JOINT-DEMO-01`에 연결한다. 용접 수치는 사진에서 검출한 값이 아니라 등록된 시연 작업조건이며, WPS 선택 헤더·대표층 전사 확인은 사람의 적용 승인이 아니다. 사진의 실제 재질·두께·현장 WPS 적용성은 미확인이다.
+
+[PV2 축소 실행](experiments/pipeline_v2/REPORT.md)은 공개 사진 8장의 개발 진단이다. 단독 판독은 OCR 5/8·VLM 2/8이었고, 현재 합의 게이트의 잘못된 자동 확정은 0/8이지만 8장 모두 작업자 확인으로 보냈다. 보류 4장은 후보에 정답이 있었고, 두 판독기가 같은 오답에 합의한 반례도 2건 기록했다. [CTX-001](experiments/context_ablation/REPORT.md)과 2026-10-09 이전 파일럿은 정답 포함 후보에 따른 평가 설계 문제로 현재 성능·발표 근거에서 제외하고 출처 추적용으로 보존한다.
 
 ## 첫 장면 실행
 
@@ -88,6 +96,7 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
 │   ├── runs/                 # 실제 실행 기록
 │   ├── setup/                # Runpod 환경·자료 준비
 │   ├── sources/              # 외부 출처와 데이터·모델 이력
+│   ├── audit/                # 진단·처방과 실행 후속 상태
 │   ├── assets/               # 2026-10-05 단독 HTML 기획서·안내
 │   ├── images/               # 장면 미리보기 이미지
 │   └── references/           # 기획서와 미션 원문
@@ -118,7 +127,7 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
     └── presentation/
 ```
 
-`src/contextweld`에는 후보 연결(`matching.py`), 실제 OCR/VLM 실행·기록(`recognition.py`), 문서 추출·검색(`documents.py`), 문서 조건 검사와 모의 수신(`workflow.py`·`mock_delivery.py`), 수정 저장(`corrections.py`)·명시적 재검토(`review.py`), 등록조건의 제조사 입력 변환(`robot_input.py`)과 마킹부터 전달까지의 통합 실행(`weld_pipeline.py`)이 있다. `src/contextweld_dashboard`는 검증된 실행 묶음을 서버 없이 여는 관리자 패키지를 만든다.
+`src/contextweld`에는 후보 연결(`matching.py`), 실제 OCR/VLM 실행·기록(`recognition.py`), 문서 추출·검색(`documents.py`), 문서 조건 검사와 모의 수신(`workflow.py`·`mock_delivery.py`), 수정 저장(`corrections.py`)·명시적 재검토(`review.py`), 등록조건의 제조사 입력 변환(`robot_input.py`)과 마킹부터 전달까지의 통합 실행(`weld_pipeline.py`), 저장 A/B 분기(`recapture_loop.py`)와 기록 연결(`recapture_bridge.py`)이 있다. `src/contextweld_dashboard`는 검증된 실행 묶음을 서버 없이 여는 관리자 패키지를 만든다.
 
 `scripts`는 역할별로 나뉘어 있다. 준비는 `prepare/`, 인식·문서·재검토·통합 실행은 `run/`, Isaac 장면과 ROS 송출은 `isaac/`, 오프라인 조회·관리자 내보내기는 `export/`, 저장 묶음 검증은 `verify/`에 있다.
 
