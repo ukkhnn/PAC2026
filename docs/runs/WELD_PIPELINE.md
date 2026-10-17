@@ -1,6 +1,6 @@
 # 마킹부터 제조사 입력·모의 수신까지
 
-기준일: **2026-10-10**. 현재 가장 긴 종단 실행이며 범위 정의는 [데모 스펙](../plan/DEMO_SPEC.md) v1.6, 인식 계약은 [OCR 구성](../spec/OCR_PIPELINE_SPEC.md)을 따른다. 실제 모델의 표기 판독에서 작업지시를 정확 조회하고, 문서 검증·원문 위치 검색·공통 작업명세·현대/두산 변환·HTTP 수신을 한 실행으로 연결한다. 저장 RGB를 사용하며 실제 로봇 이동·아크 실행은 수행하지 않는다.
+실제 종단 실행일: **2026-10-10** · 문서 갱신일: **2026-10-17**(개발 반영 2026-10-16). 현재 가장 긴 종단 실행이며 범위 정의는 [데모 스펙](../plan/DEMO_SPEC.md) v1.7, 인식 계약은 [OCR 구성](../spec/OCR_PIPELINE_SPEC.md)을 따른다. 실제 모델의 표기 판독에서 작업지시를 정확 조회하고, 문서 검증·원문 위치 검색·공통 작업명세·현대/두산 변환·HTTP 수신을 한 실행으로 연결한다. 저장 RGB를 사용하며 실제 로봇 이동·아크 실행은 수행하지 않는다.
 
 ```text
 A/B RGB → 실제 OCR/VLM 원문 → 부재번호·이음 표기·지시 대상
@@ -52,7 +52,7 @@ PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK=True HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE
 
 수신기는 기존 문서 범위 검증과 함께 대상 일치·공통 선택값·단위 변환·명령 문자열을 검사한다. 현대와 두산에 각각 패킷을 보내고 명령 ID로 요청·수신 원문·ACK를 연결한다. `execution_authorized=false`이며 HTTP 수신은 실기 실행을 뜻하지 않는다. 기호·치수·실제 TCP 경로 생성은 이 연결의 지원 범위에 포함하지 않는다.
 
-`weld-pipeline-bundle.v1`은 `inputs`, `results`, `evidence`, `commands`, `events.jsonl`, `manifest.json`, `checksums.json`을 보존한다. `verify_pipeline()`은 파일 해시, 인식 출처, 송신/수신 패킷, ACK의 ID·해시와 변환을 교차 확인한다.
+`weld-pipeline-bundle.v1`은 `inputs`, `results`, `evidence`, `commands`, `events.jsonl`, `manifest.json`, `checksums.json`을 보존한다. `verify_pipeline()`은 파일 해시, 인식 출처, 송신/수신 패킷, ACK의 ID·해시와 변환을 교차 확인한다. 10월 15일부터 `checksums.json` 미등재 파일도 거절한다. 한 제조사만 수신한 경우 `run_outcome=needs_review`·`delivery_status=partial`과 `delivery_failures`를 남긴다. 과거 `marking-delivery-02`의 중첩 해시 목록 누락과 격리 재빌드에서의 처리 범위는 [관리자 검증 기록](ADMIN_DASHBOARD.md#13-manifest-roots-등록-2026-10-16)을 따른다.
 
 ```sh
 python3 scripts/export/export_weld_pipeline_dashboard.py \

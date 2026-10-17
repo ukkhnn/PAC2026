@@ -1,6 +1,6 @@
 # 저장 A/B 재촬영 분기와 관리자 연결
 
-기준: 2026-10-10, `9451321`의 제품 인식 함수를 재사용하는 독립 모듈. 기존 인식·문서·재검토·대시보드·Isaac·ROS 생산자는 수정하지 않는다. [데모 명세](../plan/DEMO_SPEC.md)의 `pre_captured` 경로에 해당하며 실제 팔 이동 연동인 P4는 구현하지 않는다.
+작성 기준: 2026-10-10, `9451321`의 제품 인식 함수를 재사용하는 독립 모듈. 갱신일: 2026-10-17(개발 반영 2026-10-16). 최초 모듈은 기존 생산자를 수정하지 않았으며, 이후 통합 실행에 기록 브리지와 CLI를 추가했다. [데모 명세](../plan/DEMO_SPEC.md)의 `pre_captured` 경로에 해당하며 실제 팔 이동 연동인 P4는 구현하지 않는다.
 
 ## 구현 범위
 
@@ -44,6 +44,29 @@
 | `docs/runs/RECAPTURE_LOOP.md` | 문서 내 스크립트 경로·링크를 dev 체계로 수정 (원본 SHA-256 `2aa6f544…c737fa`) |
 
 기존 `capture_binding()`의 `requires_recapture=true` 예외는 유지한다(결정과 사유는 [WELD_PIPELINE.md](WELD_PIPELINE.md)의 재촬영 결정 문단 참조). 2026-10-16 연결(Option 1): `run_pipeline()`이 이 예외를 받아 이 모듈을 기록 단계로 실행하고(`src/contextweld/recapture_bridge.py`) 완료 번들을 weld 묶음의 `inputs/recapture-bundle/`에 보존한다. 루프 판정은 weld 판독 결정을 대체하지 않으며 연결은 기록만이다.
+
+## 통합 실행의 기록 브리지 (2026-10-16 구현)
+
+| 조건·결과 | 현재 동작 |
+|---|---|
+| `source_kind=capture`, 마지막 판독 `requires_recapture=true`, 재촬영 설정 있음 | `capture_binding` 예외를 받아 `run_recapture_step()` 실행 |
+| 촬영 기록의 프레임 해시가 재촬영 입력에 없음 | 다른 저장 A/B로 루프를 실행하지 않고 거절 |
+| 루프 완료·검증 성공 | `inputs/recapture-bundle/` 복사, manifest에 `recapture_bundle_ref`, `recapture_run_id`, `recapture_outcome`, `recapture_visual_outcome` 기록 |
+| 루프의 시각 판정이 `continue` | 통합 실행은 여전히 `needs_review`·전달 `blocked`; 후속 문서·명령 생성으로 진행하지 않음 |
+| 설정 없음 또는 다른 연결 오류 | 기존 보류 경로 유지; 루프를 자동 호출하지 않음 |
+
+`src/contextweld/recapture_bridge.py`와 `tests/test_recapture_bridge.py` 6개 테스트로 이 연결을 확인했다. 10월 16일 전체 회귀는 161개 통과했으며 위 최초 126개는 10월 10일 기록이다. 실제 GPU 실행 증거는 아직 없다. 10월 10일 `shipyard-connected-01`의 저장 B 선택은 이 브리지 실행이 아니다.
+
+통합 CLI `scripts/run/run_weld_pipeline.py`의 기존 입력에 아래 옵션을 추가한다. 명령 전체의 입력 경로는 [통합 실행 안내](WELD_PIPELINE.md)를 따른다.
+
+| 옵션 | 의미·기본값 |
+|---|---|
+| `--recapture-inputs` | `recapture-inputs.v1` 입력 루트. 촬영 기록과 해시 대조 |
+| `--recapture-output-root`, `--recapture-run-id` | 기본 `output/recapture-loops`, `<통합 output 이름>-recapture` |
+| `--recapture-{det,rec,vlm}-model-dir`, `--recapture-{det,rec,vlm}-revision` | 실제 추론을 위한 경로·고정 revision 6항목 필수. 아래 독립 실행과 같은 값 사용 |
+| `--recapture-ocr-device` | 기본 `cpu` |
+| `--recapture-document-ids`, `--recapture-query` | 기본 `twi-weld-symbols`, 용접 기호·화살표 검색 질의 |
+| `--recapture-top-k`, `--recapture-max-new-tokens`, `--recapture-max-pixels` | 기본 `3`, `4096`, `802816`; 허용 범위는 각각 1~10, 128 이상, 65536 이상 |
 
 ## 파일과 실행
 
@@ -122,7 +145,7 @@ UI는 새 묶음을 읽기만 하며 추론·검색·ROS·전송을 실행하지
 
 2026-10-16 기준 weld 파이프라인 연결(기록 단계, Option 1)은 완료됐다. 아래 1~4는 남은 단계이며 실제 A/B 루프 1회(2번)는 서버 접근 재개 후 실행한다.
 
-1. 대시보드 작업 완료 뒤 새 파일만 반영하고 기존 변경은 보존한다.
+1. `recapture-bundle.v1` 전용 대시보드 읽기 어댑터를 구현한다. 기존 bootstrap/document/review와 실제 전달 화면은 보존한다.
 2. 공유 GPU 사용이 겹치지 않는 시점에 실제 A/B 루프를 한 번 실행한다. 강제로 A 실패/B 성공을 만들지 않는다.
 3. 검증된 실제 결과 묶음을 대시보드 어댑터로 읽고 재촬영 여부·이유·A/B 차이를 원문과 대조한다.
 4. 문서 적용·모의 전달은 별도 연결하며, 실제 팔 이동이 필요하면 다음 단계에서 요청→이동 완료→새 RGB의 시간/ID를 기록하는 live provider를 구현한다.
