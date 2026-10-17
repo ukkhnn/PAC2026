@@ -1,9 +1,9 @@
 # ContextWeld 관리자 대시보드 (오프라인 기록 재생)
 
-작성 2026-10-10, 갱신 2026-10-11. 구현 당시 기준은 `dev` `9451321`의 작업 트리였고, 그때 미커밋이던 README·마일스톤·OCR 명세·실험 README 수정은 이후 커밋됐다. 인계 문서 `admin-dashboard-20261010`의 관리자 대시보드 작업 기록이다.
+작성 2026-10-10, 갱신 2026-10-17(개발 반영 2026-10-16). 구현 당시 기준은 `dev` `9451321`의 작업 트리였고, 그때 미커밋이던 README·마일스톤·OCR 명세·실험 README 수정은 이후 커밋됐다. 인계 문서 `admin-dashboard-20261010`의 관리자 대시보드 작업 기록이다.
 
 > **상태:** 패키지 생성기·화면·검증 연결은 구현했고 `scripts/export/export_admin_dashboard.py export|verify`로 실행한다.
-> 아래 4·5절은 코드에서 확인한 구성이다. **6~11절의 실행 기록은 작성되지 않았다**([미작성 절](#6-11절-미작성) 참고).
+> 아래 4·5절은 코드에서 확인한 구성이다. **6~11절의 실행 기록은 작성되지 않았다**([미작성 절](#611절-미작성) 참고).
 > 빠진 내용을 구현 완료로 읽지 않는다.
 
 ## 1. 목적과 경계
@@ -47,8 +47,7 @@ python3 scripts/export/export_admin_dashboard.py verify output/admin-dashboard-2
 3. 선택: `shasum -a 256 -c SHA256SUMS` 또는 `python3 tools/verify_package.py`로 사본 동일성 확인.
 4. 파일 열기가 브라우저 정책으로 막히면 선택적으로 `python3 tools/serve_package.py` 후 `http://127.0.0.1:8765/index.html`.
 
-Mac에서의 최종 확인 절차는 [10절](#10-mac-최종-확인-절차)에 따로 적었다. 서버에서 개발·검증했으며 Mac에서 실행했다고
-주장하지 않는다.
+Mac 브라우저 전체 시각 검수 기록은 아직 없다. 미작성 범위는 [6~11절](#611절-미작성), 이후 로컬 사본·격리 재빌드 검증은 [13절](#13-manifest-roots-등록-2026-10-16)을 따른다.
 
 ## 3. 구성
 
@@ -136,10 +135,10 @@ Mac에서의 최종 확인 절차는 [10절](#10-mac-최종-확인-절차)에 �
 | 패키지 생성·검증 CLI | 구현됨. `export_admin_dashboard.py export`·`verify` |
 | 사본 동일성 확인 | 패키지 안의 `SHA256SUMS`와 `tools/verify_package.py`로 확인 |
 | 화면 모델 ↔ 원본 연결 검사 | `tests/admin_dashboard_support.py`의 도우미는 있으나 이를 호출하는 테스트 파일이 없음 |
-| 실제 내보내기 실행 기록 | **미기록.** 어떤 묶음으로 언제 패키지를 만들었고 보고서의 `forbidden_calls`가 비어 있었는지 남아 있지 않음 |
+| 실제 내보내기 실행 기록 | 최초 전체 내보내기의 `forbidden_calls` 기록은 미기록. 10월 15일 사본 재생성·10월 16일 격리 재빌드와 검증 범위는 12·13절에 추가 |
 | 원본 보존 전·후 해시 비교 | **미기록** |
 | Mac 브라우저 시각 검수 | **미기록.** 2절의 열기 절차만 적혀 있고 실제 수행 결과는 없음 |
-| 새 결과 연결 입력 계약 | **미작성.** 현재는 `--add <묶음 폴더>` 사용법만 2절에 있음 |
+| 새 결과 연결 입력 계약 | 기본 `--add`는 2절, 정상 통합 실행 전용 exporter·roots 등록은 [통합 실행 안내](WELD_PIPELINE.md)와 13절. 재촬영 묶음 읽기 어댑터는 미구현 |
 
 이 기록을 채우려면 2절의 명령을 실행하고 `export-report.json`과 사본 재검증 결과를 이 문서에 옮겨 적는다.
 
@@ -185,3 +184,14 @@ Mac에서의 최종 확인 절차는 [10절](#10-mac-최종-확인-절차)에 �
 검증: 실제 사본과 격리 재빌드 모두 `tools/verify_package.py` "결과: 통과"(roots 22줄, 신규 3줄은
 `shipyard-connected-01` pass·`marking-delivery-02` pass·`shipyard-recapture` no_checksums, 파일 4,892개)와
 `export_admin_dashboard.py verify` exit 0(17묶음: verified 2 · partial 2 · expected failed 13)을 확인했다.
+
+## 14. 검증 결과를 읽는 방법
+
+파일 해시 검사와 스키마별 의미 검사는 서로 다른 결과다. 13절의 `verify` exit 0은 모든 묶음이 `verified`라는 뜻이 아니다. 현재 `expected_failures`는 미완료 인식 묶음 1개, 통합/시연 묶음 3개, 계보 정정 이후 재계산 불일치가 남은 과거 문서/재검토 묶음 9개다. 이 13개는 실패 상태를 유지하면서 종료 코드 판정에서 허용한다. 원본 기록 재작성이나 의미 검증 복구를 완료한 것으로 표시하지 않는다.
+
+```sh
+python3 scripts/export/export_admin_dashboard.py verify \
+  output/dashboard-preview-20261010/pac-admin-dashboard
+```
+
+결과의 `files`와 `bundles`의 개별 묶음 상태를 함께 읽는다. 과거 9개는 새 실행으로 재검증하고, 통합 묶음에는 전용 검증 연결이 필요하다. `recapture-bundle.v1` 실제 결과를 화면에 적재하려면 별도 읽기 어댑터도 필요하다. `shipyard-recapture` 목업의 재생 화면은 그 어댑터의 완료 증거가 아니다.
