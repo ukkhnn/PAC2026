@@ -1,6 +1,12 @@
 # 문서 색인
 
-기준일: 2026-10-11. 어떤 문서를 언제 읽는지 정리한다. 서술이 충돌하면 **더 늦은 실행 기록**이 우선하고, 범위 정의는 [데모 스펙](plan/DEMO_SPEC.md)이 우선한다.
+갱신일: 2026-10-17 · 개발 반영: 2026-10-16. 어떤 문서를 언제 읽는지 정리한다. 서술이 충돌하면 **더 늦은 실행 기록**이 우선하고, 범위 정의는 [데모 스펙](plan/DEMO_SPEC.md)이 우선한다.
+
+## 최근 반영
+
+- 10월 15일: 재촬영 모듈 병합, 판독·라벨 계보 정정, 추가 파일·부분 전달 검증 보강, 관리자 목업 분리.
+- 10월 16일: 재촬영 기록 브리지·CLI, 통합/시연 실행의 `MANIFEST.roots` 등록, 서버 복구용 로컬 보존 사본 재대조.
+- 실제 GPU 재촬영·대시보드 어댑터·서버 실물 회수는 남아 있다. 현재 완료 범위는 [마일스톤](plan/MILESTONES.md), 진단 후 항목별 상태는 [진단·처방 후속 현황](audit/DIAGNOSIS_AND_REMEDIATION.md#5-실행-후속-현황-2026-10-17)을 따른다.
 
 ## 처음 읽는 순서
 
@@ -37,10 +43,10 @@
 | 문서 | 내용 |
 |---|---|
 | [WELD_PIPELINE](runs/WELD_PIPELINE.md) | **최신.** 저장 A/B 마킹 판독 → 작업지시 조회 → WPS 검증 → 공통 명세 → 현대/두산 변환 → HTTP 모의 수신 |
-| [RECAPTURE_LOOP](runs/RECAPTURE_LOOP.md) | 저장 A/B 재촬영 분기 모듈의 dev 병합과 해시 대조 기록. 실제 모델 실행·대시보드 연결은 미완료 |
+| [RECAPTURE_LOOP](runs/RECAPTURE_LOOP.md) | 저장 A/B 분기 모듈·통합 실행의 기록 브리지·CLI. 실제 GPU 실행·대시보드 어댑터는 미완료 |
 | [RECOGNITION_AND_BINDING](runs/RECOGNITION_AND_BINDING.md) | 판독·연결 경로와 라벨 계보 정정: OCR 원문 보존·VLM 단독 판독, `B1Sb30N-15`→`BISB30N-15` 계보 명시 |
 | [ROBOT_INPUT_PREVIEW](runs/ROBOT_INPUT_PREVIEW.md) | 등록 작업조건 자동 적용과 제조사 입력 변환 화면 |
-| [ADMIN_DASHBOARD](runs/ADMIN_DASHBOARD.md) | 여러 실행을 담는 오프라인 관리자 패키지 |
+| [ADMIN_DASHBOARD](runs/ADMIN_DASHBOARD.md) | 여러 실행을 담는 오프라인 관리자 패키지, 목업 분리·MANIFEST roots·검증 한계 |
 | [ISAAC_SHIPYARD_SCENE](runs/ISAAC_SHIPYARD_SCENE.md) | 조선소 수직 3면 강판·수기 메모 장면 `live-03`의 A/B RGB |
 | [ISAAC_SCENE](runs/ISAAC_SCENE.md) | 기존 정형 마킹·작업대 기준 장면 `live-01` |
 | [EXPLICIT_REVIEW](runs/EXPLICIT_REVIEW.md) | 수정 저장 → 명시적 재검토 → 선택적 모의 전달 CLI와 `review-bundle.v1` |
@@ -65,12 +71,12 @@
 
 ## audit/ — 진단·처방
 
-현재 종단 연결의 문제를 사실(진단)과 제안(처방)으로 구분해 정리한다. 처방과 지시서 항목은 `(claude 제안사항)`이며 실행 여부는 별도 판단 대상이다.
+현재 종단 연결의 문제를 사실(진단)과 제안(처방)으로 구분해 정리한다. 당초 처방과 지시서 항목은 `(claude 제안사항)`으로 보존하며, 실행 결과는 진단·처방서 5절에서 구분한다.
 
 | 문서 | 내용 |
 |---|---|
 | [DIAGNOSIS_AND_REMEDIATION](audit/DIAGNOSIS_AND_REMEDIATION.md) | 재촬영 미병합·서사 불일치·라벨 오독 파생·OCR 미사용·서버 유실·목업·검증 허점의 진단과 처방 |
-| [INSTRUCTIONS/](audit/INSTRUCTIONS/) | 영역별 복구 지시서(recapture-loop, recognition-and-binding, server-artifact-recovery, dashboard-mock-data, verification-integrity) |
+| [INSTRUCTIONS/](audit/INSTRUCTIONS/) | 영역별 복구 지시서(recapture-loop, recognition-and-binding, server-artifact-recovery, dashboard-mock-data, verification-integrity)와 [서버 복구 로컬 준비](audit/INSTRUCTIONS/server-artifact-recovery-local-prep.md) |
 
 ## 그 밖에
 
