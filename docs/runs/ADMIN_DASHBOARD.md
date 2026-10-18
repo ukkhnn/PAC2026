@@ -194,4 +194,17 @@ python3 scripts/export/export_admin_dashboard.py verify \
   output/dashboard-preview-20261010/pac-admin-dashboard
 ```
 
-결과의 `files`와 `bundles`의 개별 묶음 상태를 함께 읽는다. 과거 9개는 새 실행으로 재검증하고, 통합 묶음에는 전용 검증 연결이 필요하다. `recapture-bundle.v1` 읽기 어댑터는 2026-10-18 구현되어 실제 결과를 화면에 적재할 수 있다(단위 테스트는 `tests/test_dashboard_recapture.py`). `shipyard-recapture` 목업의 재생 화면은 그 어댑터의 완료 증거가 아니다.
+결과의 `files`와 `bundles`의 개별 묶음 상태를 함께 읽는다. 아래는 exit 0에서 허용하는 실패 13건(신규 3 + 레거시 9 + 기존 1)의 항목별 사유다. 2026-10-19 실제 패키지(`output/dashboard-preview-20261010/pac-admin-dashboard`)에 `verify`를 돌려 얻은 message를 그대로 적었다.
+
+### 14.1 허용 실패 13건 항목별 사유
+
+| key | 분류 | verify message (실측) | 사유·허용 근거·복구 |
+|---|---|---|---|
+| `rec-batch-01-incomplete` | 기존 1 (미완료 인식) | `FileNotFoundError: …/checksums.json` | 실제 중단·불완전 묶음. 내보내기(checksums.json 생성) 전에 중단돼 해시 목록이 없다(`bundle_checks`는 `no_checksums`). 실제 중단 흔적과 검증 실패 표시를 확인하는 고정 사례라 그대로 둔다. |
+| `shipyard-connected-01` | 신규 3 (통합 weld-pipeline) | `지원하지 않는 묶음 스키마: weld-pipeline-bundle.v1` | `weld-pipeline-bundle.v1` 전용 검증기가 아직 없다. 파일 동일성 검사는 통과(21 entries)하므로 해시 무결성은 확인되지만 스키마별 의미 검증 연결이 남아 있다. 복구는 전용 검증기 연결(별도 작업). |
+| `marking-delivery-02` | 신규 3 (통합 weld-pipeline) | `지원하지 않는 묶음 스키마: weld-pipeline-bundle.v1` | 위와 동일(파일 동일성 208 entries 통과). |
+| `shipyard-recapture` | 신규 3 (시연 목업) | `manifest.json이 없습니다.` | `presentation_scenario` 목업이라 manifest.json 자체가 없다. 목업의 재생 화면은 recapture 어댑터의 완료 증거가 아니다. |
+| `doc-normal`·`doc-missing`·`doc-conflict`·`doc-revision-mismatch`·`doc-observation-conflict` | 레거시 9 (문서 검토 5) | `ValueError: 문서 명세/검증 재계산 불일치` | P0 계보 정정(`observation_consensus` → `marking_observation_evidence_recorded`)으로 관측 선택(`observed_candidates`)이 바뀌어, 검증기의 `build_spec` 재계산이 과거 저장 `results/work-spec.json`·`matching.json`과 달라졌다. 과거 기재 재작성 금지(P0 지시서)에 따라 새 실행 재계산 전까지 expected로 둔다. |
+| `review-voltage-01`·`review-voltage-deliver-01`·`review-frame005-01`·`review-receiver-down-01` | 레거시 9 (재검토 4) | `ValueError: 문서 명세/검증 재계산 불일치` | 재검토 검증기가 먼저 내장된 부모 document 묶음을 `inspect_document_bundle`로 재검증하는데, 그 부모가 위와 같은 재계산 불일치로 실패해 같은 오류가 전파된다. 재검토 자체의 재계산(`재검토 결과 재계산 불일치`)에 도달하기 전 단계다. 복구는 위 문서 5개와 함께 새 실행 재계산. |
+
+복구 요약: 레거시 9개는 현재 검증기 기준으로 새 실행(재계산)하면 정리되지만, 과거 기재 재작성 금지 원칙에 따라 기존 묶음·대시보드 사본은 그대로 둔다. weld-pipeline 2개는 전용 검증기 연결이 필요하고, `shipyard-recapture`는 목업이므로 대상이 아니다. `recapture-bundle.v1` 읽기 어댑터는 2026-10-18 구현되어 실제 결과를 화면에 적재할 수 있다(단위 테스트는 `tests/test_dashboard_recapture.py`).
