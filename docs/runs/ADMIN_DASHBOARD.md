@@ -57,7 +57,7 @@ Mac 브라우저 전체 시각 검수 기록은 아직 없다. 미작성 범위�
 | `src/contextweld_dashboard/bundle_io.py` | 읽기 전용 접근(`contextweld.recognition.safe_path`로 경로 가둠, symlink 거부, PNG/JPEG 크기 헤더 읽기) |
 | `src/contextweld_dashboard/integrity.py` | 스키마별 기존 검증기 호출 + 파일 목록·해시·symlink·경로 이탈 대조, 장면 자료는 기록 해시만 대조(`partial`) |
 | `src/contextweld_dashboard/catalog.py` | 기본 자료 목록(인계 4절), 종류 분류(schema_version), 제외 정책(CTX-001, 장면 `stream/` 등) |
-| `src/contextweld_dashboard/adapters/` | 읽기 어댑터: `recognition`, `document_review`, `explicit_review`, `scene`, `references` |
+| `src/contextweld_dashboard/adapters/` | 읽기 어댑터: `recognition`, `document_review`, `explicit_review`, `recapture`, `scene`, `references` |
 | `src/contextweld_dashboard/package.py` | 패키지 생성(검증 → 바이트 동일 복사 → 사본 재검증 → 화면 모델 → 기존 HTML 조회기 → MANIFEST/SHA256SUMS) |
 | `src/contextweld_dashboard/web/` | 화면(`index.html`, `app.css`, `app.js`): 바닐라 JS, 빌드 단계·외부 자원 없음 |
 | `src/contextweld_dashboard/package_tools/` | 패키지에 들어가는 독립 도구(`verify_package.py`, `serve_package.py`, 안내문) |
@@ -138,7 +138,7 @@ Mac 브라우저 전체 시각 검수 기록은 아직 없다. 미작성 범위�
 | 실제 내보내기 실행 기록 | 최초 전체 내보내기의 `forbidden_calls` 기록은 미기록. 10월 15일 사본 재생성·10월 16일 격리 재빌드와 검증 범위는 12·13절에 추가 |
 | 원본 보존 전·후 해시 비교 | **미기록** |
 | Mac 브라우저 시각 검수 | **미기록.** 2절의 열기 절차만 적혀 있고 실제 수행 결과는 없음 |
-| 새 결과 연결 입력 계약 | 기본 `--add`는 2절, 정상 통합 실행 전용 exporter·roots 등록은 [통합 실행 안내](WELD_PIPELINE.md)와 13절. 재촬영 묶음 읽기 어댑터는 미구현 |
+| 새 결과 연결 입력 계약 | 기본 `--add`는 2절, 정상 통합 실행 전용 exporter·roots 등록은 [통합 실행 안내](WELD_PIPELINE.md)와 13절. 재촬영 묶음 읽기 어댑터는 2026-10-18 구현(`contextweld_dashboard.adapters.recapture`, `tests/test_dashboard_recapture.py`) |
 
 이 기록을 채우려면 2절의 명령을 실행하고 `export-report.json`과 사본 재검증 결과를 이 문서에 옮겨 적는다.
 
@@ -194,4 +194,4 @@ python3 scripts/export/export_admin_dashboard.py verify \
   output/dashboard-preview-20261010/pac-admin-dashboard
 ```
 
-결과의 `files`와 `bundles`의 개별 묶음 상태를 함께 읽는다. 과거 9개는 새 실행으로 재검증하고, 통합 묶음에는 전용 검증 연결이 필요하다. `recapture-bundle.v1` 실제 결과를 화면에 적재하려면 별도 읽기 어댑터도 필요하다. `shipyard-recapture` 목업의 재생 화면은 그 어댑터의 완료 증거가 아니다.
+결과의 `files`와 `bundles`의 개별 묶음 상태를 함께 읽는다. 과거 9개는 새 실행으로 재검증하고, 통합 묶음에는 전용 검증 연결이 필요하다. `recapture-bundle.v1` 읽기 어댑터는 2026-10-18 구현되어 실제 결과를 화면에 적재할 수 있다(단위 테스트는 `tests/test_dashboard_recapture.py`). `shipyard-recapture` 목업의 재생 화면은 그 어댑터의 완료 증거가 아니다.
