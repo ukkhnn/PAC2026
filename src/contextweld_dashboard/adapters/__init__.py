@@ -14,6 +14,7 @@ KIND_LABELS = {
     "recognition": "인식 bootstrap 실행",
     "document_review": "문서 검토 실행",
     "explicit_review": "명시적 재검토 실행",
+    "recapture": "재촬영 루프 실행",
     "scene": "Isaac 장면 자료",
     "document_rag": "문서 검색 색인",
     "correction_store": "수정 저장소",
@@ -26,8 +27,9 @@ KIND_LABELS = {
 
 def get_adapter(kind: str) -> Adapter | None:
     module = {"recognition": "recognition", "document_review": "document_review", "explicit_review": "explicit_review",
-              "scene": "scene", "document_rag": "references", "correction_store": "references",
-              "review_cli_log": "references", "demo_config": "references", "knowledge": "references"}.get(kind)
+              "recapture": "recapture", "scene": "scene", "document_rag": "references",
+              "correction_store": "references", "review_cli_log": "references", "demo_config": "references",
+              "knowledge": "references"}.get(kind)
     if module is None:
         return None
     try:

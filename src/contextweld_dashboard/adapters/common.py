@@ -27,6 +27,9 @@ STAGE_LABELS = {
     "relation": "관계 해석 (VLM)",
     "work_spec_candidate": "작업 명세 후보 (규칙)",
     "recognition_decision": "인식 판단 (규칙)",
+    # 재촬영 루프
+    "capture_assessment": "촬영 품질 평가 (model)",
+    "recapture_request": "재촬영 요청 (규칙)",
     "export": "내보내기 완료",
     "failure": "실행 실패 기록",
     # 문서 검토

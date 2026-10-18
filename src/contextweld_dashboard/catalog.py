@@ -15,6 +15,7 @@ GROUPS = {
     "recognition": "인식 bootstrap (공개 사진)",
     "document": "문서 검토 실행",
     "review": "명시적 재검토 실행",
+    "recapture": "재촬영 루프 실행",
     "scene": "Isaac 장면 자료 (예약 A/B 촬영)",
     "reference": "참조 자료 (실행 아님)",
 }
@@ -22,6 +23,7 @@ SCHEMA_KINDS = {
     "bootstrap-bundle.v1": ("recognition", "recognition"),
     "document-demo-bundle.v1": ("document", "document_review"),
     "review-bundle.v1": ("review", "explicit_review"),
+    "recapture-bundle.v1": ("recapture", "recapture"),
     "isaac-shipyard-capture.v1": ("scene", "scene"),
     "isaac-scene-capture.v1": ("scene", "scene"),
 }

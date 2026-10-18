@@ -52,10 +52,16 @@ def _review_inspector() -> Callable[[Path], dict[str, Any]]:
     return inspect_review_bundle
 
 
+def _recapture_inspector() -> Callable[[Path], dict[str, Any]]:
+    from contextweld.recapture_loop import verify_recapture_bundle
+    return verify_recapture_bundle
+
+
 VERIFIERS: dict[str, tuple[str, Callable[[], Callable[[Path], dict[str, Any]]]]] = {
     "bootstrap-bundle.v1": ("scripts/verify/verify_run_bundle.py:inspect_bundle", _bootstrap_inspector),
     "document-demo-bundle.v1": ("contextweld.workflow.inspect_document_bundle", _document_inspector),
     "review-bundle.v1": ("contextweld.review.inspect_review_bundle", _review_inspector),
+    "recapture-bundle.v1": ("contextweld.recapture_loop.verify_recapture_bundle", _recapture_inspector),
 }
 
 
