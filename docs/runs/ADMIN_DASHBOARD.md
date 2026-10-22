@@ -1,6 +1,6 @@
 # ContextWeld 관리자 대시보드 (오프라인 기록 재생)
 
-작성 2026-10-10, 갱신 2026-10-17(개발 반영 2026-10-16). 구현 당시 기준은 `dev` `9451321`의 작업 트리였고, 그때 미커밋이던 README·마일스톤·OCR 명세·실험 README 수정은 이후 커밋됐다. 인계 문서 `admin-dashboard-20261010`의 관리자 대시보드 작업 기록이다.
+작성 2026-10-10, 갱신 2026-10-22(코드 반영 2026-10-18, 검증 해석 기록 2026-10-19). 구현 당시 기준은 `dev` `9451321`의 작업 트리였고, 그때 미커밋이던 README·마일스톤·OCR 명세·실험 README 수정은 이후 커밋됐다. 인계 문서 `admin-dashboard-20261010`의 관리자 대시보드 작업 기록이다.
 
 > **상태:** 패키지 생성기·화면·검증 연결은 구현했고 `scripts/export/export_admin_dashboard.py export|verify`로 실행한다.
 > 아래 4·5절은 코드에서 확인한 구성이다. **6~11절의 실행 기록은 작성되지 않았다**([미작성 절](#611절-미작성) 참고).
@@ -38,7 +38,7 @@ python3 scripts/export/export_admin_dashboard.py export \
 python3 scripts/export/export_admin_dashboard.py verify output/admin-dashboard-20261010/package/pac-admin-dashboard
 ```
 
-새 묶음을 더할 때는 `--add <묶음 폴더>`(반복 가능), 기본 자료 일부만 넣을 때는 `--only <key,...>`.
+새 묶음을 더할 때는 `--add <묶음 폴더>`(반복 가능), 기본 자료 일부만 넣을 때는 `--only <key,...>`. `recapture-bundle.v1`도 `--add`로 지정하면 재촬영 종류로 분류하고 `verify_recapture_bundle()` 검증 후 전용 어댑터로 읽는다. 실제 GPU 루프 결과의 적재·화면 검수 기록은 아직 없다.
 
 ### 2.2 로컬(Mac)에서 열기
 
@@ -201,10 +201,10 @@ python3 scripts/export/export_admin_dashboard.py verify \
 | key | 분류 | verify message (실측) | 사유·허용 근거·복구 |
 |---|---|---|---|
 | `rec-batch-01-incomplete` | 기존 1 (미완료 인식) | `FileNotFoundError: …/checksums.json` | 실제 중단·불완전 묶음. 내보내기(checksums.json 생성) 전에 중단돼 해시 목록이 없다(`bundle_checks`는 `no_checksums`). 실제 중단 흔적과 검증 실패 표시를 확인하는 고정 사례라 그대로 둔다. |
-| `shipyard-connected-01` | 신규 3 (통합 weld-pipeline) | `지원하지 않는 묶음 스키마: weld-pipeline-bundle.v1` | `weld-pipeline-bundle.v1` 전용 검증기가 아직 없다. 파일 동일성 검사는 통과(21 entries)하므로 해시 무결성은 확인되지만 스키마별 의미 검증 연결이 남아 있다. 복구는 전용 검증기 연결(별도 작업). |
+| `shipyard-connected-01` | 신규 3 (통합 weld-pipeline) | `지원하지 않는 묶음 스키마: weld-pipeline-bundle.v1` | 제품에는 `contextweld.weld_pipeline.verify_pipeline`이 있지만 관리자 `integrity.VERIFIERS`에는 `weld-pipeline-bundle.v1`이 등록되지 않았다. 파일 동일성 검사는 통과(21 entries)하므로 해시 무결성은 확인되지만 스키마별 의미 검증 연결이 남아 있다. 복구는 관리자 검증 경로 연결(별도 작업). |
 | `marking-delivery-02` | 신규 3 (통합 weld-pipeline) | `지원하지 않는 묶음 스키마: weld-pipeline-bundle.v1` | 위와 동일(파일 동일성 208 entries 통과). |
 | `shipyard-recapture` | 신규 3 (시연 목업) | `manifest.json이 없습니다.` | `presentation_scenario` 목업이라 manifest.json 자체가 없다. 목업의 재생 화면은 recapture 어댑터의 완료 증거가 아니다. |
-| `doc-normal`·`doc-missing`·`doc-conflict`·`doc-revision-mismatch`·`doc-observation-conflict` | 레거시 9 (문서 검토 5) | `ValueError: 문서 명세/검증 재계산 불일치` | P0 계보 정정(`observation_consensus` → `marking_observation_evidence_recorded`)으로 관측 선택(`observed_candidates`)이 바뀌어, 검증기의 `build_spec` 재계산이 과거 저장 `results/work-spec.json`·`matching.json`과 달라졌다. 과거 기재 재작성 금지(P0 지시서)에 따라 새 실행 재계산 전까지 expected로 둔다. |
+| `doc-normal`·`doc-missing`·`doc-conflict`·`doc-revision-mismatch`·`doc-observation-conflict` | 레거시 9 (문서 검토 5) | `ValueError: 문서 명세/검증 재계산 불일치` | P0 계보 정정으로 `build_spec`의 `validation.checks` 이름이 `observation_consensus` → `marking_observation_evidence_recorded`로 바뀌어 과거 저장 `results/work-spec.json`과 재계산 결과가 다르다. 오류는 명세·matching 대조 단계에서 발생하며, 관측 선택 함수(`observed_candidates`)가 변경됐다는 뜻은 아니다. 과거 기재 재작성 금지(P0 지시서)에 따라 새 실행 재계산 전까지 expected로 둔다. |
 | `review-voltage-01`·`review-voltage-deliver-01`·`review-frame005-01`·`review-receiver-down-01` | 레거시 9 (재검토 4) | `ValueError: 문서 명세/검증 재계산 불일치` | 재검토 검증기가 먼저 내장된 부모 document 묶음을 `inspect_document_bundle`로 재검증하는데, 그 부모가 위와 같은 재계산 불일치로 실패해 같은 오류가 전파된다. 재검토 자체의 재계산(`재검토 결과 재계산 불일치`)에 도달하기 전 단계다. 복구는 위 문서 5개와 함께 새 실행 재계산. |
 
-복구 요약: 레거시 9개는 현재 검증기 기준으로 새 실행(재계산)하면 정리되지만, 과거 기재 재작성 금지 원칙에 따라 기존 묶음·대시보드 사본은 그대로 둔다. weld-pipeline 2개는 전용 검증기 연결이 필요하고, `shipyard-recapture`는 목업이므로 대상이 아니다. `recapture-bundle.v1` 읽기 어댑터는 2026-10-18 구현되어 실제 결과를 화면에 적재할 수 있다(단위 테스트는 `tests/test_dashboard_recapture.py`).
+복구 요약: 레거시 9개는 현재 검증기 기준으로 새 실행(재계산)하면 정리되지만, 과거 기재 재작성 금지 원칙에 따라 기존 묶음·대시보드 사본은 그대로 둔다. weld-pipeline 2개는 기존 제품 검증기를 관리자 경로에 연결해야 하고, `shipyard-recapture`는 목업이므로 대상이 아니다. `recapture-bundle.v1` 읽기 어댑터는 2026-10-18 구현되어 실제 결과를 화면에 적재할 수 있다(단위 테스트는 `tests/test_dashboard_recapture.py`).
