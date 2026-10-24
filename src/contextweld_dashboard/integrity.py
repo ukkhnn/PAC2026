@@ -57,7 +57,13 @@ def _recapture_inspector() -> Callable[[Path], dict[str, Any]]:
     return verify_recapture_bundle
 
 
+def _weld_inspector() -> Callable[[Path], dict[str, Any]]:
+    from contextweld.weld_pipeline import verify_pipeline
+    return verify_pipeline
+
+
 VERIFIERS: dict[str, tuple[str, Callable[[], Callable[[Path], dict[str, Any]]]]] = {
+    "weld-pipeline-bundle.v1": ("contextweld.weld_pipeline.verify_pipeline", _weld_inspector),
     "bootstrap-bundle.v1": ("scripts/verify/verify_run_bundle.py:inspect_bundle", _bootstrap_inspector),
     "document-demo-bundle.v1": ("contextweld.workflow.inspect_document_bundle", _document_inspector),
     "review-bundle.v1": ("contextweld.review.inspect_review_bundle", _review_inspector),
@@ -246,7 +252,8 @@ def _inspect(root: Path) -> dict[str, Any]:
         return result
     name, loader = VERIFIERS[schema]
     result["verifier"] = name
-    if manifest.get("export_status") != "complete":
+    # 통합 v1은 export_status 대신 run_outcome·송수신·ACK를 전용 검증기가 검사한다.
+    if schema != "weld-pipeline-bundle.v1" and manifest.get("export_status") != "complete":
         result["checks"].insert(0, _check("export_status=complete", False,
                                           f"export_status={manifest.get('export_status')!r}: 완료 묶음이 아닙니다."))
     before = _checksum_digest(root)
