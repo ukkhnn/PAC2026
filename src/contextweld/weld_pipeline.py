@@ -11,6 +11,8 @@ from contextweld.workflow import build_spec, command_from_spec, inspect_document
 from contextweld.documents import load_index, search_documents
 from contextweld.mock_delivery import MockReceiver, send_command
 from contextweld.recapture_bridge import run_recapture_step
+from contextweld.recapture_binding import recapture_binding
+from contextweld.recapture_loop import verify_recapture_bundle
 
 
 def validate_robot_extension(command: dict[str, Any]) -> list[dict[str, str]]:
@@ -80,42 +82,62 @@ def run_pipeline(*,repo:Path,output:Path,source:Path,source_kind:str,data_root:P
                  recapture:dict[str,Any]|None=None) -> Path:
     """전체 단계를 실행한다. `recapture`가 주어지면(입력·출력 루트·run_id·observer·config)
     capture_binding의 `requires_recapture` 예외를 받아 재촬영 루프를 기록 단계로 실행한다.
-    루프 판정은 판독 결정을 대체하지 않으며 예외 의미(needs_review/blocked)는 그대로다."""
+    루프 판정은 판독 결정을 대체하지 않으며 예외 의미(needs_review/blocked)는 그대로다.
+    source_kind=recapture는 검증된 저장 루프에서 새 문서·모의 전달 실행을 만든다."""
+    if source_kind not in {'capture', 'document', 'recapture'}:
+        raise ValueError('지원하지 않는 입력 종류')
+    source, output = source.resolve(), output.resolve()
+    if source == output or source in output.parents or output in source.parents:
+        raise ValueError('입력과 출력은 분리된 경로여야 함')
     if output.exists():raise FileExistsError('새 실행 경로 필요')
     output.mkdir(parents=True)
     for d in ('inputs','results','evidence','commands'):(output/d).mkdir()
     run_id=output.name; events=[]
     def event(stage,ref):
         seq=len(events)+1;events.append({'seq':seq,'event_id':f'event-{seq:03d}','stage':stage,'recorded_at_utc':utc_now(),'payload_ref':ref,'parent_event_ids':[f'event-{seq-1:03d}'] if seq>1 else []})
-    manifest={'schema_version':'weld-pipeline-bundle.v1','run_id':run_id,'started_at_utc':utc_now(),'capture_mode':'pre_captured' if source_kind=='capture' else 'public_dataset','execution_authorized':False,'application_authorized':False,'physical_movement_triggered':False,'delivery_status':'blocked','run_outcome':'running','source_kind':'actual_model','input_reused':True}
-    orders=read_json(repo/'configs/document_demo/work_orders.json');drawing=read_json(repo/('configs/shipyard_pipeline/drawing.json' if source_kind=='capture' else 'configs/document_demo/drawing.json'))
+    manifest={'schema_version':'weld-pipeline-bundle.v1','run_id':run_id,'started_at_utc':utc_now(),'capture_mode':'pre_captured' if source_kind in {'capture','recapture'} else 'public_dataset','execution_authorized':False,'application_authorized':False,'physical_movement_triggered':False,'delivery_status':'blocked','run_outcome':'running','source_kind':'actual_model','input_reused':True}
+    orders=read_json(repo/'configs/document_demo/work_orders.json');drawing=read_json(repo/('configs/shipyard_pipeline/drawing.json' if source_kind in {'capture','recapture'} else 'configs/document_demo/drawing.json'))
     profile=read_json(repo/'configs/document_demo/target_profile.json');wps=read_json(repo/'data/knowledge/lanl-wps-3501-reviewed.json')
     scenario=read_json(repo/'configs/document_demo/scenario.json')
     deliveries={}
     delivery_failures={}
     try:
-        if source_kind=='capture':
-            shutil.copytree(source,output/'inputs/capture');capture=read_json(source/'capture.json')
-            try:
-                binding=capture_binding(capture,orders,drawing)
-            except ValueError as exc:
-                if recapture is None or '재관측 뒤에도 판독 미확정' not in str(exc):
-                    raise
-                # recapture_loop 연결(Option 1): 루프를 기록 단계로 실행하고 번들을 보존한다.
-                # 루프 판정은 판독 결정을 대체하지 않으며 예외 의미(needs_review/blocked)도 그대로다.
-                step=run_recapture_step(capture=capture,**recapture)
-                shutil.copytree(step['bundle_path'],output/'inputs/recapture-bundle')
-                manifest['recapture_bundle_ref']='inputs/recapture-bundle'
-                manifest['recapture_run_id']=step['recapture_run_id']
-                manifest['recapture_outcome']=step['recapture_outcome']
-                manifest['recapture_visual_outcome']=step['recapture_visual_outcome']
-                raise ValueError(f"{exc} — 재촬영 루프 기록: inputs/recapture-bundle")
-            binding['source_hash']=sha256(output/'inputs/capture/capture.json')
+        if source_kind in {'capture', 'recapture'}:
+            if source_kind == 'recapture':
+                loop_manifest = verify_recapture_bundle(source)
+                shutil.copytree(source, output/'inputs/recapture-bundle')
+                manifest.update(source_kind=loop_manifest.get('evidence_kind', 'actual_model'),
+                    evidence_kind=loop_manifest.get('evidence_kind', 'actual_model'),
+                    source_run_id=loop_manifest['run_id'], new_model_calls=0,
+                    recapture_bundle_ref='inputs/recapture-bundle',
+                    recapture_run_id=loop_manifest['run_id'],
+                    recapture_outcome=loop_manifest['recapture_outcome'],
+                    recapture_visual_outcome=loop_manifest['visual_outcome'],
+                    resume_mode='verified_recapture')
+                event('recapture_reuse', 'inputs/recapture-bundle/manifest.json')
+                binding = recapture_binding(output/'inputs/recapture-bundle', orders, drawing)
+            else:
+                shutil.copytree(source,output/'inputs/capture');capture=read_json(source/'capture.json')
+                try:
+                    binding=capture_binding(capture,orders,drawing)
+                except ValueError as exc:
+                    if recapture is None or '재관측 뒤에도 판독 미확정' not in str(exc):
+                        raise
+                    # recapture_loop 연결(Option 1): 루프를 기록 단계로 실행하고 번들을 보존한다.
+                    # 루프 판정은 판독 결정을 대체하지 않으며 예외 의미(needs_review/blocked)도 그대로다.
+                    step=run_recapture_step(capture=capture,**recapture)
+                    shutil.copytree(step['bundle_path'],output/'inputs/recapture-bundle')
+                    manifest['recapture_bundle_ref']='inputs/recapture-bundle'
+                    manifest['recapture_run_id']=step['recapture_run_id']
+                    manifest['recapture_outcome']=step['recapture_outcome']
+                    manifest['recapture_visual_outcome']=step['recapture_visual_outcome']
+                    raise ValueError(f"{exc} — 재촬영 루프 기록: inputs/recapture-bundle")
+                binding['source_hash']=sha256(output/'inputs/capture/capture.json')
+                manifest['new_model_calls']=capture['model_calls'];manifest['source_run_id']=capture['run_id']
             observed={'candidates':[binding['part_id']],'observations':binding['observations'],'issues':[]}
             order_path=output/'inputs/work_orders.json';draw_path=output/'inputs/drawing.json'
             write_json(order_path,orders);write_json(draw_path,drawing)
             spec,matching=build_spec(run_id=run_id,observed=observed,scenario=scenario,orders=orders,drawing=drawing,wps=wps,profile=profile,order_path=order_path,drawing_path=draw_path,faults=[])
-            manifest['new_model_calls']=capture['model_calls'];manifest['source_run_id']=capture['run_id']
         else:
             inspect_document_bundle(source);shutil.copytree(source,output/'inputs/document-run')
             spec=read_json(source/'results/work-spec.json');spec['run_id']=run_id;spec['spec_id']=run_id+'-spec'
@@ -134,8 +156,8 @@ def run_pipeline(*,repo:Path,output:Path,source:Path,source_kind:str,data_root:P
         recipes=read_json(repo/'configs/document_demo/weld_recipes.json')
         converted=build_work_order_input_previews(wps,orders,recipes,{key:read_json(repo/f'configs/robot_profiles/{name}') for key,name in [('hyundai','hyundai_hi6_current_voltage.json'),('doosan','doosan_drl_analog.json')]},order_id=spec['target']['work_order_id'])
         if converted['status']!='preview_ready':raise ValueError('제조사 변환 검증 실패')
-        common=converted['common_spec'];common['target'].update(part_id=binding['part_id'],joint_id=binding['joint_id'],observation_ref=binding['source_ref'],source_kind='model')
-        common['relation_origin']='visual_marking_and_document_mapping' if source_kind=='capture' else 'recognition_and_document_mapping'
+        common=converted['common_spec'];common['target'].update(part_id=binding['part_id'],joint_id=binding['joint_id'],observation_ref=binding['source_ref'],source_kind=binding['source_kind'])
+        common['relation_origin']='visual_marking_and_document_mapping' if source_kind in {'capture','recapture'} else 'recognition_and_document_mapping'
         common['target_evidence']=binding
         converted['marking_binding']=binding
         write_json(output/'results/robot-input.json',converted);event('manufacturer_conversion','results/robot-input.json')
