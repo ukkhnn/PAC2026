@@ -187,7 +187,9 @@ Mac 브라우저 전체 시각 검수 기록은 아직 없다. 미작성 범위�
 
 ## 14. 검증 결과를 읽는 방법
 
-파일 해시 검사와 스키마별 의미 검사는 서로 다른 결과다. 13절의 `verify` exit 0은 모든 묶음이 `verified`라는 뜻이 아니다. 현재 `expected_failures`는 미완료 인식 묶음 1개, 통합/시연 묶음 3개, 계보 정정 이후 재계산 불일치가 남은 과거 문서/재검토 묶음 9개다. 이 13개는 실패 상태를 유지하면서 종료 코드 판정에서 허용한다. 원본 기록 재작성이나 의미 검증 복구를 완료한 것으로 표시하지 않는다.
+이 절은 2026-10-19 패키지의 이력이다. 10월 24일 관리자 검증기 연결과 새 사본 검증 결과는 15절을 따른다.
+
+파일 해시 검사와 스키마별 의미 검사는 서로 다른 결과다. 13절의 `verify` exit 0은 모든 묶음이 `verified`라는 뜻이 아니다. 10월 19일 당시 `expected_failures`는 미완료 인식 묶음 1개, 통합/시연 묶음 3개, 계보 정정 이후 재계산 불일치가 남은 과거 문서/재검토 묶음 9개다. 이 13개는 실패 상태를 유지하면서 종료 코드 판정에서 허용한다. 원본 기록 재작성이나 의미 검증 복구를 완료한 것으로 표시하지 않는다.
 
 ```sh
 python3 scripts/export/export_admin_dashboard.py verify \
@@ -207,4 +209,24 @@ python3 scripts/export/export_admin_dashboard.py verify \
 | `doc-normal`·`doc-missing`·`doc-conflict`·`doc-revision-mismatch`·`doc-observation-conflict` | 레거시 9 (문서 검토 5) | `ValueError: 문서 명세/검증 재계산 불일치` | P0 계보 정정으로 `build_spec`의 `validation.checks` 이름이 `observation_consensus` → `marking_observation_evidence_recorded`로 바뀌어 과거 저장 `results/work-spec.json`과 재계산 결과가 다르다. 오류는 명세·matching 대조 단계에서 발생하며, 관측 선택 함수(`observed_candidates`)가 변경됐다는 뜻은 아니다. 과거 기재 재작성 금지(P0 지시서)에 따라 새 실행 재계산 전까지 expected로 둔다. |
 | `review-voltage-01`·`review-voltage-deliver-01`·`review-frame005-01`·`review-receiver-down-01` | 레거시 9 (재검토 4) | `ValueError: 문서 명세/검증 재계산 불일치` | 재검토 검증기가 먼저 내장된 부모 document 묶음을 `inspect_document_bundle`로 재검증하는데, 그 부모가 위와 같은 재계산 불일치로 실패해 같은 오류가 전파된다. 재검토 자체의 재계산(`재검토 결과 재계산 불일치`)에 도달하기 전 단계다. 복구는 위 문서 5개와 함께 새 실행 재계산. |
 
-복구 요약: 레거시 9개는 현재 검증기 기준으로 새 실행(재계산)하면 정리되지만, 과거 기재 재작성 금지 원칙에 따라 기존 묶음·대시보드 사본은 그대로 둔다. weld-pipeline 2개는 기존 제품 검증기를 관리자 경로에 연결해야 하고, `shipyard-recapture`는 목업이므로 대상이 아니다. `recapture-bundle.v1` 읽기 어댑터는 2026-10-18 구현되어 실제 결과를 화면에 적재할 수 있다(단위 테스트는 `tests/test_dashboard_recapture.py`).
+10월 19일 복구 계획: 레거시 9개는 현재 검증기 기준으로 새 실행(재계산)하면 정리되지만, 과거 기재 재작성 금지 원칙에 따라 기존 묶음·대시보드 사본은 그대로 둔다. weld-pipeline 2개는 기존 제품 검증기를 관리자 경로에 연결해야 하고, `shipyard-recapture`는 목업이므로 대상이 아니다. `recapture-bundle.v1` 읽기 어댑터는 2026-10-18 구현되어 실제 결과를 화면에 적재할 수 있다(단위 테스트는 `tests/test_dashboard_recapture.py`).
+
+
+## 15. 통합 실행 검증·일반 내보내기 연결 (2026-10-24)
+
+`weld-pipeline-bundle.v1`을 `integrity.VERIFIERS`에 등록하고 두 통합 실행을 허용 실패 목록에서 제거했다. 일반 `export --add <묶음>`이 전용 어댑터로 대상·문서·송수신 기록과 제조사 변환 카드를 만든다. 중첩 재촬영 묶음은 A/B 이미지와 요청·판정 원문도 보여준다. UI에서 조건을 바꿔도 과거 요청·ACK는 그대로다.
+
+과거 묶음에 현재 검증기를 적용하면 누락된 해시 목록이나 덧붙인 이미지가 드러날 수 있다. 원본을 수정하지 않고 알려진 목록 누락만 **새 사본**에서 보충하는 명령을 추가했다.
+
+```sh
+python3 scripts/export/prepare_weld_dashboard_copy.py \
+  --source output/weld-pipeline-20261010/marking-delivery-02 \
+  --output output/preserved-new/marking-delivery-02 \
+  --report output/preservation-new/marking-delivery-02.json
+```
+
+이 명령은 기존 항목의 해시를 먼저 확인한다. 중첩 `checksums.json` 2개와 촬영 기록의 이미지 해시가 일치하는 A/B 사진만 허용하며, 알 수 없는 파일은 거절한다. 사본을 의미 검증하고 원본 해시·추가 항목·원본 불변 여부를 외부 보고서에 남긴다. 생성 당시 누락 항목이 검증됐다는 의미는 아니다.
+
+새 검수 패키지는 26개 항목·5,069파일이며 파일 검사와 원본 불변 검사를 통과했다. 참조 자료를 제외한 의미 검사는 `verified 8 · partial 2 · expected failed 11`이다. 남은 11건은 과거 문서/재검토 9건, 미완료 인식 1건, manifest가 없는 목업 1건이다. 원래 10월 10일 목업 화면은 기존 패키지에 보존했고, 새 일반 내보내기에서는 해당 묶음을 진단 화면으로 표시한다.
+
+브라우저에서 전체 26개 요약, 두 통합 실행의 각 7개 탭, 재촬영 세 분기의 사진·사유·미전달 표시, 조건 수정·오류 차단·JSON 표시를 확인했다. JSON 다운로드의 완료 이벤트는 도구 제한으로 확인하지 못했다. 전체 조합의 182개 탭을 모두 검수했다는 뜻은 아니다. 구체적인 증거·한계는 [로컬 검증 기록](LOCAL_RESUME_VERIFICATION.md)에 있다.

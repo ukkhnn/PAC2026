@@ -1,6 +1,6 @@
 # 마킹부터 제조사 입력·모의 수신까지
 
-실제 종단 실행일: **2026-10-10** · 문서 갱신일: **2026-10-22**(통합 실행 코드 반영 2026-10-16, 관련 대시보드 반영 2026-10-18). 현재 가장 긴 종단 실행이며 범위 정의는 [데모 스펙](../plan/DEMO_SPEC.md) v1.8, 인식 계약은 [OCR 구성](../spec/OCR_PIPELINE_SPEC.md)을 따른다. 실제 모델의 표기 판독에서 작업지시를 정확 조회하고, 문서 검증·원문 위치 검색·공통 작업명세·현대/두산 변환·HTTP 수신을 한 실행으로 연결한다. 저장 RGB를 사용하며 실제 로봇 이동·아크 실행은 수행하지 않는다.
+실제 모델 종단 실행일: **2026-10-10** · 로컬 재개 구현·검증일: **2026-10-24**. 범위 정의는 [데모 스펙](../plan/DEMO_SPEC.md) v1.9, 인식 계약은 [OCR 구성](../spec/OCR_PIPELINE_SPEC.md)을 따른다. 실제 모델의 표기 판독에서 작업지시를 정확 조회하고, 문서 검증·원문 위치 검색·공통 작업명세·현대/두산 변환·HTTP 수신을 한 실행으로 연결한다. 저장 RGB를 사용하며 실제 로봇 이동·아크 실행은 수행하지 않는다. 10월 24일에는 저장 재촬영 결과에서 새 문서·전달 실행을 만드는 경로를 구현하고 fixture로 검증했다.
 
 ```text
 A/B RGB → 실제 OCR/VLM 원문 → 부재번호·이음 표기·지시 대상
@@ -40,7 +40,25 @@ PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK=True HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE
 
 `capture_binding()`은 `requires_recapture=true`일 때 예외를 발생시켜 실행을 중단한다. 2026-10-15 진단·처방에서 이 동작을 유지하기로 결정했다. 재촬영 뒤에도 판독이 미확정인 상태를 조용히 진행하지 않는 것이 기록 무결성에 안전하기 때문이다. 2026-10-16 연결(Option 1): `run_pipeline()`에 `recapture` 입력을 주면 이 예외를 받아 [재촬영 루프](RECAPTURE_LOOP.md)를 기록 단계로 실행하고 완료 번들을 `inputs/recapture-bundle/`에 보존한다(`src/contextweld/recapture_bridge.py`, 촬영 프레임 해시가 재촬영 입력과 일치할 때만). 루프 판정은 판독 결정을 대체하지 않으며 예외 의미는 그대로라 실행은 `needs_review`/`blocked`로 끝난다. 예외를 루프 재시도로 대체하는 것은 여전히 별도 판단이다.
 
-2026-10-18 재촬영 묶음의 대시보드 읽기 어댑터·검증 연결이 추가됐다. 저장한 `recapture-bundle.v1`은 [관리자 내보내기](ADMIN_DASHBOARD.md)의 `--add <묶음 폴더>`로 읽을 수 있다. 이 읽기 기능이 통합 실행의 문서 검토·전달을 재개하지는 않는다. 실제 GPU 루프와 실제 결과의 화면 대조는 후속 작업이다.
+2026-10-18 재촬영 묶음의 대시보드 읽기 어댑터·검증 연결이 추가됐다. 저장한 `recapture-bundle.v1`은 [관리자 내보내기](ADMIN_DASHBOARD.md)의 `--add <묶음 폴더>`로 읽을 수 있다. 읽기 기능은 실행을 재개하지 않는다. 10월 24일 추가한 아래 CLI 경로에서 명시적으로 새 실행을 만든다. 실제 GPU 루프와 실제 결과의 화면 대조는 후속 작업이다.
+
+## 저장 재촬영 결과로 문서·전달 재개 (2026-10-24)
+
+```sh
+python3 scripts/run/run_weld_pipeline.py \
+  --source-kind recapture --source output/recapture/run_verified \
+  --output output/weld-resumed/new-run \
+  --data-root data/raw/demo-bootstrap-v1 \
+  --index output/document-rag/server-v1/index.json
+```
+
+`--source`는 검증된 기존 재촬영 묶음 경로다. 데이터 원문·검색 색인은 로컬에 있어야 한다. GPU나 모델 경로는 필요 없으며 새 OCR/VLM 호출은 없다. 명령은 문서 검증 후 현대·두산의 **loopback 모의 수신**을 실제 실행한다. 기존 `--capture-inputs`·`--recapture-inputs`와 혼용하지 않는다.
+
+진입 조건은 `inference_status=succeeded`, `visual_outcome=ready_for_document_review`다. 마지막으로 입력된 프레임의 관측·관계·품질 판정·continue 결정 계보를 검증하고 부재를 한 작업지시에 정확 연결한다. 이음은 도면의 명시 매핑과 선택된 joint 관측·관계가 모두 있어야 한다. 미해결·모호한 관계나 없는 표기를 기본값으로 채우지 않는다.
+
+새 묶음은 원본을 `inputs/recapture-bundle/`에 복사하고 `resume_mode=verified_recapture`, `new_model_calls=0`, 원본 `evidence_kind`와 선택 관측의 ID·해시를 보존한다. fixture는 계속 `test_fixture`다. 원래 기록 브리지의 예외·보류 상태는 변경하지 않는다. 검증기는 저장 관측에서 연결을 다시 계산하고 송신 명령의 연결·메타데이터·ACK까지 대조한다.
+
+로컬 실행·테스트·브라우저 검수 범위는 [로컬 재개 검증 기록](LOCAL_RESUME_VERIFICATION.md)에 있다.
 
 ## 수신 패킷과 기록
 
@@ -57,10 +75,9 @@ PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK=True HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE
 `weld-pipeline-bundle.v1`은 `inputs`, `results`, `evidence`, `commands`, `events.jsonl`, `manifest.json`, `checksums.json`을 보존한다. `verify_pipeline()`은 파일 해시, 인식 출처, 송신/수신 패킷, ACK의 ID·해시와 변환을 교차 확인한다. 10월 15일부터 `checksums.json` 미등재 파일도 거절한다. 한 제조사만 수신한 경우 `run_outcome=needs_review`·`delivery_status=partial`과 `delivery_failures`를 남긴다. 과거 `marking-delivery-02`의 중첩 해시 목록 누락과 격리 재빌드에서의 처리 범위는 [관리자 검증 기록](ADMIN_DASHBOARD.md#13-manifest-roots-등록-2026-10-16)을 따른다.
 
 ```sh
-python3 scripts/export/export_weld_pipeline_dashboard.py \
-  --package output/dashboard-preview-20261010/pac-admin-dashboard \
-  --bundle output/weld-pipeline-20261010/shipyard-connected-01 \
-  --key shipyard-connected-01
+PYTHONPATH=src python3 -m contextweld_dashboard export \
+  --output output/admin-new --only rec-batch-02 \
+  --add output/weld-resumed/new-run
 ```
 
-관리자 화면은 저장된 전송/수신 기록을 재생한다. 전송한 조건은 수신 결과에 고정하여 보여주며, 수정 가능한 제조사 변환 카드는 별도의 현재 편집값이다. 화면에서 수정한다고 과거 전송 기록을 바꾸지 않는다.
+`--only`는 로컬에 있는 기본 자료 key를 선택한다. 10월 24일부터 일반 내보내기가 통합 실행을 직접 읽고 검증하며 제조사 편집 카드도 포함한다. 과거 패키지에 덧붙이는 전용 exporter보다 새 패키지를 만드는 이 경로를 사용한다. 관리자 화면은 저장된 전송/수신 기록을 재생한다. 전송한 조건은 수신 결과에 고정하여 보여주며, 수정 가능한 제조사 변환 카드는 별도의 현재 편집값이다. 화면에서 수정한다고 과거 전송 기록을 바꾸지 않는다.
