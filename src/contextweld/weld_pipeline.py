@@ -5,7 +5,7 @@ from decimal import Decimal, ROUND_HALF_UP
 import hashlib, json, re, shutil
 from pathlib import Path
 from typing import Any
-from contextweld.recognition import sha256, utc_now, write_json
+from contextweld.recognition import safe_path, sha256, utc_now, write_json
 from contextweld.robot_input import build_work_order_input_previews
 from contextweld.workflow import build_spec, command_from_spec, inspect_document_bundle, read_json
 from contextweld.documents import load_index, search_documents
@@ -199,16 +199,41 @@ def run_pipeline(*,repo:Path,output:Path,source:Path,source_kind:str,data_root:P
 
 def verify_pipeline(root: Path) -> dict[str, Any]:
     """전송 패킷·수신 원문·ACK·인식 출처와 파일 해시를 교차 확인한다."""
+    if root.is_symlink() or any(p.is_symlink() for p in root.rglob('*')):
+        raise ValueError('통합 묶음 symlink는 허용하지 않음')
     sums=read_json(root/'checksums.json')
     actual={str(p.relative_to(root)) for p in root.rglob('*') if p.is_file() and p!=root/'checksums.json'}
     extra=sorted(actual-set(sums))
     if extra:raise ValueError('통합 묶음 미등재 파일: '+', '.join(extra))
     for name,digest in sums.items():
-        if sha256(root/name)!=digest:raise ValueError('통합 묶음 해시 불일치: '+name)
+        if sha256(safe_path(root,name))!=digest:raise ValueError('통합 묶음 해시 불일치: '+name)
     manifest=read_json(root/'manifest.json')
+    if manifest.get('schema_version') != 'weld-pipeline-bundle.v1':
+        raise ValueError('지원하지 않는 통합 스키마')
     if manifest['run_outcome']!='succeeded':raise ValueError('통합 실행 미완료')
+    if (manifest.get('delivery_status') != 'received'
+            or manifest.get('manufacturers') != ['hyundai', 'doosan']
+            or any(manifest.get(key) is not False for key in
+                   ('execution_authorized', 'application_authorized', 'physical_movement_triggered'))):
+        raise ValueError('통합 전달 상태·제조사·실행 허가 불일치')
     binding=read_json(root/'results/marking-binding.json')
-    if sha256(root/binding['source_ref'])!=binding['source_hash']:raise ValueError('인식 출처 불일치')
+    if sha256(safe_path(root,binding['source_ref']))!=binding['source_hash']:raise ValueError('인식 출처 불일치')
+    if manifest.get('resume_mode') == 'verified_recapture':
+        expected = recapture_binding(root/'inputs/recapture-bundle',
+                                    read_json(root/'inputs/work_orders.json'), read_json(root/'inputs/drawing.json'))
+        loop = verify_recapture_bundle(root/'inputs/recapture-bundle')
+        if binding != expected:
+            raise ValueError('재촬영 연결 재계산 불일치')
+        metadata = {'source_run_id': loop['run_id'], 'recapture_run_id': loop['run_id'],
+                    'new_model_calls': 0, 'recapture_bundle_ref': 'inputs/recapture-bundle',
+                    'recapture_outcome': loop['recapture_outcome'],
+                    'recapture_visual_outcome': loop['visual_outcome'],
+                    'source_kind': loop.get('evidence_kind', 'actual_model'),
+                    'evidence_kind': loop.get('evidence_kind', 'actual_model')}
+        if any(manifest.get(key) != value for key, value in metadata.items()):
+            raise ValueError('재촬영 재개 출처 불일치')
+    elif 'recapture_run_id' in binding:
+        raise ValueError('재촬영 재개 방식 누락')
     receipts={}
     for key in manifest['manufacturers']:
         request=read_json(root/f'commands/{key}-request.json')
@@ -218,6 +243,8 @@ def verify_pipeline(root: Path) -> dict[str, Any]:
         ack=delivery['ack'];record=records[0]
         digest=hashlib.sha256(json.dumps(request,ensure_ascii=False,sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()
         if record['ack']!=ack or ack['command_sha256']!=digest or ack['command_id']!=request['command_id'] or ack['status']!='received' or delivery['http_status']!=200:raise ValueError('ACK 연결 불일치')
+        if request.get('marking_binding') != binding:
+            raise ValueError('저장 판독과 송신 판독 연결 불일치')
         if validate_robot_extension(request):raise ValueError('제조사 명령/대상 연결 오류')
         receipts[key]={'part_id':request['target']['part_id'],'joint_id':request['target']['joint_id'],'http_status':200,'status':ack['status'],'command_id':ack['command_id'],'command':request['robot_input']['command_preview']}
     return {'verified':True,'run_id':manifest['run_id'],'files_checked':len(sums),'receipts':receipts}
