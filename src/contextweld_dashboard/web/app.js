@@ -89,6 +89,7 @@
     tr.appendChild(td); return tr;
   }
   var R = {
+    robot_input: function (b, box) { window.PAC_ROBOT_INPUT.render(b, box); },
     notice: function (b, box) { box.className = "notice " + b.level; box.appendChild(txt("span", "lv", NOTICE[b.level] || b.level)); box.appendChild(document.createTextNode(b.text)); },
     fields: function (b, box) { var t = el("table"); (b.rows || []).forEach(function (r) { t.appendChild(rowLine(r)); }); box.appendChild(t); },
     table: function (b, box) {

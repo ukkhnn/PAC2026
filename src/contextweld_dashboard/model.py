@@ -37,7 +37,7 @@ TAB_LABELS = {
 AVAILABILITY = ("available", "partial", "absent")
 
 BLOCK_TYPES = (
-    "notice", "fields", "table", "image", "image_pair", "cards", "stages", "diff",
+    "robot_input", "notice", "fields", "table", "image", "image_pair", "cards", "stages", "diff",
     "lineage", "text", "json", "raw_files", "flow", "group", "video",
 )
 NOTICE_LEVELS = ("info", "warning", "serious", "critical")

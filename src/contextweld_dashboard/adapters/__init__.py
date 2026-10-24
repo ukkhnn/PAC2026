@@ -11,6 +11,7 @@ from .common import ExportContext, diagnostic_model
 Adapter = Callable[[Source, BundleReader, dict, ExportContext], dict]
 
 KIND_LABELS = {
+    "weld_pipeline": "통합 전달 실행",
     "recognition": "인식 bootstrap 실행",
     "document_review": "문서 검토 실행",
     "explicit_review": "명시적 재검토 실행",
@@ -26,7 +27,7 @@ KIND_LABELS = {
 
 
 def get_adapter(kind: str) -> Adapter | None:
-    module = {"recognition": "recognition", "document_review": "document_review", "explicit_review": "explicit_review",
+    module = {"weld_pipeline": "weld_pipeline", "recognition": "recognition", "document_review": "document_review", "explicit_review": "explicit_review",
               "recapture": "recapture", "scene": "scene", "document_rag": "references",
               "correction_store": "references", "review_cli_log": "references", "demo_config": "references",
               "knowledge": "references"}.get(kind)

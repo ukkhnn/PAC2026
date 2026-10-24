@@ -394,7 +394,7 @@ def _index_entry(source: Source, run: dict[str, Any], viewer: dict[str, Any] | N
 def _global_notices() -> list[dict[str, str]]:
     return [
         {"level": "info", "text": "이 화면은 저장된 기록을 읽기만 합니다. 새 추론·문서 재검색·카메라 이동·명령 전송·수정 저장·재검토를 실행하지 않습니다."},
-        {"level": "warning", "text": "인식 bootstrap(공개 사진), 문서 검토, 명시적 재검토, Isaac 장면 자료는 서로 다른 자료입니다. 장면의 J01과 문서의 JOINT-DEMO-01은 아직 연결되지 않았습니다."},
+        {"level": "warning", "text": "인식 bootstrap(공개 사진), 문서 검토, 명시적 재검토, Isaac 장면 자료는 서로 다른 자료입니다. 통합 실행의 J01→JOINT-DEMO-01 연결은 시연 도면의 명시 매핑이며 현장 이음 확인이 아닙니다."},
         {"level": "warning", "text": "모의 ACK는 수신·형식 검사 결과이며 용접 완료나 현장 적용 승인이 아닙니다."},
         {"level": "info", "text": "CTX-001 후보 목록 실험은 사용자가 거부한 실험이라 대시보드 성과·KPI로 포함하지 않았습니다."},
     ]
@@ -405,6 +405,8 @@ def _copy_static(staging: Path) -> None:
         _copy_file(WEB_DIR / name, staging / name)
     for name in ("app.css", "app.js"):
         _copy_file(WEB_DIR / name, staging / "assets" / name)
+    for name in ("robot_input.js", "robot_input.css"):
+        _copy_file(REPO / "src/contextweld/dashboard_assets" / name, staging / "assets" / name)
     for name in ("verify_package.py", "serve_package.py"):
         _copy_file(TOOLS_DIR / name, staging / "tools" / name)
     _copy_file(TOOLS_DIR / "README-offline.md", staging / "README-offline.md")

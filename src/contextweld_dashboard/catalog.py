@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Any
 
 GROUPS = {
+    "connected": "통합 파이프라인",
     "recognition": "인식 bootstrap (공개 사진)",
     "document": "문서 검토 실행",
     "review": "명시적 재검토 실행",
@@ -20,6 +21,7 @@ GROUPS = {
     "reference": "참조 자료 (실행 아님)",
 }
 SCHEMA_KINDS = {
+    "weld-pipeline-bundle.v1": ("connected", "weld_pipeline"),
     "bootstrap-bundle.v1": ("recognition", "recognition"),
     "document-demo-bundle.v1": ("document", "document_review"),
     "review-bundle.v1": ("review", "explicit_review"),
