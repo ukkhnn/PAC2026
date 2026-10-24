@@ -2,31 +2,31 @@
 
 **작업 맥락 기반 용접표기 해석 및 조건 추천 시스템**
 
-> **현재 구현 기준: [데모 스펙 v1.8](docs/plan/DEMO_SPEC.md) (2026-10-22).** Runpod에서 단일 시나리오의 인식·해석·재촬영·모의 파라미터 전달을 실행·기록하고, 로컬 관리자 화면에서 조회·재생한다. 근거 원문 적재·정확 조회/RAG도 구성한다. 아이디어 피칭이 목적이며, 데모의 실제 흐름·근거 설명을 우선하고 정확도 목표·독립 평가를 완료 조건으로 요구하지 않는다. 새 환경에서는 이 문서를 먼저 읽는다. 범위는 확정됐으며 전체 데모 구현은 아직 완료되지 않았다. 기존 기획과 충돌하면 데모 스펙이 우선한다.
+> **현재 구현 기준: [데모 스펙 v1.9](docs/plan/DEMO_SPEC.md) (2026-10-24).** Runpod에서 단일 시나리오의 인식·해석·재촬영·모의 파라미터 전달을 실행·기록하고, 로컬 관리자 화면에서 조회·재생한다. 근거 원문 적재·정확 조회/RAG도 구성한다. 아이디어 피칭이 목적이며, 데모의 실제 흐름·근거 설명을 우선하고 정확도 목표·독립 평가를 완료 조건으로 요구하지 않는다. 새 환경에서는 이 문서를 먼저 읽는다. 범위는 확정됐으며 전체 데모 구현은 아직 완료되지 않았다. 기존 기획과 충돌하면 데모 스펙이 우선한다.
 
 ContextWeld는 선박 블록과 부재의 정형 마킹·수기 표기를 인식하고, 현재 작업지시·도면·용접 기준을 함께 검토해 작업과 용접조건 후보를 제안하는 프로젝트다. 판단 근거가 부족하거나 정보가 충돌하면 작업자에게 확인을 요청하고 그 결과를 기록한다. 사용자 수정은 별도로 저장하며, 명시적 재검토 요청에서 선택한 기록만 참조한다. 자동 학습·이력 자동 재사용은 이번 범위가 아니다.
 
 [PAC 2026](https://ainnov.co.kr/pac2026) 분과 02 기업 문제 해결형 IR 피칭 대회의 HD현대로보틱스 미션 03을 대상으로 한다. 참가팀은 **Static Duo**다.
 
-이 README의 문서 갱신일은 **2026-10-22**, 최신 코드 반영일은 **2026-10-18**, 검증 해석 기록은 **2026-10-19**이다. 전체 데모는 부분 완료 상태다.
+이 README의 문서·코드·로컬 검증 갱신일은 **2026-10-24**이다. 전체 데모는 부분 완료 상태다.
 
 ## 현재 구현 상태
 
 | 영역 | 완료된 내용 | 남은 내용 |
 |---|---|---|
 | 인식 → 문서 → 전달 | [조선소 저장 A/B 마킹](docs/runs/WELD_PIPELINE.md)에서 작업지시·시연 도면·WPS 검증·등록조건·현대/두산 입력으로 연결하고, 양쪽 loopback HTTP200 `received`와 원문·ACK 일치 확인 | 실제 작업 적용성, 실기 용접·좌표 경로 생성 |
-| 재촬영 | [저장 A/B 분기 모듈](docs/runs/RECAPTURE_LOOP.md) dev 병합, `requires_recapture` 예외 시 루프를 실행·보존하는 기록 단계·CLI와 대시보드 읽기 어댑터 구현 | 실제 GPU 루프 실행, 루프 결과로 문서·전달을 계속하는 연결, 요청에 따른 실제 팔 이동 |
+| 재촬영 | [저장 A/B 분기 모듈](docs/runs/RECAPTURE_LOOP.md) dev 병합, `requires_recapture` 예외 시 루프를 실행·보존하는 기록 단계·CLI·대시보드 읽기 구현. 검증된 저장 결과에서 새 문서·현대/두산 모의 전달 실행으로 재개하고 fixture 검증 | 실제 GPU 루프 및 실제 결과 재개 확인, 요청에 따른 실제 팔 이동 |
 | 수정·재검토 | [서버 CLI 수정 저장·명시적 재검토·선택적 전달](docs/runs/EXPLICIT_REVIEW.md), [작업조건 편집·제조사 변환 화면](docs/runs/ROBOT_INPUT_PREVIEW.md) | 인식 결과 자체를 고치는 화면, 시각 관계의 모델 재해석 |
-| 관리자 재생 | [오프라인 패키지](docs/runs/ADMIN_DASHBOARD.md), 목업/실제 실행 구분, 통합·시연 실행의 `MANIFEST.roots` 등록, 재촬영 묶음 읽기·검증 연결 | 실제 재촬영 묶음의 A/B 재생, 패키지 전체 브라우저 시각 검수 |
+| 관리자 재생 | [오프라인 패키지](docs/runs/ADMIN_DASHBOARD.md), 목업/실제 실행 구분, 통합·시연 실행의 `MANIFEST.roots` 등록, 재촬영·통합 묶음 읽기/검증·조건 편집 연결, 26개 요약·주요 탭 브라우저 확인 | 실제 GPU 재촬영 결과의 A/B 재생, 모든 탭 조합·다운로드 완료 확인 |
 | 자료 보존 | [서버 복구 로컬 준비](docs/audit/INSTRUCTIONS/server-artifact-recovery-local-prep.md): 보존 사본 5건 해시 재대조, 회수 후보·기대 해시·서버 명령 정리 | Runpod 재개 후 서버 실물 대조·회수, 모델 가중치·원본 자료 확인 |
 
-2026-10-18 개발 기록의 로컬 회귀 테스트는 **164개 통과**다(기존 161개 + 재촬영 대시보드 fixture 3개). 실제 GPU 추론이나 브라우저 시각 검수 결과는 아니다. 관리자 사본·격리 재빌드의 파일 해시 검사는 통과했으며, 묶음 의미 검사는 `verified 2 · partial 2 · expected failed 13`이었다. `verify` 종료 코드 0은 허용된 실패 항목을 포함하므로 모든 묶음의 의미 검증 성공을 뜻하지 않는다. 10월 19일 정리한 [허용 실패 13건의 사유](docs/runs/ADMIN_DASHBOARD.md#141-허용-실패-13건-항목별-사유)는 과거 문서·재검토 묶음 9건의 재계산 불일치, 통합 묶음 2건의 관리자 검증기 미연결, 시연 목업 1건과 미완료 인식 1건이다. 실패 사유 문서화가 해당 실패의 해결을 뜻하지는 않는다.
+2026-10-24 로컬 회귀 테스트는 **180개 통과**했다. 새 GPU 호출 없이 fixture 재촬영 결과에서 문서 검토와 현대·두산 loopback HTTP200 수신을 확인했다. 새 관리자 패키지는 **5,069파일** 검사와 원본 불변 검사를 통과했고, 의미 검사는 `verified 8 · partial 2 · expected failed 11`이다. 통합 실행 두 건은 관리자 검증기를 연결해 허용 실패에서 제외했다. 나머지 과거 문서·재검토 9건, 중단 인식 1건, manifest 없는 목업 1건은 실패 표시를 유지한다. `verify` 종료 코드 0을 모든 묶음의 성공으로 해석하지 않는다. [로컬 재개·브라우저 검증 기록](docs/runs/LOCAL_RESUME_VERIFICATION.md)에 실행 명령·증거 경로·다운로드 미확인 등 검수 한계를 정리했다.
 
 ## 실행 근거와 해석 범위
 
 실제 통합 실행 `shipyard-connected-01`에서 A 판독 `BISB3015`는 등록 부재 정확 조회에 실패했고 저장 B의 `BISB30N-15`·`J01`·지시 대상을 읽어 연결했다. B 선택 사유는 `unresolved_target_identity_or_capture_quality`이며 반사 감지 성공으로 해석하지 않는다. 시연 기준값 `BISB30N-15`는 실제 라벨 `B1Sb30N-15`의 오독·정규화 파생값이다([판독·연결 계보](docs/runs/RECOGNITION_AND_BINDING.md)). OCR 원문을 보존하지만 통합 판독은 VLM 단독이며 OCR/VLM 합의로 표시하지 않는다.
 
-재촬영 브리지는 마지막 판독의 `requires_recapture=true`로 연결이 중단된 경우에만 선택적으로 실행한다. 촬영 프레임 해시를 대조하고 루프 번들을 `inputs/recapture-bundle/`에 보존한다. 루프 결과가 `continue`여도 기존 판독 결정을 대체하지 않으며 통합 실행은 `needs_review`·전달 `blocked`로 끝난다. 이 경로는 로컬 테스트로 확인했고 실제 GPU 실행은 남아 있다.
+재촬영 브리지는 마지막 판독의 `requires_recapture=true`로 연결이 중단된 경우에만 선택적으로 실행한다. 촬영 프레임 해시를 대조하고 루프 번들을 `inputs/recapture-bundle/`에 보존한다. 루프 결과가 `continue`여도 기존 판독 결정을 대체하지 않으며 통합 실행은 `needs_review`·전달 `blocked`로 끝난다. 이 경로는 로컬 테스트로 확인했고 실제 GPU 실행은 남아 있다. 완료된 재촬영 묶음을 명시적으로 선택하는 `--source-kind recapture`는 원본 보류 기록을 유지한 새 실행에서 문서·전달을 계속한다. 추가 모델 호출 없이 마지막 관측의 계보·대상 관계를 검증하며 fixture와 실제 모델 출처를 구분한다.
 
 [조선소 `live-03`](docs/runs/ISAAC_SHIPYARD_SCENE.md)의 UR10 손목 A/B RGB·예약 관절 이동·Foxglove 영상 수신은 확인했다. 현재 `pre_captured` 방식은 모델 판단에 따른 팔 이동 폐루프가 아니다. 합성 표기 `J01`은 시연 도면의 `joint_marking_map`으로만 `JOINT-DEMO-01`에 연결한다. 용접 수치는 사진에서 검출한 값이 아니라 등록된 시연 작업조건이며, WPS 선택 헤더·대표층 전사 확인은 사람의 적용 승인이 아니다. 사진의 실제 재질·두께·현장 WPS 적용성은 미확인이다.
 
@@ -73,6 +73,7 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
 |---|---|
 | [현재 데모 구현 기준](docs/plan/DEMO_SPEC.md) | 확정 범위, 단일 시나리오, 데이터 계약, 관리자 재생, 완료 기준·미정 항목 |
 | [마일스톤](docs/plan/MILESTONES.md) | 실제 진행 상태와 P0~P5 완료 기준 |
+| [로컬 재개·검증](docs/runs/LOCAL_RESUME_VERIFICATION.md) | GPU 없이 저장 재촬영 결과로 문서·모의 전달 재개, 관리자 검증·브라우저 확인 |
 | [통합 파이프라인](docs/runs/WELD_PIPELINE.md) | 마킹 판독부터 제조사 입력·HTTP 모의 수신까지의 최신 종단 실행 |
 | [작업조건·제조사 변환](docs/runs/ROBOT_INPUT_PREVIEW.md) | 등록조건 자동 적용과 현대 Hi6·두산 DRL 입력 변환 화면 |
 | [오프라인 관리자 패키지](docs/runs/ADMIN_DASHBOARD.md) | 여러 실행을 서버 없이 조회·재생하는 내보내기 패키지 |
@@ -127,7 +128,7 @@ ContextWeld는 시각 정보에 작업 맥락과 기준 문서의 근거를 연�
     └── presentation/
 ```
 
-`src/contextweld`에는 후보 연결(`matching.py`), 실제 OCR/VLM 실행·기록(`recognition.py`), 문서 추출·검색(`documents.py`), 문서 조건 검사와 모의 수신(`workflow.py`·`mock_delivery.py`), 수정 저장(`corrections.py`)·명시적 재검토(`review.py`), 등록조건의 제조사 입력 변환(`robot_input.py`)과 마킹부터 전달까지의 통합 실행(`weld_pipeline.py`), 저장 A/B 분기(`recapture_loop.py`)와 기록 연결(`recapture_bridge.py`)이 있다. `src/contextweld_dashboard`는 검증된 실행 묶음을 서버 없이 여는 관리자 패키지를 만든다.
+`src/contextweld`에는 후보 연결(`matching.py`), 실제 OCR/VLM 실행·기록(`recognition.py`), 문서 추출·검색(`documents.py`), 문서 조건 검사와 모의 수신(`workflow.py`·`mock_delivery.py`), 수정 저장(`corrections.py`)·명시적 재검토(`review.py`), 등록조건의 제조사 입력 변환(`robot_input.py`)과 마킹부터 전달까지의 통합 실행(`weld_pipeline.py`), 저장 A/B 분기(`recapture_loop.py`)와 기록 연결(`recapture_bridge.py`), 검증된 저장 관측의 대상 연결(`recapture_binding.py`)이 있다. `src/contextweld_dashboard`는 검증된 실행 묶음을 서버 없이 여는 관리자 패키지를 만든다.
 
 `scripts`는 역할별로 나뉘어 있다. 준비는 `prepare/`, 인식·문서·재검토·통합 실행은 `run/`, Isaac 장면과 ROS 송출은 `isaac/`, 오프라인 조회·관리자 내보내기는 `export/`, 저장 묶음 검증은 `verify/`에 있다.
 
