@@ -5,12 +5,14 @@
 재촬영 루프를 기록 단계로 실행한다(의사결정 비변경, Option 1). 루프 판정은
 판독 결정을 대체하지 않으며 파이프라인은 그대로 needs_review/blocked로 끝난다.
 실제 모델 호출이므로 recapture의 det/rec/vlm 모델 경로·revision이 필요하다.
+--source-kind recapture --source <완료된 루프>는 GPU 없이 저장 관측을 검증하고
+새 실행에서 문서 검토·HTTP 모의 전달을 재개한다. 원본 루프는 변경하지 않는다.
 """
 from pathlib import Path
 import argparse,json,sys
 REPO=Path(__file__).resolve().parents[2];sys.path.insert(0,str(REPO/'src'))
 from contextweld.weld_pipeline import run_pipeline
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('--source',type=Path);p.add_argument('--capture-inputs',type=Path);p.add_argument('--source-kind',choices=['capture','document'],required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--data-root',type=Path,default=REPO/'data/raw/demo-bootstrap-v1');p.add_argument('--index',type=Path,default=REPO/'output/document-rag/server-v1/index.json')
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--source',type=Path);p.add_argument('--capture-inputs',type=Path);p.add_argument('--source-kind',choices=['capture','document','recapture'],required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--data-root',type=Path,default=REPO/'data/raw/demo-bootstrap-v1');p.add_argument('--index',type=Path,default=REPO/'output/document-rag/server-v1/index.json')
 p.add_argument('--recapture-inputs',type=Path,help='재촬영 루프 입력(recapture-inputs.v1). capture_binding이 재촬영 판독으로 실패할 때 기록 단계로 실행한다')
 p.add_argument('--recapture-output-root',type=Path,help='루프 번들 출력 루트(기본: REPO/output/recapture-loops)')
 p.add_argument('--recapture-run-id',help='루프 run_id(기본: <output 이름>-recapture)')
@@ -25,6 +27,10 @@ for component in ('det','rec','vlm'):
  p.add_argument(f'--recapture-{component}-revision')
 a=p.parse_args()
 if bool(a.source)==bool(a.capture_inputs):p.error('--source 또는 --capture-inputs 중 하나가 필요해')
+if a.source_kind == 'recapture' and (a.capture_inputs or a.recapture_inputs):
+ p.error('저장 재촬영 재개는 --source만 사용하며 새 모델 입력과 함께 쓸 수 없음')
+if a.recapture_inputs and a.source_kind != 'capture':
+ p.error('--recapture-inputs는 capture 입력에만 사용 가능')
 if a.capture_inputs:
  import subprocess
  a.source=a.output.parent/(a.output.name+'-capture');a.source_kind='capture'
