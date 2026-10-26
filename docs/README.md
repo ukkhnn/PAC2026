@@ -1,9 +1,10 @@
 # 문서 색인
 
-갱신일: 2026-10-24 · 코드·로컬 검증 반영: 2026-10-24. 어떤 문서를 언제 읽는지 정리한다. 서술이 충돌하면 **더 늦은 실행 기록**이 우선하고, 범위 정의는 [데모 스펙](plan/DEMO_SPEC.md)이 우선한다.
+갱신일: 2026-10-26 · 코드·로컬 검증 반영: 2026-10-24. 어떤 문서를 언제 읽는지 정리한다. 서술이 충돌하면 **더 늦은 실행 기록**이 우선하고, 범위 정의는 [데모 스펙](plan/DEMO_SPEC.md)이 우선한다.
 
 ## 최근 반영
 
+- 10월 26일: [수기 마킹과 로봇 작업 연결 조사](plan/MARKING_TO_ROBOT_RESEARCH.md). 대상·구간·경로 연결 제안, 해외 공개 구현, 시뮬레이터 비교와 학습 필요 여부를 정리했다. 구현 완료나 데모 범위 변경은 아니다.
 - 10월 15일: 재촬영 모듈 병합, 판독·라벨 계보 정정, 추가 파일·부분 전달 검증 보강, 관리자 목업 분리.
 - 10월 16일: 재촬영 기록 브리지·CLI, 통합/시연 실행의 `MANIFEST.roots` 등록, 서버 복구용 로컬 보존 사본 재대조.
 - 10월 18일: `recapture-bundle.v1` 대시보드 읽기 어댑터·검증 연결과 fixture 3개 추가. 당시 전체 회귀 테스트 164개 통과.
@@ -27,6 +28,7 @@
 | [MILESTONES](plan/MILESTONES.md) | 실제 진행 상태와 P0~P5 완료 기준. 새 일정은 미확정 |
 | [DATA_REQUIREMENTS](plan/DATA_REQUIREMENTS.md) | 필요한 자료와 현장 검증 항목 |
 | [DOCUMENT_APPLICATION_PLAN](plan/DOCUMENT_APPLICATION_PLAN.md) | 원문 확보·등록·표 검수, 정확 조회와 RAG, 필드별 근거 |
+| [MARKING_TO_ROBOT_RESEARCH](plan/MARKING_TO_ROBOT_RESEARCH.md) | 2026-10-26 조사·제안. 마킹과 실제 작업 연결, 공개 구현·시뮬레이터 비교, 운동 계획과 학습, 첫 시연 검증안 |
 | [DEVELOPMENT_PLAN](plan/DEVELOPMENT_PLAN.md) | 2026-10-08 초기 개발 기획. 아카이브 |
 | [PIPELINE_OPEN_RESOURCES_AND_SCENARIO](plan/PIPELINE_OPEN_RESOURCES_AND_SCENARIO.md) | 2026-10-09 공개 자료·시나리오 조사. 아카이브, 구현 명세보다 우선하지 않음 |
 | [MENTORING_QUESTIONS](plan/MENTORING_QUESTIONS.md) | 2026-10-06 멘토링 질문지. 아카이브, 답변은 기록되지 않음 |
