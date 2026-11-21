@@ -160,4 +160,4 @@ python3 scripts/verify/verify_run_bundle.py output/recognition/run_steel-new-run
 
 후속 [문서 연결 실행](DOCUMENT_DEMO.md)에서 기존 관측→모사 작업지시/도면→WPS 대표층의 범위값·원문 위치→검증→모의 HTTP 수신을 연결했다. 위 bootstrap 기록과 모델 출력은 변경하지 않았다. 사진의 실제 물성·WPS 적용성은 계속 미확인이다.
 
-> 2026-10-10 갱신: 당시 후속 범위로 적었던 A/B RGB는 [기존 장면](ISAAC_SCENE.md)·[조선소 장면](ISAAC_SHIPYARD_SCENE.md)에서, 사용자 수정 재검토는 [명시적 재검토](EXPLICIT_REVIEW.md)에서, 관리자 화면은 [오프라인 관리자 패키지](ADMIN_DASHBOARD.md)에서 구현했다. 저장 A/B 프레임의 판독부터 제조사 전달까지는 [통합 파이프라인](WELD_PIPELINE.md)이 연결한다. 모델 판단에 따른 재촬영은 아직 남아 있다.
+> 2026-10-10 갱신: 당시 후속 범위로 적었던 A/B RGB는 [기존 장면](ISAAC_SCENE.md)·[조선소 장면](ISAAC_SHIPYARD_SCENE.md)에서, 사용자 수정 재검토는 [명시적 재검토](EXPLICIT_REVIEW.md)에서, 관리자 화면은 [오프라인 관리자 패키지](ADMIN_DASHBOARD.md)에서 구현했다. 저장 A/B 프레임의 판독부터 제조사 전달까지는 [통합 파이프라인](WELD_PIPELINE.md)이 연결한다. 모델 판단에 따른 재촬영은 [저장 A/B 분기](RECAPTURE_LOOP.md)로 구현했고, 실제 GPU 실행·요청에 따른 팔 이동은 남아 있다.
